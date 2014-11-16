@@ -19,16 +19,10 @@ namespace Gss.Model
 
         public string Nome
         {
-            get
-            {
-                return _nome;
-            }
-
-            set
-            {
-                _nome = value;
-            }
+            get { return _nome; }
+            set { _nome = value; }
         }
+
 
     }
 }

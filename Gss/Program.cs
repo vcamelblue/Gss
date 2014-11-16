@@ -13,7 +13,6 @@ namespace Gss {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //ghhghghghghghghghg
             Application.Run(new Form1());
         }
     }

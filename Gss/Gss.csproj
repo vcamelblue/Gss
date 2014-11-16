@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Model\Alpina.cs" />
     <Compile Include="Model\Fondo.cs" />
+    <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
     <Compile Include="Model\Pista.cs" />
     <Compile Include="Model\SnowPark.cs" />

@@ -51,6 +51,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Alpina.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Contatto.cs" />
     <Compile Include="Model\Fondo.cs" />
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />

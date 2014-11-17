@@ -42,16 +42,6 @@ namespace Gss.Model
             return postiTotaliMax;
         }
 
-        public int postiTotaliMin()
-        {
-            int postiTotaliMin = 0;
-            foreach (Stanza s in Stanze)
-            {
-                postiTotaliMin += s.NumeroPostiMin;
-            }
-            return postiTotaliMin;
-        }
-
         public int getNumeroStanze()
         {
             return Stanze.Count;

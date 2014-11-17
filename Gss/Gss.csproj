@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Model\Alpina.cs" />
     <Compile Include="Model\Bungalow.cs" />
+    <Compile Include="Model\Bungalows.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Clienti.cs" />
     <Compile Include="Model\Fondo.cs" />

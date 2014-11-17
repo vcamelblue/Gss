@@ -59,6 +59,7 @@
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
     <Compile Include="Model\Pista.cs" />
+    <Compile Include="Model\Resort.cs" />
     <Compile Include="Model\Risorsa.cs" />
     <Compile Include="Model\SnowPark.cs" />
     <Compile Include="Model\Stanza.cs" />

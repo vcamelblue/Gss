@@ -13,7 +13,8 @@ namespace Gss.Model
 
         private Difficolta _difficolta;
 
-        public Alpina(string nome, Difficolta difficolta) : base(nome) 
+        public Alpina(string nome, Difficolta difficolta) 
+            : base(nome) 
         {
             _difficolta = difficolta;
         }

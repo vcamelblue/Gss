@@ -51,13 +51,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Alpina.cs" />
+    <Compile Include="Model\Bungalow.cs" />
     <Compile Include="Model\Cliente.cs" />
-    <Compile Include="Model\Contatto.cs" />
+    <Compile Include="Model\Clienti.cs" />
     <Compile Include="Model\Fondo.cs" />
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
     <Compile Include="Model\Pista.cs" />
+    <Compile Include="Model\Risorsa.cs" />
     <Compile Include="Model\SnowPark.cs" />
+    <Compile Include="Model\Stanza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -8,7 +8,7 @@ namespace Gss.Model
 {
     using System;
 
-    public abstract class Pista
+    abstract class Pista
     {
         private string _nome;
 

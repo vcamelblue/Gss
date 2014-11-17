@@ -17,17 +17,25 @@ namespace Gss.Model
             _clienti = clienti;
         }
 
-        public void Add(Cliente cliente)
-        {
-            ListaClienti.Add(cliente);
-        }
-
         public List<Cliente> ListaClienti
         {
             get { return _clienti; }
             set { _clienti = value; }
         }
        
+
+        public void Add(Cliente cliente)
+        {
+            ListaClienti.Add(cliente);
+        }
+
+        public bool Remove(Cliente cliente)
+        {
+            return ListaClienti.Remove(cliente);
+        }
+
+
+        
 
     }
 }

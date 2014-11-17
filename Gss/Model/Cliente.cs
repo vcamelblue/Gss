@@ -12,16 +12,15 @@ namespace Gss.Model
         private string _cognome;
         private string _codiceFiscale;
         private DateTime _dataNascita;
-        private List<Contatto> _contatti;
+        private string _telefono;
+        private string _email;
 
-        public Cliente(string nome, string cognome, string codiceFiscale, DateTime dataNascita, Contatto contatto)
+        public Cliente(string nome, string cognome, string codiceFiscale, DateTime dataNascita, string telefono, string email)
         {
             _nome = nome;
             _cognome = cognome;
             _codiceFiscale = codiceFiscale;
             _dataNascita = dataNascita;
-            _contatti = new List<Contatto>();
-            _contatti.Add(contatto);
         }
 
         public string Nome
@@ -48,23 +47,16 @@ namespace Gss.Model
             set { _dataNascita = value; }
         }
 
-        public List<Contatto> Contatti
+        public string Telefono
         {
-            get { return _contatti; }
-            set { _contatti = value; }
+            get { return _telefono; }
+            set { _telefono = value; }
         }
 
-        public void add(Contatto contatto)
+        public string Email
         {
-            Contatti.Add(contatto);
+            get { return _email; }
+            set { _email = value; }
         }
-
-        public bool remove(Contatto contatto)
-        {
-            if (Contatti.Count == 1) return false;
-            else return Contatti.Remove(contatto);
-        }
-
-
     }
 }

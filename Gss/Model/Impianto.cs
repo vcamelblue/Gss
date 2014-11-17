@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Impianto
+    class Impianto : Risorsa
     {
         private string _nome;
         private string _versante;
         private List<Pista> _piste;
 
-        public Impianto(string nome, string versante)
+        public Impianto(string codice, string nome, string versante) 
+            : base(codice)
         {
             _nome = nome;
             _versante = versante;

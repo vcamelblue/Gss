@@ -12,7 +12,8 @@ namespace Gss.Model
         private int _numeroSalti;
         private int _numeroJibs;
 
-        public SnowPark (string nome, int numeroSalti, int numeroJibs) : base(nome)
+        public SnowPark (string nome, int numeroSalti, int numeroJibs) 
+            : base(nome)
         {
             _numeroSalti = numeroSalti;
             _numeroJibs = numeroJibs;

@@ -15,7 +15,7 @@ namespace Gss.Model
         private DateTime _dataFine;
         private Cliente _cliente;
 
-        internal Cliente Cliente
+        public Cliente Cliente
         {
             get { return _cliente; }
             set { _cliente = value; }

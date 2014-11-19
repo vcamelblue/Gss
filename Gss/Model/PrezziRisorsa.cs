@@ -48,16 +48,16 @@ namespace Gss.Model
             return PrezziSpecifici.Remove(prezzoSpecifico);
         }
 
-        public Double GetPrezzoByTipologia(TipologiaPrezzo tipologia)
+        public PrezzoSpecifico GetPrezzoByTipologia(TipologiaPrezzo tipologia)
         {
             foreach (PrezzoSpecifico ps in PrezziSpecifici)
             {
                 if (ps.Tipologia.Equals(tipologia))
                 {
-                    return ps.Valore;
+                    return ps;
                 }
             }
-            return -1;  // return -1 se non è presente quella tipologia, trattare il caso nelle funzioni sopra
+            return null; // trattare il null nelle funzioni sopra
         }
     }
 }

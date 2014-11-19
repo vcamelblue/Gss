@@ -44,19 +44,6 @@ namespace Gss.Model
             return result;
         }
 
-        public Bungalows GetBungalowConPostiMin(int n)
-        {
-            Bungalows result = new Bungalows();
-            foreach (Bungalow b in ListaBungalow)
-            {
-                if (b.postiTotaliMin() == n)
-                {
-                    result.add(b);
-                }
-            }
-            return result;
-        }
-
         public Bungalows GetBungalowConPostiMax(int n)
         {
             Bungalows result = new Bungalows();

@@ -9,8 +9,6 @@ namespace Gss.Model
 {
     class Alpina : Pista
     {
-        enum Difficolta {Bassa, Media, Alta};
-
         private Difficolta _difficolta;
 
         public Alpina(string nome, Difficolta difficolta) 

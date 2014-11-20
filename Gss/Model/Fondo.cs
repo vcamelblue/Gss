@@ -13,7 +13,7 @@ namespace Gss.Model
         private double _dislivelloMassimo;
         private double _dislivelloMinimo;
 
-        public Fondo(string nome, int dislivelloMassimo, int dislivelloMinimo) 
+        public Fondo(string nome, double dislivelloMassimo, double dislivelloMinimo) 
             : base(nome) 
         {
             _dislivelloMassimo = dislivelloMassimo;

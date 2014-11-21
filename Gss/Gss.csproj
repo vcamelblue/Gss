@@ -58,9 +58,10 @@
     <Compile Include="Model\Difficolta.cs" />
     <Compile Include="Model\Direttore.cs" />
     <Compile Include="Model\Fondo.cs" />
-	<Compile Include="Model\GestorePeriodi.cs" />
+    <Compile Include="Model\GestorePeriodi.cs" />
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
+    <Compile Include="Model\Periodo.cs" />
     <Compile Include="Model\Pista.cs" />
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\PrezziRisorsa.cs" />

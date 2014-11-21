@@ -22,9 +22,9 @@ namespace Gss.Model
 
         //Methods
 
-        public GestorePeriodi GetInstance()
+        public static GestorePeriodi GetInstance()
         {
-            if(_gestorePeriodi==null)
+            if(_gestorePeriodi == null)
             {
                 _gestorePeriodi = new GestorePeriodi();
             }

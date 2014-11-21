@@ -43,7 +43,7 @@ namespace Gss.Model
             set { _dataFine = value; }
         }
 
-        public bool IsInPeriodo(DateTime data)
+        public bool IsDataInPeriodo(DateTime data)
         {
             if (_dataInizio.CompareTo(data) >= 0 && _dataFine.CompareTo(data) <= 0)
                 return true;

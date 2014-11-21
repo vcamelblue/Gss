@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Gss.Model
 {
@@ -37,8 +38,12 @@ namespace Gss.Model
 
             while(!(data.Equals(DataFine)))
             {
-                prezzo = Impianto.GetPrezzo(, data).Prezzo;
+                prezzo += Impianto.GetPrezzoFor(data).Prezzo;
+                data.AddDays(1);
             }
+            return prezzo;
         }
+
+
     }
 }

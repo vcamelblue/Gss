@@ -32,7 +32,9 @@ namespace Gss.Model
 
         public override double GetPrezzoSkiPass()
         {
-            throw new NotImplementedException();
+            Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(DataRilascio);
+            PrezziRisorsa prezziRisorsa = periodo.Profilo.GetPrezziRisorsa(Impianto);
+            return NAccessi * prezziRisorsa.GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore;  
         }
     }
 }

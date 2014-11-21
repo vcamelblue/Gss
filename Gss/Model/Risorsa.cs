@@ -21,11 +21,6 @@ namespace Gss.Model
             return periodo.Profilo.GetPrezziRisorsa(this);
         }
 
-
-
-
-
-
         public string Codice
         {
             get { return _codice; }

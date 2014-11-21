@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gss.Model {
+namespace Gss.Model 
+{
 
-    class Fattura {
+    public class Fattura 
+    {
 
         //Fields
 

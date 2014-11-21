@@ -39,7 +39,7 @@ namespace Gss.Model
             return _prezziRisorsa.Remove(risorsa);
         }
 
-        public PrezziRisorsa getPrezziRisorsa(Risorsa risorsa)
+        public PrezziRisorsa GetPrezziRisorsa(Risorsa risorsa)
         {
             return _prezziRisorsa[risorsa];
         }

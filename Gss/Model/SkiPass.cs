@@ -31,5 +31,24 @@ namespace Gss.Model
 
         abstract public double prezzoSkiPass();
 
+
+        public override bool Equals(object obj)
+        {
+            SkiPass skipass = null;
+
+            if (obj is SkiPass)
+            {
+                skipass = (SkiPass)obj;
+            }
+            else return false;
+
+            if (this.Codice.Equals(skipass.Codice))
+            {
+                return true;
+            }
+
+            else return false;
+        }
+
     }
 }

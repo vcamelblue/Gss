@@ -56,5 +56,23 @@ namespace Gss.Model
             }
             return result;
         }
+
+        public override bool Equals(object obj)
+        {
+            SkiCard skicard = null;
+
+            if (obj is SkiCard)
+            {
+                skicard = (SkiCard)obj;
+            }
+            else return false;
+
+            if (this.Codice.Equals(skicard.Codice))
+            {
+                return true;
+            }
+
+            else return false;
+        }
     }
 }

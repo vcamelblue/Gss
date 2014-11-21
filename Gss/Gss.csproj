@@ -70,6 +70,7 @@
     <Compile Include="Model\Resort.cs" />
     <Compile Include="Model\Risorsa.cs" />
     <Compile Include="Model\SkiCard.cs" />
+    <Compile Include="Model\SkiCards.cs" />
     <Compile Include="Model\SkiPass.cs" />
     <Compile Include="Model\SkiPassAdAccesso.cs" />
     <Compile Include="Model\SkiPassAGiornata.cs" />

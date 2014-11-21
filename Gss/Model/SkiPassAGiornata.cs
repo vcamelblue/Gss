@@ -32,7 +32,13 @@ namespace Gss.Model
 
         public override double GetPrezzoSkiPass()
         {
-            throw new NotImplementedException();
+            double prezzo = 0;
+            DateTime data = DataInizio;
+
+            while(!(data.Equals(DataFine)))
+            {
+                prezzo = Impianto.GetPrezzo(, data).Prezzo;
+            }
         }
     }
 }

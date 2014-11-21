@@ -17,6 +17,11 @@ namespace Gss.Model
             _clienti = clienti;
         }
 
+        public Clienti()
+        {
+            _clienti = new List<Cliente>();
+        }
+
         public List<Cliente> ListaClienti
         {
             get { return _clienti; }

@@ -31,12 +31,12 @@ namespace Gss.Model
             return ListaBungalow.Remove(bungalow);
         }
 
-        public Bungalows GetBungalowConPostiStandard(int n)
+        public Bungalows getBungalowConPostiAlmeno(int n)
         {
             Bungalows result = new Bungalows();
             foreach (Bungalow b in ListaBungalow)
             {
-                if (b.postiTotaliStandard() == n)
+                if (b.postiTotaliStandard() >= n)
                 {
                     result.add(b);
                 }
@@ -44,12 +44,12 @@ namespace Gss.Model
             return result;
         }
 
-        public Bungalows GetBungalowConPostiMax(int n)
+        public Bungalows getBungalowConMaxPostiAlmeno(int n)
         {
             Bungalows result = new Bungalows();
             foreach (Bungalow b in ListaBungalow)
             {
-                if (b.postiTotaliMax() == n)
+                if (b.postiTotaliMax() >= n)
                 {
                     result.add(b);
                 }

@@ -14,6 +14,9 @@ namespace Gss.Model
         private string _telefono;
         private Impianti _impianti;
         private Bungalows _bungalows;
+        private DateTime _dataInizioStagione;
+        private DateTime _dataFineStagione;
+
 
         public Resort(string nome, string indirizzo, string email, string telefono)
         {
@@ -59,6 +62,18 @@ namespace Gss.Model
         {
             get { return _bungalows; }
             set { _bungalows = value; }
+        }
+
+        public DateTime DataInizioStagione
+        {
+            get { return _dataInizioStagione; }
+            set { _dataInizioStagione = value; }
+        }
+
+        public DateTime DataFineStagione
+        {
+            get { return _dataFineStagione; }
+            set { _dataFineStagione = value; }
         }
 
         public void addBungalow(Bungalow bungalow)

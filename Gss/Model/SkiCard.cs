@@ -29,7 +29,7 @@ namespace Gss.Model
             set { _skiPass = value; }
         }
 
-        public bool add(SkiPass skipass)
+        public bool Add(SkiPass skipass)
         {
             foreach (SkiPass s in SkiPass)
             {
@@ -42,17 +42,17 @@ namespace Gss.Model
             return true;
         }
 
-        public bool remove(SkiPass skipass)
+        public bool Remove(SkiPass skipass)
         {
             return SkiPass.Remove(skipass);
         }
 
-        public double prezzoSkicard()
+        public double GetPrezzoSkicard()
         {
             double result = 0;
             foreach (SkiPass s in SkiPass)
             {
-                result += s.prezzoSkiPass();
+                result += s.GetPrezzoSkiPass();
             }
             return result;
         }

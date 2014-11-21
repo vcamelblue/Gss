@@ -15,7 +15,7 @@ namespace Gss.Model
             _listaSkiCard = new List<SkiCard>();
         }
 
-        public bool add(SkiCard skicard)
+        public bool Add(SkiCard skicard)
         {
             foreach (SkiCard s in ListaSkiCard)
             {
@@ -39,7 +39,7 @@ namespace Gss.Model
 
             foreach (SkiCard s in ListaSkiCard)
             {
-                result = +s.prezzoSkicard();
+                result = +s.GetPrezzoSkicard();
             }
 
             return result;

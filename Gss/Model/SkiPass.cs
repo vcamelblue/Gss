@@ -29,7 +29,7 @@ namespace Gss.Model
             set { _impianto = value; }
         }
 
-        abstract public double prezzoSkiPass();
+        abstract public double GetPrezzoSkiPass();
 
 
         public override bool Equals(object obj)

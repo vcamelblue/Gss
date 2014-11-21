@@ -76,22 +76,22 @@ namespace Gss.Model
             set { _dataFineStagione = value; }
         }
 
-        public void addBungalow(Bungalow bungalow)
+        public void AddBungalow(Bungalow bungalow)
         {
-            Bungalows.add(bungalow);
+            Bungalows.Add(bungalow);
         }
 
-        public void addImpianto(Impianto impianto)
+        public void AddImpianto(Impianto impianto)
         {
             Impianti.Add(impianto);
         }
 
-        public bool removeBungalow(Bungalow bungalow)
+        public bool RemoveBungalow(Bungalow bungalow)
         {
-            return Bungalows.remove(bungalow);
+            return Bungalows.Remove(bungalow);
         }
 
-        public bool removeImpianto(Impianto impianto)
+        public bool RemoveImpianto(Impianto impianto)
         {
             return Impianti.Remove(impianto);
         }

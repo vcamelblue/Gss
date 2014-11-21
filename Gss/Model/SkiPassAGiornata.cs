@@ -30,7 +30,7 @@ namespace Gss.Model
             set { _dataFine = value; }
         }
 
-        public override double prezzoSkiPass()
+        public override double GetPrezzoSkiPass()
         {
             throw new NotImplementedException();
         }

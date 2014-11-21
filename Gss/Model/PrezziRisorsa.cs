@@ -30,7 +30,7 @@ namespace Gss.Model
             set { _prezziSpecifici = value; }
         }
 
-        public bool add(PrezzoSpecifico prezzoSpecifico)
+        public bool Add(PrezzoSpecifico prezzoSpecifico)
         {
             foreach (PrezzoSpecifico ps in PrezziSpecifici)
             {
@@ -43,7 +43,7 @@ namespace Gss.Model
             return true;
         }
 
-        public bool remove(PrezzoSpecifico prezzoSpecifico)
+        public bool Remove(PrezzoSpecifico prezzoSpecifico)
         {
             return PrezziSpecifici.Remove(prezzoSpecifico);
         }

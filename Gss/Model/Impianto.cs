@@ -38,12 +38,12 @@ namespace Gss.Model
             set { _piste = value; }
         }
 
-        public int numeroPiste() 
+        public int NumeroPiste() 
         {
             return _piste.Count;
         }
 
-        public List<Alpina> getPisteAlpine()
+        public List<Alpina> GetPisteAlpine()
         {
             List<Alpina> result = new List<Alpina>();
             foreach (Pista p in Piste)
@@ -57,7 +57,7 @@ namespace Gss.Model
             return result;
         }
 
-        public List<Fondo> getPisteFondo()
+        public List<Fondo> GetPisteFondo()
         {
             List<Fondo> result = new List<Fondo>();
             foreach (Pista p in Piste)
@@ -71,7 +71,7 @@ namespace Gss.Model
             return result;
         }
 
-        public List<SnowPark> getPisteSnowPark()
+        public List<SnowPark> GetPisteSnowPark()
         {
             List<SnowPark> result = new List<SnowPark>();
             foreach (Pista p in Piste)
@@ -85,12 +85,12 @@ namespace Gss.Model
             return result;
         }
 
-        public void add(Pista pista)
+        public void Add(Pista pista)
         {
             Piste.Add(pista);
         }
 
-        public bool remove(Pista pista)
+        public bool Remove(Pista pista)
         {
             return Piste.Remove(pista);
         }

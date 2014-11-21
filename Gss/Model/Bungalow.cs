@@ -22,7 +22,7 @@ namespace Gss.Model
             set { _stanze = value; }
         }
 
-        public int postiTotaliStandard()
+        public int PostiTotaliStandard()
         {
             int postiTotaliStandard = 0;
             foreach (Stanza s in Stanze)
@@ -32,7 +32,7 @@ namespace Gss.Model
             return postiTotaliStandard;
         }
 
-        public int postiTotaliMax()
+        public int PostiTotaliMax()
         {
             int postiTotaliMax = 0;
             foreach (Stanza s in Stanze)
@@ -42,17 +42,17 @@ namespace Gss.Model
             return postiTotaliMax;
         }
 
-        public int getNumeroStanze()
+        public int GetNumeroStanze()
         {
             return Stanze.Count;
         }
 
-        public void add(Stanza stanza)
+        public void Add(Stanza stanza)
         {
             Stanze.Add(stanza);
         }
 
-        public bool remove(Stanza stanza)
+        public bool Remove(Stanza stanza)
         {
             if (Stanze.Count == 1) return false;
             else return Stanze.Remove(stanza);

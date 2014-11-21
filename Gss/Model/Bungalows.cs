@@ -21,37 +21,37 @@ namespace Gss.Model
             set { _bungalows = value; }
         }
 
-        public void add(Bungalow bungalow)
+        public void Add(Bungalow bungalow)
         {
             ListaBungalow.Add(bungalow);
         }
 
-        public bool remove(Bungalow bungalow)
+        public bool Remove(Bungalow bungalow)
         {
             return ListaBungalow.Remove(bungalow);
         }
 
-        public Bungalows getBungalowConPostiAlmeno(int n)
+        public Bungalows GetBungalowConPostiAlmeno(int n)
         {
             Bungalows result = new Bungalows();
             foreach (Bungalow b in ListaBungalow)
             {
-                if (b.postiTotaliStandard() >= n)
+                if (b.PostiTotaliStandard() >= n)
                 {
-                    result.add(b);
+                    result.Add(b);
                 }
             }
             return result;
         }
 
-        public Bungalows getBungalowConMaxPostiAlmeno(int n)
+        public Bungalows GetBungalowConMaxPostiAlmeno(int n)
         {
             Bungalows result = new Bungalows();
             foreach (Bungalow b in ListaBungalow)
             {
-                if (b.postiTotaliMax() >= n)
+                if (b.PostiTotaliMax() >= n)
                 {
-                    result.add(b);
+                    result.Add(b);
                 }
             }
             return result;

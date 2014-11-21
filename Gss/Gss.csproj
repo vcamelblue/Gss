@@ -56,7 +56,7 @@
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Clienti.cs" />
     <Compile Include="Model\Difficolta.cs" />
-	<Compile Include="Model\Direttore.cs" />
+    <Compile Include="Model\Direttore.cs" />
     <Compile Include="Model\Fondo.cs" />
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
@@ -67,6 +67,9 @@
     <Compile Include="Model\ProfiloPrezziRisorse.cs" />
     <Compile Include="Model\Resort.cs" />
     <Compile Include="Model\Risorsa.cs" />
+    <Compile Include="Model\SkiPass.cs" />
+    <Compile Include="Model\SkiPassAdAccesso.cs" />
+    <Compile Include="Model\SkiPassAGiornata.cs" />
     <Compile Include="Model\SnowPark.cs" />
     <Compile Include="Model\Stanza.cs" />
     <Compile Include="Model\TipologiaPrezzo.cs" />

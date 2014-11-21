@@ -15,6 +15,20 @@ namespace Gss.Model
         private DateTime _dataFine;
         private Cliente _cliente;
 
+        public Prenotazione(int numeroPrenotazione, int numeroPersone, DateTime dataInizio, DateTime dataFine, Cliente cliente)
+        {
+            _numeroPrenotazione= numeroPrenotazione;
+            _numeroPersone = numeroPersone;
+            _dataInizio = dataInizio;
+            _dataFine = dataFine;
+            _cliente = cliente;
+        }
+
+        public Prenotazione(int numeroPrenotazione)
+        {
+            _numeroPrenotazione = numeroPrenotazione;
+        }
+
         public Cliente Cliente
         {
             get { return _cliente; }
@@ -32,8 +46,7 @@ namespace Gss.Model
             get { return _dataInizio; }
             set { _dataInizio = value; }
         }
-       
-
+      
         public int NumeroPersone
         {
             get { return _numeroPersone; }
@@ -44,6 +57,23 @@ namespace Gss.Model
         {
             get { return _numeroPrenotazione; }
             set { _numeroPrenotazione = value; }
+        }
+
+        public override bool Equals(Object obj)
+        {
+            Prenotazione prenotazione=null;
+
+            if (obj is SkiPass)
+            {
+                prenotazione = (Prenotazione)obj;
+            }
+            else return false;
+
+            if (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione)
+                return true;
+            else
+                return false;
+
         }
     }
 }

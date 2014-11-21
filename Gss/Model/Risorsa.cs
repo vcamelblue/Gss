@@ -15,6 +15,17 @@ namespace Gss.Model
             _codice = codice;
         }
 
+        public PrezziRisorsa GetPrezzo(GestorePeriodi gestorePeriodi, DateTime data)
+        {
+            Periodo periodo = gestorePeriodi.GetPeriodoByData(data);
+            return periodo.Profilo.GetPrezziRisorsa(this);
+        }
+
+
+
+
+
+
         public string Codice
         {
             get { return _codice; }

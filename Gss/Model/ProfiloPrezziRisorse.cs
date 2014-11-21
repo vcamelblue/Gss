@@ -8,8 +8,8 @@ namespace Gss.Model
 {
     class ProfiloPrezziRisorse
     {
-        string _nome;
-        Dictionary<Risorsa, PrezziRisorsa> _prezziRisorsa;
+        private string _nome;
+        private Dictionary<Risorsa, PrezziRisorsa> _prezziRisorsa;
 
         public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
         {

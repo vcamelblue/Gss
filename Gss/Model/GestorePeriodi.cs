@@ -8,5 +8,21 @@ namespace Gss.Model
 {
     class GestorePeriodi
     {
+        private static GestorePeriodi _gestorePeriodi;
+
+        private GestorePeriodi() { }
+
+        public GestorePeriodi GetInstance()
+        {
+            if(_gestorePeriodi==null)
+            {
+                _gestorePeriodi = new GestorePeriodi();
+            }
+            return _gestorePeriodi;
+        }
+
+        
     }
+
+    
 }

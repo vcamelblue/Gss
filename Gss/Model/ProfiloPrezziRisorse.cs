@@ -11,6 +11,12 @@ namespace Gss.Model
         private string _nome;
         private Dictionary<Risorsa, PrezziRisorsa> _prezziRisorsa;
 
+        public ProfiloPrezziRisorse(string nome)
+        {
+            _nome = nome;
+            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
+        }
+
         public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
         {
             get { return _prezziRisorsa; }
@@ -23,11 +29,7 @@ namespace Gss.Model
             set { _nome = value; }
         }
 
-        public ProfiloPrezziRisorse(string nome)
-        {
-            _nome = nome;
-            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
-        }
+      
 
         public void Add(Risorsa risorsa, PrezziRisorsa prezziRisorsa)
         {

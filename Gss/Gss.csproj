@@ -64,6 +64,7 @@
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\PrezziRisorsa.cs" />
     <Compile Include="Model\PrezzoSpecifico.cs" />
+    <Compile Include="Model\ProfiloPrezziRisorse.cs" />
     <Compile Include="Model\Resort.cs" />
     <Compile Include="Model\Risorsa.cs" />
     <Compile Include="Model\SnowPark.cs" />

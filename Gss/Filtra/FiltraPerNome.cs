@@ -24,7 +24,25 @@ namespace Gss.Filtra
 
         public Impianti Filtra(Impianti impianti)
         {
-            throw new NotImplementedException();
+            Impianti result = new Impianti();
+
+            foreach (Impianto i in impianti.ListaImpianti)
+            {
+                if (i.Nome == NameToFinder)
+                {
+                    result.Add(i);
+                }
+            }
+
+            return result;
+
+
+            //result.ListaImpianti = (from impianto in impianti.ListaImpianti
+            //             where impianto.Nome == NameToFinder
+            //             select impianto).ToList<Impianto>();
+
+            //return result;
+
         }
     }
 }

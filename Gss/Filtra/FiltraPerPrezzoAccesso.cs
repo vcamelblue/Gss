@@ -10,10 +10,12 @@ namespace Gss.Filtra
     class FiltraPerPrezzoAccesso : IFiltra
     {
         private double _prezzoToFilter;
+        private DateTime _dataRilascio;
 
-        public FiltraPerPrezzoAccesso(double prezzo)
+        public FiltraPerPrezzoAccesso(double prezzo,DateTime dataRilascio)
         {
             _prezzoToFilter = prezzo;
+            _dataRilascio = dataRilascio;
         }
 
         public double PrezzoToFilter
@@ -22,9 +24,25 @@ namespace Gss.Filtra
             set { _prezzoToFilter = value; }
         }
 
+        public DateTime DataRilascio
+        {
+            get { return _dataRilascio; }
+            set { _dataRilascio = value; }
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
-            throw new NotImplementedException();
+            Impianti result = new Impianti();
+
+            foreach (Impianto i in impianti.ListaImpianti)
+            {
+                if ((i.GetPrezzoFor(DataRilascio).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore)<=PrezzoToFilter) 
+                {
+                    result.Add(i);
+                }
+            }
+
+            return result;
         }
     }
 }

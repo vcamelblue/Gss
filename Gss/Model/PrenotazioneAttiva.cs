@@ -76,13 +76,15 @@ namespace Gss.Model
 
         public double GetSpesaAttuale()
         {
-            
+            return GetSpesaBungalow() + GetSpesaSkiCards();
         }
 
         public double GetSpesaBungalow()
         {
             double prezzo = 0;
             DateTime data = DataInizio;
+
+            if (Bungalow == null) return prezzo;
 
             while (!(data.Equals(DataFine))) //calcolo il prezzo standard per giornata
             {
@@ -110,7 +112,9 @@ namespace Gss.Model
 
         public double GetSpesaSkiCards()
         {
-            
+            if (ListaSkiCards.ListaSkiCard.Count == 0)
+                return 0;
+            else return ListaSkiCards.GetPrezzoTotale();
         }
     }
 }

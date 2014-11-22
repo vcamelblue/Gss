@@ -68,6 +68,7 @@
     <Compile Include="Model\Prenotazione.cs" />
     <Compile Include="Model\PrenotazioneArchiviata.cs" />
     <Compile Include="Model\PrenotazioneAttiva.cs" />
+    <Compile Include="Model\Prenotazioni.cs" />
     <Compile Include="Model\PrezziRisorsa.cs" />
     <Compile Include="Model\PrezzoSpecifico.cs" />
     <Compile Include="Model\ProfiliPrezziRisorse.cs" />

@@ -9,6 +9,19 @@ namespace Gss.Filtra
 {
     class FiltraPerDifficolta :IFiltra
     {
+        private Difficolta _difficoltaToFilter;
+
+        public FiltraPerDifficolta(Difficolta difficolta)
+        {
+            _difficoltaToFilter = difficolta;
+        }
+
+        public Difficolta DifficoltaToFilter
+        {
+            get { return _difficoltaToFilter; }
+            set { _difficoltaToFilter = value; }
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             throw new NotImplementedException();

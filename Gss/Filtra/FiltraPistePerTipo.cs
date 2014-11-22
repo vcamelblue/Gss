@@ -9,6 +9,21 @@ namespace Gss.Filtra
 {
     class FiltraPistePerTipo : IFiltra
     {
+        private string _tipoPistaToFilter;
+
+        public string TipoPistaToFilter
+        {
+            get { return _tipoPistaToFilter; }
+            set { _tipoPistaToFilter = value; }
+        }
+        private int _numeroMinPisteToFilter;
+
+        public FiltraPistePerTipo(int numeroMinPisteToFilter, string tipoPistaToFilter)
+        {
+            _numeroMinPisteToFilter = numeroMinPisteToFilter;
+            _tipoPistaToFilter = tipoPistaToFilter;
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             throw new NotImplementedException();

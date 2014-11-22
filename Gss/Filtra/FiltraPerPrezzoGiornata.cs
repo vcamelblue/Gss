@@ -9,6 +9,19 @@ namespace Gss.Filtra
 {
     class FiltraPerPrezzoGiornata : IFiltra
     {
+        private double _prezzoToFilter;
+
+        public FiltraPerPrezzoGiornata(double prezzoGiornata)
+        {
+            _prezzoToFilter = prezzoGiornata;
+        }
+
+        public double PrezzoToFilter
+        {
+            get { return _prezzoToFilter; }
+            set { _prezzoToFilter = value; }
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             throw new NotImplementedException();

@@ -9,6 +9,19 @@ namespace Gss.Filtra
 {
     class FiltraPerDislivelloMassimo :IFiltra
     {
+        private double _dislivelloMassimoToFilter;
+
+        public FiltraPerDislivelloMassimo(double dislivelloMassimo)
+        {
+            _dislivelloMassimoToFilter = dislivelloMassimo;
+        }
+
+        public double DislivelloMassimoToFilter
+        {
+            get { return _dislivelloMassimoToFilter; }
+            set { _dislivelloMassimoToFilter = value; }
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             throw new NotImplementedException();

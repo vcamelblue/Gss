@@ -9,6 +9,19 @@ namespace Gss.Filtra
 {
     class FiltraPerNumeroJibs : IFiltra
     {
+        private int _numeroJibs;
+
+        public FiltraPerNumeroJibs(int numeroJibs)
+        {
+            _numeroJibs = numeroJibs;
+        }
+
+        public int NumeroJibs
+        {
+            get { return _numeroJibs; }
+            set { _numeroJibs = value; }
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             throw new NotImplementedException();

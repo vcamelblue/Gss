@@ -33,8 +33,10 @@ namespace Gss.Filtra
                     if (p is Alpina)
                     {
                         Alpina alpina = (Alpina)p;
-                        alpina.Difficolta == DifficoltaToFilter;
-                        result.Add(i);
+                        if (alpina.Difficolta == DifficoltaToFilter)
+                        {
+                            result.Add(i);
+                        }
                         break;
                     }
                 }

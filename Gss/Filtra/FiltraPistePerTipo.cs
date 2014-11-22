@@ -26,7 +26,8 @@ namespace Gss.Filtra
 
         public Impianti Filtra(Impianti impianti)
         {
-            throw new NotImplementedException();
+   
+            
         }
     }
 }

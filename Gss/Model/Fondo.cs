@@ -11,13 +11,13 @@ namespace Gss.Model
     {
 
         private double _dislivelloMassimo;
-        private double _dislivelloMinimo;
+        private double _dislivelloMedio;
 
-        public Fondo(string nome, double dislivelloMassimo, double dislivelloMinimo) 
+        public Fondo(string nome, double dislivelloMassimo, double dislivelloMedio) 
             : base(nome) 
         {
             _dislivelloMassimo = dislivelloMassimo;
-            _dislivelloMinimo = dislivelloMinimo;
+            _dislivelloMedio = dislivelloMedio;
         }
 
         public double DislivelloMassimo
@@ -26,10 +26,10 @@ namespace Gss.Model
             set { _dislivelloMassimo = value; }
         }
 
-        public double DislivelloMinimo
+        public double DislivelloMedio
         {
-            get { return _dislivelloMinimo; }
-            set { _dislivelloMinimo = value; }
+            get { return _dislivelloMedio; }
+            set { _dislivelloMedio = value; }
         }
 
     }

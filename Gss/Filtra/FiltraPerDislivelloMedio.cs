@@ -24,7 +24,25 @@ namespace Gss.Filtra
 
         public Impianti Filtra(Impianti impianti)
         {
-            throw new NotImplementedException();
+            Impianti result = new Impianti();
+
+            foreach (Impianto i in impianti.ListaImpianti)
+            {
+                foreach (Pista p in i.Piste)
+                {
+                    if (p is Fondo)
+                    {
+                        Fondo fondo = (Fondo)p;
+                        if (fondo.DislivelloMedio == DislivelloMedio )
+                        {
+                            result.Add(i);
+                        }
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

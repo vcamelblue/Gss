@@ -9,22 +9,40 @@ namespace Gss.Filtra
 {
     class FiltraPerNumeroSalti : IFiltra
     {
-        private int _numeroSalti;
+        private int _numeroSaltiToFilter;
 
         public FiltraPerNumeroSalti(int numeroSalti)
         {
-            _numeroSalti = numeroSalti;
+            _numeroSaltiToFilter = numeroSalti;
         }
 
-        public int NumeroSalti
+        public int NumeroSaltiToFilter
         {
-            get { return _numeroSalti; }
-            set { _numeroSalti = value; }
+            get { return _numeroSaltiToFilter; }
+            set { _numeroSaltiToFilter = value; }
         }
 
         public Impianti Filtra(Impianti impianti)
         {
-            throw new NotImplementedException();
+            Impianti result = new Impianti();
+
+            foreach (Impianto i in impianti.ListaImpianti)
+            {
+                foreach (Pista p in i.Piste)
+                {
+                    if (p is SnowPark)
+                    {
+                        SnowPark snowpark = (SnowPark)p;
+                        if (snowpark.NumeroSalti == NumeroSaltiToFilter)
+                        {
+                            result.Add(i);
+                        }
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

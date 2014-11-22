@@ -26,5 +26,20 @@ namespace Gss.Model
             get { return _codice; }
             set { _codice = value; }
         }
+
+        public override bool Equals(object obj)
+        {
+            Risorsa risorsa = null;
+            if (risorsa is Risorsa)
+            {
+                risorsa = (Risorsa)obj;
+            }
+            else
+                return false;
+            if (risorsa.Codice == this.Codice)
+                return true;
+            else
+                return false;
+        }
     }
 }

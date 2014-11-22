@@ -61,6 +61,7 @@
     <Compile Include="Model\Fatturatore.cs" />
     <Compile Include="Model\Fondo.cs" />
     <Compile Include="Model\GestorePeriodi.cs" />
+    <Compile Include="Model\GSS.cs" />
     <Compile Include="Model\Impianti.cs" />
     <Compile Include="Model\Impianto.cs" />
     <Compile Include="Model\Periodo.cs" />

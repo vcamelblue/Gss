@@ -58,6 +58,7 @@
     <Compile Include="Model\Difficolta.cs" />
     <Compile Include="Model\Direttore.cs" />
     <Compile Include="Model\Fattura.cs" />
+    <Compile Include="Model\Fatturatore.cs" />
     <Compile Include="Model\Fondo.cs" />
     <Compile Include="Model\GestorePeriodi.cs" />
     <Compile Include="Model\Impianti.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="Model\Periodo.cs" />
     <Compile Include="Model\Pista.cs" />
     <Compile Include="Model\Prenotazione.cs" />
+    <Compile Include="Model\PrenotazioneArchiviata.cs" />
+    <Compile Include="Model\PrenotazioneAttiva.cs" />
     <Compile Include="Model\PrezziRisorsa.cs" />
     <Compile Include="Model\PrezzoSpecifico.cs" />
     <Compile Include="Model\ProfiliPrezziRisorse.cs" />

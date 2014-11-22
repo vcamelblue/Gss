@@ -19,7 +19,7 @@ namespace Gss.Model
         private GestorePeriodi _gestorePeriodi;
         private ProfiliPrezziRisorse _profiliPrezziRisorse;
 
-        public GSS() { }
+        private GSS() { }
 
         public ProfiliPrezziRisorse ProfiliPrezziRisorse
         {

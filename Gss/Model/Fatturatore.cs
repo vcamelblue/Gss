@@ -8,6 +8,16 @@ namespace Gss.Model
 {
     static class Fatturatore
     {
-        public static Fattura GeneraFattura()
+        private static int _numeroFatture=0;
+
+        public static Fattura GeneraFattura(PrenotazioneAttiva prenotazione)
+        {
+            int numeroFattura = _numeroFatture++;
+            Fattura fattura = new Fattura(numeroFattura, DateTime.Today);
+            fattura.TotaleBungalow = prenotazione.GetSpesaBungalow();
+            fattura.TotaleSkiCards = prenotazione.GetSpesaSkiCards();
+            fattura.TotaleFattura = prenotazione.GetSpesaAttuale();
+            return fattura;
+        }
     }
 }

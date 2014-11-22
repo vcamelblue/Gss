@@ -29,6 +29,8 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
             Risorsa risorsa = null;
             if (risorsa is Risorsa)
             {

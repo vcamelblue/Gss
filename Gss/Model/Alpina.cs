@@ -17,12 +17,26 @@ namespace Gss.Model
             _difficolta = difficolta;
         }
 
-        private Difficolta Difficolta
+        public Difficolta Difficolta
         {
             get { return _difficolta; }
             set { _difficolta = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            Alpina alpina = null;
+            if (base.Equals(obj) && obj is Alpina)
+            {
+                alpina = (Alpina)obj;
+            }
+            else
+                return false;
+            if (alpina.Difficolta.Equals(this.Difficolta))
+                return true;
+            else
+                return false;
+        }
 
     }
 }

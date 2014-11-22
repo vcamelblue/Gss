@@ -98,7 +98,7 @@ namespace Gss.Model
         public override bool Equals(object obj)
         {
             Impianto impianto = null;
-            if (base.Equals(obj))
+            if (base.Equals(obj) && obj is Impianto)
             {
                 impianto = (Impianto)obj;
             }

@@ -28,5 +28,23 @@ namespace Gss.Model
             get { return _numeroPostiMax; }
             set { _numeroPostiMax = value; }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            Stanza stanza = null;
+            if (obj is Stanza)
+            {
+                stanza = (Stanza)obj;
+            }
+            else
+                return false;
+            if (stanza.NumeroPostiStandard.Equals(this.NumeroPostiStandard)
+                && stanza.NumeroPostiMax.Equals(this.NumeroPostiMax))
+                return true;
+            else
+                return false;
+        }
     }
 }

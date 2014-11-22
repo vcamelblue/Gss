@@ -58,5 +58,21 @@ namespace Gss.Model
             get { return _email; }
             set { _email = value; }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            Cliente cliente = null;
+            if (obj is Cliente)
+                cliente = (Cliente)obj;
+            else
+                return false;
+            if (cliente.CodiceFiscale.Equals(this.CodiceFiscale) &&
+                cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita) &&
+                cliente.Email.Equals(this.Email))
+                return true;
+            else return false;
+        }
     }
 }

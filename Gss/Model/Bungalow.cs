@@ -57,5 +57,40 @@ namespace Gss.Model
             if (Stanze.Count == 1) return false;
             else return Stanze.Remove(stanza);
         }
+
+        public override bool Equals(object obj)
+        {
+            Bungalow bungalow = null;
+            if (base.Equals(obj) && obj is Bungalow)
+            {
+                bungalow = (Bungalow)obj;
+            }
+            else
+                return false;
+            if (bungalow.Stanze.Count != this.Stanze.Count)
+                return false;
+
+            List<Stanza> temp = bungalow.Stanze.ToList<Stanza>();
+            bool trovato = false;
+
+            foreach (Stanza s in this.Stanze)
+            {
+                foreach (Stanza sObj in bungalow.Stanze)
+                {
+                    if (s.Equals(sObj))
+                    {
+                        temp.Remove(sObj);
+                        trovato = true;
+                        break;
+                    }
+                }
+                if (!trovato)
+                    return false;
+                else
+                    trovato = false;
+            }
+            return true;
+            
+        }
     }
 }

@@ -32,5 +32,16 @@ namespace Gss.Model
             set { _dislivelloMedio = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            Fondo fondo = null;
+            if (base.Equals(obj) && obj is Fondo)
+                fondo = (Fondo)obj;
+            if (fondo.DislivelloMedio.Equals(this.DislivelloMedio) && fondo.DislivelloMassimo.Equals(this.DislivelloMassimo))
+                return true;
+            else
+                return false;
+
+        }
     }
 }

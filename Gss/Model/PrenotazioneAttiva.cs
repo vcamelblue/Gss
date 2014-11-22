@@ -108,9 +108,9 @@ namespace Gss.Model
 
         }
 
-        public double GetSpesaBungalow()
+        public double GetSpesaSkiCards()
         {
-
+            
         }
     }
 }

@@ -26,8 +26,9 @@ namespace Gss.Filtra
 
         public Impianti Filtra(Impianti impianti)
         {
-   
-            
+            return impianti;
         }
+
+
     }
 }

@@ -76,5 +76,20 @@ namespace Gss.Model
             get { return totaleFattura; }
             set { totaleFattura = value; }
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            Fattura fattura = null;
+            if (obj is Fattura)
+                fattura = (Fattura)obj;
+            else
+                return false;
+            if (this.Numero.Equals(fattura.Numero))
+                return true;
+            else
+                return false;
+        }
     }
 }

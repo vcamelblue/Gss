@@ -61,6 +61,8 @@ namespace Gss.Model
 
         public override bool Equals(Object obj)
         {
+            if (obj == null)
+                return false;
             Prenotazione prenotazione=null;
 
             if (obj is SkiPass)

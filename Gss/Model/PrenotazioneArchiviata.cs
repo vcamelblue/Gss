@@ -22,6 +22,18 @@ namespace Gss.Model
             set { _fattura = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            PrenotazioneArchiviata prenotazione=null;
+            if (base.Equals(obj) && obj is PrenotazioneArchiviata)
+                prenotazione = (PrenotazioneArchiviata)obj;
+            else
+                return false;
+            if (this.Fattura.Equals(prenotazione.Fattura))
+                return true;
+            else
+                return false;
+        }
 
     }
 }

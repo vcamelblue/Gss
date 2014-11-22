@@ -116,5 +116,21 @@ namespace Gss.Model
                 return 0;
             else return ListaSkiCards.GetPrezzoTotale();
         }
+
+        public override bool Equals(object obj)
+        {
+            PrenotazioneAttiva prenotazione= null;
+            if (base.Equals(obj) && obj is PrenotazioneAttiva)
+                prenotazione = (PrenotazioneAttiva)obj;
+            else 
+                return false;
+            if (this.Bungalow.Equals(prenotazione.Bungalow) &&
+                this.Cliente.Equals(prenotazione.Cliente) &&
+                this.DataInizio.Equals(prenotazione.DataInizio) &&
+                this.DataFine.Equals(prenotazione.DataFine))
+                return true;
+            else
+                return false;
+        }
     }
 }

@@ -29,9 +29,15 @@ namespace Gss.Model
         }
        
 
-        public void Add(Cliente cliente)
+        public bool Add(Cliente cliente)
         {
-            ListaClienti.Add(cliente);
+            if (ListaClienti.Contains(cliente))
+                return false;
+            else
+            {
+                ListaClienti.Add(cliente);
+                return true;
+            }
         }
 
         public bool Remove(Cliente cliente)

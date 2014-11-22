@@ -44,6 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filtra\FiltraPerDifficolta.cs" />
+    <Compile Include="Filtra\FiltraPerDislivelloMassimo.cs" />
+    <Compile Include="Filtra\FiltraPerDislivelloMedio.cs" />
+    <Compile Include="Filtra\FiltraPerNome.cs" />
+    <Compile Include="Filtra\FiltraPerNumeroJibs.cs" />
+    <Compile Include="Filtra\FiltraPerNumeroSalti.cs" />
+    <Compile Include="Filtra\FiltraPerPrezzoAccesso.cs" />
+    <Compile Include="Filtra\FiltraPerPrezzoGiornata.cs" />
+    <Compile Include="Filtra\FiltraPistePerTipo.cs" />
+    <Compile Include="Filtra\IFiltra.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

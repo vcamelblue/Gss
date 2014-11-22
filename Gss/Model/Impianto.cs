@@ -94,5 +94,40 @@ namespace Gss.Model
         {
             return Piste.Remove(pista);
         }
+
+        public override bool Equals(object obj)
+        {
+            Impianto impianto = null;
+            if (base.Equals(obj))
+            {
+                impianto = (Impianto)obj;
+            }
+            else 
+                return false;
+
+            if (impianto.Piste.Count != this.Piste.Count)
+                return false;
+
+            List<Pista> temp =impianto.Piste.ToList<Pista>();
+            bool trovato = false;
+
+            foreach(Pista p in this.Piste)
+            {
+                foreach(Pista pObj in impianto.Piste)
+                {
+                    if(p.Equals(pObj))
+                    {
+                        temp.Remove(pObj);
+                        trovato = true;
+                        break;
+                    }
+                }
+                if (!trovato)
+                    return false;
+                else
+                    trovato = false;
+            }
+            return true;
+        }
     }
 }

@@ -23,6 +23,19 @@ namespace Gss.Model
             set { _nome = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            Pista pista = null;
+            if (obj is Pista)
+            {
+                pista = (Pista)obj;
+            }
+            else return false;
 
+            if (pista.Nome == this.Nome)
+                return true;
+            else
+                return false;
+        }
     }
 }

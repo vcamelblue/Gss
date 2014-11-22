@@ -48,7 +48,7 @@ namespace Gss.Model
                     break;
                 }
             }
-            return profilo;
+            return profilo; // trattare il caso nelle classi di sopra
         }
     }
 }

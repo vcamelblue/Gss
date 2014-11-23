@@ -32,7 +32,7 @@ namespace Gss.Model
             set { _versante = value; }
         }
 
-        public List<Pista> Piste
+        internal List<Pista> Piste
         {
             get { return _piste; }
             set { _piste = value; }

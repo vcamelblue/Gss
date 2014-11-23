@@ -29,7 +29,7 @@ namespace Gss.Model
             _numeroPrenotazione = numeroPrenotazione;
         }
 
-        public Cliente Cliente
+        internal Cliente Cliente
         {
             get { return _cliente; }
             set { _cliente = value; }

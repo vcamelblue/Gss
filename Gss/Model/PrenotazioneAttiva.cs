@@ -23,13 +23,13 @@ namespace Gss.Model
      
         }
 
-        public Bungalow Bungalow
+        internal Bungalow Bungalow
         {
             get { return _bungalow; }
             set { _bungalow = value; }
         }
 
-        public SkiCards ListaSkiCards
+        internal SkiCards ListaSkiCards
         {
             get { return _listaSkiCards; }
             set { _listaSkiCards = value; }

@@ -18,7 +18,7 @@ namespace Gss.Model
             _valore = valore;
         }
 
-        public TipologiaPrezzo Tipologia
+        internal TipologiaPrezzo Tipologia
         {
             get { return _tipologia; }
             set { _tipologia = value; }

@@ -17,7 +17,7 @@ namespace Gss.Model
             _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
         }
 
-        public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
+        internal Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
         {
             get { return _prezziRisorsa; }
             set { _prezziRisorsa = value; }

@@ -52,13 +52,13 @@ namespace Gss.Model
             set { _telefono = value; }
         }
 
-        public Impianti Impianti
+        internal Impianti Impianti
         {
             get { return _impianti; }
             set { _impianti = value; }
         }
 
-        public Bungalows Bungalows
+        internal Bungalows Bungalows
         {
             get { return _bungalows; }
             set { _bungalows = value; }

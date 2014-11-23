@@ -45,7 +45,7 @@ namespace Gss.Model
             return result;
         }
 
-        public List<SkiCard> ListaSkiCard
+        internal List<SkiCard> ListaSkiCard
         {
             get { return _listaSkiCard; }
             set { _listaSkiCard = value; }

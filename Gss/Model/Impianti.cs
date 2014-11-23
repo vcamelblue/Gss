@@ -25,7 +25,7 @@ namespace Gss.Model
             return ListaImpianti.Remove(impianto);
         }
 
-        public List<Impianto> ListaImpianti
+        internal List<Impianto> ListaImpianti
         {
             get { return _impianti; }
             set { _impianti = value; }

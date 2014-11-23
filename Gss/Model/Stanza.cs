@@ -11,10 +11,10 @@ namespace Gss.Model
         private int _numeroPostiStandard;
         private int _numeroPostiMax;
 
-        public Stanza(int numeroPostiStandard, int numeroPostiMax)
+        public int NumeroPostiMax
         {
-            _numeroPostiStandard = numeroPostiStandard;
-            _numeroPostiMax = numeroPostiMax;
+            get { return _numeroPostiMax; }
+            set { _numeroPostiMax = value; }
         }
 
         public int NumeroPostiStandard
@@ -23,10 +23,10 @@ namespace Gss.Model
             set { _numeroPostiStandard = value; }
         }
 
-        public int NumeroPostiMax
+        public Stanza(int numeroPostiStandard, int numeroPostiMax)
         {
-            get { return _numeroPostiMax; }
-            set { _numeroPostiMax = value; }
+            _numeroPostiStandard = numeroPostiStandard;
+            _numeroPostiMax = numeroPostiMax;
         }
 
         public override bool Equals(object obj)

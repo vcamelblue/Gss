@@ -24,7 +24,7 @@ namespace Gss.Model
             set { _codice = value; }
         }
 
-        public Impianto Impianto
+        internal Impianto Impianto
         {
             get { return _impianto; }
             set { _impianto = value; }

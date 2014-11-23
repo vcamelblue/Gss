@@ -10,7 +10,7 @@ namespace Gss.Model
     {
         private List<ProfiloPrezziRisorse> _profili;
 
-        public ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
+        internal ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
         {
             _profili = new List<ProfiloPrezziRisorse>();
             _profili = profili;

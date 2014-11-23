@@ -19,7 +19,7 @@ namespace Gss.Model
             _listaPrenotazioni = new List<Prenotazione>();
         }
 
-        public List<Prenotazione> ListaPrenotazioni
+        internal List<Prenotazione> ListaPrenotazioni
         {
             get { return _listaPrenotazioni; }
             set { _listaPrenotazioni = value; }

@@ -23,7 +23,7 @@ namespace Gss.Model
             set { _codice = value; }
         }
 
-        public List<SkiPass> SkiPass
+        internal List<SkiPass> SkiPass
         {
             get { return _skiPass; }
             set { _skiPass = value; }

@@ -24,7 +24,7 @@ namespace Gss.Model
             set { _prezzo = value; }
         }
 
-        public List<PrezzoSpecifico> PrezziSpecifici
+        internal List<PrezzoSpecifico> PrezziSpecifici
         {
             get { return _prezziSpecifici; }
             set { _prezziSpecifici = value; }

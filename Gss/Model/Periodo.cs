@@ -25,7 +25,7 @@ namespace Gss.Model
             _dataFine = dataFine;
         }
 
-        public ProfiloPrezziRisorse Profilo
+        internal ProfiloPrezziRisorse Profilo
         {
             get { return _profilo; }
             set { _profilo = value; }

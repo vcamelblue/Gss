@@ -15,9 +15,18 @@ namespace Gss.Model
             _impianti = new List<Impianto>();
         }
 
-        public void Add(Impianto impianto)
+        public bool Add(Impianto impianto)
         {
+            foreach(Impianto i in this.ListaImpianti)
+            {
+                if (i.Equals(impianto))
+                {
+                    return false;
+                }
+
+            }
             ListaImpianti.Add(impianto);
+            return true;
         }
 
         public bool Remove(Impianto impianto)

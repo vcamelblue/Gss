@@ -25,7 +25,7 @@ namespace Gss.Controller
 
         public bool EditCliente(Cliente cliente, Cliente clienteModificato)
         {
-
+            
         }
     }
 }

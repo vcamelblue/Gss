@@ -74,5 +74,10 @@ namespace Gss.Model
                 return true;
             else return false;
         }
+
+        public override string ToString()
+        {
+            return this.Nome + " " + this.Cognome + " " + this.DataNascita.ToShortDateString() + " " + this.CodiceFiscale + " " + this.Email;
+        }
     }
 }

@@ -40,6 +40,16 @@ namespace Gss.Model
             set { _impianti = value; }
         }
 
+        public override string ToString()
+        {
+            string result = "";
+            foreach(Impianto i in this.ListaImpianti)
+            {
+                result += i.ToString() + "/n/n";
+            }
+            return result;
+        }
+
 
     }
 }

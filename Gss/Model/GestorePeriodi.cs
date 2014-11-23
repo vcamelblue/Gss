@@ -14,7 +14,6 @@ namespace Gss.Model
         private static GestorePeriodi _gestorePeriodi;
         private List<Periodo> periodi = new List<Periodo>();
 
-
         //Constructors
 
         private GestorePeriodi() { }
@@ -34,12 +33,12 @@ namespace Gss.Model
 
         public void Add(Periodo p)
         {
-            this.periodi.Add(p);
+            this.Periodi.Add(p);
         }
 
         public bool Remove(Periodo p) 
         {
-            return this.periodi.Remove(p);
+            return this.Periodi.Remove(p);
         }
 
         public Periodo getPeriodoByData(DateTime data)
@@ -47,7 +46,7 @@ namespace Gss.Model
             if( data == null)
                 return null;
             
-            foreach(Periodo p in periodi)
+            foreach(Periodo p in Periodi)
             {
                 if(p.IsDataInPeriodo(data))
                     return p;
@@ -74,7 +73,7 @@ namespace Gss.Model
 
         //Property
 
-        public List<Periodo> Periodi 
+        internal List<Periodo> Periodi
         {
             get { return periodi; }
             set { periodi = value; }

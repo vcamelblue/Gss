@@ -21,10 +21,37 @@ namespace Gss.Model
 
         private GSS() { }
 
-        public ProfiliPrezziRisorse ProfiliPrezziRisorse
+        public static GSS GetInstance()
         {
-            get { return _profiliPrezziRisorse; }
-            set { _profiliPrezziRisorse = value; }
+            if (_gss == null)
+            {
+                _gss = new GSS();
+            }
+            return _gss;
+        }
+
+        internal Resort Resort
+        {
+            get { return _resort; }
+            set { _resort = value; }
+        }
+
+        internal Prenotazioni Prenotazioni
+        {
+            get { return _prenotazioni; }
+            set { _prenotazioni = value; }
+        }
+
+        internal Direttore Direttore
+        {
+            get { return _direttore; }
+            set { _direttore = value; }
+        }
+
+        internal Clienti Clienti
+        {
+            get { return _clienti; }
+            set { _clienti = value; }
         }
 
         public GestorePeriodi GestorePeriodi
@@ -33,39 +60,10 @@ namespace Gss.Model
             set { _gestorePeriodi = value; }
         }
 
-        public Clienti Clienti
+        internal ProfiliPrezziRisorse ProfiliPrezziRisorse
         {
-            get { return _clienti; }
-            set { _clienti = value; }
-        }
-
-        public Direttore Direttore
-        {
-            get { return _direttore; }
-            set { _direttore = value; }
-        }
-
-
-        public Prenotazioni Prenotazioni
-        {
-            get { return _prenotazioni; }
-            set { _prenotazioni = value; }
-        }
-
-        public Resort Resort
-        {
-            get { return _resort; }
-            set { _resort = value; }
-        }
-
-
-        public static GSS GetInstance()
-        {
-            if (_gss == null)
-            {
-                _gss = new GSS();
-            }
-            return _gss;
+            get { return _profiliPrezziRisorse; }
+            set { _profiliPrezziRisorse = value; }
         }
         
     }

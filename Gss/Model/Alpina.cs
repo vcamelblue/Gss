@@ -17,12 +17,12 @@ namespace Gss.Model
             _difficolta = difficolta;
         }
 
-        public Difficolta Difficolta
+        internal Difficolta Difficolta
         {
             get { return _difficolta; }
             set { _difficolta = value; }
         }
-
+        
         public override bool Equals(object obj)
         {
             Alpina alpina = null;

@@ -8,7 +8,6 @@ namespace Gss.Model
 {
     class Clienti
     {
-
         private List<Cliente> _clienti;
 
         public Clienti(List<Cliente> clienti)
@@ -22,11 +21,12 @@ namespace Gss.Model
             _clienti = new List<Cliente>();
         }
 
-        public List<Cliente> ListaClienti
+        internal List<Cliente> ListaClienti
         {
             get { return _clienti; }
             set { _clienti = value; }
         }
+
        
 
         public bool Add(Cliente cliente)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gss.Model.Pista;
+using Gss.Model;
 
 namespace Gss.Model
 {

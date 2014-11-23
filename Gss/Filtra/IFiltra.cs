@@ -9,6 +9,6 @@ namespace Gss.Filtra
 {
     interface IFiltra
     {
-        public Impianti Filtra(Impianti impianti);
+        Impianti Filtra(Impianti impianti);
     }
 }

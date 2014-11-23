@@ -47,6 +47,7 @@
     <Compile Include="Controller\ClientiController.cs" />
     <Compile Include="Controller\MyController.cs" />
     <Compile Include="Controller\PrenotazioniController.cs" />
+    <Compile Include="Controller\ResortController.cs" />
     <Compile Include="Filtra\FiltraPerDifficolta.cs" />
     <Compile Include="Filtra\FiltraPerDislivelloMassimo.cs" />
     <Compile Include="Filtra\FiltraPerDislivelloMedio.cs" />

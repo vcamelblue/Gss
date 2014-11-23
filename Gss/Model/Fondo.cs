@@ -43,5 +43,10 @@ namespace Gss.Model
                 return false;
 
         }
+
+        public override string ToString()
+        {
+            return base.ToString()+ " " + this.DislivelloMassimo.ToString() + " " + this._dislivelloMedio.ToString();
+        }
     }
 }

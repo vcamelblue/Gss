@@ -38,5 +38,10 @@ namespace Gss.Model
                 return false;
         }
 
+        public override string ToString()
+        {
+            return base.ToString()+" "+ this.Difficolta.ToString();
+        }
+
     }
 }

@@ -30,5 +30,10 @@ namespace Gss.Model
             get { return _numeroJibs; }
             set { _numeroJibs = value; }
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + " " + this.NumeroSalti.ToString() + " " + this.NumeroJibs.ToString();
+        }
     }
 }

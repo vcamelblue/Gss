@@ -129,5 +129,16 @@ namespace Gss.Model
             }
             return true;
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            result += this._nome + " " + this._versante + " /n";
+            foreach(Pista p in this._piste)
+            {
+                result += p.ToString() + "/n";
+            }
+            return result;
+        }
     }
 }

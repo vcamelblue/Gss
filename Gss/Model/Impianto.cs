@@ -136,7 +136,7 @@ namespace Gss.Model
             result += this._nome + " " + this._versante + " \n";
             foreach(Pista p in this._piste)
             {
-                result += p.ToString() + "\Sn";
+                result += p.ToString() + "\n";
             }
             return result;
         }

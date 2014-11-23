@@ -13,9 +13,9 @@ namespace Gss {
         /// </summary>
         [STAThread]
         static void Main() {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
             
             //Creo i clienti
             Clienti clienti = new Clienti();
@@ -25,8 +25,12 @@ namespace Gss {
 
 
             //ClientiController
-            Controller.Controller clientiController = new ClientiController();
-            clientiController.
+            ClientiController clientiController = new ClientiController();
+            clientiController.AddCliente(cliente1); clientiController.AddCliente(cliente2); clientiController.AddCliente(cliente3);
+
+            Console.Out.Write(clientiController.Gss.Clienti.ToString());
+
+            clientiController.AddCliente(cliente1);
         }
     }
 }

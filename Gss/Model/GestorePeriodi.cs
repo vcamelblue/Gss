@@ -31,17 +31,17 @@ namespace Gss.Model
         }
 
 
-        public void Add(Periodo p)
+        internal void Add(Periodo p)
         {
             this.Periodi.Add(p);
         }
 
-        public bool Remove(Periodo p) 
+        internal bool Remove(Periodo p) 
         {
             return this.Periodi.Remove(p);
         }
 
-        public Periodo getPeriodoByData(DateTime data)
+        internal Periodo getPeriodoByData(DateTime data)
         {
             if( data == null)
                 return null;
@@ -55,7 +55,7 @@ namespace Gss.Model
 
         }
 
-        public PrezziRisorsa getPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
+        internal PrezziRisorsa getPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
         {
             if (risorsa == null || data == null)
                 return null;

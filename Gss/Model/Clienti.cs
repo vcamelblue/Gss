@@ -45,7 +45,15 @@ namespace Gss.Model
             return ListaClienti.Remove(cliente);
         }
 
-
+        public override string ToString()
+        {
+            string result="";
+            foreach(Cliente c in this.ListaClienti)
+            {
+                result += c.ToString() + " ";
+            }
+            return result;
+        }
         
 
     }

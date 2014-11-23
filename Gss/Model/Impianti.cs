@@ -45,7 +45,7 @@ namespace Gss.Model
             string result = "";
             foreach(Impianto i in this.ListaImpianti)
             {
-                result += i.ToString() + "/n/n";
+                result += i.ToString() + "\n \n";
             }
             return result;
         }

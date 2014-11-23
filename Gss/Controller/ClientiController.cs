@@ -22,5 +22,10 @@ namespace Gss.Controller
                 throw new Exception("Cliente già registrato");
             }
         }
+
+        public bool EditCliente(Cliente cliente, Cliente clienteModificato)
+        {
+
+        }
     }
 }

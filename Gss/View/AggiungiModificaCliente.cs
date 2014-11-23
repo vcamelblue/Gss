@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace interfacceProgramma.Components
+namespace Gss.View
 {
     public partial class AggiungiModificaCliente : Form 
     {

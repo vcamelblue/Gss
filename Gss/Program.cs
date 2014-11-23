@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
+using Gss.View;
 
 namespace Gss {
     static class Program {
@@ -13,9 +14,9 @@ namespace Gss {
         /// </summary>
         [STAThread]
         static void Main() {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new AggiungiModificaCliente());
 
 
             #region Clienti

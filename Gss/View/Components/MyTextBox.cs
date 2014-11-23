@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace interfacceProgramma.Components {
+namespace Gss.View.Components {
     public partial class MyTextBox : System.Windows.Forms.TextBox {
         public MyTextBox() {
             InitializeComponent();

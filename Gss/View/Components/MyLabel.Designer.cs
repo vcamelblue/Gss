@@ -1,4 +1,4 @@
-﻿namespace interfacceProgramma.Components {
+﻿namespace Gss.View.Components {
     partial class MyLabel {
         /// <summary>
         /// Variabile di progettazione necessaria.

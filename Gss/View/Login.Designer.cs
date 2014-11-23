@@ -1,4 +1,4 @@
-﻿namespace interfacceProgramma {
+﻿namespace Gss {
     partial class Login {
         /// <summary>
         /// Variabile di progettazione necessaria.

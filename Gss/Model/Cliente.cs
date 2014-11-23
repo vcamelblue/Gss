@@ -21,6 +21,8 @@ namespace Gss.Model
             _cognome = cognome;
             _codiceFiscale = codiceFiscale;
             _dataNascita = dataNascita;
+            _email = email;
+            _telefono = telefono;
         }
 
         public string Nome

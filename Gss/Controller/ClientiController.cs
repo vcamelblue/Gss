@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Controller
 {
-    class ClientiController : Controller
+    class ClientiController : MyController
     {
         public ClientiController()
             : base()
@@ -23,9 +23,27 @@ namespace Gss.Controller
             }
         }
 
-        public bool EditCliente(Cliente cliente, Cliente clienteModificato)
+        public void EditCliente(Cliente cliente, Cliente clienteModificato)
         {
-            return true;
+            if (cliente.Equals(clienteModificato)) throw new Exception("Non sono state apportate modifiche al cliente");
+            foreach (Cliente c in Gss.Clienti.ListaClienti)
+            {
+                if (cliente.Equals(c))
+                {
+                    c.Nome = clienteModificato.Nome;
+                    c.Cognome = clienteModificato.Cognome;
+                    c.CodiceFiscale = clienteModificato.CodiceFiscale;
+                    c.DataNascita = clienteModificato.DataNascita;
+                    c.Email = clienteModificato.Email;
+                    c.Telefono = clienteModificato.Telefono;
+                    break;
+                }
+            }
+        }
+
+        public Clienti GetAllClienti()
+        {
+            return Gss.Clienti;
         }
     }
 }

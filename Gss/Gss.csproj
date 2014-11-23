@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ClientiController.cs" />
-    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\MyController.cs" />
     <Compile Include="Controller\PrenotazioniController.cs" />
     <Compile Include="Filtra\FiltraPerDifficolta.cs" />
     <Compile Include="Filtra\FiltraPerDislivelloMassimo.cs" />

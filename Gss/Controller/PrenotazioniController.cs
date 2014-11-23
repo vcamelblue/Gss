@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Controller
 {
-    class PrenotazioniController : Controller
+    class PrenotazioniController : MyController
     {
         public PrenotazioniController()
             :base()

@@ -7,11 +7,11 @@ using Gss.Model;
 
 namespace Gss.Controller
 {
-    abstract class Controller
+    abstract class MyController
     {
         private GSS _gss;
 
-        public Controller()
+        public MyController()
         {
             _gss = GSS.GetInstance();
         }

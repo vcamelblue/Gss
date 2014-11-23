@@ -26,11 +26,21 @@ namespace Gss {
 
             //ClientiController
             ClientiController clientiController = new ClientiController();
+            
+            //Test add
             clientiController.AddCliente(cliente1); clientiController.AddCliente(cliente2); clientiController.AddCliente(cliente3);
+            //Console.Out.Write(clientiController.Gss.Clienti.ToString());
+            //clientiController.AddCliente(cliente1); test sull'aggiunta di un cliente uguale
+            
 
-            Console.Out.Write(clientiController.Gss.Clienti.ToString());
+            //Test edit
+            //Cliente cliente4 = new Cliente("Pasquale", "Presutti", "PRRPQL92E14B519M", new DateTime(1992, 5, 14), "3453090659", "yahoo@hotmail.it");
+            //clientiController.EditCliente(cliente1, cliente4);
+            //clientiController.EditCliente(cliente1, cliente1); test sulla non modifica
+            //Console.Out.Write(clientiController.Gss.Clienti.ToString());
 
-            clientiController.AddCliente(cliente1);
+            //Test allclienti
+            Console.Out.Write(clientiController.GetAllClienti().ToString());
         }
     }
 }

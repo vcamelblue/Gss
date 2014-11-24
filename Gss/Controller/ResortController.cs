@@ -123,10 +123,27 @@ namespace Gss.Controller
 
         public void AddStanzaABungalow(Bungalow bungalow, Stanza stanza)
         {
-            if((stanza.NumeroPostiStandard==0 || stanza.NumeroPostiMax==0) || (stanza.NumeroPostiMax<=stanza.NumeroPostiStandard)){
+            if(!(checkStanza(stanza))){
                 throw new Exception("Numero posti stanza non validi");
             }
             bungalow.Add(stanza);
+        }
+
+        public void EditStanzaABungalow(Stanza stanza, Stanza stanzaModificata)
+        {
+            if (!(checkStanza(stanzaModificata)))
+            {
+                throw new Exception("Numero posti stanza non validi");
+            }
+            stanza.NumeroPostiStandard = stanzaModificata.NumeroPostiStandard;
+            stanza.NumeroPostiMax = stanzaModificata.NumeroPostiMax;
+        }
+
+        private bool checkStanza(Stanza stanza)
+        {
+            if ((stanza.NumeroPostiStandard == 0 || stanza.NumeroPostiMax == 0) || (stanza.NumeroPostiMax <= stanza.NumeroPostiStandard))
+                return false;
+            return true;
         }
 
         public void RemoveStanzaABungalow(string codice, Stanza stanza)

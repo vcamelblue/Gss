@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
 
-namespace Gss.View 
+namespace Gss.View
 {
-    public partial class AggiungiModificaStanza : Form 
+    public partial class AggiungiModificaStanza : Form
     {
         //Fields
 
@@ -24,17 +24,17 @@ namespace Gss.View
 
         //Costructors
 
-        public AggiungiModificaStanza(Bungalow bungalow,ResortController resortController) 
+        public AggiungiModificaStanza(Bungalow bungalow, ResortController resortController)
         {
             _resortController = resortController;
             _bungalow = bungalow;
             _stanza = null;
             _inEditingMode = false;
-            
+
             InitializeComponent();
         }
 
-        public AggiungiModificaStanza(Bungalow bungalow,Stanza stanza, ResortController resortController)
+        public AggiungiModificaStanza(Bungalow bungalow, Stanza stanza, ResortController resortController)
         {
             _resortController = resortController;
             _bungalow = bungalow;
@@ -51,7 +51,7 @@ namespace Gss.View
         {
             int numeroPostiStandard = 0;
             int numeroPostiMassimi = 0;
-            
+
             //recupero i campi
             try
             {
@@ -60,27 +60,26 @@ namespace Gss.View
             }
             catch (FormatException exception)
             {
-                //errorProvider.SetError(this, "Inserisci numeri");
+                MessageBox.Show("Inserisci numeri e non lettere");
             }
-            try 
+            try
             {
                 if (_inEditingMode)
                 {
-                    Stanza stanza = new Stanza(numeroPostiStandard,numeroPostiMassimi);
-                    _bungalow.Remove(_stanza);
-                    _bungalow.Add(stanza);
+                    Stanza stanzaModificata = new Stanza(numeroPostiStandard, numeroPostiMassimi);
+                    _resortController.EditStanzaABungalow(_stanza, stanzaModificata);
                 }
                 else //nuova stanza
                 {
-                    Stanza stanza = new Stanza(numeroPostiStandard,numeroPostiMassimi);
-                    _resortController.AddStanzaABungalow(_bungalow,stanza); 
+                    Stanza stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
+                    _resortController.AddStanzaABungalow(_bungalow, stanza);
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                //errorProvider.SetError(this, exception.Message);
+                MessageBox.Show("Inserisci numeri posti maggiori di zero, e posti massimi maggiori di posti standard");
             }
         }
-
-
     }
+}
+

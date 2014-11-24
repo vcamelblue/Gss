@@ -173,6 +173,11 @@ namespace Gss.Controller
             Gss.Resort.Email = email;
         }
 
+        public void SetResort(Resort resort)
+        {
+            Gss.Resort = resort;
+        }
+
         public Impianti Filtra(Impianti impianti)
         {
             return new Impianti();

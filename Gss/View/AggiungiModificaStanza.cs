@@ -41,6 +41,9 @@ namespace Gss.View
             _stanza = stanza;
             _inEditingMode = true;
 
+            numeroPostiMassimiTextBox.Text = stanza.NumeroPostiMax.ToString();
+            numeroPostiStandardTextBox.Text = stanza.NumeroPostiStandard.ToString();
+
             InitializeComponent();
 
             this.Text = "Modifica Stanza";

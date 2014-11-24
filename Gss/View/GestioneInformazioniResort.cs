@@ -34,7 +34,14 @@ namespace Gss.View {
         {
             _resortController = resortController;
             _resort = resort;
-            _inEditingMode = false;
+            _inEditingMode = true;
+
+            nomeTextBox.Text = resort.Nome;
+            indirizzoTextBox.Text = resort.Indirizzo;
+            telefonoTextBox.Text = resort.Telefono;
+            emailTextBox.Text = resort.Email;
+            dataIniziodateTimePicker.Value = resort.DataInizioStagione;
+            dataFinedateTimePicker.Value = resort.DataFineStagione;
 
             InitializeComponent();
 
@@ -53,12 +60,28 @@ namespace Gss.View {
             DateTime dataInizio = dataIniziodateTimePicker.Value.Date;
             DateTime dataFine = dataFinedateTimePicker.Value.Date;
 
-
-
-            try
+            if (checkFields(nome, indirizzo, telefono, email))
             {
-
+                try
+                    {
+                        if (_inEditingMode)
+                        {
+                            _resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+                        }
+                        else
+                        {   Resort resort = new Resort(nome, indirizzo, telefono, email, dataInizio, dataFine);
+                            
+                            _resortController.SetResort(resort);
+                        }
+                        
+                    }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
+
+            
         }
 
         private void annullaButton_Click(object sender, EventArgs e)
@@ -66,6 +89,22 @@ namespace Gss.View {
             this.Close();
         }
 
+        //Utility Methods
 
+        private bool checkFields(params String[] fields)
+        {
+            bool all_Ok = true;
+
+            foreach (String s in fields)
+            {
+                all_Ok &= (s != "");
+            }
+            return all_Ok;
+        }
+
+        private String noNullString(String source)
+        {
+            return source != null ? source : "";
+        }
     }
 }

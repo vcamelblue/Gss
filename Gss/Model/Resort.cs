@@ -28,6 +28,13 @@ namespace Gss.Model
             _bungalows = new Bungalows();
         }
 
+        public Resort(string nome, string indirizzo, string email, string telefono,DateTime dataInizio, DateTime dataFine)
+            :this(nome, indirizzo,email,telefono)
+        {
+            _dataInizioStagione = dataInizio;
+            _dataFineStagione = dataFine;
+        }
+
         public string Nome
         {
             get { return _nome; }

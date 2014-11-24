@@ -258,7 +258,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaCliente";
             this.Text = "Aggiungi Cliente";
-            this.Load += new System.EventHandler(this.AggiungiModificaCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

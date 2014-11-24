@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.myButton1 = new Gss.View.Components.MyButton(this.components);
+            this.myButton2 = new Gss.View.Components.MyButton(this.components);
             this.SuspendLayout();
             // 
             // myButton1
@@ -33,7 +34,7 @@
             this.myButton1.FlatAppearance.BorderSize = 0;
             this.myButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.myButton1.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myButton1.Location = new System.Drawing.Point(113, 169);
+            this.myButton1.Location = new System.Drawing.Point(90, 144);
             this.myButton1.Name = "myButton1";
             this.myButton1.Size = new System.Drawing.Size(63, 26);
             this.myButton1.TabIndex = 0;
@@ -41,11 +42,26 @@
             this.myButton1.UseVisualStyleBackColor = false;
             this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
             // 
+            // myButton2
+            // 
+            this.myButton2.BackColor = System.Drawing.Color.LightGray;
+            this.myButton2.FlatAppearance.BorderSize = 0;
+            this.myButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myButton2.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myButton2.Location = new System.Drawing.Point(110, 199);
+            this.myButton2.Name = "myButton2";
+            this.myButton2.Size = new System.Drawing.Size(63, 26);
+            this.myButton2.TabIndex = 1;
+            this.myButton2.Text = "myButton2";
+            this.myButton2.UseVisualStyleBackColor = false;
+            this.myButton2.Click += new System.EventHandler(this.myButton2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.myButton2);
             this.Controls.Add(this.myButton1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,6 +72,7 @@
         #endregion
 
         private View.Components.MyButton myButton1;
+        private View.Components.MyButton myButton2;
     }
 }
 

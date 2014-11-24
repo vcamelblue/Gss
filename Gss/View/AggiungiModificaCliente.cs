@@ -38,13 +38,7 @@ namespace Gss.View
             this.inEditingMode = true;
 
             InitializeComponent();
-        }
 
-
-        //Methods
-
-        private void AggiungiModificaCliente_Load(object sender, EventArgs e) 
-        {
             nomeTextBox.Text = clienteToEdit.Nome;
             cognomeTextBox.Text = clienteToEdit.Cognome;
             dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
@@ -55,8 +49,10 @@ namespace Gss.View
 
             this.Text = "Modifica Cliente";
             this.salvaButton.Text = "Salva Modifiche";
-
         }
+
+
+        //Methods
 
         private void salvaButton_Click(object sender, EventArgs e) 
         {
@@ -70,11 +66,11 @@ namespace Gss.View
             String telefono = telefonoTextBox.Text;
             String email = emailTextBox.Text;
 
-            //controllo che non siano nulli, telefono e email sono opzionali, 
+            //controllo che non siano nulli/vuoti, telefono e email sono opzionali, 
             //ma almeno uno dei due deve esistere
             
             if( checkFields(nome, cognome, codiceFiscale, indirizzo) && dataNascita != null
-                && (telefono != null || email != null) ) 
+                && (telefono != "" || email != "") ) 
             {
                 //se in editing mode setto i campi del cliente passato
                 try {

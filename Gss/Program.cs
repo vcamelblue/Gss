@@ -88,7 +88,7 @@ namespace Gss {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(clientiController));
+            Application.Run(new AggiungiModificaPeriodo());
         }
     }
 }

@@ -116,6 +116,11 @@ namespace Gss.Controller
             return bungalow;
         }
 
+        public Bungalows GetBungalows()
+        {
+            return Gss.Resort.Bungalows;
+        }
+
         public void AddStanzaABungalow(string codice, Stanza stanza)
         {
             Bungalow bungalow = Gss.Resort.Bungalows.GetBungalowByCodice(codice);
@@ -155,6 +160,12 @@ namespace Gss.Controller
         public Impianti Filtra(Impianti impianti)
         {
             return new Impianti();
+        }
+
+        internal IFiltra Filtro
+        {
+            get { return _filtro; }
+            set { _filtro = value; }
         }
 
         private bool CercaCodice(Risorsa risorsa)

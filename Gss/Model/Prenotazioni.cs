@@ -95,6 +95,18 @@ namespace Gss.Model
             else return false;
         }
 
+        public Prenotazioni GetPrenotazioniByCliente(Cliente cliente)
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach(Prenotazione p in this.ListaPrenotazioni)
+            {
+                if (p.Cliente.Equals(cliente))
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+            
+        }
+
         private PrenotazioneArchiviata CreaPrenotazioneArchiviata(PrenotazioneAttiva prenotazioneAttiva, Fattura fattura)
         {
             int numeroPrenotazione = prenotazioneAttiva.NumeroPrenotazione;

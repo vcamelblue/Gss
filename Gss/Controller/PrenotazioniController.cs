@@ -48,8 +48,93 @@ namespace Gss.Controller
 
         public Prenotazione GetPrenotazioneByNumeroPrenotazione(int numeroPrenotazione)
         {
-            return Gss.Prenotazioni.GetPrenotazioneByNumPrenotazione(numeroPrenotazione);
+            Prenotazione result= Gss.Prenotazioni.GetPrenotazioneByNumPrenotazione(numeroPrenotazione);
+            if (result == null)
+                throw new Exception("Prenotazione non presente");
+            return result;
         }
 
+        public Prenotazioni GetPrenotazioniByCliente(Cliente cliente)
+        {
+            return Gss.Prenotazioni.GetPrenotazioniByCliente(cliente);
+        }
+
+        public Prenotazioni GetPrenotazioniIniziateOggi()
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach(Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
+            {
+                if(p.DataInizio==DateTime.Today)
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+        }
+
+        public Prenotazioni GetPrenotazioniConcluseOggi()
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
+            {
+                if (p.DataFine == DateTime.Today)
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+        }
+
+        public Prenotazioni GetPrenotazioniInCorsoOggi()
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
+            {
+                if (p.DataInizio >= DateTime.Today && p.DataFine > DateTime.Today)
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+        }
+
+        public Prenotazioni GetPrenotazioniConcluseNonArchiviate()
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
+            {
+                if (p.DataFine<=DateTime.Today)
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+        }
+        
+        public Prenotazioni GetPrenotazioniFuture()
+        {
+            Prenotazioni prenotazioni = new Prenotazioni();
+            foreach (PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
+            {
+                if (p.DataInizio > DateTime.Today)
+                    prenotazioni.Add(p);
+            }
+            return prenotazioni;
+        }
+
+        public Bungalows FindBungalowDisponibiliFor(DateTime dataInizio, DateTime dataFine, int numeroPersone)
+        {
+            Bungalows result = cercaBungalowsByNumeroPersone(numeroPersone);
+            result.ListaBungalow.Sort(new BungalowComparer(numeroPersone));
+            return result;
+
+
+
+        }
+
+        private Bungalows cercaBungalowsByNumeroPersone(int numeroPersone)
+        {
+           
+            Bungalows result = new Bungalows();
+            foreach(Bungalow b in Gss.Resort.Bungalows.ListaBungalow)
+            {
+                if (b.PostiTotaliMax() >= numeroPersone)
+                    result.Add(b);
+            }
+            return result; 
+
+        }
     }
 }

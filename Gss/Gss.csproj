@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BungalowComparer.cs" />
     <Compile Include="Controller\ClientiController.cs" />
     <Compile Include="Controller\MyController.cs" />
     <Compile Include="Controller\PrenotazioniController.cs" />

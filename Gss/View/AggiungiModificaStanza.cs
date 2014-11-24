@@ -80,6 +80,11 @@ namespace Gss.View
                 MessageBox.Show("Inserisci numeri posti maggiori di zero, e posti massimi maggiori di posti standard");
             }
         }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

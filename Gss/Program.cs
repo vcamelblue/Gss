@@ -18,7 +18,7 @@ namespace Gss {
 
             #region Clienti
             //Clienti
-            Cliente cliente1 = new Cliente("Pasquale", "Presutti", "PRRPQL92E14B519M", new DateTime(1992, 5, 14),"indirizzo1", "3453090659", "pasquale@hotmail.it");
+            Cliente cliente1 = new Cliente("Pasquale", null, "PRRPQL92E14B519M", new DateTime(1992, 5, 14),"indirizzo1", "3453090659", "pasquale@hotmail.it");
             Cliente cliente2 = new Cliente("Antonio", "Benincasa", "BNSANT92E05B519C", new DateTime(1992, 7, 5), "indirizzo2", "3460093633", "antonio@hotmail.it");
             Cliente cliente3 = new Cliente("Vincenzo", "Villani", "VNN92E12B519A", new DateTime(1992, 8, 12), "indirizzo3", "3450083223", "vincenzo@hotmail.it");
 

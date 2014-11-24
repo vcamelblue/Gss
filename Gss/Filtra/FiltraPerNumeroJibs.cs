@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra 
 {
-    class FiltraPerNumeroJibs : IFiltra
+    public class FiltraPerNumeroJibs : IFiltra
     {
         private int _numeroJibsToFilter;
 

@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPerPrezzoGiornata : IFiltra
+    public class FiltraPerPrezzoGiornata : IFiltra
     {
         private double _prezzoToFilter;
         private DateTime _dataInizio;

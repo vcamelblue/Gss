@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPistePerTipo : IFiltra
+    public class FiltraPistePerTipo : IFiltra
     {
         private string _tipoPistaToFilter;
 

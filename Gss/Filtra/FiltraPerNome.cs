@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Filtra
 {
-    class FiltraPerNome : IFiltra
+    public class FiltraPerNome : IFiltra
     {
         private string _nameToFinder;
 

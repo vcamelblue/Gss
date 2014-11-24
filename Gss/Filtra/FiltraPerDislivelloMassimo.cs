@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPerDislivelloMassimo : IFiltra
+    public class FiltraPerDislivelloMassimo : IFiltra
     {
         private double _dislivelloMassimoToFilter;
 

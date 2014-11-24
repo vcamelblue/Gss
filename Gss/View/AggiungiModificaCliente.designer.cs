@@ -40,8 +40,6 @@
             this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // dataNascitaTimePicker
@@ -235,10 +233,6 @@
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Nome";
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // AggiungiModificaCliente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -264,7 +258,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaCliente";
             this.Text = "Aggiungi Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.Load += new System.EventHandler(this.AggiungiModificaCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +282,6 @@
         private Components.MyTextBox emailTextBox;
         private Components.MyButton salvaButton;
         private Components.MyButton annullaButton;
-        private System.Windows.Forms.ErrorProvider errorProvider;
 
     }
 }

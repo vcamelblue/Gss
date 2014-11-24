@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    interface IFiltra
+    public interface IFiltra
     {
         Impianti Filtra(Impianti impianti);
     }

@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPerPrezzoAccesso : IFiltra
+    public class FiltraPerPrezzoAccesso : IFiltra
     {
         private double _prezzoToFilter;
         private DateTime _dataRilascio;

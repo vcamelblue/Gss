@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPerDifficolta :IFiltra
+    public class FiltraPerDifficolta :IFiltra
     {
         private Difficolta _difficoltaToFilter;
 

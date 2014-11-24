@@ -21,13 +21,14 @@ namespace Gss
         {
             this.clientiController = clientiController;
 
+
             InitializeComponent();
         }
 
         private void myButton1_Click(object sender, EventArgs e) 
         {
             AggiungiModificaCliente agg = new AggiungiModificaCliente(clientiController, clientiController.GetAllClienti().ListaClienti[0], this);
-            
+            agg.Show();
         }
     }
 }

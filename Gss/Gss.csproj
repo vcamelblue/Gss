@@ -142,6 +142,12 @@
     <Compile Include="View\AggiungiModificaStanza.designer.cs">
       <DependentUpon>AggiungiModificaStanza.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AggiungiModificaPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AggiungiModificaPeriodo.designer.cs">
+      <DependentUpon>AggiungiModificaPeriodo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AggiungiModificaStanza.resx">
       <DependentUpon>AggiungiModificaStanza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AggiungiModificaPeriodo.resx">
+      <DependentUpon>AggiungiModificaPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

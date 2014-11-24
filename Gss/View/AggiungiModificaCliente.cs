@@ -17,7 +17,6 @@ namespace Gss.View
         //Fields
 
         private bool inEditingMode;
-        private Form formChiamante;
         private Cliente clienteToEdit;
         private ClientiController clientiController;
 
@@ -32,14 +31,20 @@ namespace Gss.View
             InitializeComponent();
         }
 
-        public AggiungiModificaCliente(ClientiController clientiController, Cliente clienteToEdit, Form formChiamante) 
+        public AggiungiModificaCliente(ClientiController clientiController, Cliente clienteToEdit) 
         {
-            this.formChiamante = formChiamante;
+            this.clientiController = clientiController;
             this.clienteToEdit = clienteToEdit;
             this.inEditingMode = true;
 
             InitializeComponent();
+        }
 
+
+        //Methods
+
+        private void AggiungiModificaCliente_Load(object sender, EventArgs e) 
+        {
             nomeTextBox.Text = clienteToEdit.Nome;
             cognomeTextBox.Text = clienteToEdit.Cognome;
             dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
@@ -52,9 +57,6 @@ namespace Gss.View
             this.salvaButton.Text = "Salva Modifiche";
 
         }
-
-
-        //Methods
 
         private void salvaButton_Click(object sender, EventArgs e) 
         {
@@ -71,34 +73,44 @@ namespace Gss.View
             //controllo che non siano nulli, telefono e email sono opzionali, 
             //ma almeno uno dei due deve esistere
             
-            if( checkFields(nome, cognome, dataNascita, codiceFiscale, indirizzo) 
+            if( checkFields(nome, cognome, codiceFiscale, indirizzo) && dataNascita != null
                 && (telefono != null || email != null) ) 
             {
                 //se in editing mode setto i campi del cliente passato
                 try {
-                    
-                    if (inEditingMode) {   //verificare che il cliente originale non sia null?
+
+                    //verificare che il cliente originale non sia null?
+                    if (inEditingMode) {   
                         Cliente clienteEdited = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
                         clientiController.EditCliente(clienteToEdit, clienteEdited);
                     }
-                    else                    //nuovo cliente
+                    else //nuovo cliente
                     {
-                        clienteToEdit = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
-                        clientiController.AddCliente(clienteToEdit);
+                        Cliente cliente = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
+                        clientiController.AddCliente(cliente);
                     }
 
-                    formChiamante.Refresh();
+                    //SE TUTTO OK FARE COSI'
+
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
-                
+
+                    //dall'alatro lato
+
+                    //AggiungiModificaCliente imc = new AggiungiModificaCliente(controller, cliente);
+                    //DialogResult res = imc.ShowDialog();
+                    //if (res == DialogResult.OK) {
+                    //    Refresh();
+                    //}
                 }
                 catch (Exception exception) {
-                    errorProvider.SetError(this, exception.Message);
+                    MessageBox.Show(exception.Message);
                 }
 
             }
             else //se lo sono lancio errore
             {
-                errorProvider.SetError(this, "Completa i campi per continuare!");
+                MessageBox.Show("Completa i campi per continuare!");
             }
 
         }
@@ -110,13 +122,13 @@ namespace Gss.View
 
         //Utility Methods
 
-        private bool checkFields(params object[] fields) 
+        private bool checkFields(params String[] fields) 
         {
             bool all_Ok = true;
 
-            foreach (object o in fields) 
+            foreach (String s in fields) 
             {
-                all_Ok &= (o != null);
+                all_Ok &= (s != "");
             }
             return all_Ok;
         }
@@ -124,6 +136,7 @@ namespace Gss.View
         private String noNullString(String source) {
             return source != null ? source : "";
         }
+
 
     }
 }

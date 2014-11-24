@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Filtra
 {
-    class FiltraPerDislivelloMedio : IFiltra
+    public class FiltraPerDislivelloMedio : IFiltra
     {
         private double _dislivelloMedio;
 

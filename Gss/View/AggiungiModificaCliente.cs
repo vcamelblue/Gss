@@ -43,7 +43,6 @@ namespace Gss.View
             this.Text = "Modifica Cliente";
             this.salvaButton.Text = "Salva Modifiche";
 
-
         }
 
 
@@ -51,7 +50,7 @@ namespace Gss.View
 
         private void salvaButton_Click(object sender, EventArgs e) 
         {
-                                                                            //recupero i campi
+            //recupero i campi
 
             String nome = nomeTextBox.Text;
             String cognome = cognomeTextBox.Text;
@@ -61,28 +60,28 @@ namespace Gss.View
             String telefono = telefonoTextBox.Text;
             String email = emailTextBox.Text;
 
-                                                                            //controllo che non siano nulli, telefono e email sono opzionali, 
-                                                                            //ma almeno uno dei due deve esistere
+            //controllo che non siano nulli, telefono e email sono opzionali, 
+            //ma almeno uno dei due deve esistere
             
             if( checkFields(nome, cognome, dataNascita, codiceFiscale, indirizzo) 
                 && (telefono != null || email != null) ) 
             {
-                                                                            //se in editing mode setto i campi del cliente passato
+                //se in editing mode setto i campi del cliente passato
                 if (inEditingMode) 
-                {                                                           //verificare che il cliente originale non sia null?
+                {   //verificare che il cliente originale non sia null?
                     Cliente clienteEdited = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
                     _clientiController.EditCliente(cliente, clienteEdited);
                 }
-                else                                                        //nuovo cliente
+                else //nuovo cliente
                 {
                     cliente = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
                     _clientiController.AddCliente(cliente);
                 }
 
             }
-            else                                                            //se lo sono lancio errore
+            else //se lo sono lancio errore
             {
-                errorProvider1.SetError(this, "Completa i campi per continuare!");
+                errorProvider.SetError(this, "Completa i campi per continuare!");
             }
 
         }

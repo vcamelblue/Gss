@@ -58,6 +58,10 @@ namespace Gss.View {
 
             try
             {
+                if (_inEditingMode)
+                {
+
+                }
 
             }
         }

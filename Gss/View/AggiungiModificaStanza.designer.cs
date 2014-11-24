@@ -104,7 +104,6 @@
             this.annullaButton.TabIndex = 5;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
-            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
             // 
             // AggiungiModificaStanza
             // 

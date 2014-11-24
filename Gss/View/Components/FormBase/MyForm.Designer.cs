@@ -1,5 +1,5 @@
-﻿namespace interfacceProgramma.Components {
-    partial class AggiungiModificaCliente {
+﻿namespace Gss.View {
+    partial class MyForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>

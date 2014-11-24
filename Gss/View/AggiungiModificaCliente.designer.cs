@@ -24,15 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataNascitaTimePicker = new System.Windows.Forms.DateTimePicker();
             this.annullaButton = new Gss.View.Components.MyButton(this.components);
             this.salvaButton = new Gss.View.Components.MyButton(this.components);
-            this.myTextBox6 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox5 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox4 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox3 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox2 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox1 = new Gss.View.Components.MyTextBox(this.components);
+            this.emailTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.telefonoTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.indirizzoTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.codiceFiscaleTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.cognomeTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.nomeTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel7 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel6 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel5 = new Gss.View.Components.MyLabel(this.components);
@@ -40,14 +40,16 @@
             this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dataNascitaTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(178, 177);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(186, 23);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dataNascitaTimePicker.Location = new System.Drawing.Point(178, 177);
+            this.dataNascitaTimePicker.Name = "dataNascitaTimePicker";
+            this.dataNascitaTimePicker.Size = new System.Drawing.Size(186, 23);
+            this.dataNascitaTimePicker.TabIndex = 9;
             // 
             // annullaButton
             // 
@@ -61,6 +63,7 @@
             this.annullaButton.TabIndex = 15;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
+            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
             // 
             // salvaButton
             // 
@@ -72,80 +75,81 @@
             this.salvaButton.Name = "salvaButton";
             this.salvaButton.Size = new System.Drawing.Size(120, 26);
             this.salvaButton.TabIndex = 14;
-            this.salvaButton.Text = "Salva";
+            this.salvaButton.Text = "Aggiungi";
             this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
             // 
-            // myTextBox6
+            // emailTextBox
             // 
-            this.myTextBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox6.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox6.Location = new System.Drawing.Point(178, 419);
-            this.myTextBox6.Name = "myTextBox6";
-            this.myTextBox6.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox6.TabIndex = 13;
-            this.myTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.emailTextBox.Location = new System.Drawing.Point(178, 419);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(186, 21);
+            this.emailTextBox.TabIndex = 13;
+            this.emailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox5
+            // telefonoTextBox
             // 
-            this.myTextBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox5.Location = new System.Drawing.Point(178, 359);
-            this.myTextBox5.Name = "myTextBox5";
-            this.myTextBox5.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox5.TabIndex = 12;
-            this.myTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.telefonoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.telefonoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.telefonoTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telefonoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.telefonoTextBox.Location = new System.Drawing.Point(178, 359);
+            this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.Size = new System.Drawing.Size(186, 21);
+            this.telefonoTextBox.TabIndex = 12;
+            this.telefonoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox4
+            // indirizzoTextBox
             // 
-            this.myTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox4.Location = new System.Drawing.Point(178, 299);
-            this.myTextBox4.Name = "myTextBox4";
-            this.myTextBox4.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox4.TabIndex = 11;
-            this.myTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.indirizzoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.indirizzoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.indirizzoTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indirizzoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.indirizzoTextBox.Location = new System.Drawing.Point(178, 299);
+            this.indirizzoTextBox.Name = "indirizzoTextBox";
+            this.indirizzoTextBox.Size = new System.Drawing.Size(186, 21);
+            this.indirizzoTextBox.TabIndex = 11;
+            this.indirizzoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox3
+            // codiceFiscaleTextBox
             // 
-            this.myTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox3.Location = new System.Drawing.Point(178, 239);
-            this.myTextBox3.Name = "myTextBox3";
-            this.myTextBox3.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox3.TabIndex = 10;
-            this.myTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.codiceFiscaleTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.codiceFiscaleTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceFiscaleTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceFiscaleTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.codiceFiscaleTextBox.Location = new System.Drawing.Point(178, 239);
+            this.codiceFiscaleTextBox.Name = "codiceFiscaleTextBox";
+            this.codiceFiscaleTextBox.Size = new System.Drawing.Size(186, 21);
+            this.codiceFiscaleTextBox.TabIndex = 10;
+            this.codiceFiscaleTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox2
+            // cognomeTextBox
             // 
-            this.myTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox2.Location = new System.Drawing.Point(178, 117);
-            this.myTextBox2.Name = "myTextBox2";
-            this.myTextBox2.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox2.TabIndex = 8;
-            this.myTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cognomeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.cognomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cognomeTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cognomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.cognomeTextBox.Location = new System.Drawing.Point(178, 117);
+            this.cognomeTextBox.Name = "cognomeTextBox";
+            this.cognomeTextBox.Size = new System.Drawing.Size(186, 21);
+            this.cognomeTextBox.TabIndex = 8;
+            this.cognomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox1
+            // nomeTextBox
             // 
-            this.myTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox1.Location = new System.Drawing.Point(178, 57);
-            this.myTextBox1.Name = "myTextBox1";
-            this.myTextBox1.Size = new System.Drawing.Size(186, 21);
-            this.myTextBox1.TabIndex = 7;
-            this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nomeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeTextBox.Location = new System.Drawing.Point(178, 57);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(186, 21);
+            this.nomeTextBox.TabIndex = 7;
+            this.nomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel7
             // 
@@ -231,6 +235,10 @@
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Nome";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AggiungiModificaCliente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -238,13 +246,13 @@
             this.ClientSize = new System.Drawing.Size(401, 553);
             this.Controls.Add(this.annullaButton);
             this.Controls.Add(this.salvaButton);
-            this.Controls.Add(this.myTextBox6);
-            this.Controls.Add(this.myTextBox5);
-            this.Controls.Add(this.myTextBox4);
-            this.Controls.Add(this.myTextBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.myTextBox2);
-            this.Controls.Add(this.myTextBox1);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.telefonoTextBox);
+            this.Controls.Add(this.indirizzoTextBox);
+            this.Controls.Add(this.codiceFiscaleTextBox);
+            this.Controls.Add(this.dataNascitaTimePicker);
+            this.Controls.Add(this.cognomeTextBox);
+            this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.myLabel7);
             this.Controls.Add(this.myLabel6);
             this.Controls.Add(this.myLabel5);
@@ -256,6 +264,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaCliente";
             this.Text = "Aggiungi Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,15 +279,16 @@
         private Components.MyLabel myLabel5;
         private Components.MyLabel myLabel6;
         private Components.MyLabel myLabel7;
-        private Components.MyTextBox myTextBox1;
-        private Components.MyTextBox myTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Components.MyTextBox myTextBox3;
-        private Components.MyTextBox myTextBox4;
-        private Components.MyTextBox myTextBox5;
-        private Components.MyTextBox myTextBox6;
+        private Components.MyTextBox nomeTextBox;
+        private Components.MyTextBox cognomeTextBox;
+        private System.Windows.Forms.DateTimePicker dataNascitaTimePicker;
+        private Components.MyTextBox codiceFiscaleTextBox;
+        private Components.MyTextBox indirizzoTextBox;
+        private Components.MyTextBox telefonoTextBox;
+        private Components.MyTextBox emailTextBox;
         private Components.MyButton salvaButton;
         private Components.MyButton annullaButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
 
     }
 }

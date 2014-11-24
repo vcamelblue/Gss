@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace interfacceProgramma.Components {
-    public partial class AggiungiModificaCliente : Form {
-        public AggiungiModificaCliente() {
+namespace Gss.View {
+    public partial class MyForm : Form {
+        public MyForm() {
             InitializeComponent();
         }
     }

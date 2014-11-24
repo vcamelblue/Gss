@@ -12,15 +12,17 @@ namespace Gss.Model
         private string _cognome;
         private string _codiceFiscale;
         private DateTime _dataNascita;
+        private string _indirizzo;
         private string _telefono;
         private string _email;
 
-        public Cliente(string nome, string cognome, string codiceFiscale, DateTime dataNascita, string telefono, string email)
+        public Cliente(string nome, string cognome, string codiceFiscale, DateTime dataNascita, string indirizzo, string telefono, string email)
         {
             _nome = nome;
             _cognome = cognome;
             _codiceFiscale = codiceFiscale;
             _dataNascita = dataNascita;
+            _indirizzo = indirizzo;
             _email = email;
             _telefono = telefono;
         }
@@ -49,7 +51,13 @@ namespace Gss.Model
             set { _dataNascita = value; }
         }
 
-        public string Telefono
+        public string Indirizzo 
+        { 
+            get { return _indirizzo; }
+            set { _indirizzo = value; }
+        }
+
+        public string Telefono //aggiungere return "" se nullo
         {
             get { return _telefono; }
             set { _telefono = value; }
@@ -70,16 +78,16 @@ namespace Gss.Model
                 cliente = (Cliente)obj;
             else
                 return false;
-            if (cliente.CodiceFiscale.Equals(this.CodiceFiscale) &&
+            if (cliente.CodiceFiscale.Equals(this.CodiceFiscale) && cliente.Nome.Equals(this.Nome) &&
                 cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita) &&
-                cliente.Email.Equals(this.Email))
+                cliente.Indirizzo.Equals(this.Indirizzo))
                 return true;
             else return false;
         }
 
         public override string ToString()
         {
-            return this.Nome + " " + this.Cognome + " " + this.DataNascita.ToShortDateString() + " " + this.CodiceFiscale + " " + this.Email;
+            return this.Nome + " " + this.Cognome + " " + this.DataNascita.ToShortDateString() + " " + this.CodiceFiscale + " " + this.Indirizzo + " " + this.Email + " " + this.Telefono ;
         }
     }
 }

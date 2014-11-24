@@ -28,23 +28,23 @@ namespace Gss.Controller
             if (cliente.Equals(clienteModificato)) 
                 throw new Exception("Non sono state apportate modifiche al cliente");
 
-            //Verifico che il cliente edited non esesta gia -> funzione publica apposita
-            // copio i parametri nel cliente originale, siccome ho gia il riferimento!
-
-            foreach (Cliente c in Gss.Clienti.ListaClienti)
+            if (Exist(clienteModificato))
             {
-                if (cliente.Equals(c))
-                {
-                    c.Nome = clienteModificato.Nome;
-                    c.Cognome = clienteModificato.Cognome;
-                    c.CodiceFiscale = clienteModificato.CodiceFiscale;
-                    c.DataNascita = clienteModificato.DataNascita;
-                    c.Indirizzo = clienteModificato.Indirizzo;
-                    c.Email = clienteModificato.Email;
-                    c.Telefono = clienteModificato.Telefono;
-                    break;
-                }
+                throw new Exception("Il cliente modificato già esiste nel sistema");
             }
+
+                cliente.Nome = clienteModificato.Nome;
+                cliente.Cognome = clienteModificato.Cognome;
+                cliente.CodiceFiscale = clienteModificato.CodiceFiscale;
+                cliente.DataNascita = clienteModificato.DataNascita;
+                cliente.Indirizzo = clienteModificato.Indirizzo;
+                cliente.Email = clienteModificato.Email;
+                cliente.Telefono = clienteModificato.Telefono;
+        }
+
+        public bool Exist(Cliente cliente)
+        {
+            return Gss.Clienti.ListaClienti.Contains(cliente);
         }
 
         public Clienti GetAllClienti()

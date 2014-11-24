@@ -54,16 +54,22 @@ namespace Gss.Controller
 
         public void EditImpianto(Impianto impianto, Impianto impiantoModificato)
         {
-            if (impianto.Equals(impiantoModificato)) throw new Exception("Non sono state apportate modifiche all'impianto");
-            foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
+            if (impianto.Equals(impiantoModificato)) 
+                throw new Exception("Non sono state apportate modifiche all'impianto");
+            
+            if(Exist(impiantoModificato))
             {
-                if (impianto.Equals(i))
-                {
-                    impianto.Nome = impiantoModificato.Nome;
-                    impianto.Versante = impiantoModificato.Versante;
-                    break;
-                }
+                throw new Exception("L'impianto modificato già esiste nel sistema");
             }
+
+            impianto.Nome = impiantoModificato.Nome;
+            impianto.Versante = impiantoModificato.Versante;
+           
+        }
+
+        public bool Exist(Impianto impianto)
+        {
+            return Gss.Resort.Impianti.ListaImpianti.Contains(impianto);
         }
 
         public void AddPistaAdImpianto(string codice, Pista pista)
@@ -146,6 +152,11 @@ namespace Gss.Controller
             Gss.Resort.Email = email;
         }
 
+        public Impianti Filtra(Impianti impianti)
+        {
+            return new Impianti();
+        }
+
         private bool CercaCodice(Risorsa risorsa)
         {
             foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
@@ -165,9 +176,5 @@ namespace Gss.Controller
             return false;
         }
 
-
-
-
-   
     }
 }

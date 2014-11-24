@@ -18,27 +18,35 @@ namespace Gss.View
 
         private bool inEditingMode;
         private Form formChiamante;
-        private Cliente cliente;
-        private ClientiController _clientiController;
+        private Cliente clienteToEdit;
+        private ClientiController clientiController;
 
 
         //Constructors
 
         public AggiungiModificaCliente(ClientiController clientiController) 
         {
-            this._clientiController = clientiController;
+            this.clientiController = clientiController;
             inEditingMode = false;
 
             InitializeComponent();
         }
 
-        public AggiungiModificaCliente(Cliente cliente, Form formChiamante) 
+        public AggiungiModificaCliente(ClientiController clientiController, Cliente clienteToEdit, Form formChiamante) 
         {
             this.formChiamante = formChiamante;
-            this.cliente = cliente;
+            this.clienteToEdit = clienteToEdit;
             this.inEditingMode = true;
 
             InitializeComponent();
+
+            nomeTextBox.Text = clienteToEdit.Nome;
+            cognomeTextBox.Text = clienteToEdit.Cognome;
+            dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
+            codiceFiscaleTextBox.Text = clienteToEdit.CodiceFiscale;
+            indirizzoTextBox.Text = clienteToEdit.Indirizzo;
+            telefonoTextBox.Text = clienteToEdit.Telefono;
+            emailTextBox.Text = clienteToEdit.Email;
 
             this.Text = "Modifica Cliente";
             this.salvaButton.Text = "Salva Modifiche";
@@ -67,15 +75,24 @@ namespace Gss.View
                 && (telefono != null || email != null) ) 
             {
                 //se in editing mode setto i campi del cliente passato
-                if (inEditingMode) 
-                {   //verificare che il cliente originale non sia null?
-                    Cliente clienteEdited = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
-                    _clientiController.EditCliente(cliente, clienteEdited);
+                try {
+                    
+                    if (inEditingMode) {   //verificare che il cliente originale non sia null?
+                        Cliente clienteEdited = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
+                        clientiController.EditCliente(clienteToEdit, clienteEdited);
+                    }
+                    else                    //nuovo cliente
+                    {
+                        clienteToEdit = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
+                        clientiController.AddCliente(clienteToEdit);
+                    }
+
+                    formChiamante.Refresh();
+                    this.Close();
+                
                 }
-                else //nuovo cliente
-                {
-                    cliente = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
-                    _clientiController.AddCliente(cliente);
+                catch (Exception exception) {
+                    errorProvider.SetError(this, exception.Message);
                 }
 
             }
@@ -102,6 +119,10 @@ namespace Gss.View
                 all_Ok &= (o != null);
             }
             return all_Ok;
+        }
+
+        private String noNullString(String source) {
+            return source != null ? source : "";
         }
 
     }

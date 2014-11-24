@@ -24,11 +24,38 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            this.myButton1 = new Gss.View.Components.MyButton(this.components);
+            this.SuspendLayout();
+            // 
+            // myButton1
+            // 
+            this.myButton1.BackColor = System.Drawing.Color.LightGray;
+            this.myButton1.FlatAppearance.BorderSize = 0;
+            this.myButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myButton1.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myButton1.Location = new System.Drawing.Point(113, 169);
+            this.myButton1.Name = "myButton1";
+            this.myButton1.Size = new System.Drawing.Size(63, 26);
+            this.myButton1.TabIndex = 0;
+            this.myButton1.Text = "myButton1";
+            this.myButton1.UseVisualStyleBackColor = false;
+            this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.myButton1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private View.Components.MyButton myButton1;
     }
 }
 

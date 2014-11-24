@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Controller
 {
-    class ClientiController : MyController
+    public class ClientiController : MyController
     {
         public ClientiController()
             : base()

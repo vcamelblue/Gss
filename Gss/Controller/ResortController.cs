@@ -8,7 +8,7 @@ using Gss.Filtra;
 
 namespace Gss.Controller
 {
-    class ResortController : MyController
+    public class ResortController : MyController
     {
         private IFiltra _filtro;
 

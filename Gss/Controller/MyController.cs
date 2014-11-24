@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Controller
 {
-    abstract class MyController
+    public abstract class MyController
     {
         private GSS _gss;
 

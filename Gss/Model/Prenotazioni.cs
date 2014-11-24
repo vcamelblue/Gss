@@ -86,8 +86,6 @@ namespace Gss.Model
 
         public bool ArchiviaPrenotazione(PrenotazioneAttiva prenotazioneAttiva)
         {
-            if (!(prenotazioneAttiva.IsConclusa()))
-                return false;
             Fattura fattura = Fatturatore.GeneraFattura(prenotazioneAttiva);
             PrenotazioneArchiviata prenotazioneArchiviata = CreaPrenotazioneArchiviata(prenotazioneAttiva, fattura);
             if (this.Remove(prenotazioneAttiva))

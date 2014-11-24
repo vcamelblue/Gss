@@ -21,9 +21,18 @@ namespace Gss.Model
             set { _bungalows = value; }
         }
 
-        public void Add(Bungalow bungalow)
+        public bool Add(Bungalow bungalow)
         {
+            foreach (Bungalow b in this.ListaBungalow)
+            {
+                if (b.Equals(bungalow))
+                {
+                    return false;
+                }
+
+            }
             ListaBungalow.Add(bungalow);
+            return true;
         }
 
         public bool Remove(Bungalow bungalow)

@@ -27,8 +27,19 @@ namespace Gss
 
         private void myButton1_Click(object sender, EventArgs e) 
         {
-            AggiungiModificaCliente agg = new AggiungiModificaCliente(clientiController, clientiController.GetAllClienti().ListaClienti[0], this);
-            agg.Show();
+            AggiungiModificaCliente amc = new AggiungiModificaCliente(clientiController, clientiController.GetAllClienti().ListaClienti[3]);
+            DialogResult res = amc.ShowDialog();
+            if (res == DialogResult.OK) {
+                Refresh();
+            }
+        }
+
+        private void myButton2_Click(object sender, EventArgs e) {
+            AggiungiModificaCliente amc = new AggiungiModificaCliente(clientiController);
+            DialogResult res = amc.ShowDialog();
+            if (res == DialogResult.OK) {
+                Refresh();
+            }
         }
     }
 }

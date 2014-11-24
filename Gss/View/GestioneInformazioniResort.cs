@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gss.Controller;
 using Gss.Model;
+using Gss.Controller;
 
 namespace Gss.View {
-
-    public partial class GestioneInfoResort : Form {
-
-        //Fields
+    public partial class GestioneInformazioniResort : Form {
+        
+         //Fields
 
         private bool _inEditingMode;
         private Resort _resort;
         private Form _formChiamante;
         private ResortController _resortController;
 
-        public GestioneInfoResort(ResortController resortController) {
+        public GestioneInformazioniResort(ResortController resortController) {
 
             _resortController = resortController;
             _resort = null;
@@ -31,7 +30,7 @@ namespace Gss.View {
         
         }
 
-        public GestioneInfoResort(ResortController resortController, Resort resort)
+        public GestioneInformazioniResort(ResortController resortController, Resort resort)
         {
             _resortController = resortController;
             _resort = resort;
@@ -58,10 +57,6 @@ namespace Gss.View {
 
             try
             {
-                if (_inEditingMode)
-                {
-
-                }
 
             }
         }
@@ -70,5 +65,7 @@ namespace Gss.View {
         {
             this.Close();
         }
+
+
     }
 }

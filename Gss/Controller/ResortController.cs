@@ -121,10 +121,9 @@ namespace Gss.Controller
             return Gss.Resort.Bungalows;
         }
 
-        public void AddStanzaABungalow(string codice, Stanza stanza)
+        public void AddStanzaABungalow(Bungalow bungalow, Stanza stanza)
         {
-            Bungalow bungalow = Gss.Resort.Bungalows.GetBungalowByCodice(codice);
-            if((stanza.NumeroPostiStandard==0) || (stanza.NumeroPostiMax<=stanza.NumeroPostiStandard)){
+            if((stanza.NumeroPostiStandard==0 || stanza.NumeroPostiMax==0) || (stanza.NumeroPostiMax<=stanza.NumeroPostiStandard)){
                 throw new Exception("Numero posti stanza non validi");
             }
             bungalow.Add(stanza);

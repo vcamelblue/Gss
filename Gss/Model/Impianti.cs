@@ -50,6 +50,18 @@ namespace Gss.Model
             return result;
         }
 
+        public Impianto GetImpiantoByCodice(string codice)
+        {
+            foreach(Impianto i in this.ListaImpianti)
+            {
+                if(i.Codice==codice)
+                {
+                    return i;
+                }
+            }
+            return null;
+        }
+
 
     }
 }

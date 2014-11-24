@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    static class Fatturatore
+    public static class Fatturatore
     {
         private static int _numeroFatture=0;
 

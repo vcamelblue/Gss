@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class ProfiliPrezziRisorse //STATIC?!
+    public class ProfiliPrezziRisorse //STATIC?!
     {
         private List<ProfiloPrezziRisorse> _profili;
 
-        internal ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
+        public ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
         {
             _profili = new List<ProfiloPrezziRisorse>();
             _profili = profili;

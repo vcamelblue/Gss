@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class GSS
+    public class GSS
     {
         private static GSS _gss;
         private static int _numeroPrenotazioni = 0;
@@ -36,25 +36,25 @@ namespace Gss.Model
             return _gss;
         }
 
-        internal Resort Resort
+        public Resort Resort
         {
             get { return _resort; }
             set { _resort = value; }
         }
 
-        internal Prenotazioni Prenotazioni
+        public Prenotazioni Prenotazioni
         {
             get { return _prenotazioni; }
             set { _prenotazioni = value; }
         }
 
-        internal Direttore Direttore
+        public Direttore Direttore
         {
             get { return _direttore; }
             set { _direttore = value; }
         }
 
-        internal Clienti Clienti
+        public Clienti Clienti
         {
             get { return _clienti; }
             set { _clienti = value; }
@@ -66,7 +66,7 @@ namespace Gss.Model
             set { _gestorePeriodi = value; }
         }
 
-        internal ProfiliPrezziRisorse ProfiliPrezziRisorse
+        public ProfiliPrezziRisorse ProfiliPrezziRisorse
         {
             get { return _profiliPrezziRisorse; }
             set { _profiliPrezziRisorse = value; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Cliente
+    public class Cliente
     {
         private string _nome;
         private string _cognome;

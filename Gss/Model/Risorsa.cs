@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    abstract class Risorsa
+    public abstract class Risorsa
     {
         private string _codice;
 

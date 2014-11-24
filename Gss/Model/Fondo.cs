@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Model
 {
-    class Fondo : Pista
+    public class Fondo : Pista
     {
 
         private double _dislivelloMassimo;

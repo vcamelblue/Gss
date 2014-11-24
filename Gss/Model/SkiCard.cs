@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class SkiCard
+    public class SkiCard
     {
         private string _codice;
         private List<SkiPass> _skiPass;
@@ -23,7 +23,7 @@ namespace Gss.Model
             set { _codice = value; }
         }
 
-        internal List<SkiPass> SkiPass
+        public List<SkiPass> SkiPass
         {
             get { return _skiPass; }
             set { _skiPass = value; }

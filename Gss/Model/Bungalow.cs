@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Bungalow : Risorsa
+    public class Bungalow : Risorsa
     {
         private List<Stanza> _stanze;
 

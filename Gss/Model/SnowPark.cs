@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Model
 {
-    class SnowPark : Pista
+    public class SnowPark : Pista
     {
         private int _numeroSalti;
         private int _numeroJibs;

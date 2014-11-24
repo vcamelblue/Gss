@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Clienti
+    public class Clienti
     {
         private List<Cliente> _clienti;
 
@@ -21,7 +21,7 @@ namespace Gss.Model
             _clienti = new List<Cliente>();
         }
 
-        internal List<Cliente> ListaClienti
+        public List<Cliente> ListaClienti
         {
             get { return _clienti; }
             set { _clienti = value; }

@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Model
 {
-    class Alpina : Pista
+    public class Alpina : Pista
     {
         private Difficolta _difficolta;
 
@@ -17,7 +17,7 @@ namespace Gss.Model
             _difficolta = difficolta;
         }
 
-        internal Difficolta Difficolta
+        public Difficolta Difficolta
         {
             get { return _difficolta; }
             set { _difficolta = value; }

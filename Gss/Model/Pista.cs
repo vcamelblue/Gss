@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    abstract class Pista
+    public abstract class Pista
     {
         private string _nome;
 

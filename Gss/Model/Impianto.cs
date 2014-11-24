@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Impianto : Risorsa
+    public class Impianto : Risorsa
     {
         private string _nome;
         private string _versante;
@@ -32,7 +32,7 @@ namespace Gss.Model
             set { _versante = value; }
         }
 
-        internal List<Pista> Piste
+        public List<Pista> Piste
         {
             get { return _piste; }
             set { _piste = value; }

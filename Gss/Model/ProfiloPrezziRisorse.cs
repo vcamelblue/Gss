@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class ProfiloPrezziRisorse
+    public class ProfiloPrezziRisorse
     {
         private string _nome;
         private Dictionary<Risorsa, PrezziRisorsa> _prezziRisorsa;
@@ -17,7 +17,7 @@ namespace Gss.Model
             _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
         }
 
-        internal Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
+        public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
         {
             get { return _prezziRisorsa; }
             set { _prezziRisorsa = value; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class PrezzoSpecifico
+    public class PrezzoSpecifico
     {
        
         private TipologiaPrezzo _tipologia;
@@ -18,7 +18,7 @@ namespace Gss.Model
             _valore = valore;
         }
 
-        internal TipologiaPrezzo Tipologia
+        public TipologiaPrezzo Tipologia
         {
             get { return _tipologia; }
             set { _tipologia = value; }

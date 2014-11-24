@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class PrenotazioneArchiviata : Prenotazione
+    public class PrenotazioneArchiviata : Prenotazione
     {
         private Fattura _fattura;
 

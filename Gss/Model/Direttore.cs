@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Direttore
+    public class Direttore
     {
         private String _password;
         private bool _isAutenticato;

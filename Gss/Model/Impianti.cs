@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Impianti
+    public class Impianti
     {
         private List<Impianto> _impianti;
 
@@ -34,7 +34,7 @@ namespace Gss.Model
             return ListaImpianti.Remove(impianto);
         }
 
-        internal List<Impianto> ListaImpianti
+        public List<Impianto> ListaImpianti
         {
             get { return _impianti; }
             set { _impianti = value; }

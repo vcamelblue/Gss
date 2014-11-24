@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace Gss.Model
 {
-    class SkiPassAGiornata : SkiPass
+    public class SkiPassAGiornata : SkiPass
     {
         private DateTime _dataInizio;
         private DateTime _dataFine;

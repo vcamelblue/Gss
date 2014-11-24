@@ -7,7 +7,7 @@ using Gss.Model;
 
 namespace Gss.Model
 {
-    abstract class SkiPass
+    public abstract class SkiPass
     {
         private string _codice;
         private Impianto _impianto;
@@ -24,7 +24,7 @@ namespace Gss.Model
             set { _codice = value; }
         }
 
-        internal Impianto Impianto
+        public Impianto Impianto
         {
             get { return _impianto; }
             set { _impianto = value; }

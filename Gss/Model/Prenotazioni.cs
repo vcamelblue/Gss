@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Prenotazioni
+    public class Prenotazioni
     {
         private List<Prenotazione> _listaPrenotazioni;
 
@@ -19,7 +19,7 @@ namespace Gss.Model
             _listaPrenotazioni = new List<Prenotazione>();
         }
 
-        internal List<Prenotazione> ListaPrenotazioni
+        public List<Prenotazione> ListaPrenotazioni
         {
             get { return _listaPrenotazioni; }
             set { _listaPrenotazioni = value; }

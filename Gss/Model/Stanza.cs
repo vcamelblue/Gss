@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Stanza
+    public class Stanza
     {
         private int _numeroPostiStandard;
         private int _numeroPostiMax;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class SkiCards
+    public class SkiCards
     {
         private List<SkiCard> _listaSkiCard;
 
@@ -45,7 +45,7 @@ namespace Gss.Model
             return result;
         }
 
-        internal List<SkiCard> ListaSkiCard
+        public List<SkiCard> ListaSkiCard
         {
             get { return _listaSkiCard; }
             set { _listaSkiCard = value; }

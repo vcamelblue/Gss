@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class PrezziRisorsa
+    public class PrezziRisorsa
     {
         private double _prezzo;
         private List<PrezzoSpecifico> _prezziSpecifici;
@@ -24,7 +24,7 @@ namespace Gss.Model
             set { _prezzo = value; }
         }
 
-        internal List<PrezzoSpecifico> PrezziSpecifici
+        public List<PrezzoSpecifico> PrezziSpecifici
         {
             get { return _prezziSpecifici; }
             set { _prezziSpecifici = value; }

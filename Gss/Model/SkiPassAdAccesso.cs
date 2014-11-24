@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class SkiPassAdAccesso : SkiPass
+    public class SkiPassAdAccesso : SkiPass
     {
         private int _nAccessi;
         private DateTime _dataRilascio;

@@ -15,7 +15,7 @@ namespace Gss.Model
         private DateTime _dataFine;
         private Cliente _cliente;
 
-        internal Prenotazione(int numeroPrenotazione, int numeroPersone, DateTime dataInizio, DateTime dataFine, Cliente cliente)
+        public Prenotazione(int numeroPrenotazione, int numeroPersone, DateTime dataInizio, DateTime dataFine, Cliente cliente)
         {
             _numeroPrenotazione= numeroPrenotazione;
             _numeroPersone = numeroPersone;
@@ -29,7 +29,7 @@ namespace Gss.Model
             _numeroPrenotazione = numeroPrenotazione;
         }
 
-        internal Cliente Cliente
+        public Cliente Cliente
         {
             get { return _cliente; }
             set { _cliente = value; }

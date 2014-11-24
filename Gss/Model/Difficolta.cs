@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    enum Difficolta { Bassa, Media, Alta };
+    public enum Difficolta { Bassa, Media, Alta };
 }

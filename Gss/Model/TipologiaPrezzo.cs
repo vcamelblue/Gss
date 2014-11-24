@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    enum TipologiaPrezzo { PrezzoPerAccesso, PrezzoPerPersonaExtra };
+    public enum TipologiaPrezzo { PrezzoPerAccesso, PrezzoPerPersonaExtra };
 }

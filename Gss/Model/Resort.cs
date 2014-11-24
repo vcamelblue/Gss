@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Resort
+    public class Resort
     {
         private string _nome;
         private string _indirizzo;
@@ -52,13 +52,13 @@ namespace Gss.Model
             set { _telefono = value; }
         }
 
-        internal Impianti Impianti
+        public Impianti Impianti
         {
             get { return _impianti; }
             set { _impianti = value; }
         }
 
-        internal Bungalows Bungalows
+        public Bungalows Bungalows
         {
             get { return _bungalows; }
             set { _bungalows = value; }

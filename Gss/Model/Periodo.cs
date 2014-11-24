@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class Periodo
+    public class Periodo
     {
         private ProfiloPrezziRisorse _profilo;
         private DateTime _dataInizio;
@@ -25,7 +25,7 @@ namespace Gss.Model
             _dataFine = dataFine;
         }
 
-        internal ProfiloPrezziRisorse Profilo
+        public ProfiloPrezziRisorse Profilo
         {
             get { return _profilo; }
             set { _profilo = value; }

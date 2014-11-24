@@ -162,7 +162,7 @@ namespace Gss.Controller
             return new Impianti();
         }
 
-        internal IFiltra Filtro
+        public IFiltra Filtro
         {
             get { return _filtro; }
             set { _filtro = value; }

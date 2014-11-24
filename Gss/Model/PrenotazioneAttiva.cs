@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    class PrenotazioneAttiva : Prenotazione
+    public class PrenotazioneAttiva : Prenotazione
     {
         private Bungalow _bungalow;
         private SkiCards _listaSkiCards;
@@ -23,13 +23,13 @@ namespace Gss.Model
      
         }
 
-        internal Bungalow Bungalow
+        public Bungalow Bungalow
         {
             get { return _bungalow; }
             set { _bungalow = value; }
         }
 
-        internal SkiCards ListaSkiCards
+        public SkiCards ListaSkiCards
         {
             get { return _listaSkiCards; }
             set { _listaSkiCards = value; }

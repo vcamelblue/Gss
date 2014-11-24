@@ -71,8 +71,8 @@ namespace Gss.Model
             else
                 return false;
             if (cliente.CodiceFiscale.Equals(this.CodiceFiscale) &&
-                cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita) &&
-                cliente.Email.Equals(this.Email))
+                cliente.Cognome.Equals(this.Cognome) && 
+                cliente.DataNascita.Equals(this.DataNascita))
                 return true;
             else return false;
         }

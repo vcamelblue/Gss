@@ -66,5 +66,17 @@ namespace Gss.Model
             return result;
         }
 
+        public Bungalow GetBungalowByCodice(string codice)
+        {
+            foreach (Bungalow b in this.ListaBungalow)
+            {
+                if (b.Codice == codice)
+                {
+                    return b;
+                }
+            }
+            return null;
+        }
+
     }
 }

@@ -128,6 +128,24 @@
     <Compile Include="View\Components\MyTextBox.designer.cs">
       <DependentUpon>MyTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Components\PannelloPistaAlpina.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Components\PannelloPistaAlpina.Designer.cs">
+      <DependentUpon>PannelloPistaAlpina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\PannelloPistaFondo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Components\PannelloPistaFondo.Designer.cs">
+      <DependentUpon>PannelloPistaFondo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\PannelloSnowpark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Components\PannelloSnowpark.Designer.cs">
+      <DependentUpon>PannelloSnowpark.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Components\TabControlWithoutHeader.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -169,6 +187,11 @@
     </Compile>
     <Compile Include="View\GestioneBungalows.designer.cs">
       <DependentUpon>GestioneBungalows.cs</DependentUpon>
+    <Compile Include="View\AggiungiModificaPista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AggiungiModificaPista.designer.cs">
+      <DependentUpon>AggiungiModificaPista.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -194,6 +217,15 @@
     <EmbeddedResource Include="View\Components\MyTextBox.resx">
       <DependentUpon>MyTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\PannelloPistaAlpina.resx">
+      <DependentUpon>PannelloPistaAlpina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\PannelloPistaFondo.resx">
+      <DependentUpon>PannelloPistaFondo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\PannelloSnowpark.resx">
+      <DependentUpon>PannelloSnowpark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +243,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GestioneBungalows.resx">
       <DependentUpon>GestioneBungalows.cs</DependentUpon>
+    <EmbeddedResource Include="View\AggiungiModificaPista.resx">
+      <DependentUpon>AggiungiModificaPista.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

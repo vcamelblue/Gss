@@ -26,9 +26,16 @@ namespace Gss.Controller
                 return my - mx;
             if (mx == my)
                 return sx - sy;
-            if(sx<0 && sy<0)
+            if(sx == 0 && sy != 0)
+                return 1;
+            if (sx != 0 && sy == 0)
+                return -1;
+            if (sx > 0 && sy > 0)
                 return sx - sy;
+            if (sx < 0 && sy < 0)
+                return sy - sx;
             return sy - sx;
+
         }
     }
 }

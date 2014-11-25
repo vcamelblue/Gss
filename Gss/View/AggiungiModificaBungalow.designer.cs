@@ -36,8 +36,8 @@
             this.infoStanzaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postiStandardColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postiMaxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
-            this.myLabel4 = new Gss.View.Components.MyLabel(this.components);
+            this.postiTotoaliLabel = new Gss.View.Components.MyLabel(this.components);
+            this.postiMaxTotaliLabel = new Gss.View.Components.MyLabel(this.components);
             this.aggiungiStanzaButton = new Gss.View.Components.MyButton(this.components);
             this.modificaStanzaButton = new Gss.View.Components.MyButton(this.components);
             this.rimuoviStanzaButton = new Gss.View.Components.MyButton(this.components);
@@ -161,29 +161,29 @@
             this.postiMaxColumn.Name = "postiMaxColumn";
             this.postiMaxColumn.ReadOnly = true;
             // 
-            // myLabel3
+            // postiTotoaliLabel
             // 
-            this.myLabel3.AutoSize = true;
-            this.myLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel3.Location = new System.Drawing.Point(373, 291);
-            this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(102, 21);
-            this.myLabel3.TabIndex = 4;
-            this.myLabel3.Text = "Posti Totali  5";
+            this.postiTotoaliLabel.AutoSize = true;
+            this.postiTotoaliLabel.BackColor = System.Drawing.Color.Transparent;
+            this.postiTotoaliLabel.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postiTotoaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.postiTotoaliLabel.Location = new System.Drawing.Point(373, 291);
+            this.postiTotoaliLabel.Name = "postiTotoaliLabel";
+            this.postiTotoaliLabel.Size = new System.Drawing.Size(102, 21);
+            this.postiTotoaliLabel.TabIndex = 4;
+            this.postiTotoaliLabel.Text = "Posti Totali  5";
             // 
-            // myLabel4
+            // postiMaxTotaliLabel
             // 
-            this.myLabel4.AutoSize = true;
-            this.myLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel4.Location = new System.Drawing.Point(549, 291);
-            this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(145, 21);
-            this.myLabel4.TabIndex = 5;
-            this.myLabel4.Text = "Posti Totali Max  10";
+            this.postiMaxTotaliLabel.AutoSize = true;
+            this.postiMaxTotaliLabel.BackColor = System.Drawing.Color.Transparent;
+            this.postiMaxTotaliLabel.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.postiMaxTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.postiMaxTotaliLabel.Location = new System.Drawing.Point(549, 291);
+            this.postiMaxTotaliLabel.Name = "postiMaxTotaliLabel";
+            this.postiMaxTotaliLabel.Size = new System.Drawing.Size(145, 21);
+            this.postiMaxTotaliLabel.TabIndex = 5;
+            this.postiMaxTotaliLabel.Text = "Posti Totali Max  10";
             // 
             // aggiungiStanzaButton
             // 
@@ -269,8 +269,8 @@
             this.Controls.Add(this.rimuoviStanzaButton);
             this.Controls.Add(this.modificaStanzaButton);
             this.Controls.Add(this.aggiungiStanzaButton);
-            this.Controls.Add(this.myLabel4);
-            this.Controls.Add(this.myLabel3);
+            this.Controls.Add(this.postiMaxTotaliLabel);
+            this.Controls.Add(this.postiTotoaliLabel);
             this.Controls.Add(this.myTextBox1);
             this.Controls.Add(this.myLabel2);
             this.Controls.Add(this.myLabel1);
@@ -290,8 +290,8 @@
         private Components.MyLabel myLabel2;
         private Components.MyTextBox myTextBox1;
         private Components.MyDataGridView stanzeDataGridView;
-        private Components.MyLabel myLabel3;
-        private Components.MyLabel myLabel4;
+        private Components.MyLabel postiTotoaliLabel;
+        private Components.MyLabel postiMaxTotaliLabel;
         private Components.MyLabel myLabel1;
         private Components.MyButton aggiungiStanzaButton;
         private Components.MyButton modificaStanzaButton;

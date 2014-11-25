@@ -17,16 +17,17 @@ namespace Gss.View {
         private Impianto _impianto;
         private Pista _pista;
         private ResortController _resortController;
+        private int _indice;
 
         public AggiungiModificaPista(ResortController resortController, Impianto impianto ) {
 
             _inEditingMode = false;
             _impianto = impianto;
             _resortController = resortController;
-
-
+            
             InitializeComponent();
 
+            tabControlWithoutHeader1.SelectedTab = tabVuoto;
         }
 
         public AggiungiModificaPista(ResortController resortController, Impianto impianto, Pista pista)
@@ -34,10 +35,18 @@ namespace Gss.View {
             _inEditingMode = true;
             _impianto = impianto;
             _resortController = resortController;
-
-
+            _pista = pista;
 
             InitializeComponent();
+
+            TabPage tabCorrente = checkPista(_pista);
+            if (tabCorrente == null)
+            {
+              MessageBox.Show("Pista da modificare non valida");
+            }
+
+            tabControlWithoutHeader1.SelectedTab = checkPista(_pista);
+            tipologiaComboBox1.SelectionStart = _indice;
 
         }
 
@@ -56,24 +65,41 @@ namespace Gss.View {
             tipologiaComboBox1.Items.Add("Alpina");
             tipologiaComboBox1.Items.Add("Fondo");
             tipologiaComboBox1.Items.Add("SnowPark");
+
+            difficoltaComboBox.Items.Add(Difficolta.Alta.ToString());
+            difficoltaComboBox.Items.Add(Difficolta.Media.ToString());
+            difficoltaComboBox.Items.Add(Difficolta.Bassa.ToString());
         }
 
-        private int checkPista(Pista pista)
+        private TabPage checkPista(Pista pista)
         {
             if (pista is Alpina)
             {
-                return 1;
+                Alpina alpina = (Alpina)pista;
+                _indice = 0;
+                nomeAlpinaTextBox.Text = alpina.Nome;
+                return tabAlpina;
             }
 
             if (pista is Fondo)
             {
-                return 2;
+                Fondo fondo = (Fondo)pista;
+                _indice = 1;
+                nomeFondoTextBox.Text = fondo.Nome;
+                dislivelloMaxTextBox2.Text = fondo.DislivelloMassimo.ToString();
+                dislivelloMedioTextBox.Text = fondo.DislivelloMedio.ToString();
+                return tabFondo;
             }
             if (pista is SnowPark)
             {
-                return 3;
+                SnowPark snowPark = (SnowPark)pista;
+                nomeSnowparkTextBox.Text = snowPark.Nome;
+                numeroSaltiTextBox.Text = snowPark.NumeroSalti.ToString();
+                numeroJibsTextBox.Text = snowPark.NumeroJibs.ToString();
+                _indice = 2;
+                return tabSnowpark;
             }
-            else return -1;
+            else return null;
 
         }
     }

@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gss.View {
-    public partial class GestioneBungalows : Form {
-        public GestioneBungalows() {
+namespace Gss.View 
+{
+    public partial class GestioneBungalows : Form 
+    {
+        public GestioneBungalows() 
+        {
             InitializeComponent();
+
+
         }
     }
 }

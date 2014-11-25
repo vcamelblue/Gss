@@ -24,7 +24,9 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
+            this.annullaButton = new Gss.View.Components.MyButton(this.components);
+            this.salvaButton = new Gss.View.Components.MyButton(this.components);
+            this.tipologiaComboBox1 = new Gss.View.Components.MyComboBox(this.components);
             this.tabControlWithoutHeader1 = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.tabVuoto = new System.Windows.Forms.TabPage();
             this.tabAlpina = new System.Windows.Forms.TabPage();
@@ -46,26 +48,52 @@
             this.myLabel9 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel8 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel7 = new Gss.View.Components.MyLabel(this.components);
-            this.tipologiaComboBox1 = new Gss.View.Components.MyComboBox(this.components);
-            this.salvaButton = new Gss.View.Components.MyButton(this.components);
-            this.annullaButton = new Gss.View.Components.MyButton(this.components);
+            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.tabControlWithoutHeader1.SuspendLayout();
             this.tabAlpina.SuspendLayout();
             this.tabFondo.SuspendLayout();
             this.tabSnowpark.SuspendLayout();
             this.SuspendLayout();
             // 
-            // myLabel1
+            // annullaButton
             // 
-            this.myLabel1.AutoSize = true;
-            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(53, 29);
-            this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(59, 17);
-            this.myLabel1.TabIndex = 0;
-            this.myLabel1.Text = "Tipologia";
+            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
+            this.annullaButton.FlatAppearance.BorderSize = 0;
+            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.annullaButton.Location = new System.Drawing.Point(80, 244);
+            this.annullaButton.Name = "annullaButton";
+            this.annullaButton.Size = new System.Drawing.Size(63, 26);
+            this.annullaButton.TabIndex = 8;
+            this.annullaButton.Text = "Annulla";
+            this.annullaButton.UseVisualStyleBackColor = false;
+            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
+            // 
+            // salvaButton
+            // 
+            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
+            this.salvaButton.FlatAppearance.BorderSize = 0;
+            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvaButton.Location = new System.Drawing.Point(299, 244);
+            this.salvaButton.Name = "salvaButton";
+            this.salvaButton.Size = new System.Drawing.Size(120, 26);
+            this.salvaButton.TabIndex = 7;
+            this.salvaButton.Text = "Salva";
+            this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
+            // 
+            // tipologiaComboBox1
+            // 
+            this.tipologiaComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.tipologiaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipologiaComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tipologiaComboBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipologiaComboBox1.Location = new System.Drawing.Point(280, 28);
+            this.tipologiaComboBox1.Name = "tipologiaComboBox1";
+            this.tipologiaComboBox1.Size = new System.Drawing.Size(121, 22);
+            this.tipologiaComboBox1.TabIndex = 6;
+            this.tipologiaComboBox1.SelectedValueChanged += new System.EventHandler(this.tipologiaComboBox1_SelectedValueChanged);
             // 
             // tabControlWithoutHeader1
             // 
@@ -73,6 +101,7 @@
             this.tabControlWithoutHeader1.Controls.Add(this.tabAlpina);
             this.tabControlWithoutHeader1.Controls.Add(this.tabFondo);
             this.tabControlWithoutHeader1.Controls.Add(this.tabSnowpark);
+            this.tabControlWithoutHeader1.Font = new System.Drawing.Font("Calibri", 9F);
             this.tabControlWithoutHeader1.Location = new System.Drawing.Point(0, 56);
             this.tabControlWithoutHeader1.Name = "tabControlWithoutHeader1";
             this.tabControlWithoutHeader1.SelectedIndex = 0;
@@ -82,10 +111,10 @@
             // tabVuoto
             // 
             this.tabVuoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.tabVuoto.Location = new System.Drawing.Point(4, 22);
+            this.tabVuoto.Location = new System.Drawing.Point(4, 23);
             this.tabVuoto.Name = "tabVuoto";
             this.tabVuoto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuoto.Size = new System.Drawing.Size(449, 133);
+            this.tabVuoto.Size = new System.Drawing.Size(449, 132);
             this.tabVuoto.TabIndex = 0;
             this.tabVuoto.Text = "tabPage1";
             // 
@@ -96,16 +125,17 @@
             this.tabAlpina.Controls.Add(this.myLabel3);
             this.tabAlpina.Controls.Add(this.nomeAlpinaTextBox);
             this.tabAlpina.Controls.Add(this.myLabel2);
-            this.tabAlpina.Location = new System.Drawing.Point(4, 22);
+            this.tabAlpina.Location = new System.Drawing.Point(4, 23);
             this.tabAlpina.Name = "tabAlpina";
             this.tabAlpina.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlpina.Size = new System.Drawing.Size(449, 133);
+            this.tabAlpina.Size = new System.Drawing.Size(449, 132);
             this.tabAlpina.TabIndex = 1;
             this.tabAlpina.Text = "tabPage2";
             // 
             // difficoltaComboBox
             // 
             this.difficoltaComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.difficoltaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficoltaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.difficoltaComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.difficoltaComboBox.FormattingEnabled = true;
@@ -158,10 +188,10 @@
             this.tabFondo.Controls.Add(this.myLabel6);
             this.tabFondo.Controls.Add(this.myLabel5);
             this.tabFondo.Controls.Add(this.myLabel4);
-            this.tabFondo.Location = new System.Drawing.Point(4, 22);
+            this.tabFondo.Location = new System.Drawing.Point(4, 23);
             this.tabFondo.Name = "tabFondo";
             this.tabFondo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFondo.Size = new System.Drawing.Size(449, 133);
+            this.tabFondo.Size = new System.Drawing.Size(449, 132);
             this.tabFondo.TabIndex = 2;
             this.tabFondo.Text = "tabPage3";
             // 
@@ -243,10 +273,10 @@
             this.tabSnowpark.Controls.Add(this.myLabel9);
             this.tabSnowpark.Controls.Add(this.myLabel8);
             this.tabSnowpark.Controls.Add(this.myLabel7);
-            this.tabSnowpark.Location = new System.Drawing.Point(4, 22);
+            this.tabSnowpark.Location = new System.Drawing.Point(4, 23);
             this.tabSnowpark.Name = "tabSnowpark";
             this.tabSnowpark.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSnowpark.Size = new System.Drawing.Size(449, 133);
+            this.tabSnowpark.Size = new System.Drawing.Size(449, 132);
             this.tabSnowpark.TabIndex = 3;
             this.tabSnowpark.Text = "tabPage4";
             // 
@@ -319,45 +349,17 @@
             this.myLabel7.TabIndex = 0;
             this.myLabel7.Text = "Nome";
             // 
-            // tipologiaComboBox1
+            // myLabel1
             // 
-            this.tipologiaComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
-            this.tipologiaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tipologiaComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tipologiaComboBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipologiaComboBox1.FormattingEnabled = true;
-            this.tipologiaComboBox1.Location = new System.Drawing.Point(280, 28);
-            this.tipologiaComboBox1.Name = "tipologiaComboBox1";
-            this.tipologiaComboBox1.Size = new System.Drawing.Size(121, 22);
-            this.tipologiaComboBox1.TabIndex = 6;
-            // 
-            // salvaButton
-            // 
-            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
-            this.salvaButton.FlatAppearance.BorderSize = 0;
-            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaButton.Location = new System.Drawing.Point(299, 244);
-            this.salvaButton.Name = "salvaButton";
-            this.salvaButton.Size = new System.Drawing.Size(63, 26);
-            this.salvaButton.TabIndex = 7;
-            this.salvaButton.Text = "Salva";
-            this.salvaButton.UseVisualStyleBackColor = false;
-            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
-            // 
-            // annullaButton
-            // 
-            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
-            this.annullaButton.FlatAppearance.BorderSize = 0;
-            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(80, 244);
-            this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(63, 26);
-            this.annullaButton.TabIndex = 8;
-            this.annullaButton.Text = "Annulla";
-            this.annullaButton.UseVisualStyleBackColor = false;
-            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
+            this.myLabel1.AutoSize = true;
+            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.myLabel1.Location = new System.Drawing.Point(53, 29);
+            this.myLabel1.Name = "myLabel1";
+            this.myLabel1.Size = new System.Drawing.Size(59, 17);
+            this.myLabel1.TabIndex = 0;
+            this.myLabel1.Text = "Tipologia";
             // 
             // AggiungiModificaPista
             // 

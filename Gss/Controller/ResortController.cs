@@ -72,20 +72,69 @@ namespace Gss.Controller
             return Gss.Resort.Impianti.ListaImpianti.Contains(impianto);
         }
 
-        public void AddPistaAdImpianto(string codice, Pista pista)
+        public void AddPistaAdImpianto(Impianto impianto, Pista pista)
         {
-            Impianto impianto = Gss.Resort.Impianti.GetImpiantoByCodice(codice);
+            if (Exist(pista))
+            {
+                throw new Exception("Pista già esistente nel sistema");
+            }
+
             impianto.Add(pista);
         }
 
-        public void RemovePistaAdImpianto(string codice, Pista pista)
+        public void RemovePistaAdImpianto(Impianto impianto, Pista pista)
         {
-            Impianto impianto = Gss.Resort.Impianti.GetImpiantoByCodice(codice);
-
             if (!(impianto.Remove(pista)))
             {
                 throw new Exception("Pista non  presente nell'impianto");
             }
+        }
+
+        public void EditPistaAlpinaAdImpianto(Alpina pista, Alpina pistaModificata)
+        {
+            if (Exist(pista))
+            {
+                throw new Exception("Pista già esistente nel sistema");
+            }
+            pista.Nome = pistaModificata.Nome;
+            pista.Difficolta = pistaModificata.Difficolta;
+        }
+
+        public void EditPistaFondoAdImpianto(Fondo pista, Fondo pistaModificata)
+        {
+            if (Exist(pista))
+            {
+                throw new Exception("Pista già esistente nel sistema");
+            }
+            pista.Nome = pistaModificata.Nome;
+            pista.DislivelloMassimo = pistaModificata.DislivelloMassimo;
+            pista.DislivelloMedio = pistaModificata.DislivelloMedio;
+        }
+
+        public void EditPistaSnowParkAdImpianto(SnowPark pista, SnowPark pistaModificata)
+        {
+            if (Exist(pista))
+            {
+                throw new Exception("Pista già esistente nel sistema");
+            }
+            pista.Nome = pistaModificata.Nome;
+            pista.NumeroSalti = pistaModificata.NumeroSalti;
+            pista.NumeroJibs = pistaModificata.NumeroJibs;
+        }
+
+        private bool Exist(Pista pista)
+        {
+            foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
+            {
+                foreach (Pista p in i.Piste)
+                {
+                    if (p.Equals(pista))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public void AddBungalow(Bungalow bungalow)
@@ -141,7 +190,7 @@ namespace Gss.Controller
 
         private bool checkStanza(Stanza stanza)
         {
-            if ((stanza.NumeroPostiStandard == 0 || stanza.NumeroPostiMax == 0) || (stanza.NumeroPostiMax <= stanza.NumeroPostiStandard))
+            if ((stanza.NumeroPostiStandard == 0 || stanza.NumeroPostiMax == 0) || (stanza.NumeroPostiMax < stanza.NumeroPostiStandard))
                 return false;
             return true;
         }

@@ -46,13 +46,63 @@ namespace Gss.View {
             }
 
             tabControlWithoutHeader1.SelectedTab = checkPista(_pista);
-            tipologiaComboBox1.SelectionStart = _indice;
 
+
+            this.Text = "Modifica Pista";
+            salvaButton.Text = "Salva Modifiche";
         }
 
         private void salvaButton_Click(object sender, EventArgs e)
         {
+            if (tabControlWithoutHeader1.SelectedTab == tabAlpina)
+            {
+                salvaAlpina();
+            }
+            else if (tabControlWithoutHeader1.SelectedTab == tabFondo)
+            {
+                salvaAFondo();
+            }
+            else if (tabControlWithoutHeader1.SelectedTab == tabSnowpark)
+            {
+                salvaSnowpark();
+            }
+        }
 
+        private void salvaSnowpark()
+        {
+            if (_inEditingMode)
+            {
+            }
+            else 
+            { 
+            }
+                
+        }
+
+        private void salvaAFondo()
+        {
+
+            if (_inEditingMode)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void salvaAlpina()
+        {
+
+            if (_inEditingMode)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         private void annullaButton_Click(object sender, EventArgs e)
@@ -62,13 +112,26 @@ namespace Gss.View {
 
         private void AggiungiModificaPista_Load(object sender, EventArgs e)
         {
-            tipologiaComboBox1.Items.Add("Alpina");
-            tipologiaComboBox1.Items.Add("Fondo");
-            tipologiaComboBox1.Items.Add("SnowPark");
+            tipologiaComboBox1.Items.Insert(0, "Alpina");
+            tipologiaComboBox1.Items.Insert(1, "Fondo");
+            tipologiaComboBox1.Items.Insert(2, "Snowpark");
+            tipologiaComboBox1.SelectedIndex = 0;
 
-            difficoltaComboBox.Items.Add(Difficolta.Alta.ToString());
-            difficoltaComboBox.Items.Add(Difficolta.Media.ToString());
-            difficoltaComboBox.Items.Add(Difficolta.Bassa.ToString());
+            difficoltaComboBox.Items.Insert(0,Difficolta.Alta.ToString());
+            difficoltaComboBox.Items.Insert(1,Difficolta.Media.ToString());
+            difficoltaComboBox.Items.Insert(2,Difficolta.Bassa.ToString());
+
+            if (_inEditingMode)
+            {
+                tipologiaComboBox1.SelectedIndex = tipologiaComboBox1.FindStringExact(cercaCategoria(_pista));
+                tipologiaComboBox1.Enabled =  false;
+                if (_pista is Alpina)
+                {
+                    Alpina alpina = (Alpina)_pista;
+                    difficoltaComboBox.SelectedIndex = difficoltaComboBox.FindStringExact(alpina.Difficolta.ToString());
+                }
+            }
+
         }
 
         private TabPage checkPista(Pista pista)
@@ -102,5 +165,43 @@ namespace Gss.View {
             else return null;
 
         }
+
+        private string cercaCategoria(Pista pista)
+        {
+            if (pista is Alpina)
+            {
+               
+                return "Alpina";
+            }
+
+            if (pista is Fondo)
+            {
+                return "Fondo";
+            }
+            if (pista is SnowPark)
+            {
+                return "SnowPark";
+            }
+            else return "";
+
+        }
+
+        private void tipologiaComboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (tipologiaComboBox1.SelectedIndex == 0)
+            {
+                tabControlWithoutHeader1.SelectedTab = tabAlpina;
+            }
+            if (tipologiaComboBox1.SelectedIndex == 1)
+            {
+                tabControlWithoutHeader1.SelectedTab = tabFondo;
+            }
+            if (tipologiaComboBox1.SelectedIndex == 2)
+            {
+                tabControlWithoutHeader1.SelectedTab = tabSnowpark;
+            }
+        }
+
+
     }
 }

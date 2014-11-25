@@ -15,6 +15,36 @@ namespace Gss.View
         public GestioneBungalows() 
         {
             InitializeComponent();
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strdfgsdfgsdfi1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "stzdssdsri1", "stri1", "stri1");
+            bungalowDataGridView.Rows.Add("stri1", "stri1", "strzsdzsdzddri1", "stri1", "stri1");
 
 
         }

@@ -110,6 +110,10 @@
     <Compile Include="View\Components\MyButton.designer.cs">
       <DependentUpon>MyButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Components\MyComboBox.cs" />
+    <Compile Include="View\Components\MyComboBox.Designer.cs">
+      <DependentUpon>MyComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Components\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -184,6 +188,9 @@
     </Compile>
     <EmbeddedResource Include="View\Components\MyButton.resx">
       <DependentUpon>MyButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\MyComboBox.resx">
+      <DependentUpon>MyComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Components\MyDataGridView.resx">
       <DependentUpon>MyDataGridView.cs</DependentUpon>

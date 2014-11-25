@@ -41,5 +41,11 @@ namespace Gss
                 Refresh();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
+            dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
+            dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
+        }
     }
 }

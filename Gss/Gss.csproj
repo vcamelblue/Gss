@@ -65,6 +65,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainPresutti.cs" />
+    <Compile Include="MainTonino.cs" />
+    <Compile Include="MainVillani.cs" />
     <Compile Include="Model\Alpina.cs" />
     <Compile Include="Model\Bungalow.cs" />
     <Compile Include="Model\Bungalows.cs" />
@@ -106,6 +109,12 @@
     </Compile>
     <Compile Include="View\Components\MyButton.designer.cs">
       <DependentUpon>MyButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\MyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\MyDataGridView.Designer.cs">
+      <DependentUpon>MyDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Components\MyLabel.cs">
       <SubType>Component</SubType>
@@ -155,6 +164,12 @@
     <Compile Include="View\GestioneInformazioniResort.designer.cs">
       <DependentUpon>GestioneInformazioniResort.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GestioneBungalows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GestioneBungalows.designer.cs">
+      <DependentUpon>GestioneBungalows.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="View\Components\MyButton.resx">
       <DependentUpon>MyButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\MyDataGridView.resx">
+      <DependentUpon>MyDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Components\MyLabel.resx">
       <DependentUpon>MyLabel.cs</DependentUpon>
@@ -190,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GestioneInformazioniResort.resx">
       <DependentUpon>GestioneInformazioniResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestioneBungalows.resx">
+      <DependentUpon>GestioneBungalows.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Gss.View {
     public partial class AggiungiModificaPista : Form {
+
         public AggiungiModificaPista() {
+
             InitializeComponent();
+
         }
     }
 }

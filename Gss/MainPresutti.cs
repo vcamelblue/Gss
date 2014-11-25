@@ -87,7 +87,7 @@ namespace Gss
             #endregion
 
 
-            //Application.Run(new Form());
+            Application.Run(new AggiungiModificaPista());
         }
     }
 }

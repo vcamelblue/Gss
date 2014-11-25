@@ -17,7 +17,6 @@ namespace Gss.View
         //Fields
 
         private bool _inEditingMode;
-        private Form _formChiamante;
         private Bungalow _bungalow;
         private Stanza _stanza;
         private ResortController _resortController;

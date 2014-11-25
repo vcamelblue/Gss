@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Gss.View 
 {
-    public partial class MyForm : Form 
-	{
-        public MyForm() 
-		{
+    public partial class AggiungiModificaBungalow : Form 
+    {
+        public AggiungiModificaBungalow() 
+        {
             InitializeComponent();
         }
     }

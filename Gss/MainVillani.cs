@@ -86,7 +86,7 @@ namespace Gss
             Console.Out.Write(impianti);
             #endregion
 
-            Application.Run(new GestioneImpianti());
+            Application.Run(new AggiungiModificaBungalow());
         }
     }
 }

@@ -15,6 +15,14 @@ namespace Gss.View
         public AggiungiModificaBungalow() 
         {
             InitializeComponent();
+
+            stanzeDataGridView.Rows.Add("strdfgsdfgsdfi1", "3", "5");
+            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
+            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
+            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
+            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
+            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
+            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
         }
     }
 }

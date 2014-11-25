@@ -128,12 +128,13 @@ namespace Gss.Controller
         {
            
             Bungalows result = new Bungalows();
-            foreach(Bungalow b in disponibili.ListaBungalow)
-            {
-                if (b.PostiTotaliMax() >= numeroPersone)
-                    result.Add(b);
-            }
-            return result; 
+           // foreach(Bungalow b in disponibili.ListaBungalow)
+            //{
+             //   if (b.PostiTotaliMax() >= numeroPersone)
+               //     result.Add(b);
+            //}
+            return disponibili.GetBungalowConMaxPostiAlmeno(numeroPersone);
+           // return result; 
         }
 
         private Bungalows cercaBungalowsDisponibiliByDate(DateTime dataInizio, DateTime dataFine)
@@ -152,7 +153,6 @@ namespace Gss.Controller
         {
             if (p.DataFine < dataInizio || p.DataInizio > dataFine)
             {
-                Console.Out.WriteLine("TRUE");
                 return true;
             }
             return false;

@@ -143,8 +143,8 @@ namespace Gss
             prenotazioni.AddPrenotazione(p1);
      
             Bungalows b=prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014,11, 21), new DateTime(2014,11,25),4);
-           
-            Console.Out.WriteLine(b);         
+            Console.Out.WriteLine(b);
+            
             
             
         }

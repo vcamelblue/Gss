@@ -13,7 +13,6 @@ namespace Gss.Model
 
         private static GestorePeriodi _gestorePeriodi;
         private List<Periodo> periodi = new List<Periodo>();
-
         //Constructors
 
         private GestorePeriodi() { }
@@ -70,6 +69,10 @@ namespace Gss.Model
             return null;
         }
 
+        public void AllineaPeriodi()
+        {
+            
+        }
 
         //Property
 

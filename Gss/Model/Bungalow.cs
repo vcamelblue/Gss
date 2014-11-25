@@ -58,7 +58,7 @@ namespace Gss.Model
             else return Stanze.Remove(stanza);
         }
 
-        public override bool Equals(object obj)
+       /* public override bool Equals(object obj)
         {
             Bungalow bungalow = null;
             if (base.Equals(obj) && obj is Bungalow)
@@ -91,6 +91,20 @@ namespace Gss.Model
             }
             return true;
             
+        }*/
+
+        public override bool Equals(object obj)
+        {
+            Bungalow bungalow = null;
+            if (obj is Bungalow)
+            {
+                bungalow = (Bungalow)obj;
+            }
+            else
+                return false;
+            if (this.Codice == bungalow.Codice)
+                return true;
+            return false;
         }
 
         public override string ToString()

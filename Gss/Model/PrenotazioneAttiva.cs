@@ -132,5 +132,10 @@ namespace Gss.Model
             else
                 return false;
         }
+
+        public override string ToString() //FITTIZIA!!!!!
+        {
+            return this.Bungalow.ToString();
+        }
     }
 }

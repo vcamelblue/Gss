@@ -37,7 +37,24 @@ namespace Gss.Model
 
         public bool Remove(Bungalow bungalow)
         {
-            return ListaBungalow.Remove(bungalow);
+            /*bool trovato=false;
+            int index = 0;
+            for (int i = 0; i < this.ListaBungalow.Count;i++ )
+            {
+                if (bungalow.Equals(this.ListaBungalow.ElementAt(i)))
+                {
+                    Console.Out.WriteLine("IFFFFFF");
+                    index = i;
+                    
+                    trovato = true;
+                    
+                }
+                if(trovato)
+                    ListaBungalow.RemoveAt(index);
+            }
+                
+                return trovato;*/
+            return this.ListaBungalow.Remove(bungalow);
         }
 
         public Bungalows GetBungalowConPostiAlmeno(int n)

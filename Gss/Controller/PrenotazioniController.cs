@@ -116,25 +116,46 @@ namespace Gss.Controller
 
         public Bungalows FindBungalowDisponibiliFor(DateTime dataInizio, DateTime dataFine, int numeroPersone)
         {
-            Bungalows result = cercaBungalowsByNumeroPersone(numeroPersone);
+            
+            Bungalows disponibili = cercaBungalowsDisponibiliByDate(dataInizio, dataFine);
+            Bungalows result = cercaBungalowsByNumeroPersone(numeroPersone,disponibili);
             result.ListaBungalow.Sort(new BungalowComparer(numeroPersone));
             return result;
 
-
-
         }
 
-        private Bungalows cercaBungalowsByNumeroPersone(int numeroPersone)
+        private Bungalows cercaBungalowsByNumeroPersone(int numeroPersone, Bungalows disponibili)
         {
            
             Bungalows result = new Bungalows();
-            foreach(Bungalow b in Gss.Resort.Bungalows.ListaBungalow)
+            foreach(Bungalow b in disponibili.ListaBungalow)
             {
                 if (b.PostiTotaliMax() >= numeroPersone)
                     result.Add(b);
             }
             return result; 
+        }
 
+        private Bungalows cercaBungalowsDisponibiliByDate(DateTime dataInizio, DateTime dataFine)
+        {
+            Bungalows result = new Bungalows();
+            result.ListaBungalow = Gss.Resort.Bungalows.ListaBungalow.ToList<Bungalow>();
+            foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
+            {
+                if (!inData(p, dataInizio, dataFine))
+                    result.Remove(p.Bungalow);
+            }            
+            return result;
+        }
+
+        private bool inData(PrenotazioneAttiva p, DateTime dataInizio, DateTime dataFine)
+        {
+            if (p.DataFine < dataInizio || p.DataInizio > dataFine)
+            {
+                Console.Out.WriteLine("TRUE");
+                return true;
+            }
+            return false;
         }
     }
 }

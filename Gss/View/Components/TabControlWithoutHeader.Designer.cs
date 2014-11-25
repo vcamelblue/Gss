@@ -23,7 +23,13 @@
         /// il contenuto del metodo con l'editor di codice.
         /// </summary>
         private void InitializeComponent() {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // TabControlWithoutHeader
+            // 
+            this.Font = new System.Drawing.Font("Calibri", 9F);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -212,6 +212,9 @@
     <EmbeddedResource Include="View\Components\MyTextBox.resx">
       <DependentUpon>MyTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\TabControlWithoutHeader.resx">
+      <DependentUpon>TabControlWithoutHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

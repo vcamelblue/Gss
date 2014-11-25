@@ -81,6 +81,7 @@
             this.myTextBox1.Name = "myTextBox1";
             this.myTextBox1.Size = new System.Drawing.Size(445, 21);
             this.myTextBox1.TabIndex = 2;
+            this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // stanzeDataGridView
             // 

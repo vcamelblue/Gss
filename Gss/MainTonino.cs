@@ -90,7 +90,7 @@ namespace Gss
 
             PrenotazioniController prenotazioni = new PrenotazioniController();
             ResortController resort = new ResortController();
-
+            resort.Gss.Resort = new Resort("a", "a", "a", "a");
             Bungalow b1 = new Bungalow("44");
             Bungalow b2 = new Bungalow("45");
             Bungalow b3 = new Bungalow("46");
@@ -109,14 +109,14 @@ namespace Gss
             Stanza s7 = new Stanza(2,4);
             Stanza s8 = new Stanza(5,7);
 
-            /*b1.Add(s1);
+            b1.Add(s1);
             b2.Add(s2);
             b3.Add(s3);
             b4.Add(s4);
             b5.Add(s5);
             b6.Add(s6);
             b7.Add(s7);
-            b8.Add(s8);*/
+            b8.Add(s8);
 
             resort.AddBungalow(b1);
             resort.AddBungalow(b2);
@@ -128,16 +128,16 @@ namespace Gss
             resort.AddBungalow(b8);
 
 
-            resort.AddStanzaABungalow(b1, s1);
+            /*resort.AddStanzaABungalow(b1, s1);
             resort.AddStanzaABungalow(b2, s2);
             resort.AddStanzaABungalow(b3, s3);
             resort.AddStanzaABungalow(b4, s4);
             resort.AddStanzaABungalow(b5, s5);
             resort.AddStanzaABungalow(b6, s6);
             resort.AddStanzaABungalow(b7, s7);
-            resort.AddStanzaABungalow(b8, s8);
+            resort.AddStanzaABungalow(b8, s8);*/
 
-            Bungalows b=prenotazioni.FindBungalowDisponibiliFor(DateTime.Today, DateTime.Today, 4);
+            Bungalows b=prenotazioni.FindBungalowDisponibiliFor(DateTime.Today, DateTime.Today, 5);
             Console.Out.WriteLine(b);
             Console.In.Read();
             

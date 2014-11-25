@@ -23,19 +23,30 @@ namespace Gss.Controller
             int sy = y.PostiTotaliStandard() - _numeroPersone;
             int my = y.PostiTotaliMax() - _numeroPersone;
             if (sx == sy)
-                return my - mx;
-            if (mx == my)
-                return sx - sy;
+                return mx - my;
             if(sx == 0 && sy != 0)
-                return 1;
-            if (sx != 0 && sy == 0)
                 return -1;
-            if (sx > 0 && sy > 0)
-                return sx - sy;
-            if (sx < 0 && sy < 0)
-                return sy - sx;
-            return sy - sx;
+            if (sx != 0 && sy == 0)
+                return 1;
+            return Max(sx, sy);
 
+            
+
+        }
+
+        private int Max(int x, int y)
+        {
+            if (x < 0 && y > 0)
+                return -1;
+            if (x > 0 && y < 0)
+                return 1;
+            int ax = Math.Abs(x);
+            int ay = Math.Abs(y);
+            if (ax < ay)
+                return -1;
+            if (ax > ay)
+                return 1;
+            return 0;
         }
     }
 }

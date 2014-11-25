@@ -78,5 +78,15 @@ namespace Gss.Model
             return null;
         }
 
+        public override string ToString()
+        {
+            string result = "";
+            foreach(Bungalow b in this.ListaBungalow)
+            {
+                result += b.ToString() + "\n";
+            }
+            return result;
+        }
+
     }
 }

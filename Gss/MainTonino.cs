@@ -85,8 +85,65 @@ namespace Gss
             impianti.Add(impianto1); impianti.Add(impianto2); impianti.Add(impianto3); impianti.Add(impianto4); impianti.Add(impianto5);
             Console.Out.Write(impianti);
             #endregion
-
+            
             //Application.Run(new Form());
+
+            PrenotazioniController prenotazioni = new PrenotazioniController();
+            ResortController resort = new ResortController();
+
+            Bungalow b1 = new Bungalow("44");
+            Bungalow b2 = new Bungalow("45");
+            Bungalow b3 = new Bungalow("46");
+            Bungalow b4 = new Bungalow("56");
+            Bungalow b5 = new Bungalow("34");
+            Bungalow b6 = new Bungalow("35");
+            Bungalow b7 = new Bungalow("24");
+            Bungalow b8 = new Bungalow("57");
+
+            Stanza s1 = new Stanza(4,4);
+            Stanza s2 = new Stanza(4,5);
+            Stanza s3 = new Stanza(4,6);
+            Stanza s4 = new Stanza(5,6);
+            Stanza s5 = new Stanza(3,4);
+            Stanza s6 = new Stanza(3,5);
+            Stanza s7 = new Stanza(2,4);
+            Stanza s8 = new Stanza(5,7);
+
+            /*b1.Add(s1);
+            b2.Add(s2);
+            b3.Add(s3);
+            b4.Add(s4);
+            b5.Add(s5);
+            b6.Add(s6);
+            b7.Add(s7);
+            b8.Add(s8);*/
+
+            resort.AddBungalow(b1);
+            resort.AddBungalow(b2);
+            resort.AddBungalow(b3);
+            resort.AddBungalow(b4);
+            resort.AddBungalow(b5);
+            resort.AddBungalow(b6);
+            resort.AddBungalow(b7);
+            resort.AddBungalow(b8);
+
+
+            resort.AddStanzaABungalow(b1, s1);
+            resort.AddStanzaABungalow(b2, s2);
+            resort.AddStanzaABungalow(b3, s3);
+            resort.AddStanzaABungalow(b4, s4);
+            resort.AddStanzaABungalow(b5, s5);
+            resort.AddStanzaABungalow(b6, s6);
+            resort.AddStanzaABungalow(b7, s7);
+            resort.AddStanzaABungalow(b8, s8);
+
+            Bungalows b=prenotazioni.FindBungalowDisponibiliFor(DateTime.Today, DateTime.Today, 4);
+            Console.Out.WriteLine(b);
+            Console.In.Read();
+            
+            
+            
+            
         }
     }
 }

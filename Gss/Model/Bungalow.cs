@@ -92,5 +92,10 @@ namespace Gss.Model
             return true;
             
         }
+
+        public override string ToString()
+        {
+            return base.ToString()+" "+this.PostiTotaliStandard()+" "+this.PostiTotaliMax();
+        }
     }
 }

@@ -6,13 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gss.View.Components {
-    public partial class MyComboBox : System.Windows.Forms.ComboBox {
-        public MyComboBox() {
+namespace Gss.View.Components 
+{
+    public partial class MyComboBox : System.Windows.Forms.ComboBox 
+    {
+        public MyComboBox() 
+        {
             InitializeComponent();
         }
 
-        public MyComboBox(IContainer container) {
+        public MyComboBox(IContainer container) 
+        {
             container.Add(this);
 
             InitializeComponent();

@@ -28,6 +28,7 @@
             // MyComboBox
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Size = new System.Drawing.Size(121, 25);

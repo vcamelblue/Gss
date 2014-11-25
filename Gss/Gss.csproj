@@ -110,7 +110,9 @@
     <Compile Include="View\Components\MyButton.designer.cs">
       <DependentUpon>MyButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\MyComboBox.cs" />
+    <Compile Include="View\Components\MyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Components\MyComboBox.Designer.cs">
       <DependentUpon>MyComboBox.cs</DependentUpon>
     </Compile>

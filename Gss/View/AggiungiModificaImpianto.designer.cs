@@ -24,14 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.myTextBox3 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox2 = new Gss.View.Components.MyTextBox(this.components);
+            this.versanteTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.nomeTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel6 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel5 = new Gss.View.Components.MyLabel(this.components);
             this.pisteDataGridView = new Gss.View.Components.MyDataGridView(this.components);
@@ -43,7 +43,7 @@
             this.rimuoviPistaButton = new Gss.View.Components.MyButton(this.components);
             this.modificaPistaButton = new Gss.View.Components.MyButton(this.components);
             this.aggiungiPistaButton = new Gss.View.Components.MyButton(this.components);
-            this.myTextBox1 = new Gss.View.Components.MyTextBox(this.components);
+            this.codiceTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.pisteTotaliLabel = new Gss.View.Components.MyLabel(this.components);
@@ -60,29 +60,29 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // myTextBox3
+            // versanteTextBox
             // 
-            this.myTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox3.Location = new System.Drawing.Point(590, 23);
-            this.myTextBox3.Name = "myTextBox3";
-            this.myTextBox3.Size = new System.Drawing.Size(113, 21);
-            this.myTextBox3.TabIndex = 4;
-            this.myTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.versanteTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.versanteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.versanteTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versanteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.versanteTextBox.Location = new System.Drawing.Point(590, 23);
+            this.versanteTextBox.Name = "versanteTextBox";
+            this.versanteTextBox.Size = new System.Drawing.Size(113, 17);
+            this.versanteTextBox.TabIndex = 4;
+            this.versanteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox2
+            // nomeTextBox
             // 
-            this.myTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox2.Location = new System.Drawing.Point(361, 23);
-            this.myTextBox2.Name = "myTextBox2";
-            this.myTextBox2.Size = new System.Drawing.Size(128, 21);
-            this.myTextBox2.TabIndex = 3;
-            this.myTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nomeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeTextBox.Location = new System.Drawing.Point(361, 23);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(128, 17);
+            this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel6
             // 
@@ -92,7 +92,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(513, 23);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(71, 21);
+            this.myLabel6.Size = new System.Drawing.Size(58, 17);
             this.myLabel6.TabIndex = 14;
             this.myLabel6.Text = "Versante";
             // 
@@ -104,7 +104,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(304, 23);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(52, 21);
+            this.myLabel5.Size = new System.Drawing.Size(42, 17);
             this.myLabel5.TabIndex = 13;
             this.myLabel5.Text = "Nome";
             // 
@@ -113,55 +113,55 @@
             this.pisteDataGridView.AllowUserToAddRows = false;
             this.pisteDataGridView.AllowUserToDeleteRows = false;
             this.pisteDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.pisteDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.pisteDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.pisteDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.pisteDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.pisteDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pisteDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.pisteDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pisteDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pisteDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.pisteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pisteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomePistaColumn,
             this.tipologiaPistaColumn,
             this.infoPistaColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.pisteDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.pisteDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.pisteDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.pisteDataGridView.Location = new System.Drawing.Point(12, 104);
             this.pisteDataGridView.MultiSelect = false;
             this.pisteDataGridView.Name = "pisteDataGridView";
             this.pisteDataGridView.ReadOnly = true;
             this.pisteDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pisteDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pisteDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.pisteDataGridView.RowHeadersVisible = false;
             this.pisteDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pisteDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pisteDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.pisteDataGridView.RowTemplate.Height = 24;
             this.pisteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pisteDataGridView.Size = new System.Drawing.Size(708, 184);
@@ -253,17 +253,17 @@
             this.aggiungiPistaButton.Text = "Aggiungi Pista";
             this.aggiungiPistaButton.UseVisualStyleBackColor = false;
             // 
-            // myTextBox1
+            // codiceTextBox
             // 
-            this.myTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox1.Location = new System.Drawing.Point(152, 23);
-            this.myTextBox1.Name = "myTextBox1";
-            this.myTextBox1.Size = new System.Drawing.Size(121, 21);
-            this.myTextBox1.TabIndex = 2;
-            this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.codiceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.codiceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.codiceTextBox.Location = new System.Drawing.Point(152, 23);
+            this.codiceTextBox.Name = "codiceTextBox";
+            this.codiceTextBox.Size = new System.Drawing.Size(121, 17);
+            this.codiceTextBox.TabIndex = 2;
+            this.codiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel2
             // 
@@ -273,7 +273,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 78);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(49, 24);
+            this.myLabel2.Size = new System.Drawing.Size(40, 19);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Piste";
             // 
@@ -285,7 +285,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(123, 21);
+            this.myLabel1.Size = new System.Drawing.Size(99, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice Impianto";
             // 
@@ -298,7 +298,7 @@
             this.pisteTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.pisteTotaliLabel.Location = new System.Drawing.Point(609, 231);
             this.pisteTotaliLabel.Name = "pisteTotaliLabel";
-            this.pisteTotaliLabel.Size = new System.Drawing.Size(97, 21);
+            this.pisteTotaliLabel.Size = new System.Drawing.Size(78, 17);
             this.pisteTotaliLabel.TabIndex = 12;
             this.pisteTotaliLabel.Text = "Pisti Totali  5";
             // 
@@ -307,8 +307,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(732, 503);
-            this.Controls.Add(this.myTextBox3);
-            this.Controls.Add(this.myTextBox2);
+            this.Controls.Add(this.versanteTextBox);
+            this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.myLabel6);
             this.Controls.Add(this.myLabel5);
             this.Controls.Add(this.pisteDataGridView);
@@ -317,7 +317,7 @@
             this.Controls.Add(this.rimuoviPistaButton);
             this.Controls.Add(this.modificaPistaButton);
             this.Controls.Add(this.aggiungiPistaButton);
-            this.Controls.Add(this.myTextBox1);
+            this.Controls.Add(this.codiceTextBox);
             this.Controls.Add(this.myLabel2);
             this.Controls.Add(this.myLabel1);
             this.Controls.Add(this.groupBox1);
@@ -325,6 +325,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AggiungiModificaImpianto";
             this.Text = "Aggiungi Impianto";
+            this.Load += new System.EventHandler(this.AggiungiModificaImpianto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pisteDataGridView)).EndInit();
@@ -336,7 +337,7 @@
         #endregion
 
         private Components.MyLabel myLabel2;
-        private Components.MyTextBox myTextBox1;
+        private Components.MyTextBox codiceTextBox;
         private Components.MyDataGridView pisteDataGridView;
         private Components.MyLabel pisteTotaliLabel;
         private Components.MyLabel myLabel1;
@@ -348,8 +349,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Components.MyLabel myLabel5;
         private Components.MyLabel myLabel6;
-        private Components.MyTextBox myTextBox2;
-        private Components.MyTextBox myTextBox3;
+        private Components.MyTextBox nomeTextBox;
+        private Components.MyTextBox versanteTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomePistaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipologiaPistaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn infoPistaColumn;

@@ -104,6 +104,12 @@
     <Compile Include="Model\TipologiaPrezzo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AggiungiModificaVisualizzaProfilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AggiungiModificaVisualizzaProfilo.designer.cs">
+      <DependentUpon>AggiungiModificaVisualizzaProfilo.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VisualizzaImpianto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AggiungiModificaVisualizzaProfilo.resx">
+      <DependentUpon>AggiungiModificaVisualizzaProfilo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\VisualizzaImpianto.resx">
       <DependentUpon>VisualizzaImpianto.cs</DependentUpon>
     </EmbeddedResource>

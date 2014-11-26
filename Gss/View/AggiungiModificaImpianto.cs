@@ -89,7 +89,7 @@ namespace Gss.View
         private void aggiungiPistaButton_Click(object sender, EventArgs e)
         {
 
-            if (!inEditingMode)
+            if (!inEditingMode && impianto==null)
             {
                 impianto = new Impianto(codiceTextBox.Text, nomeTextBox.Text, versanteTextBox.Text);
             }

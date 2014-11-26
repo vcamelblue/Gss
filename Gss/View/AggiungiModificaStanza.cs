@@ -68,13 +68,12 @@ namespace Gss.View
             {
                 if (_inEditingMode)
                 {
-                    Stanza stanzaModificata = new Stanza(numeroPostiStandard, numeroPostiMassimi);
-                    _resortController.EditStanzaABungalow(_stanza, stanzaModificata);
+                    _stanza.NumeroPostiMax = numeroPostiMassimi;
+                    _stanza.NumeroPostiStandard = numeroPostiStandard;
                 }
                 else //nuova stanza
                 {
-                    Stanza stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
-                    _resortController.AddStanzaABungalow(_bungalow, stanza);
+                    _stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
                 }
                 //SE TUTTO OK FARE COSI'
 

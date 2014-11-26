@@ -91,7 +91,7 @@ namespace Gss
             resortController.Gss.Resort = new Resort("a", "a", "a", "a");
             
 
-            Application.Run(new VisualizzaImpianto(resortController,impianto1));
+            Application.Run(new VisualizzaImpianto(impianto1));
             
         }
     }

@@ -102,5 +102,11 @@ namespace Gss.Model
         {
             return Impianti.Remove(impianto);
         }
+
+        internal void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
+        {
+            this.DataInizioStagione = dataInizioStagione;
+            this.DataFineStagione = dataFineStagione;
+        }
     }
 }

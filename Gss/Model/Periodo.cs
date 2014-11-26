@@ -19,10 +19,16 @@ namespace Gss.Model
             _dataFine = dataFine;
         }
 
+        public Periodo()
+        {
+            _profilo=new ProfiloPrezziRisorse();
+        }
+
         public Periodo(DateTime dataInizio, DateTime dataFine)
         {
             _dataInizio = dataInizio;
             _dataFine = dataFine;
+            _profilo = new ProfiloPrezziRisorse();
         }
 
         public ProfiloPrezziRisorse Profilo

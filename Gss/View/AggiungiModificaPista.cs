@@ -85,12 +85,14 @@ namespace Gss.View {
                     {
                         SnowPark snowparkModificato = new SnowPark(nomePista, numeroSalti, numeroJibs);
                         SnowPark snowpark = (SnowPark)_pista;
-                        _resortController.EditPistaSnowParkAdImpianto(snowpark, snowparkModificato);
+                        snowpark.Nome = snowparkModificato.Nome;
+                        snowpark.NumeroSalti = snowparkModificato.NumeroSalti;
+                        snowpark.NumeroJibs = snowparkModificato.NumeroJibs;
                     }
                     else
                     {
                         SnowPark snowpark = new SnowPark(nomePista, numeroSalti, numeroJibs);
-                        _resortController.AddPistaAdImpianto(_impianto, snowpark);
+                        _impianto.Add(snowpark);
                     }
                     //SE TUTTO OK FARE COSI'
 
@@ -134,12 +136,14 @@ namespace Gss.View {
                     {
                         Fondo fondoModificata = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
                         Fondo fondo = (Fondo)_pista;
-                        _resortController.EditPistaFondoAdImpianto(fondo, fondoModificata);
+                        fondo.Nome = fondoModificata.Nome;
+                        fondo.DislivelloMassimo = fondoModificata.DislivelloMassimo;
+                        fondo.DislivelloMedio = fondo.DislivelloMedio;
                     }
                     else
                     {
                         Fondo fondo = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
-                        _resortController.AddPistaAdImpianto(_impianto, fondo);
+                        _impianto.Add(fondo);
                     }
                     //SE TUTTO OK FARE COSI'
 
@@ -183,12 +187,13 @@ namespace Gss.View {
                     {
                         Alpina alpinaModificata = new Alpina(nomePista, difficoltaValue);
                         Alpina alpina = (Alpina)_pista;
-                        _resortController.EditPistaAlpinaAdImpianto(alpina, alpinaModificata);
+                        alpina.Nome = alpinaModificata.Nome;
+                        alpina.Difficolta = alpinaModificata.Difficolta;
                     }
                     else
                     {
                         Alpina alpina = new Alpina(nomePista, difficoltaValue);
-                        _resortController.AddPistaAdImpianto(_impianto, alpina);
+                        _impianto.Add(alpina);
                     }
                     //SE TUTTO OK FARE COSI'
 
@@ -306,7 +311,6 @@ namespace Gss.View {
                 tabControlWithoutHeader1.SelectedTab = tabSnowpark;
             }
         }
-
 
     }
 }

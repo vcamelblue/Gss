@@ -87,7 +87,12 @@ namespace Gss
             #endregion
 
 
-            Application.Run(new AggiungiModificaPista(new ResortController(),impianto1));
+            ResortController resortController = new ResortController();
+            resortController.Gss.Resort = new Resort("a", "a", "a", "a");
+            
+
+            Application.Run(new AggiungiModificaPista(resortController,impianto1));
+            
         }
     }
 }

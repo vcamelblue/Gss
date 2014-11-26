@@ -70,39 +70,131 @@ namespace Gss.View {
 
         private void salvaSnowpark()
         {
-            if (_inEditingMode)
+            //Recupero i campi
+            string nomePista = nomeSnowparkTextBox.Text;
+            int numeroSalti = 0;
+            int numeroJibs = 0;
+
+            if (nomePista != "")
             {
+                try
+                {
+                    numeroSalti = int.Parse(numeroSaltiTextBox.Text);
+                    numeroJibs = int.Parse(numeroJibsTextBox.Text);
+                    if (_inEditingMode)
+                    {
+                        SnowPark snowparkModificato = new SnowPark(nomePista, numeroSalti, numeroJibs);
+                        SnowPark snowpark = (SnowPark)_pista;
+                        _resortController.EditPistaSnowParkAdImpianto(snowpark, snowparkModificato);
+                    }
+                    else
+                    {
+                        SnowPark snowpark = new SnowPark(nomePista, numeroSalti, numeroJibs);
+                        _resortController.AddPistaAdImpianto(_impianto, snowpark);
+                    }
+                }
+                catch (FormatException exception)
+                {
+                    MessageBox.Show("Inserire interi positivi");
+                }
+                catch (ArgumentNullException exception)
+                {
+                    MessageBox.Show("Riempire tutti i campi");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                }
             }
-            else 
-            { 
-            }
-                
+            else
+            {
+                MessageBox.Show("Inserire un nome valido");
+            }               
+         
         }
 
         private void salvaAFondo()
         {
+            //Recupero i campi
+            string nomePista = nomeFondoTextBox.Text;
+            double dislivelloMassimo = 0;
+            double dislivelloMedio = 0;
 
-            if (_inEditingMode)
+            if (nomePista != "")
             {
-
+                try
+                {
+                    dislivelloMassimo = double.Parse(dislivelloMaxTextBox2.Text);
+                    dislivelloMedio = double.Parse(dislivelloMedioTextBox.Text);
+                    if (_inEditingMode)
+                    {
+                        Fondo fondoModificata = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
+                        Fondo fondo = (Fondo)_pista;
+                        _resortController.EditPistaFondoAdImpianto(fondo, fondoModificata);
+                    }
+                    else
+                    {
+                        Fondo fondo = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
+                        _resortController.AddPistaAdImpianto(_impianto, fondo);
+                    }
+                }
+                catch (FormatException exception)
+                {
+                    MessageBox.Show("Inserire interi positivi");
+                }
+                catch (ArgumentNullException exception)
+                {
+                    MessageBox.Show("Riempire i campi dei dislivelli");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                }
             }
             else
             {
-
-            }
-        }
+                MessageBox.Show("Inserire un nome valido");
+            }               
+         
+       }
 
         private void salvaAlpina()
         {
+            //Recupero i campi
+            string nomePista = nomeAlpinaTextBox.Text;
+            string difficoltaString = difficoltaComboBox.SelectedItem.ToString();
+            Difficolta difficoltaValue = 0;
 
-            if (_inEditingMode)
+            if (nomePista!="")
             {
-
+                try
+                {
+                    difficoltaValue = (Difficolta)Enum.Parse(typeof(Difficolta), difficoltaString);
+                    if (_inEditingMode)
+                    {
+                        Alpina alpinaModificata = new Alpina(nomePista, difficoltaValue);
+                        Alpina alpina = (Alpina)_pista;
+                        _resortController.EditPistaAlpinaAdImpianto(alpina, alpinaModificata);
+                    }
+                    else
+                    {
+                        Alpina alpina = new Alpina(nomePista, difficoltaValue);
+                        _resortController.AddPistaAdImpianto(_impianto, alpina);
+                    }
+                }
+                catch(ArgumentException Exception)
+                {
+                    MessageBox.Show("Inserire una difficoltà valida");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                }
             }
             else
             {
-
-            }
+                MessageBox.Show("Inserire un nome valido");
+            }               
         }
 
         private void annullaButton_Click(object sender, EventArgs e)

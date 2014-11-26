@@ -40,14 +40,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.myTextBox3 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox2 = new Gss.View.Components.MyTextBox(this.components);
+            this.versanteTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.nomeImpiantoTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel6 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel5 = new Gss.View.Components.MyLabel(this.components);
             this.pisteAlpineDataGridView = new Gss.View.Components.MyDataGridView(this.components);
             this.nomePistaAlpinaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.difficoltaPistaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.myTextBox1 = new Gss.View.Components.MyTextBox(this.components);
+            this.codiceTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.pisteSnowParkLabel = new Gss.View.Components.MyLabel(this.components);
@@ -84,31 +84,31 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // myTextBox3
+            // versanteTextBox
             // 
-            this.myTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox3.Enabled = false;
-            this.myTextBox3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox3.Location = new System.Drawing.Point(590, 23);
-            this.myTextBox3.Name = "myTextBox3";
-            this.myTextBox3.Size = new System.Drawing.Size(113, 21);
-            this.myTextBox3.TabIndex = 4;
-            this.myTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.versanteTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.versanteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.versanteTextBox.Enabled = false;
+            this.versanteTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versanteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.versanteTextBox.Location = new System.Drawing.Point(590, 23);
+            this.versanteTextBox.Name = "versanteTextBox";
+            this.versanteTextBox.Size = new System.Drawing.Size(113, 17);
+            this.versanteTextBox.TabIndex = 4;
+            this.versanteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox2
+            // nomeImpiantoTextBox
             // 
-            this.myTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox2.Enabled = false;
-            this.myTextBox2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox2.Location = new System.Drawing.Point(361, 23);
-            this.myTextBox2.Name = "myTextBox2";
-            this.myTextBox2.Size = new System.Drawing.Size(128, 21);
-            this.myTextBox2.TabIndex = 3;
-            this.myTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nomeImpiantoTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeImpiantoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeImpiantoTextBox.Enabled = false;
+            this.nomeImpiantoTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeImpiantoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeImpiantoTextBox.Location = new System.Drawing.Point(361, 23);
+            this.nomeImpiantoTextBox.Name = "nomeImpiantoTextBox";
+            this.nomeImpiantoTextBox.Size = new System.Drawing.Size(128, 17);
+            this.nomeImpiantoTextBox.TabIndex = 3;
+            this.nomeImpiantoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel6
             // 
@@ -118,7 +118,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(513, 23);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(71, 21);
+            this.myLabel6.Size = new System.Drawing.Size(58, 17);
             this.myLabel6.TabIndex = 14;
             this.myLabel6.Text = "Versante";
             // 
@@ -130,7 +130,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(304, 23);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(52, 21);
+            this.myLabel5.Size = new System.Drawing.Size(42, 17);
             this.myLabel5.TabIndex = 13;
             this.myLabel5.Text = "Nome";
             // 
@@ -206,18 +206,18 @@
             this.difficoltaPistaColumn.Name = "difficoltaPistaColumn";
             this.difficoltaPistaColumn.ReadOnly = true;
             // 
-            // myTextBox1
+            // codiceTextBox
             // 
-            this.myTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox1.Enabled = false;
-            this.myTextBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox1.Location = new System.Drawing.Point(152, 23);
-            this.myTextBox1.Name = "myTextBox1";
-            this.myTextBox1.Size = new System.Drawing.Size(121, 21);
-            this.myTextBox1.TabIndex = 2;
-            this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.codiceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.codiceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceTextBox.Enabled = false;
+            this.codiceTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.codiceTextBox.Location = new System.Drawing.Point(152, 23);
+            this.codiceTextBox.Name = "codiceTextBox";
+            this.codiceTextBox.Size = new System.Drawing.Size(121, 17);
+            this.codiceTextBox.TabIndex = 2;
+            this.codiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel2
             // 
@@ -227,7 +227,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 80);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(103, 24);
+            this.myLabel2.Size = new System.Drawing.Size(85, 19);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Piste Alpine";
             // 
@@ -239,7 +239,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(123, 21);
+            this.myLabel1.Size = new System.Drawing.Size(99, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice Impianto";
             // 
@@ -252,9 +252,9 @@
             this.pisteSnowParkLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.pisteSnowParkLabel.Location = new System.Drawing.Point(537, 642);
             this.pisteSnowParkLabel.Name = "pisteSnowParkLabel";
-            this.pisteSnowParkLabel.Size = new System.Drawing.Size(170, 21);
+            this.pisteSnowParkLabel.Size = new System.Drawing.Size(140, 17);
             this.pisteSnowParkLabel.TabIndex = 17;
-            this.pisteSnowParkLabel.Text = "Pisti SnowPark Totali  1";
+            this.pisteSnowParkLabel.Text = "Piste SnowPark Totali  1";
             this.pisteSnowParkLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pisteDiFondoTotaliLabel
@@ -266,9 +266,9 @@
             this.pisteDiFondoTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.pisteDiFondoTotaliLabel.Location = new System.Drawing.Point(544, 436);
             this.pisteDiFondoTotaliLabel.Name = "pisteDiFondoTotaliLabel";
-            this.pisteDiFondoTotaliLabel.Size = new System.Drawing.Size(163, 21);
+            this.pisteDiFondoTotaliLabel.Size = new System.Drawing.Size(134, 17);
             this.pisteDiFondoTotaliLabel.TabIndex = 17;
-            this.pisteDiFondoTotaliLabel.Text = "Pisti Di Fondo Totali  3";
+            this.pisteDiFondoTotaliLabel.Text = "Piste Di Fondo Totali  3";
             this.pisteDiFondoTotaliLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pisteSnowparkDataGridView
@@ -356,7 +356,7 @@
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel8.Location = new System.Drawing.Point(24, 432);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(132, 24);
+            this.myLabel8.Size = new System.Drawing.Size(107, 19);
             this.myLabel8.TabIndex = 15;
             this.myLabel8.Text = "Piste SnowPark";
             // 
@@ -369,9 +369,9 @@
             this.pisteAlpineTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.pisteAlpineTotaliLabel.Location = new System.Drawing.Point(562, 229);
             this.pisteAlpineTotaliLabel.Name = "pisteAlpineTotaliLabel";
-            this.pisteAlpineTotaliLabel.Size = new System.Drawing.Size(145, 21);
+            this.pisteAlpineTotaliLabel.Size = new System.Drawing.Size(120, 17);
             this.pisteAlpineTotaliLabel.TabIndex = 12;
-            this.pisteAlpineTotaliLabel.Text = "Pisti Alpine Totali  5";
+            this.pisteAlpineTotaliLabel.Text = "Piste Alpine Totali  5";
             this.pisteAlpineTotaliLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pisteDiFondoDataGridView
@@ -459,7 +459,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(24, 226);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(124, 24);
+            this.myLabel4.Size = new System.Drawing.Size(101, 19);
             this.myLabel4.TabIndex = 15;
             this.myLabel4.Text = "Piste Di Fondo";
             // 
@@ -468,12 +468,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(732, 727);
-            this.Controls.Add(this.myTextBox3);
-            this.Controls.Add(this.myTextBox2);
+            this.Controls.Add(this.versanteTextBox);
+            this.Controls.Add(this.nomeImpiantoTextBox);
             this.Controls.Add(this.myLabel6);
             this.Controls.Add(this.myLabel5);
             this.Controls.Add(this.pisteAlpineDataGridView);
-            this.Controls.Add(this.myTextBox1);
+            this.Controls.Add(this.codiceTextBox);
             this.Controls.Add(this.myLabel2);
             this.Controls.Add(this.myLabel1);
             this.Controls.Add(this.groupBox1);
@@ -481,6 +481,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VisualizzaImpianto";
             this.Text = "Visualizza Impianto";
+            this.Load += new System.EventHandler(this.VisualizzaImpianto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pisteAlpineDataGridView)).EndInit();
@@ -494,15 +495,15 @@
         #endregion
 
         private Components.MyLabel myLabel2;
-        private Components.MyTextBox myTextBox1;
+        private Components.MyTextBox codiceTextBox;
         private Components.MyDataGridView pisteAlpineDataGridView;
         private Components.MyLabel pisteAlpineTotaliLabel;
         private Components.MyLabel myLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Components.MyLabel myLabel5;
         private Components.MyLabel myLabel6;
-        private Components.MyTextBox myTextBox2;
-        private Components.MyTextBox myTextBox3;
+        private Components.MyTextBox nomeImpiantoTextBox;
+        private Components.MyTextBox versanteTextBox;
         private Components.MyLabel pisteSnowParkLabel;
         private Components.MyLabel pisteDiFondoTotaliLabel;
         private Components.MyDataGridView pisteSnowparkDataGridView;

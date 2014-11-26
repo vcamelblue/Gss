@@ -30,7 +30,7 @@ namespace Gss.Controller
         {
             string result = "";
             periodi.Sort(new PeriodoComparer());
-            List<Periodo> temp = periodi.ToList<Periodo>();
+            List<Periodo> temp =new List<Periodo>(periodi);
             
             if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio)
             {
@@ -40,6 +40,8 @@ namespace Gss.Controller
             int i=1;
             while(i<periodi.Count)
             {
+                Console.Out.WriteLine("!!!!!!!!!!!!");
+                Console.Out.WriteLine(periodi.ElementAt(i).DataInizio);
                 if(temp.ElementAt(i).DataInizio.AddDays(-1)> temp.ElementAt(i-1).DataFine)
                 {
                     temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(1);

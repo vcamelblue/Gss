@@ -74,7 +74,7 @@ namespace Gss.Model
 
         public bool SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
         {
-            _gestorePeriodi.SetStagione(dataInizioStagione, dataInizioStagione);
+            //_gestorePeriodi.SetStagione(dataInizioStagione, dataInizioStagione);
             _resort.SetStagione(dataInizioStagione, dataFineStagione);
             return true;
             //TODO!!!!

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class Periodo
+    public class Periodo :ICloneable
     {
         private ProfiloPrezziRisorse _profilo;
         private DateTime _dataInizio;
@@ -55,6 +55,11 @@ namespace Gss.Model
                 return true;
             return false;
         }
-        
+
+
+        public object Clone()
+        {
+            return new Periodo(this.DataInizio,this.DataFine,this.Profilo);
+        }
     }
 }

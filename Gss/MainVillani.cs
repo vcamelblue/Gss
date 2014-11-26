@@ -86,6 +86,14 @@ namespace Gss
             Console.Out.Write(impianti);
             #endregion
 
+
+            ResortController resortController = new ResortController();
+            resortController.Gss.Resort = new Resort("a", "a", "a", "a");
+
+            resortController.Gss.Resort.Impianti = impianti;
+
+            Application.Run(new GestioneImpianti(resortController));
+
             //Application.Run(new AggiungiModificaVisualizzaProfilo());
         }
     }

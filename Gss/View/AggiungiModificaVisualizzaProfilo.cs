@@ -16,6 +16,8 @@ namespace Gss.View
 		{
             InitializeComponent();
 
+            //aggiustare tabulazione per passare al prossimo controllo!
+
             bungalowDataGridView.Rows.Add("001", "2", "Singola + Sngola", "2", "4");
             risorseDataGridView.Rows.Add("Bungalow - 001");
             risorseDataGridView.Rows.Add("Bungalow - 002");

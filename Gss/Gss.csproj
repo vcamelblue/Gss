@@ -47,6 +47,7 @@
     <Compile Include="Controller\BungalowComparer.cs" />
     <Compile Include="Controller\ClientiController.cs" />
     <Compile Include="Controller\MyController.cs" />
+	<Compile Include="Controller\PeriodiProfiliController.cs" />
     <Compile Include="Controller\PrenotazioniController.cs" />
     <Compile Include="Controller\ResortController.cs" />
     <Compile Include="Filtra\FiltraPerDifficolta.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Model\Clienti.cs" />
     <Compile Include="Model\Difficolta.cs" />
     <Compile Include="Model\Direttore.cs" />
+	<Compile Include="Model\DizionarioProfili.cs" />
     <Compile Include="Model\Fattura.cs" />
     <Compile Include="Model\Fatturatore.cs" />
     <Compile Include="Model\Fondo.cs" />

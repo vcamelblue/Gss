@@ -54,8 +54,9 @@ namespace Gss.Model
 
         public bool Remove(Stanza stanza)
         {
-            if (Stanze.Count == 1) return false;
-            else return Stanze.Remove(stanza);
+            //if (Stanze.Count == 1) return false;
+            //else 
+            return Stanze.Remove(stanza);
         }
 
        /* public override bool Equals(object obj)
@@ -110,6 +111,18 @@ namespace Gss.Model
         public override string ToString()
         {
             return base.ToString()+" "+this.PostiTotaliStandard()+" "+this.PostiTotaliMax();
+        }
+
+
+        public override object Clone()
+        {
+            Bungalow clone;
+            clone = new Bungalow(this.Codice);
+            foreach (Stanza s in Stanze)
+            {
+                clone.Add((Stanza)s.Clone());
+            }
+            return clone;
         }
     }
 }

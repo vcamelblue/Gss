@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class Stanza
+    public class Stanza : ICloneable
     {
         private int _numeroPostiStandard;
         private int _numeroPostiMax;
@@ -45,6 +45,11 @@ namespace Gss.Model
                 return true;
             else
                 return false;
+        }
+
+        public object Clone()
+        {
+            return new Stanza(NumeroPostiStandard, NumeroPostiMax);
         }
     }
 }

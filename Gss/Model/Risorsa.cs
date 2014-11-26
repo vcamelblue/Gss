@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public abstract class Risorsa
+    public abstract class Risorsa : ICloneable
     {
         private string _codice;
 
@@ -43,5 +43,7 @@ namespace Gss.Model
             else
                 return false;
         }
+
+        public abstract object Clone();
     }
 }

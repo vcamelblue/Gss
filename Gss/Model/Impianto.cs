@@ -149,7 +149,7 @@ namespace Gss.Model
             return result;
         }
 
-        public object Clone()
+        public override object Clone()
         {
             Impianto clone;
             string codice = this.Codice;

@@ -30,8 +30,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.myTextBox3 = new Gss.View.Components.MyTextBox(this.components);
-            this.myTextBox2 = new Gss.View.Components.MyTextBox(this.components);
+            this.versanteTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.nomeTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel6 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel5 = new Gss.View.Components.MyLabel(this.components);
             this.pisteDataGridView = new Gss.View.Components.MyDataGridView(this.components);
@@ -43,7 +43,7 @@
             this.rimuoviPistaButton = new Gss.View.Components.MyButton(this.components);
             this.modificaPistaButton = new Gss.View.Components.MyButton(this.components);
             this.aggiungiPistaButton = new Gss.View.Components.MyButton(this.components);
-            this.myTextBox1 = new Gss.View.Components.MyTextBox(this.components);
+            this.codiceTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.pisteTotaliLabel = new Gss.View.Components.MyLabel(this.components);
@@ -60,29 +60,29 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
-            // myTextBox3
+            // versanteTextBox
             // 
-            this.myTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox3.Location = new System.Drawing.Point(590, 23);
-            this.myTextBox3.Name = "myTextBox3";
-            this.myTextBox3.Size = new System.Drawing.Size(113, 21);
-            this.myTextBox3.TabIndex = 4;
-            this.myTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.versanteTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.versanteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.versanteTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versanteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.versanteTextBox.Location = new System.Drawing.Point(590, 23);
+            this.versanteTextBox.Name = "versanteTextBox";
+            this.versanteTextBox.Size = new System.Drawing.Size(113, 17);
+            this.versanteTextBox.TabIndex = 4;
+            this.versanteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // myTextBox2
+            // nomeTextBox
             // 
-            this.myTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox2.Location = new System.Drawing.Point(361, 23);
-            this.myTextBox2.Name = "myTextBox2";
-            this.myTextBox2.Size = new System.Drawing.Size(128, 21);
-            this.myTextBox2.TabIndex = 3;
-            this.myTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nomeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeTextBox.Location = new System.Drawing.Point(361, 23);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(128, 17);
+            this.nomeTextBox.TabIndex = 3;
+            this.nomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel6
             // 
@@ -92,7 +92,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(513, 23);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(71, 21);
+            this.myLabel6.Size = new System.Drawing.Size(58, 17);
             this.myLabel6.TabIndex = 14;
             this.myLabel6.Text = "Versante";
             // 
@@ -104,7 +104,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(304, 23);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(52, 21);
+            this.myLabel5.Size = new System.Drawing.Size(42, 17);
             this.myLabel5.TabIndex = 13;
             this.myLabel5.Text = "Nome";
             // 
@@ -200,6 +200,7 @@
             this.annullaButton.TabIndex = 10;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
+            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
             // 
             // salvaButton
             // 
@@ -213,6 +214,7 @@
             this.salvaButton.TabIndex = 9;
             this.salvaButton.Text = "Salva";
             this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
             // 
             // rimuoviPistaButton
             // 
@@ -226,6 +228,7 @@
             this.rimuoviPistaButton.TabIndex = 8;
             this.rimuoviPistaButton.Text = "Rimuovi Pista";
             this.rimuoviPistaButton.UseVisualStyleBackColor = false;
+            this.rimuoviPistaButton.Click += new System.EventHandler(this.rimuoviPistaButton_Click);
             // 
             // modificaPistaButton
             // 
@@ -239,6 +242,7 @@
             this.modificaPistaButton.TabIndex = 7;
             this.modificaPistaButton.Text = "Modifica Pista";
             this.modificaPistaButton.UseVisualStyleBackColor = false;
+            this.modificaPistaButton.Click += new System.EventHandler(this.modificaPistaButton_Click);
             // 
             // aggiungiPistaButton
             // 
@@ -252,18 +256,19 @@
             this.aggiungiPistaButton.TabIndex = 6;
             this.aggiungiPistaButton.Text = "Aggiungi Pista";
             this.aggiungiPistaButton.UseVisualStyleBackColor = false;
+            this.aggiungiPistaButton.Click += new System.EventHandler(this.aggiungiPistaButton_Click);
             // 
-            // myTextBox1
+            // codiceTextBox
             // 
-            this.myTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.myTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.myTextBox1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myTextBox1.Location = new System.Drawing.Point(152, 23);
-            this.myTextBox1.Name = "myTextBox1";
-            this.myTextBox1.Size = new System.Drawing.Size(121, 21);
-            this.myTextBox1.TabIndex = 2;
-            this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.codiceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.codiceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.codiceTextBox.Location = new System.Drawing.Point(152, 23);
+            this.codiceTextBox.Name = "codiceTextBox";
+            this.codiceTextBox.Size = new System.Drawing.Size(121, 17);
+            this.codiceTextBox.TabIndex = 2;
+            this.codiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // myLabel2
             // 
@@ -273,7 +278,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 78);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(49, 24);
+            this.myLabel2.Size = new System.Drawing.Size(40, 19);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Piste";
             // 
@@ -285,7 +290,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(123, 21);
+            this.myLabel1.Size = new System.Drawing.Size(99, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice Impianto";
             // 
@@ -298,7 +303,7 @@
             this.pisteTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.pisteTotaliLabel.Location = new System.Drawing.Point(609, 231);
             this.pisteTotaliLabel.Name = "pisteTotaliLabel";
-            this.pisteTotaliLabel.Size = new System.Drawing.Size(97, 21);
+            this.pisteTotaliLabel.Size = new System.Drawing.Size(78, 17);
             this.pisteTotaliLabel.TabIndex = 12;
             this.pisteTotaliLabel.Text = "Pisti Totali  5";
             // 
@@ -307,8 +312,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(732, 503);
-            this.Controls.Add(this.myTextBox3);
-            this.Controls.Add(this.myTextBox2);
+            this.Controls.Add(this.versanteTextBox);
+            this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.myLabel6);
             this.Controls.Add(this.myLabel5);
             this.Controls.Add(this.pisteDataGridView);
@@ -317,7 +322,7 @@
             this.Controls.Add(this.rimuoviPistaButton);
             this.Controls.Add(this.modificaPistaButton);
             this.Controls.Add(this.aggiungiPistaButton);
-            this.Controls.Add(this.myTextBox1);
+            this.Controls.Add(this.codiceTextBox);
             this.Controls.Add(this.myLabel2);
             this.Controls.Add(this.myLabel1);
             this.Controls.Add(this.groupBox1);
@@ -325,6 +330,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AggiungiModificaImpianto";
             this.Text = "Aggiungi Impianto";
+            this.Load += new System.EventHandler(this.AggiungiModificaImpianto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pisteDataGridView)).EndInit();
@@ -336,7 +342,7 @@
         #endregion
 
         private Components.MyLabel myLabel2;
-        private Components.MyTextBox myTextBox1;
+        private Components.MyTextBox codiceTextBox;
         private Components.MyDataGridView pisteDataGridView;
         private Components.MyLabel pisteTotaliLabel;
         private Components.MyLabel myLabel1;
@@ -348,8 +354,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Components.MyLabel myLabel5;
         private Components.MyLabel myLabel6;
-        private Components.MyTextBox myTextBox2;
-        private Components.MyTextBox myTextBox3;
+        private Components.MyTextBox nomeTextBox;
+        private Components.MyTextBox versanteTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomePistaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipologiaPistaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn infoPistaColumn;

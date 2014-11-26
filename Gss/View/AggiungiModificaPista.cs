@@ -92,6 +92,10 @@ namespace Gss.View {
                         SnowPark snowpark = new SnowPark(nomePista, numeroSalti, numeroJibs);
                         _resortController.AddPistaAdImpianto(_impianto, snowpark);
                     }
+                    //SE TUTTO OK FARE COSI'
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 catch (FormatException exception)
                 {
@@ -137,6 +141,11 @@ namespace Gss.View {
                         Fondo fondo = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
                         _resortController.AddPistaAdImpianto(_impianto, fondo);
                     }
+                    //SE TUTTO OK FARE COSI'
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
                 }
                 catch (FormatException exception)
                 {
@@ -181,6 +190,10 @@ namespace Gss.View {
                         Alpina alpina = new Alpina(nomePista, difficoltaValue);
                         _resortController.AddPistaAdImpianto(_impianto, alpina);
                     }
+                    //SE TUTTO OK FARE COSI'
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 catch(ArgumentException Exception)
                 {

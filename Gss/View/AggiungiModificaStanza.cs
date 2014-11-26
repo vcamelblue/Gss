@@ -76,6 +76,11 @@ namespace Gss.View
                     Stanza stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
                     _resortController.AddStanzaABungalow(_bungalow, stanza);
                 }
+                //SE TUTTO OK FARE COSI'
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
             }
             catch (Exception exception)
             {

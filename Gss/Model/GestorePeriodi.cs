@@ -15,7 +15,7 @@ namespace Gss.Model
         private static GestorePeriodi _gestorePeriodi;
         private List<Periodo> periodi;
 
-        private DizionarioProfili _dizionarioProfili;
+        //private DizionarioPeriodi _dizionarioPeriodi;
         //Constructors
 
         private GestorePeriodi() 
@@ -36,34 +36,38 @@ namespace Gss.Model
             return _gestorePeriodi;
         }
 
-        public string TryAdd(Periodo p)
+       /* public List<Periodo> TryAdd(Periodo periodo)
         {
-            if (_dizionarioProfili == null)
-                return "Stagione non inizializzata";
-            else
-                return _dizionarioProfili.TryAdd(p);
+            if (_dizionarioPeriodi == null)
+            {
+                //DIZIONARIO NON INIZIALIZZATO
+            }
+
+
+            return _dizionarioPeriodi.TryAdd(periodo);
+
         }
 
         public bool Add(Periodo p)
         {
-            if (_dizionarioProfili == null)
+            if (_dizionarioPeriodi == null)
                 return false;
-            this._dizionarioProfili.Add(p);
+            this._dizionarioPeriodi.Add(p);
             return true;
-        }
+        }*/
 
         public bool Remove(Periodo p) 
         {
             return this.Periodi.Remove(p);
         }
 
-        public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
+       /* public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
         {
-            if (_dizionarioProfili == null)
-                _dizionarioProfili = new DizionarioProfili(dataInizioStagione, dataFineStagione);
+            if (_dizionarioPeriodi == null)
+                _dizionarioPeriodi = new DizionarioPeriodi(dataInizioStagione, dataFineStagione);
             //TODO!!!!
 
-        }
+        }*/
 
         public Periodo getPeriodoByData(DateTime data)
         {

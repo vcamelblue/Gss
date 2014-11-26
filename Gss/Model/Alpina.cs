@@ -43,5 +43,11 @@ namespace Gss.Model
             return base.ToString()+" "+ this.Difficolta.ToString();
         }
 
+        public override object Clone()
+        {
+            string nome = this.Nome;
+            Difficolta difficolta = this.Difficolta;
+            return new Alpina(nome, difficolta);
+        }
     }
 }

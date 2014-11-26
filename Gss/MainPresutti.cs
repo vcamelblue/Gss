@@ -89,9 +89,9 @@ namespace Gss
 
             ResortController resortController = new ResortController();
             resortController.Gss.Resort = new Resort("a", "a", "a", "a");
-            
 
-            Application.Run(new AggiungiModificaImpianto(resortController,impianto1));
+            resortController.Gss.Resort.Impianti = impianti;
+            Application.Run(new GestioneImpianti(resortController));
             
         }
     }

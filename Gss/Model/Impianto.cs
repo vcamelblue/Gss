@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class Impianto : Risorsa
+    public class Impianto : Risorsa, ICloneable
     {
         private string _nome;
         private string _versante;
@@ -98,13 +100,18 @@ namespace Gss.Model
         public override bool Equals(object obj)
         {
             Impianto impianto = null;
-            if (base.Equals(obj) && obj is Impianto)
+            if (obj is Impianto)
             {
                 impianto = (Impianto)obj;
             }
             else 
                 return false;
-
+            if (this.Codice == impianto.Codice)
+            {
+                return true;
+            }
+            else return false;
+            /*
             if (impianto.Piste.Count != this.Piste.Count)
                 return false;
 
@@ -127,7 +134,8 @@ namespace Gss.Model
                 else
                     trovato = false;
             }
-            return true;
+            return true;*/
+
         }
 
         public override string ToString()
@@ -139,6 +147,20 @@ namespace Gss.Model
                 result += p.ToString() + "\n";
             }
             return result;
+        }
+
+        public object Clone()
+        {
+            Impianto clone;
+            string codice = this.Codice;
+            string nome = this.Nome;
+            string versante = this.Versante;
+            clone = new Impianto(codice, nome, versante);
+            foreach (Pista p in Piste)
+            {
+                clone.Add((Pista)p.Clone());
+            }
+            return clone;
         }
     }
 }

@@ -48,7 +48,11 @@ namespace Gss.View
                 versanteTextBox.Text = impianto.Versante;
                 SetDataGrid();
                 codiceTextBox.Enabled = false;
+
+                this.Text = "Modifica Impianto";
+                salvaButton.Text = "Salva Modifiche";
             }
+            else pisteTotaliLabel.Text = "";
         }
 
         private string GetTipologiaByPista(Pista pista)
@@ -84,6 +88,12 @@ namespace Gss.View
 
         private void aggiungiPistaButton_Click(object sender, EventArgs e)
         {
+
+            if (!inEditingMode)
+            {
+                impianto = new Impianto(codiceTextBox.Text, nomeTextBox.Text, versanteTextBox.Text);
+            }
+
             AggiungiModificaPista aggiungiPistaForm = new AggiungiModificaPista(resortController, impianto);
             
             DialogResult res = aggiungiPistaForm.ShowDialog();
@@ -135,12 +145,12 @@ namespace Gss.View
             }
         }
 
-        private void annullaButton_Click(object sender, EventArgs e)
+       private void annullaButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-         private void salvaButton_Click(object sender, EventArgs e)
+       private void salvaButton_Click(object sender, EventArgs e)
         {
             //Recupero i campi
             string codiceImpianto = codiceTextBox.Text;

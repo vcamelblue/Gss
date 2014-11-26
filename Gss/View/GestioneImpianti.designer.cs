@@ -29,6 +29,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.visualizzaImpiantoButton = new Gss.View.Components.MyButton(this.components);
+            this.rimuoviImpiantoButton = new Gss.View.Components.MyButton(this.components);
+            this.modificaImpiantoButton = new Gss.View.Components.MyButton(this.components);
+            this.AggiungiImpiantoButton = new Gss.View.Components.MyButton(this.components);
             this.impiantiDataGridView = new Gss.View.Components.MyDataGridView(this.components);
             this.codiceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,12 +40,64 @@
             this.numPisteAlpineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numPisteDiFodnoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numPisteSnowparkColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AggiungiImpiantoButton = new Gss.View.Components.MyButton(this.components);
-            this.modificaImpiantoButton = new Gss.View.Components.MyButton(this.components);
-            this.rimuoviImpiantoButton = new Gss.View.Components.MyButton(this.components);
-            this.visualizzaImpiantoButton = new Gss.View.Components.MyButton(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.impiantiDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // visualizzaImpiantoButton
+            // 
+            this.visualizzaImpiantoButton.BackColor = System.Drawing.Color.LightGray;
+            this.visualizzaImpiantoButton.FlatAppearance.BorderSize = 0;
+            this.visualizzaImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.visualizzaImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualizzaImpiantoButton.Location = new System.Drawing.Point(512, 526);
+            this.visualizzaImpiantoButton.Name = "visualizzaImpiantoButton";
+            this.visualizzaImpiantoButton.Size = new System.Drawing.Size(169, 26);
+            this.visualizzaImpiantoButton.TabIndex = 5;
+            this.visualizzaImpiantoButton.Text = "Visualizza Impianto";
+            this.visualizzaImpiantoButton.UseVisualStyleBackColor = false;
+            this.visualizzaImpiantoButton.Click += new System.EventHandler(this.visualizzaImpiantoButton_Click);
+            // 
+            // rimuoviImpiantoButton
+            // 
+            this.rimuoviImpiantoButton.BackColor = System.Drawing.Color.LightGray;
+            this.rimuoviImpiantoButton.FlatAppearance.BorderSize = 0;
+            this.rimuoviImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rimuoviImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rimuoviImpiantoButton.Location = new System.Drawing.Point(342, 526);
+            this.rimuoviImpiantoButton.Name = "rimuoviImpiantoButton";
+            this.rimuoviImpiantoButton.Size = new System.Drawing.Size(169, 26);
+            this.rimuoviImpiantoButton.TabIndex = 4;
+            this.rimuoviImpiantoButton.Text = "Rimuovi Impianto";
+            this.rimuoviImpiantoButton.UseVisualStyleBackColor = false;
+            this.rimuoviImpiantoButton.Click += new System.EventHandler(this.rimuoviImpiantoButton_Click);
+            // 
+            // modificaImpiantoButton
+            // 
+            this.modificaImpiantoButton.BackColor = System.Drawing.Color.LightGray;
+            this.modificaImpiantoButton.FlatAppearance.BorderSize = 0;
+            this.modificaImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modificaImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificaImpiantoButton.Location = new System.Drawing.Point(172, 526);
+            this.modificaImpiantoButton.Name = "modificaImpiantoButton";
+            this.modificaImpiantoButton.Size = new System.Drawing.Size(169, 26);
+            this.modificaImpiantoButton.TabIndex = 3;
+            this.modificaImpiantoButton.Text = "Modifica Impianto";
+            this.modificaImpiantoButton.UseVisualStyleBackColor = false;
+            this.modificaImpiantoButton.Click += new System.EventHandler(this.modificaImpiantoButton_Click);
+            // 
+            // AggiungiImpiantoButton
+            // 
+            this.AggiungiImpiantoButton.BackColor = System.Drawing.Color.LightGray;
+            this.AggiungiImpiantoButton.FlatAppearance.BorderSize = 0;
+            this.AggiungiImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AggiungiImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AggiungiImpiantoButton.Location = new System.Drawing.Point(1, 526);
+            this.AggiungiImpiantoButton.Name = "AggiungiImpiantoButton";
+            this.AggiungiImpiantoButton.Size = new System.Drawing.Size(170, 26);
+            this.AggiungiImpiantoButton.TabIndex = 2;
+            this.AggiungiImpiantoButton.Text = "Aggiungi Impianto";
+            this.AggiungiImpiantoButton.UseVisualStyleBackColor = false;
+            this.AggiungiImpiantoButton.Click += new System.EventHandler(this.AggiungiImpiantoButton_Click);
             // 
             // impiantiDataGridView
             // 
@@ -140,65 +196,13 @@
             this.numPisteDiFodnoColumn.HeaderText = "Piste Di Fondo";
             this.numPisteDiFodnoColumn.Name = "numPisteDiFodnoColumn";
             this.numPisteDiFodnoColumn.ReadOnly = true;
-            this.numPisteDiFodnoColumn.Width = 112;
+            this.numPisteDiFodnoColumn.Width = 99;
             // 
             // numPisteSnowparkColumn
             // 
             this.numPisteSnowparkColumn.HeaderText = "Piste SnowPark";
             this.numPisteSnowparkColumn.Name = "numPisteSnowparkColumn";
             this.numPisteSnowparkColumn.ReadOnly = true;
-            // 
-            // AggiungiImpiantoButton
-            // 
-            this.AggiungiImpiantoButton.BackColor = System.Drawing.Color.LightGray;
-            this.AggiungiImpiantoButton.FlatAppearance.BorderSize = 0;
-            this.AggiungiImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AggiungiImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AggiungiImpiantoButton.Location = new System.Drawing.Point(1, 526);
-            this.AggiungiImpiantoButton.Name = "AggiungiImpiantoButton";
-            this.AggiungiImpiantoButton.Size = new System.Drawing.Size(170, 26);
-            this.AggiungiImpiantoButton.TabIndex = 2;
-            this.AggiungiImpiantoButton.Text = "Aggiungi Impianto";
-            this.AggiungiImpiantoButton.UseVisualStyleBackColor = false;
-            // 
-            // modificaImpiantoButton
-            // 
-            this.modificaImpiantoButton.BackColor = System.Drawing.Color.LightGray;
-            this.modificaImpiantoButton.FlatAppearance.BorderSize = 0;
-            this.modificaImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificaImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificaImpiantoButton.Location = new System.Drawing.Point(172, 526);
-            this.modificaImpiantoButton.Name = "modificaImpiantoButton";
-            this.modificaImpiantoButton.Size = new System.Drawing.Size(169, 26);
-            this.modificaImpiantoButton.TabIndex = 3;
-            this.modificaImpiantoButton.Text = "Modifica Impianto";
-            this.modificaImpiantoButton.UseVisualStyleBackColor = false;
-            // 
-            // rimuoviImpiantoButton
-            // 
-            this.rimuoviImpiantoButton.BackColor = System.Drawing.Color.LightGray;
-            this.rimuoviImpiantoButton.FlatAppearance.BorderSize = 0;
-            this.rimuoviImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rimuoviImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rimuoviImpiantoButton.Location = new System.Drawing.Point(342, 526);
-            this.rimuoviImpiantoButton.Name = "rimuoviImpiantoButton";
-            this.rimuoviImpiantoButton.Size = new System.Drawing.Size(169, 26);
-            this.rimuoviImpiantoButton.TabIndex = 4;
-            this.rimuoviImpiantoButton.Text = "Rimuovi Impianto";
-            this.rimuoviImpiantoButton.UseVisualStyleBackColor = false;
-            // 
-            // visualizzaImpiantoButton
-            // 
-            this.visualizzaImpiantoButton.BackColor = System.Drawing.Color.LightGray;
-            this.visualizzaImpiantoButton.FlatAppearance.BorderSize = 0;
-            this.visualizzaImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visualizzaImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visualizzaImpiantoButton.Location = new System.Drawing.Point(512, 526);
-            this.visualizzaImpiantoButton.Name = "visualizzaImpiantoButton";
-            this.visualizzaImpiantoButton.Size = new System.Drawing.Size(169, 26);
-            this.visualizzaImpiantoButton.TabIndex = 5;
-            this.visualizzaImpiantoButton.Text = "Visualizza Impianto";
-            this.visualizzaImpiantoButton.UseVisualStyleBackColor = false;
             // 
             // GestioneImpianti
             // 
@@ -214,6 +218,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GestioneImpianti";
             this.Text = "Gestione Impianti";
+            this.Load += new System.EventHandler(this.GestioneImpianti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.impiantiDataGridView)).EndInit();
             this.ResumeLayout(false);
 

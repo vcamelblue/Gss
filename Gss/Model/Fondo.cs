@@ -48,5 +48,13 @@ namespace Gss.Model
         {
             return base.ToString()+ " " + this.DislivelloMassimo.ToString() + " " + this._dislivelloMedio.ToString();
         }
+
+        public override object Clone()
+        {
+            string nome = this.Nome;
+            double dislivelloMedio = this.DislivelloMedio;
+            double dislivelloMassimo = this.DislivelloMassimo;
+            return new Fondo(nome, dislivelloMassimo, dislivelloMedio);
+        }
     }
 }

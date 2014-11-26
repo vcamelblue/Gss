@@ -7,22 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gss.Controller;
+using Gss.Model;
 
 namespace Gss.View 
 {
     public partial class AggiungiModificaBungalow : Form 
     {
-        public AggiungiModificaBungalow() 
+        private ResortController resortController;
+        private Bungalow bungalow;
+        private bool inEditingMode;
+
+
+        public AggiungiModificaBungalow(ResortController resortController) 
         {
+            this.resortController = resortController;
+            this.bungalow = null;
+            inEditingMode = false;
+
             InitializeComponent();
 
-            stanzeDataGridView.Rows.Add("strdfgsdfgsdfi1", "3", "5");
-            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
-            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
-            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
-            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
-            stanzeDataGridView.Rows.Add("stzdssdsri1", "5", "7");
-            stanzeDataGridView.Rows.Add("strzsdzsdzddri1", "1", "1");
         }
+
+        public AggiungiModificaBungalow(ResortController resortController, Bungalow bungalow)
+        {
+            this.resortController = resortController;
+            this.bungalow = bungalow;
+            inEditingMode = true;
+
+            InitializeComponent();
+
+        }
+
+        private void AggiungiModificaBungalow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

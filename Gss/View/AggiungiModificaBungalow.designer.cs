@@ -55,7 +55,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(128, 21);
+            this.myLabel1.Size = new System.Drawing.Size(104, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice Bungalow";
             // 
@@ -67,7 +67,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 78);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(63, 24);
+            this.myLabel2.Size = new System.Drawing.Size(51, 19);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Stanze";
             // 
@@ -79,7 +79,7 @@
             this.myTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myTextBox1.Location = new System.Drawing.Point(258, 23);
             this.myTextBox1.Name = "myTextBox1";
-            this.myTextBox1.Size = new System.Drawing.Size(445, 21);
+            this.myTextBox1.Size = new System.Drawing.Size(445, 17);
             this.myTextBox1.TabIndex = 2;
             this.myTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -170,7 +170,7 @@
             this.postiTotoaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.postiTotoaliLabel.Location = new System.Drawing.Point(373, 291);
             this.postiTotoaliLabel.Name = "postiTotoaliLabel";
-            this.postiTotoaliLabel.Size = new System.Drawing.Size(102, 21);
+            this.postiTotoaliLabel.Size = new System.Drawing.Size(82, 17);
             this.postiTotoaliLabel.TabIndex = 4;
             this.postiTotoaliLabel.Text = "Posti Totali  5";
             // 
@@ -182,7 +182,7 @@
             this.postiMaxTotaliLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.postiMaxTotaliLabel.Location = new System.Drawing.Point(549, 291);
             this.postiMaxTotaliLabel.Name = "postiMaxTotaliLabel";
-            this.postiMaxTotaliLabel.Size = new System.Drawing.Size(145, 21);
+            this.postiMaxTotaliLabel.Size = new System.Drawing.Size(117, 17);
             this.postiMaxTotaliLabel.TabIndex = 5;
             this.postiMaxTotaliLabel.Text = "Posti Totali Max  10";
             // 
@@ -280,6 +280,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaBungalow";
             this.Text = "Aggiungi Bungalow";
+            this.Load += new System.EventHandler(this.AggiungiModificaBungalow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stanzeDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

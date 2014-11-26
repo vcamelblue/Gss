@@ -89,9 +89,47 @@ namespace Gss
 
             ResortController resortController = new ResortController();
             resortController.Gss.Resort = new Resort("a", "a", "a", "a");
-            
 
-            Application.Run(new VisualizzaImpianto(resortController,impianto1));
+
+            resortController.Gss.Resort.Impianti = impianti;
+
+            Bungalow b1 = new Bungalow("44");
+            Bungalow b2 = new Bungalow("45");
+            Bungalow b3 = new Bungalow("46");
+            Bungalow b4 = new Bungalow("56");
+            Bungalow b5 = new Bungalow("34");
+            Bungalow b6 = new Bungalow("35");
+            Bungalow b7 = new Bungalow("24");
+            Bungalow b8 = new Bungalow("57");
+
+            Stanza s1 = new Stanza(4, 4);
+            Stanza s2 = new Stanza(4, 5);
+            Stanza s3 = new Stanza(4, 6);
+            Stanza s4 = new Stanza(5, 6);
+            Stanza s5 = new Stanza(3, 4);
+            Stanza s6 = new Stanza(3, 5);
+            Stanza s7 = new Stanza(2, 4);
+            Stanza s8 = new Stanza(5, 7);
+
+            b1.Add(s1);
+            b2.Add(s2);
+            b3.Add(s3);
+            b4.Add(s4);
+            b5.Add(s5);
+            b6.Add(s6);
+            b7.Add(s7);
+            b8.Add(s8);
+
+            resortController.AddBungalow(b2);
+            resortController.AddBungalow(b1);
+            resortController.AddBungalow(b3);
+            resortController.AddBungalow(b4);
+            resortController.AddBungalow(b5);
+            resortController.AddBungalow(b6);
+            resortController.AddBungalow(b7);
+            resortController.AddBungalow(b8);
+            
+            Application.Run(new AggiungiModificaBungalow(resortController));
             
         }
     }

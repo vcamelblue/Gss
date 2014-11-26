@@ -35,5 +35,13 @@ namespace Gss.Model
         {
             return base.ToString() + " " + this.NumeroSalti.ToString() + " " + this.NumeroJibs.ToString();
         }
+
+        public override object Clone()
+        {
+            string nome = this.Nome;
+            int numerosalti= this.NumeroSalti;
+            int numeroJibs = this.NumeroJibs;
+            return new SnowPark(nome, numerosalti, numeroJibs);
+        }
     }
 }

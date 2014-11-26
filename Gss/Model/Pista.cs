@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public abstract class Pista
+    public abstract class Pista : ICloneable
     {
         private string _nome;
 
@@ -42,5 +42,7 @@ namespace Gss.Model
         {
             return this.Nome;
         }
+
+        public abstract object Clone();
     }
 }

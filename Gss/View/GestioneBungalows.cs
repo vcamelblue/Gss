@@ -48,5 +48,11 @@ namespace Gss.View
 
 
         }
+
+        private void GestioneBungalows_Load(object sender, EventArgs e)
+        {
+            bungalowDataGridView.Rows[15].Selected = true;
+            bungalowDataGridView.FirstDisplayedScrollingRowIndex = 15;
+        }
     }
 }

@@ -189,6 +189,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GestioneBungalows";
             this.Text = "Gestione Bungalows";
+            this.Load += new System.EventHandler(this.GestioneBungalows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bungalowDataGridView)).EndInit();
             this.ResumeLayout(false);
 

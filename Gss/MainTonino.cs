@@ -191,6 +191,8 @@ namespace Gss
             periodo11.Profilo = ppc.GetProfiloByNome("Bassa");
             periodo12.Profilo = ppc.GetProfiloByNome("Alta");
 
+            ProfiloPrezziRisorse p = ppc.GetProfiloByNome("Alta");
+            
 
 
             List<Periodo> periodi=new List<Periodo>();
@@ -207,8 +209,7 @@ namespace Gss
             
             
             Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
-            foreach(Periodo p in ppc.SetPeriodi(periodi))
-                Console.Out.WriteLine(p);
+            ppc.SetPeriodi(periodi);
 
             Console.Out.WriteLine(GSS.GetInstance().GestorePeriodi.Periodi);
             foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)

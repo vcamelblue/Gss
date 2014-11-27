@@ -46,7 +46,6 @@ namespace Gss.Controller
                     else
                     {
                         periodoTemp = new Periodo(temp.ElementAt(i-1).DataFine.AddDays(1), temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).Profilo);
-                        Console.Out.WriteLine(periodoTemp);
                         temp.Add(periodoTemp);
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                         temp.Sort(new PeriodoComparer());
@@ -93,12 +92,11 @@ namespace Gss.Controller
                     else
                     {
                         periodoTemp = new Periodo(temp.ElementAt(i - 1).DataFine.AddDays(1), temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).Profilo);
-                        Console.Out.WriteLine(periodoTemp);
                         temp.Add(periodoTemp);
-                        result += "Inserito " + temp.ElementAt(i) + " In " + temp.ElementAt(i - 1) + "\n";//Problema nel scrivere chi viene inserito in chi
-                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                         temp.Sort(new PeriodoComparer());
                         i--;
+                        result += "Inserito " + temp.ElementAt(i+1) + " In " + temp.ElementAt(i) + "\n";//Problema nel scrivere chi viene inserito in chi
+                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                     }
                 }
                 i++;
@@ -173,6 +171,26 @@ namespace Gss.Controller
         public ProfiliPrezziRisorse GetProfili()
         {
             return Gss.ProfiliPrezziRisorse;
+        }
+
+        public void SetPrezzoRisorsa(Risorsa risorsa, ProfiloPrezziRisorse profilo, PrezziRisorsa prezzi)
+        {
+            if (risorsa == null || profilo == null || prezzi == null)
+                throw new Exception("Inseriti parametri sbagliati");
+            if (!this.Gss.ProfiliPrezziRisorse.Profili.Contains(profilo))
+                throw new Exception("Il profilo inserito non esiste nel sistema");
+            ProfiloPrezziRisorse p = this.Gss.ProfiliPrezziRisorse.GetProfiloPrezziRisorseByNome(profilo.Nome);
+            p.PrezziRisorsa.Add(risorsa, prezzi);
+        }
+
+        public void SetPrezzoRisorsa(Risorsa risorsa,string nomeProfilo, PrezziRisorsa prezzi)
+        {
+            if (risorsa == null || nomeProfilo == null || prezzi == null)
+                throw new Exception("Inseriti parametri sbagliati");    
+            ProfiloPrezziRisorse p = this.Gss.ProfiliPrezziRisorse.GetProfiloPrezziRisorseByNome(nomeProfilo);
+            if(p==null)
+                throw new Exception("Il profilo inserito non esiste nel sistema");
+            p.PrezziRisorsa.Add(risorsa, prezzi);
         }
     }
 }

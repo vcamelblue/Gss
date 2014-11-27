@@ -55,5 +55,21 @@ namespace Gss.Model
         {
             return this.Nome;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            ProfiloPrezziRisorse profilo;
+            if (obj is ProfiloPrezziRisorse)
+            {
+                profilo = (ProfiloPrezziRisorse)obj;
+            }
+            else
+                return false;
+            if (this.Nome == profilo.Nome)
+                return true;
+            return false;
+        }
     }
 }

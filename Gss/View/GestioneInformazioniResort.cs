@@ -17,7 +17,6 @@ namespace Gss.View {
 
         private bool _inEditingMode;
         private Resort _resort;
-        private Form _formChiamante;
         private ResortController _resortController;
 
         public GestioneInformazioniResort(ResortController resortController) {

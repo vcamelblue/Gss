@@ -29,7 +29,7 @@ namespace Gss.View
             InitializeComponent();
         }
 
-        public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController, Periodo periodo)
+        public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController,List<Periodo> periodi,Periodo periodo)
         {
             this.periodiProfiliController = periodiProfiliController;
             inEditingMode = true;
@@ -88,7 +88,7 @@ namespace Gss.View
 
         private void RiempiProfiloComboBox()
         {
-            foreach (ProfiloPrezziRisorse p in periodiProfiliController.Gss.ProfiliPrezziRisorse.Profili)
+            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().)
             {
                 profiloPeriodoComboBox.Items.Add(p.Nome);
             }

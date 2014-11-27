@@ -19,6 +19,7 @@ namespace Gss.Controller
 
         public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
+            Periodo periodoTemp;
             periodi.Sort(new PeriodoComparer());
             List<Periodo> temp =new List<Periodo>(periodi);
             
@@ -28,26 +29,28 @@ namespace Gss.Controller
                 temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
             }
             int i=1;
-            while(i<periodi.Count)
+            while(i<temp.Count)
             {
                 DateTime data = temp.ElementAt(i).DataInizio.AddDays(-1);
-                if (temp.ElementAt(i).DataInizio > temp.ElementAt(i - 1).DataFine)
+                if (DateTime.Compare(data , temp.ElementAt(i - 1).DataFine)<0)
                 {
                     temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                 }
 
-                if(temp.ElementAt(i).DataInizio<temp.ElementAt(i-1).DataFine)
+                if(DateTime.Compare(data,temp.ElementAt(i-1).DataFine)>0)
                 {
-                    if(temp.ElementAt(i).DataFine> temp.ElementAt(i-1).DataFine)
+                    if(temp.ElementAt(i).DataFine< temp.ElementAt(i-1).DataFine)
                     {
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                     }
                     else
                     {
-                        Periodo periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - 1).Profilo);
+                        periodoTemp = new Periodo(temp.ElementAt(i-1).DataFine.AddDays(1), temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).Profilo);
+                        Console.Out.WriteLine(periodoTemp);
                         temp.Add(periodoTemp);
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                         temp.Sort(new PeriodoComparer());
+                        i--;
                     }
                 }
                 i++;
@@ -56,9 +59,55 @@ namespace Gss.Controller
             return temp;
 
         }
-        
 
         public string TrySetPeriodi(List<Periodo> periodi)
+        {
+            string result = "";
+            Periodo periodoTemp;
+            periodi.Sort(new PeriodoComparer());
+            List<Periodo> temp = new List<Periodo>(periodi);
+
+            if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio)
+            {
+                result += temp.ElementAt(0) + " modificato con data d'inizio portata a " + Gss.Resort.DataInizioStagione.ToString("dd/MM/yyyy") + "\n";
+                temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
+            }
+            int i = 1;
+            while (i < temp.Count)
+            {
+                DateTime data = temp.ElementAt(i).DataInizio.AddDays(-1);
+                if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine) < 0)
+                {
+                    result += temp.ElementAt(i - 1) + " modificato con data fine portata a";
+                    temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                    result += temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
+                }
+
+                if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine) > 0)
+                {
+                    if (temp.ElementAt(i).DataFine < temp.ElementAt(i - 1).DataFine)
+                    {
+                        result += temp.ElementAt(i - 1) + " modificato con data fine portata a" + temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
+                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                    }
+                    else
+                    {
+                        periodoTemp = new Periodo(temp.ElementAt(i - 1).DataFine.AddDays(1), temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).Profilo);
+                        Console.Out.WriteLine(periodoTemp);
+                        temp.Add(periodoTemp);
+                        result += "Inserito " + temp.ElementAt(i) + " In " + temp.ElementAt(i - 1) + "\n";//Problema nel scrivere chi viene inserito in chi
+                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                        temp.Sort(new PeriodoComparer());
+                        i--;
+                    }
+                }
+                i++;
+            }
+            return result;
+
+        }
+
+       /* public string TrySetPeriodi(List<Periodo> periodi)
         {
             string result = "";
             periodi.Sort(new PeriodoComparer());
@@ -99,7 +148,7 @@ namespace Gss.Controller
                 i++;
             }
             return result;
-        }
+        }*/
 
         public PrezziRisorsa GetPrezzoRisorsaByData(Risorsa risorsa,DateTime data)
         {

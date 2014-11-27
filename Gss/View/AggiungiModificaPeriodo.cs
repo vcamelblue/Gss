@@ -47,31 +47,24 @@ namespace Gss.View
             DateTime dataInizio = dataInizioTimePicker.Value;
             DateTime dataFine = dataFineTimePicker.Value;
             string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
-            ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloByNome(nomeProfilo); 
+            ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloByNome(nomeProfilo);
 
-            if (CheckData(dataInizio) && CheckData(dataFine))
+            if (inEditingMode)
             {
-                if (inEditingMode)
+                foreach (Periodo p in periodi)
                 {
-                    foreach(Periodo p in periodi)
+                    if (p.Equals(periodo))
                     {
-                        if(p.Equals(periodo))
-                        {
-                            p.DataInizio = dataInizio;
-                            p.DataFine = dataFine;
-                            p.Profilo = profiloScelto;
-                        }
-                    }   
-                }
-                else
-                {
-                    Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
-                    periodi.Add(periodo);
+                        p.DataInizio = dataInizio;
+                        p.DataFine = dataFine;
+                        p.Profilo = profiloScelto;
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("Inserisci date all'interno della sagione");
+                Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
+                periodi.Add(periodo);
             }
             
         }
@@ -88,6 +81,11 @@ namespace Gss.View
 
         private void RiempiProfiloComboBox()
         {
+            dataFineTimePicker.MinDate = periodiProfiliController.Gss.Resort.DataInizioStagione;
+            dataFineTimePicker.MaxDate = periodiProfiliController.Gss.Resort.DataFineStagione;
+            dataInizioTimePicker.MinDate = periodiProfiliController.Gss.Resort.DataInizioStagione;
+            dataInizioTimePicker.MaxDate = periodiProfiliController.Gss.Resort.DataFineStagione;
+
             foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().Profili)
             {
                 profiloPeriodoComboBox.Items.Add(p.Nome);
@@ -99,17 +97,5 @@ namespace Gss.View
                 dataFineTimePicker.Value = periodo.DataFine;
             }
         }
-
-        private bool CheckData(DateTime data)
-        {
-            if((data >= periodiProfiliController.Gss.Resort.DataInizioStagione) && 
-                (data <= periodiProfiliController.Gss.Resort.DataFineStagione))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
     }
 }

@@ -152,6 +152,8 @@ namespace Gss
             periodi.Add(periodo2);
             periodi.Add(periodo3);
 
+            profiloController.Gss.Resort = new Resort("a", "a", "a", "a", DateTime.Today, DateTime.Today.AddDays(20));
+
             
             Application.Run(new AggiungiModificaPeriodo(profiloController,periodi,periodo));
             

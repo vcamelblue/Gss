@@ -67,7 +67,7 @@ namespace Gss.Controller
            
         }
 
-        public bool Exist(Impianto impianto)
+        private bool Exist(Impianto impianto)
         {
             return Gss.Resort.Impianti.ListaImpianti.Contains(impianto);
         }
@@ -148,6 +148,18 @@ namespace Gss.Controller
             {
                 throw new Exception("Bungalow già presente");
             }
+        }
+
+        public void EditBungalow(Bungalow bungalow, Bungalow bungalowModificato)
+        {
+            
+            bungalow.Codice = bungalowModificato.Codice;
+            bungalow.Stanze = bungalowModificato.Stanze;
+        }
+
+        private bool Exist(Bungalow bungalow)
+        {
+            return Gss.Resort.Bungalows.ListaBungalow.Contains(bungalow);
         }
 
         public bool RemoveBungalow(Bungalow bungalow)
@@ -242,14 +254,14 @@ namespace Gss.Controller
         {
             foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
             {
-                if (risorsa.Equals(i))
+                if (risorsa.Codice==i.Codice)
                 {
                     return true;
                 }
             }
             foreach (Bungalow b in Gss.Resort.Bungalows.ListaBungalow)
             {
-                if (risorsa.Equals(b))
+                if (risorsa.Codice==b.Codice)
                 {
                     return true;
                 }

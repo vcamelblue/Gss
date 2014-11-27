@@ -66,20 +66,26 @@ namespace Gss.View
             }
             try
             {
-                if (_inEditingMode)
-                {
-                    _stanza.NumeroPostiMax = numeroPostiMassimi;
-                    _stanza.NumeroPostiStandard = numeroPostiStandard;
-                }
-                else //nuova stanza
-                {
-                    _stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
-                }
-                //SE TUTTO OK FARE COSI'
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-
+                  if ((numeroPostiStandard != 0) && (numeroPostiMassimi != 0) && (numeroPostiMassimi >= numeroPostiStandard))
+                  {
+                      if (_inEditingMode)
+                      {
+                          _stanza.NumeroPostiMax = numeroPostiMassimi;
+                          _stanza.NumeroPostiStandard = numeroPostiStandard;
+                      }
+                      else //nuova stanza
+                      {
+                          _stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
+                          _bungalow.Add(_stanza);
+                      }
+                      //SE TUTTO OK FARE COSI'
+                      this.DialogResult = DialogResult.OK;
+                      this.Close();
+                  }
+                  else
+                  {
+                      MessageBox.Show("Inserire numeri maggiori di zero e con posti massimi maggiori o uguali di posti standard");
+                  }
             }
             catch (Exception exception)
             {

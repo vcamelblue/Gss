@@ -146,6 +146,7 @@
             this.annullaButton.TabIndex = 10;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
+            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
             // 
             // salvaButton
             // 
@@ -159,6 +160,7 @@
             this.salvaButton.TabIndex = 9;
             this.salvaButton.Text = "Salva";
             this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
             // 
             // rimuoviStanzaButton
             // 
@@ -200,6 +202,7 @@
             this.aggiungiStanzaButton.TabIndex = 6;
             this.aggiungiStanzaButton.Text = "Aggiungi Stanza";
             this.aggiungiStanzaButton.UseVisualStyleBackColor = false;
+            this.aggiungiStanzaButton.Click += new System.EventHandler(this.aggiungiStanzaButton_Click);
             // 
             // postiMaxTotaliLabel
             // 

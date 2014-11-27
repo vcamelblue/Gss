@@ -103,7 +103,7 @@ namespace Gss
             Bungalow b8 = new Bungalow("57");
 
             Stanza s1 = new Stanza(4, 4);
-            Stanza s2 = new Stanza(4, 5);
+            Stanza s2 = new Stanza(4, 4);
             Stanza s3 = new Stanza(4, 6);
             Stanza s4 = new Stanza(5, 6);
             Stanza s5 = new Stanza(3, 4);
@@ -112,8 +112,8 @@ namespace Gss
             Stanza s8 = new Stanza(5, 7);
 
             b1.Add(s1);
-            b1.Add(s1);
             b1.Add(s2);
+            b1.Add(s3);
             b2.Add(s2);
             b3.Add(s3);
             b4.Add(s4);
@@ -131,7 +131,7 @@ namespace Gss
             resortController.AddBungalow(b7);
             resortController.AddBungalow(b8);
             
-            Application.Run(new AggiungiModificaBungalow(resortController,b1));
+            Application.Run(new GestioneBungalows(resortController));
             
         }
     }

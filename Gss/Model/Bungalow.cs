@@ -59,10 +59,10 @@ namespace Gss.Model
             return Stanze.Remove(stanza);
         }
 
-       /* public override bool Equals(object obj)
+       public override bool Equals(object obj)
         {
             Bungalow bungalow = null;
-            if (base.Equals(obj) && obj is Bungalow)
+            if (obj is Bungalow)
             {
                 bungalow = (Bungalow)obj;
             }
@@ -90,11 +90,10 @@ namespace Gss.Model
                 else
                     trovato = false;
             }
-            return true;
-            
-        }*/
+            return true;   
+        }
 
-        public override bool Equals(object obj)
+        /*public override bool Equals(object obj)
         {
             Bungalow bungalow = null;
             if (obj is Bungalow)
@@ -106,7 +105,7 @@ namespace Gss.Model
             if (this.Codice == bungalow.Codice)
                 return true;
             return false;
-        }
+        }*/
 
         public override string ToString()
         {

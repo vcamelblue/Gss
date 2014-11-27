@@ -44,6 +44,7 @@ namespace Gss.View
             if (inEditingMode)
             {
                 codiceTextBox1.Text = bungalow.Codice;
+                codiceTextBox1.Enabled = false;
                 RiempiGrid();
             }
         }
@@ -109,7 +110,7 @@ namespace Gss.View
             for(int i = 0; i<bungalow.Stanze.Count && !trovato;i++) 
             {
                 Stanza s = bungalow.Stanze[i];
-                if (s.GetHashCode()==stanzaSelezionata.GetHashCode())
+                if (s.Equals(stanzaSelezionata))
                 {
                     trovato = true;
                     AggiungiModificaStanza modificaStanza = new AggiungiModificaStanza(bungalow, s, resortController);
@@ -123,6 +124,66 @@ namespace Gss.View
                 }
             }
         }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aggiungiStanzaButton_Click(object sender, EventArgs e)
+        {
+            if (!inEditingMode && bungalow == null)
+            {
+                bungalow = new Bungalow(codiceTextBox1.Text);
+            }
+
+            AggiungiModificaStanza aggiungiStanzaForm = new AggiungiModificaStanza(bungalow, resortController);
+
+            DialogResult res = aggiungiStanzaForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                Refresh();
+            }
+
+        }
+
+        private void salvaButton_Click(object sender, EventArgs e)
+        {
+            //Recupero i campi
+            string codiceBungalow = codiceTextBox1.Text;
+
+            if (codiceBungalow!="")
+            {
+                try
+                {
+                    if (inEditingMode)
+                    {
+                        Bungalow bungalowModificato = new Bungalow(codiceBungalow);
+                        bungalowModificato.Stanze = bungalow.Stanze;
+                        resortController.EditBungalow(bungalow, bungalowModificato);
+                    }
+                    else
+                    {
+                        Bungalow bungalowNuovo = new Bungalow(codiceBungalow);
+                        bungalowNuovo.Stanze = bungalow.Stanze;
+                        resortController.AddBungalow(bungalowNuovo);
+                    }
+                    //SE TUTTO OK FARE COSI'
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Riempire tutti i campi");
+            }
+        }
+
     }
     }
 

@@ -53,6 +53,7 @@
             this.rimuoviBungalowButton.TabIndex = 3;
             this.rimuoviBungalowButton.Text = "Rimuovi Bungalow";
             this.rimuoviBungalowButton.UseVisualStyleBackColor = false;
+            this.rimuoviBungalowButton.Click += new System.EventHandler(this.rimuoviBungalowButton_Click);
             // 
             // modificaBungalowButton
             // 
@@ -66,6 +67,7 @@
             this.modificaBungalowButton.TabIndex = 2;
             this.modificaBungalowButton.Text = "Modifica Bungalow";
             this.modificaBungalowButton.UseVisualStyleBackColor = false;
+            this.modificaBungalowButton.Click += new System.EventHandler(this.modificaBungalowButton_Click);
             // 
             // aggiungiBungalowButton
             // 
@@ -79,6 +81,7 @@
             this.aggiungiBungalowButton.TabIndex = 1;
             this.aggiungiBungalowButton.Text = "Aggiungi Bungalow";
             this.aggiungiBungalowButton.UseVisualStyleBackColor = false;
+            this.aggiungiBungalowButton.Click += new System.EventHandler(this.aggiungiBungalowButton_Click);
             // 
             // bungalowDataGridView
             // 

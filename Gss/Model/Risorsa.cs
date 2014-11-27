@@ -31,8 +31,8 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
-            Risorsa risorsa = null;
-            if (risorsa is Risorsa)
+            Risorsa risorsa;
+            if (obj is Risorsa)
             {
                 risorsa = (Risorsa)obj;
             }

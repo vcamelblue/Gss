@@ -157,5 +157,10 @@ namespace Gss.Controller
             }
             return false;
         }
+
+        public void AddSkiCardAPrenotazione(Prenotazione prenotazione, SkiCard skiCard)
+        {
+
+        }
     }
 }

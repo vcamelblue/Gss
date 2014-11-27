@@ -50,5 +50,10 @@ namespace Gss.Model
         {
             return _prezziRisorsa[risorsa];
         }
+
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }

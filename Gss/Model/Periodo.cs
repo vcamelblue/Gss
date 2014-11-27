@@ -56,10 +56,14 @@ namespace Gss.Model
             return false;
         }
 
+        public override string ToString()
+        {
+            return "Periodo dal " + this._dataInizio.Date.ToString("dd/MM/yyyy") + " al " + this.DataFine.Date.ToString("dd/MM/yyyy")+ ",Profilo:"+this.Profilo;
+        }
 
         public object Clone()
         {
-            return new Periodo(this.DataInizio,this.DataFine,this.Profilo);
+            return new Periodo(this.DataInizio, this.DataFine, this.Profilo);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Gss.Model
             else return false;
         }
 
-        public bool AddSkicard(SkiCard skicard)
+        public bool AddSkiCard(SkiCard skicard)
         {
             return ListaSkiCards.Add(skicard);
         }

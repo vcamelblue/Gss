@@ -17,7 +17,7 @@ namespace Gss
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            MainPresutti.myTest();
+            //MainPresutti.myTest();
             //MainTonino.myTest();
             //MainVillani.myTest();
         }

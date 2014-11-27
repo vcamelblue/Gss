@@ -112,6 +112,12 @@
     <Compile Include="View\AggiungiModificaVisualizzaProfilo.designer.cs">
       <DependentUpon>AggiungiModificaVisualizzaProfilo.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AggiungiModificaSkipass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AggiungiModificaSkipass.designer.cs">
+      <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VisualizzaImpianto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </Compile>
     <EmbeddedResource Include="View\AggiungiModificaVisualizzaProfilo.resx">
       <DependentUpon>AggiungiModificaVisualizzaProfilo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AggiungiModificaSkipass.resx">
+      <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VisualizzaImpianto.resx">
       <DependentUpon>VisualizzaImpianto.cs</DependentUpon>

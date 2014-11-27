@@ -124,6 +124,12 @@
     <Compile Include="View\AggiungiModificaSkipass.designer.cs">
       <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NuovaPrenotazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NuovaPrenotazione.designer.cs">
+      <DependentUpon>NuovaPrenotazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VisualizzaImpianto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AggiungiModificaSkipass.resx">
       <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuovaPrenotazione.resx">
+      <DependentUpon>NuovaPrenotazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VisualizzaImpianto.resx">
       <DependentUpon>VisualizzaImpianto.cs</DependentUpon>

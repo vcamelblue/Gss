@@ -35,12 +35,12 @@
             this.infoStanzeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postiStandardColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postiMaxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myButton6 = new Gss.View.Components.MyButton(this.components);
             this.myButton5 = new Gss.View.Components.MyButton(this.components);
             this.myButton4 = new Gss.View.Components.MyButton(this.components);
             this.myButton3 = new Gss.View.Components.MyButton(this.components);
             this.myButton2 = new Gss.View.Components.MyButton(this.components);
             this.myButton1 = new Gss.View.Components.MyButton(this.components);
-            this.myButton6 = new Gss.View.Components.MyButton(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,6 +140,20 @@
             this.postiMaxColumn.ReadOnly = true;
             this.postiMaxColumn.Width = 103;
             // 
+            // myButton6
+            // 
+            this.myButton6.BackColor = System.Drawing.Color.LightGray;
+            this.myButton6.FlatAppearance.BorderSize = 0;
+            this.myButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            this.myButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myButton6.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myButton6.Location = new System.Drawing.Point(416, 414);
+            this.myButton6.Name = "myButton6";
+            this.myButton6.Size = new System.Drawing.Size(63, 26);
+            this.myButton6.TabIndex = 6;
+            this.myButton6.Text = "myButton6";
+            this.myButton6.UseVisualStyleBackColor = false;
+            // 
             // myButton5
             // 
             this.myButton5.BackColor = System.Drawing.Color.LightGray;
@@ -212,20 +226,6 @@
             this.myButton1.Text = "myButton1";
             this.myButton1.UseVisualStyleBackColor = false;
             this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
-            // 
-            // myButton6
-            // 
-            this.myButton6.BackColor = System.Drawing.Color.LightGray;
-            this.myButton6.FlatAppearance.BorderSize = 0;
-            this.myButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            this.myButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myButton6.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myButton6.Location = new System.Drawing.Point(416, 414);
-            this.myButton6.Name = "myButton6";
-            this.myButton6.Size = new System.Drawing.Size(63, 26);
-            this.myButton6.TabIndex = 6;
-            this.myButton6.Text = "myButton6";
-            this.myButton6.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

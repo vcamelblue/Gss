@@ -140,11 +140,81 @@ namespace Gss.View
             }
             else if (nPisteDiTipoRadioButton.Checked)
             {
-
+                FiltraPerNPisteDiTipo();
             }
             else if (caratteristicaSpecificaRadioButton.Checked)
             {
+                FiltraPerCaratteristicaSpecifica();
+            }
+        }
 
+        private void FiltraPerCaratteristicaSpecifica()
+        {
+            if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
+            {
+                if (caratteristicaSpecificaAlmenoFiltroTextBox.Text != "")
+                {
+                    if (!checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Difficoltà non valida, inserisci (Alta, Media, Bassa)");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completa il campo nome per continuare");
+                }
+            }
+            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
+            {
+
+            }
+            else if(caratteristicaSpecificaFiltroComboBox.SelectedIndex == 2)//dislivello medio
+            {
+
+            }
+            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 3)//numero salti
+            {
+
+            }
+            else //numero jibs
+            {
+
+            }
+        }
+
+        private bool checkDifficoltà(string difficolta)
+        {
+            return true;
+            string val = "AStringValue";
+
+            //if (val.Equals("astringvalue", StringComparison.InvariantCultureIgnoreCase)) ;
+        }
+
+        private void FiltraPerNPisteDiTipo()
+        {
+            if (numeroPisteFiltroTextBox.Text != "")
+            {
+                try
+                {
+                    int numeroPiste = int.Parse(numeroPisteFiltroTextBox.Text);
+                    string tipoPistaCercata = tipologiaPistaFiltroComboBox.SelectedItem.ToString();
+                    IFiltra filtraPerNPisteDiTipo = new FiltraPistePerTipo(numeroPiste, tipoPistaCercata);
+                    resortController.Filtro = filtraPerNPisteDiTipo;
+                    Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                    RiempiImpiantiGrid(impiantiFiltrati);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Inserisci un numero di piste valido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completa il campo nome per continuare");
             }
         }
 

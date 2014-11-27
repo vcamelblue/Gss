@@ -17,7 +17,7 @@ namespace Gss.Controller
 
         
 
-        public List<Periodo> AddPeriodi(List<Periodo> periodi)
+        public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
             periodi.Sort(new PeriodoComparer());
             List<Periodo> temp =new List<Periodo>(periodi);
@@ -58,7 +58,7 @@ namespace Gss.Controller
         }
         
 
-        public string TryAddPeriodi(List<Periodo> periodi)
+        public string TrySetPeriodi(List<Periodo> periodi)
         {
             string result = "";
             periodi.Sort(new PeriodoComparer());
@@ -101,7 +101,29 @@ namespace Gss.Controller
             return result;
         }
 
+        public PrezziRisorsa GetPrezzoRisorsaByData(Risorsa risorsa,DateTime data)
+        {
+            PrezziRisorsa prezzi= Gss.GestorePeriodi.getPrezzoRisorsaByData(risorsa, data);
+            if(prezzi==null)
+            {
+                throw new Exception("Non esistono prezzi della risorsa per la data specificata");
+            }
+            return prezzi;
+        }
 
+        
 
+        public ProfiloPrezziRisorse GetProfiloByNome(string nomeProfilo)
+        {
+            ProfiloPrezziRisorse profilo=Gss.ProfiliPrezziRisorse.GetProfiloPrezziRisorseByNome(nomeProfilo);
+            if (profilo == null)
+                throw new Exception("Non esiste il profilo per il nome specificato");
+            return profilo;
+        }
+
+        public ProfiliPrezziRisorse GetProfili()
+        {
+            return Gss.ProfiliPrezziRisorse;
+        }
     }
 }

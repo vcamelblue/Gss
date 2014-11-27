@@ -153,7 +153,7 @@ namespace Gss
             periodi.Add(periodo1);periodi.Add(periodo2);periodi.Add(periodo3);periodi.Add(periodo4);
             Console.Out.WriteLine(new DateTime(2014, 12, 01));
             PeriodiProfiliController ppc=new PeriodiProfiliController();
-            Console.Out.WriteLine(ppc.TryAddPeriodi(periodi));
+            Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
             
         }
     }

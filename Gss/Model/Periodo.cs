@@ -65,5 +65,21 @@ namespace Gss.Model
         {
             return new Periodo(this.DataInizio, this.DataFine, this.Profilo);
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            Periodo p;
+            if (obj is Periodo)
+            {
+                p = (Periodo)obj;
+            }
+            else
+                return false;
+            if (this._dataInizio == p.DataInizio && this._dataFine == p.DataFine)
+                return true;
+            return false;
+        }
     }
 }

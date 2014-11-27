@@ -46,7 +46,7 @@ namespace Gss.View
         {
             DateTime dataInizio = dataInizioTimePicker.Value;
             DateTime dataFine = dataFineTimePicker.Value;
-            string nomeProfilo = profiloPeriodoComboBox.SelectedText;
+            string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
             ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloByNome(nomeProfilo); 
 
             if (CheckData(dataInizio) && CheckData(dataFine))
@@ -88,7 +88,7 @@ namespace Gss.View
 
         private void RiempiProfiloComboBox()
         {
-            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().)
+            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().Profili)
             {
                 profiloPeriodoComboBox.Items.Add(p.Nome);
             }

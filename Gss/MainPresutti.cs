@@ -144,10 +144,16 @@ namespace Gss
             profiloController.Gss.ProfiliPrezziRisorse.Profili = profili;
 
             Periodo periodo = new Periodo(DateTime.Today, DateTime.Today.AddDays(10), profilo1);
+            Periodo periodo2 = new Periodo(DateTime.Today.AddDays(11), DateTime.Today.AddDays(20), profilo1);
+            Periodo periodo3 = new Periodo(DateTime.Today.AddDays(21), DateTime.Today.AddDays(30), profilo1);
 
+            List<Periodo> periodi = new List<Periodo>();
+            periodi.Add(periodo);
+            periodi.Add(periodo2);
+            periodi.Add(periodo3);
 
             
-            Application.Run(new AggiungiModificaPeriodo(profiloController,periodo));
+            Application.Run(new AggiungiModificaPeriodo(profiloController,periodi,periodo));
             
         }
     }

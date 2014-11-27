@@ -28,7 +28,7 @@ namespace Gss.Filtra
 
             foreach (Impianto i in impianti.ListaImpianti)
             {
-                if (i.Nome == NameToFinder)
+                if (i.Nome.IndexOf(NameToFinder, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     result.Add(i);
                 }

@@ -9,9 +9,36 @@ namespace Gss.Model
     public class GSS
     {
         private static GSS _gss;
-        private static int _numeroPrenotazioni = 0;
-        private static int _numeroSkiCards = 0;
-        private static int _numeroSkiPass = 0;
+        private int _numeroPrenotazioni;
+
+        public int NumeroPrenotazioni
+        {
+            get 
+            {
+                _numeroPrenotazioni++;
+                return _numeroPrenotazioni++; 
+            }
+        }
+        private  int _numeroSkiCards;
+
+        public int NumeroSkiCards
+        {
+            get 
+            {
+                _numeroSkiCards++;
+                return _numeroSkiCards; 
+            }
+        }
+        private int _numeroSkiPass;
+
+        public int NumeroSkiPass
+        {
+            get 
+            {
+                _numeroSkiPass++;
+                return _numeroSkiPass; 
+            }
+        }
         private Resort _resort;
         private Prenotazioni _prenotazioni;
         private Direttore _direttore;
@@ -25,6 +52,9 @@ namespace Gss.Model
             _prenotazioni = new Prenotazioni();
             _gestorePeriodi = GestorePeriodi.GetInstance();
             _profiliPrezziRisorse = new ProfiliPrezziRisorse();
+            _numeroPrenotazioni = 0;
+            _numeroSkiCards = 0;
+            _numeroSkiPass = 0;
         }
 
         public static GSS GetInstance()

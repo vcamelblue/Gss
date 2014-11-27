@@ -241,7 +241,7 @@ namespace Gss.Controller
 
         public Impianti Filtra(Impianti impianti)
         {
-            return new Impianti();
+            return Filtro.Filtra(impianti);
         }
 
         public IFiltra Filtro

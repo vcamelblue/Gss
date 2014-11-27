@@ -87,12 +87,6 @@ namespace Gss
             #endregion
 
 
-            ResortController resortController = new ResortController();
-            resortController.Gss.Resort = new Resort("a", "a", "a", "a");
-
-
-            resortController.Gss.Resort.Impianti = impianti;
-
             Bungalow b1 = new Bungalow("44");
             Bungalow b2 = new Bungalow("45");
             Bungalow b3 = new Bungalow("46");
@@ -122,15 +116,6 @@ namespace Gss
             b7.Add(s7);
             b8.Add(s8);
 
-            resortController.AddBungalow(b2);
-            resortController.AddBungalow(b1);
-            resortController.AddBungalow(b3);
-            resortController.AddBungalow(b4);
-            resortController.AddBungalow(b5);
-            resortController.AddBungalow(b6);
-            resortController.AddBungalow(b7);
-            resortController.AddBungalow(b8);
-
             ProfiloPrezziRisorse profilo1 = new ProfiloPrezziRisorse("Alta");
             ProfiloPrezziRisorse profilo2 = new ProfiloPrezziRisorse("Bassa");
             ProfiloPrezziRisorse profilo3 = new ProfiloPrezziRisorse("Media");
@@ -140,8 +125,7 @@ namespace Gss
             profili.Add(profilo2);
             profili.Add(profilo3);
 
-            PeriodiProfiliController profiloController = new PeriodiProfiliController();
-            profiloController.Gss.ProfiliPrezziRisorse.Profili = profili;
+            
 
             Periodo periodo = new Periodo(DateTime.Today, DateTime.Today.AddDays(10), profilo1);
             Periodo periodo2 = new Periodo(DateTime.Today.AddDays(11), DateTime.Today.AddDays(20), profilo1);
@@ -152,10 +136,19 @@ namespace Gss
             periodi.Add(periodo2);
             periodi.Add(periodo3);
 
-            profiloController.Gss.Resort = new Resort("a", "a", "a", "a", DateTime.Today, DateTime.Today.AddDays(20));
+            SkiCard skicard = new SkiCard("aa");
 
-            
-            Application.Run(new AggiungiModificaPeriodo(profiloController,periodi,periodo));
+            SkiPassAGiornata skipassAGiornata = new SkiPassAGiornata("1",impianto1,DateTime.Today,DateTime.Today.AddDays(10));
+
+            ResortController resortController = new ResortController();
+            PrenotazioniController prenotazioniController = new PrenotazioniController();
+
+            Resort resort = new Resort("a", "a", "a", "a", DateTime.Today.AddDays(-20), DateTime.Today.AddDays(20));
+            resort.Impianti = impianti;
+
+            resortController.Gss.Resort = resort;
+
+            Application.Run(new AggiungiModificaSkipass(prenotazioniController,resortController,skicard,skipassAGiornata));
             
         }
     }

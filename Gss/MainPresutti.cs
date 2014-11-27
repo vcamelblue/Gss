@@ -130,8 +130,24 @@ namespace Gss
             resortController.AddBungalow(b6);
             resortController.AddBungalow(b7);
             resortController.AddBungalow(b8);
+
+            ProfiloPrezziRisorse profilo1 = new ProfiloPrezziRisorse("Alta");
+            ProfiloPrezziRisorse profilo2 = new ProfiloPrezziRisorse("Bassa");
+            ProfiloPrezziRisorse profilo3 = new ProfiloPrezziRisorse("Media");
+
+            List<ProfiloPrezziRisorse> profili = new List<ProfiloPrezziRisorse>();
+            profili.Add(profilo1);
+            profili.Add(profilo2);
+            profili.Add(profilo3);
+
+            PeriodiProfiliController profiloController = new PeriodiProfiliController();
+            profiloController.Gss.ProfiliPrezziRisorse.Profili = profili;
+
+            Periodo periodo = new Periodo(DateTime.Today, DateTime.Today.AddDays(10), profilo1);
+
+
             
-            Application.Run(new GestioneBungalows(resortController));
+            Application.Run(new AggiungiModificaPeriodo(profiloController,periodo));
             
         }
     }

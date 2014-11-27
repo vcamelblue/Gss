@@ -31,21 +31,21 @@
             this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
-            this.myComboBox1 = new Gss.View.Components.MyComboBox(this.components);
+            this.profiloPeriodoComboBox = new Gss.View.Components.MyComboBox(this.components);
             this.SuspendLayout();
             // 
             // dataInizioTimePicker
             // 
             this.dataInizioTimePicker.Location = new System.Drawing.Point(305, 117);
             this.dataInizioTimePicker.Name = "dataInizioTimePicker";
-            this.dataInizioTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.dataInizioTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataInizioTimePicker.TabIndex = 4;
             // 
             // dataFineTimePicker
             // 
             this.dataFineTimePicker.Location = new System.Drawing.Point(305, 175);
             this.dataFineTimePicker.Name = "dataFineTimePicker";
-            this.dataFineTimePicker.Size = new System.Drawing.Size(200, 23);
+            this.dataFineTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataFineTimePicker.TabIndex = 5;
             // 
             // annullaButton
@@ -84,7 +84,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(75, 177);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(75, 21);
+            this.myLabel3.Size = new System.Drawing.Size(62, 17);
             this.myLabel3.TabIndex = 2;
             this.myLabel3.Text = "Data Fine";
             // 
@@ -96,7 +96,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(75, 119);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(83, 21);
+            this.myLabel2.Size = new System.Drawing.Size(69, 17);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Data Inizio";
             // 
@@ -108,27 +108,28 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(75, 58);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(114, 21);
+            this.myLabel1.Size = new System.Drawing.Size(90, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Profilo Periodo";
             // 
-            // myComboBox1
+            // profiloPeriodoComboBox
             // 
-            this.myComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
-            this.myComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.myComboBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myComboBox1.FormattingEnabled = true;
-            this.myComboBox1.Location = new System.Drawing.Point(305, 55);
-            this.myComboBox1.Name = "myComboBox1";
-            this.myComboBox1.Size = new System.Drawing.Size(200, 26);
-            this.myComboBox1.TabIndex = 3;
+            this.profiloPeriodoComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(231)))), ((int)(((byte)(231)))));
+            this.profiloPeriodoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.profiloPeriodoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.profiloPeriodoComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profiloPeriodoComboBox.FormattingEnabled = true;
+            this.profiloPeriodoComboBox.Location = new System.Drawing.Point(305, 55);
+            this.profiloPeriodoComboBox.Name = "profiloPeriodoComboBox";
+            this.profiloPeriodoComboBox.Size = new System.Drawing.Size(200, 22);
+            this.profiloPeriodoComboBox.TabIndex = 3;
             // 
             // AggiungiModificaPeriodo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(582, 303);
-            this.Controls.Add(this.myComboBox1);
+            this.Controls.Add(this.profiloPeriodoComboBox);
             this.Controls.Add(this.annullaButton);
             this.Controls.Add(this.salvaButton);
             this.Controls.Add(this.dataFineTimePicker);
@@ -140,6 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaPeriodo";
             this.Text = "Aggiungi Periodo";
+            this.Load += new System.EventHandler(this.AggiungiModificaPeriodo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +156,6 @@
         private System.Windows.Forms.DateTimePicker dataFineTimePicker;
         private Components.MyButton salvaButton;
         private Components.MyButton annullaButton;
-        private Components.MyComboBox myComboBox1;
+        private Components.MyComboBox profiloPeriodoComboBox;
     }
 }

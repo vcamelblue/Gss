@@ -14,9 +14,28 @@ namespace Gss.View
 {
     public partial class AggiungiModificaPeriodo : Form 
     {
-        public AggiungiModificaPeriodo() 
+        private PeriodiProfiliController periodiProfiliController;
+        private bool inEditingMode;
+        private Periodo periodo;
+
+        public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController) 
         {
+            this.periodiProfiliController = periodiProfiliController;
+            inEditingMode = false;
+            periodo = null;
+
             InitializeComponent();
+        }
+
+        public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController, Periodo periodo)
+        {
+            this.periodiProfiliController = periodiProfiliController;
+            inEditingMode = true;
+            this.periodo = periodo;
+
+            InitializeComponent();
+            salvaButton.Text = "Salva Modifiche";
+            this.Text = "Modifica Periodo";
         }
 
 
@@ -29,5 +48,19 @@ namespace Gss.View
         {
             this.Close();
         }
+
+        private void AggiungiModificaPeriodo_Load(object sender, EventArgs e)
+        {
+            RiempiProfiloComboBox();
+        }
+
+        private void RiempiProfiloComboBox()
+        {
+            foreach (ProfiloPrezziRisorse p in periodiProfiliController.Gss.ProfiliPrezziRisorse.Profili)
+            {
+                profiloPeriodoComboBox.Items.Add(p.Nome);
+            }
+        }
+
     }
 }

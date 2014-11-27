@@ -17,6 +17,10 @@ namespace Gss
     {
         private ClientiController clientiController;
 
+        private Button previusSelectedButton = null;
+        private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
+        private Color selectedButtonColor = Color.FromArgb(54, 78, 102);
+
         internal Form1(ClientiController clientiController) 
         {
             this.clientiController = clientiController;
@@ -46,6 +50,33 @@ namespace Gss
             dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
             dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
             dataGridView1.Rows.Add("stri1", "stri1", "stri1", "stri1", "stri1");
+        }
+
+        private void myButton3_Click(object sender, EventArgs e)
+        {
+            selectRightButton(myButton3);
+        }
+
+        private void myButton4_Click(object sender, EventArgs e)
+        {
+            selectRightButton(myButton4);
+        }
+
+        private void myButton5_Click(object sender, EventArgs e)
+        {
+            selectRightButton(myButton5);
+        }
+
+
+        //utilissima funzione
+        private void selectRightButton(Button newSelectedButton)
+        {
+            if (previusSelectedButton != null)
+            {
+                previusSelectedButton.BackColor = normalButtonColor;
+            }
+            newSelectedButton.BackColor = selectedButtonColor;
+            previusSelectedButton = newSelectedButton;            
         }
     }
 }

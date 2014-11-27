@@ -94,7 +94,7 @@ namespace Gss
 
             //Application.Run(new GestioneImpianti(resortController));
 
-            //Application.Run(new AggiungiModificaSkipass());
+            //Application.Run(new Form1(clientiController));
         }
     }
 }

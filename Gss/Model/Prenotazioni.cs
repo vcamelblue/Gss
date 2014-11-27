@@ -116,13 +116,5 @@ namespace Gss.Model
             Cliente cliente = prenotazioneAttiva.Cliente;
             return new PrenotazioneArchiviata(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente, fattura);
         }
-
-        public bool AddSkiCard(PrenotazioneAttiva prenotazione,SkiCard skiCard)
-        {
-            foreach(PrenotazioneAttiva p in this.GetPrenotazioniAttive())
-            {
-                if(p.Equals(prenotazione))
-            }
-        }
     }
 }

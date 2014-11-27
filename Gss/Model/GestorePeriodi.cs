@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gss.Controller; // ATTENZIONE PASSARE A CONTROLLER!!!
+
 
 namespace Gss.Model
 {
@@ -15,7 +15,7 @@ namespace Gss.Model
         private static GestorePeriodi _gestorePeriodi;
         private List<Periodo> periodi;
 
-        //private DizionarioPeriodi _dizionarioPeriodi;
+       
         //Constructors
 
         private GestorePeriodi() 
@@ -36,38 +36,12 @@ namespace Gss.Model
             return _gestorePeriodi;
         }
 
-       /* public List<Periodo> TryAdd(Periodo periodo)
-        {
-            if (_dizionarioPeriodi == null)
-            {
-                //DIZIONARIO NON INIZIALIZZATO
-            }
-
-
-            return _dizionarioPeriodi.TryAdd(periodo);
-
-        }
-
-        public bool Add(Periodo p)
-        {
-            if (_dizionarioPeriodi == null)
-                return false;
-            this._dizionarioPeriodi.Add(p);
-            return true;
-        }*/
 
         public bool Remove(Periodo p) 
         {
             return this.Periodi.Remove(p);
         }
 
-       /* public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
-        {
-            if (_dizionarioPeriodi == null)
-                _dizionarioPeriodi = new DizionarioPeriodi(dataInizioStagione, dataFineStagione);
-            //TODO!!!!
-
-        }*/
 
         public Periodo getPeriodoByData(DateTime data)
         {
@@ -83,15 +57,19 @@ namespace Gss.Model
 
         }
 
-        /*public PrezziRisorsa getPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
+        public PrezziRisorsa getPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
         {
             if (risorsa == null || data == null)
                 return null;
-            ProfiloPrezziRisorse profilo=_dizionarioProfili.GetProfiloByData(data);
-            if(profilo==null)
-                return null;
-            return profilo.GetPrezziRisorsa(risorsa);
-        }*/
+            Periodo periodo = getPeriodoByData(data);
+
+            if (periodo != null) 
+            {
+                return periodo.Profilo.GetPrezziRisorsa(risorsa);
+            }
+
+            return null;
+        }
 
         //Property
 

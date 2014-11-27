@@ -145,13 +145,13 @@ namespace Gss
             Bungalows b=prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014,11, 21), new DateTime(2014,11,25),4);
             Console.Out.WriteLine(b);
 
-            Periodo periodo1 = new Periodo(new DateTime(2014 / 12 / 1), new DateTime(2014 / 12 / 10));
-            Periodo periodo2 = new Periodo(new DateTime(2014 / 12 / 3), new DateTime(2014 / 12 / 8));
-            Periodo periodo3 = new Periodo(new DateTime(2014 / 12 / 4), new DateTime(2014 / 12 / 7));
-            Periodo periodo4 = new Periodo(new DateTime(2014 / 12 / 5), new DateTime(2014 / 12 / 9));
+            Periodo periodo1 = new Periodo(new DateTime(2014 , 12 , 1), new DateTime(2014 , 12 , 10));
+            Periodo periodo2 = new Periodo(new DateTime(2014 , 12 , 3), new DateTime(2014 , 12 , 8));
+            Periodo periodo3 = new Periodo(new DateTime(2014 , 12 , 4), new DateTime(2014 , 12 , 7));
+            Periodo periodo4 = new Periodo(new DateTime(2014 , 12 , 5), new DateTime(2014 , 12 , 9));
             List<Periodo> periodi=new List<Periodo>();
             periodi.Add(periodo1);periodi.Add(periodo2);periodi.Add(periodo3);periodi.Add(periodo4);
-
+            Console.Out.WriteLine(new DateTime(2014, 12, 01));
             PeriodiProfiliController ppc=new PeriodiProfiliController();
             Console.Out.WriteLine(ppc.TryAddPeriodi(periodi));
             

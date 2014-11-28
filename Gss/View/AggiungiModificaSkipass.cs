@@ -55,28 +55,27 @@ namespace Gss.View
             SetRangeDate();
 
             perNomeRadioButton.Checked = true;
+            codiceSkipassTextBox.Enabled = false;
 
             if (!inEditingMode)
             {
                 codiceSkipassTextBox.Text = prenotazioneController.Gss.NumeroSkiPass.ToString();
-                codiceSkipassTextBox.Enabled = false;
             }
             else
             {
                 codiceSkipassTextBox.Text = skipass.Codice;
-                codiceSkipassTextBox.Enabled = false;
                 tipologiaSkipassComboBox.SelectedIndex = tipologiaSkipassComboBox.FindStringExact(GetTipologiaBySkipass(skipass));
-                if (tipologiaSkipassComboBox.SelectedIndex == 0)
-                {
-                    SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
-                    skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
-                    skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
-                }
-                else
-                {
-                    SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
-                    skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
-                }
+                    if (tipologiaSkipassComboBox.SelectedIndex == 0)
+                    {
+                        SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
+                        skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
+                        skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
+                    }
+                    else
+                    {
+                        SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
+                        skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
+                    }
             }
         }
 
@@ -150,43 +149,160 @@ namespace Gss.View
 
         private void FiltraPerCaratteristicaSpecifica()
         {
-            if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
+            if (caratteristicaSpecificaAlmenoFiltroTextBox.Text != "")
             {
-                
-                    if (!checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
-                    {
+                if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
+                {
 
+                    if (checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
+                    {
+                        Difficolta difficoltaCercata =(Difficolta)Enum.Parse((typeof(Difficolta)), getDifficoltàGiustaByString(caratteristicaSpecificaAlmenoFiltroTextBox.Text));
+                        IFiltra filtroDifficoltà = new FiltraPerDifficolta(difficoltaCercata);
+                        resortController.Filtro = filtroDifficoltà;
+                        Impianti impiantiCercati = resortController.Filtra(resortController.GetImpianti());
+                        RiempiImpiantiGrid(impiantiCercati);
                     }
                     else
                     {
                         MessageBox.Show("Difficoltà non valida, inserisci (Alta, Media, Bassa)");
                     }
-              
-            }
-            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
-            {
 
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
+                {
+                    double dislivelloCercato = 0;
+                    try
+                    {
+                        dislivelloCercato = double.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (dislivelloCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerDislivelloMassimo(dislivelloCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un dislivello positivo");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 2)//dislivello medio
+                {
+                    double dislivelloCercato = 0;
+                    try
+                    {
+                        dislivelloCercato = double.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (dislivelloCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerDislivelloMedio(dislivelloCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un dislivello positivo");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 3)//numero salti
+                {
+                    int numeroCercato = 0;
+                    try
+                    {
+                        numeroCercato = int.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (numeroCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerNumeroSalti(numeroCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un numero salti");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else //numero jibs
+                {
+                    int numeroCercato = 0;
+                    try
+                    {
+                        numeroCercato = int.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (numeroCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerNumeroJibs(numeroCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un numero jibs");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
             }
-            else if(caratteristicaSpecificaFiltroComboBox.SelectedIndex == 2)//dislivello medio
+            else
             {
-
-            }
-            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 3)//numero salti
-            {
-
-            }
-            else //numero jibs
-            {
-
+                MessageBox.Show("Completa il campo nome per continuare");
             }
         }
 
         private bool checkDifficoltà(string difficolta)
         {
-            return true;
-            string val = "AStringValue";
+            string difficoltaBassa = "Bassa";
+            string difficoltaAlta = "Alta";
+            string difficoltaMedia = "Media";
 
-            //if (val.Equals("astringvalue", StringComparison.InvariantCultureIgnoreCase)) ;
+            if ((difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+                || (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+                || (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Mi restituisce bene le stringhe per costruirmi l'enumerativo esatto
+        private string getDifficoltàGiustaByString(string difficolta)
+        {
+            string difficoltaBassa = "Bassa";
+            string difficoltaAlta = "Alta";
+            string difficoltaMedia = "Media";
+
+            if (difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaBassa;
+            }
+
+            if (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaAlta;
+            }
+            if (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaMedia;
+            }
+            return "";
         }
 
         private void FiltraPerNPisteDiTipo()
@@ -327,6 +443,100 @@ namespace Gss.View
                 all_Ok &= (s != "");
             }
             return all_Ok;
+        }
+
+        private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            caratteristicaSpecificaAlmenoFiltroTextBox.Clear();
+        }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AggiungiSkipassButton_Click(object sender, EventArgs e)
+        {
+            //Recupero i campi
+            string codice = codiceSkipassTextBox.Text;
+            int tipologiaScelta = tipologiaSkipassComboBox.SelectedIndex;
+
+            if (tipologiaScelta == 0)//skipass a giornata
+            {
+                DateTime datainizio = skipassAGiornataDataInizioTimePicker.Value;
+                DateTime datafine = skipassAGiornataDataFineTimePicker.Value;
+                if (inEditingMode)
+                {
+                    SkiPassAGiornata skipassModificato = (SkiPassAGiornata)skipass;
+                    Impianto impiantoScelto = recuperaImpianto();
+                    skipassModificato.DataInizio = datainizio;
+                    skipassModificato.DataFine = datafine;
+                    skipassModificato.Impianto = impiantoScelto;
+                }
+                else
+                {
+                    Impianto impiantoScelto = recuperaImpianto();
+                    SkiPassAGiornata nuovoSkipass = new SkiPassAGiornata(codice, impiantoScelto, datainizio, datafine);
+                    skicard.Add(nuovoSkipass);
+                }
+            }
+            else // skipass ad accesso
+            {
+                DateTime dataRilascio = skipassAdAccessoDataInizioTimePicker.Value;
+                if(numeroAccessiTextBox.Text!="")
+                {
+                    try
+                    {
+                        int numeroAccessi = int.Parse(numeroAccessiTextBox.Text);
+                        if (inEditingMode)
+                        {
+                            SkiPassAdAccesso skipassModificato = (SkiPassAdAccesso)skipass;
+                            Impianto impiantoScelto = recuperaImpianto();
+                            skipassModificato.DataRilascio = dataRilascio;
+                            skipassModificato.NAccessi = numeroAccessi;
+                            skipassModificato.Impianto = impiantoScelto;
+                        }
+                        else
+                        {
+                            Impianto impiantoScelto = recuperaImpianto();
+                            SkiPassAdAccesso nuovoSkipass = new SkiPassAdAccesso(codice, impiantoScelto, numeroAccessi, dataRilascio);
+                            skicard.Add(nuovoSkipass);
+                        }
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("Inserire numero di accessi validi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Riempire tutti i campi");
+                }
+            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private Impianto recuperaImpianto()
+        {
+            foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
+            {
+                if (impiantiDataGridView.SelectedRows[0].Cells[0].Value == i.Codice)
+                {
+                    return i;
+                }
+            }
+            return null;
+        }
+
+        private void tipologiaSkipassComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tipologiaSkipassComboBox.SelectedIndex == 0)
+            {
+                tipoSkipassTabControl.SelectedTab = skipassAGiornataTabPage;
+            }
+            else 
+                tipoSkipassTabControl.SelectedTab = skipassAdAccessoTabPage;
         }
 
         }

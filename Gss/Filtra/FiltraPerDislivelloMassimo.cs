@@ -33,7 +33,7 @@ namespace Gss.Filtra
                     if (p is Fondo)
                     {
                         Fondo fondo = (Fondo)p;
-                        if (fondo.DislivelloMassimo == DislivelloMassimoToFilter)
+                        if (fondo.DislivelloMassimo >= DislivelloMassimoToFilter)
                         {
                             result.Add(i);
                         }

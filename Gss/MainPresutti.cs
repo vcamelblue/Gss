@@ -147,8 +147,12 @@ namespace Gss
             resort.Impianti = impianti;
 
             resortController.Gss.Resort = resort;
+            skicard.Add(new SkiPassAGiornata("00",impianto1,DateTime.Today, DateTime.Today.AddDays(2)));
+            skicard.Add(new SkiPassAGiornata("01", impianto2, DateTime.Today.AddDays(1), DateTime.Today.AddDays(3)));
+            skicard.Add(new SkiPassAdAccesso("02", impianto3, 3, DateTime.Today.AddDays(1)));
 
-            Application.Run(new AggiungiModificaSkipass(prenotazioniController,resortController,skicard,skipassAGiornata));
+            SkiCards skicards = new SkiCards();
+            Application.Run(new AggiungiModificaSkicard(prenotazioniController,resortController,skicards,skicard));
             
         }
     }

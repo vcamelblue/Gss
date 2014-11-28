@@ -84,6 +84,7 @@ namespace Gss
             Impianti impianti = new Impianti();
             impianti.Add(impianto1); impianti.Add(impianto2); impianti.Add(impianto3); impianti.Add(impianto4); impianti.Add(impianto5);
             Console.Out.Write(impianti);
+            
             #endregion
             
             //Application.Run(new Form());
@@ -149,6 +150,11 @@ namespace Gss
             resort.AddStanzaABungalow(b8, s8);*/
             #endregion
 
+            resort.AddImpianto(impianto1);
+            resort.AddImpianto(impianto2);
+            resort.AddImpianto(impianto3);
+            resort.AddImpianto(impianto5);
+            resort.AddImpianto(impianto4);
             PrenotazioneAttiva p1 = new PrenotazioneAttiva(1, 4, new DateTime(2014, 11, 26), new DateTime(2014, 11, 29), cliente1);
             p1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(p1.DataInizio,p1.DataFine,p1.NumeroPersone).ListaBungalow.First();
 
@@ -161,8 +167,10 @@ namespace Gss
             ProfiliPrezziRisorse profili = new ProfiliPrezziRisorse();
             ProfiloPrezziRisorse alta = new ProfiloPrezziRisorse("Alta");
             ProfiloPrezziRisorse bassa = new ProfiloPrezziRisorse("Bassa");
+            ProfiloPrezziRisorse media = new ProfiloPrezziRisorse("Media");
             profili.Add(alta);
             profili.Add(bassa);
+            profili.Add(media);
             ppc.Gss.ProfiliPrezziRisorse = profili;
 
             Periodo periodo1 = new Periodo(new DateTime(2014 , 12 , 1), new DateTime(2014 , 12 , 10));
@@ -212,9 +220,58 @@ namespace Gss
             ppc.SetPeriodi(periodi);
 
             Console.Out.WriteLine(GSS.GetInstance().GestorePeriodi.Periodi);
-            foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
-                Console.Out.WriteLine(p);
+            //foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
+              //  Console.Out.WriteLine(p);
+
+            List<PrezzoSpecifico> prezzispecifici=new List<PrezzoSpecifico>();
+            PrezzoSpecifico prezzoPerAccesso= new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso,5);
+            prezzispecifici.Add(prezzoPerAccesso);
+            PrezziRisorsa prezziImpianto1Alta = new PrezziRisorsa(10, prezzispecifici);
+            PrezziRisorsa prezziImpianto2Alta = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziImpianto3Alta = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziImpianto4Alta = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziImpianto5Alta = new PrezziRisorsa(11, prezzispecifici);
+
+            PrezziRisorsa prezziImpianto1Media = new PrezziRisorsa(8, prezzispecifici);
+            PrezziRisorsa prezziImpianto2Media = new PrezziRisorsa(18, prezzispecifici);
+            PrezziRisorsa prezziImpianto3Media = new PrezziRisorsa(12, prezzispecifici);
+            PrezziRisorsa prezziImpianto4Media = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziImpianto5Media = new PrezziRisorsa(7, prezzispecifici);
+
+            PrezziRisorsa prezziImpianto1Bassa = new PrezziRisorsa(5, prezzispecifici);
+            PrezziRisorsa prezziImpianto2Bassa = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziImpianto3Bassa = new PrezziRisorsa(10, prezzispecifici);
+            PrezziRisorsa prezziImpianto4Bassa = new PrezziRisorsa(12, prezzispecifici);
+            PrezziRisorsa prezziImpianto5Bassa = new PrezziRisorsa(3, prezzispecifici);
+
+
+
+            ppc.SetPrezzoRisorsa(impianto1, "Alta", prezziImpianto1Alta);
+            ppc.SetPrezzoRisorsa(impianto2, "Alta", prezziImpianto2Alta);
+            ppc.SetPrezzoRisorsa(impianto3, "Alta", prezziImpianto3Alta);
+            ppc.SetPrezzoRisorsa(impianto4, "Alta", prezziImpianto4Alta);
+            ppc.SetPrezzoRisorsa(impianto5, "Alta", prezziImpianto5Alta);
+
+            ppc.SetPrezzoRisorsa(impianto1, "Media", prezziImpianto1Media);
+            ppc.SetPrezzoRisorsa(impianto2, "Media", prezziImpianto2Media);
+            ppc.SetPrezzoRisorsa(impianto3, "Media", prezziImpianto3Media);
+            ppc.SetPrezzoRisorsa(impianto4, "Media", prezziImpianto4Media);
+            ppc.SetPrezzoRisorsa(impianto5, "Media", prezziImpianto5Media);
+
+            ppc.SetPrezzoRisorsa(impianto1, "Bassa", prezziImpianto1Bassa);
+            ppc.SetPrezzoRisorsa(impianto2, "Bassa", prezziImpianto2Bassa);
+            ppc.SetPrezzoRisorsa(impianto3, "Bassa", prezziImpianto3Bassa);
+            ppc.SetPrezzoRisorsa(impianto4, "Bassa", prezziImpianto4Bassa);
+            ppc.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
+
+            SkiCard skicard = new SkiCard("aa");
+
+            SkiPassAGiornata skipassAGiornata = new SkiPassAGiornata("1", impianto1, DateTime.Today.AddDays(3), DateTime.Today.AddDays(10));
+
+
+            Application.Run(new AggiungiModificaSkipass(prenotazioni, resort, skicard, skipassAGiornata));
             
+             
         }
     }
 }

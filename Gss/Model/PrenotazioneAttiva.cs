@@ -89,7 +89,7 @@ namespace Gss.Model
             while (!(data.Equals(DataFine))) //calcolo il prezzo standard per giornata
             {
                 prezzo += Bungalow.GetPrezzoFor(data).Prezzo;
-                data.AddDays(1);
+                data =data.AddDays(1);
             }
 
             if (NumeroPersone <= Bungalow.PostiTotaliStandard()) // controllo se ho affittato un bungalow senza sfruttare i posti max
@@ -103,7 +103,7 @@ namespace Gss.Model
                 while (!(data.Equals(DataFine)))                    //calcolo il prezzo per ogni persona extra  per giornata
                 {
                     prezzo +=(numeroPersoneExtra*Bungalow.GetPrezzoFor(data).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore);
-                    data.AddDays(1);
+                    data = data.AddDays(1);
                 }
                 return prezzo;
             }

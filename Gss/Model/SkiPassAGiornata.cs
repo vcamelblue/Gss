@@ -39,7 +39,7 @@ namespace Gss.Model
             while(!(data.Equals(DataFine)))
             {
                 prezzo += Impianto.GetPrezzoFor(data).Prezzo;
-                data.AddDays(1);
+                data = data.AddDays(1);
             }
             return prezzo;
         }

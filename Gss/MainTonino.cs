@@ -225,6 +225,8 @@ namespace Gss
 
             List<PrezzoSpecifico> prezzispecifici=new List<PrezzoSpecifico>();
             PrezzoSpecifico prezzoPerAccesso= new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso,5);
+            PrezzoSpecifico prezzoPerPersonaExtra = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, 6);
+            prezzispecifici.Add(prezzoPerPersonaExtra);
             prezzispecifici.Add(prezzoPerAccesso);
             PrezziRisorsa prezziImpianto1Alta = new PrezziRisorsa(10, prezzispecifici);
             PrezziRisorsa prezziImpianto2Alta = new PrezziRisorsa(20, prezzispecifici);

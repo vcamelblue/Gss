@@ -150,43 +150,161 @@ namespace Gss.View
 
         private void FiltraPerCaratteristicaSpecifica()
         {
-            if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
+            if (caratteristicaSpecificaAlmenoFiltroTextBox.Text != "")
             {
-                
-                    if (!checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
-                    {
+                if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
+                {
 
+                    if (checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
+                    {
+                        Difficolta difficoltaCercata =(Difficolta)Enum.Parse((typeof(Difficolta)), getDifficoltàGiustaByString(caratteristicaSpecificaAlmenoFiltroTextBox.Text));
+                        IFiltra filtroDifficoltà = new FiltraPerDifficolta(difficoltaCercata);
+                        resortController.Filtro = filtroDifficoltà;
+                        Impianti impiantiCercati = resortController.Filtra(resortController.GetImpianti());
+                        RiempiImpiantiGrid(impiantiCercati);
                     }
                     else
                     {
                         MessageBox.Show("Difficoltà non valida, inserisci (Alta, Media, Bassa)");
                     }
-              
-            }
-            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
-            {
 
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
+                {
+                    double dislivelloCercato = 0;
+                    try
+                    {
+                        dislivelloCercato = double.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (dislivelloCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerDislivelloMassimo(dislivelloCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un dislivello positivo");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 2)//dislivello medio
+                {
+                    double dislivelloCercato = 0;
+                    try
+                    {
+                        dislivelloCercato = double.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (dislivelloCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerDislivelloMedio(dislivelloCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un dislivello positivo");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 3)//numero salti
+                {
+                    int numeroCercato = 0;
+                    try
+                    {
+                        numeroCercato = int.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (numeroCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerNumeroSalti(numeroCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un numero salti");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
+                else //numero jibs
+                {
+                    int numeroCercato = 0;
+                    try
+                    {
+                        numeroCercato = int.Parse(caratteristicaSpecificaAlmenoFiltroTextBox.Text);
+                        if (numeroCercato >= 0)
+                        {
+                            IFiltra filtraDislivello = new FiltraPerNumeroJibs(numeroCercato);
+                            resortController.Filtro = filtraDislivello;
+                            Impianti impiantiFiltrati = resortController.Filtra(resortController.GetImpianti());
+                            RiempiImpiantiGrid(impiantiFiltrati);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Inserire un numero jibs");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero nel campo");
+                    }
+                }
             }
-            else if(caratteristicaSpecificaFiltroComboBox.SelectedIndex == 2)//dislivello medio
+            else
             {
-
-            }
-            else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 3)//numero salti
-            {
-
-            }
-            else //numero jibs
-            {
-
+                MessageBox.Show("Completa il campo nome per continuare");
             }
         }
 
         private bool checkDifficoltà(string difficolta)
         {
-            return true;
-            string val = "AStringValue";
+            string difficoltaBassa = "Bassa";
+            string difficoltaAlta = "Alta";
+            string difficoltaMedia = "Media";
 
-            //if (val.Equals("astringvalue", StringComparison.InvariantCultureIgnoreCase)) ;
+            if ((difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+                || (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+                || (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+        //Mi restituisce bene le stringhe per costruirmi l'enumerativo esatto
+        private string getDifficoltàGiustaByString(string difficolta)
+        {
+            string difficoltaBassa = "Bassa";
+            string difficoltaAlta = "Alta";
+            string difficoltaMedia = "Media";
+
+            if (difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaBassa;
+            }
+
+            if (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaAlta;
+            }
+            if (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return difficoltaMedia;
+            }
+            return "";
         }
 
         private void FiltraPerNPisteDiTipo()
@@ -323,6 +441,11 @@ namespace Gss.View
                 all_Ok &= (s != "");
             }
             return all_Ok;
+        }
+
+        private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            caratteristicaSpecificaAlmenoFiltroTextBox.Clear();
         }
 
         }

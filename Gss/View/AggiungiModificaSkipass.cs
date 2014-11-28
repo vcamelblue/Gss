@@ -283,7 +283,6 @@ namespace Gss.View
             return false;
         }
 
-
         //Mi restituisce bene le stringhe per costruirmi l'enumerativo esatto
         private string getDifficoltàGiustaByString(string difficolta)
         {
@@ -450,6 +449,91 @@ namespace Gss.View
         private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             caratteristicaSpecificaAlmenoFiltroTextBox.Clear();
+        }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AggiungiSkipassButton_Click(object sender, EventArgs e)
+        {
+            //Recupero i campi
+            string codice = codiceSkipassTextBox.Text;
+            int tipologiaScelta = tipologiaSkipassComboBox.SelectedIndex;
+
+            if (tipologiaScelta == 0)//skipass a giornata
+            {
+                DateTime datainizio = skipassAGiornataDataInizioTimePicker.Value;
+                DateTime datafine = skipassAGiornataDataFineTimePicker.Value;
+                if (inEditingMode)
+                {
+                    SkiPassAGiornata skipassModificato = (SkiPassAGiornata)skipass;
+                    Impianto impiantoScelto = recuperaImpianto();
+                    skipassModificato.DataInizio = datainizio;
+                    skipassModificato.DataFine = datafine;
+                }
+                else
+                {
+                    Impianto impiantoScelto = recuperaImpianto();
+                    SkiPassAGiornata nuovoSkipass = new SkiPassAGiornata(codice, impiantoScelto, datainizio, datafine);
+                    skicard.Add(nuovoSkipass);
+                }
+            }
+            else // skipass ad accesso
+            {
+                DateTime dataRilascio = skipassAdAccessoDataInizioTimePicker.Value;
+                if(numeroAccessiTextBox.Text!=""){
+                    try
+                    {
+                        int numeroAccessi = int.Parse(numeroAccessiTextBox.Text);
+                        if (inEditingMode)
+                        {
+                            SkiPassAdAccesso skipassModificato = (SkiPassAdAccesso)skipass;
+                            Impianto impiantoScelto = recuperaImpianto();
+                            skipassModificato.DataRilascio = dataRilascio;
+                            skipassModificato.NAccessi = numeroAccessi;
+                            skipassModificato.Impianto = impiantoScelto;
+                        }
+                        else
+                        {
+                            Impianto impiantoScelto = recuperaImpianto();
+                            SkiPassAdAccesso nuovoSkipass = new SkiPassAdAccesso(codice, impiantoScelto, numeroAccessi, dataRilascio);
+                            skicard.Add(nuovoSkipass);
+                        }
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("Inserire numero di accessi validi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Riempire tutti i campi");
+                }
+            }
+        }
+
+        private Impianto recuperaImpianto()
+        {
+            foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
+            {
+                if (impiantiDataGridView.SelectedRows[0].Cells[0].Value == i.Codice)
+                {
+                    return i;
+                }
+            }
+            return null;
+        }
+
+        private void tipologiaSkipassComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tipologiaSkipassComboBox.SelectedIndex == 0)
+            {
+                tipoSkipassTabControl.SelectedTab = skipassAGiornataTabPage;
+            }
+            else 
+                tipoSkipassTabControl.SelectedTab = skipassAdAccessoTabPage;
         }
 
         }

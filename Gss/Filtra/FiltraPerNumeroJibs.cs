@@ -33,7 +33,7 @@ namespace Gss.Filtra
                     if (p is SnowPark)
                     {
                         SnowPark snowpark = (SnowPark)p;
-                        if (snowpark.NumeroJibs == NumeroJibsToFilter)
+                        if (snowpark.NumeroJibs >= NumeroJibsToFilter)
                         {
                             result.Add(i);
                         }

@@ -62,11 +62,14 @@ namespace Gss.View
 
         private void riempiSkiPassGrid()
         {
-            skipassTotaliLabel.Text = "Pass Totali  " + skiCard.SkiPass.Count;
+            totaleSkipassLabel.Text = "Pass Totali  " + skiCard.SkiPass.Count;
+            double totale = 0;
             foreach(SkiPass s in skiCard.SkiPass)
             {
-                skipassDataGridView.Rows.Add(s.Codice, s.Impianto.Nome, GetTipologiaSkipass(s), GetInfoBySkipass(s));
+                skipassDataGridView.Rows.Add(s.Codice, s.Impianto.Nome, GetTipologiaSkipass(s), GetInfoBySkipass(s), "10 €");
+                //totale += s.GetPrezzoSkiPass();
             }
+            totaleSkipassLabel.Text = "Totale SkiPass  " + totale + " €";
         }
 
         private string GetTipologiaSkipass(SkiPass skipass)

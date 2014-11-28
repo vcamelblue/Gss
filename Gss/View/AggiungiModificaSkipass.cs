@@ -152,8 +152,7 @@ namespace Gss.View
         {
             if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
             {
-                if (caratteristicaSpecificaAlmenoFiltroTextBox.Text != "")
-                {
+                
                     if (!checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
                     {
 
@@ -162,11 +161,7 @@ namespace Gss.View
                     {
                         MessageBox.Show("Difficoltà non valida, inserisci (Alta, Media, Bassa)");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Completa il campo nome per continuare");
-                }
+              
             }
             else if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 1)//dislivello max
             {

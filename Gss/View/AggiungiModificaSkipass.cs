@@ -55,28 +55,27 @@ namespace Gss.View
             SetRangeDate();
 
             perNomeRadioButton.Checked = true;
+            codiceSkipassTextBox.Enabled = false;
 
             if (!inEditingMode)
             {
                 codiceSkipassTextBox.Text = prenotazioneController.Gss.NumeroSkiPass.ToString();
-                codiceSkipassTextBox.Enabled = false;
             }
             else
             {
                 codiceSkipassTextBox.Text = skipass.Codice;
-                codiceSkipassTextBox.Enabled = false;
                 tipologiaSkipassComboBox.SelectedIndex = tipologiaSkipassComboBox.FindStringExact(GetTipologiaBySkipass(skipass));
-                if (tipologiaSkipassComboBox.SelectedIndex == 0)
-                {
-                    SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
-                    skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
-                    skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
-                }
-                else
-                {
-                    SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
-                    skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
-                }
+                    if (tipologiaSkipassComboBox.SelectedIndex == 0)
+                    {
+                        SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
+                        skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
+                        skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
+                    }
+                    else
+                    {
+                        SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
+                        skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
+                    }
             }
         }
 
@@ -472,6 +471,7 @@ namespace Gss.View
                     Impianto impiantoScelto = recuperaImpianto();
                     skipassModificato.DataInizio = datainizio;
                     skipassModificato.DataFine = datafine;
+                    skipassModificato.Impianto = impiantoScelto;
                 }
                 else
                 {
@@ -483,7 +483,8 @@ namespace Gss.View
             else // skipass ad accesso
             {
                 DateTime dataRilascio = skipassAdAccessoDataInizioTimePicker.Value;
-                if(numeroAccessiTextBox.Text!=""){
+                if(numeroAccessiTextBox.Text!="")
+                {
                     try
                     {
                         int numeroAccessi = int.Parse(numeroAccessiTextBox.Text);
@@ -512,6 +513,8 @@ namespace Gss.View
                     MessageBox.Show("Riempire tutti i campi");
                 }
             }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private Impianto recuperaImpianto()

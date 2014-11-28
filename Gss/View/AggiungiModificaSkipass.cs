@@ -363,9 +363,13 @@ namespace Gss.View
                         RiempiImpiantiGrid(impiantiFiltrati);
                     }
                 }
-                catch (Exception)
+                catch (FormatException)
                 {
                     MessageBox.Show("Inserisci un prezzo valido");
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
                 }
             }
             else

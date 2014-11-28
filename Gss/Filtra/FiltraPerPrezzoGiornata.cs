@@ -50,7 +50,7 @@ namespace Gss.Filtra
                 while (!(data.Equals(DataFine)))
                 {
                     prezzo += i.GetPrezzoFor(data).Prezzo;
-                    data.AddDays(1);
+                    data=data.AddDays(1);
                 }
                 if (prezzo <= PrezzoToFilter)
                 {

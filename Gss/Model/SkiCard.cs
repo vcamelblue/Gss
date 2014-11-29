@@ -74,5 +74,27 @@ namespace Gss.Model
 
             else return false;
         }
+
+        public int GetNumeroSkiPassAGiornata()
+        {
+            int result=0;
+            foreach(SkiPass s in this.SkiPass)
+            {
+                if (s is SkiPassAGiornata)
+                    result++;
+            }
+            return result;
+        }
+
+        public int GetNumeroSkiPassAdAccesso()
+        {
+            int result = 0;
+            foreach (SkiPass s in this.SkiPass)
+            {
+                if (s is SkiPassAdAccesso)
+                    result++;
+            }
+            return result;
+        }
     }
 }

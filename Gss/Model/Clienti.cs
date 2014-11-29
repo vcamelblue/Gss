@@ -54,20 +54,21 @@ namespace Gss.Model
             }
             return result;
         }
-        
+
         public Cliente GetClienteByCF(String codiceFiscale)
         {
             Cliente cliente = null;
 
-            foreach(Cliente c in this.ListaClienti)
+            foreach (Cliente c in this.ListaClienti)
             {
                 if (c.CodiceFiscale == codiceFiscale)
-                { 
+                {
                     cliente = c;
                     break;
                 }
             }
             return cliente;
+        }
 
     }
 }

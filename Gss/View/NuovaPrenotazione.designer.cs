@@ -61,7 +61,6 @@
             this.myLabel8 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.clientiDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.clientiColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenotazioneTabPage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -123,6 +122,8 @@
             this.skicardsTabButton = new Gss.View.Components.MyButton(this.components);
             this.prenotazioneTabButton = new Gss.View.Components.MyButton(this.components);
             this.clienteTabButton = new Gss.View.Components.MyButton(this.components);
+            this.clientiColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlWithoutHeader.SuspendLayout();
             this.clienteTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -176,6 +177,7 @@
             this.nuvoClienteButton.TabIndex = 5;
             this.nuvoClienteButton.Text = "Nuvo Cliente";
             this.nuvoClienteButton.UseVisualStyleBackColor = false;
+            this.nuvoClienteButton.Click += new System.EventHandler(this.nuvoClienteButton_Click);
             // 
             // tabControlWithoutHeader
             // 
@@ -195,10 +197,10 @@
             this.clienteTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.clienteTabPage.Controls.Add(this.groupBox1);
             this.clienteTabPage.Controls.Add(this.clientiDataGridView);
-            this.clienteTabPage.Location = new System.Drawing.Point(4, 27);
+            this.clienteTabPage.Location = new System.Drawing.Point(4, 23);
             this.clienteTabPage.Name = "clienteTabPage";
             this.clienteTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.clienteTabPage.Size = new System.Drawing.Size(800, 425);
+            this.clienteTabPage.Size = new System.Drawing.Size(800, 429);
             this.clienteTabPage.TabIndex = 0;
             this.clienteTabPage.Text = "Cliente";
             // 
@@ -234,7 +236,7 @@
             this.emailClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.emailClienteTextBox.Location = new System.Drawing.Point(202, 380);
             this.emailClienteTextBox.Name = "emailClienteTextBox";
-            this.emailClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.emailClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.emailClienteTextBox.TabIndex = 27;
             this.emailClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -247,7 +249,7 @@
             this.telefonoClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.telefonoClienteTextBox.Location = new System.Drawing.Point(202, 330);
             this.telefonoClienteTextBox.Name = "telefonoClienteTextBox";
-            this.telefonoClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.telefonoClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.telefonoClienteTextBox.TabIndex = 26;
             this.telefonoClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -260,7 +262,7 @@
             this.indirizzoClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.indirizzoClienteTextBox.Location = new System.Drawing.Point(202, 280);
             this.indirizzoClienteTextBox.Name = "indirizzoClienteTextBox";
-            this.indirizzoClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.indirizzoClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.indirizzoClienteTextBox.TabIndex = 25;
             this.indirizzoClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -273,7 +275,7 @@
             this.codiceFiscaleClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceFiscaleClienteTextBox.Location = new System.Drawing.Point(202, 230);
             this.codiceFiscaleClienteTextBox.Name = "codiceFiscaleClienteTextBox";
-            this.codiceFiscaleClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.codiceFiscaleClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.codiceFiscaleClienteTextBox.TabIndex = 24;
             this.codiceFiscaleClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -282,7 +284,7 @@
             this.dataNascitaTimePicker.Enabled = false;
             this.dataNascitaTimePicker.Location = new System.Drawing.Point(202, 175);
             this.dataNascitaTimePicker.Name = "dataNascitaTimePicker";
-            this.dataNascitaTimePicker.Size = new System.Drawing.Size(299, 26);
+            this.dataNascitaTimePicker.Size = new System.Drawing.Size(299, 22);
             this.dataNascitaTimePicker.TabIndex = 23;
             // 
             // cognomeClienteTextBox
@@ -294,7 +296,7 @@
             this.cognomeClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.cognomeClienteTextBox.Location = new System.Drawing.Point(202, 125);
             this.cognomeClienteTextBox.Name = "cognomeClienteTextBox";
-            this.cognomeClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.cognomeClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.cognomeClienteTextBox.TabIndex = 22;
             this.cognomeClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -307,7 +309,7 @@
             this.nomeClienteTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.nomeClienteTextBox.Location = new System.Drawing.Point(202, 75);
             this.nomeClienteTextBox.Name = "nomeClienteTextBox";
-            this.nomeClienteTextBox.Size = new System.Drawing.Size(299, 21);
+            this.nomeClienteTextBox.Size = new System.Drawing.Size(299, 17);
             this.nomeClienteTextBox.TabIndex = 21;
             this.nomeClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -319,7 +321,7 @@
             this.myLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel7.Location = new System.Drawing.Point(55, 380);
             this.myLabel7.Name = "myLabel7";
-            this.myLabel7.Size = new System.Drawing.Size(53, 21);
+            this.myLabel7.Size = new System.Drawing.Size(43, 17);
             this.myLabel7.TabIndex = 20;
             this.myLabel7.Text = "E-mail";
             // 
@@ -331,7 +333,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(55, 330);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(68, 21);
+            this.myLabel6.Size = new System.Drawing.Size(56, 17);
             this.myLabel6.TabIndex = 19;
             this.myLabel6.Text = "Telefono";
             // 
@@ -343,7 +345,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(55, 280);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(69, 21);
+            this.myLabel5.Size = new System.Drawing.Size(56, 17);
             this.myLabel5.TabIndex = 18;
             this.myLabel5.Text = "Indirizzo";
             // 
@@ -355,7 +357,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(55, 230);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(106, 21);
+            this.myLabel4.Size = new System.Drawing.Size(85, 17);
             this.myLabel4.TabIndex = 17;
             this.myLabel4.Text = "Codice Fiscale";
             // 
@@ -367,7 +369,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(55, 179);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(97, 21);
+            this.myLabel3.Size = new System.Drawing.Size(81, 17);
             this.myLabel3.TabIndex = 16;
             this.myLabel3.Text = "Data Nascita";
             // 
@@ -379,7 +381,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(55, 125);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(76, 21);
+            this.myLabel2.Size = new System.Drawing.Size(61, 17);
             this.myLabel2.TabIndex = 15;
             this.myLabel2.Text = "Cognome";
             // 
@@ -391,7 +393,7 @@
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel8.Location = new System.Drawing.Point(55, 75);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(52, 21);
+            this.myLabel8.Size = new System.Drawing.Size(42, 17);
             this.myLabel8.TabIndex = 14;
             this.myLabel8.Text = "Nome";
             // 
@@ -403,7 +405,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(175, 18);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(204, 29);
+            this.myLabel1.Size = new System.Drawing.Size(163, 23);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Informazioni Cliente";
             // 
@@ -433,7 +435,8 @@
             this.clientiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientiDataGridView.ColumnHeadersVisible = false;
             this.clientiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientiColumn});
+            this.clientiColumn,
+            this.cfColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9F);
@@ -464,21 +467,16 @@
             this.clientiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientiDataGridView.Size = new System.Drawing.Size(229, 423);
             this.clientiDataGridView.TabIndex = 21;
-            // 
-            // clientiColumn
-            // 
-            this.clientiColumn.HeaderText = "Clienti";
-            this.clientiColumn.Name = "clientiColumn";
-            this.clientiColumn.ReadOnly = true;
+            this.clientiDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientiDataGridView_CellValueChanged);
             // 
             // prenotazioneTabPage
             // 
             this.prenotazioneTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.prenotazioneTabPage.Controls.Add(this.groupBox2);
-            this.prenotazioneTabPage.Location = new System.Drawing.Point(4, 27);
+            this.prenotazioneTabPage.Location = new System.Drawing.Point(4, 23);
             this.prenotazioneTabPage.Name = "prenotazioneTabPage";
             this.prenotazioneTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.prenotazioneTabPage.Size = new System.Drawing.Size(800, 425);
+            this.prenotazioneTabPage.Size = new System.Drawing.Size(800, 429);
             this.prenotazioneTabPage.TabIndex = 1;
             this.prenotazioneTabPage.Text = "Prenotazione";
             // 
@@ -531,7 +529,7 @@
             this.numeroPersoneTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroPersoneTextBox.Location = new System.Drawing.Point(166, 114);
             this.numeroPersoneTextBox.Name = "numeroPersoneTextBox";
-            this.numeroPersoneTextBox.Size = new System.Drawing.Size(381, 21);
+            this.numeroPersoneTextBox.Size = new System.Drawing.Size(381, 17);
             this.numeroPersoneTextBox.TabIndex = 9;
             this.numeroPersoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -543,7 +541,7 @@
             this.numeroPrenotazioneTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroPrenotazioneTextBox.Location = new System.Drawing.Point(705, 30);
             this.numeroPrenotazioneTextBox.Name = "numeroPrenotazioneTextBox";
-            this.numeroPrenotazioneTextBox.Size = new System.Drawing.Size(66, 21);
+            this.numeroPrenotazioneTextBox.Size = new System.Drawing.Size(66, 17);
             this.numeroPrenotazioneTextBox.TabIndex = 8;
             this.numeroPrenotazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -551,14 +549,14 @@
             // 
             this.dataFinePrenotazioneTimePicker.Location = new System.Drawing.Point(70, 68);
             this.dataFinePrenotazioneTimePicker.Name = "dataFinePrenotazioneTimePicker";
-            this.dataFinePrenotazioneTimePicker.Size = new System.Drawing.Size(477, 26);
+            this.dataFinePrenotazioneTimePicker.Size = new System.Drawing.Size(477, 22);
             this.dataFinePrenotazioneTimePicker.TabIndex = 7;
             // 
             // dataInizioPrenotazioneTimePicker
             // 
             this.dataInizioPrenotazioneTimePicker.Location = new System.Drawing.Point(70, 26);
             this.dataInizioPrenotazioneTimePicker.Name = "dataInizioPrenotazioneTimePicker";
-            this.dataInizioPrenotazioneTimePicker.Size = new System.Drawing.Size(477, 26);
+            this.dataInizioPrenotazioneTimePicker.Size = new System.Drawing.Size(477, 22);
             this.dataInizioPrenotazioneTimePicker.TabIndex = 6;
             // 
             // bungalowDisponibiliDataGridView
@@ -673,7 +671,7 @@
             this.myLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel13.Location = new System.Drawing.Point(23, 170);
             this.myLabel13.Name = "myLabel13";
-            this.myLabel13.Size = new System.Drawing.Size(168, 23);
+            this.myLabel13.Size = new System.Drawing.Size(132, 18);
             this.myLabel13.TabIndex = 4;
             this.myLabel13.Text = "Bungalow Disponibili";
             // 
@@ -685,7 +683,7 @@
             this.myLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel12.Location = new System.Drawing.Point(578, 30);
             this.myLabel12.Name = "myLabel12";
-            this.myLabel12.Size = new System.Drawing.Size(121, 21);
+            this.myLabel12.Size = new System.Drawing.Size(99, 17);
             this.myLabel12.TabIndex = 3;
             this.myLabel12.Text = "N. Prenotazione";
             // 
@@ -697,7 +695,7 @@
             this.myLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel11.Location = new System.Drawing.Point(23, 113);
             this.myLabel11.Name = "myLabel11";
-            this.myLabel11.Size = new System.Drawing.Size(127, 21);
+            this.myLabel11.Size = new System.Drawing.Size(102, 17);
             this.myLabel11.TabIndex = 2;
             this.myLabel11.Text = "Numero Persone";
             // 
@@ -709,7 +707,7 @@
             this.myLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel10.Location = new System.Drawing.Point(23, 73);
             this.myLabel10.Name = "myLabel10";
-            this.myLabel10.Size = new System.Drawing.Size(24, 21);
+            this.myLabel10.Size = new System.Drawing.Size(19, 17);
             this.myLabel10.TabIndex = 1;
             this.myLabel10.Text = "Al";
             // 
@@ -721,7 +719,7 @@
             this.myLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel9.Location = new System.Drawing.Point(23, 30);
             this.myLabel9.Name = "myLabel9";
-            this.myLabel9.Size = new System.Drawing.Size(32, 21);
+            this.myLabel9.Size = new System.Drawing.Size(27, 17);
             this.myLabel9.TabIndex = 0;
             this.myLabel9.Text = "Dal";
             // 
@@ -729,10 +727,10 @@
             // 
             this.skicardsTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.skicardsTabPage.Controls.Add(this.groupBox3);
-            this.skicardsTabPage.Location = new System.Drawing.Point(4, 27);
+            this.skicardsTabPage.Location = new System.Drawing.Point(4, 23);
             this.skicardsTabPage.Name = "skicardsTabPage";
             this.skicardsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skicardsTabPage.Size = new System.Drawing.Size(800, 425);
+            this.skicardsTabPage.Size = new System.Drawing.Size(800, 429);
             this.skicardsTabPage.TabIndex = 2;
             this.skicardsTabPage.Text = "SkiCards";
             // 
@@ -906,7 +904,7 @@
             this.myLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel14.Location = new System.Drawing.Point(31, 22);
             this.myLabel14.Name = "myLabel14";
-            this.myLabel14.Size = new System.Drawing.Size(77, 24);
+            this.myLabel14.Size = new System.Drawing.Size(64, 19);
             this.myLabel14.TabIndex = 4;
             this.myLabel14.Text = "SkiCards";
             // 
@@ -915,10 +913,10 @@
             this.riepilogoTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.riepilogoTabPage.Controls.Add(this.groupBox4);
             this.riepilogoTabPage.Controls.Add(this.groupBox5);
-            this.riepilogoTabPage.Location = new System.Drawing.Point(4, 27);
+            this.riepilogoTabPage.Location = new System.Drawing.Point(4, 23);
             this.riepilogoTabPage.Name = "riepilogoTabPage";
             this.riepilogoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.riepilogoTabPage.Size = new System.Drawing.Size(800, 425);
+            this.riepilogoTabPage.Size = new System.Drawing.Size(800, 429);
             this.riepilogoTabPage.TabIndex = 3;
             this.riepilogoTabPage.Text = "Riepilogo";
             // 
@@ -950,7 +948,7 @@
             this.numeroPersoneRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroPersoneRiepilogoTextBox.Location = new System.Drawing.Point(589, 180);
             this.numeroPersoneRiepilogoTextBox.Name = "numeroPersoneRiepilogoTextBox";
-            this.numeroPersoneRiepilogoTextBox.Size = new System.Drawing.Size(179, 21);
+            this.numeroPersoneRiepilogoTextBox.Size = new System.Drawing.Size(179, 17);
             this.numeroPersoneRiepilogoTextBox.TabIndex = 10;
             this.numeroPersoneRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -963,7 +961,7 @@
             this.numeroPrenotazioneRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroPrenotazioneRiepilogoTextBox.Location = new System.Drawing.Point(589, 125);
             this.numeroPrenotazioneRiepilogoTextBox.Name = "numeroPrenotazioneRiepilogoTextBox";
-            this.numeroPrenotazioneRiepilogoTextBox.Size = new System.Drawing.Size(179, 21);
+            this.numeroPrenotazioneRiepilogoTextBox.Size = new System.Drawing.Size(179, 17);
             this.numeroPrenotazioneRiepilogoTextBox.TabIndex = 9;
             this.numeroPrenotazioneRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -972,7 +970,7 @@
             this.dataFineRiepilogoTimePicker.Enabled = false;
             this.dataFineRiepilogoTimePicker.Location = new System.Drawing.Point(127, 177);
             this.dataFineRiepilogoTimePicker.Name = "dataFineRiepilogoTimePicker";
-            this.dataFineRiepilogoTimePicker.Size = new System.Drawing.Size(273, 26);
+            this.dataFineRiepilogoTimePicker.Size = new System.Drawing.Size(273, 22);
             this.dataFineRiepilogoTimePicker.TabIndex = 8;
             // 
             // dataInizioRiepilogoTimePicker
@@ -980,7 +978,7 @@
             this.dataInizioRiepilogoTimePicker.Enabled = false;
             this.dataInizioRiepilogoTimePicker.Location = new System.Drawing.Point(127, 122);
             this.dataInizioRiepilogoTimePicker.Name = "dataInizioRiepilogoTimePicker";
-            this.dataInizioRiepilogoTimePicker.Size = new System.Drawing.Size(273, 26);
+            this.dataInizioRiepilogoTimePicker.Size = new System.Drawing.Size(273, 22);
             this.dataInizioRiepilogoTimePicker.TabIndex = 7;
             // 
             // nomeCognomeClienteRiepilogoTextBox
@@ -992,7 +990,7 @@
             this.nomeCognomeClienteRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.nomeCognomeClienteRiepilogoTextBox.Location = new System.Drawing.Point(127, 73);
             this.nomeCognomeClienteRiepilogoTextBox.Name = "nomeCognomeClienteRiepilogoTextBox";
-            this.nomeCognomeClienteRiepilogoTextBox.Size = new System.Drawing.Size(641, 21);
+            this.nomeCognomeClienteRiepilogoTextBox.Size = new System.Drawing.Size(641, 17);
             this.nomeCognomeClienteRiepilogoTextBox.TabIndex = 6;
             this.nomeCognomeClienteRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1004,7 +1002,7 @@
             this.myLabel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel20.Location = new System.Drawing.Point(450, 180);
             this.myLabel20.Name = "myLabel20";
-            this.myLabel20.Size = new System.Drawing.Size(127, 21);
+            this.myLabel20.Size = new System.Drawing.Size(102, 17);
             this.myLabel20.TabIndex = 5;
             this.myLabel20.Text = "Numero Persone";
             // 
@@ -1016,7 +1014,7 @@
             this.myLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel19.Location = new System.Drawing.Point(414, 125);
             this.myLabel19.Name = "myLabel19";
-            this.myLabel19.Size = new System.Drawing.Size(163, 21);
+            this.myLabel19.Size = new System.Drawing.Size(132, 17);
             this.myLabel19.TabIndex = 4;
             this.myLabel19.Text = "Numero Prenotazione";
             // 
@@ -1028,7 +1026,7 @@
             this.myLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel18.Location = new System.Drawing.Point(34, 180);
             this.myLabel18.Name = "myLabel18";
-            this.myLabel18.Size = new System.Drawing.Size(75, 21);
+            this.myLabel18.Size = new System.Drawing.Size(62, 17);
             this.myLabel18.TabIndex = 3;
             this.myLabel18.Text = "Data Fine";
             // 
@@ -1040,7 +1038,7 @@
             this.myLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel17.Location = new System.Drawing.Point(34, 125);
             this.myLabel17.Name = "myLabel17";
-            this.myLabel17.Size = new System.Drawing.Size(83, 21);
+            this.myLabel17.Size = new System.Drawing.Size(69, 17);
             this.myLabel17.TabIndex = 2;
             this.myLabel17.Text = "Data Inizio";
             // 
@@ -1052,7 +1050,7 @@
             this.myLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel16.Location = new System.Drawing.Point(34, 73);
             this.myLabel16.Name = "myLabel16";
-            this.myLabel16.Size = new System.Drawing.Size(58, 21);
+            this.myLabel16.Size = new System.Drawing.Size(47, 17);
             this.myLabel16.TabIndex = 1;
             this.myLabel16.Text = "Cliente";
             // 
@@ -1064,7 +1062,7 @@
             this.myLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel15.Location = new System.Drawing.Point(340, 14);
             this.myLabel15.Name = "myLabel15";
-            this.myLabel15.Size = new System.Drawing.Size(120, 35);
+            this.myLabel15.Size = new System.Drawing.Size(93, 27);
             this.myLabel15.TabIndex = 0;
             this.myLabel15.Text = "Riepilogo";
             // 
@@ -1095,7 +1093,7 @@
             this.totaleRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.totaleRiepilogoTextBox.Location = new System.Drawing.Point(587, 159);
             this.totaleRiepilogoTextBox.Name = "totaleRiepilogoTextBox";
-            this.totaleRiepilogoTextBox.Size = new System.Drawing.Size(181, 25);
+            this.totaleRiepilogoTextBox.Size = new System.Drawing.Size(181, 20);
             this.totaleRiepilogoTextBox.TabIndex = 9;
             this.totaleRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1108,7 +1106,7 @@
             this.prezzpSkicardsRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzpSkicardsRiepilogoTextBox.Location = new System.Drawing.Point(589, 84);
             this.prezzpSkicardsRiepilogoTextBox.Name = "prezzpSkicardsRiepilogoTextBox";
-            this.prezzpSkicardsRiepilogoTextBox.Size = new System.Drawing.Size(179, 21);
+            this.prezzpSkicardsRiepilogoTextBox.Size = new System.Drawing.Size(179, 17);
             this.prezzpSkicardsRiepilogoTextBox.TabIndex = 8;
             this.prezzpSkicardsRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1121,7 +1119,7 @@
             this.numeroSkicardsCreateRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroSkicardsCreateRiepilogoTextBox.Location = new System.Drawing.Point(207, 84);
             this.numeroSkicardsCreateRiepilogoTextBox.Name = "numeroSkicardsCreateRiepilogoTextBox";
-            this.numeroSkicardsCreateRiepilogoTextBox.Size = new System.Drawing.Size(193, 21);
+            this.numeroSkicardsCreateRiepilogoTextBox.Size = new System.Drawing.Size(193, 17);
             this.numeroSkicardsCreateRiepilogoTextBox.TabIndex = 7;
             this.numeroSkicardsCreateRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1134,7 +1132,7 @@
             this.prezzoBungalowRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoBungalowRiepilogoTextBox.Location = new System.Drawing.Point(589, 36);
             this.prezzoBungalowRiepilogoTextBox.Name = "prezzoBungalowRiepilogoTextBox";
-            this.prezzoBungalowRiepilogoTextBox.Size = new System.Drawing.Size(179, 21);
+            this.prezzoBungalowRiepilogoTextBox.Size = new System.Drawing.Size(179, 17);
             this.prezzoBungalowRiepilogoTextBox.TabIndex = 6;
             this.prezzoBungalowRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1147,7 +1145,7 @@
             this.codiceBungalowRiepilogoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceBungalowRiepilogoTextBox.Location = new System.Drawing.Point(207, 36);
             this.codiceBungalowRiepilogoTextBox.Name = "codiceBungalowRiepilogoTextBox";
-            this.codiceBungalowRiepilogoTextBox.Size = new System.Drawing.Size(193, 21);
+            this.codiceBungalowRiepilogoTextBox.Size = new System.Drawing.Size(193, 17);
             this.codiceBungalowRiepilogoTextBox.TabIndex = 5;
             this.codiceBungalowRiepilogoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1159,7 +1157,7 @@
             this.myLabel25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel25.Location = new System.Drawing.Point(509, 157);
             this.myLabel25.Name = "myLabel25";
-            this.myLabel25.Size = new System.Drawing.Size(68, 28);
+            this.myLabel25.Size = new System.Drawing.Size(53, 22);
             this.myLabel25.TabIndex = 4;
             this.myLabel25.Text = "Totale";
             // 
@@ -1171,7 +1169,7 @@
             this.myLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel24.Location = new System.Drawing.Point(458, 84);
             this.myLabel24.Name = "myLabel24";
-            this.myLabel24.Size = new System.Drawing.Size(119, 21);
+            this.myLabel24.Size = new System.Drawing.Size(95, 17);
             this.myLabel24.TabIndex = 3;
             this.myLabel24.Text = "Prezzo SkiCards";
             // 
@@ -1183,7 +1181,7 @@
             this.myLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel23.Location = new System.Drawing.Point(449, 36);
             this.myLabel23.Name = "myLabel23";
-            this.myLabel23.Size = new System.Drawing.Size(128, 21);
+            this.myLabel23.Size = new System.Drawing.Size(105, 17);
             this.myLabel23.TabIndex = 2;
             this.myLabel23.Text = "Prezzo Bungalow";
             // 
@@ -1195,7 +1193,7 @@
             this.myLabel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel22.Location = new System.Drawing.Point(34, 84);
             this.myLabel22.Name = "myLabel22";
-            this.myLabel22.Size = new System.Drawing.Size(118, 21);
+            this.myLabel22.Size = new System.Drawing.Size(95, 17);
             this.myLabel22.TabIndex = 1;
             this.myLabel22.Text = "SkiCards Create";
             // 
@@ -1207,7 +1205,7 @@
             this.myLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel21.Location = new System.Drawing.Point(34, 36);
             this.myLabel21.Name = "myLabel21";
-            this.myLabel21.Size = new System.Drawing.Size(162, 21);
+            this.myLabel21.Size = new System.Drawing.Size(132, 17);
             this.myLabel21.TabIndex = 0;
             this.myLabel21.Text = "Bungalow Selezionato";
             // 
@@ -1264,6 +1262,19 @@
             this.clienteTabButton.UseVisualStyleBackColor = false;
             this.clienteTabButton.Click += new System.EventHandler(this.clienteTabButton_Click);
             // 
+            // clientiColumn
+            // 
+            this.clientiColumn.HeaderText = "Clienti";
+            this.clientiColumn.Name = "clientiColumn";
+            this.clientiColumn.ReadOnly = true;
+            // 
+            // cfColumn
+            // 
+            this.cfColumn.HeaderText = "Cf";
+            this.cfColumn.Name = "cfColumn";
+            this.cfColumn.ReadOnly = true;
+            this.cfColumn.Visible = false;
+            // 
             // NuovaPrenotazione
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1281,6 +1292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "NuovaPrenotazione";
             this.Text = "Nuova Prenotazione";
+            this.Load += new System.EventHandler(this.NuovaPrenotazione_Load);
             this.tabControlWithoutHeader.ResumeLayout(false);
             this.clienteTabPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1370,7 +1382,6 @@
         private Components.MyButton nuvoClienteButton;
         private Components.MyButton avantiConfermaButton;
         private Components.MyButton annullaButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientiColumn;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numStanzeColumn;
@@ -1389,5 +1400,7 @@
         private Components.MyTextBox nomeCognomeClienteRiepilogoTextBox;
         private Components.MyTextBox numeroSkicardsCreateRiepilogoTextBox;
         private Components.MyTextBox codiceBungalowRiepilogoTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientiColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cfColumn;
     }
 }

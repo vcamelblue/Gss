@@ -19,6 +19,7 @@ namespace Gss.View
         private ClientiController clientiController;
         private ResortController resortController;
         private Cliente clienteSelezionato = null;
+        private Prenotazione prenotazioneCorrente = null;
 
         private Button previusSelectedButton = null;
         private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
@@ -109,8 +110,27 @@ namespace Gss.View
             }
             else if (tabControlWithoutHeader.SelectedTab == prenotazioneTabPage) // sono nella schermata prenotazione
             {
-                tabControlWithoutHeader.SelectedTab = skicardsTabPage;
-                selectRightTab(skicardsTabButton);
+                //Recupero i campi per creare la prenotazione
+                if (numeroPersoneTextBox.Text != "")
+                {
+                    try
+                    {
+                        int numeroPrenotazione = int.Parse(numeroPrenotazioneTextBox.Text);
+                        int numeroPersone = int.Parse(numeroPersoneTextBox.Text);
+                        Bungalow bungalowSelezionato = GetBungalowSelezionato();
+                        prenotazioneCorrente = new PrenotazioneAttiva(numeroPrenotazione, numeroPersone, dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, clienteSelezionato);
+                        tabControlWithoutHeader.SelectedTab = skicardsTabPage;
+                        selectRightTab(skicardsTabButton);
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero di persone valido");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completare tutti i campi");
+                }
             }
             else if (tabControlWithoutHeader.SelectedTab == skicardsTabPage) // sono nella schermata skicards
             {
@@ -123,6 +143,18 @@ namespace Gss.View
 
             }
             
+        }
+
+        private Bungalow GetBungalowSelezionato()
+        {
+            foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
+            {
+                if (b.Codice == bungalowDisponibiliDataGridView.SelectedRows[0].Cells[0].Value)
+                {
+                    return b;
+                }
+            }
+            return null;
         }
 
         private void selectRightTab(Button newSelectedButton)
@@ -165,7 +197,7 @@ namespace Gss.View
                         MessageBox.Show("Inserire un numero di persone maggiori di zero");
                     }
                 }
-                catch(FormatException ) 
+                catch(FormatException) 
                 {
                     MessageBox.Show("Inserire un numero di persone valido");
                 }
@@ -183,6 +215,10 @@ namespace Gss.View
             {
                 double prezzoBungalow = prenotazioniController.GetSpesaBungalow(b,dataInizioPrenotazioneTimePicker.Value,dataFinePrenotazioneTimePicker.Value,numeroPersone);
                 bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax(), prezzoBungalow);
+            }
+            if (bungalowDisponibiliDataGridView.Rows.Count == 0)
+            {
+                avantiConfermaButton.Enabled = false;
             }
         }
 

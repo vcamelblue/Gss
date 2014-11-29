@@ -24,7 +24,7 @@ namespace Gss.View
         private Button previusSelectedButton = null;
         private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
         private Color selectedButtonColor = Color.FromArgb(54, 78, 102);
-        private Color normalFontColor = Color.FromArgb(86, 86, 86);
+        private Color normalFontColor = Color.FromKnownColor(KnownColor.Black);
         private Color selectFontColor = Color.FromArgb(251,251,251);
 
         //Location del tasto annulla:
@@ -58,10 +58,6 @@ namespace Gss.View
             dataFinePrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
             numeroPrenotazioneTextBox.Text = resortController.Gss.NumeroPrenotazioni.ToString();
             
-            //Skicard Tab
-           
-
-
             selectRightTab(clienteTabButton);
         }
 
@@ -126,6 +122,12 @@ namespace Gss.View
                         tabControlWithoutHeader.SelectedTab = skicardsTabPage;
                         selectRightTab(skicardsTabButton);
                         RiempiGrigliaSkiCards();
+                        if (prenotazioneCorrente.ListaSkiCards.ListaSkiCard.Count == 0)
+                        {
+                            modificaSkicardButton.Enabled = false;
+                            rimuoviSkicardButton.Enabled = false;
+                            duplicaSkicardButton.Enabled = false;
+                        }
                     }
                     catch (FormatException)
                     {
@@ -168,9 +170,11 @@ namespace Gss.View
             {
                 previusSelectedButton.BackColor = normalButtonColor;
                 previusSelectedButton.ForeColor = normalFontColor;
+                previusSelectedButton.FlatAppearance.MouseOverBackColor = normalButtonColor;
             }
             newSelectedButton.BackColor = selectedButtonColor;
             newSelectedButton.ForeColor = selectFontColor;
+            newSelectedButton.FlatAppearance.MouseOverBackColor = selectedButtonColor;
             previusSelectedButton = newSelectedButton;
         }
 
@@ -261,6 +265,12 @@ namespace Gss.View
             {
                 skicardsDataGridView.Rows.Add(s.Codice, GetImpiantiBySkiCard(s), s.GetNumeroSkiPassAGiornata(), s.GetNumeroSkiPassAdAccesso(), s.GetPrezzoSkicard());
             }
+            if (skicardsDataGridView.Rows.Count != 0)
+            {
+                modificaSkicardButton.Enabled = true;
+                rimuoviSkicardButton.Enabled = true;
+                duplicaSkicardButton.Enabled = true;
+            }
         }
 
         private string GetImpiantiBySkiCard(SkiCard skicard)
@@ -276,6 +286,17 @@ namespace Gss.View
                 result += s.Impianto.Nome + ", ";
             }
             return result;
+        }
+
+        private void aggiungiSkicardButton_Click(object sender, EventArgs e)
+        {
+            AggiungiModificaSkicard aggiungiSkicardForm = new AggiungiModificaSkicard(prenotazioniController, resortController, prenotazioneCorrente.ListaSkiCards);
+
+            DialogResult res = aggiungiSkicardForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                RiempiGrigliaSkiCards();
+            }
         }
     }
 }

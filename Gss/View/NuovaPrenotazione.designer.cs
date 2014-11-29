@@ -817,6 +817,7 @@
             this.aggiungiSkicardButton.TabIndex = 6;
             this.aggiungiSkicardButton.Text = "Aggiungi SkiCard";
             this.aggiungiSkicardButton.UseVisualStyleBackColor = false;
+            this.aggiungiSkicardButton.Click += new System.EventHandler(this.aggiungiSkicardButton_Click);
             // 
             // skicardsDataGridView
             // 
@@ -1231,6 +1232,7 @@
             // 
             this.riepilogoTabButton.BackColor = System.Drawing.Color.LightGray;
             this.riepilogoTabButton.FlatAppearance.BorderSize = 0;
+            this.riepilogoTabButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.riepilogoTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.riepilogoTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.riepilogoTabButton.Location = new System.Drawing.Point(625, 1);
@@ -1244,6 +1246,7 @@
             // 
             this.skicardsTabButton.BackColor = System.Drawing.Color.LightGray;
             this.skicardsTabButton.FlatAppearance.BorderSize = 0;
+            this.skicardsTabButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.skicardsTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.skicardsTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skicardsTabButton.Location = new System.Drawing.Point(417, 1);
@@ -1257,6 +1260,7 @@
             // 
             this.prenotazioneTabButton.BackColor = System.Drawing.Color.LightGray;
             this.prenotazioneTabButton.FlatAppearance.BorderSize = 0;
+            this.prenotazioneTabButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.prenotazioneTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prenotazioneTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenotazioneTabButton.Location = new System.Drawing.Point(209, 1);
@@ -1270,6 +1274,7 @@
             // 
             this.clienteTabButton.BackColor = System.Drawing.Color.LightGray;
             this.clienteTabButton.FlatAppearance.BorderSize = 0;
+            this.clienteTabButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.clienteTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clienteTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteTabButton.Location = new System.Drawing.Point(1, 1);

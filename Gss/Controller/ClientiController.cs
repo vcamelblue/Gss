@@ -51,5 +51,13 @@ namespace Gss.Controller
         {
             return Gss.Clienti;
         }
+
+        public Cliente GetClientebyCF(string codiceFiscale)
+        {
+            Cliente cliente = Gss.Clienti.GetClienteByCF(codiceFiscale);
+            if (cliente == null)
+                throw new Exception("Il cliente ricercato non è presente nel sistema");
+            return cliente;
+        }
     }
 }

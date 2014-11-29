@@ -158,9 +158,34 @@ namespace Gss.Controller
             return false;
         }
 
-        public void AddSkiCardAPrenotazione(Prenotazione prenotazione, SkiCard skiCard)
+        public double GetSpesaBungalow(Bungalow bungalow, DateTime dataInizio, DateTime dataFine,int numeroPersone)
         {
+            double prezzo = 0;
+            DateTime data = dataInizio;
 
+            if (bungalow == null) return prezzo;
+
+            while (!(data.Equals(dataFine))) //calcolo il prezzo standard per giornata
+            {
+                prezzo += bungalow.GetPrezzoFor(data).Prezzo;
+                data = data.AddDays(1);
+            }
+
+            if (numeroPersone <= bungalow.PostiTotaliStandard()) // controllo se ho affittato un bungalow senza sfruttare i posti max
+            {
+                return prezzo;
+            }
+
+            else
+            {
+                int numeroPersoneExtra = numeroPersone - bungalow.PostiTotaliStandard();
+                while (!(data.Equals(dataFine)))                    //calcolo il prezzo per ogni persona extra  per giornata
+                {
+                    prezzo += (numeroPersoneExtra * bungalow.GetPrezzoFor(data).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore);
+                    data = data.AddDays(1);
+                }
+                return prezzo;
+            }
         }
     }
 }

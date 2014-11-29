@@ -110,14 +110,27 @@ namespace Gss.View
             }
             else if (tabControlWithoutHeader.SelectedTab == prenotazioneTabPage) // sono nella schermata prenotazione
             {
-                tabControlWithoutHeader.SelectedTab = skicardsTabPage;
-                selectRightTab(skicardsTabButton);
-
                 //Recupero i campi per creare la prenotazione
-                int numeroPrenotazione = int.Parse(numeroPrenotazioneTextBox.Text);
-                int numeroPersone = int.Parse(numeroPersoneTextBox.Text);
-                Bungalow bungalowSelezionato = GetBungalowSelezionato();
-                prenotazioneCorrente = new PrenotazioneAttiva(numeroPrenotazione, numeroPersone, dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, clienteSelezionato);
+                if (numeroPersoneTextBox.Text != "")
+                {
+                    try
+                    {
+                        int numeroPrenotazione = int.Parse(numeroPrenotazioneTextBox.Text);
+                        int numeroPersone = int.Parse(numeroPersoneTextBox.Text);
+                        Bungalow bungalowSelezionato = GetBungalowSelezionato();
+                        prenotazioneCorrente = new PrenotazioneAttiva(numeroPrenotazione, numeroPersone, dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, clienteSelezionato);
+                        tabControlWithoutHeader.SelectedTab = skicardsTabPage;
+                        selectRightTab(skicardsTabButton);
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire un numero di persone valido");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completare tutti i campi");
+                }
             }
             else if (tabControlWithoutHeader.SelectedTab == skicardsTabPage) // sono nella schermata skicards
             {
@@ -184,7 +197,7 @@ namespace Gss.View
                         MessageBox.Show("Inserire un numero di persone maggiori di zero");
                     }
                 }
-                catch(FormatException ) 
+                catch(FormatException) 
                 {
                     MessageBox.Show("Inserire un numero di persone valido");
                 }

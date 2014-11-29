@@ -67,10 +67,10 @@
             this.prenotazioniConcluseTabButton.FlatAppearance.BorderSize = 0;
             this.prenotazioniConcluseTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prenotazioniConcluseTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenotazioniConcluseTabButton.Location = new System.Drawing.Point(233, 0);
+            this.prenotazioniConcluseTabButton.Location = new System.Drawing.Point(0, 0);
             this.prenotazioniConcluseTabButton.Name = "prenotazioniConcluseTabButton";
             this.prenotazioniConcluseTabButton.Size = new System.Drawing.Size(232, 26);
-            this.prenotazioniConcluseTabButton.TabIndex = 1;
+            this.prenotazioniConcluseTabButton.TabIndex = 0;
             this.prenotazioniConcluseTabButton.Text = "Prenotazioni Concluse";
             this.prenotazioniConcluseTabButton.UseVisualStyleBackColor = false;
             // 
@@ -80,10 +80,10 @@
             this.prenotazioniInCorsoTabButton.FlatAppearance.BorderSize = 0;
             this.prenotazioniInCorsoTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prenotazioniInCorsoTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenotazioniInCorsoTabButton.Location = new System.Drawing.Point(0, 0);
+            this.prenotazioniInCorsoTabButton.Location = new System.Drawing.Point(233, 0);
             this.prenotazioniInCorsoTabButton.Name = "prenotazioniInCorsoTabButton";
             this.prenotazioniInCorsoTabButton.Size = new System.Drawing.Size(232, 26);
-            this.prenotazioniInCorsoTabButton.TabIndex = 0;
+            this.prenotazioniInCorsoTabButton.TabIndex = 1;
             this.prenotazioniInCorsoTabButton.Text = "Prenotazioni In Corso";
             this.prenotazioniInCorsoTabButton.UseVisualStyleBackColor = false;
             // 

@@ -158,7 +158,7 @@ namespace Gss.View
                     if (numeroPersone != 0)
                     {
                         Bungalows bungalowsDisponibili = prenotazioniController.FindBungalowDisponibiliFor(dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, numeroPersone);
-                        riempiListaBungalow(bungalowsDisponibili);
+                        riempiListaBungalow(bungalowsDisponibili,numeroPersone);
                     }
                     else
                     {
@@ -176,11 +176,13 @@ namespace Gss.View
             }
         }
 
-        private void riempiListaBungalow(Bungalows bungalows)
+        private void riempiListaBungalow(Bungalows bungalows,int numeroPersone)
         {
+            bungalowDisponibiliDataGridView.Rows.Clear();
             foreach (Bungalow b in bungalows.ListaBungalow)
             {
-                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax());
+                double prezzoBungalow = prenotazioniController.GetPrezzoBungalowPerPeriodo(dataInizioPrenotazioneTimePicker.Value,dataFinePrenotazioneTimePicker.Value,numeroPersone);
+                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax(), );
             }
         }
 

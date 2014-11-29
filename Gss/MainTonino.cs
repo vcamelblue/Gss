@@ -162,7 +162,7 @@ namespace Gss
             Console.Out.WriteLine(prenotazioni.GetPrenotazioneByNumeroPrenotazione(1));
      
             Bungalows b=prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014,11, 21), new DateTime(2014,11,25),4);
-            //Console.Out.WriteLine(b);
+            Console.Out.WriteLine(b);
             PeriodiProfiliController ppc = new PeriodiProfiliController();
             ProfiliPrezziRisorse profili = new ProfiliPrezziRisorse();
             ProfiloPrezziRisorse alta = new ProfiloPrezziRisorse("Alta");
@@ -246,6 +246,62 @@ namespace Gss
             PrezziRisorsa prezziImpianto4Bassa = new PrezziRisorsa(12, prezzispecifici);
             PrezziRisorsa prezziImpianto5Bassa = new PrezziRisorsa(3, prezzispecifici);
 
+            PrezziRisorsa prezziBungalow1Alta = new PrezziRisorsa(10, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Alta = new PrezziRisorsa(30, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Alta = new PrezziRisorsa(12, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Alta = new PrezziRisorsa(24, prezzispecifici);
+            PrezziRisorsa prezziBungalow5Alta = new PrezziRisorsa(45, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Alta = new PrezziRisorsa(7, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Alta = new PrezziRisorsa(33, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Alta = new PrezziRisorsa(15, prezzispecifici);
+
+            PrezziRisorsa prezziBungalow1Media = new PrezziRisorsa(8, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Media = new PrezziRisorsa(25, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Media = new PrezziRisorsa(10, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Media = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziBungalow5Media = new PrezziRisorsa(40, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Media = new PrezziRisorsa(5, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Media = new PrezziRisorsa(30, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Media = new PrezziRisorsa(12, prezzispecifici);
+
+            PrezziRisorsa prezziBungalow1Bassa = new PrezziRisorsa(5, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Bassa = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Bassa = new PrezziRisorsa(8, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Bassa = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziBungalow5Bassa = new PrezziRisorsa(30, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Bassa = new PrezziRisorsa(3, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Bassa = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Bassa = new PrezziRisorsa(10, prezzispecifici);
+
+
+            ppc.SetPrezzoRisorsa(b1, "Alta", prezziBungalow1Alta);
+            ppc.SetPrezzoRisorsa(b2, "Alta", prezziBungalow2Alta);
+            ppc.SetPrezzoRisorsa(b3, "Alta", prezziBungalow3Alta);
+            ppc.SetPrezzoRisorsa(b4, "Alta", prezziBungalow4Alta);
+            ppc.SetPrezzoRisorsa(b5, "Alta", prezziBungalow5Alta);
+            ppc.SetPrezzoRisorsa(b6, "Alta", prezziBungalow6Alta);
+            ppc.SetPrezzoRisorsa(b7, "Alta", prezziBungalow7Alta);
+            ppc.SetPrezzoRisorsa(b8, "Alta", prezziBungalow8Alta);
+
+            ppc.SetPrezzoRisorsa(b1, "Media", prezziBungalow1Media);
+            ppc.SetPrezzoRisorsa(b2, "Media", prezziBungalow2Media);
+            ppc.SetPrezzoRisorsa(b3, "Media", prezziBungalow3Media);
+            ppc.SetPrezzoRisorsa(b4, "Media", prezziBungalow4Media);
+            ppc.SetPrezzoRisorsa(b5, "Media", prezziBungalow5Media);
+            ppc.SetPrezzoRisorsa(b6, "Media", prezziBungalow6Media);
+            ppc.SetPrezzoRisorsa(b7, "Media", prezziBungalow7Media);
+            ppc.SetPrezzoRisorsa(b8, "Media", prezziBungalow8Media);
+
+            ppc.SetPrezzoRisorsa(b1, "Bassa", prezziBungalow1Bassa);
+            ppc.SetPrezzoRisorsa(b2, "Bassa", prezziBungalow2Bassa);
+            ppc.SetPrezzoRisorsa(b3, "Bassa", prezziBungalow3Bassa);
+            ppc.SetPrezzoRisorsa(b4, "Bassa", prezziBungalow4Bassa);
+            ppc.SetPrezzoRisorsa(b5, "Bassa", prezziBungalow5Bassa);
+            ppc.SetPrezzoRisorsa(b6, "Bassa", prezziBungalow6Bassa);
+            ppc.SetPrezzoRisorsa(b7, "Bassa", prezziBungalow7Bassa);
+            ppc.SetPrezzoRisorsa(b8, "Bassa", prezziBungalow8Bassa);
+
+
 
 
             ppc.SetPrezzoRisorsa(impianto1, "Alta", prezziImpianto1Alta);
@@ -272,7 +328,7 @@ namespace Gss
             SkiCards skicards= new SkiCards();
             skicards.Add(skicard);
 
-            Application.Run(new GestioneBungalows(resort));
+            Application.Run(new NuovaPrenotazione(prenotazioni,clientiController,resort));
             
              
         }

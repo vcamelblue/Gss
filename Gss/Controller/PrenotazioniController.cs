@@ -165,7 +165,7 @@ namespace Gss.Controller
 
             if (bungalow == null) return prezzo;
 
-            while (!(data.Equals(dataFine))) //calcolo il prezzo standard per giornata
+            while (data<=dataFine) //calcolo il prezzo standard per giornata
             {
                 prezzo += bungalow.GetPrezzoFor(data).Prezzo;
                 data = data.AddDays(1);
@@ -179,7 +179,7 @@ namespace Gss.Controller
             else
             {
                 int numeroPersoneExtra = numeroPersone - bungalow.PostiTotaliStandard();
-                while (!(data.Equals(dataFine)))                    //calcolo il prezzo per ogni persona extra  per giornata
+                while (data<=dataFine)                    //calcolo il prezzo per ogni persona extra  per giornata
                 {
                     prezzo += (numeroPersoneExtra * bungalow.GetPrezzoFor(data).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore);
                     data = data.AddDays(1);

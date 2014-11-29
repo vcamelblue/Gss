@@ -18,6 +18,8 @@ namespace Gss.Model
         public PrezziRisorsa GetPrezzoFor(DateTime data)
         {
             Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(data);
+            if (periodo == null)
+                return null;
             return periodo.Profilo.GetPrezziRisorsa(this);
         }
 

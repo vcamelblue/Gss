@@ -124,6 +124,18 @@
     <Compile Include="View\AggiungiModificaSkipass.designer.cs">
       <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainView.designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainViewPanel\PrenotazioniPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\PrenotazioniPanel.Designer.cs">
+      <DependentUpon>PrenotazioniPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuovaPrenotazione.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AggiungiModificaSkipass.resx">
       <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\PrenotazioniPanel.resx">
+      <DependentUpon>PrenotazioniPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovaPrenotazione.resx">
       <DependentUpon>NuovaPrenotazione.cs</DependentUpon>

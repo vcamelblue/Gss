@@ -37,6 +37,9 @@ namespace Gss.View
 
             InitializeComponent();
 
+            this.Text = "Modifica Bungalow";
+            this.salvaButton.Text = "Salva Modifiche";
+
         }
 
         private void AggiungiModificaBungalow_Load(object sender, EventArgs e)
@@ -72,6 +75,11 @@ namespace Gss.View
         public override void Refresh()
         {
             base.Refresh();
+            if (bungalow.Stanze.Count == 0)
+            {
+                modificaStanzaButton.Enabled = false;
+                salvaButton.Enabled = false;
+            }
             stanzeDataGridView.Rows.Clear();
             RiempiGrid();
         }

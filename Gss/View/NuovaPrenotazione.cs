@@ -181,8 +181,8 @@ namespace Gss.View
             bungalowDisponibiliDataGridView.Rows.Clear();
             foreach (Bungalow b in bungalows.ListaBungalow)
             {
-                double prezzoBungalow = prenotazioniController.GetPrezzoBungalowPerPeriodo(dataInizioPrenotazioneTimePicker.Value,dataFinePrenotazioneTimePicker.Value,numeroPersone);
-                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax(), );
+                double prezzoBungalow = prenotazioniController.GetSpesaBungalow(b,dataInizioPrenotazioneTimePicker.Value,dataFinePrenotazioneTimePicker.Value,numeroPersone);
+                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax(), prezzoBungalow);
             }
         }
 

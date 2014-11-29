@@ -21,7 +21,7 @@ namespace Gss.View.MainViewPanel
 
             InitializeComponent();
 
-            /*
+            
             clientiInArrivoOggiDataGridView.Rows.Add("Vincenzo Villani");
             clientiInArrivoOggiDataGridView.Rows.Add("Antonio Benincasa");
             clientiInArrivoOggiDataGridView.Rows.Add("Pasquale Presutti");
@@ -31,7 +31,7 @@ namespace Gss.View.MainViewPanel
             clientiInPartenzaOggiDataGridView.Rows.Add("Anthony De Castro Braciola");
 
             prenotazioniDaSaldareOggiDataGridView.Rows.Add("231 - Nicola Mignogna");
-             */
+             
         }
     }
 }

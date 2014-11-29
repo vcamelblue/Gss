@@ -30,15 +30,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gestioneIncassiTabButton = new Gss.View.Components.MyButton(this.components);
-            this.gestioneProfiliTabButton = new Gss.View.Components.MyButton(this.components);
-            this.gestionePeriodiTabButton = new Gss.View.Components.MyButton(this.components);
-            this.gestioneResortTabButton = new Gss.View.Components.MyButton(this.components);
-            this.gestioneClientiTabButton = new Gss.View.Components.MyButton(this.components);
-            this.gestionePrenotazioniTabButton = new Gss.View.Components.MyButton(this.components);
-            this.riepilogoGiornalieroTabButton = new Gss.View.Components.MyButton(this.components);
             this.tabControlWithoutHeader = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.riepilogoPanel1 = new Gss.View.MainViewPanel.RiepilogoPanel(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.prenotazioniPanel1 = new Gss.View.MainViewPanel.PrenotazioniPanel(this.components);
             this.prenotazioniFutureTabButton = new Gss.View.Components.MyButton(this.components);
@@ -53,8 +47,16 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.gestioneIncassiTabButton = new Gss.View.Components.MyButton(this.components);
+            this.gestioneProfiliTabButton = new Gss.View.Components.MyButton(this.components);
+            this.gestionePeriodiTabButton = new Gss.View.Components.MyButton(this.components);
+            this.gestioneResortTabButton = new Gss.View.Components.MyButton(this.components);
+            this.gestioneClientiTabButton = new Gss.View.Components.MyButton(this.components);
+            this.gestionePrenotazioniTabButton = new Gss.View.Components.MyButton(this.components);
+            this.riepilogoGiornalieroTabButton = new Gss.View.Components.MyButton(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControlWithoutHeader.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.prenotazioniPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioniInCorsoDataGridView)).BeginInit();
@@ -68,97 +70,6 @@
             this.groupBox1.Size = new System.Drawing.Size(704, 588);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // gestioneIncassiTabButton
-            // 
-            this.gestioneIncassiTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestioneIncassiTabButton.FlatAppearance.BorderSize = 0;
-            this.gestioneIncassiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestioneIncassiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneIncassiTabButton.Location = new System.Drawing.Point(1, 358);
-            this.gestioneIncassiTabButton.Name = "gestioneIncassiTabButton";
-            this.gestioneIncassiTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestioneIncassiTabButton.TabIndex = 7;
-            this.gestioneIncassiTabButton.Text = "Gestione Incassi";
-            this.gestioneIncassiTabButton.UseVisualStyleBackColor = false;
-            // 
-            // gestioneProfiliTabButton
-            // 
-            this.gestioneProfiliTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestioneProfiliTabButton.FlatAppearance.BorderSize = 0;
-            this.gestioneProfiliTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestioneProfiliTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneProfiliTabButton.Location = new System.Drawing.Point(1, 309);
-            this.gestioneProfiliTabButton.Name = "gestioneProfiliTabButton";
-            this.gestioneProfiliTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestioneProfiliTabButton.TabIndex = 6;
-            this.gestioneProfiliTabButton.Text = "Gestione Profili";
-            this.gestioneProfiliTabButton.UseVisualStyleBackColor = false;
-            // 
-            // gestionePeriodiTabButton
-            // 
-            this.gestionePeriodiTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestionePeriodiTabButton.FlatAppearance.BorderSize = 0;
-            this.gestionePeriodiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestionePeriodiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionePeriodiTabButton.Location = new System.Drawing.Point(1, 248);
-            this.gestionePeriodiTabButton.Name = "gestionePeriodiTabButton";
-            this.gestionePeriodiTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestionePeriodiTabButton.TabIndex = 5;
-            this.gestionePeriodiTabButton.Text = "Gestione Periodi";
-            this.gestionePeriodiTabButton.UseVisualStyleBackColor = false;
-            // 
-            // gestioneResortTabButton
-            // 
-            this.gestioneResortTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestioneResortTabButton.FlatAppearance.BorderSize = 0;
-            this.gestioneResortTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestioneResortTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneResortTabButton.Location = new System.Drawing.Point(1, 201);
-            this.gestioneResortTabButton.Name = "gestioneResortTabButton";
-            this.gestioneResortTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestioneResortTabButton.TabIndex = 4;
-            this.gestioneResortTabButton.Text = "Gestione Resort";
-            this.gestioneResortTabButton.UseVisualStyleBackColor = false;
-            // 
-            // gestioneClientiTabButton
-            // 
-            this.gestioneClientiTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestioneClientiTabButton.FlatAppearance.BorderSize = 0;
-            this.gestioneClientiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestioneClientiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneClientiTabButton.Location = new System.Drawing.Point(1, 149);
-            this.gestioneClientiTabButton.Name = "gestioneClientiTabButton";
-            this.gestioneClientiTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestioneClientiTabButton.TabIndex = 3;
-            this.gestioneClientiTabButton.Text = "Gestione Clienti";
-            this.gestioneClientiTabButton.UseVisualStyleBackColor = false;
-            // 
-            // gestionePrenotazioniTabButton
-            // 
-            this.gestionePrenotazioniTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.gestionePrenotazioniTabButton.FlatAppearance.BorderSize = 0;
-            this.gestionePrenotazioniTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gestionePrenotazioniTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionePrenotazioniTabButton.Location = new System.Drawing.Point(1, 93);
-            this.gestionePrenotazioniTabButton.Name = "gestionePrenotazioniTabButton";
-            this.gestionePrenotazioniTabButton.Size = new System.Drawing.Size(227, 26);
-            this.gestionePrenotazioniTabButton.TabIndex = 2;
-            this.gestionePrenotazioniTabButton.Text = "Gestione Prenotazioni";
-            this.gestionePrenotazioniTabButton.UseVisualStyleBackColor = false;
-            // 
-            // riepilogoGiornalieroTabButton
-            // 
-            this.riepilogoGiornalieroTabButton.BackColor = System.Drawing.Color.LightGray;
-            this.riepilogoGiornalieroTabButton.FlatAppearance.BorderSize = 0;
-            this.riepilogoGiornalieroTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.riepilogoGiornalieroTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.riepilogoGiornalieroTabButton.Location = new System.Drawing.Point(1, 47);
-            this.riepilogoGiornalieroTabButton.Name = "riepilogoGiornalieroTabButton";
-            this.riepilogoGiornalieroTabButton.Size = new System.Drawing.Size(227, 26);
-            this.riepilogoGiornalieroTabButton.TabIndex = 1;
-            this.riepilogoGiornalieroTabButton.Text = "Riepilogo Giornaliero";
-            this.riepilogoGiornalieroTabButton.UseVisualStyleBackColor = false;
             // 
             // tabControlWithoutHeader
             // 
@@ -178,6 +89,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.riepilogoPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -185,6 +97,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // riepilogoPanel1
+            // 
+            this.riepilogoPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.riepilogoPanel1.Location = new System.Drawing.Point(0, 0);
+            this.riepilogoPanel1.Name = "riepilogoPanel1";
+            this.riepilogoPanel1.Size = new System.Drawing.Size(698, 573);
+            this.riepilogoPanel1.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -395,6 +315,97 @@
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // gestioneIncassiTabButton
+            // 
+            this.gestioneIncassiTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestioneIncassiTabButton.FlatAppearance.BorderSize = 0;
+            this.gestioneIncassiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestioneIncassiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestioneIncassiTabButton.Location = new System.Drawing.Point(1, 219);
+            this.gestioneIncassiTabButton.Name = "gestioneIncassiTabButton";
+            this.gestioneIncassiTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestioneIncassiTabButton.TabIndex = 7;
+            this.gestioneIncassiTabButton.Text = "Gestione Incassi";
+            this.gestioneIncassiTabButton.UseVisualStyleBackColor = false;
+            // 
+            // gestioneProfiliTabButton
+            // 
+            this.gestioneProfiliTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestioneProfiliTabButton.FlatAppearance.BorderSize = 0;
+            this.gestioneProfiliTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestioneProfiliTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestioneProfiliTabButton.Location = new System.Drawing.Point(1, 192);
+            this.gestioneProfiliTabButton.Name = "gestioneProfiliTabButton";
+            this.gestioneProfiliTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestioneProfiliTabButton.TabIndex = 6;
+            this.gestioneProfiliTabButton.Text = "Gestione Profili";
+            this.gestioneProfiliTabButton.UseVisualStyleBackColor = false;
+            // 
+            // gestionePeriodiTabButton
+            // 
+            this.gestionePeriodiTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestionePeriodiTabButton.FlatAppearance.BorderSize = 0;
+            this.gestionePeriodiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestionePeriodiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestionePeriodiTabButton.Location = new System.Drawing.Point(1, 165);
+            this.gestionePeriodiTabButton.Name = "gestionePeriodiTabButton";
+            this.gestionePeriodiTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestionePeriodiTabButton.TabIndex = 5;
+            this.gestionePeriodiTabButton.Text = "Gestione Periodi";
+            this.gestionePeriodiTabButton.UseVisualStyleBackColor = false;
+            // 
+            // gestioneResortTabButton
+            // 
+            this.gestioneResortTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestioneResortTabButton.FlatAppearance.BorderSize = 0;
+            this.gestioneResortTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestioneResortTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestioneResortTabButton.Location = new System.Drawing.Point(1, 138);
+            this.gestioneResortTabButton.Name = "gestioneResortTabButton";
+            this.gestioneResortTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestioneResortTabButton.TabIndex = 4;
+            this.gestioneResortTabButton.Text = "Gestione Resort";
+            this.gestioneResortTabButton.UseVisualStyleBackColor = false;
+            // 
+            // gestioneClientiTabButton
+            // 
+            this.gestioneClientiTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestioneClientiTabButton.FlatAppearance.BorderSize = 0;
+            this.gestioneClientiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestioneClientiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestioneClientiTabButton.Location = new System.Drawing.Point(1, 111);
+            this.gestioneClientiTabButton.Name = "gestioneClientiTabButton";
+            this.gestioneClientiTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestioneClientiTabButton.TabIndex = 3;
+            this.gestioneClientiTabButton.Text = "Gestione Clienti";
+            this.gestioneClientiTabButton.UseVisualStyleBackColor = false;
+            // 
+            // gestionePrenotazioniTabButton
+            // 
+            this.gestionePrenotazioniTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.gestionePrenotazioniTabButton.FlatAppearance.BorderSize = 0;
+            this.gestionePrenotazioniTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gestionePrenotazioniTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestionePrenotazioniTabButton.Location = new System.Drawing.Point(1, 84);
+            this.gestionePrenotazioniTabButton.Name = "gestionePrenotazioniTabButton";
+            this.gestionePrenotazioniTabButton.Size = new System.Drawing.Size(232, 26);
+            this.gestionePrenotazioniTabButton.TabIndex = 2;
+            this.gestionePrenotazioniTabButton.Text = "Gestione Prenotazioni";
+            this.gestionePrenotazioniTabButton.UseVisualStyleBackColor = false;
+            // 
+            // riepilogoGiornalieroTabButton
+            // 
+            this.riepilogoGiornalieroTabButton.BackColor = System.Drawing.Color.LightGray;
+            this.riepilogoGiornalieroTabButton.FlatAppearance.BorderSize = 0;
+            this.riepilogoGiornalieroTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.riepilogoGiornalieroTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riepilogoGiornalieroTabButton.Location = new System.Drawing.Point(1, 57);
+            this.riepilogoGiornalieroTabButton.Name = "riepilogoGiornalieroTabButton";
+            this.riepilogoGiornalieroTabButton.Size = new System.Drawing.Size(232, 26);
+            this.riepilogoGiornalieroTabButton.TabIndex = 1;
+            this.riepilogoGiornalieroTabButton.Text = "Riepilogo Giornaliero";
+            this.riepilogoGiornalieroTabButton.UseVisualStyleBackColor = false;
+            // 
             // MainView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -411,9 +422,9 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MainView";
-            this.Text = "Riepilogo";
             this.groupBox1.ResumeLayout(false);
             this.tabControlWithoutHeader.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.prenotazioniPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioniInCorsoDataGridView)).EndInit();
@@ -447,5 +458,6 @@
         private Components.MyButton archiviaRimuoviPrenotazioneButton;
         private Components.MyButton modificaPrenotazioneButton;
         private Components.MyButton nuovaPrenotazioneButton;
+        private MainViewPanel.RiepilogoPanel riepilogoPanel1;
     }
 }

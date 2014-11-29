@@ -31,7 +31,7 @@ namespace Gss.View.MainViewPanel
             clientiInPartenzaOggiDataGridView.Rows.Add("Anthony De Castro Braciola");
 
             prenotazioniDaSaldareOggiDataGridView.Rows.Add("231 - Nicola Mignogna");
-             */ 
+             */
         }
     }
 }

@@ -66,8 +66,8 @@ namespace Gss.View
             double totale = 0;
             foreach(SkiPass s in skiCard.SkiPass)
             {
-                skipassDataGridView.Rows.Add(s.Codice, s.Impianto.Nome, GetTipologiaSkipass(s), GetInfoBySkipass(s), "10 €");
-                //totale += s.GetPrezzoSkiPass();
+                skipassDataGridView.Rows.Add(s.Codice, s.Impianto.Nome, GetTipologiaSkipass(s), GetInfoBySkipass(s), s.GetPrezzoSkiPass());
+                totale += s.GetPrezzoSkiPass();
             }
             totaleSkipassLabel.Text = "Totale SkiPass  " + totale + " €";
         }
@@ -103,7 +103,6 @@ namespace Gss.View
             {
                 skiCard = new SkiCard(codiceTextBox.Text);
             }
-
 
             AggiungiModificaSkipass aggiungiSkipassForm = new AggiungiModificaSkipass(prenotazioniController, resortController, skiCard);
             DialogResult res = aggiungiSkipassForm.ShowDialog();

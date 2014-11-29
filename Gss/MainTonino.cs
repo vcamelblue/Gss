@@ -269,9 +269,10 @@ namespace Gss
             SkiCard skicard = new SkiCard("aa");
 
             SkiPassAGiornata skipassAGiornata = new SkiPassAGiornata("1", impianto1, DateTime.Today.AddDays(3), DateTime.Today.AddDays(10));
+            SkiCards skicards= new SkiCards();
+            skicards.Add(skicard);
 
-
-            Application.Run(new AggiungiModificaSkipass(prenotazioni, resort, skicard, skipassAGiornata));
+            Application.Run(new GestioneBungalows(resort));
             
              
         }

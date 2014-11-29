@@ -119,6 +119,7 @@ namespace Gss.View
                         int numeroPersone = int.Parse(numeroPersoneTextBox.Text);
                         Bungalow bungalowSelezionato = GetBungalowSelezionato();
                         prenotazioneCorrente = new PrenotazioneAttiva(numeroPrenotazione, numeroPersone, dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, clienteSelezionato);
+                        prenotazioneCorrente.Bungalow = bungalowSelezionato;
                         tabControlWithoutHeader.SelectedTab = skicardsTabPage;
                         selectRightTab(skicardsTabButton);
                         RiempiGrigliaSkiCards();
@@ -144,10 +145,20 @@ namespace Gss.View
                 tabControlWithoutHeader.SelectedTab = riepilogoTabPage;
                 avantiConfermaButton.Text = "Conferma Prenotazione";
                 selectRightTab(riepilogoTabButton);
+                nomeCognomeClienteRiepilogoTextBox.Text = prenotazioneCorrente.Cliente.Nome + "  " + prenotazioneCorrente.Cliente.Cognome;
+                dataInizioRiepilogoTimePicker.Value = prenotazioneCorrente.DataInizio;
+                dataFineRiepilogoTimePicker.Value = prenotazioneCorrente.DataFine;
+                numeroPrenotazioneRiepilogoTextBox.Text = prenotazioneCorrente.NumeroPrenotazione.ToString();
+                numeroPersoneRiepilogoTextBox.Text = prenotazioneCorrente.NumeroPersone.ToString();
+                codiceBungalowRiepilogoTextBox.Text = prenotazioneCorrente.Bungalow.Codice;
+                numeroSkicardsCreateRiepilogoTextBox.Text = prenotazioneCorrente.ListaSkiCards.ListaSkiCard.Count.ToString();
+                prezzoBungalowRiepilogoTextBox.Text = prenotazioneCorrente.GetSpesaBungalow() + " €";
+                prezzpSkicardsRiepilogoTextBox.Text = prenotazioneCorrente.GetSpesaSkiCards() + " €";
+                totaleRiepilogoTextBox.Text = prenotazioneCorrente.GetSpesaAttuale() + " €"; 
             }
             else // sono nella schermata riepilogo
             {
-
+                
             }
             
         }
@@ -261,6 +272,7 @@ namespace Gss.View
 
         private void RiempiGrigliaSkiCards()
         {
+            skicardsDataGridView.Rows.Clear();
             foreach(SkiCard s in prenotazioneCorrente.ListaSkiCards.ListaSkiCard)
             {
                 skicardsDataGridView.Rows.Add(s.Codice, GetImpiantiBySkiCard(s), s.GetNumeroSkiPassAGiornata(), s.GetNumeroSkiPassAdAccesso(), s.GetPrezzoSkicard());
@@ -297,6 +309,77 @@ namespace Gss.View
             {
                 RiempiGrigliaSkiCards();
             }
+        }
+
+        private void modificaSkicardButton_Click(object sender, EventArgs e)
+        {
+            SkiCard skicardSelezionata = GetSkiCardSelezionata(skicardsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+            AggiungiModificaSkicard modificaSkicardForm = new AggiungiModificaSkicard(prenotazioniController, resortController, prenotazioneCorrente.ListaSkiCards, skicardSelezionata);
+
+            DialogResult res = modificaSkicardForm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                RiempiGrigliaSkiCards();
+            }
+        }
+
+        private void rimuoviSkicardButton_Click(object sender, EventArgs e)
+        {
+            SkiCard skicardSelezionata = GetSkiCardSelezionata(skicardsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+            DialogResult result = MessageBox.Show("Sicuro di voler rimuovere la SkiCard selezionata?", "Rimozione SkiCard", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                prenotazioneCorrente.RemoveSkiCard(skicardSelezionata);
+            }
+            RiempiGrigliaSkiCards();
+        }
+
+        private void duplicaSkicardButton_Click(object sender, EventArgs e)
+        {
+            SkiCard skicardSelezionata = GetSkiCardSelezionata(skicardsDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+            DialogResult result = MessageBox.Show("Sicuro di voler duplicare la SkiCard selezionata?", "Duplicazione SkiCard", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                string codiceSkicard = prenotazioniController.Gss.NumeroSkiCards.ToString();
+                SkiCard skiCard = new SkiCard(codiceSkicard);
+                foreach (SkiPass s in skicardSelezionata.SkiPass)
+                {
+                    if (s is SkiPassAdAccesso)
+                    {
+                        SkiPassAdAccesso skipassDaCopiare = (SkiPassAdAccesso)s;
+                        //Creo la copia dello skipass
+                        SkiPassAdAccesso skipassCopiato = new SkiPassAdAccesso(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.NAccessi, skipassDaCopiare.DataRilascio);
+                        //Aggiungo la copia 
+                        skiCard.Add(skipassCopiato);
+                    }
+                    else
+                    {
+                        SkiPassAGiornata skipassDaCopiare = (SkiPassAGiornata)s;
+                        //Creo la copia dello skipass
+                        SkiPassAGiornata skipassCopiato = new SkiPassAGiornata(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.DataInizio, skipassDaCopiare.DataFine);
+                        //Aggiungo la copia
+                        skiCard.Add(skipassCopiato);
+                    }
+                }
+                //Aggiungo la skicard copiata alla prenotazione
+                prenotazioneCorrente.AddSkiCard(skiCard);
+                RiempiGrigliaSkiCards();
+            }
+        }
+
+        private SkiCard GetSkiCardSelezionata(string codice)
+        {
+            foreach (SkiCard s in prenotazioneCorrente.ListaSkiCards.ListaSkiCard)
+            {
+                if (s.Codice == codice)
+                {
+                    return s;
+                }
+            }
+            return null;
         }
     }
 }

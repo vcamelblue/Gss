@@ -146,6 +146,9 @@ namespace Gss
             Resort resort = new Resort("a", "a", "a", "a", DateTime.Today.AddDays(-20), DateTime.Today.AddDays(20));
             resort.Impianti = impianti;
 
+            Bungalows bungalows = new Bungalows();
+            bungalows.Add(b1); bungalows.Add(b2); bungalows.Add(b3);
+
             resortController.Gss.Resort = resort;
             skicard.Add(new SkiPassAGiornata("00",impianto1,DateTime.Today, DateTime.Today.AddDays(2)));
             skicard.Add(new SkiPassAGiornata("01", impianto2, DateTime.Today.AddDays(1), DateTime.Today.AddDays(3)));

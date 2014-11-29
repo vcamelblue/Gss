@@ -52,7 +52,7 @@ namespace Gss.Controller
             return Gss.Clienti;
         }
 
-        public Cliente GetClientebyCF(string codiceFiscale)
+        public Cliente GetClienteByCF(string codiceFiscale)
         {
             Cliente cliente = Gss.Clienti.GetClienteByCF(codiceFiscale);
             if (cliente == null)

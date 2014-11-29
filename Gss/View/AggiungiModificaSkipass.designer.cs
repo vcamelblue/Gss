@@ -535,6 +535,7 @@
             this.skipassAGiornataDataInizioTimePicker.Name = "skipassAGiornataDataInizioTimePicker";
             this.skipassAGiornataDataInizioTimePicker.Size = new System.Drawing.Size(226, 22);
             this.skipassAGiornataDataInizioTimePicker.TabIndex = 2;
+            this.skipassAGiornataDataInizioTimePicker.ValueChanged += new System.EventHandler(this.skipassAGiornataDataInizioTimePicker_ValueChanged);
             // 
             // myLabel4
             // 

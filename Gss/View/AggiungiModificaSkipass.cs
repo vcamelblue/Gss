@@ -539,6 +539,11 @@ namespace Gss.View
                 tipoSkipassTabControl.SelectedTab = skipassAdAccessoTabPage;
         }
 
+        private void skipassAGiornataDataInizioTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            skipassAGiornataDataFineTimePicker.MinDate = skipassAGiornataDataInizioTimePicker.Value;
+        }
+
         }
     }
 

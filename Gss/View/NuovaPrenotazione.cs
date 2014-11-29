@@ -19,7 +19,7 @@ namespace Gss.View
         private ClientiController clientiController;
         private ResortController resortController;
         private Cliente clienteSelezionato = null;
-        private Prenotazione prenotazioneCorrente = null;
+        private PrenotazioneAttiva prenotazioneCorrente = null;
 
         private Button previusSelectedButton = null;
         private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
@@ -58,6 +58,10 @@ namespace Gss.View
             dataFinePrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
             numeroPrenotazioneTextBox.Text = resortController.Gss.NumeroPrenotazioni.ToString();
             
+            //Skicard Tab
+           
+
+
             selectRightTab(clienteTabButton);
         }
 
@@ -121,6 +125,7 @@ namespace Gss.View
                         prenotazioneCorrente = new PrenotazioneAttiva(numeroPrenotazione, numeroPersone, dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, clienteSelezionato);
                         tabControlWithoutHeader.SelectedTab = skicardsTabPage;
                         selectRightTab(skicardsTabButton);
+                        RiempiGrigliaSkiCards();
                     }
                     catch (FormatException)
                     {
@@ -250,6 +255,27 @@ namespace Gss.View
                     stanza.NumeroPostiStandard == 5 ? "Quintupla" : "Nupla");
         }
 
+        private void RiempiGrigliaSkiCards()
+        {
+            foreach(SkiCard s in prenotazioneCorrente.ListaSkiCards.ListaSkiCard)
+            {
+                skicardsDataGridView.Rows.Add(s.Codice, GetImpiantiBySkiCard(s), s.GetNumeroSkiPassAGiornata(), s.GetNumeroSkiPassAdAccesso(), s.GetPrezzoSkicard());
+            }
+        }
 
+        private string GetImpiantiBySkiCard(SkiCard skicard)
+        {
+            string result = "";
+            foreach (SkiPass s in skicard.SkiPass)
+            {
+                if (skicard.SkiPass.Last().Equals(s))
+                {
+                    result += s.Impianto.Nome;
+                }
+                else
+                result += s.Impianto.Nome + ", ";
+            }
+            return result;
+        }
     }
 }

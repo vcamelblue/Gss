@@ -15,12 +15,13 @@ namespace Gss.Model
             : base(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente)
         {
             _bungalow = bungalow;
+            _listaSkiCards = new SkiCards();
         }
 
         public PrenotazioneAttiva(int numeroPrenotazione, int numeroPersone, DateTime dataInizio, DateTime dataFine, Cliente cliente)
             : base(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente)
         {
-     
+            _listaSkiCards = new SkiCards();
         }
 
         public Bungalow Bungalow

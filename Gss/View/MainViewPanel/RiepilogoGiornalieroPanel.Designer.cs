@@ -54,7 +54,6 @@
             this.myLabel4 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
-            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioniDaSaldareOggiDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiInPartenzaOggiDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiInArrivoOggiDataGridView)).BeginInit();
@@ -161,7 +160,7 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.clientiInPartenzaOggiDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.clientiInPartenzaOggiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.clientiInPartenzaOggiDataGridView.Location = new System.Drawing.Point(357, 82);
+            this.clientiInPartenzaOggiDataGridView.Location = new System.Drawing.Point(357, 45);
             this.clientiInPartenzaOggiDataGridView.MultiSelect = false;
             this.clientiInPartenzaOggiDataGridView.Name = "clientiInPartenzaOggiDataGridView";
             this.clientiInPartenzaOggiDataGridView.ReadOnly = true;
@@ -180,7 +179,7 @@
             this.clientiInPartenzaOggiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.clientiInPartenzaOggiDataGridView.RowTemplate.Height = 24;
             this.clientiInPartenzaOggiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientiInPartenzaOggiDataGridView.Size = new System.Drawing.Size(325, 269);
+            this.clientiInPartenzaOggiDataGridView.Size = new System.Drawing.Size(325, 306);
             this.clientiInPartenzaOggiDataGridView.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn1
@@ -232,7 +231,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.clientiInArrivoOggiDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
             this.clientiInArrivoOggiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.clientiInArrivoOggiDataGridView.Location = new System.Drawing.Point(16, 82);
+            this.clientiInArrivoOggiDataGridView.Location = new System.Drawing.Point(16, 45);
             this.clientiInArrivoOggiDataGridView.MultiSelect = false;
             this.clientiInArrivoOggiDataGridView.Name = "clientiInArrivoOggiDataGridView";
             this.clientiInArrivoOggiDataGridView.ReadOnly = true;
@@ -251,7 +250,7 @@
             this.clientiInArrivoOggiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.clientiInArrivoOggiDataGridView.RowTemplate.Height = 24;
             this.clientiInArrivoOggiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientiInArrivoOggiDataGridView.Size = new System.Drawing.Size(325, 269);
+            this.clientiInArrivoOggiDataGridView.Size = new System.Drawing.Size(325, 306);
             this.clientiInArrivoOggiDataGridView.TabIndex = 22;
             // 
             // clientiColumn
@@ -266,7 +265,7 @@
             this.myLabel4.BackColor = System.Drawing.Color.Transparent;
             this.myLabel4.Font = new System.Drawing.Font("Calibri Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel4.Location = new System.Drawing.Point(59, 374);
+            this.myLabel4.Location = new System.Drawing.Point(235, 374);
             this.myLabel4.Name = "myLabel4";
             this.myLabel4.Size = new System.Drawing.Size(228, 21);
             this.myLabel4.TabIndex = 3;
@@ -278,7 +277,7 @@
             this.myLabel3.BackColor = System.Drawing.Color.Transparent;
             this.myLabel3.Font = new System.Drawing.Font("Calibri Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel3.Location = new System.Drawing.Point(402, 58);
+            this.myLabel3.Location = new System.Drawing.Point(452, 21);
             this.myLabel3.Name = "myLabel3";
             this.myLabel3.Size = new System.Drawing.Size(135, 21);
             this.myLabel3.TabIndex = 2;
@@ -290,25 +289,13 @@
             this.myLabel2.BackColor = System.Drawing.Color.Transparent;
             this.myLabel2.Font = new System.Drawing.Font("Calibri Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel2.Location = new System.Drawing.Point(59, 58);
+            this.myLabel2.Location = new System.Drawing.Point(120, 21);
             this.myLabel2.Name = "myLabel2";
             this.myLabel2.Size = new System.Drawing.Size(116, 21);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Clienti In Arrivo";
             // 
-            // myLabel1
-            // 
-            this.myLabel1.AutoSize = true;
-            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel1.Font = new System.Drawing.Font("Calibri Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(223, 3);
-            this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(253, 35);
-            this.myLabel1.TabIndex = 0;
-            this.myLabel1.Text = "Riepilogo Giornaliero";
-            // 
-            // RiepilogoPanel
+            // RiepilogoGiornalieroPanel
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.prenotazioniDaSaldareOggiDataGridView);
@@ -317,8 +304,7 @@
             this.Controls.Add(this.myLabel4);
             this.Controls.Add(this.myLabel3);
             this.Controls.Add(this.myLabel2);
-            this.Controls.Add(this.myLabel1);
-            this.Name = "RiepilogoPanel";
+            this.Name = "RiepilogoGiornalieroPanel";
             this.Size = new System.Drawing.Size(698, 573);
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioniDaSaldareOggiDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiInPartenzaOggiDataGridView)).EndInit();
@@ -330,7 +316,6 @@
 
         #endregion
 
-        private Components.MyLabel myLabel1;
         private Components.MyLabel myLabel2;
         private Components.MyLabel myLabel3;
         private Components.MyLabel myLabel4;

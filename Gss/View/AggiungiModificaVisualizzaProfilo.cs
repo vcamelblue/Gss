@@ -260,7 +260,7 @@ namespace Gss.View
                 {
                     Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
                     prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo).ToString();
-                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
+                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
                     SpostatiNellaGriglia();
                 }
             }

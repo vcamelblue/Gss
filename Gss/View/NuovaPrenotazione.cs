@@ -158,7 +158,19 @@ namespace Gss.View
             }
             else // sono nella schermata riepilogo
             {
-                
+                try
+                {
+                    DialogResult result = MessageBox.Show("Sicuro di voler conferamre le prenotazione?", "Conferma Prenotazione", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        prenotazioniController.AddPrenotazione(prenotazioneCorrente);
+                        this.Close();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
             
         }

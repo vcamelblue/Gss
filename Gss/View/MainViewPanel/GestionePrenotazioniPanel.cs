@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Gss.View.MainViewPanel
 {
-    public partial class PrenotazioniPanel : System.Windows.Forms.UserControl
+    public partial class GestionePrenotazioniPanel : System.Windows.Forms.UserControl
     {
-        public PrenotazioniPanel()
+        public GestionePrenotazioniPanel()
         {
             InitializeComponent();
         }
 
-        public PrenotazioniPanel(IContainer container)
+        public GestionePrenotazioniPanel(IContainer container)
         {
             container.Add(this);
 

@@ -130,11 +130,23 @@
     <Compile Include="View\MainView.designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainViewPanel\PrenotazioniPanel.cs">
+    <Compile Include="View\MainViewPanel\GestioneClientiPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\MainViewPanel\PrenotazioniPanel.Designer.cs">
-      <DependentUpon>PrenotazioniPanel.cs</DependentUpon>
+    <Compile Include="View\MainViewPanel\GestioneClientiPanel.Designer.cs">
+      <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestionePrenotazioniPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestionePrenotazioniPanel.Designer.cs">
+      <DependentUpon>GestionePrenotazioniPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainViewPanel\RiepilogoGiornalieroPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\RiepilogoGiornalieroPanel.Designer.cs">
+      <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NuovaPrenotazione.cs">
       <SubType>Form</SubType>
@@ -268,8 +280,14 @@
     <EmbeddedResource Include="View\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainViewPanel\PrenotazioniPanel.resx">
-      <DependentUpon>PrenotazioniPanel.cs</DependentUpon>
+    <EmbeddedResource Include="View\MainViewPanel\GestioneClientiPanel.resx">
+      <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\GestionePrenotazioniPanel.resx">
+      <DependentUpon>GestionePrenotazioniPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\RiepilogoGiornalieroPanel.resx">
+      <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovaPrenotazione.resx">
       <DependentUpon>NuovaPrenotazione.cs</DependentUpon>

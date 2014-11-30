@@ -24,6 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -34,12 +39,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.salvaModificheRisorsaButton = new Gss.View.Components.MyButton(this.components);
+            this.prossimaRisorsaButton = new Gss.View.Components.MyButton(this.components);
+            this.annullaButton = new Gss.View.Components.MyButton(this.components);
+            this.salvaButton = new Gss.View.Components.MyButton(this.components);
+            this.risorseDataGridView = new Gss.View.Components.MyDataGridView(this.components);
+            this.risorsaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.tabControlWithoutHeader = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.bungalowTabPage = new System.Windows.Forms.TabPage();
             this.prezzoPerPersonaExtraTextBox = new Gss.View.Components.MyTextBox(this.components);
@@ -64,21 +72,13 @@
             this.pisteAlpineImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pisteDiFondoImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pisteSnowparkImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salvaModificheRisorsaButton = new Gss.View.Components.MyButton(this.components);
-            this.prossimaRisorsaButton = new Gss.View.Components.MyButton(this.components);
-            this.annullaButton = new Gss.View.Components.MyButton(this.components);
-            this.salvaButton = new Gss.View.Components.MyButton(this.components);
-            this.risorseDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.risorsaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
-            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).BeginInit();
             this.tabControlWithoutHeader.SuspendLayout();
             this.bungalowTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bungalowDataGridView)).BeginInit();
             this.impiantoTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.impiantoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -89,6 +89,149 @@
             this.groupBox1.Size = new System.Drawing.Size(559, 339);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // salvaModificheRisorsaButton
+            // 
+            this.salvaModificheRisorsaButton.BackColor = System.Drawing.Color.LightGray;
+            this.salvaModificheRisorsaButton.FlatAppearance.BorderSize = 0;
+            this.salvaModificheRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salvaModificheRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvaModificheRisorsaButton.Location = new System.Drawing.Point(289, 340);
+            this.salvaModificheRisorsaButton.Name = "salvaModificheRisorsaButton";
+            this.salvaModificheRisorsaButton.Size = new System.Drawing.Size(239, 26);
+            this.salvaModificheRisorsaButton.TabIndex = 4;
+            this.salvaModificheRisorsaButton.Text = "Salva Modifiche Risorsa";
+            this.salvaModificheRisorsaButton.UseVisualStyleBackColor = false;
+            this.salvaModificheRisorsaButton.Visible = false;
+            // 
+            // prossimaRisorsaButton
+            // 
+            this.prossimaRisorsaButton.BackColor = System.Drawing.Color.LightGray;
+            this.prossimaRisorsaButton.FlatAppearance.BorderSize = 0;
+            this.prossimaRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prossimaRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prossimaRisorsaButton.Location = new System.Drawing.Point(571, 340);
+            this.prossimaRisorsaButton.Name = "prossimaRisorsaButton";
+            this.prossimaRisorsaButton.Size = new System.Drawing.Size(239, 26);
+            this.prossimaRisorsaButton.TabIndex = 5;
+            this.prossimaRisorsaButton.Text = "Prossima Risorsa";
+            this.prossimaRisorsaButton.UseVisualStyleBackColor = false;
+            this.prossimaRisorsaButton.Click += new System.EventHandler(this.prossimaRisorsaButton_Click);
+            // 
+            // annullaButton
+            // 
+            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
+            this.annullaButton.FlatAppearance.BorderSize = 0;
+            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.annullaButton.Location = new System.Drawing.Point(55, 411);
+            this.annullaButton.Name = "annullaButton";
+            this.annullaButton.Size = new System.Drawing.Size(151, 26);
+            this.annullaButton.TabIndex = 7;
+            this.annullaButton.Text = "Annulla";
+            this.annullaButton.UseVisualStyleBackColor = false;
+            // 
+            // salvaButton
+            // 
+            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
+            this.salvaButton.FlatAppearance.BorderSize = 0;
+            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvaButton.Location = new System.Drawing.Point(622, 411);
+            this.salvaButton.Name = "salvaButton";
+            this.salvaButton.Size = new System.Drawing.Size(151, 26);
+            this.salvaButton.TabIndex = 6;
+            this.salvaButton.Text = "Salva";
+            this.salvaButton.UseVisualStyleBackColor = false;
+            // 
+            // risorseDataGridView
+            // 
+            this.risorseDataGridView.AllowUserToAddRows = false;
+            this.risorseDataGridView.AllowUserToDeleteRows = false;
+            this.risorseDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.risorseDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.risorseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.risorseDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.risorseDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.risorseDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.risorseDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.risorseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.risorseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.risorseDataGridView.ColumnHeadersVisible = false;
+            this.risorseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.risorsaColumn});
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.risorseDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            this.risorseDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.risorseDataGridView.Location = new System.Drawing.Point(17, 17);
+            this.risorseDataGridView.MultiSelect = false;
+            this.risorseDataGridView.Name = "risorseDataGridView";
+            this.risorseDataGridView.ReadOnly = true;
+            this.risorseDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.risorseDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.risorseDataGridView.RowHeadersVisible = false;
+            this.risorseDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.risorseDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.risorseDataGridView.RowTemplate.Height = 24;
+            this.risorseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.risorseDataGridView.Size = new System.Drawing.Size(229, 373);
+            this.risorseDataGridView.TabIndex = 20;
+            this.risorseDataGridView.SelectionChanged += new System.EventHandler(this.risorseDataGridView_SelectionChanged);
+            // 
+            // risorsaColumn
+            // 
+            this.risorsaColumn.HeaderText = "Risorsa";
+            this.risorsaColumn.Name = "risorsaColumn";
+            this.risorsaColumn.ReadOnly = true;
+            // 
+            // nomeProfiloTextBox
+            // 
+            this.nomeProfiloTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeProfiloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeProfiloTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeProfiloTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeProfiloTextBox.Location = new System.Drawing.Point(371, 27);
+            this.nomeProfiloTextBox.Name = "nomeProfiloTextBox";
+            this.nomeProfiloTextBox.Size = new System.Drawing.Size(449, 17);
+            this.nomeProfiloTextBox.TabIndex = 1;
+            this.nomeProfiloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // myLabel1
+            // 
+            this.myLabel1.AutoSize = true;
+            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.myLabel1.Location = new System.Drawing.Point(263, 27);
+            this.myLabel1.Name = "myLabel1";
+            this.myLabel1.Size = new System.Drawing.Size(81, 17);
+            this.myLabel1.TabIndex = 0;
+            this.myLabel1.Text = "Nome Profilo";
             // 
             // tabControlWithoutHeader
             // 
@@ -109,10 +252,10 @@
             this.bungalowTabPage.Controls.Add(this.myLabel3);
             this.bungalowTabPage.Controls.Add(this.myLabel2);
             this.bungalowTabPage.Controls.Add(this.bungalowDataGridView);
-            this.bungalowTabPage.Location = new System.Drawing.Point(4, 27);
+            this.bungalowTabPage.Location = new System.Drawing.Point(4, 23);
             this.bungalowTabPage.Name = "bungalowTabPage";
             this.bungalowTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.bungalowTabPage.Size = new System.Drawing.Size(539, 278);
+            this.bungalowTabPage.Size = new System.Drawing.Size(539, 282);
             this.bungalowTabPage.TabIndex = 0;
             this.bungalowTabPage.Text = "Bungalow";
             // 
@@ -124,7 +267,7 @@
             this.prezzoPerPersonaExtraTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoPerPersonaExtraTextBox.Location = new System.Drawing.Point(303, 138);
             this.prezzoPerPersonaExtraTextBox.Name = "prezzoPerPersonaExtraTextBox";
-            this.prezzoPerPersonaExtraTextBox.Size = new System.Drawing.Size(240, 21);
+            this.prezzoPerPersonaExtraTextBox.Size = new System.Drawing.Size(240, 17);
             this.prezzoPerPersonaExtraTextBox.TabIndex = 3;
             this.prezzoPerPersonaExtraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -136,7 +279,7 @@
             this.prezzoPerGironataPostStdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoPerGironataPostStdTextBox.Location = new System.Drawing.Point(303, 94);
             this.prezzoPerGironataPostStdTextBox.Name = "prezzoPerGironataPostStdTextBox";
-            this.prezzoPerGironataPostStdTextBox.Size = new System.Drawing.Size(240, 21);
+            this.prezzoPerGironataPostStdTextBox.Size = new System.Drawing.Size(240, 17);
             this.prezzoPerGironataPostStdTextBox.TabIndex = 2;
             this.prezzoPerGironataPostStdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -148,7 +291,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(11, 138);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(182, 21);
+            this.myLabel3.Size = new System.Drawing.Size(149, 17);
             this.myLabel3.TabIndex = 8;
             this.myLabel3.Text = "Prezzo Per Persona Extra";
             // 
@@ -160,7 +303,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(11, 94);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(253, 21);
+            this.myLabel2.Size = new System.Drawing.Size(205, 17);
             this.myLabel2.TabIndex = 7;
             this.myLabel2.Text = "Prezzo Per Giornata Posti Standard";
             // 
@@ -268,10 +411,10 @@
             this.impiantoTabPage.Controls.Add(this.myLabel5);
             this.impiantoTabPage.Controls.Add(this.myLabel4);
             this.impiantoTabPage.Controls.Add(this.impiantoDataGridView);
-            this.impiantoTabPage.Location = new System.Drawing.Point(4, 27);
+            this.impiantoTabPage.Location = new System.Drawing.Point(4, 23);
             this.impiantoTabPage.Name = "impiantoTabPage";
             this.impiantoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.impiantoTabPage.Size = new System.Drawing.Size(539, 278);
+            this.impiantoTabPage.Size = new System.Drawing.Size(539, 282);
             this.impiantoTabPage.TabIndex = 1;
             this.impiantoTabPage.Text = "Impianto";
             // 
@@ -283,7 +426,7 @@
             this.prezzoPerAccessoImpiantoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoPerAccessoImpiantoTextBox.Location = new System.Drawing.Point(303, 138);
             this.prezzoPerAccessoImpiantoTextBox.Name = "prezzoPerAccessoImpiantoTextBox";
-            this.prezzoPerAccessoImpiantoTextBox.Size = new System.Drawing.Size(239, 21);
+            this.prezzoPerAccessoImpiantoTextBox.Size = new System.Drawing.Size(239, 17);
             this.prezzoPerAccessoImpiantoTextBox.TabIndex = 3;
             this.prezzoPerAccessoImpiantoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -295,7 +438,7 @@
             this.prezzoPerGiornataImpiantoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoPerGiornataImpiantoTextBox.Location = new System.Drawing.Point(303, 94);
             this.prezzoPerGiornataImpiantoTextBox.Name = "prezzoPerGiornataImpiantoTextBox";
-            this.prezzoPerGiornataImpiantoTextBox.Size = new System.Drawing.Size(240, 21);
+            this.prezzoPerGiornataImpiantoTextBox.Size = new System.Drawing.Size(240, 17);
             this.prezzoPerGiornataImpiantoTextBox.TabIndex = 2;
             this.prezzoPerGiornataImpiantoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -307,7 +450,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(11, 138);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(142, 21);
+            this.myLabel5.Size = new System.Drawing.Size(115, 17);
             this.myLabel5.TabIndex = 15;
             this.myLabel5.Text = "Prezzo Per Accesso";
             // 
@@ -319,7 +462,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(11, 94);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(148, 21);
+            this.myLabel4.Size = new System.Drawing.Size(121, 17);
             this.myLabel4.TabIndex = 14;
             this.myLabel4.Text = "Prezzo Per Giornata";
             // 
@@ -427,147 +570,6 @@
             this.pisteSnowparkImpiantoColumn.Name = "pisteSnowparkImpiantoColumn";
             this.pisteSnowparkImpiantoColumn.ReadOnly = true;
             // 
-            // salvaModificheRisorsaButton
-            // 
-            this.salvaModificheRisorsaButton.BackColor = System.Drawing.Color.LightGray;
-            this.salvaModificheRisorsaButton.FlatAppearance.BorderSize = 0;
-            this.salvaModificheRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvaModificheRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaModificheRisorsaButton.Location = new System.Drawing.Point(289, 340);
-            this.salvaModificheRisorsaButton.Name = "salvaModificheRisorsaButton";
-            this.salvaModificheRisorsaButton.Size = new System.Drawing.Size(239, 26);
-            this.salvaModificheRisorsaButton.TabIndex = 4;
-            this.salvaModificheRisorsaButton.Text = "Salva Modifiche Risorsa";
-            this.salvaModificheRisorsaButton.UseVisualStyleBackColor = false;
-            this.salvaModificheRisorsaButton.Visible = false;
-            // 
-            // prossimaRisorsaButton
-            // 
-            this.prossimaRisorsaButton.BackColor = System.Drawing.Color.LightGray;
-            this.prossimaRisorsaButton.FlatAppearance.BorderSize = 0;
-            this.prossimaRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prossimaRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prossimaRisorsaButton.Location = new System.Drawing.Point(571, 340);
-            this.prossimaRisorsaButton.Name = "prossimaRisorsaButton";
-            this.prossimaRisorsaButton.Size = new System.Drawing.Size(239, 26);
-            this.prossimaRisorsaButton.TabIndex = 5;
-            this.prossimaRisorsaButton.Text = "Prossima Risorsa";
-            this.prossimaRisorsaButton.UseVisualStyleBackColor = false;
-            // 
-            // annullaButton
-            // 
-            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
-            this.annullaButton.FlatAppearance.BorderSize = 0;
-            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(55, 411);
-            this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(151, 26);
-            this.annullaButton.TabIndex = 7;
-            this.annullaButton.Text = "Annulla";
-            this.annullaButton.UseVisualStyleBackColor = false;
-            // 
-            // salvaButton
-            // 
-            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
-            this.salvaButton.FlatAppearance.BorderSize = 0;
-            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaButton.Location = new System.Drawing.Point(622, 411);
-            this.salvaButton.Name = "salvaButton";
-            this.salvaButton.Size = new System.Drawing.Size(151, 26);
-            this.salvaButton.TabIndex = 6;
-            this.salvaButton.Text = "Salva";
-            this.salvaButton.UseVisualStyleBackColor = false;
-            // 
-            // risorseDataGridView
-            // 
-            this.risorseDataGridView.AllowUserToAddRows = false;
-            this.risorseDataGridView.AllowUserToDeleteRows = false;
-            this.risorseDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.risorseDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.risorseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.risorseDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.risorseDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.risorseDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.risorseDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.risorseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.risorseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.risorseDataGridView.ColumnHeadersVisible = false;
-            this.risorseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.risorsaColumn});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.risorseDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
-            this.risorseDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.risorseDataGridView.Location = new System.Drawing.Point(17, 17);
-            this.risorseDataGridView.MultiSelect = false;
-            this.risorseDataGridView.Name = "risorseDataGridView";
-            this.risorseDataGridView.ReadOnly = true;
-            this.risorseDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.risorseDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.risorseDataGridView.RowHeadersVisible = false;
-            this.risorseDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.risorseDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.risorseDataGridView.RowTemplate.Height = 24;
-            this.risorseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.risorseDataGridView.Size = new System.Drawing.Size(229, 373);
-            this.risorseDataGridView.TabIndex = 20;
-            // 
-            // risorsaColumn
-            // 
-            this.risorsaColumn.HeaderText = "Risorsa";
-            this.risorsaColumn.Name = "risorsaColumn";
-            this.risorsaColumn.ReadOnly = true;
-            // 
-            // nomeProfiloTextBox
-            // 
-            this.nomeProfiloTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.nomeProfiloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nomeProfiloTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeProfiloTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeProfiloTextBox.Location = new System.Drawing.Point(371, 27);
-            this.nomeProfiloTextBox.Name = "nomeProfiloTextBox";
-            this.nomeProfiloTextBox.Size = new System.Drawing.Size(449, 21);
-            this.nomeProfiloTextBox.TabIndex = 1;
-            this.nomeProfiloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // myLabel1
-            // 
-            this.myLabel1.AutoSize = true;
-            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(263, 27);
-            this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(102, 21);
-            this.myLabel1.TabIndex = 0;
-            this.myLabel1.Text = "Nome Profilo";
-            // 
             // AggiungiModificaVisualizzaProfilo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -585,7 +587,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaVisualizzaProfilo";
             this.Text = "Aggiungi Profilo";
+            this.Load += new System.EventHandler(this.AggiungiModificaVisualizzaProfilo_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).EndInit();
             this.tabControlWithoutHeader.ResumeLayout(false);
             this.bungalowTabPage.ResumeLayout(false);
             this.bungalowTabPage.PerformLayout();
@@ -593,7 +597,6 @@
             this.impiantoTabPage.ResumeLayout(false);
             this.impiantoTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.impiantoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -185,68 +185,88 @@ namespace Gss.View
             if (!inEditingMode && !inViewMode)
             {
                 string nomeProfilo = nomeProfiloTextBox.Text;
-                if (nomeProfilo != "")
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
-                    string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-                    if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+                    Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
+                    string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
+                    string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
+                    if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
                     {
-                        Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
-                        string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
-                        string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
-                        if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
+                        try
                         {
-                            try
-                            {
-                                double prezzoGiornata = double.Parse(prezzoPerGiornata);
-                                double prezzoAccesso = double.Parse(prezzoPerAccesso);
-                                PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);   
-                                PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
-                                prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                                profilo.Add(impiantoSelezionato, prezziRisorsa);
-                                SpostatiNellaGriglia();
-                            }
-                            catch (Exception)
-                            {
-                                MessageBox.Show("Inserire dei prezzi validi");
-                            }
+                            double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                            double prezzoAccesso = double.Parse(prezzoPerAccesso);
+                            PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);   
+                            PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                            prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                            profilo.Add(impiantoSelezionato, prezziRisorsa);
+                            SpostatiNellaGriglia();
+                            prezzoPerGiornataImpiantoTextBox.Clear();
+                            prezzoPerAccessoImpiantoTextBox.Clear();
                         }
-                        else
+                        catch (Exception)
                         {
-                            MessageBox.Show("Completare tutti i campi per proseguire");
+                            MessageBox.Show("Inserire dei prezzi validi");
                         }
                     }
-                    else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+                    else
                     {
-                        Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
-                        string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
-                        string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
-                        if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                        MessageBox.Show("Completare tutti i campi per proseguire");
+                    }
+                }
+                else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+                {
+                    Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
+                    string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
+                    string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
+                    if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                    {
+                        try
                         {
-                            try
-                            {
-                                double prezzoGiornata = double.Parse(prezzoPerGiornata);
-                                double prezzoExtra = double.Parse(prezzoPerPersonaExtra);
-                                PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra );   
-                                PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
-                                prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                                profilo.Add(bungalowSelezionato, prezziRisorsa);
-                                SpostatiNellaGriglia();
-                            }
-                            catch (FormatException)
-                            {
-                                MessageBox.Show("Inserire dei prezzi validi");
-                            }
+                            double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                            double prezzoExtra = double.Parse(prezzoPerPersonaExtra);
+                            PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra );   
+                            PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                            prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                            profilo.Add(bungalowSelezionato, prezziRisorsa);
+                            SpostatiNellaGriglia();
+                            prezzoPerGironataPostStdTextBox.Clear();
+                            prezzoPerPersonaExtraTextBox.Clear();
                         }
-                        else
+                        catch (FormatException)
                         {
-                            MessageBox.Show("Completare tutti i campi per proseguire");
+                            MessageBox.Show("Inserire dei prezzi validi");
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Completare tutti i campi per proseguire");
+                    }
+                }
+            }
+            else if(inViewMode)
+            {
+                nomeProfiloTextBox.Text = profilo.Nome;
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+                {
+                    Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
+                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo).ToString();
+                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerAccesso).ToString();
+                    SpostatiNellaGriglia();
                 }
                 else
                 {
-                    MessageBox.Show("Compilare tutti i campi");
+                    Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
+                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo).ToString();
+                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
+                    SpostatiNellaGriglia();
                 }
+            }
+            else if (inEditingMode)
+            {
+
             }
         }
 

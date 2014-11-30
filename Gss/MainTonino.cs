@@ -132,8 +132,8 @@ namespace Gss
 #endregion
 
             #region Aggiunta Bungalows al Resort
-            resort.AddBungalow(b2);
             resort.AddBungalow(b1);
+            resort.AddBungalow(b2);
             resort.AddBungalow(b3);
             resort.AddBungalow(b4);
             resort.AddBungalow(b5);
@@ -175,8 +175,8 @@ namespace Gss
 
             #endregion
 
-
-            PrenotazioniController prenotazioni = new PrenotazioniController();
+            
+           /* PrenotazioniController prenotazioni = new PrenotazioniController();
             PrenotazioneAttiva p1 = new PrenotazioneAttiva(1, 4, new DateTime(2014, 11, 26), new DateTime(2014, 11, 29), cliente1);
             p1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(p1.DataInizio,p1.DataFine,p1.NumeroPersone).ListaBungalow.First();
 
@@ -184,60 +184,40 @@ namespace Gss
             Console.Out.WriteLine(prenotazioni.GetPrenotazioneByNumeroPrenotazione(1));
      
             Bungalows b=prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014,11, 21), new DateTime(2014,11,25),4);
-            Console.Out.WriteLine(b);
-            
-            
+            Console.Out.WriteLine(b);*/
+
+            #region Periodi
 
             Periodo periodo1 = new Periodo(new DateTime(2014 , 12 , 1), new DateTime(2014 , 12 , 10));
             Periodo periodo2 = new Periodo(new DateTime(2014 , 12 , 11), new DateTime(2014 , 12 , 20));
-            Periodo periodo3 = new Periodo(new DateTime(2014 , 12 , 24), new DateTime(2015 , 1 , 1));
-            Periodo periodo4 = new Periodo(new DateTime(2014 , 12 , 5), new DateTime(2014 , 12 , 9));
-            Periodo periodo5 = new Periodo(new DateTime(2014, 12, 15), new DateTime(2014, 12, 24));
-            Periodo periodo6 = new Periodo(new DateTime(2014, 12, 26), new DateTime(2015, 01, 2));
-            Periodo periodo7 = new Periodo(new DateTime(2015, 01, 5), new DateTime(2015, 01, 9));
-            Periodo periodo8 = new Periodo(new DateTime(2015, 01, 20), new DateTime(2015, 01, 30));
-            Periodo periodo9 = new Periodo(new DateTime(2015, 02, 4), new DateTime(2015, 02, 9));
-            Periodo periodo10 = new Periodo(new DateTime(2014, 12, 20), new DateTime(2014, 12, 25));
-            Periodo periodo11 = new Periodo(new DateTime(2015, 02, 3), new DateTime(2015, 02, 5));
-            Periodo periodo12 = new Periodo(new DateTime(2015, 02, 25), new DateTime(2015, 02, 27));
-
-            periodo1.Profilo=periodiProfili.GetProfiloByNome("Alta");
-            periodo2.Profilo = periodiProfili.GetProfiloByNome("Bassa");
-            periodo3.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo4.Profilo = periodiProfili.GetProfiloByNome("Bassa");
-            periodo5.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo6.Profilo = periodiProfili.GetProfiloByNome("Bassa");
-            periodo7.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo8.Profilo = periodiProfili.GetProfiloByNome("Bassa");
-            periodo9.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo10.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo11.Profilo = periodiProfili.GetProfiloByNome("Bassa");
-            periodo12.Profilo = periodiProfili.GetProfiloByNome("Alta");
-
-            ProfiloPrezziRisorse p = periodiProfili.GetProfiloByNome("Alta");
+            Periodo periodo3 = new Periodo(new DateTime(2014 , 12 , 24), new DateTime(2015 , 1 , 2));
+            Periodo periodo4 = new Periodo(new DateTime(2015 , 1 , 4), new DateTime(2015 , 1 , 25));
+            Periodo periodo5 = new Periodo(new DateTime(2015, 1, 27), new DateTime(2015, 2, 5));
             
+
+            periodo1.Profilo=periodiProfili.GetProfiloByNome("Bassa");
+            periodo2.Profilo = periodiProfili.GetProfiloByNome("Media");
+            periodo3.Profilo = periodiProfili.GetProfiloByNome("Alta");
+            periodo4.Profilo = periodiProfili.GetProfiloByNome("Media");
+            periodo5.Profilo = periodiProfili.GetProfiloByNome("Bassa");
+              
 
 
             List<Periodo> periodi=new List<Periodo>();
             periodi.Add(periodo1);periodi.Add(periodo2);periodi.Add(periodo3);periodi.Add(periodo4);
             periodi.Add(periodo5);
-            periodi.Add(periodo6);
-            periodi.Add(periodo7);
-            periodi.Add(periodo8);
-            periodi.Add(periodo9);
-            periodi.Add(periodo10);
-            periodi.Add(periodo11);
-            periodi.Add(periodo12);
 
-            
-            
+            #endregion
+
+
             //Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
             periodiProfili.SetPeriodi(periodi);
 
-            Console.Out.WriteLine(GSS.GetInstance().GestorePeriodi.Periodi);
             //foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
-              //  Console.Out.WriteLine(p);
+            //  Console.Out.WriteLine(p);
 
+
+            #region Aggiunta Prezzi Periodi
             List<PrezzoSpecifico> prezzispecifici=new List<PrezzoSpecifico>();
             PrezzoSpecifico prezzoPerAccesso= new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso,5);
             PrezzoSpecifico prezzoPerPersonaExtra = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, 6);
@@ -261,32 +241,32 @@ namespace Gss
             PrezziRisorsa prezziImpianto4Bassa = new PrezziRisorsa(12, prezzispecifici);
             PrezziRisorsa prezziImpianto5Bassa = new PrezziRisorsa(3, prezzispecifici);
 
-            PrezziRisorsa prezziBungalow1Alta = new PrezziRisorsa(10, prezzispecifici);
-            PrezziRisorsa prezziBungalow2Alta = new PrezziRisorsa(30, prezzispecifici);
-            PrezziRisorsa prezziBungalow3Alta = new PrezziRisorsa(12, prezzispecifici);
-            PrezziRisorsa prezziBungalow4Alta = new PrezziRisorsa(24, prezzispecifici);
+            PrezziRisorsa prezziBungalow1Alta = new PrezziRisorsa(60, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Alta = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Alta = new PrezziRisorsa(30, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Alta = new PrezziRisorsa(35, prezzispecifici);
             PrezziRisorsa prezziBungalow5Alta = new PrezziRisorsa(45, prezzispecifici);
-            PrezziRisorsa prezziBungalow6Alta = new PrezziRisorsa(7, prezzispecifici);
-            PrezziRisorsa prezziBungalow7Alta = new PrezziRisorsa(33, prezzispecifici);
-            PrezziRisorsa prezziBungalow8Alta = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Alta = new PrezziRisorsa(50, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Alta = new PrezziRisorsa(65, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Alta = new PrezziRisorsa(80, prezzispecifici);
 
-            PrezziRisorsa prezziBungalow1Media = new PrezziRisorsa(8, prezzispecifici);
-            PrezziRisorsa prezziBungalow2Media = new PrezziRisorsa(25, prezzispecifici);
-            PrezziRisorsa prezziBungalow3Media = new PrezziRisorsa(10, prezzispecifici);
-            PrezziRisorsa prezziBungalow4Media = new PrezziRisorsa(20, prezzispecifici);
-            PrezziRisorsa prezziBungalow5Media = new PrezziRisorsa(40, prezzispecifici);
-            PrezziRisorsa prezziBungalow6Media = new PrezziRisorsa(5, prezzispecifici);
-            PrezziRisorsa prezziBungalow7Media = new PrezziRisorsa(30, prezzispecifici);
-            PrezziRisorsa prezziBungalow8Media = new PrezziRisorsa(12, prezzispecifici);
+            PrezziRisorsa prezziBungalow1Media = new PrezziRisorsa(50, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Media = new PrezziRisorsa(15, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Media = new PrezziRisorsa(23, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Media = new PrezziRisorsa(30, prezzispecifici);
+            PrezziRisorsa prezziBungalow5Media = new PrezziRisorsa(38, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Media = new PrezziRisorsa(45, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Media = new PrezziRisorsa(55, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Media = new PrezziRisorsa(70, prezzispecifici);
 
-            PrezziRisorsa prezziBungalow1Bassa = new PrezziRisorsa(5, prezzispecifici);
-            PrezziRisorsa prezziBungalow2Bassa = new PrezziRisorsa(20, prezzispecifici);
-            PrezziRisorsa prezziBungalow3Bassa = new PrezziRisorsa(8, prezzispecifici);
-            PrezziRisorsa prezziBungalow4Bassa = new PrezziRisorsa(15, prezzispecifici);
-            PrezziRisorsa prezziBungalow5Bassa = new PrezziRisorsa(30, prezzispecifici);
-            PrezziRisorsa prezziBungalow6Bassa = new PrezziRisorsa(3, prezzispecifici);
-            PrezziRisorsa prezziBungalow7Bassa = new PrezziRisorsa(20, prezzispecifici);
-            PrezziRisorsa prezziBungalow8Bassa = new PrezziRisorsa(10, prezzispecifici);
+            PrezziRisorsa prezziBungalow1Bassa = new PrezziRisorsa(45, prezzispecifici);
+            PrezziRisorsa prezziBungalow2Bassa = new PrezziRisorsa(12, prezzispecifici);
+            PrezziRisorsa prezziBungalow3Bassa = new PrezziRisorsa(20, prezzispecifici);
+            PrezziRisorsa prezziBungalow4Bassa = new PrezziRisorsa(25, prezzispecifici);
+            PrezziRisorsa prezziBungalow5Bassa = new PrezziRisorsa(33, prezzispecifici);
+            PrezziRisorsa prezziBungalow6Bassa = new PrezziRisorsa(40, prezzispecifici);
+            PrezziRisorsa prezziBungalow7Bassa = new PrezziRisorsa(50, prezzispecifici);
+            PrezziRisorsa prezziBungalow8Bassa = new PrezziRisorsa(65, prezzispecifici);
 
 
             periodiProfili.SetPrezzoRisorsa(b1, "Alta", prezziBungalow1Alta);
@@ -336,14 +316,10 @@ namespace Gss
             periodiProfili.SetPrezzoRisorsa(impianto3, "Bassa", prezziImpianto3Bassa);
             periodiProfili.SetPrezzoRisorsa(impianto4, "Bassa", prezziImpianto4Bassa);
             periodiProfili.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
+            #endregion
+            
 
-            SkiCard skicard = new SkiCard("aa");
-
-            SkiPassAGiornata skipassAGiornata = new SkiPassAGiornata("1", impianto1, DateTime.Today.AddDays(3), DateTime.Today.AddDays(10));
-            SkiCards skicards= new SkiCards();
-            skicards.Add(skicard);
-
-            Application.Run(new GestioneImpianti(resort));
+            Application.Run(new GestioneBungalows(resort));
             
              
         }

@@ -24,30 +24,22 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.salvaModificheRisorsaButton = new Gss.View.Components.MyButton(this.components);
-            this.prossimaRisorsaButton = new Gss.View.Components.MyButton(this.components);
-            this.annullaButton = new Gss.View.Components.MyButton(this.components);
-            this.salvaButton = new Gss.View.Components.MyButton(this.components);
-            this.risorseDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.risorsaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
-            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.tabControlWithoutHeader = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.bungalowTabPage = new System.Windows.Forms.TabPage();
             this.prezzoPerPersonaExtraTextBox = new Gss.View.Components.MyTextBox(this.components);
@@ -72,13 +64,21 @@
             this.pisteAlpineImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pisteDiFondoImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pisteSnowparkImpiantoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salvaModificheRisorsaButton = new Gss.View.Components.MyButton(this.components);
+            this.prossimaRisorsaButton = new Gss.View.Components.MyButton(this.components);
+            this.annullaButton = new Gss.View.Components.MyButton(this.components);
+            this.salvaButton = new Gss.View.Components.MyButton(this.components);
+            this.risorseDataGridView = new Gss.View.Components.MyDataGridView(this.components);
+            this.risorsaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).BeginInit();
             this.tabControlWithoutHeader.SuspendLayout();
             this.bungalowTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bungalowDataGridView)).BeginInit();
             this.impiantoTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.impiantoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -89,149 +89,6 @@
             this.groupBox1.Size = new System.Drawing.Size(559, 339);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            // 
-            // salvaModificheRisorsaButton
-            // 
-            this.salvaModificheRisorsaButton.BackColor = System.Drawing.Color.LightGray;
-            this.salvaModificheRisorsaButton.FlatAppearance.BorderSize = 0;
-            this.salvaModificheRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvaModificheRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaModificheRisorsaButton.Location = new System.Drawing.Point(289, 340);
-            this.salvaModificheRisorsaButton.Name = "salvaModificheRisorsaButton";
-            this.salvaModificheRisorsaButton.Size = new System.Drawing.Size(239, 26);
-            this.salvaModificheRisorsaButton.TabIndex = 4;
-            this.salvaModificheRisorsaButton.Text = "Salva Modifiche Risorsa";
-            this.salvaModificheRisorsaButton.UseVisualStyleBackColor = false;
-            this.salvaModificheRisorsaButton.Visible = false;
-            // 
-            // prossimaRisorsaButton
-            // 
-            this.prossimaRisorsaButton.BackColor = System.Drawing.Color.LightGray;
-            this.prossimaRisorsaButton.FlatAppearance.BorderSize = 0;
-            this.prossimaRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prossimaRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prossimaRisorsaButton.Location = new System.Drawing.Point(571, 340);
-            this.prossimaRisorsaButton.Name = "prossimaRisorsaButton";
-            this.prossimaRisorsaButton.Size = new System.Drawing.Size(239, 26);
-            this.prossimaRisorsaButton.TabIndex = 5;
-            this.prossimaRisorsaButton.Text = "Prossima Risorsa";
-            this.prossimaRisorsaButton.UseVisualStyleBackColor = false;
-            this.prossimaRisorsaButton.Click += new System.EventHandler(this.prossimaRisorsaButton_Click);
-            // 
-            // annullaButton
-            // 
-            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
-            this.annullaButton.FlatAppearance.BorderSize = 0;
-            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(55, 411);
-            this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(151, 26);
-            this.annullaButton.TabIndex = 7;
-            this.annullaButton.Text = "Annulla";
-            this.annullaButton.UseVisualStyleBackColor = false;
-            // 
-            // salvaButton
-            // 
-            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
-            this.salvaButton.FlatAppearance.BorderSize = 0;
-            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaButton.Location = new System.Drawing.Point(622, 411);
-            this.salvaButton.Name = "salvaButton";
-            this.salvaButton.Size = new System.Drawing.Size(151, 26);
-            this.salvaButton.TabIndex = 6;
-            this.salvaButton.Text = "Salva";
-            this.salvaButton.UseVisualStyleBackColor = false;
-            // 
-            // risorseDataGridView
-            // 
-            this.risorseDataGridView.AllowUserToAddRows = false;
-            this.risorseDataGridView.AllowUserToDeleteRows = false;
-            this.risorseDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.risorseDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.risorseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.risorseDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.risorseDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.risorseDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.risorseDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.risorseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.risorseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.risorseDataGridView.ColumnHeadersVisible = false;
-            this.risorseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.risorsaColumn});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.risorseDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
-            this.risorseDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.risorseDataGridView.Location = new System.Drawing.Point(17, 17);
-            this.risorseDataGridView.MultiSelect = false;
-            this.risorseDataGridView.Name = "risorseDataGridView";
-            this.risorseDataGridView.ReadOnly = true;
-            this.risorseDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.risorseDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.risorseDataGridView.RowHeadersVisible = false;
-            this.risorseDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.risorseDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.risorseDataGridView.RowTemplate.Height = 24;
-            this.risorseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.risorseDataGridView.Size = new System.Drawing.Size(229, 373);
-            this.risorseDataGridView.TabIndex = 20;
-            this.risorseDataGridView.SelectionChanged += new System.EventHandler(this.risorseDataGridView_SelectionChanged);
-            // 
-            // risorsaColumn
-            // 
-            this.risorsaColumn.HeaderText = "Risorsa";
-            this.risorsaColumn.Name = "risorsaColumn";
-            this.risorsaColumn.ReadOnly = true;
-            // 
-            // nomeProfiloTextBox
-            // 
-            this.nomeProfiloTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.nomeProfiloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nomeProfiloTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeProfiloTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeProfiloTextBox.Location = new System.Drawing.Point(371, 27);
-            this.nomeProfiloTextBox.Name = "nomeProfiloTextBox";
-            this.nomeProfiloTextBox.Size = new System.Drawing.Size(449, 17);
-            this.nomeProfiloTextBox.TabIndex = 1;
-            this.nomeProfiloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // myLabel1
-            // 
-            this.myLabel1.AutoSize = true;
-            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(263, 27);
-            this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(81, 17);
-            this.myLabel1.TabIndex = 0;
-            this.myLabel1.Text = "Nome Profilo";
             // 
             // tabControlWithoutHeader
             // 
@@ -312,24 +169,24 @@
             this.bungalowDataGridView.AllowUserToAddRows = false;
             this.bungalowDataGridView.AllowUserToDeleteRows = false;
             this.bungalowDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.bungalowDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.bungalowDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.bungalowDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bungalowDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.bungalowDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bungalowDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.bungalowDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bungalowDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bungalowDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.bungalowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bungalowDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceBungalowColumn,
@@ -337,32 +194,32 @@
             this.infoStanzeBungalowColumn,
             this.postiStandardBungalowColumn,
             this.postiMaxBungalowColumn});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bungalowDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bungalowDataGridView.DefaultCellStyle = dataGridViewCellStyle33;
             this.bungalowDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.bungalowDataGridView.Location = new System.Drawing.Point(0, 6);
             this.bungalowDataGridView.MultiSelect = false;
             this.bungalowDataGridView.Name = "bungalowDataGridView";
             this.bungalowDataGridView.ReadOnly = true;
             this.bungalowDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bungalowDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bungalowDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.bungalowDataGridView.RowHeadersVisible = false;
             this.bungalowDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bungalowDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bungalowDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.bungalowDataGridView.RowTemplate.Height = 24;
             this.bungalowDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bungalowDataGridView.Size = new System.Drawing.Size(542, 56);
@@ -471,24 +328,24 @@
             this.impiantoDataGridView.AllowUserToAddRows = false;
             this.impiantoDataGridView.AllowUserToDeleteRows = false;
             this.impiantoDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.impiantoDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.impiantoDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle36;
             this.impiantoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.impiantoDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.impiantoDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.impiantoDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.impiantoDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.impiantoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.impiantoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.impiantoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.impiantoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceImpiantoColumn,
@@ -497,32 +354,32 @@
             this.pisteAlpineImpiantoColumn,
             this.pisteDiFondoImpiantoColumn,
             this.pisteSnowparkImpiantoColumn});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.impiantoDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.impiantoDataGridView.DefaultCellStyle = dataGridViewCellStyle38;
             this.impiantoDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.impiantoDataGridView.Location = new System.Drawing.Point(0, 6);
             this.impiantoDataGridView.MultiSelect = false;
             this.impiantoDataGridView.Name = "impiantoDataGridView";
             this.impiantoDataGridView.ReadOnly = true;
             this.impiantoDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.impiantoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Calibri", 9F);
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.impiantoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.impiantoDataGridView.RowHeadersVisible = false;
             this.impiantoDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.impiantoDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.impiantoDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.impiantoDataGridView.RowTemplate.Height = 24;
             this.impiantoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.impiantoDataGridView.Size = new System.Drawing.Size(542, 56);
@@ -570,6 +427,152 @@
             this.pisteSnowparkImpiantoColumn.Name = "pisteSnowparkImpiantoColumn";
             this.pisteSnowparkImpiantoColumn.ReadOnly = true;
             // 
+            // salvaModificheRisorsaButton
+            // 
+            this.salvaModificheRisorsaButton.BackColor = System.Drawing.Color.LightGray;
+            this.salvaModificheRisorsaButton.FlatAppearance.BorderSize = 0;
+            this.salvaModificheRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salvaModificheRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvaModificheRisorsaButton.Location = new System.Drawing.Point(289, 340);
+            this.salvaModificheRisorsaButton.Name = "salvaModificheRisorsaButton";
+            this.salvaModificheRisorsaButton.Size = new System.Drawing.Size(239, 26);
+            this.salvaModificheRisorsaButton.TabIndex = 4;
+            this.salvaModificheRisorsaButton.Text = "Salva Modifiche Risorsa";
+            this.salvaModificheRisorsaButton.UseVisualStyleBackColor = false;
+            this.salvaModificheRisorsaButton.Visible = false;
+            this.salvaModificheRisorsaButton.Click += new System.EventHandler(this.salvaModificheRisorsaButton_Click);
+            // 
+            // prossimaRisorsaButton
+            // 
+            this.prossimaRisorsaButton.BackColor = System.Drawing.Color.LightGray;
+            this.prossimaRisorsaButton.FlatAppearance.BorderSize = 0;
+            this.prossimaRisorsaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prossimaRisorsaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prossimaRisorsaButton.Location = new System.Drawing.Point(571, 340);
+            this.prossimaRisorsaButton.Name = "prossimaRisorsaButton";
+            this.prossimaRisorsaButton.Size = new System.Drawing.Size(239, 26);
+            this.prossimaRisorsaButton.TabIndex = 5;
+            this.prossimaRisorsaButton.Text = "Prossima Risorsa";
+            this.prossimaRisorsaButton.UseVisualStyleBackColor = false;
+            this.prossimaRisorsaButton.Click += new System.EventHandler(this.prossimaRisorsaButton_Click);
+            // 
+            // annullaButton
+            // 
+            this.annullaButton.BackColor = System.Drawing.Color.LightGray;
+            this.annullaButton.FlatAppearance.BorderSize = 0;
+            this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.annullaButton.Location = new System.Drawing.Point(55, 411);
+            this.annullaButton.Name = "annullaButton";
+            this.annullaButton.Size = new System.Drawing.Size(151, 26);
+            this.annullaButton.TabIndex = 7;
+            this.annullaButton.Text = "Annulla";
+            this.annullaButton.UseVisualStyleBackColor = false;
+            this.annullaButton.Click += new System.EventHandler(this.annullaButton_Click);
+            // 
+            // salvaButton
+            // 
+            this.salvaButton.BackColor = System.Drawing.Color.LightGray;
+            this.salvaButton.FlatAppearance.BorderSize = 0;
+            this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvaButton.Location = new System.Drawing.Point(622, 411);
+            this.salvaButton.Name = "salvaButton";
+            this.salvaButton.Size = new System.Drawing.Size(151, 26);
+            this.salvaButton.TabIndex = 6;
+            this.salvaButton.Text = "Salva";
+            this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
+            // 
+            // risorseDataGridView
+            // 
+            this.risorseDataGridView.AllowUserToAddRows = false;
+            this.risorseDataGridView.AllowUserToDeleteRows = false;
+            this.risorseDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.risorseDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            this.risorseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.risorseDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.risorseDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.risorseDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.risorseDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.risorseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            this.risorseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.risorseDataGridView.ColumnHeadersVisible = false;
+            this.risorseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.risorsaColumn});
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.risorseDataGridView.DefaultCellStyle = dataGridViewCellStyle43;
+            this.risorseDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.risorseDataGridView.Location = new System.Drawing.Point(17, 17);
+            this.risorseDataGridView.MultiSelect = false;
+            this.risorseDataGridView.Name = "risorseDataGridView";
+            this.risorseDataGridView.ReadOnly = true;
+            this.risorseDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.risorseDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.risorseDataGridView.RowHeadersVisible = false;
+            this.risorseDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.risorseDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle45;
+            this.risorseDataGridView.RowTemplate.Height = 24;
+            this.risorseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.risorseDataGridView.Size = new System.Drawing.Size(229, 373);
+            this.risorseDataGridView.TabIndex = 20;
+            this.risorseDataGridView.SelectionChanged += new System.EventHandler(this.risorseDataGridView_SelectionChanged);
+            // 
+            // risorsaColumn
+            // 
+            this.risorsaColumn.HeaderText = "Risorsa";
+            this.risorsaColumn.Name = "risorsaColumn";
+            this.risorsaColumn.ReadOnly = true;
+            // 
+            // nomeProfiloTextBox
+            // 
+            this.nomeProfiloTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.nomeProfiloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nomeProfiloTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeProfiloTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.nomeProfiloTextBox.Location = new System.Drawing.Point(371, 27);
+            this.nomeProfiloTextBox.Name = "nomeProfiloTextBox";
+            this.nomeProfiloTextBox.Size = new System.Drawing.Size(449, 17);
+            this.nomeProfiloTextBox.TabIndex = 1;
+            this.nomeProfiloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // myLabel1
+            // 
+            this.myLabel1.AutoSize = true;
+            this.myLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.myLabel1.Location = new System.Drawing.Point(263, 27);
+            this.myLabel1.Name = "myLabel1";
+            this.myLabel1.Size = new System.Drawing.Size(81, 17);
+            this.myLabel1.TabIndex = 0;
+            this.myLabel1.Text = "Nome Profilo";
+            // 
             // AggiungiModificaVisualizzaProfilo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -589,7 +592,6 @@
             this.Text = "Aggiungi Profilo";
             this.Load += new System.EventHandler(this.AggiungiModificaVisualizzaProfilo_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).EndInit();
             this.tabControlWithoutHeader.ResumeLayout(false);
             this.bungalowTabPage.ResumeLayout(false);
             this.bungalowTabPage.PerformLayout();
@@ -597,6 +599,7 @@
             this.impiantoTabPage.ResumeLayout(false);
             this.impiantoTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.impiantoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.risorseDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

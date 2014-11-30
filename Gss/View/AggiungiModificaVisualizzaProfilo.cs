@@ -19,6 +19,7 @@ namespace Gss.View
         private bool inEditingMode;
         private bool inViewMode;
         private ProfiloPrezziRisorse profilo;
+        private string nomeProfiloPrimaDelleModifiche;
 
         public AggiungiModificaVisualizzaProfilo(ResortController resortController, PeriodiProfiliController periodiProfiliController) 
 		{
@@ -44,6 +45,7 @@ namespace Gss.View
             else
             {
                 inEditingMode = true;
+                nomeProfiloPrimaDelleModifiche = profilo.Nome;
             }
             this.profilo = profilo;
 
@@ -264,9 +266,24 @@ namespace Gss.View
                     SpostatiNellaGriglia();
                 }
             }
-            else if (inEditingMode)
+            else if (inEditingMode || inViewMode)
             {
-
+                nomeProfiloTextBox.Text = profilo.Nome;
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+                {
+                    Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
+                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo).ToString();
+                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerAccesso).ToString();
+                    SpostatiNellaGriglia();
+                }
+                else
+                {
+                    Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
+                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo).ToString();
+                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
+                    SpostatiNellaGriglia();
+                }
             }
         }
 
@@ -281,6 +298,121 @@ namespace Gss.View
             else
             {
                 MessageBox.Show("Risorse Terminate");
+            }
+        }
+
+        private void salvaButton_Click(object sender, EventArgs e)
+        {
+            if (!inEditingMode)
+            {
+                string nomeProfilo = nomeProfiloTextBox.Text;
+                if (nomeProfilo != "")
+                {
+                    profilo.Nome = nomeProfilo;
+                    try
+                    {
+                        periodiProfiliController.AddProfilo(profilo);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Inserire il nome del profilo");
+                }
+            }
+            else
+            {
+                string nomeProfilo = nomeProfiloTextBox.Text;
+                if (nomeProfilo != "")
+                {
+                    profilo.Nome = nomeProfilo;
+                    try
+                    {
+                        periodiProfiliController.SetProfilo(profilo,nomeProfiloPrimaDelleModifiche);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Inserire il nome del profilo");
+                }
+            }
+        }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void salvaModificheRisorsaButton_Click(object sender, EventArgs e)
+        {
+            string nomeProfilo = nomeProfiloTextBox.Text;
+            string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+            {
+                Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
+                string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
+                string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
+                if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
+                {
+                    try
+                    {
+                        double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                        double prezzoAccesso = double.Parse(prezzoPerAccesso);
+                        PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);
+                        PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                        prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                        profilo.PrezziRisorsa[impiantoSelezionato] = prezziRisorsa;
+                        prezzoPerGiornataImpiantoTextBox.Clear();
+                        prezzoPerAccessoImpiantoTextBox.Clear();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Inserire dei prezzi validi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completare tutti i campi");
+                }
+            }
+            else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+            {
+                Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
+                string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
+                string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
+                if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                {
+                    try
+                    {
+                        double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                        double prezzoExtra = double.Parse(prezzoPerPersonaExtra);
+                        PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra);
+                        PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                        prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                        profilo.PrezziRisorsa[bungalowSelezionato] = prezziRisorsa;
+                        prezzoPerGironataPostStdTextBox.Clear();
+                        prezzoPerPersonaExtraTextBox.Clear();
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Inserire dei prezzi validi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completare tutti i campi");
+                }
             }
         }
     }

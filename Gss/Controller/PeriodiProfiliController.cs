@@ -221,5 +221,15 @@ namespace Gss.Controller
                 throw new Exception("Non è specificato il prezzo specifico per la tipologia desiderata");
             return result;
         }
+
+        internal void AddProfilo(ProfiloPrezziRisorse profilo)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void SetProfilo(ProfiloPrezziRisorse profilo, string nomeProfiloPrimaDelleModifiche)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

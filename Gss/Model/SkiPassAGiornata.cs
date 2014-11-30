@@ -36,7 +36,7 @@ namespace Gss.Model
             double prezzo = 0;
             DateTime data = DataInizio;
 
-            while(!(data.Equals(DataFine)))
+            while(data<=DataFine)
             {
                 prezzo += Impianto.GetPrezzoFor(data).Prezzo;
                 data = data.AddDays(1);

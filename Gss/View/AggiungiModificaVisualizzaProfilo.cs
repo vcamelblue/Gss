@@ -26,7 +26,7 @@ namespace Gss.View
             this.periodiProfiliController = periodiProfiliController;
             inEditingMode = false;
             inViewMode = false;
-            profilo = null;
+            profilo = new ProfiloPrezziRisorse("");
 
             InitializeComponent();
             //aggiustare tabulazione per passare al prossimo controllo!
@@ -181,7 +181,77 @@ namespace Gss.View
         }
 
         private void prossimaRisorsaButton_Click(object sender, EventArgs e)
-        {   
+        {
+            if (!inEditingMode && !inViewMode)
+            {
+                string nomeProfilo = nomeProfiloTextBox.Text;
+                if (nomeProfilo != "")
+                {
+                    string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                    if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+                    {
+                        Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
+                        string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
+                        string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
+                        if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
+                        {
+                            try
+                            {
+                                double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                                double prezzoAccesso = double.Parse(prezzoPerAccesso);
+                                PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);   
+                                PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                                prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                                profilo.Add(impiantoSelezionato, prezziRisorsa);
+                                SpostatiNellaGriglia();
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("Inserire dei prezzi validi");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Completare tutti i campi per proseguire");
+                        }
+                    }
+                    else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+                    {
+                        Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
+                        string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
+                        string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
+                        if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                        {
+                            try
+                            {
+                                double prezzoGiornata = double.Parse(prezzoPerGiornata);
+                                double prezzoExtra = double.Parse(prezzoPerPersonaExtra);
+                                PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra );   
+                                PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                                prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                                profilo.Add(bungalowSelezionato, prezziRisorsa);
+                                SpostatiNellaGriglia();
+                            }
+                            catch (FormatException)
+                            {
+                                MessageBox.Show("Inserire dei prezzi validi");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Completare tutti i campi per proseguire");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Compilare tutti i campi");
+                }
+            }
+        }
+
+        private void SpostatiNellaGriglia()
+        {
             int indiceSelezionato = risorseDataGridView.SelectedRows[0].Index;
             indiceSelezionato++;
             if (indiceSelezionato < risorseDataGridView.Rows.Count)

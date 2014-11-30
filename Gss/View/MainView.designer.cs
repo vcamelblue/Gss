@@ -32,9 +32,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControlWithoutHeader = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.riepilogoPanel1 = new Gss.View.MainViewPanel.RiepilogoPanel(this.components);
+            this.riepilogoPanel1 = new Gss.View.MainViewPanel.RiepilogoGiornalieroPanel(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.prenotazioniPanel1 = new Gss.View.MainViewPanel.PrenotazioniPanel(this.components);
+            this.prenotazioniPanel1 = new Gss.View.MainViewPanel.GestionePrenotazioniPanel(this.components);
             this.prenotazioniFutureTabButton = new Gss.View.Components.MyButton(this.components);
             this.prenotazioniConcluseTabButton = new Gss.View.Components.MyButton(this.components);
             this.prenotazioniInCorsoTabButton = new Gss.View.Components.MyButton(this.components);
@@ -450,7 +450,7 @@
         private Components.MyButton gestionePeriodiTabButton;
         private Components.MyButton gestioneProfiliTabButton;
         private Components.MyButton gestioneIncassiTabButton;
-        private MainViewPanel.PrenotazioniPanel prenotazioniPanel1;
+        private MainViewPanel.GestionePrenotazioniPanel prenotazioniPanel1;
         private Components.MyButton prenotazioniFutureTabButton;
         private Components.MyButton prenotazioniConcluseTabButton;
         private Components.MyButton prenotazioniInCorsoTabButton;
@@ -458,6 +458,6 @@
         private Components.MyButton archiviaRimuoviPrenotazioneButton;
         private Components.MyButton modificaPrenotazioneButton;
         private Components.MyButton nuovaPrenotazioneButton;
-        private MainViewPanel.RiepilogoPanel riepilogoPanel1;
+        private MainViewPanel.RiepilogoGiornalieroPanel riepilogoPanel1;
     }
 }

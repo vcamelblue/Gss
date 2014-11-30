@@ -1,6 +1,6 @@
 ﻿namespace Gss.View.MainViewPanel
 {
-    partial class RiepilogoPanel
+    partial class RiepilogoGiornalieroPanel
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

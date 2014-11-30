@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Gss.View.MainViewPanel
 {
-    public partial class RiepilogoPanel : System.Windows.Forms.UserControl
+    public partial class RiepilogoGiornalieroPanel : System.Windows.Forms.UserControl
     {
-        public RiepilogoPanel()
+        public RiepilogoGiornalieroPanel()
         {
             InitializeComponent();
         }
 
-        public RiepilogoPanel(IContainer container)
+        public RiepilogoGiornalieroPanel(IContainer container)
         {
             container.Add(this);
 

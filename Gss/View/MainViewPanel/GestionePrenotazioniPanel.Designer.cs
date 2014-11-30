@@ -1,6 +1,6 @@
 ﻿namespace Gss.View.MainViewPanel
 {
-    partial class PrenotazioniPanel
+    partial class GestionePrenotazioniPanel
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

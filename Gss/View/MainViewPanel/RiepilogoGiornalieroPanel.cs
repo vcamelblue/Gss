@@ -19,8 +19,9 @@ namespace Gss.View.MainViewPanel
             InitializeComponent();
         }
 
-        public RiepilogoGiornalieroPanel(IContainer container)
+        public RiepilogoGiornalieroPanel(IContainer container, PrenotazioniController prenotazioniController)
         {
+            this.prenotazioniController = prenotazioniController;
             container.Add(this);
 
             InitializeComponent();

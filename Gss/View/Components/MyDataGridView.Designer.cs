@@ -78,7 +78,7 @@
             this.RowHeadersVisible = false;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.RowTemplate.Height = 24;
+            this.RowTemplate.Height = 30;
             this.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

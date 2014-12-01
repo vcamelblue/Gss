@@ -34,18 +34,74 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.visualizzaClienteButton = new Gss.View.Components.MyButton(this.components);
+            this.rimuoviClienteButton = new Gss.View.Components.MyButton(this.components);
+            this.modificaClienteButton = new Gss.View.Components.MyButton(this.components);
+            this.aggiungiClienteButton = new Gss.View.Components.MyButton(this.components);
             this.clientiDataGridView = new Gss.View.Components.MyDataGridView(this.components);
             this.nomeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cdiceFiscaleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aggiungiClienteButton = new Gss.View.Components.MyButton(this.components);
-            this.modificaClienteButton = new Gss.View.Components.MyButton(this.components);
-            this.rimuoviClienteButton = new Gss.View.Components.MyButton(this.components);
-            this.visualizzaClienteButton = new Gss.View.Components.MyButton(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.clientiDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // visualizzaClienteButton
+            // 
+            this.visualizzaClienteButton.BackColor = System.Drawing.Color.LightGray;
+            this.visualizzaClienteButton.FlatAppearance.BorderSize = 0;
+            this.visualizzaClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.visualizzaClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualizzaClienteButton.Location = new System.Drawing.Point(525, 547);
+            this.visualizzaClienteButton.Name = "visualizzaClienteButton";
+            this.visualizzaClienteButton.Size = new System.Drawing.Size(173, 26);
+            this.visualizzaClienteButton.TabIndex = 12;
+            this.visualizzaClienteButton.Text = "Visualizza Cliente";
+            this.visualizzaClienteButton.UseVisualStyleBackColor = false;
+            this.visualizzaClienteButton.Click += new System.EventHandler(this.visualizzaClienteButton_Click);
+            // 
+            // rimuoviClienteButton
+            // 
+            this.rimuoviClienteButton.BackColor = System.Drawing.Color.LightGray;
+            this.rimuoviClienteButton.FlatAppearance.BorderSize = 0;
+            this.rimuoviClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rimuoviClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rimuoviClienteButton.Location = new System.Drawing.Point(350, 547);
+            this.rimuoviClienteButton.Name = "rimuoviClienteButton";
+            this.rimuoviClienteButton.Size = new System.Drawing.Size(174, 26);
+            this.rimuoviClienteButton.TabIndex = 11;
+            this.rimuoviClienteButton.Text = "Rimuovi Cliente";
+            this.rimuoviClienteButton.UseVisualStyleBackColor = false;
+            this.rimuoviClienteButton.Click += new System.EventHandler(this.rimuoviClienteButton_Click);
+            // 
+            // modificaClienteButton
+            // 
+            this.modificaClienteButton.BackColor = System.Drawing.Color.LightGray;
+            this.modificaClienteButton.FlatAppearance.BorderSize = 0;
+            this.modificaClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modificaClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificaClienteButton.Location = new System.Drawing.Point(175, 547);
+            this.modificaClienteButton.Name = "modificaClienteButton";
+            this.modificaClienteButton.Size = new System.Drawing.Size(174, 26);
+            this.modificaClienteButton.TabIndex = 10;
+            this.modificaClienteButton.Text = "Modifica Cliente";
+            this.modificaClienteButton.UseVisualStyleBackColor = false;
+            this.modificaClienteButton.Click += new System.EventHandler(this.modificaClienteButton_Click);
+            // 
+            // aggiungiClienteButton
+            // 
+            this.aggiungiClienteButton.BackColor = System.Drawing.Color.LightGray;
+            this.aggiungiClienteButton.FlatAppearance.BorderSize = 0;
+            this.aggiungiClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aggiungiClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aggiungiClienteButton.Location = new System.Drawing.Point(0, 547);
+            this.aggiungiClienteButton.Name = "aggiungiClienteButton";
+            this.aggiungiClienteButton.Size = new System.Drawing.Size(174, 26);
+            this.aggiungiClienteButton.TabIndex = 9;
+            this.aggiungiClienteButton.Text = "Aggiungi Cliente";
+            this.aggiungiClienteButton.UseVisualStyleBackColor = false;
+            this.aggiungiClienteButton.Click += new System.EventHandler(this.aggiungiClienteButton_Click);
             // 
             // clientiDataGridView
             // 
@@ -139,58 +195,6 @@
             this.emailColumn.Name = "emailColumn";
             this.emailColumn.ReadOnly = true;
             // 
-            // aggiungiClienteButton
-            // 
-            this.aggiungiClienteButton.BackColor = System.Drawing.Color.LightGray;
-            this.aggiungiClienteButton.FlatAppearance.BorderSize = 0;
-            this.aggiungiClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aggiungiClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aggiungiClienteButton.Location = new System.Drawing.Point(0, 547);
-            this.aggiungiClienteButton.Name = "aggiungiClienteButton";
-            this.aggiungiClienteButton.Size = new System.Drawing.Size(174, 26);
-            this.aggiungiClienteButton.TabIndex = 9;
-            this.aggiungiClienteButton.Text = "Aggiungi Cliente";
-            this.aggiungiClienteButton.UseVisualStyleBackColor = false;
-            // 
-            // modificaClienteButton
-            // 
-            this.modificaClienteButton.BackColor = System.Drawing.Color.LightGray;
-            this.modificaClienteButton.FlatAppearance.BorderSize = 0;
-            this.modificaClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modificaClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificaClienteButton.Location = new System.Drawing.Point(175, 547);
-            this.modificaClienteButton.Name = "modificaClienteButton";
-            this.modificaClienteButton.Size = new System.Drawing.Size(174, 26);
-            this.modificaClienteButton.TabIndex = 10;
-            this.modificaClienteButton.Text = "Modifica Cliente";
-            this.modificaClienteButton.UseVisualStyleBackColor = false;
-            // 
-            // rimuoviClienteButton
-            // 
-            this.rimuoviClienteButton.BackColor = System.Drawing.Color.LightGray;
-            this.rimuoviClienteButton.FlatAppearance.BorderSize = 0;
-            this.rimuoviClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rimuoviClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rimuoviClienteButton.Location = new System.Drawing.Point(350, 547);
-            this.rimuoviClienteButton.Name = "rimuoviClienteButton";
-            this.rimuoviClienteButton.Size = new System.Drawing.Size(174, 26);
-            this.rimuoviClienteButton.TabIndex = 11;
-            this.rimuoviClienteButton.Text = "Rimuovi Cliente";
-            this.rimuoviClienteButton.UseVisualStyleBackColor = false;
-            // 
-            // visualizzaClienteButton
-            // 
-            this.visualizzaClienteButton.BackColor = System.Drawing.Color.LightGray;
-            this.visualizzaClienteButton.FlatAppearance.BorderSize = 0;
-            this.visualizzaClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visualizzaClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visualizzaClienteButton.Location = new System.Drawing.Point(525, 547);
-            this.visualizzaClienteButton.Name = "visualizzaClienteButton";
-            this.visualizzaClienteButton.Size = new System.Drawing.Size(173, 26);
-            this.visualizzaClienteButton.TabIndex = 12;
-            this.visualizzaClienteButton.Text = "Visualizza Cliente";
-            this.visualizzaClienteButton.UseVisualStyleBackColor = false;
-            // 
             // GestioneClientiPanel
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
@@ -201,6 +205,7 @@
             this.Controls.Add(this.clientiDataGridView);
             this.Name = "GestioneClientiPanel";
             this.Size = new System.Drawing.Size(698, 573);
+            this.Load += new System.EventHandler(this.GestioneClientiPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientiDataGridView)).EndInit();
             this.ResumeLayout(false);
 

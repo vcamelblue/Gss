@@ -64,7 +64,7 @@ namespace Gss.Controller
             Prenotazioni prenotazioni = new Prenotazioni();
             foreach(Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
             {
-                if(p.DataInizio==DateTime.Today)
+                if(p.DataInizio.Date==DateTime.Today)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -75,7 +75,7 @@ namespace Gss.Controller
             Prenotazioni prenotazioni = new Prenotazioni();
             foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
             {
-                if (p.DataFine == DateTime.Today)
+                if (p.DataFine.Date == DateTime.Today)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -86,7 +86,7 @@ namespace Gss.Controller
             Prenotazioni prenotazioni = new Prenotazioni();
             foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
             {
-                if (p.DataInizio >= DateTime.Today && p.DataFine > DateTime.Today)
+                if (p.DataInizio.Date >= DateTime.Today && p.DataFine.Date > DateTime.Today)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -97,7 +97,7 @@ namespace Gss.Controller
             Prenotazioni prenotazioni = new Prenotazioni();
             foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (p.DataFine<=DateTime.Today)
+                if (p.DataFine.Date<=DateTime.Today)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -108,7 +108,7 @@ namespace Gss.Controller
             Prenotazioni prenotazioni = new Prenotazioni();
             foreach (PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (p.DataInizio > DateTime.Today)
+                if (p.DataInizio.Date > DateTime.Today)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -151,7 +151,7 @@ namespace Gss.Controller
 
         private bool inData(PrenotazioneAttiva p, DateTime dataInizio, DateTime dataFine)
         {
-            if (p.DataFine < dataInizio || p.DataInizio > dataFine)
+            if (p.DataFine.Date < dataInizio.Date || p.DataInizio.Date > dataFine.Date)
             {
                 return true;
             }
@@ -161,11 +161,11 @@ namespace Gss.Controller
         public double GetSpesaBungalow(Bungalow bungalow, DateTime dataInizio, DateTime dataFine,int numeroPersone)
         {
             double prezzo = 0;
-            DateTime data = dataInizio;
+            DateTime data = dataInizio.Date;
 
             if (bungalow == null) return prezzo;
 
-            while (data<=dataFine) //calcolo il prezzo standard per giornata
+            while (data<=dataFine.Date) //calcolo il prezzo standard per giornata
             {
                 prezzo += bungalow.GetPrezzoFor(data.Date).Prezzo;
                 data = data.AddDays(1);

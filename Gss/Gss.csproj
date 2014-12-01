@@ -136,11 +136,23 @@
     <Compile Include="View\MainViewPanel\GestioneClientiPanel.Designer.cs">
       <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MainViewPanel\GestioneIncassi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestioneIncassi.Designer.cs">
+      <DependentUpon>GestioneIncassi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainViewPanel\GestionePrenotazioniPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\MainViewPanel\GestionePrenotazioniPanel.Designer.cs">
       <DependentUpon>GestionePrenotazioniPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestioneProfili.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestioneProfili.Designer.cs">
+      <DependentUpon>GestioneProfili.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainViewPanel\RiepilogoGiornalieroPanel.cs">
       <SubType>UserControl</SubType>
@@ -283,8 +295,14 @@
     <EmbeddedResource Include="View\MainViewPanel\GestioneClientiPanel.resx">
       <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\GestioneIncassi.resx">
+      <DependentUpon>GestioneIncassi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\GestionePrenotazioniPanel.resx">
       <DependentUpon>GestionePrenotazioniPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\GestioneProfili.resx">
+      <DependentUpon>GestioneProfili.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\RiepilogoGiornalieroPanel.resx">
       <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>

@@ -14,6 +14,10 @@ namespace Gss.View
 {
     public partial class MainView : Form 
 	{
+        private ClientiController clientiController;
+        private ResortController resortController;
+        private PrenotazioniController prenotazioniController;
+        private PeriodiProfiliController periodiProfiliController;
 
         private Button previusSelectedButton = null;
         private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
@@ -21,13 +25,18 @@ namespace Gss.View
         private Color normalFontColor = Color.FromKnownColor(KnownColor.Black);
         private Color selectFontColor = Color.FromArgb(251, 251, 251);
 
-        public MainView() 
+        public MainView(PrenotazioniController prenotazioniController, ClientiController clientiController, ResortController resortController, PeriodiProfiliController periodiProfiliController) 
 		{
+            this.clientiController = clientiController;
+            this.resortController = resortController;
+            this.prenotazioniController = prenotazioniController;
+            this.periodiProfiliController = periodiProfiliController;
+
             InitializeComponent();
             selectRightTab(riepilogoGiornalieroTabButton);
 
             //Creo e Aggiungo il pannello Riepilogo
-            RiepilogoGiornalieroPanel riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components);
+            RiepilogoGiornalieroPanel riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components,prenotazioniController);
             riepilogoGiornalieroTabPage.Controls.Add(riepilogoGiornalieroPanel);
 
             //Creo e Aggiungo il pannello Prenotazioni
@@ -35,12 +44,14 @@ namespace Gss.View
             gestionePrenotazioniTabPage.Controls.Add(gestionePrenotazioniPanel);
 
             //Creo e Aggiungo il pannello Clienti
-            GestioneClientiPanel gestioneClientiPanel = new GestioneClientiPanel(this.components);
+            GestioneClientiPanel gestioneClientiPanel = new GestioneClientiPanel(this.components,clientiController);
             gestioneClientiTabPage.Controls.Add(gestioneClientiPanel);
 
             //Creo e Aggiungo il pannello 
 
-            //Creo e Aggiungo il pannello 
+            //Creo e Aggiungo il pannello Profili
+            GestioneProfili gestioneProfiliPanel = new GestioneProfili(this.components);
+            gestioneProfiliTabPage.Controls.Add(gestioneProfiliPanel);
 
             //Creo e Aggiungo il pannello 
 

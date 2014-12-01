@@ -51,7 +51,9 @@ namespace Gss.View.MainViewPanel
         {
             selectRightTab(prenotazioniConcluseTabButton);
             modificaPrenotazioneButton.Enabled = false;
+            archiviaRimuoviPrenotazioneButton.Enabled = true;
             prenotazioniDataGridView.Rows.Clear();
+            RiempiGrigliaPrenotazioniConcluse();
         }
 
         private void prenotazioniInCorsoTabButton_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace Gss.View.MainViewPanel
         {
             selectRightTab(prenotazioniFutureTabButton);
             archiviaRimuoviPrenotazioneButton.Enabled = false;
+            modificaPrenotazioneButton.Enabled = true;
             prenotazioniDataGridView.Rows.Clear();
             RiempiGrigliaPrenotazioniFuture();
         }
@@ -93,6 +96,10 @@ namespace Gss.View.MainViewPanel
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
             }
+            if (prenotazioniController.GetPrenotazioniConcluseNonArchiviate().ListaPrenotazioni.Count == 0)
+            {
+                archiviaRimuoviPrenotazioneButton.Enabled = false;
+            }
         }
 
         private void selectRightTab(Button newSelectedButton)
@@ -112,6 +119,8 @@ namespace Gss.View.MainViewPanel
         private void GestionePrenotazioniPanel_Load(object sender, EventArgs e)
         {
             selectRightTab(prenotazioniInCorsoTabButton);
+            archiviaRimuoviPrenotazioneButton.Enabled = false;
+            modificaPrenotazioneButton.Enabled = false;
             RiempiGrigliaPrenotazioniInCorso();
         }
 
@@ -135,8 +144,22 @@ namespace Gss.View.MainViewPanel
         }
 
         private void archiviaRimuoviPrenotazioneButton_Click(object sender, EventArgs e)
-        {
-
+        {   
+            int numeroPrenotazioneSelezionata = int.Parse(prenotazioniDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+            Prenotazione prenotazioneSelezionata = prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata);
+            DialogResult result = MessageBox.Show("Sicuro di voler archiviare la prenotazione?", "Archviazione Prenotazione", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
+                    Refresh();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
         }
     }
 }

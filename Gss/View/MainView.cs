@@ -40,7 +40,7 @@ namespace Gss.View
             riepilogoGiornalieroTabPage.Controls.Add(riepilogoGiornalieroPanel);
 
             //Creo e Aggiungo il pannello Prenotazioni
-            GestionePrenotazioniPanel gestionePrenotazioniPanel = new GestionePrenotazioniPanel(this.components);
+            GestionePrenotazioniPanel gestionePrenotazioniPanel = new GestionePrenotazioniPanel(this.components,prenotazioniController,clientiController,resortController);
             gestionePrenotazioniTabPage.Controls.Add(gestionePrenotazioniPanel);
 
             //Creo e Aggiungo il pannello Clienti

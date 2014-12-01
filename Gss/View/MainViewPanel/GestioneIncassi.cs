@@ -20,6 +20,40 @@ namespace Gss.View.MainViewPanel
             container.Add(this);
 
             InitializeComponent();
+
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
+            incassiDataGridView.Rows.Add("345", "10/12/2014", "nomecliente e cognomecli", "890 €");
         }
     }
 }

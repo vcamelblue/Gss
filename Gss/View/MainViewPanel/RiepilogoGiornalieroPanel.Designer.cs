@@ -112,7 +112,7 @@
             this.prenotazioniDaSaldareOggiDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenotazioniDaSaldareOggiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.prenotazioniDaSaldareOggiDataGridView.RowTemplate.Height = 24;
+            this.prenotazioniDaSaldareOggiDataGridView.RowTemplate.Height = 30;
             this.prenotazioniDaSaldareOggiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.prenotazioniDaSaldareOggiDataGridView.Size = new System.Drawing.Size(666, 158);
             this.prenotazioniDaSaldareOggiDataGridView.TabIndex = 24;
@@ -177,7 +177,7 @@
             this.clientiInPartenzaOggiDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientiInPartenzaOggiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.clientiInPartenzaOggiDataGridView.RowTemplate.Height = 24;
+            this.clientiInPartenzaOggiDataGridView.RowTemplate.Height = 30;
             this.clientiInPartenzaOggiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientiInPartenzaOggiDataGridView.Size = new System.Drawing.Size(325, 306);
             this.clientiInPartenzaOggiDataGridView.TabIndex = 23;
@@ -248,7 +248,7 @@
             this.clientiInArrivoOggiDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientiInArrivoOggiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            this.clientiInArrivoOggiDataGridView.RowTemplate.Height = 24;
+            this.clientiInArrivoOggiDataGridView.RowTemplate.Height = 30;
             this.clientiInArrivoOggiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientiInArrivoOggiDataGridView.Size = new System.Drawing.Size(325, 306);
             this.clientiInArrivoOggiDataGridView.TabIndex = 22;
@@ -267,7 +267,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(235, 374);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(186, 17);
+            this.myLabel4.Size = new System.Drawing.Size(228, 21);
             this.myLabel4.TabIndex = 3;
             this.myLabel4.Text = "Prenotazioni Ancora Da Saldare";
             // 
@@ -279,7 +279,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(452, 21);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(111, 17);
+            this.myLabel3.Size = new System.Drawing.Size(135, 21);
             this.myLabel3.TabIndex = 2;
             this.myLabel3.Text = "Clienti In Partenza";
             // 
@@ -291,7 +291,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(120, 21);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(94, 17);
+            this.myLabel2.Size = new System.Drawing.Size(116, 21);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Clienti In Arrivo";
             // 

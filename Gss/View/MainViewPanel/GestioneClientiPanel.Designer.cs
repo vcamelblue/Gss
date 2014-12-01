@@ -159,7 +159,7 @@
             this.clientiDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.clientiDataGridView.RowTemplate.Height = 24;
+            this.clientiDataGridView.RowTemplate.Height = 30;
             this.clientiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clientiDataGridView.Size = new System.Drawing.Size(698, 549);
             this.clientiDataGridView.TabIndex = 8;

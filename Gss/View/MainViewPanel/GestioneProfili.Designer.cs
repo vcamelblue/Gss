@@ -150,7 +150,7 @@
             this.profiliDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.profiliDataGridView.RowTemplate.Height = 30;
             this.profiliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.profiliDataGridView.Size = new System.Drawing.Size(698, 549);
+            this.profiliDataGridView.Size = new System.Drawing.Size(698, 547);
             this.profiliDataGridView.TabIndex = 22;
             // 
             // profiliColumn

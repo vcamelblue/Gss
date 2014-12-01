@@ -366,7 +366,7 @@ namespace Gss
             Console.Out.WriteLine(prenotazioneAttiva1.Bungalow);
             Console.Out.WriteLine(prenotazioneAttiva2.Bungalow);
             Console.Out.WriteLine(prenotazioneAttiva3.Bungalow);
-            Application.Run(new MainView(prenotazioni,clientiController,resortController,periodiProfili);
+            Application.Run(new MainView(prenotazioni,clientiController,resortController,periodiProfili));
             
              
         }

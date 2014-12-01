@@ -55,7 +55,9 @@ namespace Gss.View
 
             //Creo e Aggiungo il pannello 
 
-            //Creo e Aggiungo il pannello 
+            //Creo e Aggiungo il pannello Incassi
+            GestioneIncassi gestioneIncassiPanel = new GestioneIncassi(this.components);
+            gestioneIncassiTabPage.Controls.Add(gestioneIncassiPanel);
         }
 
         private void riepilogoGiornalieroTabButton_Click(object sender, EventArgs e)

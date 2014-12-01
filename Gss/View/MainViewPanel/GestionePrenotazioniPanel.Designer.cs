@@ -37,15 +37,15 @@
             this.prenotazioniFutureTabButton = new Gss.View.Components.MyButton(this.components);
             this.prenotazioniConcluseTabButton = new Gss.View.Components.MyButton(this.components);
             this.prenotazioniInCorsoTabButton = new Gss.View.Components.MyButton(this.components);
-            this.prenotazioniInCorsoDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.prenInCorsoNumeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoDataInizioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoDataFineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoClienteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenotazioniDataGridView = new Gss.View.Components.MyDataGridView(this.components);
+            this.numeroPrenColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInizioPrenColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFinePrenColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientePrenColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.archiviaRimuoviPrenotazioneButton = new Gss.View.Components.MyButton(this.components);
             this.modificaPrenotazioneButton = new Gss.View.Components.MyButton(this.components);
             this.nuovaPrenotazioneButton = new Gss.View.Components.MyButton(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.prenotazioniInCorsoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prenotazioniDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // prenotazioniFutureTabButton
@@ -87,21 +87,21 @@
             this.prenotazioniInCorsoTabButton.Text = "Prenotazioni In Corso";
             this.prenotazioniInCorsoTabButton.UseVisualStyleBackColor = false;
             // 
-            // prenotazioniInCorsoDataGridView
+            // prenotazioniDataGridView
             // 
-            this.prenotazioniInCorsoDataGridView.AllowUserToAddRows = false;
-            this.prenotazioniInCorsoDataGridView.AllowUserToDeleteRows = false;
-            this.prenotazioniInCorsoDataGridView.AllowUserToResizeRows = false;
+            this.prenotazioniDataGridView.AllowUserToAddRows = false;
+            this.prenotazioniDataGridView.AllowUserToDeleteRows = false;
+            this.prenotazioniDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.prenotazioniInCorsoDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.prenotazioniInCorsoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.prenotazioniInCorsoDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.prenotazioniInCorsoDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.prenotazioniInCorsoDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.prenotazioniInCorsoDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.prenotazioniDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.prenotazioniDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.prenotazioniDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.prenotazioniDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prenotazioniDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.prenotazioniDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9F);
@@ -109,13 +109,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.prenotazioniInCorsoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.prenotazioniInCorsoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.prenotazioniInCorsoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.prenInCorsoNumeroColumn,
-            this.prenInCorsoDataInizioColumn,
-            this.prenInCorsoDataFineColumn,
-            this.prenInCorsoClienteColumn});
+            this.prenotazioniDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.prenotazioniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prenotazioniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numeroPrenColumn,
+            this.dataInizioPrenColumn,
+            this.dataFinePrenColumn,
+            this.clientePrenColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9F);
@@ -123,13 +123,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.prenotazioniInCorsoDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.prenotazioniInCorsoDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.prenotazioniInCorsoDataGridView.Location = new System.Drawing.Point(0, 26);
-            this.prenotazioniInCorsoDataGridView.MultiSelect = false;
-            this.prenotazioniInCorsoDataGridView.Name = "prenotazioniInCorsoDataGridView";
-            this.prenotazioniInCorsoDataGridView.ReadOnly = true;
-            this.prenotazioniInCorsoDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.prenotazioniDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.prenotazioniDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.prenotazioniDataGridView.Location = new System.Drawing.Point(0, 26);
+            this.prenotazioniDataGridView.MultiSelect = false;
+            this.prenotazioniDataGridView.Name = "prenotazioniDataGridView";
+            this.prenotazioniDataGridView.ReadOnly = true;
+            this.prenotazioniDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9F);
@@ -137,43 +137,43 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.prenotazioniInCorsoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.prenotazioniInCorsoDataGridView.RowHeadersVisible = false;
-            this.prenotazioniInCorsoDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.prenotazioniDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.prenotazioniDataGridView.RowHeadersVisible = false;
+            this.prenotazioniDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenotazioniInCorsoDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.prenotazioniInCorsoDataGridView.RowTemplate.Height = 24;
-            this.prenotazioniInCorsoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.prenotazioniInCorsoDataGridView.Size = new System.Drawing.Size(698, 520);
-            this.prenotazioniInCorsoDataGridView.TabIndex = 7;
+            this.prenotazioniDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.prenotazioniDataGridView.RowTemplate.Height = 30;
+            this.prenotazioniDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.prenotazioniDataGridView.Size = new System.Drawing.Size(698, 520);
+            this.prenotazioniDataGridView.TabIndex = 7;
             // 
-            // prenInCorsoNumeroColumn
+            // numeroPrenColumn
             // 
-            this.prenInCorsoNumeroColumn.FillWeight = 20F;
-            this.prenInCorsoNumeroColumn.HeaderText = "Numero";
-            this.prenInCorsoNumeroColumn.Name = "prenInCorsoNumeroColumn";
-            this.prenInCorsoNumeroColumn.ReadOnly = true;
+            this.numeroPrenColumn.FillWeight = 20F;
+            this.numeroPrenColumn.HeaderText = "Numero";
+            this.numeroPrenColumn.Name = "numeroPrenColumn";
+            this.numeroPrenColumn.ReadOnly = true;
             // 
-            // prenInCorsoDataInizioColumn
+            // dataInizioPrenColumn
             // 
-            this.prenInCorsoDataInizioColumn.FillWeight = 30F;
-            this.prenInCorsoDataInizioColumn.HeaderText = "Data Inizio";
-            this.prenInCorsoDataInizioColumn.Name = "prenInCorsoDataInizioColumn";
-            this.prenInCorsoDataInizioColumn.ReadOnly = true;
+            this.dataInizioPrenColumn.FillWeight = 30F;
+            this.dataInizioPrenColumn.HeaderText = "Data Inizio";
+            this.dataInizioPrenColumn.Name = "dataInizioPrenColumn";
+            this.dataInizioPrenColumn.ReadOnly = true;
             // 
-            // prenInCorsoDataFineColumn
+            // dataFinePrenColumn
             // 
-            this.prenInCorsoDataFineColumn.FillWeight = 30F;
-            this.prenInCorsoDataFineColumn.HeaderText = "Data Fine";
-            this.prenInCorsoDataFineColumn.Name = "prenInCorsoDataFineColumn";
-            this.prenInCorsoDataFineColumn.ReadOnly = true;
+            this.dataFinePrenColumn.FillWeight = 30F;
+            this.dataFinePrenColumn.HeaderText = "Data Fine";
+            this.dataFinePrenColumn.Name = "dataFinePrenColumn";
+            this.dataFinePrenColumn.ReadOnly = true;
             // 
-            // prenInCorsoClienteColumn
+            // clientePrenColumn
             // 
-            this.prenInCorsoClienteColumn.FillWeight = 45F;
-            this.prenInCorsoClienteColumn.HeaderText = "Cliente";
-            this.prenInCorsoClienteColumn.Name = "prenInCorsoClienteColumn";
-            this.prenInCorsoClienteColumn.ReadOnly = true;
+            this.clientePrenColumn.FillWeight = 45F;
+            this.clientePrenColumn.HeaderText = "Cliente";
+            this.clientePrenColumn.Name = "clientePrenColumn";
+            this.clientePrenColumn.ReadOnly = true;
             // 
             // archiviaRimuoviPrenotazioneButton
             // 
@@ -214,19 +214,19 @@
             this.nuovaPrenotazioneButton.Text = "Nuova Prenotazione";
             this.nuovaPrenotazioneButton.UseVisualStyleBackColor = false;
             // 
-            // PrenotazioniPanel
+            // GestionePrenotazioniPanel
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.Controls.Add(this.prenotazioniFutureTabButton);
             this.Controls.Add(this.prenotazioniConcluseTabButton);
             this.Controls.Add(this.prenotazioniInCorsoTabButton);
-            this.Controls.Add(this.prenotazioniInCorsoDataGridView);
+            this.Controls.Add(this.prenotazioniDataGridView);
             this.Controls.Add(this.archiviaRimuoviPrenotazioneButton);
             this.Controls.Add(this.modificaPrenotazioneButton);
             this.Controls.Add(this.nuovaPrenotazioneButton);
-            this.Name = "PrenotazioniPanel";
+            this.Name = "GestionePrenotazioniPanel";
             this.Size = new System.Drawing.Size(698, 573);
-            ((System.ComponentModel.ISupportInitialize)(this.prenotazioniInCorsoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prenotazioniDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,10 +239,10 @@
         private Components.MyButton nuovaPrenotazioneButton;
         private Components.MyButton modificaPrenotazioneButton;
         private Components.MyButton archiviaRimuoviPrenotazioneButton;
-        private Components.MyDataGridView prenotazioniInCorsoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoNumeroColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoDataInizioColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoDataFineColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoClienteColumn;
+        private Components.MyDataGridView prenotazioniDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroPrenColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataInizioPrenColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataFinePrenColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientePrenColumn;
     }
 }

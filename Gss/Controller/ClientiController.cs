@@ -28,7 +28,7 @@ namespace Gss.Controller
             if (cliente.Identic(clienteModificato)) 
                 throw new Exception("Non sono state apportate modifiche al cliente");
 
-            if (Exist(clienteModificato))
+            if (Exist(clienteModificato) && !clienteModificato.Equals(cliente))
             {
                 throw new Exception("Il cliente modificato già esiste nel sistema");
             }
@@ -58,6 +58,21 @@ namespace Gss.Controller
             if (cliente == null)
                 throw new Exception("Il cliente ricercato non è presente nel sistema");
             return cliente;
+        }
+
+        public void RemoveCliente(Cliente cliente)
+        {
+            if (HavePrenotazioni(cliente))
+                throw new Exception("Il cliente non può essere rimosso perchè ha prenotazioni salvate nel sistema");
+            if (!this.Gss.Clienti.Remove(cliente))
+                throw new Exception("Il cliente non può essere rimorso perchè non presente nel sistema");
+        }
+
+        private bool HavePrenotazioni(Cliente cliente)
+        {
+            if (this.Gss.Prenotazioni.GetPrenotazioniByCliente(cliente).ListaPrenotazioni.Count != 0)
+                return true;
+            return false;
         }
     }
 }

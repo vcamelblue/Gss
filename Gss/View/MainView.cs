@@ -14,11 +14,22 @@ namespace Gss.View
 {
     public partial class MainView : Form 
 	{
+        //Controller
         private ClientiController clientiController;
         private ResortController resortController;
         private PrenotazioniController prenotazioniController;
         private PeriodiProfiliController periodiProfiliController;
 
+        //Pannelli
+        private RiepilogoGiornalieroPanel riepilogoGiornalieroPanel;
+        private GestionePrenotazioniPanel gestionePrenotazioniPanel;
+        private GestioneClientiPanel gestioneClientiPanel;
+        private GestioneResortPanel gestioneResortPanel;
+        private GestioneProfili gestioneProfiliPanel;
+        private GestionePeriodiPanel gestionePeriodiPanel;
+        private GestioneIncassi gestioneIncassiPanel;
+
+        //Impostazioni bottoni
         private Button previusSelectedButton = null;
         private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
         private Color selectedButtonColor = Color.FromArgb(54, 78, 102); //Color.FromKnownColor(KnownColor.MenuHighlight);
@@ -33,74 +44,85 @@ namespace Gss.View
             this.periodiProfiliController = periodiProfiliController;
 
             InitializeComponent();
+
+
             selectRightTab(riepilogoGiornalieroTabButton);
 
             //Creo e Aggiungo il pannello Riepilogo
-            RiepilogoGiornalieroPanel riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components,prenotazioniController);
+            riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components,prenotazioniController);
             riepilogoGiornalieroTabPage.Controls.Add(riepilogoGiornalieroPanel);
 
             //Creo e Aggiungo il pannello Prenotazioni
-            GestionePrenotazioniPanel gestionePrenotazioniPanel = new GestionePrenotazioniPanel(this.components,prenotazioniController,clientiController,resortController);
+            gestionePrenotazioniPanel = new GestionePrenotazioniPanel(this.components,prenotazioniController,clientiController,resortController);
             gestionePrenotazioniTabPage.Controls.Add(gestionePrenotazioniPanel);
 
             //Creo e Aggiungo il pannello Clienti
-            GestioneClientiPanel gestioneClientiPanel = new GestioneClientiPanel(this.components,clientiController);
+            gestioneClientiPanel = new GestioneClientiPanel(this.components,clientiController);
             gestioneClientiTabPage.Controls.Add(gestioneClientiPanel);
 
             //Creo e Aggiungo il pannello Resort
-            GestioneResortPanel gestioneResortPanel = new GestioneResortPanel(this.components);
+            gestioneResortPanel = new GestioneResortPanel(this.components);
             gestioneResortTabPage.Controls.Add(gestioneResortPanel);
 
             //Creo e Aggiungo il pannello Profili
-            GestioneProfili gestioneProfiliPanel = new GestioneProfili(this.components,periodiProfiliController,resortController);
+            gestioneProfiliPanel = new GestioneProfili(this.components,periodiProfiliController,resortController);
             gestioneProfiliTabPage.Controls.Add(gestioneProfiliPanel);
 
-            //Creo e Aggiungo il pannello 
+            //Creo e Aggiungo il pannello Periodi
+            gestionePeriodiPanel = new GestionePeriodiPanel(this.components);
+            gestionePeriodiTabPage.Controls.Add(gestionePeriodiPanel);
 
             //Creo e Aggiungo il pannello Incassi
-            GestioneIncassi gestioneIncassiPanel = new GestioneIncassi(this.components);
+            gestioneIncassiPanel = new GestioneIncassi(this.components);
             gestioneIncassiTabPage.Controls.Add(gestioneIncassiPanel);
         }
 
         private void riepilogoGiornalieroTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(riepilogoGiornalieroTabButton);
+            riepilogoGiornalieroPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = riepilogoGiornalieroTabPage;
         }
 
         private void gestionePrenotazioniTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestionePrenotazioniTabButton);
+            gestionePrenotazioniPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestionePrenotazioniTabPage;
         }
 
         private void gestioneClientiTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestioneClientiTabButton);
+            gestioneClientiPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestioneClientiTabPage;
         }
 
         private void gestioneResortTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestioneResortTabButton);
+            gestioneResortPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestioneResortTabPage;
         }
 
         private void gestioneProfiliTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestioneProfiliTabButton);
+            gestioneProfiliPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestioneProfiliTabPage;
         }
 
         private void gestionePeriodiTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestionePeriodiTabButton);
+            gestionePeriodiPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestionePeriodiTabPage;
         }
 
         private void gestioneIncassiTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(gestioneIncassiTabButton);
+            gestioneIncassiPanel.Refresh();
             tabControlWithoutHeader.SelectedTab = gestioneIncassiTabPage;
         }
 

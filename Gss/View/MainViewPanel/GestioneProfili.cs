@@ -70,5 +70,30 @@ namespace Gss.View.MainViewPanel
                 //periodiProfiliController
             }
         }
+
+        private void modificaProfiloButton_Click(object sender, EventArgs e)
+        {
+            string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloByNome(nomeSelezionato);
+
+            AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, false);
+
+            DialogResult res = modificaProfilo.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                Refresh();
+            }
+        }
+
+        private void aggiungiProfiloButton_Click(object sender, EventArgs e)
+        {
+            AggiungiModificaVisualizzaProfilo aggiungiProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController);
+
+            DialogResult res = aggiungiProfilo.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                Refresh();
+            }
+        }
     }
 }

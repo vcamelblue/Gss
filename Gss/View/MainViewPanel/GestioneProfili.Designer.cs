@@ -83,6 +83,7 @@
             this.modificaProfiloButton.TabIndex = 24;
             this.modificaProfiloButton.Text = "Modifica Profilo";
             this.modificaProfiloButton.UseVisualStyleBackColor = false;
+            this.modificaProfiloButton.Click += new System.EventHandler(this.modificaProfiloButton_Click);
             // 
             // aggiungiProfiloButton
             // 
@@ -96,6 +97,7 @@
             this.aggiungiProfiloButton.TabIndex = 23;
             this.aggiungiProfiloButton.Text = "Aggiungi Profilo";
             this.aggiungiProfiloButton.UseVisualStyleBackColor = false;
+            this.aggiungiProfiloButton.Click += new System.EventHandler(this.aggiungiProfiloButton_Click);
             // 
             // profiliDataGridView
             // 

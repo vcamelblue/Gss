@@ -94,6 +94,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.prenotazioniDaSaldareOggiDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.prenotazioniDaSaldareOggiDataGridView.Enabled = false;
             this.prenotazioniDaSaldareOggiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.prenotazioniDaSaldareOggiDataGridView.Location = new System.Drawing.Point(16, 398);
             this.prenotazioniDaSaldareOggiDataGridView.MultiSelect = false;
@@ -159,6 +160,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.clientiInPartenzaOggiDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            this.clientiInPartenzaOggiDataGridView.Enabled = false;
             this.clientiInPartenzaOggiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.clientiInPartenzaOggiDataGridView.Location = new System.Drawing.Point(357, 45);
             this.clientiInPartenzaOggiDataGridView.MultiSelect = false;
@@ -230,6 +232,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.clientiInArrivoOggiDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            this.clientiInArrivoOggiDataGridView.Enabled = false;
             this.clientiInArrivoOggiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.clientiInArrivoOggiDataGridView.Location = new System.Drawing.Point(16, 45);
             this.clientiInArrivoOggiDataGridView.MultiSelect = false;
@@ -267,7 +270,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(235, 374);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(228, 21);
+            this.myLabel4.Size = new System.Drawing.Size(186, 17);
             this.myLabel4.TabIndex = 3;
             this.myLabel4.Text = "Prenotazioni Ancora Da Saldare";
             // 
@@ -279,7 +282,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(452, 21);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(135, 21);
+            this.myLabel3.Size = new System.Drawing.Size(111, 17);
             this.myLabel3.TabIndex = 2;
             this.myLabel3.Text = "Clienti In Partenza";
             // 
@@ -291,7 +294,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(120, 21);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(116, 21);
+            this.myLabel2.Size = new System.Drawing.Size(94, 17);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Clienti In Arrivo";
             // 

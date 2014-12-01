@@ -136,12 +136,15 @@ namespace Gss.View
                 impiantoDataGridView.Rows.Clear();
                 Impianto impiantoSelezionato = (Impianto)risorsa;
                 impiantoDataGridView.Rows.Add(impiantoSelezionato.Codice, impiantoSelezionato.Nome, impiantoSelezionato.Versante, impiantoSelezionato.GetPisteAlpine().Count, impiantoSelezionato.GetPisteFondo().Count, impiantoSelezionato.GetPisteSnowPark().Count);
+                prezzoPerAccessoImpiantoTextBox.Text = profilo.GetPrezziRisorsa(impiantoSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore.ToString();
+                prezzoPerGiornataImpiantoTextBox.Text = profilo.GetPrezziRisorsa(impiantoSelezionato).Prezzo.ToString();
             }
             else
             {
                 bungalowDataGridView.Rows.Clear();
                 Bungalow bungalowSelezionato = (Bungalow)risorsa;
-                bungalowDataGridView.Rows.Clear();
+                prezzoPerGironataPostStdTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).Prezzo.ToString();
+                prezzoPerPersonaExtraTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore.ToString();
                 string informazioniBungalow = infoBungalow(bungalowSelezionato);
                 string informazioniCamere = "";
                 foreach (Stanza s in bungalowSelezionato.Stanze)

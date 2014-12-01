@@ -38,9 +38,8 @@
             this.prenotazioniInCorsoDataGridView = new Gss.View.Components.MyDataGridView(this.components);
             this.visualizzaFatturaButton = new Gss.View.Components.MyButton(this.components);
             this.numeroPrenotazioneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoDataInizioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoDataFineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenInCorsoClienteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataFatturaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incassoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prenotazioniInCorsoDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -71,9 +70,8 @@
             this.prenotazioniInCorsoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.prenotazioniInCorsoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroPrenotazioneColumn,
-            this.prenInCorsoDataInizioColumn,
-            this.prenInCorsoDataFineColumn,
-            this.prenInCorsoClienteColumn,
+            this.clienteColumn,
+            this.dataFatturaColumn,
             this.incassoColumn});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -121,31 +119,24 @@
             // 
             // numeroPrenotazioneColumn
             // 
-            this.numeroPrenotazioneColumn.FillWeight = 25F;
+            this.numeroPrenotazioneColumn.FillWeight = 30F;
             this.numeroPrenotazioneColumn.HeaderText = "N. Prenotazione";
             this.numeroPrenotazioneColumn.Name = "numeroPrenotazioneColumn";
             this.numeroPrenotazioneColumn.ReadOnly = true;
             // 
-            // prenInCorsoDataInizioColumn
+            // clienteColumn
             // 
-            this.prenInCorsoDataInizioColumn.FillWeight = 30F;
-            this.prenInCorsoDataInizioColumn.HeaderText = "Data Inizio";
-            this.prenInCorsoDataInizioColumn.Name = "prenInCorsoDataInizioColumn";
-            this.prenInCorsoDataInizioColumn.ReadOnly = true;
+            this.clienteColumn.FillWeight = 45F;
+            this.clienteColumn.HeaderText = "Cliente";
+            this.clienteColumn.Name = "clienteColumn";
+            this.clienteColumn.ReadOnly = true;
             // 
-            // prenInCorsoDataFineColumn
+            // dataFatturaColumn
             // 
-            this.prenInCorsoDataFineColumn.FillWeight = 30F;
-            this.prenInCorsoDataFineColumn.HeaderText = "Data Fine";
-            this.prenInCorsoDataFineColumn.Name = "prenInCorsoDataFineColumn";
-            this.prenInCorsoDataFineColumn.ReadOnly = true;
-            // 
-            // prenInCorsoClienteColumn
-            // 
-            this.prenInCorsoClienteColumn.FillWeight = 45F;
-            this.prenInCorsoClienteColumn.HeaderText = "Cliente";
-            this.prenInCorsoClienteColumn.Name = "prenInCorsoClienteColumn";
-            this.prenInCorsoClienteColumn.ReadOnly = true;
+            this.dataFatturaColumn.FillWeight = 30F;
+            this.dataFatturaColumn.HeaderText = "Data Fattura";
+            this.dataFatturaColumn.Name = "dataFatturaColumn";
+            this.dataFatturaColumn.ReadOnly = true;
             // 
             // incassoColumn
             // 
@@ -171,11 +162,10 @@
         #endregion
 
         private Components.MyDataGridView prenotazioniInCorsoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroPrenotazioneColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoDataInizioColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoDataFineColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenInCorsoClienteColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn incassoColumn;
         private Components.MyButton visualizzaFatturaButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroPrenotazioneColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataFatturaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn incassoColumn;
     }
 }

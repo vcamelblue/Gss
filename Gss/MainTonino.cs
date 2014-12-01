@@ -318,8 +318,8 @@ namespace Gss
             periodiProfili.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
             #endregion
             
-
-            Application.Run(new GestioneBungalows(resort));
+            PrenotazioniController prenotazioni = new PrenotazioniController();
+            Application.Run(new  NuovaPrenotazione(prenotazioni,clientiController,resort));
             
              
         }

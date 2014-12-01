@@ -91,8 +91,10 @@ namespace Gss
             
             
             //Creazione Resort con stagione
+            DateTime DataInizioStagione = DateTime.Today.AddDays(-7);
+            DateTime DataFineStagione = DateTime.Today.AddMonths(3);
             ResortController resortController = new ResortController();
-            resortController.SetResort(new Resort("Gelbison SuperSki", "Via dei Pazzi, 23", "GSS@info.it", "335904825967", new DateTime(2014, 11, 30), new DateTime(2015, 02, 28)));
+            resortController.SetResort(new Resort("Gelbison SuperSki", "Via dei Pazzi, 23", "GSS@info.it", "335904825967", DataInizioStagione,DataFineStagione));
 
             #region Bungalow
             Bungalow b1 = new Bungalow("B0001");
@@ -323,28 +325,37 @@ namespace Gss
             
             PrenotazioniController prenotazioni = new PrenotazioniController();
 
-            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, new DateTime(2014, 11, 30), new DateTime(2014, 12, 1), cliente5);
+            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-1), DateTime.Today, cliente5);
             prenotazioni.AddPrenotazione(prenotazioneAttivaPassata1);
             prenotazioneAttivaPassata1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata1.DataInizio, prenotazioneAttivaPassata1.DataFine, prenotazioneAttivaPassata1.NumeroPersone).ListaBungalow.First();
             prenotazioni.ArchiviaPrenotazione(prenotazioneAttivaPassata1);
+
+            PrenotazioneAttiva prenotazioneAttivaPassata2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-5), DateTime.Today, cliente4);
+            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata2);
+            prenotazioneAttivaPassata2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata2.DataInizio, prenotazioneAttivaPassata2.DataFine, prenotazioneAttivaPassata2.NumeroPersone).ListaBungalow.First();
+
+            PrenotazioneAttiva prenotazioneAttivaPassata3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-6), DateTime.Today.AddDays(-1), cliente4);
+            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata3);
+            prenotazioneAttivaPassata2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata3.DataInizio, prenotazioneAttivaPassata3.DataFine, prenotazioneAttivaPassata3.NumeroPersone).ListaBungalow.First();
+            
             
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 5));
-            PrenotazioneAttiva prenotazioneAttiva1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, new DateTime(2014, 11, 30), new DateTime(2014,12,04), cliente1);
+            PrenotazioneAttiva prenotazioneAttiva1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today, DateTime.Today.AddDays(5), cliente1);
             prenotazioneAttiva1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva1.DataInizio, prenotazioneAttiva1.DataFine, prenotazioneAttiva1.NumeroPersone).ListaBungalow.First();
             //prenotazioni.AddPrenotazione(prenotazioneAttiva1);
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 4));
-            PrenotazioneAttiva prenotazioneAttiva2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 4, new DateTime(2014, 12, 5), new DateTime(2014, 12, 14), cliente3);
+            PrenotazioneAttiva prenotazioneAttiva2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 4, DateTime.Today, DateTime.Today.AddDays(7), cliente3);
             prenotazioneAttiva2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva2.DataInizio, prenotazioneAttiva2.DataFine, prenotazioneAttiva2.NumeroPersone).ListaBungalow.First();
             //prenotazioni.AddPrenotazione(prenotazioneAttiva2);
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 12, 12), new DateTime(2014, 12, 20), 7));
-            PrenotazioneAttiva prenotazioneAttiva3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 7, new DateTime(2014, 1, 12), new DateTime(2014, 1, 20), cliente2);
+            PrenotazioneAttiva prenotazioneAttiva3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 7, DateTime.Today.AddMonths(1), DateTime.Today.AddMonths(1).AddDays(4), cliente2);
             prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
             //prenotazioni.AddPrenotazione(prenotazioneAttiva3);
 
-            PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 3, new DateTime(2014, 1, 22), new DateTime(2014, 1, 25), cliente5);
+            PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 3, DateTime.Today.AddDays(15), DateTime.Today.AddDays(22), cliente5);
             prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
             //prenotazioni.AddPrenotazione(prenotazioneAttiva4);
 

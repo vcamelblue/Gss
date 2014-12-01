@@ -31,7 +31,7 @@ namespace Gss
 
         private void myButton1_Click(object sender, EventArgs e) 
         {
-            AggiungiModificaCliente amc = new AggiungiModificaCliente(clientiController, clientiController.GetAllClienti().ListaClienti[3]);
+            AggiungiModificaCliente amc = new AggiungiModificaCliente(clientiController, clientiController.GetAllClienti().ListaClienti[3],false);
             DialogResult res = amc.ShowDialog();
             if (res == DialogResult.OK) {
                 Refresh();

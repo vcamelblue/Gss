@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Gss.View.MainViewPanel
 {
-    public partial class GestioneIncassi : System.Windows.Forms.UserControl
+    public partial class GestioneIncassiPanel : System.Windows.Forms.UserControl
     {
-        public GestioneIncassi()
+        public GestioneIncassiPanel()
         {
             InitializeComponent();
         }
 
-        public GestioneIncassi(IContainer container)
+        public GestioneIncassiPanel(IContainer container)
         {
             container.Add(this);
 

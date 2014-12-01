@@ -11,17 +11,17 @@ using Gss.Controller;
 
 namespace Gss.View.MainViewPanel
 {
-    public partial class GestioneProfili : System.Windows.Forms.UserControl
+    public partial class GestioneProfiliPanel : System.Windows.Forms.UserControl
     {
         private PeriodiProfiliController periodiProfiliController;
         private ResortController resortController;
 
-        public GestioneProfili()
+        public GestioneProfiliPanel()
         {
             InitializeComponent();
         }
 
-        public GestioneProfili(IContainer container,PeriodiProfiliController periodiProfiliController,ResortController resortController)
+        public GestioneProfiliPanel(IContainer container,PeriodiProfiliController periodiProfiliController,ResortController resortController)
         {
             this.resortController = resortController;
             this.periodiProfiliController = periodiProfiliController;

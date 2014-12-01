@@ -25,9 +25,9 @@ namespace Gss.View
         private GestionePrenotazioniPanel gestionePrenotazioniPanel;
         private GestioneClientiPanel gestioneClientiPanel;
         private GestioneResortPanel gestioneResortPanel;
-        private GestioneProfili gestioneProfiliPanel;
+        private GestioneProfiliPanel gestioneProfiliPanel;
         private GestionePeriodiPanel gestionePeriodiPanel;
-        private GestioneIncassi gestioneIncassiPanel;
+        private GestioneIncassiPanel gestioneIncassiPanel;
 
         //Impostazioni bottoni
         private Button previusSelectedButton = null;
@@ -65,7 +65,7 @@ namespace Gss.View
             gestioneResortTabPage.Controls.Add(gestioneResortPanel);
 
             //Creo e Aggiungo il pannello Profili
-            gestioneProfiliPanel = new GestioneProfili(this.components,periodiProfiliController,resortController);
+            gestioneProfiliPanel = new GestioneProfiliPanel(this.components,periodiProfiliController,resortController);
             gestioneProfiliTabPage.Controls.Add(gestioneProfiliPanel);
 
             //Creo e Aggiungo il pannello Periodi
@@ -73,7 +73,7 @@ namespace Gss.View
             gestionePeriodiTabPage.Controls.Add(gestionePeriodiPanel);
 
             //Creo e Aggiungo il pannello Incassi
-            gestioneIncassiPanel = new GestioneIncassi(this.components);
+            gestioneIncassiPanel = new GestioneIncassiPanel(this.components);
             gestioneIncassiTabPage.Controls.Add(gestioneIncassiPanel);
         }
 

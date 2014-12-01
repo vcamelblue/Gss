@@ -65,7 +65,7 @@ namespace Gss.Model
                 return false;
             Prenotazione prenotazione=null;
 
-            if (obj is SkiPass)
+            if (obj is Prenotazione)
             {
                 prenotazione = (Prenotazione)obj;
             }

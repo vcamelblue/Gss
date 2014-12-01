@@ -40,7 +40,7 @@ namespace Gss.Controller
 
                 if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine) > 0)
                 {
-                    if (temp.ElementAt(i).DataFine < temp.ElementAt(i - 1).DataFine)
+                    if (temp.ElementAt(i).DataFine > temp.ElementAt(i - 1).DataFine)
                     {
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                     }
@@ -55,6 +55,7 @@ namespace Gss.Controller
                 }
                 i++;
             }
+            temp.Last().DataFine = Gss.Resort.DataFineStagione;
             GSS.GetInstance().GestorePeriodi.Periodi = temp;
             return temp;
 

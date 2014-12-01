@@ -21,13 +21,15 @@ namespace Gss
             Cliente cliente1 = new Cliente("Pasquale", "Presutti", "PRRPQL92E14B519M", new DateTime(1992, 5, 14), "indirizzo1", "3453090659", "pasquale@hotmail.it");
             Cliente cliente2 = new Cliente("Antonio", "Benincasa", "BNSANT92E05B519C", new DateTime(1992, 7, 5), "indirizzo2", "3460093633", "antonio@hotmail.it");
             Cliente cliente3 = new Cliente("Vincenzo", "Villani", "VNN92E12B519A", new DateTime(1992, 8, 12), "indirizzo3", "3450083223", "vincenzo@hotmail.it");
-
+            Cliente cliente4 = new Cliente("Anthony", "De Castro", "DCSNTN92E08B519F", new DateTime(1992,1,8), "indirizzo4", "3920398760", "anthony@hotmail.it");
+            Cliente cliente5 = new Cliente("Nicola", "Mignogna", "MGNNCLE92N054D", new DateTime(1992,3,14),"indirizzo5","3483948761","nicola@hotmail.it");
 
             //ClientiController
             ClientiController clientiController = new ClientiController();
 
             //Test add
             clientiController.AddCliente(cliente1); clientiController.AddCliente(cliente2); clientiController.AddCliente(cliente3);
+            clientiController.AddCliente(cliente4); clientiController.AddCliente(cliente5);
             //Console.Out.Write(clientiController.Gss.Clienti.ToString());
             //clientiController.AddCliente(cliente1); test sull'aggiunta di un cliente uguale
 
@@ -89,8 +91,8 @@ namespace Gss
             
             
             //Creazione Resort con stagione
-            ResortController resort = new ResortController();
-            resort.SetResort(new Resort("Gelbison SuperSki", "Via dei Pazzi, 23", "GSS@info.it", "335904825967", new DateTime(2014, 11, 30), new DateTime(2015, 02, 28)));
+            ResortController resortController = new ResortController();
+            resortController.SetResort(new Resort("Gelbison SuperSki", "Via dei Pazzi, 23", "GSS@info.it", "335904825967", new DateTime(2014, 11, 30), new DateTime(2015, 02, 28)));
 
             #region Bungalow
             Bungalow b1 = new Bungalow("B0001");
@@ -103,7 +105,7 @@ namespace Gss
             Bungalow b8 = new Bungalow("B0008");
 
             Stanza s1 = new Stanza(2,3);
-            Stanza s2 = new Stanza(1,1);
+            Stanza s2 = new Stanza(2,2);
             Stanza s3 = new Stanza(3,3);
             Stanza s4 = new Stanza(2,4);
             Stanza s5 = new Stanza(3,4);
@@ -132,14 +134,14 @@ namespace Gss
 #endregion
 
             #region Aggiunta Bungalows al Resort
-            resort.AddBungalow(b1);
-            resort.AddBungalow(b2);
-            resort.AddBungalow(b3);
-            resort.AddBungalow(b4);
-            resort.AddBungalow(b5);
-            resort.AddBungalow(b6);
-            resort.AddBungalow(b7);
-            resort.AddBungalow(b8);
+            resortController.AddBungalow(b1);
+            resortController.AddBungalow(b2);
+            resortController.AddBungalow(b3);
+            resortController.AddBungalow(b4);
+            resortController.AddBungalow(b5);
+            resortController.AddBungalow(b6);
+            resortController.AddBungalow(b7);
+            resortController.AddBungalow(b8);
 
 
             /*resort.AddStanzaABungalow(b1, s1);
@@ -153,11 +155,11 @@ namespace Gss
             #endregion
 
             #region Aggiunta Impianti al Resort
-            resort.AddImpianto(impianto1);
-            resort.AddImpianto(impianto2);
-            resort.AddImpianto(impianto3);
-            resort.AddImpianto(impianto5);
-            resort.AddImpianto(impianto4);
+            resortController.AddImpianto(impianto1);
+            resortController.AddImpianto(impianto2);
+            resortController.AddImpianto(impianto3);
+            resortController.AddImpianto(impianto5);
+            resortController.AddImpianto(impianto4);
             #endregion
 
             PeriodiProfiliController periodiProfili = new PeriodiProfiliController();
@@ -212,9 +214,10 @@ namespace Gss
 
             //Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
             periodiProfili.SetPeriodi(periodi);
+            
 
-            //foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
-            //  Console.Out.WriteLine(p);
+            foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
+              Console.Out.WriteLine(p);
 
 
             #region Aggiunta Prezzi Periodi
@@ -319,7 +322,40 @@ namespace Gss
             #endregion
             
             PrenotazioniController prenotazioni = new PrenotazioniController();
-            Application.Run(new  NuovaPrenotazione(prenotazioni,clientiController,resort));
+
+            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, new DateTime(2014, 11, 30), new DateTime(2014, 12, 1), cliente5);
+            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata1);
+            prenotazioneAttivaPassata1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata1.DataInizio, prenotazioneAttivaPassata1.DataFine, prenotazioneAttivaPassata1.NumeroPersone).ListaBungalow.First();
+            prenotazioni.ArchiviaPrenotazione(prenotazioneAttivaPassata1);
+            
+
+            //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 5));
+            PrenotazioneAttiva prenotazioneAttiva1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, new DateTime(2014, 11, 30), new DateTime(2014,12,04), cliente1);
+            prenotazioneAttiva1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva1.DataInizio, prenotazioneAttiva1.DataFine, prenotazioneAttiva1.NumeroPersone).ListaBungalow.First();
+            //prenotazioni.AddPrenotazione(prenotazioneAttiva1);
+
+            //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 4));
+            PrenotazioneAttiva prenotazioneAttiva2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 4, new DateTime(2014, 12, 5), new DateTime(2014, 12, 14), cliente3);
+            prenotazioneAttiva2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva2.DataInizio, prenotazioneAttiva2.DataFine, prenotazioneAttiva2.NumeroPersone).ListaBungalow.First();
+            //prenotazioni.AddPrenotazione(prenotazioneAttiva2);
+
+            //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 12, 12), new DateTime(2014, 12, 20), 7));
+            PrenotazioneAttiva prenotazioneAttiva3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 7, new DateTime(2014, 1, 12), new DateTime(2014, 1, 20), cliente2);
+            prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
+            //prenotazioni.AddPrenotazione(prenotazioneAttiva3);
+
+            PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 3, new DateTime(2014, 1, 22), new DateTime(2014, 1, 25), cliente5);
+            prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
+            //prenotazioni.AddPrenotazione(prenotazioneAttiva4);
+
+
+            
+            //PrenotazioneArchiviata prenotazioneArchiviata1=new PrenotazioneArchiviata(prenotazioni.Gss.NumeroPrenotazioni,3)
+
+            Console.Out.WriteLine(prenotazioneAttiva1.Bungalow);
+            Console.Out.WriteLine(prenotazioneAttiva2.Bungalow);
+            Console.Out.WriteLine(prenotazioneAttiva3.Bungalow);
+            Application.Run(new AggiungiModificaVisualizzaProfilo(resortController,periodiProfili,alta,false));
             
              
         }

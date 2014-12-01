@@ -51,7 +51,8 @@ namespace Gss.Model
 
         public bool IsDataInPeriodo(DateTime data)
         {
-            if (_dataInizio.CompareTo(data) <= 0 && _dataFine.CompareTo(data) >= 0)
+            
+            if (_dataInizio.CompareTo(data.Date) <= 0 && _dataFine.CompareTo(data.Date) >= 0)
                 return true;
             return false;
         }

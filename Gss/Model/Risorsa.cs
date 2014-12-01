@@ -46,6 +46,11 @@ namespace Gss.Model
                 return false;
         }
 
+        public override string ToString()
+        {
+            return this.Codice;
+        }
+
         public abstract object Clone();
     }
 }

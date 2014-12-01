@@ -46,7 +46,7 @@ namespace Gss.Model
 
         public bool IsConclusa()
         {
-            if (DataFine <= DateTime.Today)
+            if (DataFine.Date <= DateTime.Today)
                 return true;
             else return false;
         }

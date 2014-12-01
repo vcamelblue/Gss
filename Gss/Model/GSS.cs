@@ -16,7 +16,7 @@ namespace Gss.Model
             get 
             {
                 _numeroPrenotazioni++;
-                return _numeroPrenotazioni++; 
+                return _numeroPrenotazioni; 
             }
         }
         private  int _numeroSkiCards;

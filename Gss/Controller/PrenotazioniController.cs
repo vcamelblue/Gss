@@ -30,7 +30,7 @@ namespace Gss.Controller
 
         public void ArchiviaPrenotazione(PrenotazioneAttiva prenotazione)
         {
-            if (prenotazione.IsConclusa())
+            if (!prenotazione.IsConclusa())
                 throw new Exception("La prenotazione non è archiviabile perchè non conclusa");
             if (!Gss.Prenotazioni.ArchiviaPrenotazione(prenotazione))
                 throw new Exception("Errore nell'archiviazione");
@@ -167,7 +167,7 @@ namespace Gss.Controller
 
             while (data<=dataFine) //calcolo il prezzo standard per giornata
             {
-                prezzo += bungalow.GetPrezzoFor(data).Prezzo;
+                prezzo += bungalow.GetPrezzoFor(data.Date).Prezzo;
                 data = data.AddDays(1);
             }
 

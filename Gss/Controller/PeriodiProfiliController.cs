@@ -222,14 +222,37 @@ namespace Gss.Controller
             return result;
         }
 
-        internal void AddProfilo(ProfiloPrezziRisorse profilo)
+        public void AddProfilo(ProfiloPrezziRisorse profilo)
         {
-            throw new NotImplementedException();
+            if (this.Gss.ProfiliPrezziRisorse.Profili.Contains(profilo))
+                throw new Exception("Aggiunto Profilo già esistente");
         }
 
-        internal void SetProfilo(ProfiloPrezziRisorse profilo, string nomeProfiloPrimaDelleModifiche)
+        public void SetProfilo(ProfiloPrezziRisorse profilo, string nomeProfiloPrimaDelleModifiche)
         {
-            throw new NotImplementedException();
+            ProfiloPrezziRisorse profiloDaModificare= GetProfiloByNome(nomeProfiloPrimaDelleModifiche);
+            if (profilo.PrezziRisorsa.Count == profiloDaModificare.PrezziRisorsa.Count)
+            {
+                if (!ProfiloIsChanged(profilo, profiloDaModificare))
+                    throw new Exception("Il profilo non è stato modificato");
+            }
+            Gss.ProfiliPrezziRisorse.Remove(profiloDaModificare);
+            Gss.ProfiliPrezziRisorse.Add(profilo);
+            //this.Gss.ProfiliPrezziRisorse.Profili.Remove();
         }
+
+        private bool ProfiloIsChanged(ProfiloPrezziRisorse p1, ProfiloPrezziRisorse p2)
+        {
+            if (p1.Nome != p2.Nome)
+                return true;
+            foreach(Risorsa r in p1.PrezziRisorsa.Keys)
+            {
+                if (!p2.PrezziRisorsa[r].Equals(p1.PrezziRisorsa[r]))
+                    return true;
+            }
+            return false;
+        }
+            
+        
     }
 }

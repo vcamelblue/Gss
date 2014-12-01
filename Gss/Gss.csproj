@@ -136,6 +136,12 @@
     <Compile Include="View\MainViewPanel\GestioneClientiPanel.Designer.cs">
       <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MainViewPanel\GestioneIncassi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestioneIncassi.Designer.cs">
+      <DependentUpon>GestioneIncassi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainViewPanel\GestionePrenotazioniPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\GestioneClientiPanel.resx">
       <DependentUpon>GestioneClientiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\GestioneIncassi.resx">
+      <DependentUpon>GestioneIncassi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\GestionePrenotazioniPanel.resx">
       <DependentUpon>GestionePrenotazioniPanel.cs</DependentUpon>

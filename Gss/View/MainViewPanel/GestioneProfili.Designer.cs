@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.visualizzaClienteButton = new Gss.View.Components.MyButton(this.components);
+            this.visualizzaProfiloButton = new Gss.View.Components.MyButton(this.components);
             this.rimuoviProfiloButton = new Gss.View.Components.MyButton(this.components);
             this.modificaProfiloButton = new Gss.View.Components.MyButton(this.components);
             this.aggiungiProfiloButton = new Gss.View.Components.MyButton(this.components);
@@ -43,18 +43,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.profiliDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // visualizzaClienteButton
+            // visualizzaProfiloButton
             // 
-            this.visualizzaClienteButton.BackColor = System.Drawing.Color.LightGray;
-            this.visualizzaClienteButton.FlatAppearance.BorderSize = 0;
-            this.visualizzaClienteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visualizzaClienteButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visualizzaClienteButton.Location = new System.Drawing.Point(525, 547);
-            this.visualizzaClienteButton.Name = "visualizzaClienteButton";
-            this.visualizzaClienteButton.Size = new System.Drawing.Size(173, 26);
-            this.visualizzaClienteButton.TabIndex = 26;
-            this.visualizzaClienteButton.Text = "Visualizza Cliente";
-            this.visualizzaClienteButton.UseVisualStyleBackColor = false;
+            this.visualizzaProfiloButton.BackColor = System.Drawing.Color.LightGray;
+            this.visualizzaProfiloButton.FlatAppearance.BorderSize = 0;
+            this.visualizzaProfiloButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.visualizzaProfiloButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualizzaProfiloButton.Location = new System.Drawing.Point(525, 547);
+            this.visualizzaProfiloButton.Name = "visualizzaProfiloButton";
+            this.visualizzaProfiloButton.Size = new System.Drawing.Size(173, 26);
+            this.visualizzaProfiloButton.TabIndex = 26;
+            this.visualizzaProfiloButton.Text = "Visualizza Dettagli Profilo";
+            this.visualizzaProfiloButton.UseVisualStyleBackColor = false;
             // 
             // rimuoviProfiloButton
             // 
@@ -162,7 +162,7 @@
             // GestioneProfili
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.Controls.Add(this.visualizzaClienteButton);
+            this.Controls.Add(this.visualizzaProfiloButton);
             this.Controls.Add(this.rimuoviProfiloButton);
             this.Controls.Add(this.modificaProfiloButton);
             this.Controls.Add(this.aggiungiProfiloButton);
@@ -180,7 +180,7 @@
         private Components.MyButton aggiungiProfiloButton;
         private Components.MyButton modificaProfiloButton;
         private Components.MyButton rimuoviProfiloButton;
-        private Components.MyButton visualizzaClienteButton;
+        private Components.MyButton visualizzaProfiloButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn profiliColumn;
     }
 }

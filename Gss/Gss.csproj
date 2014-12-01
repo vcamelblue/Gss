@@ -154,6 +154,12 @@
     <Compile Include="View\MainViewPanel\GestioneProfili.Designer.cs">
       <DependentUpon>GestioneProfili.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MainViewPanel\GestioneResortPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MainViewPanel\GestioneResortPanel.Designer.cs">
+      <DependentUpon>GestioneResortPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainViewPanel\RiepilogoGiornalieroPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\GestioneProfili.resx">
       <DependentUpon>GestioneProfili.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainViewPanel\GestioneResortPanel.resx">
+      <DependentUpon>GestioneResortPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\RiepilogoGiornalieroPanel.resx">
       <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>

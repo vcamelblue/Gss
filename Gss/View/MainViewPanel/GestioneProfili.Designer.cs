@@ -55,6 +55,7 @@
             this.visualizzaProfiloButton.TabIndex = 26;
             this.visualizzaProfiloButton.Text = "Visualizza Dettagli Profilo";
             this.visualizzaProfiloButton.UseVisualStyleBackColor = false;
+            this.visualizzaProfiloButton.Click += new System.EventHandler(this.visualizzaProfiloButton_Click);
             // 
             // rimuoviProfiloButton
             // 
@@ -68,6 +69,7 @@
             this.rimuoviProfiloButton.TabIndex = 25;
             this.rimuoviProfiloButton.Text = "Rimuovi Profilo";
             this.rimuoviProfiloButton.UseVisualStyleBackColor = false;
+            this.rimuoviProfiloButton.Click += new System.EventHandler(this.rimuoviProfiloButton_Click);
             // 
             // modificaProfiloButton
             // 
@@ -81,6 +83,7 @@
             this.modificaProfiloButton.TabIndex = 24;
             this.modificaProfiloButton.Text = "Modifica Profilo";
             this.modificaProfiloButton.UseVisualStyleBackColor = false;
+            this.modificaProfiloButton.Click += new System.EventHandler(this.modificaProfiloButton_Click);
             // 
             // aggiungiProfiloButton
             // 
@@ -94,6 +97,7 @@
             this.aggiungiProfiloButton.TabIndex = 23;
             this.aggiungiProfiloButton.Text = "Aggiungi Profilo";
             this.aggiungiProfiloButton.UseVisualStyleBackColor = false;
+            this.aggiungiProfiloButton.Click += new System.EventHandler(this.aggiungiProfiloButton_Click);
             // 
             // profiliDataGridView
             // 
@@ -169,6 +173,7 @@
             this.Controls.Add(this.profiliDataGridView);
             this.Name = "GestioneProfili";
             this.Size = new System.Drawing.Size(698, 573);
+            this.Load += new System.EventHandler(this.GestioneProfili_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profiliDataGridView)).EndInit();
             this.ResumeLayout(false);
 

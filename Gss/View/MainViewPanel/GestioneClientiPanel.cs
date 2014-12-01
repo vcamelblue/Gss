@@ -72,11 +72,14 @@ namespace Gss.View.MainViewPanel
             DialogResult res = MessageBox.Show("Sicuro di voler rimuovere il cliente selezionato?", "Rimozione Cliente", MessageBoxButtons.OKCancel);
             if (res == DialogResult.OK)
             {
-
-            }
-            else
-            {
-
+                try
+                {
+                    clientiController.RemoveCliente(clienteSelezionato);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
             
         }
@@ -105,9 +108,6 @@ namespace Gss.View.MainViewPanel
                 Refresh();
             }
         }
-
-
-
         
     }
 }

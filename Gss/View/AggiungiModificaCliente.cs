@@ -17,6 +17,7 @@ namespace Gss.View
         //Fields
 
         private bool inEditingMode;
+        private bool inViewMode;
         private Cliente clienteToEdit;
         private ClientiController clientiController;
 
@@ -31,13 +32,32 @@ namespace Gss.View
             InitializeComponent();
         }
 
-        public AggiungiModificaCliente(ClientiController clientiController, Cliente clienteToEdit) 
+        public AggiungiModificaCliente(ClientiController clientiController, Cliente clienteToEdit, bool inViewMode) 
         {
             this.clientiController = clientiController;
             this.clienteToEdit = clienteToEdit;
-            this.inEditingMode = true;
+            this.inViewMode = inViewMode;
+
 
             InitializeComponent();
+
+            if (inViewMode == true)
+            {
+                this.inEditingMode = false;
+                nomeTextBox.Enabled = false;
+                cognomeTextBox.Enabled = false;
+                dataNascitaTimePicker.Enabled = false;
+                codiceFiscaleTextBox.Enabled = false;
+                indirizzoTextBox.Enabled = false;
+                telefonoTextBox.Enabled = false;
+                emailTextBox.Enabled = false;
+                salvaButton.Visible = false;
+                annullaButton.Visible = false;
+            }
+            else
+            {
+                this.inEditingMode = true;
+            }
 
             nomeTextBox.Text = clienteToEdit.Nome;
             cognomeTextBox.Text = clienteToEdit.Cognome;

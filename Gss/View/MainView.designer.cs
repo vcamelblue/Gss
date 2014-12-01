@@ -34,20 +34,14 @@
             this.riepilogoGiornalieroTabButton = new Gss.View.Components.MyButton(this.components);
             this.tabControlWithoutHeader = new Gss.View.Components.TabControlWithoutHeader(this.components);
             this.riepilogoGiornalieroTabPage = new System.Windows.Forms.TabPage();
-            this.riepilogoPanel1 = new Gss.View.MainViewPanel.RiepilogoGiornalieroPanel(this.components);
             this.gestionePrenotazioniTabPage = new System.Windows.Forms.TabPage();
-            this.gestionePrenotazioniPanel1 = new Gss.View.MainViewPanel.GestionePrenotazioniPanel(this.components);
             this.gestioneClientiTabPage = new System.Windows.Forms.TabPage();
-            this.gestioneClientiPanel1 = new Gss.View.MainViewPanel.GestioneClientiPanel(this.components);
             this.gestioneResortTabPage = new System.Windows.Forms.TabPage();
             this.gestioneProfiliTabPage = new System.Windows.Forms.TabPage();
             this.gestionePeriodiTabPage = new System.Windows.Forms.TabPage();
             this.gestioneIncassiTabPage = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.tabControlWithoutHeader.SuspendLayout();
-            this.riepilogoGiornalieroTabPage.SuspendLayout();
-            this.gestionePrenotazioniTabPage.SuspendLayout();
-            this.gestioneClientiTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -175,7 +169,6 @@
             // 
             // riepilogoGiornalieroTabPage
             // 
-            this.riepilogoGiornalieroTabPage.Controls.Add(this.riepilogoPanel1);
             this.riepilogoGiornalieroTabPage.Location = new System.Drawing.Point(4, 27);
             this.riepilogoGiornalieroTabPage.Name = "riepilogoGiornalieroTabPage";
             this.riepilogoGiornalieroTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -184,17 +177,8 @@
             this.riepilogoGiornalieroTabPage.Text = "Riepilogo Giornaliero";
             this.riepilogoGiornalieroTabPage.UseVisualStyleBackColor = true;
             // 
-            // riepilogoPanel1
-            // 
-            this.riepilogoPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.riepilogoPanel1.Location = new System.Drawing.Point(0, 0);
-            this.riepilogoPanel1.Name = "riepilogoPanel1";
-            this.riepilogoPanel1.Size = new System.Drawing.Size(698, 573);
-            this.riepilogoPanel1.TabIndex = 0;
-            // 
             // gestionePrenotazioniTabPage
             // 
-            this.gestionePrenotazioniTabPage.Controls.Add(this.gestionePrenotazioniPanel1);
             this.gestionePrenotazioniTabPage.Location = new System.Drawing.Point(4, 27);
             this.gestionePrenotazioniTabPage.Name = "gestionePrenotazioniTabPage";
             this.gestionePrenotazioniTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -203,17 +187,8 @@
             this.gestionePrenotazioniTabPage.Text = "Gestione Prenotazioni";
             this.gestionePrenotazioniTabPage.UseVisualStyleBackColor = true;
             // 
-            // gestionePrenotazioniPanel1
-            // 
-            this.gestionePrenotazioniPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.gestionePrenotazioniPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gestionePrenotazioniPanel1.Name = "gestionePrenotazioniPanel1";
-            this.gestionePrenotazioniPanel1.Size = new System.Drawing.Size(698, 573);
-            this.gestionePrenotazioniPanel1.TabIndex = 0;
-            // 
             // gestioneClientiTabPage
             // 
-            this.gestioneClientiTabPage.Controls.Add(this.gestioneClientiPanel1);
             this.gestioneClientiTabPage.Location = new System.Drawing.Point(4, 27);
             this.gestioneClientiTabPage.Name = "gestioneClientiTabPage";
             this.gestioneClientiTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -221,14 +196,6 @@
             this.gestioneClientiTabPage.TabIndex = 2;
             this.gestioneClientiTabPage.Text = "Gestione Clienti";
             this.gestioneClientiTabPage.UseVisualStyleBackColor = true;
-            // 
-            // gestioneClientiPanel1
-            // 
-            this.gestioneClientiPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.gestioneClientiPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gestioneClientiPanel1.Name = "gestioneClientiPanel1";
-            this.gestioneClientiPanel1.Size = new System.Drawing.Size(698, 573);
-            this.gestioneClientiPanel1.TabIndex = 0;
             // 
             // gestioneResortTabPage
             // 
@@ -288,9 +255,6 @@
             this.Name = "MainView";
             this.groupBox1.ResumeLayout(false);
             this.tabControlWithoutHeader.ResumeLayout(false);
-            this.riepilogoGiornalieroTabPage.ResumeLayout(false);
-            this.gestionePrenotazioniTabPage.ResumeLayout(false);
-            this.gestioneClientiTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -313,8 +277,5 @@
         private Components.MyButton gestionePeriodiTabButton;
         private Components.MyButton gestioneProfiliTabButton;
         private Components.MyButton gestioneIncassiTabButton;
-        private MainViewPanel.RiepilogoGiornalieroPanel riepilogoPanel1;
-        private MainViewPanel.GestioneClientiPanel gestioneClientiPanel1;
-        private MainViewPanel.GestionePrenotazioniPanel gestionePrenotazioniPanel1;
     }
 }

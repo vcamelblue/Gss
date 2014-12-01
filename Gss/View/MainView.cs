@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gss.Controller;
+using Gss.View.MainViewPanel;
 
 namespace Gss.View 
 {
@@ -23,6 +25,26 @@ namespace Gss.View
 		{
             InitializeComponent();
             selectRightTab(riepilogoGiornalieroTabButton);
+
+            //Creo e Aggiungo il pannello Riepilogo
+            RiepilogoGiornalieroPanel riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components);
+            riepilogoGiornalieroTabPage.Controls.Add(riepilogoGiornalieroPanel);
+
+            //Creo e Aggiungo il pannello Prenotazioni
+            GestionePrenotazioniPanel gestionePrenotazioniPanel = new GestionePrenotazioniPanel(this.components);
+            gestionePrenotazioniTabPage.Controls.Add(gestionePrenotazioniPanel);
+
+            //Creo e Aggiungo il pannello Clienti
+            GestioneClientiPanel gestioneClientiPanel = new GestioneClientiPanel(this.components);
+            gestioneClientiTabPage.Controls.Add(gestioneClientiPanel);
+
+            //Creo e Aggiungo il pannello 
+
+            //Creo e Aggiungo il pannello 
+
+            //Creo e Aggiungo il pannello 
+
+            //Creo e Aggiungo il pannello 
         }
 
         private void riepilogoGiornalieroTabButton_Click(object sender, EventArgs e)

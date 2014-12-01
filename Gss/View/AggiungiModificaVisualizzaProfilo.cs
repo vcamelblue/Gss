@@ -83,17 +83,17 @@ namespace Gss.View
             risorseDataGridView.Rows.Clear();
             foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
             {
-                risorseDataGridView.Rows.Add("Bungalows - " + b.Codice);
+                risorseDataGridView.Rows.Add("Bungalows - " + b.Codice,b.Codice);
             }
             foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
             {
-                risorseDataGridView.Rows.Add("Impianto - " + i.Codice);
+                risorseDataGridView.Rows.Add("Impianto - " + i.Codice,i.Codice);
             }
         }
 
         private void risorseDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             // Mostro la pagina adatta alla risorsa
             if (IndividuaRisorsa(codiceSelezionato) is Impianto)
             {
@@ -107,23 +107,22 @@ namespace Gss.View
                 tabControlWithoutHeader.SelectedTab = bungalowTabPage;
             }
         }
-
-        private Risorsa IndividuaRisorsa(String codice)//cerca la risorsa selezionata
+        
+        //cerca la risorsa selezionata
+        private Risorsa IndividuaRisorsa(String codice)
         {
             foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
             {
-                if (codice.Contains(b.Codice))
+                if (codice==b.Codice)
                 {
                     return b;
-                    break;
                 }
             }
             foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
             {
-                if (codice.Contains(i.Codice))
+                if (codice==i.Codice)
                 {
                     return i;
-                    break;
                 }
             }
             return null;
@@ -187,7 +186,7 @@ namespace Gss.View
             if (!inEditingMode && !inViewMode)
             {
                 string nomeProfilo = nomeProfiloTextBox.Text;
-                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
@@ -250,7 +249,7 @@ namespace Gss.View
             else if(inViewMode)
             {
                 nomeProfiloTextBox.Text = profilo.Nome;
-                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
@@ -269,7 +268,7 @@ namespace Gss.View
             else if (inEditingMode || inViewMode)
             {
                 nomeProfiloTextBox.Text = profilo.Nome;
-                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
@@ -357,7 +356,7 @@ namespace Gss.View
         private void salvaModificheRisorsaButton_Click(object sender, EventArgs e)
         {
             string nomeProfilo = nomeProfiloTextBox.Text;
-            string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             if (IndividuaRisorsa(codiceSelezionato) is Impianto)
             {
                 Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);

@@ -88,5 +88,10 @@ namespace Gss.Model
         {
             return this.Nome + " " + this.Cognome + " " + this.DataNascita.ToShortDateString() + " " + this.CodiceFiscale + " " + this.Indirizzo + " " + this.Email + " " + this.Telefono ;
         }
+
+        public bool Identic(Cliente cliente)
+        {
+
+        }
     }
 }

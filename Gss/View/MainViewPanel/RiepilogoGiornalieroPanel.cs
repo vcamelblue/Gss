@@ -35,6 +35,7 @@ namespace Gss.View.MainViewPanel
             prenotazioniDaSaldareOggiDataGridView.Rows.Clear();
             RiempiGrids();
         }
+
         private void RiepilogoGiornalieroPanel_Load(object sender, EventArgs e)
         {
             RiempiGrids();

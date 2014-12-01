@@ -157,7 +157,7 @@ namespace Gss
             SkiCards skicards = new SkiCards();
             //Application.Run(new AggiungiModificaSkicard(prenotazioniController,resortController,skicards,skicard));
             //Application.Run(new NuovaPrenotazione(prenotazioniController,clientiController,resortController));
-            //Application.Run(new AggiungiModificaVisualizzaProfilo());
+            Application.Run(new AggiungiModificaCliente(clientiController,cliente1,true));
         }
     }
 }

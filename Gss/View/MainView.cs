@@ -40,7 +40,9 @@ namespace Gss.View
 
             //Creo e Aggiungo il pannello 
 
-            //Creo e Aggiungo il pannello 
+            //Creo e Aggiungo il pannello Profili
+            GestioneProfili gestioneProfiliPanel = new GestioneProfili(this.components);
+            gestioneProfiliTabPage.Controls.Add(gestioneProfiliPanel);
 
             //Creo e Aggiungo il pannello 
 

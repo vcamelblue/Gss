@@ -91,7 +91,9 @@ namespace Gss.Model
 
         public bool Identic(Cliente cliente)
         {
-
+            if (this.Equals(cliente) && this.Indirizzo == cliente.Indirizzo && this.Telefono == cliente.Telefono && this.Email == cliente.Email)
+                return true;
+            return false;
         }
     }
 }

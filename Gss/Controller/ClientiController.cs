@@ -25,7 +25,7 @@ namespace Gss.Controller
 
         public void EditCliente(Cliente cliente, Cliente clienteModificato)
         {
-            if (cliente.Equals(clienteModificato)) 
+            if (cliente.Identic(clienteModificato)) 
                 throw new Exception("Non sono state apportate modifiche al cliente");
 
             if (Exist(clienteModificato))

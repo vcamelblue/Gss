@@ -44,11 +44,21 @@ namespace Gss.View
 
         private void AggiungiModificaBungalow_Load(object sender, EventArgs e)
         {
+           
             if (inEditingMode)
             {
                 codiceTextBox1.Text = bungalow.Codice;
                 codiceTextBox1.Enabled = false;
                 RiempiGrid();
+            }
+            else
+            {
+              
+                modificaStanzaButton.Enabled = false;
+                rimuoviStanzaButton.Enabled = false;
+                salvaButton.Enabled = false;
+                postiMaxTotaliLabel.Text = "Posti Max Totali:  0";
+                postiTotoaliLabel.Text = "Posti Totali:  0";  
             }
         }
 
@@ -56,30 +66,27 @@ namespace Gss.View
         {
             foreach (Stanza s in bungalow.Stanze)
             {
-                stanzeDataGridView.Rows.Add(TipoCameraByPosti(s), s.NumeroPostiStandard.ToString(), s.NumeroPostiMax.ToString());
+                stanzeDataGridView.Rows.Add(s.ToString(), s.NumeroPostiStandard.ToString(), s.NumeroPostiMax.ToString());
             }
             postiTotoaliLabel.Text = "Posti Totali:  " + bungalow.PostiTotaliStandard();
             postiMaxTotaliLabel.Text = "Posti Max Totali:  " + bungalow.PostiTotaliMax();
-        }
-
-        //Mi dice come è una stanza (singola, doppia, tripla)
-        private string TipoCameraByPosti(Stanza stanza)
-        {
-            return (stanza.NumeroPostiStandard == 1 ? "Singola" :
-                    stanza.NumeroPostiStandard == 2 ? "Doppia" :
-                    stanza.NumeroPostiStandard == 3 ? "Tripla" :
-                    stanza.NumeroPostiStandard == 4 ? "Quadrupla" :
-                    stanza.NumeroPostiStandard == 5 ? "Quintupla" : "Nupla");
+            if (bungalow.Stanze.Count == 0)
+            {
+                rimuoviStanzaButton.Enabled = false;
+                modificaStanzaButton.Enabled = false;
+                salvaButton.Enabled = false;
+            }
+            else
+            {
+                rimuoviStanzaButton.Enabled = true;
+                modificaStanzaButton.Enabled = true;
+                salvaButton.Enabled = true;
+            }
         }
 
         public override void Refresh()
         {
             base.Refresh();
-            if (bungalow.Stanze.Count == 0)
-            {
-                modificaStanzaButton.Enabled = false;
-                salvaButton.Enabled = false;
-            }
             stanzeDataGridView.Rows.Clear();
             RiempiGrid();
         }

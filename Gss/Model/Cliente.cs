@@ -73,15 +73,16 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             Cliente cliente = null;
+
             if (obj is Cliente)
                 cliente = (Cliente)obj;
             else
                 return false;
-            if (cliente.CodiceFiscale.Equals(this.CodiceFiscale) && cliente.Nome.Equals(this.Nome) &&
-                cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita))
-                return true;
-            else return false;
+
+            return (cliente.CodiceFiscale.Equals(this.CodiceFiscale) && cliente.Nome.Equals(this.Nome) &&
+                    cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita))
         }
 
         public override string ToString()
@@ -91,9 +92,7 @@ namespace Gss.Model
 
         public bool Identic(Cliente cliente)
         {
-            if (this.Equals(cliente) && this.Indirizzo == cliente.Indirizzo && this.Telefono == cliente.Telefono && this.Email == cliente.Email)
-                return true;
-            return false;
+            return (this.Equals(cliente) && this.Indirizzo == cliente.Indirizzo && this.Telefono == cliente.Telefono && this.Email == cliente.Email)
         }
     }
 }

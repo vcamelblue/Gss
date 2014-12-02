@@ -12,7 +12,6 @@ namespace Gss.Model
 
         public Clienti(List<Cliente> clienti)
         {
-            _clienti = new List<Cliente>();
             _clienti = clienti;
         }
 
@@ -25,19 +24,16 @@ namespace Gss.Model
         {
             get { return _clienti; }
             set { _clienti = value; }
-        }
-
-       
+        }               
 
         public bool Add(Cliente cliente)
         {
             if (ListaClienti.Contains(cliente))
                 return false;
-            else
-            {
-                ListaClienti.Add(cliente);
-                return true;
-            }
+
+            ListaClienti.Add(cliente);
+
+            return true;
         }
 
         public bool Remove(Cliente cliente)
@@ -47,7 +43,7 @@ namespace Gss.Model
 
         public override string ToString()
         {
-            string result="";
+            string result = "";
             foreach(Cliente c in this.ListaClienti)
             {
                 result += c.ToString() + " ";
@@ -57,17 +53,16 @@ namespace Gss.Model
 
         public Cliente GetClienteByCF(String codiceFiscale)
         {
-            Cliente cliente = null;
 
             foreach (Cliente c in this.ListaClienti)
             {
                 if (c.CodiceFiscale == codiceFiscale)
                 {
-                    cliente = c;
-                    break;
+                    return c;
                 }
             }
-            return cliente;
+
+            return null;
         }
 
     }

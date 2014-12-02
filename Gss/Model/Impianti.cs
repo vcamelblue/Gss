@@ -17,15 +17,12 @@ namespace Gss.Model
 
         public bool Add(Impianto impianto)
         {
-            foreach(Impianto i in this.ListaImpianti)
-            {
-                if (i.Equals(impianto))
-                {
-                    return false;
-                }
 
-            }
+            if (this.ListaImpianti.Contains(impianto))
+                return false;
+
             ListaImpianti.Add(impianto);
+
             return true;
         }
 
@@ -43,10 +40,12 @@ namespace Gss.Model
         public override string ToString()
         {
             string result = "";
+
             foreach(Impianto i in this.ListaImpianti)
             {
-                result += i.ToString() + "\n \n";
+                result += i.ToString() + "\n\n";
             }
+
             return result;
         }
 
@@ -55,10 +54,9 @@ namespace Gss.Model
             foreach(Impianto i in this.ListaImpianti)
             {
                 if(i.Codice==codice)
-                {
                     return i;
-                }
             }
+
             return null;
         }
 

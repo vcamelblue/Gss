@@ -7,21 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gss.Model;
 
 namespace Gss.View 
 {
     public partial class VisualizzaFattura : Form 
 	{
-        public VisualizzaFattura() 
+        private PrenotazioneArchiviata prenotazioneArchiviata;
+
+        public VisualizzaFattura(PrenotazioneArchiviata prenotazioneArchiviata) 
 		{
+            this.prenotazioneArchiviata = prenotazioneArchiviata;
+
             InitializeComponent();
-
-            clienteDataGridView.Rows.Add("Vincenzo", "Villani", "VNCVLL90M02C095R", "Via Saffi 15, Bologna (BO)");
-
-            dettagliFatturaDataGridView.Rows.Add("Bungalow", "560 €");
-            dettagliFatturaDataGridView.Rows.Add("SkiCards", "89 €");
-            dettagliFatturaDataGridView.Rows.Add("", "");
-            dettagliFatturaDataGridView.Rows.Add("Totale", "649 €");
         }
+
+        private void VisualizzaFattura_Load(object sender, EventArgs e)
+        {
+            numeroFatturaTextBox.Text = prenotazioneArchiviata.Fattura.Numero.ToString();
+            dataFatturaTimePicker.Value = prenotazioneArchiviata.Fattura.DataFattura;
+            clienteDataGridView.Rows.Add(prenotazioneArchiviata.Cliente.Nome, prenotazioneArchiviata.Cliente.Nome, prenotazioneArchiviata.Cliente.CodiceFiscale, prenotazioneArchiviata.Cliente.Indirizzo);
+            dettagliFatturaDataGridView.Rows.Add("Bungalow", prenotazioneArchiviata.Fattura.TotaleBungalow);
+            dettagliFatturaDataGridView.Rows.Add("Skicards", prenotazioneArchiviata.Fattura.TotaleSkiCards);
+            dettagliFatturaDataGridView.Rows.Add("");
+            dettagliFatturaDataGridView.Rows.Add("Totale", prenotazioneArchiviata.Fattura.TotaleFattura);
+            dettagliFatturaDataGridView.Rows[3].Selected = true;  
+        }
+
+
     }
 }

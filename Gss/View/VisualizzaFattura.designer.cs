@@ -24,36 +24,36 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataFatturaTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dettagliFatturaDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.oggettoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.myLabel4 = new Gss.View.Components.MyLabel(this.components);
-            this.stampaButton = new Gss.View.Components.MyButton(this.components);
             this.clienteDataGridView = new Gss.View.Components.MyDataGridView(this.components);
             this.nomeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognomeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cdiceFiscaleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.indirizzoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myLabel3 = new Gss.View.Components.MyLabel(this.components);
+            this.dettagliFatturaDataGridView = new Gss.View.Components.MyDataGridView(this.components);
+            this.oggettoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myLabel4 = new Gss.View.Components.MyLabel(this.components);
+            this.stampaButton = new Gss.View.Components.MyButton(this.components);
             this.numeroFatturaTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dettagliFatturaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettagliFatturaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataFatturaTimePicker
@@ -61,7 +61,7 @@
             this.dataFatturaTimePicker.Enabled = false;
             this.dataFatturaTimePicker.Location = new System.Drawing.Point(485, 27);
             this.dataFatturaTimePicker.Name = "dataFatturaTimePicker";
-            this.dataFatturaTimePicker.Size = new System.Drawing.Size(203, 23);
+            this.dataFatturaTimePicker.Size = new System.Drawing.Size(203, 20);
             this.dataFatturaTimePicker.TabIndex = 3;
             // 
             // groupBox1
@@ -73,103 +73,6 @@
             this.groupBox1.Size = new System.Drawing.Size(736, 151);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            // 
-            // dettagliFatturaDataGridView
-            // 
-            this.dettagliFatturaDataGridView.AllowUserToAddRows = false;
-            this.dettagliFatturaDataGridView.AllowUserToDeleteRows = false;
-            this.dettagliFatturaDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.dettagliFatturaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dettagliFatturaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dettagliFatturaDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.dettagliFatturaDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dettagliFatturaDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dettagliFatturaDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dettagliFatturaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dettagliFatturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dettagliFatturaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.oggettoColumn,
-            this.importoColumn});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dettagliFatturaDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dettagliFatturaDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.dettagliFatturaDataGridView.Location = new System.Drawing.Point(15, 271);
-            this.dettagliFatturaDataGridView.MultiSelect = false;
-            this.dettagliFatturaDataGridView.Name = "dettagliFatturaDataGridView";
-            this.dettagliFatturaDataGridView.ReadOnly = true;
-            this.dettagliFatturaDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dettagliFatturaDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dettagliFatturaDataGridView.RowHeadersVisible = false;
-            this.dettagliFatturaDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dettagliFatturaDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dettagliFatturaDataGridView.RowTemplate.Height = 30;
-            this.dettagliFatturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dettagliFatturaDataGridView.Size = new System.Drawing.Size(692, 164);
-            this.dettagliFatturaDataGridView.TabIndex = 9;
-            // 
-            // oggettoColumn
-            // 
-            this.oggettoColumn.HeaderText = "Oggetto";
-            this.oggettoColumn.Name = "oggettoColumn";
-            this.oggettoColumn.ReadOnly = true;
-            // 
-            // importoColumn
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.importoColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.importoColumn.HeaderText = "Importo";
-            this.importoColumn.Name = "importoColumn";
-            this.importoColumn.ReadOnly = true;
-            // 
-            // myLabel4
-            // 
-            this.myLabel4.AutoSize = true;
-            this.myLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.myLabel4.Font = new System.Drawing.Font("Calibri Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel4.Location = new System.Drawing.Point(25, 236);
-            this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(159, 29);
-            this.myLabel4.TabIndex = 0;
-            this.myLabel4.Text = "Dettagli Fattura";
-            // 
-            // stampaButton
-            // 
-            this.stampaButton.BackColor = System.Drawing.Color.LightGray;
-            this.stampaButton.FlatAppearance.BorderSize = 0;
-            this.stampaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stampaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stampaButton.Location = new System.Drawing.Point(485, 458);
-            this.stampaButton.Name = "stampaButton";
-            this.stampaButton.Size = new System.Drawing.Size(203, 26);
-            this.stampaButton.TabIndex = 6;
-            this.stampaButton.Text = "Stampa Fattura";
-            this.stampaButton.UseVisualStyleBackColor = false;
             // 
             // clienteDataGridView
             // 
@@ -266,9 +169,106 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(30, 24);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(159, 29);
+            this.myLabel3.Size = new System.Drawing.Size(125, 23);
             this.myLabel3.TabIndex = 0;
             this.myLabel3.Text = "Dettagli Cliente";
+            // 
+            // dettagliFatturaDataGridView
+            // 
+            this.dettagliFatturaDataGridView.AllowUserToAddRows = false;
+            this.dettagliFatturaDataGridView.AllowUserToDeleteRows = false;
+            this.dettagliFatturaDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.dettagliFatturaDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dettagliFatturaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dettagliFatturaDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.dettagliFatturaDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dettagliFatturaDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dettagliFatturaDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dettagliFatturaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dettagliFatturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dettagliFatturaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.oggettoColumn,
+            this.importoColumn});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dettagliFatturaDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dettagliFatturaDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.dettagliFatturaDataGridView.Location = new System.Drawing.Point(15, 271);
+            this.dettagliFatturaDataGridView.MultiSelect = false;
+            this.dettagliFatturaDataGridView.Name = "dettagliFatturaDataGridView";
+            this.dettagliFatturaDataGridView.ReadOnly = true;
+            this.dettagliFatturaDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dettagliFatturaDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dettagliFatturaDataGridView.RowHeadersVisible = false;
+            this.dettagliFatturaDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dettagliFatturaDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dettagliFatturaDataGridView.RowTemplate.Height = 30;
+            this.dettagliFatturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dettagliFatturaDataGridView.Size = new System.Drawing.Size(692, 164);
+            this.dettagliFatturaDataGridView.TabIndex = 9;
+            // 
+            // oggettoColumn
+            // 
+            this.oggettoColumn.HeaderText = "Oggetto";
+            this.oggettoColumn.Name = "oggettoColumn";
+            this.oggettoColumn.ReadOnly = true;
+            // 
+            // importoColumn
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.importoColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.importoColumn.HeaderText = "Importo";
+            this.importoColumn.Name = "importoColumn";
+            this.importoColumn.ReadOnly = true;
+            // 
+            // myLabel4
+            // 
+            this.myLabel4.AutoSize = true;
+            this.myLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.myLabel4.Font = new System.Drawing.Font("Calibri Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.myLabel4.Location = new System.Drawing.Point(25, 236);
+            this.myLabel4.Name = "myLabel4";
+            this.myLabel4.Size = new System.Drawing.Size(128, 23);
+            this.myLabel4.TabIndex = 0;
+            this.myLabel4.Text = "Dettagli Fattura";
+            // 
+            // stampaButton
+            // 
+            this.stampaButton.BackColor = System.Drawing.Color.LightGray;
+            this.stampaButton.FlatAppearance.BorderSize = 0;
+            this.stampaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stampaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stampaButton.Location = new System.Drawing.Point(485, 458);
+            this.stampaButton.Name = "stampaButton";
+            this.stampaButton.Size = new System.Drawing.Size(203, 26);
+            this.stampaButton.TabIndex = 6;
+            this.stampaButton.Text = "Stampa Fattura";
+            this.stampaButton.UseVisualStyleBackColor = false;
             // 
             // numeroFatturaTextBox
             // 
@@ -279,7 +279,7 @@
             this.numeroFatturaTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroFatturaTextBox.Location = new System.Drawing.Point(153, 28);
             this.numeroFatturaTextBox.Name = "numeroFatturaTextBox";
-            this.numeroFatturaTextBox.Size = new System.Drawing.Size(206, 21);
+            this.numeroFatturaTextBox.Size = new System.Drawing.Size(206, 17);
             this.numeroFatturaTextBox.TabIndex = 2;
             this.numeroFatturaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -291,7 +291,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(383, 28);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(96, 21);
+            this.myLabel2.Size = new System.Drawing.Size(80, 17);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Data Fattura";
             // 
@@ -303,7 +303,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(26, 28);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(121, 21);
+            this.myLabel1.Size = new System.Drawing.Size(98, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Numero Fattura";
             // 
@@ -324,10 +324,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "VisualizzaFattura";
             this.Text = "Visualizza Fattura";
+            this.Load += new System.EventHandler(this.VisualizzaFattura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dettagliFatturaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettagliFatturaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

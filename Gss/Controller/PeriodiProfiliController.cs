@@ -149,6 +149,11 @@ namespace Gss.Controller
              }
              return result;
          }*/
+        
+        public List<Periodo> GetAllPeriodi()
+        {
+            return this.Gss.GestorePeriodi.Periodi;
+        }
 
         public PrezziRisorsa GetPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
         {

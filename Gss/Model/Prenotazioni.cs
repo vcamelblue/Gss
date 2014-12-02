@@ -28,13 +28,11 @@ namespace Gss.Model
 
         public bool Add(Prenotazione prenotazione)
         {
-            foreach(Prenotazione p in ListaPrenotazioni){
-                if (p.Equals(prenotazione))
-                {
-                    return false;
-                }
-            }
+            if (ListaPrenotazioni.Contains(prenotazione))
+                return false;
+
             ListaPrenotazioni.Add(prenotazione);
+
             return true;
         }
 
@@ -50,7 +48,7 @@ namespace Gss.Model
                 if (p.NumeroPrenotazione == numeroPrenotazione)
                     return p;
             }
-            return null; //trattare il caso nelle classi di sopra
+            return null;
         }
 
         public List<PrenotazioneAttiva> GetPrenotazioniAttive()
@@ -87,17 +85,21 @@ namespace Gss.Model
         public bool ArchiviaPrenotazione(PrenotazioneAttiva prenotazioneAttiva)
         {
             Fattura fattura = Fatturatore.GeneraFattura(prenotazioneAttiva);
+
             PrenotazioneArchiviata prenotazioneArchiviata = CreaPrenotazioneArchiviata(prenotazioneAttiva, fattura);
+           
             if (this.Remove(prenotazioneAttiva))
             {
                 return this.Add(prenotazioneArchiviata);
             }
-            else return false;
+
+            return false;
         }
 
         public Prenotazioni GetPrenotazioniByCliente(Cliente cliente)
         {
             Prenotazioni prenotazioni = new Prenotazioni();
+
             foreach(Prenotazione p in this.ListaPrenotazioni)
             {
                 if (p.Cliente.Equals(cliente))
@@ -114,15 +116,9 @@ namespace Gss.Model
             DateTime dataInizio = prenotazioneAttiva.DataInizio;
             DateTime dataFine = prenotazioneAttiva.DataFine;
             Cliente cliente = prenotazioneAttiva.Cliente;
+
             return new PrenotazioneArchiviata(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente, fattura);
         }
 
-        /*public bool AddSkiCard(PrenotazioneAttiva prenotazione,SkiCard skiCard)
-        {
-            foreach(PrenotazioneAttiva p in this.GetPrenotazioniAttive())
-            {
-                if(p.Equals(prenotazione))
-            }
-        }*/
     }
 }

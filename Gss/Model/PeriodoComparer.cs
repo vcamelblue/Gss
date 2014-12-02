@@ -10,8 +10,9 @@ namespace Gss.Model
     {
         public int Compare(Periodo x, Periodo y)
         {
-            if(x.DataInizio.Date!=y.DataInizio)
+            if( x.DataInizio.Date != y.DataInizio)
                 return x.DataInizio.CompareTo(y.DataInizio);
+
             return x.DataFine.CompareTo(y.DataFine);
         }
     }

@@ -12,13 +12,13 @@ namespace Gss.Model
 
         public ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
         {
-            _profili = new List<ProfiloPrezziRisorse>();
             _profili = profili;
         }
 
         public ProfiliPrezziRisorse()
+            : this(new List<ProfiloPrezziRisorse>())
         {
-            _profili = new List<ProfiloPrezziRisorse>();
+
         }
 
         public List<ProfiloPrezziRisorse> Profili
@@ -39,16 +39,15 @@ namespace Gss.Model
 
         public ProfiloPrezziRisorse GetProfiloPrezziRisorseByNome(string nomeProfilo)
         {
-            ProfiloPrezziRisorse profilo=null;
-            foreach(ProfiloPrezziRisorse p in _profili)
+
+            foreach(ProfiloPrezziRisorse p in Profili)
             {
-                if(p.Nome==nomeProfilo)
+                if(p.Nome == nomeProfilo)
                 {
-                    profilo = p;
-                    break;
+                    return p;
                 }
             }
-            return profilo; // trattare il caso nelle classi di sopra
+            return null;
         }
     }
 }

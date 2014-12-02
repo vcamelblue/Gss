@@ -24,9 +24,10 @@ namespace Gss.Model
             _cliente = cliente;
         }
 
-        public Prenotazione(int numeroPrenotazione)
+        public Prenotazione(int numeroPrenotazione) 
+            : this(numeroPrenotazione, 0, DateTime.MinValue, DateTime.MinValue, null)
         {
-            _numeroPrenotazione = numeroPrenotazione;
+
         }
 
         public Cliente Cliente
@@ -63,18 +64,15 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             Prenotazione prenotazione=null;
 
             if (obj is Prenotazione)
-            {
                 prenotazione = (Prenotazione)obj;
-            }
-            else return false;
-
-            if (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione)
-                return true;
-            else
+            else 
                 return false;
+
+            return (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione);
 
         }
     }

@@ -14,18 +14,12 @@ namespace Gss.Model
         public PrezziRisorsa(double prezzo, List<PrezzoSpecifico> prezziSpecifici)
         {
             _prezzo = prezzo;
-            _prezziSpecifici = new List<PrezzoSpecifico>();
             _prezziSpecifici = prezziSpecifici;
         }
 
         public PrezziRisorsa()
+            : this(0, new List<PrezzoSpecifico>())
         {
-            _prezzo = 0;
-            _prezziSpecifici = new List<PrezzoSpecifico>();
-            foreach(TipologiaPrezzo ps in Enum.GetValues(typeof(TipologiaPrezzo)))
-            {
-                _prezziSpecifici.Add(new PrezzoSpecifico(ps, 0));
-            }
             
         }
 
@@ -41,6 +35,7 @@ namespace Gss.Model
             set { _prezziSpecifici = value; }
         }
 
+        //Aggiungo solo prezzi specifici con tipologie diverse
         public bool Add(PrezzoSpecifico prezzoSpecifico)
         {
             foreach (PrezzoSpecifico ps in PrezziSpecifici)
@@ -68,7 +63,7 @@ namespace Gss.Model
                     return ps;
                 }
             }
-            return null; // trattare il null nelle funzioni sopra
+            return null;
         }
 
         public object Clone()

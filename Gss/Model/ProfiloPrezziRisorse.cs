@@ -18,8 +18,9 @@ namespace Gss.Model
         }
 
         public ProfiloPrezziRisorse()
+            : this(null)
         {
-            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
+
         }
 
         public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
@@ -33,7 +34,6 @@ namespace Gss.Model
             get { return _nome; }
             set { _nome = value; }
         }
-
       
 
         public void Add(Risorsa risorsa, PrezziRisorsa prezziRisorsa)
@@ -50,8 +50,8 @@ namespace Gss.Model
         {
             if (_prezziRisorsa.Keys.Contains(risorsa))
                 return _prezziRisorsa[risorsa];
-            else
-                return new PrezziRisorsa();
+            
+            return null;
         }
 
         public override string ToString()
@@ -63,16 +63,15 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             ProfiloPrezziRisorse profilo;
+
             if (obj is ProfiloPrezziRisorse)
-            {
                 profilo = (ProfiloPrezziRisorse)obj;
-            }
             else
                 return false;
-            if (this.Nome == profilo.Nome)
-                return true;
-            return false;
+
+            return (this.Nome == profilo.Nome);
         }
 
         public object Clone()

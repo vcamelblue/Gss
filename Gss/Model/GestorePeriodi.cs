@@ -20,8 +20,7 @@ namespace Gss.Model
 
         private GestorePeriodi() 
         {
-            periodi = new List<Periodo>();
-            
+            periodi = new List<Periodo>();            
         }
 
 
@@ -37,6 +36,11 @@ namespace Gss.Model
         }
 
 
+        public void Add(Periodo p)
+        {
+            this.Periodi.Add(p);
+        }
+
         public bool Remove(Periodo p) 
         {
             return this.Periodi.Remove(p);
@@ -45,8 +49,9 @@ namespace Gss.Model
 
         public Periodo getPeriodoByData(DateTime data)
         {
-            if( data == null)
-                return null;
+            //RIVEDERE DateTime e valori nulli!!!!!!
+            //if( data == null)
+            //    return null;
             
             foreach(Periodo p in Periodi)
             {
@@ -59,8 +64,9 @@ namespace Gss.Model
 
         public PrezziRisorsa getPrezzoRisorsaByData(Risorsa risorsa, DateTime data)
         {
-            if (risorsa == null || data == null)
+            if (risorsa == null /*|| data == null*/)
                 return null;
+
             Periodo periodo = getPeriodoByData(data);
 
             if (periodo != null) 

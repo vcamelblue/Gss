@@ -19,9 +19,9 @@ namespace Gss.Model
         }
 
         public PrenotazioneAttiva(int numeroPrenotazione, int numeroPersone, DateTime dataInizio, DateTime dataFine, Cliente cliente)
-            : base(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente)
+            : this(numeroPrenotazione, numeroPersone, dataInizio, dataFine, cliente, null)
         {
-            _listaSkiCards = new SkiCards();
+
         }
 
         public Bungalow Bungalow
@@ -38,31 +38,22 @@ namespace Gss.Model
 
         public bool IsIniziata()
         {
-            if (DataInizio >= DateTime.Today)
-                return true;
-            else return false;
-           
+            return (DateTime.Today.Date >= DataInizio.Date);           
         }
 
         public bool IsConclusa()
         {
-            if (DataFine.Date <= DateTime.Today)
-                return true;
-            else return false;
+            return (DateTime.Today.Date >= DataFine.Date );
         }
 
         public bool IsInCorso()
         {
-            if (IsIniziata() && !(IsConclusa()))
-                return true;
-            else return false;
+            return (IsIniziata() && !(IsConclusa()));
         }
 
         public bool IsEntroUnaSettimana()
         {
-            if (DataInizio >= DateTime.Today.AddDays(7))
-                return true;
-            else return false;
+            return (DateTime.Today.AddDays(7).Date <= DataInizio.Date);
         }
 
         public bool AddSkiCard(SkiCard skicard)
@@ -85,31 +76,47 @@ namespace Gss.Model
             double prezzo = 0;
             DateTime data = DataInizio.Date;
 
-            if (Bungalow == null) return prezzo;
+            if (Bungalow == null) 
+                return prezzo;
 
-            while (data<(DataFine)) //calcolo il prezzo standard per giornata
+            while (data.Date < DataFine.Date) //calcolo il prezzo standard per giornata
             {
-                prezzo += Bungalow.GetPrezzoFor(data).Prezzo;
-                data =data.AddDays(1);
+                PrezziRisorsa prezziBungalow = Bungalow.GetPrezzoFor(data);
+
+                if (prezziBungalow == null)
+                    throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
+
+                prezzo += prezziBungalow.Prezzo;
+                data = data.AddDays(1);
             }
 
             if (NumeroPersone <= Bungalow.PostiTotaliStandard()) // controllo se ho affittato un bungalow senza sfruttare i posti max
             {
                 return prezzo;
             }
-
             else
             {
                 int numeroPersoneExtra = NumeroPersone - Bungalow.PostiTotaliStandard();
-                data = DataInizio;
-                while (data<DataFine)                    //calcolo il prezzo per ogni persona extra  per giornata
+                data = DataInizio.Date;
+
+                while (data.Date < DataFine.Date)                    //calcolo il prezzo per ogni persona extra  per giornata
                 {
-                    prezzo +=(numeroPersoneExtra*Bungalow.GetPrezzoFor(data).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore);
+                    PrezziRisorsa prezziBungalow = Bungalow.GetPrezzoFor(data);
+                    
+                    if (prezziBungalow == null)
+                        throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
+
+                    PrezzoSpecifico prezzoPerPersonaExtra = prezziBungalow.GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra);
+
+                    if (prezzoPerPersonaExtra == null)
+                        throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
+
+
+                    prezzo += numeroPersoneExtra * prezzoPerPersonaExtra.Valore;
                     data = data.AddDays(1);
                 }
                 return prezzo;
             }
-
         }
 
         public double GetSpesaSkiCards()
@@ -119,23 +126,22 @@ namespace Gss.Model
             else return ListaSkiCards.GetPrezzoTotale();
         }
 
+        /*
         public override bool Equals(object obj)
         {
             PrenotazioneAttiva prenotazione= null;
-            if (base.Equals(obj) && obj is PrenotazioneAttiva)
+            if (obj is PrenotazioneAttiva && base.Equals(obj))
                 prenotazione = (PrenotazioneAttiva)obj;
             else 
                 return false;
-            if (this.Bungalow.Equals(prenotazione.Bungalow) &&
-                this.Cliente.Equals(prenotazione.Cliente) &&
-                this.DataInizio.Equals(prenotazione.DataInizio) &&
-                this.DataFine.Equals(prenotazione.DataFine))
-                return true;
-            else
-                return false;
-        }
 
-        public override string ToString() //FITTIZIA!!!!!
+            return (this.Bungalow.Equals(prenotazione.Bungalow) &&
+                    this.Cliente.Equals(prenotazione.Cliente) &&
+                    this.DataInizio.Equals(prenotazione.DataInizio) &&
+                    this.DataFine.Equals(prenotazione.DataFine));
+        }*/
+
+        public override string ToString() //FITTIZIA!!!!! DA FARE PRIMA O POI
         {
             return this.Bungalow.ToString();
         }

@@ -21,19 +21,24 @@ namespace Gss.Model
             get { return _fattura; }
             set { _fattura = value; }
         }
-
+        /*
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             PrenotazioneArchiviata prenotazione=null;
-            if (base.Equals(obj) && obj is PrenotazioneArchiviata)
+
+            if (obj is PrenotazioneArchiviata && base.Equals(obj))
                 prenotazione = (PrenotazioneArchiviata)obj;
             else
                 return false;
-            if (this.Fattura.Equals(prenotazione.Fattura))
-                return true;
-            else
-                return false;
-        }
+
+            return (this.Fattura.Equals(prenotazione.Fattura) &&
+                    this.Cliente.Equals(prenotazione.Cliente) &&
+                    this.DataInizio.Equals(prenotazione.DataInizio) &&
+                    this.DataFine.Equals(prenotazione.DataFine));
+        }*/
 
     }
 }

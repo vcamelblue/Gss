@@ -12,12 +12,6 @@ namespace Gss.Model
         private DateTime _dataInizio;
         private DateTime _dataFine;
 
-        public Periodo(DateTime dataInizio, DateTime dataFine, ProfiloPrezziRisorse profilo)
-        {
-            _profilo = profilo;
-            _dataInizio = dataInizio;
-            _dataFine = dataFine;
-        }
 
         public Periodo()
         {
@@ -29,6 +23,13 @@ namespace Gss.Model
             _dataInizio = dataInizio;
             _dataFine = dataFine;
             _profilo = new ProfiloPrezziRisorse();
+        }
+
+        public Periodo(DateTime dataInizio, DateTime dataFine, ProfiloPrezziRisorse profilo)
+        {
+            _profilo = profilo;
+            _dataInizio = dataInizio;
+            _dataFine = dataFine;
         }
 
         public ProfiloPrezziRisorse Profilo
@@ -51,16 +52,12 @@ namespace Gss.Model
 
         public bool IsDataInPeriodo(DateTime data)
         {
-            
-            if (_dataInizio.CompareTo(data.Date) <= 0 && _dataFine.CompareTo(data.Date) >= 0)
-                return true;
-            return false;
+            return (DataInizio.Date <= data.Date && data.Date <= DataFine.Date);
         }
 
         public override string ToString()
         {
-            return "Periodo "+ this.Profilo.Nome+  " dal " + this._dataInizio.Date.ToString("dd/MM/yyyy") + " al " + this.DataFine.Date.ToString("dd/MM/yyyy");//+ ",Profilo:"+this.Profilo;
-        }
+            return "Periodo " + this.Profilo.Nome +  " dal " + this.DataInizio.Date.ToString("dd/MM/yyyy") + " al " + this.DataFine.Date.ToString("dd/MM/yyyy");
 
         public object Clone()
         {
@@ -71,16 +68,15 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             Periodo p;
+
             if (obj is Periodo)
-            {
                 p = (Periodo)obj;
-            }
             else
                 return false;
-            if (this._dataInizio == p.DataInizio && this._dataFine == p.DataFine)
-                return true;
-            return false;
+
+            return (this.Profilo.Equals(p.Profilo) && this._dataInizio == p.DataInizio && this._dataFine == p.DataFine);
         }
     }
 }

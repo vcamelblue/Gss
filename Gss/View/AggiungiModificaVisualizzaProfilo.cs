@@ -150,45 +150,10 @@ namespace Gss.View
                 Bungalow bungalowSelezionato = (Bungalow)risorsa;
                 prezzoPerGironataPostStdTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).Prezzo.ToString();
                 prezzoPerPersonaExtraTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore.ToString();
-                string informazioniBungalow = infoBungalow(bungalowSelezionato);
-                string informazioniCamere = "";
-                foreach (Stanza s in bungalowSelezionato.Stanze)
-                {
-                    informazioniCamere += TipoCameraByPosti(s);
-                }
-                bungalowDataGridView.Rows.Add(bungalowSelezionato.Codice, bungalowSelezionato.GetNumeroStanze(), informazioniBungalow, bungalowSelezionato.PostiTotaliStandard(), bungalowSelezionato.PostiTotaliMax());
+                bungalowDataGridView.Rows.Add(bungalowSelezionato.Codice, bungalowSelezionato.GetNumeroStanze(), bungalowSelezionato.ToStringStanze(), bungalowSelezionato.PostiTotaliStandard(), bungalowSelezionato.PostiTotaliMax());
             }
             
         }
-
-        // Mi dice come sono le stanze del bungalow
-        private string infoBungalow(Bungalow bungalow)
-        {
-            string result = "";
-            foreach (Stanza s in bungalow.Stanze)
-            {
-                if (s.Equals(bungalow.Stanze[bungalow.Stanze.Count - 1]))
-                {
-                    result += TipoCameraByPosti(s) + " ";
-                }
-                else
-                {
-                    result += TipoCameraByPosti(s) + " + ";
-                }
-            }
-            return result;
-        }
-
-        //Mi dice come è una stanza (singola, doppia, tripla)
-        private string TipoCameraByPosti(Stanza stanza)
-        {
-            return (stanza.NumeroPostiStandard == 1 ? "Singola" :
-                    stanza.NumeroPostiStandard == 2 ? "Doppia" :
-                    stanza.NumeroPostiStandard == 3 ? "Tripla" :
-                    stanza.NumeroPostiStandard == 4 ? "Quadrupla" :
-                    stanza.NumeroPostiStandard == 5 ? "Quintupla" : "Nupla");
-        }
-
         private void prossimaRisorsaButton_Click(object sender, EventArgs e)
         {
             if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 2)

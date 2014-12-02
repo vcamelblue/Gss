@@ -216,17 +216,20 @@ namespace Gss.Controller
         public void SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
         {
 
-            if (DateTime.Compare( Gss.Resort.DataInizioStagione.Date, DateTime.Today)<0)
+            if (Gss.Resort.isStagioneIniziata())
             {
-                throw new Exception("Impossibile modificare data, stagione in corso");
+                throw new Exception("Impossibile modificare le date della stagione, stagione già in corso");
             }
-            Gss.Resort.DataInizioStagione = dataInizioStagione;
 
-            if (Gss.Resort.DataFineStagione < dataFineStagione)
-            {
+
+            //Rielliniare i periodi se la stagione non e' iniziata e si ritoccano le date???
+
+            //if (Gss.Resort.DataInizioStagione > dataInizioStagione || Gss.Resort.DataFineStagione < dataFineStagione)
+            //{
+                Gss.Resort.DataInizioStagione = dataInizioStagione;
                 Gss.Resort.DataFineStagione = dataFineStagione;
                 //GestorePeriodi.AllineaPeriodi()
-            }
+            //}
             
             Gss.Resort.Nome = nome;
             Gss.Resort.Indirizzo = indirizzo;

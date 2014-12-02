@@ -41,8 +41,8 @@ namespace Gss.View {
             indirizzoTextBox.Text = _resort.Indirizzo;
             telefonoTextBox.Text = _resort.Telefono;
             emailTextBox.Text = _resort.Email;
-            dataIniziodateTimePicker.Value = _resort.DataInizioStagione;
-            dataFinedateTimePicker.Value = _resort.DataFineStagione;
+            dataIniziodateTimePicker.Value = _resort.DataInizioStagione == DateTime.MinValue? DateTime.Now.AddMonths(1) : _resort.DataInizioStagione;
+            dataFinedateTimePicker.Value = _resort.DataFineStagione == DateTime.MinValue? DateTime.Now.AddMonths(2) : resort.DataFineStagione;
 
             
             this.Text = "Modifica Info";

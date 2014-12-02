@@ -109,10 +109,22 @@ namespace Gss.Model
             return Impianti.Remove(impianto);
         }
 
-        internal void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
+        public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
         {
             this.DataInizioStagione = dataInizioStagione;
             this.DataFineStagione = dataFineStagione;
         }
+
+        public bool isStagioneImpostata()
+        {
+            return (DataInizioStagione.Date != DateTime.MinValue.Date && DataFineStagione.Date != DateTime.MinValue.Date);
+        }
+        
+        public bool isStagioneIniziata()
+        {
+            return (isStagioneImpostata() && 
+                   (DataInizioStagione.Date <= DateTime.Now.Date && DateTime.Now.Date <= DataFineStagione.Date));
+        }
+
     }
 }

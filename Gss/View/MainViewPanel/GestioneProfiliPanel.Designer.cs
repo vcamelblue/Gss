@@ -1,6 +1,6 @@
 ﻿namespace Gss.View.MainViewPanel
 {
-    partial class GestioneProfili
+    partial class GestioneProfiliPanel
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

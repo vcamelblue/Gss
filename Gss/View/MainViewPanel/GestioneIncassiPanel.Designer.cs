@@ -1,6 +1,6 @@
 ﻿namespace Gss.View.MainViewPanel
 {
-    partial class GestioneIncassi
+    partial class GestioneIncassiPanel
     {
         /// <summary>
         /// Variabile di progettazione necessaria.

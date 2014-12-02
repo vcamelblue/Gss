@@ -73,7 +73,7 @@ namespace Gss.View
             gestionePeriodiTabPage.Controls.Add(gestionePeriodiPanel);
 
             //Creo e Aggiungo il pannello Incassi
-            gestioneIncassiPanel = new GestioneIncassiPanel(this.components);
+            gestioneIncassiPanel = new GestioneIncassiPanel(this.components,prenotazioniController);
             gestioneIncassiTabPage.Controls.Add(gestioneIncassiPanel);
         }
 

@@ -48,7 +48,6 @@ namespace Gss.View.MainViewPanel
         public override void Refresh()
         {
             base.Refresh();
-            profiliDataGridView.Rows.Clear();
             RiempiGridProfili();
         }
 

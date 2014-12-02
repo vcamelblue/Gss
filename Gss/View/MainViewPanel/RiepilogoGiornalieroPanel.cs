@@ -47,6 +47,9 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiDataGrids()
         {
+            clientiInArrivoOggiDataGridView.Rows.Clear();
+            clientiInPartenzaOggiDataGridView.Rows.Clear();
+            prenotazioniDaSaldareOggiDataGridView.Rows.Clear();
             foreach(Prenotazione p in prenotazioniController.GetPrenotazioniConcluseOggi().ListaPrenotazioni)
             {
                 clientiInPartenzaOggiDataGridView.Rows.Add(p.Cliente.Nome+"  "+p.Cliente.Cognome);
@@ -69,9 +72,6 @@ namespace Gss.View.MainViewPanel
         public override void Refresh()
         {
             base.Refresh();
-            clientiInArrivoOggiDataGridView.Rows.Clear();
-            clientiInPartenzaOggiDataGridView.Rows.Clear();
-            prenotazioniDaSaldareOggiDataGridView.Rows.Clear();
             RiempiDataGrids();
         }
 

@@ -18,9 +18,8 @@ namespace Gss.Model
         public PrezziRisorsa GetPrezzoFor(DateTime data)
         {
             Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(data);
-            if (periodo == null)
-                return null;
-            return periodo.Profilo.GetPrezziRisorsa(this);
+            
+            return periodo == null ? null : periodo.Profilo.GetPrezziRisorsa(this);
         }
 
         public string Codice
@@ -35,16 +34,13 @@ namespace Gss.Model
                 return false;
 
             Risorsa risorsa;
+
             if (obj is Risorsa)
-            {
                 risorsa = (Risorsa)obj;
-            }
             else
                 return false;
-            if (risorsa.Codice == this.Codice)
-                return true;
-            else
-                return false;
+
+            return (risorsa.Codice == this.Codice);
         }
 
         public override string ToString()

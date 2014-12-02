@@ -48,6 +48,7 @@ namespace Gss.Model
         public List<Alpina> GetPisteAlpine()
         {
             List<Alpina> result = new List<Alpina>();
+
             foreach (Pista p in Piste)
             {
                 if (p is Alpina)
@@ -62,6 +63,7 @@ namespace Gss.Model
         public List<Fondo> GetPisteFondo()
         {
             List<Fondo> result = new List<Fondo>();
+
             foreach (Pista p in Piste)
             {
                 if (p is Fondo)
@@ -76,6 +78,7 @@ namespace Gss.Model
         public List<SnowPark> GetPisteSnowPark()
         {
             List<SnowPark> result = new List<SnowPark>();
+
             foreach (Pista p in Piste)
             {
                 if (p is SnowPark)
@@ -99,18 +102,19 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             Impianto impianto = null;
+
             if (obj is Impianto)
-            {
                 impianto = (Impianto)obj;
-            }
             else 
                 return false;
-            if (this.Codice == impianto.Codice)
-            {
-                return true;
-            }
-            else return false;
+
+            return (this.Codice == impianto.Codice) ;
+
+
             /*
             if (impianto.Piste.Count != this.Piste.Count)
                 return false;
@@ -140,22 +144,23 @@ namespace Gss.Model
 
         public override string ToString()
         {
-            string result = "";
-            result =Codice+ " - " + Nome + ",  Versante: " + Versante + " ";
-            return result;
+            return Codice+ " - " + Nome + ",  Versante: " + Versante + " ";
         }
 
         public override object Clone()
         {
-            Impianto clone;
+
             string codice = this.Codice;
             string nome = this.Nome;
             string versante = this.Versante;
-            clone = new Impianto(codice, nome, versante);
+
+            Impianto clone = new Impianto(codice, nome, versante);
+
             foreach (Pista p in Piste)
             {
                 clone.Add((Pista)p.Clone());
             }
+
             return clone;
         }
     }

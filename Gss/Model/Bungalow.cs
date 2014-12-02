@@ -25,20 +25,24 @@ namespace Gss.Model
         public int PostiTotaliStandard()
         {
             int postiTotaliStandard = 0;
+
             foreach (Stanza s in Stanze)
             {
                 postiTotaliStandard += s.NumeroPostiStandard;
             }
+
             return postiTotaliStandard;
         }
 
         public int PostiTotaliMax()
         {
             int postiTotaliMax = 0;
+
             foreach (Stanza s in Stanze)
             {
                 postiTotaliMax += s.NumeroPostiMax;
             }
+
             return postiTotaliMax;
         }
 
@@ -54,25 +58,39 @@ namespace Gss.Model
 
         public bool Remove(Stanza stanza)
         {
-            //if (Stanze.Count == 1) return false;
-            //else 
             return Stanze.Remove(stanza);
         }
 
-       public override bool Equals(object obj)
+        public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             Bungalow bungalow = null;
+
             if (obj is Bungalow)
-            {
                 bungalow = (Bungalow)obj;
-            }
             else
                 return false;
+
             if (!base.Equals(obj))
                 return false;
+
             if (bungalow.Stanze.Count != this.Stanze.Count)
                 return false;
 
+
+            foreach (Stanza this_stanza in this.Stanze)
+            {
+
+                if (!bungalow.Stanze.Contains(this_stanza))
+                    return false;
+            }
+
+            return true;
+
+
+            /*
             List<Stanza> temp = bungalow.Stanze.ToList<Stanza>();
             bool trovato = false;
 
@@ -92,7 +110,7 @@ namespace Gss.Model
                 else
                     trovato = false;
             }
-            return true;   
+            return true;   */
         }
 
         public override string ToString()

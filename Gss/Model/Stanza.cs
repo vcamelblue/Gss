@@ -33,18 +33,16 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             Stanza stanza = null;
+
             if (obj is Stanza)
-            {
                 stanza = (Stanza)obj;
-            }
             else
                 return false;
-            if (stanza.NumeroPostiStandard.Equals(this.NumeroPostiStandard)
-                && stanza.NumeroPostiMax.Equals(this.NumeroPostiMax))
-                return true;
-            else
-                return false;
+
+            return (stanza.NumeroPostiStandard.Equals(this.NumeroPostiStandard) &&
+                    stanza.NumeroPostiMax.Equals(this.NumeroPostiMax));
         }
 
         public object Clone()

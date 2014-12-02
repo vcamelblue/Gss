@@ -58,7 +58,7 @@ namespace Gss.Model
                     NumeroPostiStandard == 2 ? "Doppia" :
                     NumeroPostiStandard == 3 ? "Tripla" :
                     NumeroPostiStandard == 4 ? "Quadrupla" :
-                    NumeroPostiStandard == 5 ? "Quintupla" : "Nupla");
+                    NumeroPostiStandard == 5 ? "Quintupla" : NumeroPostiStandard+"upla");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Gss.Model
 {
     public static class Fatturatore
     {
-        private static int _numeroFatture=0;
+        private static int _numeroFatture=1;
 
         public static Fattura GeneraFattura(PrenotazioneAttiva prenotazione)
         {

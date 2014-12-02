@@ -18,6 +18,12 @@ namespace Gss.Model
         private DateTime _dataFineStagione;
 
 
+        public Resort()
+            : this("", "", "", "", DateTime.MinValue, DateTime.MinValue)
+        {
+
+        }
+
         public Resort(string nome, string indirizzo, string email, string telefono)
         {
             _nome = nome;

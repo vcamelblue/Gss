@@ -75,7 +75,6 @@
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Clienti.cs" />
     <Compile Include="Model\Difficolta.cs" />
-    <Compile Include="Model\Direttore.cs" />
     <Compile Include="Model\Fattura.cs" />
     <Compile Include="Model\Fatturatore.cs" />
     <Compile Include="Model\Fondo.cs" />

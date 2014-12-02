@@ -35,18 +35,19 @@ namespace Gss.Model
         public override bool Equals(object obj)
         {
             Fondo fondo = null;
-            if (base.Equals(obj) && obj is Fondo)
+
+            if (obj is Fondo && base.Equals(obj))
                 fondo = (Fondo)obj;
-            if (fondo.DislivelloMedio.Equals(this.DislivelloMedio) && fondo.DislivelloMassimo.Equals(this.DislivelloMassimo))
-                return true;
             else
                 return false;
+
+            return (fondo.DislivelloMedio.Equals(this.DislivelloMedio) && fondo.DislivelloMassimo.Equals(this.DislivelloMassimo));
 
         }
 
         public override string ToString()
         {
-            return base.ToString()+ " " + this.DislivelloMassimo.ToString() + " " + this._dislivelloMedio.ToString();
+            return base.ToString()+ " " + this.DislivelloMassimo.ToString() + " " + this.DislivelloMedio.ToString();
         }
 
         public override object Clone()
@@ -54,6 +55,7 @@ namespace Gss.Model
             string nome = this.Nome;
             double dislivelloMedio = this.DislivelloMedio;
             double dislivelloMassimo = this.DislivelloMassimo;
+
             return new Fondo(nome, dislivelloMassimo, dislivelloMedio);
         }
     }

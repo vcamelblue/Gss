@@ -25,28 +25,27 @@ namespace Gss.Model
         
         public override bool Equals(object obj)
         {
+
             Alpina alpina = null;
-            if (base.Equals(obj) && obj is Alpina)
-            {
+
+            if (obj is Alpina && base.Equals(obj))
                 alpina = (Alpina)obj;
-            }
             else
                 return false;
-            if (alpina.Difficolta.Equals(this.Difficolta))
-                return true;
-            else
-                return false;
+
+            return alpina.Difficolta.Equals(this.Difficolta);
         }
 
         public override string ToString()
         {
-            return base.ToString()+" "+ this.Difficolta.ToString();
+            return base.ToString() + " " + this.Difficolta.ToString();
         }
 
         public override object Clone()
         {
             string nome = this.Nome;
             Difficolta difficolta = this.Difficolta;
+
             return new Alpina(nome, difficolta);
         }
     }

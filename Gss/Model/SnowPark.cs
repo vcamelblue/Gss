@@ -31,6 +31,19 @@ namespace Gss.Model
             set { _numeroJibs = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            SnowPark snowpark = null;
+
+            if (obj is SnowPark && base.Equals(obj))
+                snowpark = (SnowPark)obj;
+            else
+                return false;
+
+            return (snowpark.NumeroSalti.Equals(this.NumeroSalti) && snowpark.NumeroJibs.Equals(this.NumeroJibs));
+
+        }
+
         public override string ToString()
         {
             return base.ToString() + " " + this.NumeroSalti.ToString() + " " + this.NumeroJibs.ToString();
@@ -41,6 +54,7 @@ namespace Gss.Model
             string nome = this.Nome;
             int numerosalti= this.NumeroSalti;
             int numeroJibs = this.NumeroJibs;
+
             return new SnowPark(nome, numerosalti, numeroJibs);
         }
     }

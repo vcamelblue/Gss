@@ -25,17 +25,15 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
-            Pista pista = null;
-            if (obj is Pista)
-            {
-                pista = (Pista)obj;
-            }
-            else return false;
 
-            if (pista.Nome == this.Nome)
-                return true;
-            else
+            Pista pista = null;
+
+            if (obj is Pista)
+                pista = (Pista)obj;
+            else 
                 return false;
+
+            return (pista.Nome == this.Nome);
         }
 
         public override string ToString()

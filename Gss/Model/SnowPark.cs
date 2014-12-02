@@ -33,6 +33,9 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             SnowPark snowpark = null;
 
             if (obj is SnowPark && base.Equals(obj))

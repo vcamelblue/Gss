@@ -33,6 +33,7 @@ namespace Gss.Model
         {
             if (obj == null)
                 return false;
+
             Risorsa risorsa;
             if (obj is Risorsa)
             {

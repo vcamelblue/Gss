@@ -34,6 +34,9 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             Fondo fondo = null;
 
             if (obj is Fondo && base.Equals(obj))

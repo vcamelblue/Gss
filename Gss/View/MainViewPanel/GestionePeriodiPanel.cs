@@ -57,7 +57,8 @@ namespace Gss.View.MainViewPanel
         {
             DialogResult result = MessageBox.Show("Sicuro di voler rimuovere Tutti i periodi?", "Rimozione Periodi", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
-            {                
+            {
+                periodiProfiliController.RemoveAllPeriodi();
                 Refresh();
             }
         }

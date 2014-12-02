@@ -68,6 +68,8 @@ namespace Gss.Model
             }
             else
                 return false;
+            if (!base.Equals(obj))
+                return false;
             if (bungalow.Stanze.Count != this.Stanze.Count)
                 return false;
 

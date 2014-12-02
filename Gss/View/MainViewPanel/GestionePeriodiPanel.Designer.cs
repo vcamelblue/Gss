@@ -40,6 +40,7 @@
             this.dataFineProfiloColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.impostaPeriodiButton = new Gss.View.Components.MyButton(this.components);
             this.modificaPeriodiButton = new Gss.View.Components.MyButton(this.components);
+            this.rimuoviTuttiIPeriodiButton = new Gss.View.Components.MyButton(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.periodiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +132,7 @@
             this.impostaPeriodiButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.impostaPeriodiButton.Location = new System.Drawing.Point(0, 546);
             this.impostaPeriodiButton.Name = "impostaPeriodiButton";
-            this.impostaPeriodiButton.Size = new System.Drawing.Size(349, 26);
+            this.impostaPeriodiButton.Size = new System.Drawing.Size(232, 26);
             this.impostaPeriodiButton.TabIndex = 9;
             this.impostaPeriodiButton.Text = "Imposta Nuovi Periodi";
             this.impostaPeriodiButton.UseVisualStyleBackColor = false;
@@ -142,16 +143,30 @@
             this.modificaPeriodiButton.FlatAppearance.BorderSize = 0;
             this.modificaPeriodiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modificaPeriodiButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificaPeriodiButton.Location = new System.Drawing.Point(350, 546);
+            this.modificaPeriodiButton.Location = new System.Drawing.Point(233, 546);
             this.modificaPeriodiButton.Name = "modificaPeriodiButton";
-            this.modificaPeriodiButton.Size = new System.Drawing.Size(348, 26);
+            this.modificaPeriodiButton.Size = new System.Drawing.Size(232, 26);
             this.modificaPeriodiButton.TabIndex = 10;
             this.modificaPeriodiButton.Text = "Modifica Periodi Esistenti";
             this.modificaPeriodiButton.UseVisualStyleBackColor = false;
             // 
+            // rimuoviTuttiIPeriodiButton
+            // 
+            this.rimuoviTuttiIPeriodiButton.BackColor = System.Drawing.Color.LightGray;
+            this.rimuoviTuttiIPeriodiButton.FlatAppearance.BorderSize = 0;
+            this.rimuoviTuttiIPeriodiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rimuoviTuttiIPeriodiButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rimuoviTuttiIPeriodiButton.Location = new System.Drawing.Point(466, 546);
+            this.rimuoviTuttiIPeriodiButton.Name = "rimuoviTuttiIPeriodiButton";
+            this.rimuoviTuttiIPeriodiButton.Size = new System.Drawing.Size(232, 26);
+            this.rimuoviTuttiIPeriodiButton.TabIndex = 11;
+            this.rimuoviTuttiIPeriodiButton.Text = "Rimuovi Periodi Esistenti";
+            this.rimuoviTuttiIPeriodiButton.UseVisualStyleBackColor = false;
+            // 
             // GestionePeriodiPanel
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.Controls.Add(this.rimuoviTuttiIPeriodiButton);
             this.Controls.Add(this.modificaPeriodiButton);
             this.Controls.Add(this.impostaPeriodiButton);
             this.Controls.Add(this.periodiDataGridView);
@@ -170,5 +185,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataFineProfiloColumn;
         private Components.MyButton impostaPeriodiButton;
         private Components.MyButton modificaPeriodiButton;
+        private Components.MyButton rimuoviTuttiIPeriodiButton;
     }
 }

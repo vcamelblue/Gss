@@ -227,6 +227,7 @@ namespace Gss.Controller
         {
             if (this.Gss.ProfiliPrezziRisorse.Profili.Contains(profilo))
                 throw new Exception("Aggiunto Profilo già esistente");
+            this.Gss.ProfiliPrezziRisorse.Add(profilo);
         }
 
         public void SetProfilo(ProfiloPrezziRisorse profilo, string nomeProfiloPrimaDelleModifiche)

@@ -146,7 +146,7 @@ namespace Gss.Controller
                     else
                     {
                         periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - i).Profilo); // .Clone()???
-                        result += "Inserito " + periodoTemp+" in " + temp.ElementAt(i-1)+"\n";
+                        result += "Inserito " + temp.ElementAt(i)+" in " + temp.ElementAt(i-1)+"\n";
                         temp.Add(periodoTemp);
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                         temp.Sort(new PeriodoComparer());
@@ -160,6 +160,7 @@ namespace Gss.Controller
                 }
                 i++;
             }
+            i--;
             if(DateTime.Compare(temp.ElementAt(i).DataFine,Gss.Resort.DataFineStagione)<0)
             {
                 result += temp.ElementAt(i) + " modificato con data fine portata a " + Gss.Resort.DataFineStagione.ToShortDateString();

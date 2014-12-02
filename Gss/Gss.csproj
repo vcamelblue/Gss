@@ -172,6 +172,12 @@
     <Compile Include="View\MainViewPanel\RiepilogoGiornalieroPanel.Designer.cs">
       <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AggiungiModificaPeriodi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AggiungiModificaPeriodi.designer.cs">
+      <DependentUpon>AggiungiModificaPeriodi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuovaPrenotazione.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainViewPanel\RiepilogoGiornalieroPanel.resx">
       <DependentUpon>RiepilogoGiornalieroPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AggiungiModificaPeriodi.resx">
+      <DependentUpon>AggiungiModificaPeriodi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovaPrenotazione.resx">
       <DependentUpon>NuovaPrenotazione.cs</DependentUpon>

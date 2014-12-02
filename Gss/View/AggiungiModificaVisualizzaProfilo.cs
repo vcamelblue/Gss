@@ -65,6 +65,7 @@ namespace Gss.View
             }
             if (inViewMode)
             {
+                risorseDataGridView.Enabled = true;
                 nomeProfiloTextBox.Text = profilo.Nome;
                 nomeProfiloTextBox.Enabled = false;
                 prezzoPerAccessoImpiantoTextBox.Enabled = false;
@@ -94,10 +95,6 @@ namespace Gss.View
         private void risorseDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count)
-            {
-                prossimaRisorsaButton.Text = "Imposta Ultima Risorsa";
-            }
             // Mostro la pagina adatta alla risorsa
             if (IndividuaRisorsa(codiceSelezionato) is Impianto)
             {
@@ -190,6 +187,11 @@ namespace Gss.View
 
         private void prossimaRisorsaButton_Click(object sender, EventArgs e)
         {
+            if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 2)
+            {
+                    prossimaRisorsaButton.Enabled = false;
+            }
+
             if (!inEditingMode && !inViewMode)
             {
                 string nomeProfilo = nomeProfiloTextBox.Text;

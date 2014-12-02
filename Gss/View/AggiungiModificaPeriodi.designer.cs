@@ -212,6 +212,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaPeriodi";
             this.Text = "Nuovi Periodi Stagione";
+            this.Load += new System.EventHandler(this.AggiungiModificaPeriodi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.periodiDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

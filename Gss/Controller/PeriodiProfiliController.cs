@@ -15,8 +15,33 @@ namespace Gss.Controller
 
         }
 
+        public void RemovePeriodo(Periodo periodo)
+        {
+            List<Periodo> periodi=this.Gss.GestorePeriodi.Periodi;
+            if (periodi.Remove(periodo))
+                throw new Exception("Il periodo che si tenta di rimuovere non è presente nella lista dei periodi");
+            SetPeriodi(periodi);
 
+        }
 
+        public void AddPeriodo(Periodo periodo)
+        {
+            if (!CanAddPeriodo(periodo))
+                throw new Exception("Non è possibile aggiungere il periodo perchè esiste già un periodo con data inizio "+periodo.DataInizio.ToString("dd MM yy"));
+            List<Periodo> periodi = this.Gss.GestorePeriodi.Periodi;
+            periodi.Add(periodo);
+            SetPeriodi(periodi);
+        }
+
+        private bool CanAddPeriodo(Periodo periodo)
+        {
+            foreach(Periodo p in this.Gss.GestorePeriodi.Periodi)
+            {
+                if (p.DataInizio == periodo.DataInizio)
+                    return false;
+            }
+            return true;
+        }
 
         public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
@@ -56,7 +81,7 @@ namespace Gss.Controller
                 i++;
             }
             temp.Last().DataFine = Gss.Resort.DataFineStagione;
-            GSS.GetInstance().GestorePeriodi.Periodi = temp;
+            this.Gss.GestorePeriodi.Periodi = temp;
             return temp;
 
         }

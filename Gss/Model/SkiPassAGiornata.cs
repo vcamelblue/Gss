@@ -34,7 +34,7 @@ namespace Gss.Model
         public override double GetPrezzoSkiPass()
         {
             double prezzo = 0;
-            DateTime data = DataInizio;
+            DateTime data = DataInizio.Date;
 
             while(data<=DataFine)
             {

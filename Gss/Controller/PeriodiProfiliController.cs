@@ -295,6 +295,16 @@ namespace Gss.Controller
                 throw new Exception("Profilo non rimosso");
         }
             
+        public List<Periodo> GetAllPeriodiClone()
+        {
+            List<Periodo> result = new List<Periodo>();
+
+            foreach(Periodo p in this.Gss.GestorePeriodi.Periodi)
+            {
+                result.Add((Periodo)p.Clone());
+            }
+            return result;
+        }
         
     }
 }

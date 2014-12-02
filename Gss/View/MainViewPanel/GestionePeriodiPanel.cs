@@ -26,6 +26,9 @@ namespace Gss.View.MainViewPanel
             container.Add(this);
 
             InitializeComponent();
+
+            modificaPeriodiButton.Enabled = (periodiProfiliController.GetAllPeriodi().Count > 0);
+            rimuoviTuttiIPeriodiButton.Enabled = (periodiProfiliController.GetAllPeriodi().Count > 0);
         }
 
 
@@ -64,6 +67,7 @@ namespace Gss.View.MainViewPanel
         }
 
         //Methods
+
         public override void Refresh()
         {
             base.Refresh();
@@ -77,9 +81,20 @@ namespace Gss.View.MainViewPanel
         {
             periodiDataGridView.Rows.Clear();
 
-            foreach (Periodo p in periodiProfiliController.GetAllPeriodi())
+            if (periodiProfiliController.GetAllPeriodi().Count > 0)
             {
-                periodiDataGridView.Rows.Add(p.Profilo.Nome, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"));
+                foreach (Periodo p in periodiProfiliController.GetAllPeriodi())
+                {
+                    periodiDataGridView.Rows.Add(p.Profilo.Nome, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"));
+                }
+
+                modificaPeriodiButton.Enabled = true;
+                rimuoviTuttiIPeriodiButton.Enabled = true;
+            }
+            else
+            {
+                modificaPeriodiButton.Enabled = false;
+                rimuoviTuttiIPeriodiButton.Enabled = false;
             }
         }
     }

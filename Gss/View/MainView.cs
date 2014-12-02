@@ -69,7 +69,7 @@ namespace Gss.View
             gestioneProfiliTabPage.Controls.Add(gestioneProfiliPanel);
 
             //Creo e Aggiungo il pannello Periodi
-            gestionePeriodiPanel = new GestionePeriodiPanel(this.components);
+            gestionePeriodiPanel = new GestionePeriodiPanel(this.components,periodiProfiliController);
             gestionePeriodiTabPage.Controls.Add(gestionePeriodiPanel);
 
             //Creo e Aggiungo il pannello Incassi

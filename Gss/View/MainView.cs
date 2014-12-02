@@ -61,7 +61,7 @@ namespace Gss.View
             gestioneClientiTabPage.Controls.Add(gestioneClientiPanel);
 
             //Creo e Aggiungo il pannello Resort
-            gestioneResortPanel = new GestioneResortPanel(this.components);
+            gestioneResortPanel = new GestioneResortPanel(this.components,resortController);
             gestioneResortTabPage.Controls.Add(gestioneResortPanel);
 
             //Creo e Aggiungo il pannello Profili

@@ -94,6 +94,10 @@ namespace Gss.View
         private void risorseDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count)
+            {
+                prossimaRisorsaButton.Enabled = false;
+            }
             // Mostro la pagina adatta alla risorsa
             if (IndividuaRisorsa(codiceSelezionato) is Impianto)
             {

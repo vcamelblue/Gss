@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class ProfiloPrezziRisorse
+    public class ProfiloPrezziRisorse : ICloneable
     {
         private string _nome;
         private Dictionary<Risorsa, PrezziRisorsa> _prezziRisorsa;
@@ -73,6 +73,22 @@ namespace Gss.Model
             if (this.Nome == profilo.Nome)
                 return true;
             return false;
+        }
+
+        public object Clone()
+        {
+            ProfiloPrezziRisorse result = new ProfiloPrezziRisorse(this.Nome);
+
+            result.PrezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
+
+            foreach(Risorsa risorsa in this.PrezziRisorsa.Keys){
+
+                Risorsa risClone = (Risorsa) risorsa.Clone();
+                PrezziRisorsa prezziRisClone = (PrezziRisorsa) this.PrezziRisorsa[risorsa].Clone();
+
+                result.Add(risClone, prezziRisClone);
+            }
+            return result;
         }
     }
 }

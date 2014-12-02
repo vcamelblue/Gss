@@ -49,6 +49,8 @@ namespace Gss.View
             string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
             ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloByNome(nomeProfilo);
 
+            //AGGIUNGERE CONTROLLO CHE UN PERIODO AGGIUNTO/MODIFICATO NON SIA GIA PRESENTE!!! GRAVE ERRORE ALTRIMENTI!
+
             if (inEditingMode)
             {
                 foreach (Periodo p in periodi)
@@ -58,6 +60,7 @@ namespace Gss.View
                         p.DataInizio = dataInizio;
                         p.DataFine = dataFine;
                         p.Profilo = profiloScelto;
+                        this.DialogResult = DialogResult.OK;
                     }
                 }
             }
@@ -65,6 +68,7 @@ namespace Gss.View
             {
                 Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
                 periodi.Add(periodo);
+                this.DialogResult = DialogResult.OK;
             }
             
         }

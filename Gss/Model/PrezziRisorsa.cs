@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class PrezziRisorsa
+    public class PrezziRisorsa : ICloneable
     {
         private double _prezzo;
         private List<PrezzoSpecifico> _prezziSpecifici;
@@ -69,6 +69,18 @@ namespace Gss.Model
                 }
             }
             return null; // trattare il null nelle funzioni sopra
+        }
+
+        public object Clone()
+        {
+            PrezziRisorsa result = new PrezziRisorsa(this.Prezzo, new List<PrezzoSpecifico>());
+
+            foreach (PrezzoSpecifico p in this.PrezziSpecifici)
+            {
+                result.PrezziSpecifici.Add(new PrezzoSpecifico(p.Tipologia, p.Valore));
+            }
+
+            return result;
         }
     }
 }

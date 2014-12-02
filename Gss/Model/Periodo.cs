@@ -64,7 +64,7 @@ namespace Gss.Model
 
         public object Clone()
         {
-            return new Periodo(this.DataInizio, this.DataFine, this.Profilo);
+            return new Periodo(this.DataInizio, this.DataFine, (ProfiloPrezziRisorse) this.Profilo.Clone());
         }
 
         public override bool Equals(object obj)

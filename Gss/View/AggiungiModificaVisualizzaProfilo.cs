@@ -23,6 +23,8 @@ namespace Gss.View
 
         public AggiungiModificaVisualizzaProfilo(ResortController resortController, PeriodiProfiliController periodiProfiliController) 
 		{
+
+            //FIELDS
             this.resortController = resortController;
             this.periodiProfiliController = periodiProfiliController;
             inEditingMode = false;
@@ -33,6 +35,8 @@ namespace Gss.View
             //aggiustare tabulazione per passare al prossimo controllo!
         }
 
+
+        //COSTRUCTORS
         public AggiungiModificaVisualizzaProfilo(ResortController resortController, PeriodiProfiliController periodiProfiliController, ProfiloPrezziRisorse profilo, bool inViewMode)
         {
             this.resortController = resortController;

@@ -14,7 +14,10 @@ namespace Gss.Controller
         {
 
         }
-
+        public void RemoveAllPeriodi()
+        {
+            this.Gss.GestorePeriodi.Periodi = new List<Periodo>();
+        }
         public void RemovePeriodo(Periodo periodo)
         {
             List<Periodo> periodi=this.Gss.GestorePeriodi.Periodi;
@@ -113,8 +116,9 @@ namespace Gss.Controller
                 {
                     if (temp.ElementAt(i).DataFine < temp.ElementAt(i - 1).DataFine)
                     {
-                        result += temp.ElementAt(i - 1) + " modificato con data fine portata a" + temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                        result += temp.ElementAt(i - 1) + " modificato con data fine portata a" + temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
+                        
                     }
                     else
                     {

@@ -14,10 +14,16 @@ namespace Gss.View
 {
     public partial class AggiungiModificaPeriodo : Form 
     {
+
+        //Fields
+
         private PeriodiProfiliController periodiProfiliController;
         private bool inEditingMode;
         private Periodo periodo;
         private List<Periodo> periodi;
+
+
+        //Constructors
 
         public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController,List<Periodo> periodi) 
         {
@@ -42,6 +48,8 @@ namespace Gss.View
         }
 
 
+        //Events
+
         private void salvaButton_Click(object sender, EventArgs e) 
         {
             DateTime dataInizio = dataInizioTimePicker.Value;
@@ -51,24 +59,45 @@ namespace Gss.View
 
             //AGGIUNGERE CONTROLLO CHE UN PERIODO AGGIUNTO/MODIFICATO NON SIA GIA PRESENTE!!! GRAVE ERRORE ALTRIMENTI!
 
-            if (inEditingMode)
+            if (periodoConDataInizioGiaSettataInAltroPeriodo(profiloScelto, dataInizio))
             {
-                foreach (Periodo p in periodi)
+                MessageBox.Show("Il periodo inserito contiene una Data Inizio già presente in un'altro periodo! Modifica i campi per continuare.");
+            }
+            else if (periodoGiaEsistente(profiloScelto, dataInizio, dataFine))
+            {
+                MessageBox.Show("Il periodo inserito esiste già!\nModifica i campi per continuare.");
+            }
+            else if (inEditingMode)
+            {
+                if(!(periodo.Profilo.Equals(profiloScelto)      && 
+                     periodo.DataInizio.Date == dataInizio.Date && 
+                     periodo.DataFine.Date == dataFine.Date) ) //testo se almeno qualcosa è cambiato
                 {
-                    if (p.Equals(periodo))
+                    foreach (Periodo p in periodi)
                     {
-                        p.DataInizio = dataInizio;
-                        p.DataFine = dataFine;
-                        p.Profilo = profiloScelto;
-                        this.DialogResult = DialogResult.OK;
+                        if (p.Equals(periodo))
+                        {
+                            p.DataInizio = dataInizio;
+                            p.DataFine = dataFine;
+                            p.Profilo = profiloScelto;
+
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Nessuna modifica apportata!");
+                }                
             }
             else
             {
                 Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
                 periodi.Add(periodo);
+
                 this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             
         }
@@ -82,6 +111,9 @@ namespace Gss.View
         {
             RiempiProfiloComboBox();
         }
+
+
+        //Private Utility Methods
 
         private void RiempiProfiloComboBox()
         {
@@ -100,6 +132,33 @@ namespace Gss.View
                 dataInizioTimePicker.Value = periodo.DataInizio;
                 dataFineTimePicker.Value = periodo.DataFine;
             }
+        }
+
+
+        private bool periodoGiaEsistente(ProfiloPrezziRisorse profiloScelto, DateTime dataInizio, DateTime dataFine)
+        {
+            foreach (Periodo p in periodi)
+            {
+                //escludo il periodo passato a questa form e testo sugli altri
+                if (  periodo != null && !(p.Equals(periodo)) && p.Equals(new Periodo(dataInizio,dataFine,profiloScelto)))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool periodoConDataInizioGiaSettataInAltroPeriodo(ProfiloPrezziRisorse profiloScelto, DateTime dataInizio)
+        {
+            foreach (Periodo p in periodi)
+            {
+                //escludo il periodo passato a questa form e testo sugli altri
+                if (periodo != null && !(p.Equals(periodo)) &&  p.DataInizio.Date == dataInizio.Date)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

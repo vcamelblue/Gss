@@ -76,6 +76,7 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiGrigliaPrenotazioniFuture()
         {
+            prenotazioniDataGridView.Rows.Clear();
             foreach (Prenotazione p in prenotazioniController.GetPrenotazioniFuture().ListaPrenotazioni)
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
@@ -84,6 +85,7 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiGrigliaPrenotazioniInCorso()
         {
+            prenotazioniDataGridView.Rows.Clear();
             foreach (Prenotazione p in prenotazioniController.GetPrenotazioniInCorsoOggi().ListaPrenotazioni)
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
@@ -92,6 +94,7 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiGrigliaPrenotazioniConcluse()
         {
+            prenotazioniDataGridView.Rows.Clear();
             foreach (Prenotazione p in prenotazioniController.GetPrenotazioniConcluseNonArchiviate().ListaPrenotazioni)
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
@@ -127,7 +130,6 @@ namespace Gss.View.MainViewPanel
         public override void Refresh()
         {
             base.Refresh();
-            prenotazioniDataGridView.Rows.Clear();
             selectRightTab(prenotazioniInCorsoTabButton);
             RiempiGrigliaPrenotazioniInCorso();
         }

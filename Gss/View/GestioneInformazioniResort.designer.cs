@@ -182,6 +182,7 @@
             this.salvaButton.TabIndex = 12;
             this.salvaButton.Text = "Salva";
             this.salvaButton.UseVisualStyleBackColor = false;
+            this.salvaButton.Click += new System.EventHandler(this.salvaButton_Click);
             // 
             // annullaButton
             // 

@@ -42,6 +42,7 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiGrigliaClienti()
         {
+            clientiDataGridView.Rows.Clear();
             foreach (Cliente c in clientiController.GetAllClienti().ListaClienti)
             {
                 clientiDataGridView.Rows.Add(c.Nome, c.Cognome, c.CodiceFiscale, c.Telefono, c.Email);
@@ -51,7 +52,6 @@ namespace Gss.View.MainViewPanel
         public override void Refresh()
         {
             base.Refresh();
-            clientiDataGridView.Rows.Clear();
             RiempiGrigliaClienti();
         }
 

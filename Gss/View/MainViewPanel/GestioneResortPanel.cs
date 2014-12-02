@@ -30,8 +30,8 @@ namespace Gss.View.MainViewPanel
 
         private void GestioneResortPanel_Load(object sender, EventArgs e)
         {
-            dataFineStagioneTimePicker.Value = resortController.Gss.Resort.DataFineStagione;
-            dataInizioStagioneTimePicker.Value = resortController.Gss.Resort.DataInizioStagione;
+            dataInizioStagioneTextBox.Text = resortController.Gss.Resort.DataInizioStagione == DateTime.MinValue ? "Non Impostata" : resortController.Gss.Resort.DataInizioStagione.ToString("d MMMM yyyy");
+            dataFineStagioneTextBox.Text = resortController.Gss.Resort.DataFineStagione == DateTime.MinValue ? "Non Impostata" : resortController.Gss.Resort.DataFineStagione.ToString("d MMMM yyyy");
             RiempiBungalowGrid();
             RiempiImpiantiGrid();
         }

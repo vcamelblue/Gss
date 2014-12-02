@@ -57,6 +57,8 @@ namespace Gss.View
             else
             {
                 codiceTextBox.Text = prenotazioniController.Gss.NumeroSkiCards.ToString();
+                modificaSkipassButton.Enabled = false;
+                rimuoviSkipssButton.Enabled = false;
             }
         }
 
@@ -70,6 +72,11 @@ namespace Gss.View
                 totale += s.GetPrezzoSkiPass();
             }
             totaleSkipassLabel.Text = "Totale SkiPass  " + totale + " €";
+            if (skiCard.SkiPass.Count==0)
+            {
+                modificaSkipassButton.Enabled = false;
+                rimuoviSkipssButton.Enabled = false;
+            }
         }
 
         private string GetTipologiaSkipass(SkiPass skipass)

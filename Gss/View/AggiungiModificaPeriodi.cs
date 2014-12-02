@@ -41,7 +41,10 @@ namespace Gss.View
         private void RiempiGrigliaPeriodi()
         {
             periodiDataGridView.Rows.Clear();
-            //foreach(Periodo p in periodiProfiliController)
+            foreach (Periodo p in periodiProfiliController.GetAllPeriodi())
+            {
+                periodiDataGridView.Rows.Add(p.Profilo.Nome, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"));
+            }
         }
 
         public override void Refresh()

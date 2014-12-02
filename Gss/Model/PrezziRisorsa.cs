@@ -18,6 +18,17 @@ namespace Gss.Model
             _prezziSpecifici = prezziSpecifici;
         }
 
+        public PrezziRisorsa()
+        {
+            _prezzo = 0;
+            _prezziSpecifici = new List<PrezzoSpecifico>();
+            foreach(TipologiaPrezzo ps in Enum.GetValues(typeof(TipologiaPrezzo)))
+            {
+                _prezziSpecifici.Add(new PrezzoSpecifico(ps, 0));
+            }
+            
+        }
+
         public double Prezzo
         {
             get { return _prezzo; }

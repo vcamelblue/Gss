@@ -216,7 +216,7 @@ namespace Gss.Controller
         public void SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
         {
 
-            if (Gss.Resort.DataInizioStagione < DateTime.Today)
+            if (DateTime.Compare( Gss.Resort.DataInizioStagione.Date, DateTime.Today)<0)
             {
                 throw new Exception("Impossibile modificare data, stagione in corso");
             }

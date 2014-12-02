@@ -48,7 +48,10 @@ namespace Gss.Model
 
         public PrezziRisorsa GetPrezziRisorsa(Risorsa risorsa)
         {
-            return _prezziRisorsa[risorsa];
+            if (_prezziRisorsa.Keys.Contains(risorsa))
+                return _prezziRisorsa[risorsa];
+            else
+                return new PrezziRisorsa();
         }
 
         public override string ToString()

@@ -38,6 +38,7 @@ namespace Gss.View.MainViewPanel
 
         private void RiempiGridProfili()
         {
+            profiliDataGridView.Rows.Clear();
             foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().Profili)
             {
                 profiliDataGridView.Rows.Add(p.Nome);
@@ -67,7 +68,8 @@ namespace Gss.View.MainViewPanel
             DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il profilo selezionato?", "Rimozione Profilo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                //periodiProfiliController
+                periodiProfiliController.RemoveProfilo(profiloSelezionato);
+                Refresh();
             }
         }
 

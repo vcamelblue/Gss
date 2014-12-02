@@ -38,13 +38,7 @@ namespace Gss.View
             this.resortController = resortController;
 
             InitializeComponent();
-           
-        }
 
-        private void clienteTabButton_Click(object sender, EventArgs e)
-        {
-            tabControlWithoutHeader.SelectedIndex = (tabControlWithoutHeader.SelectedIndex + 1 < tabControlWithoutHeader.TabCount) ?
-                             tabControlWithoutHeader.SelectedIndex + 1 : tabControlWithoutHeader.SelectedIndex;
         }
 
         private void NuovaPrenotazione_Load(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace Gss
     {
         public static void myTest() 
         {
-
+            /*
 
             #region Clienti
             //Clienti
@@ -96,6 +96,16 @@ namespace Gss
 
             //Application.Run(new Form1(clientiController));
             //Application.Run(new VisualizzaFattura());
+             * */
+
+            
+            ClientiController cc = new ClientiController();
+            PeriodiProfiliController ppc = new PeriodiProfiliController();
+            PrenotazioniController pc = new PrenotazioniController();
+            ResortController rc = new ResortController();
+
+            Application.Run(new MainView(pc, cc, rc, ppc));
+
         }
     }
 }

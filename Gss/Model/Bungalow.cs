@@ -95,25 +95,52 @@ namespace Gss.Model
             return true;   
         }
 
-        /*public override bool Equals(object obj)
-        {
-            Bungalow bungalow = null;
-            if (obj is Bungalow)
-            {
-                bungalow = (Bungalow)obj;
-            }
-            else
-                return false;
-            if (this.Codice == bungalow.Codice)
-                return true;
-            return false;
-        }*/
-
         public override string ToString()
         {
-            return base.ToString()+" "+this.PostiTotaliStandard()+" "+this.PostiTotaliMax();
+            string result = Codice + " - Posti Standard: " + PostiTotaliStandard() + ", Posti Totali: " + PostiTotaliMax()+"  -  ";
+           
+            return result += ToStringStanze();
         }
 
+        public string ToStringStanze()
+        {
+            string result = "  ";
+
+            foreach (Stanza s in Stanze)
+            {   
+                if (result.Contains(s.ToString()))
+                {
+                    if (ContaOccorrenzeStanza(s) > 1) // faccio il plurale della stanza replicata
+                    {
+                        string nuovaStringa = s.ToString().Remove(s.ToString().Length-1);
+                        nuovaStringa += "e";
+                        result = result.Replace("1 " + s.ToString(), ContaOccorrenzeStanza(s) + " " + nuovaStringa);
+                    }
+                    else
+                    {
+                        result = result.Replace("1 " + s.ToString(), ContaOccorrenzeStanza(s) + " " + s.ToString());
+                    }
+                }
+                else
+                {
+                    result += "1 "+s.ToString() + " + ";
+                }
+            }
+            return result.Remove(result.LastIndexOf("+")); //tolgo l'ultimo più che nel ciclo si aggiunge alla stringa
+        }
+
+        private int ContaOccorrenzeStanza(Stanza stanza)
+        {
+            int result = 0;
+            foreach (Stanza s in Stanze)
+            {
+                if (s.NumeroPostiStandard == stanza.NumeroPostiStandard)
+                {
+                    result++;
+                }
+            }
+            return result;
+        } // conto quante stanze uguali ci sono
 
         public override object Clone()
         {

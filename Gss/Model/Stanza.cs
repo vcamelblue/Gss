@@ -51,5 +51,14 @@ namespace Gss.Model
         {
             return new Stanza(NumeroPostiStandard, NumeroPostiMax);
         }
+
+        public override string ToString()
+        {
+            return (NumeroPostiStandard == 1 ? "Singola" :
+                    NumeroPostiStandard == 2 ? "Doppia" :
+                    NumeroPostiStandard == 3 ? "Tripla" :
+                    NumeroPostiStandard == 4 ? "Quadrupla" :
+                    NumeroPostiStandard == 5 ? "Quintupla" : NumeroPostiStandard+"upla");
+        }
     }
 }

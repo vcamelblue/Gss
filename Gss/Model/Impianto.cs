@@ -141,11 +141,7 @@ namespace Gss.Model
         public override string ToString()
         {
             string result = "";
-            result += this._nome + " " + this._versante + " \n";
-            foreach(Pista p in this._piste)
-            {
-                result += p.ToString() + "\n";
-            }
+            result =Codice+ " - " + Nome + ",  Versante: " + Versante + " ";
             return result;
         }
 

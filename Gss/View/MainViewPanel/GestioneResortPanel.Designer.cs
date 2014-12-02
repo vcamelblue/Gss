@@ -40,8 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataInizioStagioneTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dataFineStagioneTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
@@ -55,6 +53,8 @@
             this.totalePostiResortLabel = new Gss.View.Components.MyLabel(this.components);
             this.myLabel8 = new Gss.View.Components.MyLabel(this.components);
             this.gestioneBungalowsButton = new Gss.View.Components.MyButton(this.components);
+            this.dataFineStagioneTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.dataInizioStagioneTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.gestioneInfoResortButton = new Gss.View.Components.MyButton(this.components);
             this.myLabel4 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel5 = new Gss.View.Components.MyLabel(this.components);
@@ -80,27 +80,11 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
-            // dataInizioStagioneTimePicker
-            // 
-            this.dataInizioStagioneTimePicker.Enabled = false;
-            this.dataInizioStagioneTimePicker.Location = new System.Drawing.Point(194, 41);
-            this.dataInizioStagioneTimePicker.Name = "dataInizioStagioneTimePicker";
-            this.dataInizioStagioneTimePicker.Size = new System.Drawing.Size(266, 20);
-            this.dataInizioStagioneTimePicker.TabIndex = 12;
-            // 
-            // dataFineStagioneTimePicker
-            // 
-            this.dataFineStagioneTimePicker.Enabled = false;
-            this.dataFineStagioneTimePicker.Location = new System.Drawing.Point(194, 78);
-            this.dataFineStagioneTimePicker.Name = "dataFineStagioneTimePicker";
-            this.dataFineStagioneTimePicker.Size = new System.Drawing.Size(266, 20);
-            this.dataFineStagioneTimePicker.TabIndex = 13;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dataFineStagioneTextBox);
+            this.groupBox2.Controls.Add(this.dataInizioStagioneTextBox);
             this.groupBox2.Controls.Add(this.gestioneInfoResortButton);
-            this.groupBox2.Controls.Add(this.dataFineStagioneTimePicker);
-            this.groupBox2.Controls.Add(this.dataInizioStagioneTimePicker);
             this.groupBox2.Controls.Add(this.myLabel4);
             this.groupBox2.Controls.Add(this.myLabel5);
             this.groupBox2.Location = new System.Drawing.Point(-11, 6);
@@ -117,7 +101,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(308, 119);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(64, 23);
+            this.myLabel2.Size = new System.Drawing.Size(82, 29);
             this.myLabel2.TabIndex = 23;
             this.myLabel2.Text = "Risorse";
             // 
@@ -129,7 +113,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(311, -1);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(59, 23);
+            this.myLabel1.Size = new System.Drawing.Size(76, 29);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Resort";
             // 
@@ -220,7 +204,7 @@
             this.totalePisteResortLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.totalePisteResortLabel.Location = new System.Drawing.Point(40, 410);
             this.totalePisteResortLabel.Name = "totalePisteResortLabel";
-            this.totalePisteResortLabel.Size = new System.Drawing.Size(134, 17);
+            this.totalePisteResortLabel.Size = new System.Drawing.Size(168, 21);
             this.totalePisteResortLabel.TabIndex = 21;
             this.totalePisteResortLabel.Text = "Totali Piste Resort    60";
             // 
@@ -232,7 +216,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(40, 17);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(80, 19);
+            this.myLabel6.Size = new System.Drawing.Size(100, 24);
             this.myLabel6.TabIndex = 15;
             this.myLabel6.Text = "Bungalows";
             // 
@@ -309,7 +293,7 @@
             this.totalePostiResortLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.totalePostiResortLabel.Location = new System.Drawing.Point(40, 195);
             this.totalePostiResortLabel.Name = "totalePostiResortLabel";
-            this.totalePostiResortLabel.Size = new System.Drawing.Size(139, 17);
+            this.totalePostiResortLabel.Size = new System.Drawing.Size(173, 21);
             this.totalePostiResortLabel.TabIndex = 17;
             this.totalePostiResortLabel.Text = "Totale Posti Resort  180";
             // 
@@ -321,7 +305,7 @@
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel8.Location = new System.Drawing.Point(40, 232);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(115, 19);
+            this.myLabel8.Size = new System.Drawing.Size(143, 24);
             this.myLabel8.TabIndex = 19;
             this.myLabel8.Text = "Impianti Sciistici";
             // 
@@ -339,13 +323,39 @@
             this.gestioneBungalowsButton.UseVisualStyleBackColor = false;
             this.gestioneBungalowsButton.Click += new System.EventHandler(this.gestioneBungalowsButton_Click);
             // 
+            // dataFineStagioneTextBox
+            // 
+            this.dataFineStagioneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dataFineStagioneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataFineStagioneTextBox.Enabled = false;
+            this.dataFineStagioneTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataFineStagioneTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.dataFineStagioneTextBox.Location = new System.Drawing.Point(194, 79);
+            this.dataFineStagioneTextBox.Name = "dataFineStagioneTextBox";
+            this.dataFineStagioneTextBox.Size = new System.Drawing.Size(266, 21);
+            this.dataFineStagioneTextBox.TabIndex = 16;
+            this.dataFineStagioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // dataInizioStagioneTextBox
+            // 
+            this.dataInizioStagioneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dataInizioStagioneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataInizioStagioneTextBox.Enabled = false;
+            this.dataInizioStagioneTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataInizioStagioneTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.dataInizioStagioneTextBox.Location = new System.Drawing.Point(194, 42);
+            this.dataInizioStagioneTextBox.Name = "dataInizioStagioneTextBox";
+            this.dataInizioStagioneTextBox.Size = new System.Drawing.Size(266, 21);
+            this.dataInizioStagioneTextBox.TabIndex = 15;
+            this.dataInizioStagioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // gestioneInfoResortButton
             // 
             this.gestioneInfoResortButton.BackColor = System.Drawing.Color.LightGray;
             this.gestioneInfoResortButton.FlatAppearance.BorderSize = 0;
             this.gestioneInfoResortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestioneInfoResortButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneInfoResortButton.Location = new System.Drawing.Point(484, 57);
+            this.gestioneInfoResortButton.Location = new System.Drawing.Point(484, 77);
             this.gestioneInfoResortButton.Name = "gestioneInfoResortButton";
             this.gestioneInfoResortButton.Size = new System.Drawing.Size(187, 26);
             this.gestioneInfoResortButton.TabIndex = 14;
@@ -361,7 +371,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(30, 42);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(121, 17);
+            this.myLabel4.Size = new System.Drawing.Size(147, 21);
             this.myLabel4.TabIndex = 3;
             this.myLabel4.Text = "Data Inizio Stagione";
             // 
@@ -373,7 +383,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(30, 79);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(114, 17);
+            this.myLabel5.Size = new System.Drawing.Size(139, 21);
             this.myLabel5.TabIndex = 4;
             this.myLabel5.Text = "Data Fine Stagione";
             // 
@@ -416,8 +426,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private Components.MyLabel myLabel4;
         private Components.MyLabel myLabel5;
-        private System.Windows.Forms.DateTimePicker dataInizioStagioneTimePicker;
-        private System.Windows.Forms.DateTimePicker dataFineStagioneTimePicker;
         private System.Windows.Forms.GroupBox groupBox2;
+        private Components.MyTextBox dataFineStagioneTextBox;
+        private Components.MyTextBox dataInizioStagioneTextBox;
     }
 }

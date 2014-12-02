@@ -51,7 +51,19 @@ namespace Gss.View.MainViewPanel
 
         private void visualizzaFatturaButton_Click(object sender, EventArgs e)
         {
+            string fatturaSelezionata = incassiDataGridView.SelectedRows[0].Cells[0].Value.ToString();
 
+            PrenotazioneArchiviata prenotazioneSelezionata = null;
+            foreach (PrenotazioneArchiviata p in prenotazioniController.GetPrenotazioniArchiviate())
+            {
+                if (p.Fattura.Numero.ToString() == fatturaSelezionata)
+                {
+                    prenotazioneSelezionata = p;
+                }
+            }
+
+            VisualizzaFattura visualizzaFatturaForm = new VisualizzaFattura(prenotazioneSelezionata);
+            visualizzaFatturaForm.Show();
         }
     }
 }

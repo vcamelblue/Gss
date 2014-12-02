@@ -30,8 +30,8 @@ namespace Gss.View.MainViewPanel
 
         private void GestioneResortPanel_Load(object sender, EventArgs e)
         {
-            dataFineStagioneTimePicker.Value = resortController.Gss.Resort.DataFineStagione;
-            dataInizioStagioneTimePicker.Value = resortController.Gss.Resort.DataInizioStagione;
+            dataInizioStagioneTextBox.Text = resortController.Gss.Resort.DataInizioStagione == DateTime.MinValue ? "Non Impostata" : resortController.Gss.Resort.DataInizioStagione.ToString("d MMMM yyyy");
+            dataFineStagioneTextBox.Text = resortController.Gss.Resort.DataFineStagione == DateTime.MinValue ? "Non Impostata" : resortController.Gss.Resort.DataFineStagione.ToString("d MMMM yyyy");
             RiempiBungalowGrid();
             RiempiImpiantiGrid();
         }
@@ -42,7 +42,7 @@ namespace Gss.View.MainViewPanel
             int numImpianti = resortController.GetImpianti().ListaImpianti.Count;
             foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
             {
-                impiantiDataGridView.Rows.Add(" "+i.Codice+" - "+i.Nome+" - Versante: "+i.Versante);
+                impiantiDataGridView.Rows.Add(i.ToString());
             }
             totalePisteResortLabel.Text = "Piste Totali Resort  " + numImpianti;
         }
@@ -54,7 +54,7 @@ namespace Gss.View.MainViewPanel
             foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
             {
                 numeroPosti += b.PostiTotaliStandard();
-                bungalowsDataGridView.Rows.Add(" " + b.Codice + " - Posti Standard: " + b.PostiTotaliStandard() + ",  Posti Max: "+ b.PostiTotaliMax());
+                bungalowsDataGridView.Rows.Add(b.ToString());
             }
             totalePostiResortLabel.Text = "Posti Totali Resort  " + numeroPosti;
         }

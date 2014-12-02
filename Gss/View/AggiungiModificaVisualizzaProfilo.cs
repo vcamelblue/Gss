@@ -96,7 +96,7 @@ namespace Gss.View
             string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count)
             {
-                prossimaRisorsaButton.Enabled = false;
+                prossimaRisorsaButton.Text = "Imposta Ultima Risorsa";
             }
             // Mostro la pagina adatta alla risorsa
             if (IndividuaRisorsa(codiceSelezionato) is Impianto)

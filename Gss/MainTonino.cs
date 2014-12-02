@@ -91,7 +91,7 @@ namespace Gss
             
             
             //Creazione Resort con stagione
-            DateTime DataInizioStagione = DateTime.Today.AddDays(-7);
+            DateTime DataInizioStagione = DateTime.Today.AddMonths(-1);
             DateTime DataFineStagione = DateTime.Today.AddMonths(3);
             ResortController resortController = new ResortController();
             resortController.SetResort(new Resort("Gelbison SuperSki", "Via dei Pazzi, 23", "GSS@info.it", "335904825967", DataInizioStagione,DataFineStagione));
@@ -164,7 +164,7 @@ namespace Gss
             resortController.AddImpianto(impianto4);
             #endregion
 
-            PeriodiProfiliController periodiProfili = new PeriodiProfiliController();
+            PeriodiProfiliController periodiProfiliController = new PeriodiProfiliController();
 
             #region Profili
 
@@ -175,7 +175,7 @@ namespace Gss
             profili.Add(alta);
             profili.Add(bassa);
             profili.Add(media);
-            periodiProfili.Gss.ProfiliPrezziRisorse = profili;
+            periodiProfiliController.Gss.ProfiliPrezziRisorse = profili;
 
             #endregion
 
@@ -199,11 +199,11 @@ namespace Gss
             Periodo periodo5 = new Periodo(new DateTime(2015, 1, 27), new DateTime(2015, 2, 5));
             
 
-            periodo1.Profilo=periodiProfili.GetProfiloByNome("Bassa");
-            periodo2.Profilo = periodiProfili.GetProfiloByNome("Media");
-            periodo3.Profilo = periodiProfili.GetProfiloByNome("Alta");
-            periodo4.Profilo = periodiProfili.GetProfiloByNome("Media");
-            periodo5.Profilo = periodiProfili.GetProfiloByNome("Bassa");
+            periodo1.Profilo=periodiProfiliController.GetProfiloByNome("Bassa");
+            periodo2.Profilo = periodiProfiliController.GetProfiloByNome("Media");
+            periodo3.Profilo = periodiProfiliController.GetProfiloByNome("Alta");
+            periodo4.Profilo = periodiProfiliController.GetProfiloByNome("Media");
+            periodo5.Profilo = periodiProfiliController.GetProfiloByNome("Bassa");
               
 
 
@@ -215,7 +215,7 @@ namespace Gss
 
 
             //Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
-            periodiProfili.SetPeriodi(periodi);
+            periodiProfiliController.SetPeriodi(periodi);
             
 
             foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
@@ -274,90 +274,90 @@ namespace Gss
             PrezziRisorsa prezziBungalow8Bassa = new PrezziRisorsa(65, prezzispecifici);
 
 
-            periodiProfili.SetPrezzoRisorsa(b1, "Alta", prezziBungalow1Alta);
-            periodiProfili.SetPrezzoRisorsa(b2, "Alta", prezziBungalow2Alta);
-            periodiProfili.SetPrezzoRisorsa(b3, "Alta", prezziBungalow3Alta);
-            periodiProfili.SetPrezzoRisorsa(b4, "Alta", prezziBungalow4Alta);
-            periodiProfili.SetPrezzoRisorsa(b5, "Alta", prezziBungalow5Alta);
-            periodiProfili.SetPrezzoRisorsa(b6, "Alta", prezziBungalow6Alta);
-            periodiProfili.SetPrezzoRisorsa(b7, "Alta", prezziBungalow7Alta);
-            periodiProfili.SetPrezzoRisorsa(b8, "Alta", prezziBungalow8Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b1, "Alta", prezziBungalow1Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b2, "Alta", prezziBungalow2Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b3, "Alta", prezziBungalow3Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b4, "Alta", prezziBungalow4Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b5, "Alta", prezziBungalow5Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b6, "Alta", prezziBungalow6Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b7, "Alta", prezziBungalow7Alta);
+            periodiProfiliController.SetPrezzoRisorsa(b8, "Alta", prezziBungalow8Alta);
 
-            periodiProfili.SetPrezzoRisorsa(b1, "Media", prezziBungalow1Media);
-            periodiProfili.SetPrezzoRisorsa(b2, "Media", prezziBungalow2Media);
-            periodiProfili.SetPrezzoRisorsa(b3, "Media", prezziBungalow3Media);
-            periodiProfili.SetPrezzoRisorsa(b4, "Media", prezziBungalow4Media);
-            periodiProfili.SetPrezzoRisorsa(b5, "Media", prezziBungalow5Media);
-            periodiProfili.SetPrezzoRisorsa(b6, "Media", prezziBungalow6Media);
-            periodiProfili.SetPrezzoRisorsa(b7, "Media", prezziBungalow7Media);
-            periodiProfili.SetPrezzoRisorsa(b8, "Media", prezziBungalow8Media);
+            periodiProfiliController.SetPrezzoRisorsa(b1, "Media", prezziBungalow1Media);
+            periodiProfiliController.SetPrezzoRisorsa(b2, "Media", prezziBungalow2Media);
+            periodiProfiliController.SetPrezzoRisorsa(b3, "Media", prezziBungalow3Media);
+            periodiProfiliController.SetPrezzoRisorsa(b4, "Media", prezziBungalow4Media);
+            periodiProfiliController.SetPrezzoRisorsa(b5, "Media", prezziBungalow5Media);
+            periodiProfiliController.SetPrezzoRisorsa(b6, "Media", prezziBungalow6Media);
+            periodiProfiliController.SetPrezzoRisorsa(b7, "Media", prezziBungalow7Media);
+            periodiProfiliController.SetPrezzoRisorsa(b8, "Media", prezziBungalow8Media);
 
-            periodiProfili.SetPrezzoRisorsa(b1, "Bassa", prezziBungalow1Bassa);
-            periodiProfili.SetPrezzoRisorsa(b2, "Bassa", prezziBungalow2Bassa);
-            periodiProfili.SetPrezzoRisorsa(b3, "Bassa", prezziBungalow3Bassa);
-            periodiProfili.SetPrezzoRisorsa(b4, "Bassa", prezziBungalow4Bassa);
-            periodiProfili.SetPrezzoRisorsa(b5, "Bassa", prezziBungalow5Bassa);
-            periodiProfili.SetPrezzoRisorsa(b6, "Bassa", prezziBungalow6Bassa);
-            periodiProfili.SetPrezzoRisorsa(b7, "Bassa", prezziBungalow7Bassa);
-            periodiProfili.SetPrezzoRisorsa(b8, "Bassa", prezziBungalow8Bassa);
-
-
+            periodiProfiliController.SetPrezzoRisorsa(b1, "Bassa", prezziBungalow1Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b2, "Bassa", prezziBungalow2Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b3, "Bassa", prezziBungalow3Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b4, "Bassa", prezziBungalow4Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b5, "Bassa", prezziBungalow5Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b6, "Bassa", prezziBungalow6Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b7, "Bassa", prezziBungalow7Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(b8, "Bassa", prezziBungalow8Bassa);
 
 
-            periodiProfili.SetPrezzoRisorsa(impianto1, "Alta", prezziImpianto1Alta);
-            periodiProfili.SetPrezzoRisorsa(impianto2, "Alta", prezziImpianto2Alta);
-            periodiProfili.SetPrezzoRisorsa(impianto3, "Alta", prezziImpianto3Alta);
-            periodiProfili.SetPrezzoRisorsa(impianto4, "Alta", prezziImpianto4Alta);
-            periodiProfili.SetPrezzoRisorsa(impianto5, "Alta", prezziImpianto5Alta);
 
-            periodiProfili.SetPrezzoRisorsa(impianto1, "Media", prezziImpianto1Media);
-            periodiProfili.SetPrezzoRisorsa(impianto2, "Media", prezziImpianto2Media);
-            periodiProfili.SetPrezzoRisorsa(impianto3, "Media", prezziImpianto3Media);
-            periodiProfili.SetPrezzoRisorsa(impianto4, "Media", prezziImpianto4Media);
-            periodiProfili.SetPrezzoRisorsa(impianto5, "Media", prezziImpianto5Media);
 
-            periodiProfili.SetPrezzoRisorsa(impianto1, "Bassa", prezziImpianto1Bassa);
-            periodiProfili.SetPrezzoRisorsa(impianto2, "Bassa", prezziImpianto2Bassa);
-            periodiProfili.SetPrezzoRisorsa(impianto3, "Bassa", prezziImpianto3Bassa);
-            periodiProfili.SetPrezzoRisorsa(impianto4, "Bassa", prezziImpianto4Bassa);
-            periodiProfili.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Alta", prezziImpianto1Alta);
+            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Alta", prezziImpianto2Alta);
+            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Alta", prezziImpianto3Alta);
+            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Alta", prezziImpianto4Alta);
+            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Alta", prezziImpianto5Alta);
+
+            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Media", prezziImpianto1Media);
+            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Media", prezziImpianto2Media);
+            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Media", prezziImpianto3Media);
+            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Media", prezziImpianto4Media);
+            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Media", prezziImpianto5Media);
+
+            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Bassa", prezziImpianto1Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Bassa", prezziImpianto2Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Bassa", prezziImpianto3Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Bassa", prezziImpianto4Bassa);
+            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
             #endregion
             
-            PrenotazioniController prenotazioni = new PrenotazioniController();
+            PrenotazioniController prenotazioniController = new PrenotazioniController();
 
-            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-1), DateTime.Today, cliente5);
-            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata1);
-            prenotazioneAttivaPassata1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata1.DataInizio, prenotazioneAttivaPassata1.DataFine, prenotazioneAttivaPassata1.NumeroPersone).ListaBungalow.First();
-            prenotazioni.ArchiviaPrenotazione(prenotazioneAttivaPassata1);
+            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-1), DateTime.Today, cliente5);
+            prenotazioneAttivaPassata1.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttivaPassata1.DataInizio, prenotazioneAttivaPassata1.DataFine, prenotazioneAttivaPassata1.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttivaPassata1);
+            prenotazioniController.ArchiviaPrenotazione(prenotazioneAttivaPassata1);
 
-            PrenotazioneAttiva prenotazioneAttivaPassata2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-5), DateTime.Today, cliente4);
-            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata2);
-            prenotazioneAttivaPassata2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata2.DataInizio, prenotazioneAttivaPassata2.DataFine, prenotazioneAttivaPassata2.NumeroPersone).ListaBungalow.First();
+            PrenotazioneAttiva prenotazioneAttivaPassata2 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-5), DateTime.Today, cliente4);
+            prenotazioneAttivaPassata2.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttivaPassata2.DataInizio, prenotazioneAttivaPassata2.DataFine, prenotazioneAttivaPassata2.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttivaPassata2);
 
-            PrenotazioneAttiva prenotazioneAttivaPassata3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-6), DateTime.Today.AddDays(-1), cliente4);
-            prenotazioni.AddPrenotazione(prenotazioneAttivaPassata3);
-            prenotazioneAttivaPassata2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttivaPassata3.DataInizio, prenotazioneAttivaPassata3.DataFine, prenotazioneAttivaPassata3.NumeroPersone).ListaBungalow.First();
+            PrenotazioneAttiva prenotazioneAttivaPassata3 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-6), DateTime.Today.AddDays(-1), cliente4);
+            prenotazioneAttivaPassata3.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttivaPassata3.DataInizio, prenotazioneAttivaPassata3.DataFine, prenotazioneAttivaPassata3.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttivaPassata3);
             
             
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 5));
-            PrenotazioneAttiva prenotazioneAttiva1 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 5, DateTime.Today, DateTime.Today.AddDays(5), cliente1);
-            prenotazioneAttiva1.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva1.DataInizio, prenotazioneAttiva1.DataFine, prenotazioneAttiva1.NumeroPersone).ListaBungalow.First();
-            prenotazioni.AddPrenotazione(prenotazioneAttiva1);
+            PrenotazioneAttiva prenotazioneAttiva1 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today, DateTime.Today.AddDays(5), cliente1);
+            prenotazioneAttiva1.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva1.DataInizio, prenotazioneAttiva1.DataFine, prenotazioneAttiva1.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttiva1);
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 11, 30), new DateTime(2014, 12, 04), 4));
-            PrenotazioneAttiva prenotazioneAttiva2 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 4, DateTime.Today, DateTime.Today.AddDays(7), cliente3);
-            prenotazioneAttiva2.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva2.DataInizio, prenotazioneAttiva2.DataFine, prenotazioneAttiva2.NumeroPersone).ListaBungalow.First();
-            prenotazioni.AddPrenotazione(prenotazioneAttiva2);
+            PrenotazioneAttiva prenotazioneAttiva2 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 4, DateTime.Today, DateTime.Today.AddDays(7), cliente3);
+            prenotazioneAttiva2.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva2.DataInizio, prenotazioneAttiva2.DataFine, prenotazioneAttiva2.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttiva2);
 
             //Console.Out.WriteLine(prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014, 12, 12), new DateTime(2014, 12, 20), 7));
-            PrenotazioneAttiva prenotazioneAttiva3 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 7, DateTime.Today.AddMonths(1), DateTime.Today.AddMonths(1).AddDays(4), cliente2);
-            prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
-            prenotazioni.AddPrenotazione(prenotazioneAttiva3);
+            PrenotazioneAttiva prenotazioneAttiva3 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 7, DateTime.Today.AddMonths(1), DateTime.Today.AddMonths(1).AddDays(4), cliente2);
+            prenotazioneAttiva3.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttiva3);
 
-            PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioni.Gss.NumeroPrenotazioni, 3, DateTime.Today.AddDays(15), DateTime.Today.AddDays(22), cliente5);
-            prenotazioneAttiva3.Bungalow = prenotazioni.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
-            prenotazioni.AddPrenotazione(prenotazioneAttiva4);
+            PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 3, DateTime.Today.AddDays(15), DateTime.Today.AddDays(22), cliente5);
+            prenotazioneAttiva3.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
+            prenotazioniController.AddPrenotazione(prenotazioneAttiva4);
 
 
             
@@ -366,7 +366,7 @@ namespace Gss
             Console.Out.WriteLine(prenotazioneAttiva1.Bungalow);
             Console.Out.WriteLine(prenotazioneAttiva2.Bungalow);
             Console.Out.WriteLine(prenotazioneAttiva3.Bungalow);
-            Application.Run(new MainView(prenotazioni,clientiController,resortController,periodiProfili));
+            Application.Run(new MainView(prenotazioniController,clientiController,resortController,periodiProfiliController));
             
              
         }

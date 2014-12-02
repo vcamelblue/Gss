@@ -151,7 +151,7 @@ namespace Gss.Controller
 
         private bool inData(PrenotazioneAttiva p, DateTime dataInizio, DateTime dataFine)
         {
-            if (p.DataFine.Date < dataInizio.Date || p.DataInizio.Date > dataFine.Date)
+            if (DateTime.Compare(p.DataFine.Date , dataInizio.Date)<=0 || DateTime.Compare( p.DataInizio.Date , dataFine.Date)>=0)
             {
                 return true;
             }

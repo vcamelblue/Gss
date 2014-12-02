@@ -95,20 +95,6 @@ namespace Gss.Model
             return true;   
         }
 
-        /*public override bool Equals(object obj)
-        {
-            Bungalow bungalow = null;
-            if (obj is Bungalow)
-            {
-                bungalow = (Bungalow)obj;
-            }
-            else
-                return false;
-            if (this.Codice == bungalow.Codice)
-                return true;
-            return false;
-        }*/
-
         public override string ToString()
         {
             string result = Codice + " - Posti Standard: " + PostiTotaliStandard() + ", Posti Totali: " + PostiTotaliMax()+"  -  ";
@@ -124,37 +110,23 @@ namespace Gss.Model
             {   
                 if (result.Contains(s.ToString()))
                 {
-                    if (ContaOccorrenzeStanza(s) > 1)
+                    if (ContaOccorrenzeStanza(s) > 1) // faccio il plurale della stanza replicata
                     {
                         string nuovaStringa = s.ToString().Remove(s.ToString().Length-1);
                         nuovaStringa += "e";
-                        result = result.Replace(s.ToString(), ContaOccorrenzeStanza(s) + " " + nuovaStringa) + "  ";
+                        result = result.Replace("1 " + s.ToString(), ContaOccorrenzeStanza(s) + " " + nuovaStringa);
                     }
                     else
                     {
-                        result = result.Replace(s.ToString(), ContaOccorrenzeStanza(s) + " " + s.ToString()) + "  ";
+                        result = result.Replace("1 " + s.ToString(), ContaOccorrenzeStanza(s) + " " + s.ToString());
                     }
                 }
                 else
                 {
-                    result += s.ToString() + " + ";
+                    result += "1 "+s.ToString() + " + ";
                 }
             }
-
-            return result;
-
-           /* foreach (Stanza s in Stanze)
-            {
-                if (s.Equals(Stanze[Stanze.Count - 1]))
-                {
-                    result += s.ToString() + " ";
-                }
-                else
-                {
-                    result += s.ToString() + " + ";
-                }
-            }
-            return result;*/
+            return result.Remove(result.LastIndexOf("+")); //tolgo l'ultimo più che nel ciclo si aggiunge alla stringa
         }
 
         private int ContaOccorrenzeStanza(Stanza stanza)
@@ -168,7 +140,7 @@ namespace Gss.Model
                 }
             }
             return result;
-        }
+        } // conto quante stanze uguali ci sono
 
         public override object Clone()
         {

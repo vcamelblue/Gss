@@ -240,40 +240,12 @@ namespace Gss.View
             foreach (Bungalow b in bungalows.ListaBungalow)
             {
                 double prezzoBungalow = prenotazioniController.GetSpesaBungalow(b,dataInizioPrenotazioneTimePicker.Value,dataFinePrenotazioneTimePicker.Value,numeroPersone);
-                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), infoBungalow(b), b.PostiTotaliStandard(), b.PostiTotaliMax(), prezzoBungalow);
+                bungalowDisponibiliDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), b.ToStringStanze(), b.PostiTotaliStandard(), b.PostiTotaliMax(), prezzoBungalow);
             }
             if (bungalowDisponibiliDataGridView.Rows.Count == 0)
             {
                 avantiConfermaButton.Enabled = false;
             }
-        }
-
-        // Mi dice come sono le stanze del bungalow
-        private string infoBungalow(Bungalow bungalow)
-        {
-            string result = "";
-            foreach (Stanza s in bungalow.Stanze)
-            {
-                if (s.Equals(bungalow.Stanze[bungalow.Stanze.Count - 1]))
-                {
-                    result += TipoCameraByPosti(s) + " ";
-                }
-                else
-                {
-                    result += TipoCameraByPosti(s) + " + ";
-                }
-            }
-            return result;
-        }
-
-        //Mi dice come è una stanza (singola, doppia, tripla)
-        private string TipoCameraByPosti(Stanza stanza)
-        {
-            return (stanza.NumeroPostiStandard == 1 ? "Singola" :
-                    stanza.NumeroPostiStandard == 2 ? "Doppia" :
-                    stanza.NumeroPostiStandard == 3 ? "Tripla" :
-                    stanza.NumeroPostiStandard == 4 ? "Quadrupla" :
-                    stanza.NumeroPostiStandard == 5 ? "Quintupla" : "Nupla");
         }
 
         private void RiempiGrigliaSkiCards()

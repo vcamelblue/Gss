@@ -15,6 +15,13 @@ namespace Gss.View
         public VisualizzaFattura() 
 		{
             InitializeComponent();
+
+            clienteDataGridView.Rows.Add("Vincenzo", "Villani", "VNCVLL90M02C095R", "Via Saffi 15, Bologna (BO)");
+
+            dettagliFatturaDataGridView.Rows.Add("Bungalow", "560 €");
+            dettagliFatturaDataGridView.Rows.Add("SkiCards", "89 €");
+            dettagliFatturaDataGridView.Rows.Add("", "");
+            dettagliFatturaDataGridView.Rows.Add("Totale", "649 €");
         }
     }
 }

@@ -99,7 +99,7 @@ namespace Gss.Controller
                 temp.Add((Periodo)p.Clone());
             
 
-            if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio)
+            if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio.Date)
             {
                 result += temp.ElementAt(0) + " modificato con data d'inizio portata a " + Gss.Resort.DataInizioStagione.ToString("dd/MM/yyyy") + "\n";
                 temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
@@ -107,7 +107,7 @@ namespace Gss.Controller
             int i = 1;
             while (i < temp.Count)
             {
-                DateTime data = temp.ElementAt(i).DataInizio.AddDays(-1);
+               /* DateTime data = temp.ElementAt(i).DataInizio.AddDays(-1).Date;
                 if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine) < 0)
                 {
                     result += temp.ElementAt(i - 1) + " modificato con data fine portata a";
@@ -115,25 +115,55 @@ namespace Gss.Controller
                     result += temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
                 }
 
-                if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine) > 0)
+                if (DateTime.Compare(data, temp.ElementAt(i - 1).DataFine.Date) > 0)
                 {
-                    if (temp.ElementAt(i).DataFine < temp.ElementAt(i - 1).DataFine)
+                    if (temp.ElementAt(i).DataFine < temp.ElementAt(i - 1).DataFine.Date)
                     {
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                         result += temp.ElementAt(i - 1) + " modificato con data fine portata a" + temp.ElementAt(i - 1).DataFine.ToString("dd/MM/yyyy") + "\n";
                         
                     }
-                    else
+                    else if (DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) > 0)
                     {
                         periodoTemp = new Periodo(temp.ElementAt(i - 1).DataFine.AddDays(1), temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).Profilo);
                         temp.Add(periodoTemp);
-                        temp.Sort(new PeriodoComparer());
                         i--;
-                        result += "Inserito " + temp.ElementAt(i + 1) + " In " + temp.ElementAt(i) + "\n";//Problema nel scrivere chi viene inserito in chi
+                        result += "Inserito " + periodoTemp + " In " + temp.ElementAt(i) + "\n";//Problema nel scrivere chi viene inserito in chi
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                        temp.Sort(new PeriodoComparer());
                     }
                 }
+                i++;*/
+
+                if(DateTime.Compare(temp.ElementAt(i).DataInizio,temp.ElementAt(i-1).DataFine)<=0)
+                { 
+                    if(DateTime.Compare(temp.ElementAt(i).DataFine,temp.ElementAt(i-1).DataFine)>=0)
+                    {
+                        result += temp.ElementAt(i - 1);
+                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                        result += " modificato con data fine portata a " + temp.ElementAt(i - 1).DataFine.ToShortDateString() + "\n";
+                    }
+                    else
+                    {
+                        periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - i).Profilo); // .Clone()???
+                        result += "Inserito " + periodoTemp+" in " + temp.ElementAt(i-1)+"\n";
+                        temp.Add(periodoTemp);
+                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                        temp.Sort(new PeriodoComparer());
+                    }
+                }
+
+                else if(DateTime.Compare(temp.ElementAt(i).DataInizio.AddDays(-1),temp.ElementAt(i-1).DataFine)>0)
+                {
+                    result += temp.ElementAt(i - 1) + " modificato con data fine portata a " + temp.ElementAt(i).DataInizio.AddDays(-1).ToShortDateString();
+                    temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
+                }
                 i++;
+            }
+            if(DateTime.Compare(temp.ElementAt(i).DataFine,Gss.Resort.DataFineStagione)<0)
+            {
+                result += temp.ElementAt(i) + " modificato con data fine portata a " + Gss.Resort.DataFineStagione.ToShortDateString();
+                temp.ElementAt(i).DataFine = Gss.Resort.DataFineStagione;
             }
             return result;
 

@@ -242,7 +242,7 @@ namespace Gss.Controller
             //this.Gss.ProfiliPrezziRisorse.Profili.Remove();
         }
 
-        private bool ProfiloIsChanged(ProfiloPrezziRisorse p1, ProfiloPrezziRisorse p2)
+        private static bool ProfiloIsChanged(ProfiloPrezziRisorse p1, ProfiloPrezziRisorse p2)
         {
             if (p1.Nome != p2.Nome)
                 return true;
@@ -252,6 +252,12 @@ namespace Gss.Controller
                     return true;
             }
             return false;
+        }
+
+        public void RemoveProfilo(ProfiloPrezziRisorse profilo)
+        {
+            if (!this.Gss.ProfiliPrezziRisorse.Remove(profilo))
+                throw new Exception("Profilo non rimosso");
         }
             
         

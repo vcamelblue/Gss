@@ -35,15 +35,16 @@ namespace Gss.View {
             _resort = resort;
             _inEditingMode = true;
 
-            nomeTextBox.Text = resort.Nome;
-            indirizzoTextBox.Text = resort.Indirizzo;
-            telefonoTextBox.Text = resort.Telefono;
-            emailTextBox.Text = resort.Email;
-            dataIniziodateTimePicker.Value = resort.DataInizioStagione;
-            dataFinedateTimePicker.Value = resort.DataFineStagione;
-
             InitializeComponent();
 
+            nomeTextBox.Text = _resort.Nome;
+            indirizzoTextBox.Text = _resort.Indirizzo;
+            telefonoTextBox.Text = _resort.Telefono;
+            emailTextBox.Text = _resort.Email;
+            dataIniziodateTimePicker.Value = _resort.DataInizioStagione;
+            dataFinedateTimePicker.Value = _resort.DataFineStagione;
+
+            
             this.Text = "Modifica Info";
             this.salvaButton.Text = "Salva Modifiche";
         }
@@ -65,12 +66,23 @@ namespace Gss.View {
                     {
                         if (_inEditingMode)
                         {
-                            _resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+                            try
+                            {
+                                _resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            catch (Exception exception)
+                            {
+                                MessageBox.Show(exception.Message);
+                            }
                         }
                         else
-                        {   Resort resort = new Resort(nome, indirizzo, telefono, email, dataInizio, dataFine);
-                            
+                        {   
+                            Resort resort = new Resort(nome, indirizzo, telefono, email, dataInizio, dataFine);
                             _resortController.SetResort(resort);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
                         }
                         
                     }

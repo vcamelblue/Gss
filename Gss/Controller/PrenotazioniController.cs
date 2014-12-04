@@ -10,30 +10,35 @@ namespace Gss.Controller
     public class PrenotazioniController : MyController
     {
         public PrenotazioniController()
-            :base()
+            : base()
         {
 
         }
 
         public void AddPrenotazione(Prenotazione prenotazione)
         {
+            //AGGIUNGERE CONTROLLI SULL'INIZIO DELLA STAGIONE!
+
             if (!Gss.Prenotazioni.Add(prenotazione))
                 throw new Exception("Prenotazione già presente nel sistema");
         }
 
         public void RemovePrenotazione(Prenotazione prenotazione)
         {
-            if (prenotazione.DataInizio < DateTime.Today.AddDays(7))
+            if (prenotazione.DataInizio.Date < DateTime.Today.AddDays(7).Date)
                 throw new Exception("La prenotazione già è iniziata");
-            Gss.Prenotazioni.Remove(prenotazione);
+
+            if (!Gss.Prenotazioni.Remove(prenotazione))
+                throw new Exception("Impossibile Rimuovere La Prenotazione Dal Sistema!");
         }
 
         public void ArchiviaPrenotazione(PrenotazioneAttiva prenotazione)
         {
             if (!prenotazione.IsConclusa())
-                throw new Exception("La prenotazione non è archiviabile perchè non conclusa");
+                throw new Exception("Spiacente, la prenotazione non è archiviabile in quanto non è ancora conclusa");
+
             if (!Gss.Prenotazioni.ArchiviaPrenotazione(prenotazione))
-                throw new Exception("Errore nell'archiviazione");
+                throw new Exception("Errore durante l'archiviazione della prenotazione, Archiviazione non effettuata");
         }
 
         public List<PrenotazioneAttiva> GetPrenotazioniAttive()
@@ -48,34 +53,40 @@ namespace Gss.Controller
 
         public Prenotazione GetPrenotazioneByNumeroPrenotazione(int numeroPrenotazione)
         {
-            Prenotazione result= Gss.Prenotazioni.GetPrenotazioneByNumPrenotazione(numeroPrenotazione);
+            Prenotazione result = Gss.Prenotazioni.GetPrenotazioneByNumPrenotazione(numeroPrenotazione);
+
             if (result == null)
-                throw new Exception("Prenotazione non presente");
+                throw new Exception("Prenotazione non presente nel sistema");
+
             return result;
         }
 
         public Prenotazioni GetPrenotazioniByCliente(Cliente cliente)
         {
+            //Controlli sul numero di prenotazioni > 0, altrimenti messaggio??
+
             return Gss.Prenotazioni.GetPrenotazioniByCliente(cliente);
         }
 
         public Prenotazioni GetPrenotazioniIniziateOggi()
         {
             Prenotazioni prenotazioni = new Prenotazioni();
-            foreach(Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
+
+            foreach(Prenotazione p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if(p.DataInizio.Date==DateTime.Today)
+                if(p.DataInizio.Date == DateTime.Today.Date)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
         }
 
-        public Prenotazioni GetPrenotazioniConcluseOggi()
+        public Prenotazioni GetPrenotazioniConcluseOggi() //solo quelle che finiscono oggi!
         {
             Prenotazioni prenotazioni = new Prenotazioni();
+
             foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
             {
-                if (p.DataFine.Date == DateTime.Today)
+                if (p.DataFine.Date == DateTime.Today.Date)
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -84,9 +95,11 @@ namespace Gss.Controller
         public Prenotazioni GetPrenotazioniInCorsoOggi()
         {
             Prenotazioni prenotazioni = new Prenotazioni();
-            foreach (Prenotazione p in Gss.Prenotazioni.ListaPrenotazioni)
+
+            foreach (PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (p.DataInizio.Date >= DateTime.Today && p.DataFine.Date > DateTime.Today)
+                //in base alle convenzioni usate le prenotazioni concluse oggi NON SONO IN CORSO, sfrutto i metodi sotto
+                if (p.IsInCorso())
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -95,9 +108,10 @@ namespace Gss.Controller
         public Prenotazioni GetPrenotazioniConcluseNonArchiviate()
         {
             Prenotazioni prenotazioni = new Prenotazioni();
+
             foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (p.DataFine.Date<=DateTime.Today)
+                if (p.IsConclusa())
                     prenotazioni.Add(p);
             }
             return prenotazioni;
@@ -106,13 +120,16 @@ namespace Gss.Controller
         public Prenotazioni GetPrenotazioniFuture()
         {
             Prenotazioni prenotazioni = new Prenotazioni();
+
             foreach (PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (p.DataInizio.Date > DateTime.Today)
+                if (!p.IsIniziata())
                     prenotazioni.Add(p);
             }
             return prenotazioni;
         }
+
+        //CONTINUARE DA QUA A RICONTROLLARE!!!
 
         public Bungalows FindBungalowDisponibiliFor(DateTime dataInizio, DateTime dataFine, int numeroPersone)
         {

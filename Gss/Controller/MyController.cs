@@ -19,7 +19,6 @@ namespace Gss.Controller
         public GSS Gss
         {
             get { return _gss; }
-            set { _gss = value; }
         }
     }
 }

@@ -17,13 +17,9 @@ namespace Gss.Model
 
         public bool Add(SkiCard skicard)
         {
-            foreach (SkiCard s in ListaSkiCard)
-            {
-                if(s.Equals(skicard))
-                {
-                    return false;
-                }
-            }
+            if (ListaSkiCard.Contains(skicard))
+                return false;
+
             ListaSkiCard.Add(skicard);
             return true;
         }

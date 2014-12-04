@@ -31,14 +31,11 @@ namespace Gss.Model
 
         public bool Add(SkiPass skipass)
         {
-            foreach (SkiPass s in SkiPass)
-            {
-                if (s.Equals(skipass))
-                {
-                    return false;
-                }
-            }
+            if (SkiPass.Contains(skipass))
+                return false;
+
             SkiPass.Add(skipass);
+
             return true;
         }
 
@@ -50,6 +47,7 @@ namespace Gss.Model
         public double GetPrezzoSkicard()
         {
             double result = 0;
+
             foreach (SkiPass s in SkiPass)
             {
                 result += s.GetPrezzoSkiPass();
@@ -59,6 +57,9 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             SkiCard skicard = null;
 
             if (obj is SkiCard)
@@ -67,17 +68,13 @@ namespace Gss.Model
             }
             else return false;
 
-            if (this.Codice.Equals(skicard.Codice))
-            {
-                return true;
-            }
-
-            else return false;
+            return (this.Codice == skicard.Codice);
         }
 
         public int GetNumeroSkiPassAGiornata()
         {
             int result=0;
+
             foreach(SkiPass s in this.SkiPass)
             {
                 if (s is SkiPassAGiornata)
@@ -89,6 +86,7 @@ namespace Gss.Model
         public int GetNumeroSkiPassAdAccesso()
         {
             int result = 0;
+
             foreach (SkiPass s in this.SkiPass)
             {
                 if (s is SkiPassAdAccesso)

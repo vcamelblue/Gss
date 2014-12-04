@@ -96,7 +96,7 @@ namespace Gss.View
                 return "Dal : " + skipassAGiornata.DataInizio.ToString("dd/MM/yyyy") + ",  Al : " + skipassAGiornata.DataFine.ToString("dd/MM/yyyy");
             }
             SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
-            return "Numero Accessi : " + skipassAdAccesso.NAccessi;
+            return "Numero Accessi : " + skipassAdAccesso.NumeroAccessi;
         }
 
         private void annullaButton_Click(object sender, EventArgs e)

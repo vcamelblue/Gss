@@ -35,6 +35,9 @@ namespace Gss.Model
 
         public override bool Equals(object obj)
         {
+            if (obj == null)
+                return false;
+
             SkiPass skipass = null;
 
             if (obj is SkiPass)
@@ -43,12 +46,7 @@ namespace Gss.Model
             }
             else return false;
 
-            if (this.Codice.Equals(skipass.Codice))
-            {
-                return true;
-            }
-
-            else return false;
+            return (this.Codice == skipass.Codice && this.Impianto.Equals(skipass.Impianto));
         }
 
     }

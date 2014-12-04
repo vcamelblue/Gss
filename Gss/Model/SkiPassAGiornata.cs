@@ -15,8 +15,8 @@ namespace Gss.Model
         public SkiPassAGiornata(string codice, Impianto impianto, DateTime dataInizio, DateTime dataFine)
             : base(codice, impianto)
         {
-            _dataInizio = dataInizio;
-            _dataFine = dataFine;
+            _dataInizio = dataInizio.Date;
+            _dataFine = dataFine.Date;
         }
 
         public DateTime DataInizio
@@ -34,16 +34,24 @@ namespace Gss.Model
         public override double GetPrezzoSkiPass()
         {
             double prezzo = 0;
+
             DateTime data = DataInizio.Date;
 
-            while(data<=DataFine)
+            while(data.Date <= DataFine.Date)
             {
-                prezzo += Impianto.GetPrezzoFor(data).Prezzo;
-                data = data.AddDays(1);
+                PrezziRisorsa prezziSkipassImpianto = Impianto.GetPrezzoFor(data);
+                
+                if (prezziSkipassImpianto != null)
+                {
+                    prezzo += prezziSkipassImpianto.Prezzo;
+                    data = data.AddDays(1);
+                }
+                else
+                    throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
             }
+
             return prezzo;
         }
-
 
     }
 }

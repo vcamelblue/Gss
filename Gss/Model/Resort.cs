@@ -12,8 +12,10 @@ namespace Gss.Model
         private string _indirizzo;
         private string _email;
         private string _telefono;
+
         private Impianti _impianti;
         private Bungalows _bungalows;
+
         private DateTime _dataInizioStagione;
         private DateTime _dataFineStagione;
 
@@ -30,12 +32,13 @@ namespace Gss.Model
             _indirizzo = indirizzo;
             _email = email;
             _telefono = telefono;
+
             _impianti = new Impianti();
             _bungalows = new Bungalows();
         }
 
         public Resort(string nome, string indirizzo, string email, string telefono,DateTime dataInizio, DateTime dataFine)
-            :this(nome, indirizzo,email,telefono)
+            : this(nome, indirizzo,email,telefono)
         {
             _dataInizioStagione = dataInizio;
             _dataFineStagione = dataFine;

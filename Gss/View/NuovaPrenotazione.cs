@@ -329,7 +329,7 @@ namespace Gss.View
                     {
                         SkiPassAdAccesso skipassDaCopiare = (SkiPassAdAccesso)s;
                         //Creo la copia dello skipass
-                        SkiPassAdAccesso skipassCopiato = new SkiPassAdAccesso(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.NAccessi, skipassDaCopiare.DataRilascio);
+                        SkiPassAdAccesso skipassCopiato = new SkiPassAdAccesso(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.NumeroAccessi, skipassDaCopiare.DataRilascio);
                         //Aggiungo la copia 
                         skiCard.Add(skipassCopiato);
                     }

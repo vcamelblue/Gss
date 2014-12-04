@@ -493,7 +493,7 @@ namespace Gss.View
                             SkiPassAdAccesso skipassModificato = (SkiPassAdAccesso)skipass;
                             Impianto impiantoScelto = recuperaImpianto();
                             skipassModificato.DataRilascio = dataRilascio;
-                            skipassModificato.NAccessi = numeroAccessi;
+                            skipassModificato.NumeroAccessi = numeroAccessi;
                             skipassModificato.Impianto = impiantoScelto;
                         }
                         else

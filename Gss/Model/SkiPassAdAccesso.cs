@@ -8,20 +8,20 @@ namespace Gss.Model
 {
     public class SkiPassAdAccesso : SkiPass
     {
-        private int _nAccessi;
+        private int _numeroAccessi;
         private DateTime _dataRilascio;
 
-        public SkiPassAdAccesso(string codice, Impianto impianto, int nAccessi, DateTime dataRilascio)
+        public SkiPassAdAccesso(string codice, Impianto impianto, int numeroAccessi, DateTime dataRilascio)
             : base(codice, impianto)
         {
-            _nAccessi = nAccessi;
+            _numeroAccessi = numeroAccessi;
             _dataRilascio = dataRilascio;
         }
 
-        public int NAccessi
+        public int NumeroAccessi
         {
-            get { return _nAccessi; }
-            set { _nAccessi = value; }
+            get { return _numeroAccessi; }
+            set { _numeroAccessi = value; }
         }
 
         public DateTime DataRilascio
@@ -32,9 +32,29 @@ namespace Gss.Model
 
         public override double GetPrezzoSkiPass()
         {
+            
             Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(DataRilascio);
-            PrezziRisorsa prezziRisorsa = periodo.Profilo.GetPrezziRisorsa(Impianto);
-            return NAccessi * prezziRisorsa.GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore;  
+
+            if (periodo == null)
+            {
+                throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
+            }
+
+            PrezziRisorsa prezziSkipass = periodo.Profilo.GetPrezziRisorsa(Impianto);
+
+            if (prezziSkipass == null)
+            {
+                throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
+            }
+
+            PrezzoSpecifico prezzoPerAccessoSkipass = prezziSkipass.GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso);
+            
+            if (prezzoPerAccessoSkipass == null)
+            {
+                throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
+            }
+
+            return NumeroAccessi * prezzoPerAccessoSkipass.Valore;
         }
     }
 }

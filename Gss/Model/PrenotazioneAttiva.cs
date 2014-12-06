@@ -123,7 +123,8 @@ namespace Gss.Model
         {
             if (ListaSkiCards.ListaSkiCard.Count == 0)
                 return 0;
-            else return ListaSkiCards.GetPrezzoTotale();
+            else 
+                return ListaSkiCards.GetPrezzoTotale();
         }
 
         /*

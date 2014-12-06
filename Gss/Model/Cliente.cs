@@ -82,7 +82,7 @@ namespace Gss.Model
                 return false;
 
             return (cliente.CodiceFiscale.Equals(this.CodiceFiscale) && cliente.Nome.Equals(this.Nome) &&
-                    cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita))
+                    cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita));
         }
 
         public override string ToString()
@@ -92,7 +92,7 @@ namespace Gss.Model
 
         public bool Identic(Cliente cliente)
         {
-            return (this.Equals(cliente) && this.Indirizzo == cliente.Indirizzo && this.Telefono == cliente.Telefono && this.Email == cliente.Email)
+            return (this.Equals(cliente) && this.Indirizzo == cliente.Indirizzo && this.Telefono == cliente.Telefono && this.Email == cliente.Email);
         }
     }
 }

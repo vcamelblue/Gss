@@ -57,7 +57,8 @@ namespace Gss.Model
 
         public override string ToString()
         {
-            return "Periodo " + this.Profilo.Nome +  " dal " + this.DataInizio.Date.ToString("dd/MM/yyyy") + " al " + this.DataFine.Date.ToString("dd/MM/yyyy");
+            return "Periodo " + this.Profilo.Nome + " dal " + this.DataInizio.Date.ToString("dd/MM/yyyy") + " al " + this.DataFine.Date.ToString("dd/MM/yyyy");
+        }
 
         public object Clone()
         {

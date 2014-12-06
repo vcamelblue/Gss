@@ -134,49 +134,73 @@ namespace Gss.Controller
         public Bungalows FindBungalowDisponibiliFor(DateTime dataInizio, DateTime dataFine, int numeroPersone)
         {
             
-            Bungalows disponibili = cercaBungalowsDisponibiliByDate(dataInizio, dataFine);
-            Bungalows result = cercaBungalowsByNumeroPersone(numeroPersone,disponibili);
-            result.ListaBungalow.Sort(new BungalowComparer(numeroPersone));
-            return result;
+            Bungalows bungalowsDisponibili = cercaBungalowsDisponibiliByDate(dataInizio, dataFine);
+
+            bungalowsDisponibili = bungalowsDisponibili.GetBungalowConMaxPostiAlmeno(numeroPersone);
+
+            bungalowsDisponibili.ListaBungalow.Sort(new BungalowComparer(numeroPersone));
+
+            return bungalowsDisponibili;
 
         }
-
-        private Bungalows cercaBungalowsByNumeroPersone(int numeroPersone, Bungalows disponibili)
+        /*
+        private Bungalows cercaBungalowsByNumeroPersone(int numeroPersone, Bungalows bungalowsDisponibili)
         {
            
-            Bungalows result = new Bungalows();
+            //Bungalows result = new Bungalows();
            // foreach(Bungalow b in disponibili.ListaBungalow)
             //{
              //   if (b.PostiTotaliMax() >= numeroPersone)
                //     result.Add(b);
             //}
-            return disponibili.GetBungalowConMaxPostiAlmeno(numeroPersone);
+            return bungalowsDisponibili.GetBungalowConMaxPostiAlmeno(numeroPersone);
            // return result; 
-        }
+        }*/
 
         private Bungalows cercaBungalowsDisponibiliByDate(DateTime dataInizio, DateTime dataFine)
         {
             Bungalows result = new Bungalows();
+            
+            //Ragionamento in logica negativa: tra tutti i bungalows rimuovo quelli non prenotabili
+
             result.ListaBungalow = Gss.Resort.Bungalows.ListaBungalow.ToList<Bungalow>();
+
             foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
-                if (!inData(p, dataInizio, dataFine))
+                /*
+                 * CASI CON ESITO POSITIVO
+                 * 
+                 *              tempo (in millisec)
+                 *  ---------------------------------------->
+                 *   | data Bungalow | data Pren |       (data fine bungalow <= data inizio pren)
+                 *   
+                 *   | data Pren | data Bungalow |       (data inizio bungalow >= data fine pren)
+                 */
+
+                //Logica negativa, quelli che non hanno esito positivo vengono rimossi perche occupati in uno o più giorni
+
+                if ( ! (dataInizio.Date >= p.DataFine.Date || dataFine.Date <= p.DataInizio.Date) )
+                {
                     result.Remove(p.Bungalow);
+                }
+
             }            
             return result;
         }
 
-        private bool inData(PrenotazioneAttiva p, DateTime dataInizio, DateTime dataFine)
-        {
-            if (DateTime.Compare(p.DataFine.Date , dataInizio.Date)<=0 || DateTime.Compare( p.DataInizio.Date , dataFine.Date)>=0)
-            {
-                return true;
-            }
-            return false;
-        }
 
         public double GetSpesaBungalow(Bungalow bungalow, DateTime dataInizio, DateTime dataFine,int numeroPersone)
         {
+            
+            PrenotazioneAttiva tempPrenotation = new PrenotazioneAttiva(-1, numeroPersone, dataInizio.Date, dataFine.Date, null, bungalow);
+            
+            return tempPrenotation.GetSpesaBungalow(); 
+
+            //try e catch gestito ai piani alti! nella view, cosi da lanciare messaggio utente
+
+
+
+            /*
             double prezzo = 0;
             DateTime data = dataInizio.Date;
 
@@ -202,7 +226,7 @@ namespace Gss.Controller
                     data = data.AddDays(1);
                 }
                 return prezzo;
-            }
+            }*/
         }
     }
 }

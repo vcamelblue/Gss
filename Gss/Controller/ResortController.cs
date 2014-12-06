@@ -31,9 +31,10 @@ namespace Gss.Controller
             }
         }
 
-        public bool RemoveImpianto(Impianto impianto)
+        public void RemoveImpianto(Impianto impianto)
         {
-            return Gss.Resort.Impianti.Remove(impianto);
+            if (!Gss.Resort.Impianti.Remove(impianto))
+                throw new Exception("Impossibile Rimuovere L'Impianto Dal Sistema!");
             
         }
 
@@ -45,15 +46,18 @@ namespace Gss.Controller
         public Impianto GetImpiantoByCodice(string codice)
         {
             Impianto impianto = Gss.Resort.Impianti.GetImpiantoByCodice(codice);
+
             if (impianto == null)
             {
                 throw new Exception("L'impianto cercato non esiste");
             }
+
             return impianto;
         }
 
         public void EditImpianto(Impianto impianto, Impianto impiantoModificato)
         {
+            //MODIFICARE EQUALS IN IDENTIC! PER FERIFICARE CHE L'IMPIANTO E' STATO EFFETIVAENTE MODIFICATO
             if (impianto.Equals(impiantoModificato)) 
                 throw new Exception("Non sono state apportate modifiche all'impianto");
             

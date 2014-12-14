@@ -129,7 +129,6 @@ namespace Gss.Controller
             return prenotazioni;
         }
 
-        //CONTINUARE DA QUA A RICONTROLLARE!!!
 
         public Bungalows FindBungalowDisponibiliFor(DateTime dataInizio, DateTime dataFine, int numeroPersone)
         {

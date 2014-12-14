@@ -10,17 +10,84 @@ namespace Gss.Controller
 {
     public class ResortController : MyController
     {
+        //FIELDS
+
         private IFiltra _filtro;
 
-        public ResortController()
-            : base()
+        //CONSTRUCTORS
+
+        public ResortController() : base()
         {
 
         }
 
+        //PROPERTY
+
+        public IFiltra Filtro
+        {
+            get { return _filtro; }
+            set { _filtro = value; }
+        }
+
+        public Bungalows GetBungalows()
+        {
+            return Gss.Resort.Bungalows;
+        }
+
+        public Impianti GetImpianti()
+        {
+            return Gss.Resort.Impianti;
+        }
+
+        public Resort GetResort()
+        {
+            return Gss.Resort;
+        }
+        
+        public void SetResort(Resort resort)
+        {
+            Gss.Resort = resort;
+        }
+
+
+        //RESORT METHODS
+
+        public void SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
+        {
+            if (nome == null || indirizzo == null || telefono == null || email == null)
+            {
+                throw new Exception("Impossibile impostare i dati del Resort, uno o più valori non sono validi");
+            }
+            
+            Gss.Resort.Nome = nome;
+            Gss.Resort.Indirizzo = indirizzo;
+            Gss.Resort.Telefono = telefono;
+            Gss.Resort.Email = email;
+            
+            //se la stagione è gia iniziata blocco l'inserimento di nuove date
+
+            if (Gss.Resort.isStagioneIniziata())
+            {
+                throw new Exception("Impossibile modificare le date della stagione, stagione già in corso");
+            }
+
+            //Rielliniare i periodi se la stagione non e' iniziata e si ritoccano le date???
+
+            //if (Gss.Resort.DataInizioStagione > dataInizioStagione || Gss.Resort.DataFineStagione < dataFineStagione)
+            //{
+                Gss.Resort.DataInizioStagione = dataInizioStagione;
+                Gss.Resort.DataFineStagione = dataFineStagione;
+                //GestorePeriodi.AllineaPeriodi()
+            //}
+            
+        }
+
+
+        //IMPIANTI METHODS
+
         public void AddImpianto(Impianto impianto)
         {
-            if (CercaCodice(impianto))
+            if (codiceRisorsaGiaEsistente(impianto))
             {
                 throw new Exception("Codice Risorsa già presente");
             }
@@ -35,12 +102,18 @@ namespace Gss.Controller
         {
             if (!Gss.Resort.Impianti.Remove(impianto))
                 throw new Exception("Impossibile Rimuovere L'Impianto Dal Sistema!");
-            
+
         }
 
-        public Impianti GetImpianti()
+        public void EditImpianto(Impianto impianto, Impianto impiantoModificato)
         {
-            return Gss.Resort.Impianti;
+            if (impianto.Equals(impiantoModificato))
+                throw new Exception("Non sono state apportate modifiche all'impianto!");
+
+            impianto.Nome = impiantoModificato.Nome;
+            impianto.Versante = impiantoModificato.Versante;
+            impianto.Piste = impiantoModificato.Piste;
+
         }
 
         public Impianto GetImpiantoByCodice(string codice)
@@ -55,95 +128,12 @@ namespace Gss.Controller
             return impianto;
         }
 
-        public void EditImpianto(Impianto impianto, Impianto impiantoModificato)
-        {
-            //MODIFICARE EQUALS IN IDENTIC! PER FERIFICARE CHE L'IMPIANTO E' STATO EFFETIVAENTE MODIFICATO
-            if (impianto.Equals(impiantoModificato)) 
-                throw new Exception("Non sono state apportate modifiche all'impianto");
-            
-            if(Exist(impiantoModificato))
-            {
-                throw new Exception("L'impianto modificato già esiste nel sistema");
-            }
 
-            impianto.Nome = impiantoModificato.Nome;
-            impianto.Versante = impiantoModificato.Versante;
-           
-        }
-
-        private bool Exist(Impianto impianto)
-        {
-            return Gss.Resort.Impianti.ListaImpianti.Contains(impianto);
-        }
-
-        public void AddPistaAdImpianto(Impianto impianto, Pista pista)
-        {
-            if (Exist(pista))
-            {
-                throw new Exception("Pista già esistente nel sistema");
-            }
-
-            impianto.Add(pista);
-        }
-
-        public void RemovePistaAdImpianto(Impianto impianto, Pista pista)
-        {
-            if (!(impianto.Remove(pista)))
-            {
-                throw new Exception("Pista non  presente nell'impianto");
-            }
-        }
-
-        public void EditPistaAlpinaAdImpianto(Alpina pista, Alpina pistaModificata)
-        {
-            if (Exist(pista))
-            {
-                throw new Exception("Pista già esistente nel sistema");
-            }
-            pista.Nome = pistaModificata.Nome;
-            pista.Difficolta = pistaModificata.Difficolta;
-        }
-
-        public void EditPistaFondoAdImpianto(Fondo pista, Fondo pistaModificata)
-        {
-            if (Exist(pista))
-            {
-                throw new Exception("Pista già esistente nel sistema");
-            }
-            pista.Nome = pistaModificata.Nome;
-            pista.DislivelloMassimo = pistaModificata.DislivelloMassimo;
-            pista.DislivelloMedio = pistaModificata.DislivelloMedio;
-        }
-
-        public void EditPistaSnowParkAdImpianto(SnowPark pista, SnowPark pistaModificata)
-        {
-            if (Exist(pista))
-            {
-                throw new Exception("Pista già esistente nel sistema");
-            }
-            pista.Nome = pistaModificata.Nome;
-            pista.NumeroSalti = pistaModificata.NumeroSalti;
-            pista.NumeroJibs = pistaModificata.NumeroJibs;
-        }
-
-        private bool Exist(Pista pista)
-        {
-            foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
-            {
-                foreach (Pista p in i.Piste)
-                {
-                    if (p.Equals(pista))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        //BUNGALOWS METHODS
 
         public void AddBungalow(Bungalow bungalow)
         {
-            if (CercaCodice(bungalow))
+            if (codiceRisorsaGiaEsistente(bungalow))
             {
                 throw new Exception("Codice Risorsa già presente");
             }
@@ -154,26 +144,41 @@ namespace Gss.Controller
             }
         }
 
+        public void RemoveBungalow(Bungalow bungalow)
+        {
+            if (!(Gss.Resort.Bungalows.Remove(bungalow)))
+            {
+                throw new Exception("Impossibile rimuvoere il Bungalow dal sistema, rimozione non effettuata!");
+            }
+        }
+
         public void EditBungalow(Bungalow bungalow, Bungalow bungalowModificato)
         {
-            
-            bungalow.Codice = bungalowModificato.Codice;
+            foreach (Stanza s in bungalowModificato.Stanze)
+            {
+                if (!isStanzaValid(s))
+                    throw new Exception("Impossibile modificare le stanze del bungalow! una o più stanze non sono valide!");
+            }
+
             bungalow.Stanze = bungalowModificato.Stanze;
         }
 
-        private bool Exist(Bungalow bungalow)
+
+        public void EditBungalow(Bungalow bungalow, List<Stanza> nuoveStanze)
         {
-            return Gss.Resort.Bungalows.ListaBungalow.Contains(bungalow);
+            foreach (Stanza s in nuoveStanze)
+            {
+                if (!isStanzaValid(s))
+                    throw new Exception("Impossibile modificare le stanze del bungalow! una o più stanze non sono valide!");
+            }
+            bungalow.Stanze = nuoveStanze;
         }
 
-        public bool RemoveBungalow(Bungalow bungalow)
-        {
-            return Gss.Resort.RemoveBungalow(bungalow);
-        }
 
         public Bungalow GetBungalowByCodice(string codice)
         {
             Bungalow bungalow = Gss.Resort.Bungalows.GetBungalowByCodice(codice);
+
             if (bungalow == null)
             {
                 throw new Exception("Il bungalow cercato non esiste");
@@ -181,100 +186,51 @@ namespace Gss.Controller
             return bungalow;
         }
 
-        public Bungalows GetBungalows()
-        {
-            return Gss.Resort.Bungalows;
-        }
 
-        public void AddStanzaABungalow(Bungalow bungalow, Stanza stanza)
-        {
-            if(!(checkStanza(stanza))){
-                throw new Exception("Numero posti stanza non validi");
-            }
-            bungalow.Add(stanza);
-        }
-
-        public void EditStanzaABungalow(Stanza stanza, Stanza stanzaModificata)
-        {
-            if (!(checkStanza(stanzaModificata)))
-            {
-                throw new Exception("Numero posti stanza non validi");
-            }
-            stanza.NumeroPostiStandard = stanzaModificata.NumeroPostiStandard;
-            stanza.NumeroPostiMax = stanzaModificata.NumeroPostiMax;
-        }
-
-        private bool checkStanza(Stanza stanza)
-        {
-            if ((stanza.NumeroPostiStandard == 0 || stanza.NumeroPostiMax == 0) || (stanza.NumeroPostiMax < stanza.NumeroPostiStandard))
-                return false;
-            return true;
-        }
-
-        public void RemoveStanzaABungalow(string codice, Stanza stanza)
-        {
-            Bungalow bungalow = Gss.Resort.Bungalows.GetBungalowByCodice(codice);
-            bungalow.Remove(stanza);
-        }
-
-        public void SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
-        {
-
-            if (Gss.Resort.isStagioneIniziata())
-            {
-                throw new Exception("Impossibile modificare le date della stagione, stagione già in corso");
-            }
-
-
-            //Rielliniare i periodi se la stagione non e' iniziata e si ritoccano le date???
-
-            //if (Gss.Resort.DataInizioStagione > dataInizioStagione || Gss.Resort.DataFineStagione < dataFineStagione)
-            //{
-                Gss.Resort.DataInizioStagione = dataInizioStagione;
-                Gss.Resort.DataFineStagione = dataFineStagione;
-                //GestorePeriodi.AllineaPeriodi()
-            //}
-            
-            Gss.Resort.Nome = nome;
-            Gss.Resort.Indirizzo = indirizzo;
-            Gss.Resort.Telefono = telefono;
-            Gss.Resort.Email = email;
-        }
-
-        public void SetResort(Resort resort)
-        {
-            Gss.Resort = resort;
-        }
+        //FILTRAGGIO
 
         public Impianti Filtra(Impianti impianti)
         {
             return Filtro.Filtra(impianti);
         }
 
-        public IFiltra Filtro
-        {
-            get { return _filtro; }
-            set { _filtro = value; }
-        }
 
-        private bool CercaCodice(Risorsa risorsa)
+        //PRIVATE METHODS
+
+        private bool codiceRisorsaGiaEsistente(Risorsa risorsa)
         {
-            foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
+            if (risorsa is Impianto)
             {
-                if (risorsa.Codice==i.Codice)
+                foreach (Impianto i in Gss.Resort.Impianti.ListaImpianti)
                 {
-                    return true;
+                    if (risorsa.Codice == i.Codice)
+                    {
+                        return true;
+                    }
                 }
             }
-            foreach (Bungalow b in Gss.Resort.Bungalows.ListaBungalow)
+            else
             {
-                if (risorsa.Codice==b.Codice)
+                foreach (Bungalow b in Gss.Resort.Bungalows.ListaBungalow)
                 {
-                    return true;
+                    if (risorsa.Codice == b.Codice)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
         }
+
+
+        private bool isStanzaValid(Stanza stanza)
+        {
+            if (stanza == null)
+                return false;
+
+            return (stanza.NumeroPostiStandard != 0 && stanza.NumeroPostiMax != 0 && stanza.NumeroPostiMax >= stanza.NumeroPostiStandard);
+        }
+
 
     }
 }

@@ -89,7 +89,11 @@ namespace Gss.Model
             else
                 return false;
 
-            return this.Numero.Equals(fattura.Numero);
+            return (this.Numero == fattura.Numero &&
+                    this.DataFattura == fattura.DataFattura &&
+                    this.TotaleBungalow == fattura.totaleBungalow &&
+                    this.TotaleSkiCards == fattura.TotaleSkiCards &&
+                    this.TotaleFattura == fattura.TotaleFattura);
         }
     }
 }

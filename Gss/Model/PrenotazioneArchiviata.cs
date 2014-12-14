@@ -21,7 +21,7 @@ namespace Gss.Model
             get { return _fattura; }
             set { _fattura = value; }
         }
-        /*
+        
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -34,11 +34,8 @@ namespace Gss.Model
             else
                 return false;
 
-            return (this.Fattura.Equals(prenotazione.Fattura) &&
-                    this.Cliente.Equals(prenotazione.Cliente) &&
-                    this.DataInizio.Equals(prenotazione.DataInizio) &&
-                    this.DataFine.Equals(prenotazione.DataFine));
-        }*/
+            return (this.Fattura.Equals(prenotazione.Fattura));
+        }
 
     }
 }

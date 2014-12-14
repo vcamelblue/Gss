@@ -66,9 +66,23 @@ namespace Gss.Model
             {
                 skicard = (SkiCard)obj;
             }
-            else return false;
+            else 
+                return false;
 
-            return (this.Codice == skicard.Codice);
+            if (this.Codice != skicard.Codice)
+                return false;
+
+            if (this.SkiPass.Count != skicard.SkiPass.Count)
+                return false;
+
+            foreach (SkiPass s in this.SkiPass)
+            {
+                if (!skicard.SkiPass.Contains(s))
+                    return false;
+            }
+            
+            return true;
+
         }
 
         public int GetNumeroSkiPassAGiornata()

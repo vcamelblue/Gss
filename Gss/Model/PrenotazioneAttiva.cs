@@ -127,7 +127,7 @@ namespace Gss.Model
                 return ListaSkiCards.GetPrezzoTotale();
         }
 
-        /*
+        
         public override bool Equals(object obj)
         {
             PrenotazioneAttiva prenotazione= null;
@@ -136,11 +136,8 @@ namespace Gss.Model
             else 
                 return false;
 
-            return (this.Bungalow.Equals(prenotazione.Bungalow) &&
-                    this.Cliente.Equals(prenotazione.Cliente) &&
-                    this.DataInizio.Equals(prenotazione.DataInizio) &&
-                    this.DataFine.Equals(prenotazione.DataFine));
-        }*/
+            return (this.Bungalow.Equals(prenotazione.Bungalow));
+        }
 
         public override string ToString() //FITTIZIA!!!!! DA FARE PRIMA O POI
         {

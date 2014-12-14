@@ -92,26 +92,6 @@ namespace Gss.Model
             set { _dataFineStagione = value; }
         }
 
-        public void AddBungalow(Bungalow bungalow)
-        {
-            Bungalows.Add(bungalow);
-        }
-
-        public void AddImpianto(Impianto impianto)
-        {
-            Impianti.Add(impianto);
-        }
-
-        public bool RemoveBungalow(Bungalow bungalow)
-        {
-            return Bungalows.Remove(bungalow);
-        }
-
-        public bool RemoveImpianto(Impianto impianto)
-        {
-            return Impianti.Remove(impianto);
-        }
-
         public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
         {
             this.DataInizioStagione = dataInizioStagione;

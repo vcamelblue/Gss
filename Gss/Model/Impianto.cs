@@ -105,26 +105,34 @@ namespace Gss.Model
             if (obj == null)
                 return false;
 
-            Impianto impianto = null;
+            Impianto otherImpianto = null;
 
             if (obj is Impianto)
-                impianto = (Impianto)obj;
-            else 
+                otherImpianto = (Impianto)obj;
+            else
                 return false;
 
-            return (this.Codice == impianto.Codice) ;
+            if (this.Codice != otherImpianto.Codice)
+                return false;
+            
+            if (otherImpianto.Piste.Count != this.Piste.Count)
+                return false;
 
+            foreach (Pista p in this.Piste)
+            {
+                if (!otherImpianto.Piste.Contains(p))
+                    return false;
+            }
+
+            return true;
 
             /*
-            if (impianto.Piste.Count != this.Piste.Count)
-                return false;
-
-            List<Pista> temp =impianto.Piste.ToList<Pista>();
+            List<Pista> temp =otherImpianto.Piste.ToList<Pista>();
             bool trovato = false;
 
             foreach(Pista p in this.Piste)
             {
-                foreach(Pista pObj in impianto.Piste)
+                foreach(Pista pObj in otherImpianto.Piste)
                 {
                     if(p.Equals(pObj))
                     {
@@ -138,8 +146,8 @@ namespace Gss.Model
                 else
                     trovato = false;
             }
-            return true;*/
-
+            return true;
+            */
         }
 
         public override string ToString()

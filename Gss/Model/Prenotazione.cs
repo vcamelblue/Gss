@@ -72,8 +72,14 @@ namespace Gss.Model
             else 
                 return false;
 
-            return (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione);
+            return (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione &&
+                    this.NumeroPersone == prenotazione.NumeroPersone &&
+                    this.Cliente.Equals(prenotazione.Cliente) &&
+                    this.DataInizio == prenotazione.DataInizio &&
+                    this.DataFine == prenotazione.DataFine);
 
         }
+
+
     }
 }

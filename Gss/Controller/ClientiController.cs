@@ -48,10 +48,9 @@ namespace Gss.Controller
              * IL CONTROLLO CHE QUELLO MODIFICATO NON SIA UGUALE A QUALCUNALTRO ESCLUDENDO DALLA LISTA 
              * QUELLO CHE ERA DA MODIFICARE IN ORIGINE!
              * 
-            if (Exist(clienteModificato) && !clienteModificato.Equals(cliente))
-            {
-                throw new Exception("Il cliente modificato già esiste nel sistema");
-            }*/
+             * 
+             * DONE!
+             */
 
             foreach (Cliente c in Gss.Clienti.ListaClienti)
             {

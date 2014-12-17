@@ -25,10 +25,7 @@ namespace Gss.View
 
         private void GestioneBungalows_Load(object sender, EventArgs e)
         {
-            foreach (Bungalow b in resortController.Gss.Resort.Bungalows.ListaBungalow)
-            {
-                bungalowDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), b.ToStringStanze(), b.PostiTotaliStandard(), b.PostiTotaliMax());
-            }
+            RiempiGrid();
 
             //bungalowDataGridView.Rows[15].Selected = true;
             //bungalowDataGridView.FirstDisplayedScrollingRowIndex = 15;
@@ -37,12 +34,12 @@ namespace Gss.View
         public override void Refresh()
         {
             base.Refresh();
-            bungalowDataGridView.Rows.Clear();
             RiempiGrid();
         }
 
         private void RiempiGrid()
         {
+            bungalowDataGridView.Rows.Clear();
             foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
             {
                 bungalowDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), b.ToStringStanze(), b.PostiTotaliStandard(), b.PostiTotaliMax());
@@ -51,22 +48,21 @@ namespace Gss.View
 
         private void rimuoviBungalowButton_Click(object sender, EventArgs e)
         {
-            foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
+            try
             {
-                if (b.Codice == bungalowDataGridView.SelectedRows[0].Cells[0].Value)
+                Bungalow toRemove = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+            
+                DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il bungalow selezionato?", "Rimozione Bungalow", MessageBoxButtons.OKCancel);
+            
+                if (result == DialogResult.OK)
                 {
-                    DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il bungalow selezionato?", "Rimozione Bungalow", MessageBoxButtons.OKCancel);
-                    if (result == DialogResult.OK)
-                    {
-                        resortController.RemoveBungalow(b);
-                        Refresh();
-                        break;
-                    }
-                    else if (result == DialogResult.Cancel)
-                    {
-                        break;
-                    }
+                    resortController.RemoveBungalow(toRemove);
+                    Refresh();
                 }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
 
@@ -83,21 +79,24 @@ namespace Gss.View
 
         private void modificaBungalowButton_Click(object sender, EventArgs e)
         {
-            foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
+            try
             {
-                if (b.Codice == bungalowDataGridView.SelectedRows[0].Cells[0].Value)
-                {
-                    Bungalow bungalowCopia = (Bungalow)b.Clone();
-                    AggiungiModificaBungalow modificaBungalow = new AggiungiModificaBungalow(resortController, bungalowCopia);
+                Bungalow bungalowToEdit = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
 
-                    DialogResult res = modificaBungalow.ShowDialog();
-                    if (res == DialogResult.OK)
-                    {
-                        resortController.EditBungalow(b, bungalowCopia);
-                        Refresh();
-                        break;
-                    }
+                Bungalow bungalowCopia = (Bungalow)bungalowToEdit.Clone();
+
+                AggiungiModificaBungalow modificaBungalow = new AggiungiModificaBungalow(resortController, bungalowCopia);
+
+                DialogResult res = modificaBungalow.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    resortController.EditBungalow(bungalowToEdit, bungalowCopia);
+                    Refresh();
                 }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
 

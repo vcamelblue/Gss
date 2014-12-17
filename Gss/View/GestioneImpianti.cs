@@ -120,7 +120,7 @@ namespace Gss.View
             {
                 rimuoviImpiantoButton.Enabled = true;
                 modificaImpiantoButton.Enabled = true;
-                visualizzaImpiantoButton.Enabled = false;
+                visualizzaImpiantoButton.Enabled = true;
             }
         }
     }

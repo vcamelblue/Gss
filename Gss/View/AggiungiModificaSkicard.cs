@@ -77,6 +77,11 @@ namespace Gss.View
                 modificaSkipassButton.Enabled = false;
                 rimuoviSkipssButton.Enabled = false;
             }
+            else
+            {
+                modificaSkipassButton.Enabled = true;
+                rimuoviSkipssButton.Enabled = true;
+            }
         }
 
         private string GetTipologiaSkipass(SkiPass skipass)

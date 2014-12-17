@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public abstract class Risorsa : ICloneable
+    public abstract class Risorsa : ICloneable, IEquatable<Risorsa>
     {
         private string _codice;
 
@@ -49,5 +49,15 @@ namespace Gss.Model
         }
 
         public abstract object Clone();
+
+        public bool Equals(Risorsa other)
+        {
+            if (other == null)
+                return false;
+
+           
+
+            return (other.Codice == this.Codice);
+        }
     }
 }

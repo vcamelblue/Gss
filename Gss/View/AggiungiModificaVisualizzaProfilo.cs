@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
+using Gss.View.Utility;
 
 namespace Gss.View 
 {
@@ -100,36 +101,29 @@ namespace Gss.View
         {
             string codiceSelezionato = risorseDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             // Mostro la pagina adatta alla risorsa
-            if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+            try
             {
-                RiempiGirdView(IndividuaRisorsa(codiceSelezionato));
-                tabControlWithoutHeader.SelectedTab = impiantoTabPage;
+                if (IndividuaRisorsa(codiceSelezionato) is Impianto)
+                {
+                    RiempiGirdView(IndividuaRisorsa(codiceSelezionato));
+                    tabControlWithoutHeader.SelectedTab = impiantoTabPage;
+                }
+                else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+                {
+                    RiempiGirdView(IndividuaRisorsa(codiceSelezionato));
+                    tabControlWithoutHeader.SelectedTab = bungalowTabPage;
+                }
             }
-            else if (IndividuaRisorsa(codiceSelezionato) is Bungalow)
+            catch (Exception exception)
             {
-                RiempiGirdView(IndividuaRisorsa(codiceSelezionato));
-                tabControlWithoutHeader.SelectedTab = bungalowTabPage;
+                MessageBox.Show(exception.Message);
             }
         }
         
         //cerca la risorsa selezionata
         private Risorsa IndividuaRisorsa(String codice)
         {
-            foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
-            {
-                if (codice==b.Codice)
-                {
-                    return b;
-                }
-            }
-            foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
-            {
-                if (codice==i.Codice)
-                {
-                    return i;
-                }
-            }
-            return null;
+            return resortController.GetRisorsaByCodice(codice);
         }
 
         //Riempie la griglia apposita in base alla risorsa selezionata
@@ -171,7 +165,7 @@ namespace Gss.View
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
                     string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
                     string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
-                    if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
+                    if (ConfigAndUtility.checkFields(prezzoPerGiornata,prezzoPerAccesso))
                     {
                         try
                         {
@@ -209,7 +203,7 @@ namespace Gss.View
                     Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
                     string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
                     string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
-                    if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                    if (ConfigAndUtility.checkFields(prezzoPerGiornata,prezzoPerPersonaExtra))
                     {
                         try
                         {
@@ -309,7 +303,7 @@ namespace Gss.View
             if (!inEditingMode)
             {
                 string nomeProfilo = nomeProfiloTextBox.Text;
-                if (nomeProfilo != "")
+                if (ConfigAndUtility.checkFields(nomeProfilo))
                 {
                     profilo.Nome = nomeProfilo;
                     try
@@ -339,7 +333,7 @@ namespace Gss.View
             else
             {
                 string nomeProfilo = nomeProfiloTextBox.Text;
-                if (nomeProfilo != "")
+                if (ConfigAndUtility.checkFields(nomeProfilo))
                 {
                     profilo.Nome = nomeProfilo;
                     try
@@ -374,18 +368,19 @@ namespace Gss.View
                 Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
                 string prezzoPerGiornata = prezzoPerGiornataImpiantoTextBox.Text;
                 string prezzoPerAccesso = prezzoPerAccessoImpiantoTextBox.Text;
-                if ((prezzoPerGiornata != "") && (prezzoPerAccesso != ""))
+                if (ConfigAndUtility.checkFields(prezzoPerGiornata,prezzoPerAccesso))
                 {
                     try
                     {
                         double prezzoGiornata = double.Parse(prezzoPerGiornata);
                         double prezzoAccesso = double.Parse(prezzoPerAccesso);
-                        PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);
-                        PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
-                        prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                        profilo.PrezziRisorse[impiantoSelezionato] = prezziRisorsa;
-                        //prezzoPerGiornataImpiantoTextBox.Clear();
-                        //prezzoPerAccessoImpiantoTextBox.Clear();
+                        if (prezzoGiornata > 0 && prezzoAccesso > 0) 
+                        {
+                            PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);
+                            PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                            prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                            profilo.PrezziRisorse[impiantoSelezionato] = prezziRisorsa;
+                        }
                     }
                     catch (Exception)
                     {
@@ -402,18 +397,19 @@ namespace Gss.View
                 Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
                 string prezzoPerGiornata = prezzoPerGironataPostStdTextBox.Text;
                 string prezzoPerPersonaExtra = prezzoPerPersonaExtraTextBox.Text;
-                if ((prezzoPerGiornata != "") && (prezzoPerPersonaExtra != ""))
+                if (ConfigAndUtility.checkFields(prezzoPerGiornata,prezzoPerPersonaExtra))
                 {
                     try
                     {
                         double prezzoGiornata = double.Parse(prezzoPerGiornata);
                         double prezzoExtra = double.Parse(prezzoPerPersonaExtra);
-                        PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra);
-                        PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
-                        prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                        profilo.PrezziRisorse[bungalowSelezionato] = prezziRisorsa;
-                        //prezzoPerGironataPostStdTextBox.Clear();
-                        //prezzoPerPersonaExtraTextBox.Clear();
+                        if (prezzoGiornata > 0 && prezzoExtra > 0)
+                        {
+                            PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra);
+                            PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
+                            prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
+                            profilo.PrezziRisorse[bungalowSelezionato] = prezziRisorsa;
+                        }
                     }
                     catch (FormatException)
                     {

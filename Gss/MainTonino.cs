@@ -325,10 +325,10 @@ namespace Gss
             
             PrenotazioniController prenotazioniController = new PrenotazioniController();
 
-            PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-1), DateTime.Today, cliente5);
+            /*PrenotazioneAttiva prenotazioneAttivaPassata1 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-1), DateTime.Today, cliente5);
             prenotazioneAttivaPassata1.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttivaPassata1.DataInizio, prenotazioneAttivaPassata1.DataFine, prenotazioneAttivaPassata1.NumeroPersone).ListaBungalow.First();
             prenotazioniController.AddPrenotazione(prenotazioneAttivaPassata1);
-            prenotazioniController.ArchiviaPrenotazione(prenotazioneAttivaPassata1);
+            prenotazioniController.ArchiviaPrenotazione(prenotazioneAttivaPassata1);*/
 
             PrenotazioneAttiva prenotazioneAttivaPassata2 = new PrenotazioneAttiva(prenotazioniController.Gss.NumeroPrenotazioni, 5, DateTime.Today.AddDays(-5), DateTime.Today, cliente4);
             prenotazioneAttivaPassata2.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttivaPassata2.DataInizio, prenotazioneAttivaPassata2.DataFine, prenotazioneAttivaPassata2.NumeroPersone).ListaBungalow.First();

@@ -82,6 +82,20 @@ namespace Gss.Controller
             
         }
 
+        //RISORSE METHODS   
+        public Risorsa GetRisorsaByCodice(string codice)
+        {
+            Risorsa risorsa = Gss.Resort.Impianti.GetImpiantoByCodice(codice);
+
+            if (risorsa == null)
+            {
+                risorsa = Gss.Resort.Bungalows.GetBungalowByCodice(codice);
+                if (risorsa == null)
+                    throw new Exception("La risorsa cercata non esiste");
+            }
+
+            return risorsa;
+        }
 
         //IMPIANTI METHODS
 

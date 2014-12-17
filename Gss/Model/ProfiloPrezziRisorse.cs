@@ -48,8 +48,11 @@ namespace Gss.Model
 
         public PrezziRisorsa GetPrezziRisorsa(Risorsa risorsa)
         {
-            if (_prezziRisorsa.Keys.Contains(risorsa))
-                return _prezziRisorsa[risorsa];
+            foreach (Risorsa r in _prezziRisorsa.Keys)
+            {
+                if (r.Equals(risorsa))
+                    return _prezziRisorsa[r];
+            }
             
             return null;
         }

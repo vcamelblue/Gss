@@ -44,6 +44,16 @@ namespace Gss.View
             {
                 bungalowDataGridView.Rows.Add(b.Codice, b.GetNumeroStanze(), b.ToStringStanze(), b.PostiTotaliStandard(), b.PostiTotaliMax());
             }
+            if (bungalowDataGridView.Rows.Count == 0)
+            {
+                rimuoviBungalowButton.Enabled = false;
+                modificaBungalowButton.Enabled = false;
+            }
+            else
+            {
+                rimuoviBungalowButton.Enabled = true;
+                modificaBungalowButton.Enabled = true;
+            }
         }
 
         private void rimuoviBungalowButton_Click(object sender, EventArgs e)

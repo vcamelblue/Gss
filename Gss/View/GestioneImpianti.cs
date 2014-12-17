@@ -110,6 +110,18 @@ namespace Gss.View
             {
                 impiantiDataGridView.Rows.Add(i.Codice, i.Nome, i.Versante, i.GetPisteAlpine().Count, i.GetPisteFondo().Count, i.GetPisteSnowPark().Count);
             }
+            if (impiantiDataGridView.Rows.Count == 0)
+            {
+                rimuoviImpiantoButton.Enabled = false;
+                modificaImpiantoButton.Enabled = false;
+                visualizzaImpiantoButton.Enabled = false;
+            }
+            else
+            {
+                rimuoviImpiantoButton.Enabled = true;
+                modificaImpiantoButton.Enabled = true;
+                visualizzaImpiantoButton.Enabled = false;
+            }
         }
     }
 }

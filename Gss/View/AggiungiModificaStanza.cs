@@ -16,34 +16,38 @@ namespace Gss.View
     {
         //Fields
 
-        private bool _inEditingMode;
-        private Bungalow _bungalow;
-        private Stanza _stanza;
-        private ResortController _resortController;
+        private bool inEditingMode;
+        private Bungalow bungalow;
+        private Stanza stanza;
+        private ResortController resortController;
 
         //Costructors
 
         public AggiungiModificaStanza(Bungalow bungalow, ResortController resortController)
         {
-            _resortController = resortController;
-            _bungalow = bungalow;
-            _stanza = null;
-            _inEditingMode = false;
+            this.resortController = resortController;
+
+            this.bungalow = bungalow;
+            this.stanza = null;
+
+            this.inEditingMode = false;
 
             InitializeComponent();
         }
 
         public AggiungiModificaStanza(Bungalow bungalow, Stanza stanza, ResortController resortController)
         {
-            _resortController = resortController;
-            _bungalow = bungalow;
-            _stanza = stanza;
-            _inEditingMode = true;
+            this.resortController = resortController;
+
+            this.bungalow = bungalow;
+            this.stanza = stanza;
+
+            this.inEditingMode = true;
 
             InitializeComponent();
 
-            numeroPostiMassimiTextBox.Text = _stanza.NumeroPostiMax+"";
-            numeroPostiStandardTextBox.Text = _stanza.NumeroPostiStandard+"";
+            numeroPostiMassimiTextBox.Text = stanza.NumeroPostiMax.ToString();
+            numeroPostiStandardTextBox.Text = stanza.NumeroPostiStandard.ToString();
 
             this.Text = "Modifica Stanza";
             this.salvaButton.Text = "Salva Modifiche";
@@ -62,23 +66,23 @@ namespace Gss.View
             }
             catch (FormatException exception)
             {
-                MessageBox.Show("Inserisci numeri e non lettere");
+                MessageBox.Show("Inserisci solo numeri interi positivi!");
             }
             try
             {
-                  if ((numeroPostiStandard != 0) && (numeroPostiMassimi != 0) && (numeroPostiMassimi >= numeroPostiStandard))
+                  if ((numeroPostiStandard > 0) && (numeroPostiMassimi > 0) && (numeroPostiMassimi >= numeroPostiStandard))
                   {
-                      if (_inEditingMode)
+                      if (inEditingMode)
                       {
-                          _stanza.NumeroPostiMax = numeroPostiMassimi;
-                          _stanza.NumeroPostiStandard = numeroPostiStandard;
+                          stanza.NumeroPostiMax = numeroPostiMassimi;
+                          stanza.NumeroPostiStandard = numeroPostiStandard;
                       }
                       else //nuova stanza
                       {
-                          _stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
-                          _bungalow.Add(_stanza);
+                          stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
+                          bungalow.Add(stanza);
                       }
-                      //SE TUTTO OK FARE COSI'
+
                       this.DialogResult = DialogResult.OK;
                       this.Close();
                   }

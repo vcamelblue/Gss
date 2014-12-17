@@ -43,6 +43,14 @@ namespace Gss.View.MainViewPanel
             {
                 incassiDataGridView.Rows.Add(p.Fattura.Numero, p.Fattura.DataFattura.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome, p.Fattura.TotaleFattura + " €");
             }
+            if (incassiDataGridView.Rows.Count == 0)
+            {
+                visualizzaFatturaButton.Enabled = false;
+            }
+            else
+            {
+                visualizzaFatturaButton.Enabled = true;
+            }
         }
 
         public override void Refresh()
@@ -63,7 +71,6 @@ namespace Gss.View.MainViewPanel
                     prenotazioneSelezionata = p;
                 }
             }
-
             VisualizzaFattura visualizzaFatturaForm = new VisualizzaFattura(prenotazioneSelezionata);
             visualizzaFatturaForm.Show();
         }

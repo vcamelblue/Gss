@@ -14,7 +14,7 @@ namespace Gss.Model
         public ProfiloPrezziRisorse(string nome)
         {
             _nome = nome;
-            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
+            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>(new RisorsaComparer());
         }
 
         public ProfiloPrezziRisorse()

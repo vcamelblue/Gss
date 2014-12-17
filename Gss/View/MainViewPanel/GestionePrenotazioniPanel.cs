@@ -155,6 +155,7 @@ namespace Gss.View.MainViewPanel
                 {
                     prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
                     VisualizzaFattura visualizzaFatt = new VisualizzaFattura((PrenotazioneArchiviata) prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata));
+                    visualizzaFatt.Show();
                     Refresh();
                 }
                 catch (Exception exception)

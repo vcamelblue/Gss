@@ -408,7 +408,13 @@ namespace Gss.View
                             PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra);
                             PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
                             prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                            profilo.PrezziRisorse[bungalowSelezionato] = prezziRisorsa;
+                            Risorsa ris=null;
+                            foreach (Risorsa r in profilo.PrezziRisorse.Keys)
+                            {
+                                if (r.Equals(bungalowSelezionato))
+                                    ris = r;
+                            }
+                            profilo.PrezziRisorse[ris] = prezziRisorsa;
                         }
                     }
                     catch (FormatException)

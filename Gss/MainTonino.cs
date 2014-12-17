@@ -189,42 +189,9 @@ namespace Gss
      
             Bungalows b=prenotazioni.FindBungalowDisponibiliFor(new DateTime(2014,11, 21), new DateTime(2014,11,25),4);
             Console.Out.WriteLine(b);*/
-
-            #region Periodi
-
-            Periodo periodo1 = new Periodo(new DateTime(2014 , 12 , 1), new DateTime(2014 , 12 , 10));
-            Periodo periodo2 = new Periodo(new DateTime(2014 , 12 , 11), new DateTime(2014 , 12 , 20));
-            Periodo periodo3 = new Periodo(new DateTime(2014 , 12 , 24), new DateTime(2015 , 1 , 2));
-            Periodo periodo4 = new Periodo(new DateTime(2015 , 1 , 4), new DateTime(2015 , 1 , 25));
-            Periodo periodo5 = new Periodo(new DateTime(2015, 1, 27), new DateTime(2015, 2, 5));
-            
-
-            periodo1.Profilo=periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
-            periodo2.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
-            periodo3.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Alta");
-            periodo4.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
-            periodo5.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
-              
-
-
-            List<Periodo> periodi=new List<Periodo>();
-            periodi.Add(periodo1);periodi.Add(periodo2);periodi.Add(periodo3);periodi.Add(periodo4);
-            periodi.Add(periodo5);
-
-            #endregion
-
-
-            //Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
-            periodiProfiliController.SetPeriodi(periodi);
-            
-
-            foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
-              Console.Out.WriteLine(p);
-
-
             #region Aggiunta Prezzi Periodi
-            List<PrezzoSpecifico> prezzispecifici=new List<PrezzoSpecifico>();
-            PrezzoSpecifico prezzoPerAccesso= new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso,5);
+            List<PrezzoSpecifico> prezzispecifici = new List<PrezzoSpecifico>();
+            PrezzoSpecifico prezzoPerAccesso = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, 5);
             PrezzoSpecifico prezzoPerPersonaExtra = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, 6);
             prezzispecifici.Add(prezzoPerPersonaExtra);
             prezzispecifici.Add(prezzoPerAccesso);
@@ -322,6 +289,40 @@ namespace Gss
             periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto4, prezziImpianto4Bassa, "Bassa");
             periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto5, prezziImpianto5Bassa, "Bassa");
             #endregion
+
+            #region Periodi
+
+            Periodo periodo1 = new Periodo(new DateTime(2014 , 12 , 1), new DateTime(2014 , 12 , 10));
+            Periodo periodo2 = new Periodo(new DateTime(2014 , 12 , 11), new DateTime(2014 , 12 , 20));
+            Periodo periodo3 = new Periodo(new DateTime(2014 , 12 , 24), new DateTime(2015 , 1 , 2));
+            Periodo periodo4 = new Periodo(new DateTime(2015 , 1 , 4), new DateTime(2015 , 1 , 25));
+            Periodo periodo5 = new Periodo(new DateTime(2015, 1, 27), new DateTime(2015, 2, 5));
+            
+
+            periodo1.Profilo=periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
+            periodo2.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
+            periodo3.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Alta");
+            periodo4.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
+            periodo5.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
+              
+
+
+            List<Periodo> periodi=new List<Periodo>();
+            periodi.Add(periodo1);periodi.Add(periodo2);periodi.Add(periodo3);periodi.Add(periodo4);
+            periodi.Add(periodo5);
+
+            #endregion
+
+
+            //Console.Out.WriteLine(ppc.TrySetPeriodi(periodi));
+            periodiProfiliController.SetPeriodi(periodi);
+            
+
+            foreach (Periodo p in GSS.GetInstance().GestorePeriodi.Periodi)
+              Console.Out.WriteLine(p);
+
+
+           
             
             PrenotazioniController prenotazioniController = new PrenotazioniController();
 

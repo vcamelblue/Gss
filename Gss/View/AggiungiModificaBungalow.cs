@@ -52,11 +52,11 @@ namespace Gss.View
                 RiempiGrid();
             }
             else
-            {
-              
+            {              
                 modificaStanzaButton.Enabled = false;
                 rimuoviStanzaButton.Enabled = false;
                 salvaButton.Enabled = false;
+
                 postiMaxTotaliLabel.Text = "Posti Max Totali:  0";
                 postiTotoaliLabel.Text = "Posti Totali:  0";  
             }
@@ -64,12 +64,16 @@ namespace Gss.View
 
         private void RiempiGrid()
         {
+            stanzeDataGridView.Rows.Clear();
+
             foreach (Stanza s in bungalow.Stanze)
             {
                 stanzeDataGridView.Rows.Add(s.ToString(), s.NumeroPostiStandard.ToString(), s.NumeroPostiMax.ToString());
             }
+
             postiTotoaliLabel.Text = "Posti Totali:  " + bungalow.PostiTotaliStandard();
             postiMaxTotaliLabel.Text = "Posti Max Totali:  " + bungalow.PostiTotaliMax();
+
             if (bungalow.Stanze.Count == 0)
             {
                 rimuoviStanzaButton.Enabled = false;
@@ -87,7 +91,6 @@ namespace Gss.View
         public override void Refresh()
         {
             base.Refresh();
-            stanzeDataGridView.Rows.Clear();
             RiempiGrid();
         }
 
@@ -95,6 +98,7 @@ namespace Gss.View
         {
             int numerPostiStandardSelezionata = int.Parse(stanzeDataGridView.SelectedRows[0].Cells[1].Value.ToString());
             int numerPostiMaxSelezionata = int.Parse(stanzeDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+
             Stanza stanzaSelezionata = new Stanza(numerPostiStandardSelezionata, numerPostiMaxSelezionata);
 
             foreach (Stanza s in bungalow.Stanze)
@@ -120,9 +124,11 @@ namespace Gss.View
         {
             int numerPostiStandardSelezionata = int.Parse(stanzeDataGridView.SelectedRows[0].Cells[1].Value.ToString());
             int numerPostiMaxSelezionata = int.Parse(stanzeDataGridView.SelectedRows[0].Cells[2].Value.ToString());
+
             Stanza stanzaSelezionata = new Stanza(numerPostiStandardSelezionata, numerPostiMaxSelezionata);
+
             bool trovato = false;
-            for(int i = 0; i<bungalow.Stanze.Count && !trovato;i++) 
+            for(int i = 0; i < bungalow.Stanze.Count && !trovato; i++) 
             {
                 Stanza s = bungalow.Stanze[i];
                 if (s.Equals(stanzaSelezionata))
@@ -134,8 +140,7 @@ namespace Gss.View
                     if (res == DialogResult.OK)
                     {
                         Refresh();
-                    }
-                    
+                    }                    
                 }
             }
         }
@@ -167,15 +172,15 @@ namespace Gss.View
             //Recupero i campi
             string codiceBungalow = codiceTextBox1.Text;
 
-            if (codiceBungalow!="")
+            if (codiceBungalow != "")
             {
                 try
                 {
                     if (inEditingMode)
                     {
-                        Bungalow bungalowModificato = new Bungalow(codiceBungalow);
-                        bungalowModificato.Stanze = bungalow.Stanze;
-                        resortController.EditBungalow(bungalow, bungalowModificato);
+                        //nothing to do, le modifiche sono già apportate nella variabile bungalow, di cui l'interfaccia 
+                        //gestione bungalows contiene il riferimento e sarà in grado di apportare o meno le modifiche 
+                        //nel sistema 
                     }
                     else
                     {
@@ -183,7 +188,6 @@ namespace Gss.View
                         bungalowNuovo.Stanze = bungalow.Stanze;
                         resortController.AddBungalow(bungalowNuovo);
                     }
-                    //SE TUTTO OK FARE COSI'
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -200,5 +204,5 @@ namespace Gss.View
         }
 
     }
-    }
+}
 

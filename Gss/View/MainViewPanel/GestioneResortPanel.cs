@@ -39,7 +39,9 @@ namespace Gss.View.MainViewPanel
         private void RiempiImpiantiGrid()
         {
             impiantiDataGridView.Rows.Clear();
+            
             int numImpianti = resortController.GetImpianti().ListaImpianti.Count;
+
             foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
             {
                 impiantiDataGridView.Rows.Add(i.ToString());
@@ -50,7 +52,9 @@ namespace Gss.View.MainViewPanel
         private void RiempiBungalowGrid()
         {
             bungalowsDataGridView.Rows.Clear();
+
             int numeroPosti = 0;
+            
             foreach (Bungalow b in resortController.GetBungalows().ListaBungalow)
             {
                 numeroPosti += b.PostiTotaliStandard();

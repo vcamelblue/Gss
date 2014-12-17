@@ -15,6 +15,8 @@ namespace Gss.View.MainViewPanel
     {
         private ClientiController clientiController;
 
+        //DISABILITARE I PULSANTI SE LA GRIGLIA E' VUOTA
+
         public GestioneClientiPanel()
         {
             InitializeComponent();

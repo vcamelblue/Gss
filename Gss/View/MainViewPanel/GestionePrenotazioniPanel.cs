@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
+using Gss.View.Utility;
 
 namespace Gss.View.MainViewPanel
 {
     public partial class GestionePrenotazioniPanel : System.Windows.Forms.UserControl
     {
         private Button previusSelectedButton = null;
-        private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
-        private Color selectedButtonColor = Color.FromArgb(54, 78, 102); //Color.FromKnownColor(KnownColor.MenuHighlight);
-        private Color normalFontColor = Color.FromKnownColor(KnownColor.Black);
-        private Color selectFontColor = Color.FromArgb(251, 251, 251);
+        private Color normalButtonColor = ConfigAndUtility.normalButtonColor;
+        private Color selectedButtonColor = ConfigAndUtility.selectedButtonColor;
+        private Color normalFontColor = ConfigAndUtility.normalFontColor;
+        private Color selectFontColor = ConfigAndUtility.selectFontColor;
 
         private ClientiController clientiController;
         private ResortController resortController;
@@ -52,7 +53,6 @@ namespace Gss.View.MainViewPanel
             selectRightTab(prenotazioniConcluseTabButton);
             modificaPrenotazioneButton.Enabled = false;
             archiviaRimuoviPrenotazioneButton.Enabled = true;
-            prenotazioniDataGridView.Rows.Clear();
             RiempiGrigliaPrenotazioniConcluse();
         }
 
@@ -61,7 +61,6 @@ namespace Gss.View.MainViewPanel
             selectRightTab(prenotazioniInCorsoTabButton);
             modificaPrenotazioneButton.Enabled = false;
             archiviaRimuoviPrenotazioneButton.Enabled = false;
-            prenotazioniDataGridView.Rows.Clear();
             RiempiGrigliaPrenotazioniInCorso();
         }
 
@@ -70,7 +69,6 @@ namespace Gss.View.MainViewPanel
             selectRightTab(prenotazioniFutureTabButton);
             archiviaRimuoviPrenotazioneButton.Enabled = false;
             modificaPrenotazioneButton.Enabled = true;
-            prenotazioniDataGridView.Rows.Clear();
             RiempiGrigliaPrenotazioniFuture();
         }
 
@@ -148,6 +146,7 @@ namespace Gss.View.MainViewPanel
         private void archiviaRimuoviPrenotazioneButton_Click(object sender, EventArgs e)
         {   
             int numeroPrenotazioneSelezionata = int.Parse(prenotazioniDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
             Prenotazione prenotazioneSelezionata = prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata);
             DialogResult result = MessageBox.Show("Sicuro di voler archiviare la prenotazione?", "Archviazione Prenotazione", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
@@ -155,6 +154,7 @@ namespace Gss.View.MainViewPanel
                 try
                 {
                     prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
+                    VisualizzaFattura visualizzaFatt = new VisualizzaFattura((PrenotazioneArchiviata) prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata));
                     Refresh();
                 }
                 catch (Exception exception)

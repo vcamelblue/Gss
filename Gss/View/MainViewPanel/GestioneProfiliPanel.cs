@@ -54,7 +54,15 @@ namespace Gss.View.MainViewPanel
         private void visualizzaProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+            ProfiloPrezziRisorse profiloSelezionato = null;
+            try
+            {
+                profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
             AggiungiModificaVisualizzaProfilo visualizzaProfiloForm = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, true);
             visualizzaProfiloForm.Show();
         }
@@ -62,8 +70,15 @@ namespace Gss.View.MainViewPanel
         private void rimuoviProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
-
+            ProfiloPrezziRisorse profiloSelezionato = null;
+            try
+            {
+                profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
             DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il profilo selezionato?", "Rimozione Profilo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
@@ -75,8 +90,15 @@ namespace Gss.View.MainViewPanel
         private void modificaProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = (ProfiloPrezziRisorse) periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato).Clone();
-
+            ProfiloPrezziRisorse profiloSelezionato = null;
+            try
+            {
+                profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
             AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, false);
 
             DialogResult res = modificaProfilo.ShowDialog();

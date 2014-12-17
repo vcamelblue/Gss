@@ -23,19 +23,7 @@ namespace Gss.View.MainViewPanel
         {
             container.Add(this);
 
-            InitializeComponent();
-
-            
-            clientiInArrivoOggiDataGridView.Rows.Add("Vincenzo Villani");
-            clientiInArrivoOggiDataGridView.Rows.Add("Antonio Benincasa");
-            clientiInArrivoOggiDataGridView.Rows.Add("Pasquale Presutti");
-            clientiInArrivoOggiDataGridView.Rows.Add("Unnome Molto Lungo e Art.");
-
-            clientiInPartenzaOggiDataGridView.Rows.Add("Niola Mignogna");
-            clientiInPartenzaOggiDataGridView.Rows.Add("Anthony De Castro Braciola");
-
-            prenotazioniDaSaldareOggiDataGridView.Rows.Add("231 - Nicola Mignogna");
-             
+            InitializeComponent();             
         }
 
         public RiepilogoGiornalieroPanel(IContainer container, PrenotazioniController prenotazioniController)

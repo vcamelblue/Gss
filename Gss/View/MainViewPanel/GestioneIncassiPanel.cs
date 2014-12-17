@@ -16,6 +16,8 @@ namespace Gss.View.MainViewPanel
     {
         private PrenotazioniController prenotazioniController;
 
+        //DISABILITARE I PULSANTI SE LA GRIGLIA E' VUOTA
+
         public GestioneIncassiPanel()
         {
             InitializeComponent();

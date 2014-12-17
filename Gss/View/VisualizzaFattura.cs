@@ -24,13 +24,22 @@ namespace Gss.View
 
         private void VisualizzaFattura_Load(object sender, EventArgs e)
         {
-            numeroFatturaTextBox.Text = prenotazioneArchiviata.Fattura.Numero.ToString();
+            if (prenotazioneArchiviata == null)
+            {
+                MessageBox.Show("Impossibile Visualizzare la fattura richiesta! La fattura selezionata potrebbe essere corrotta.");
+                this.Close();
+            }
+
+            numeroFatturaTextBox.Text = prenotazioneArchiviata.Fattura != null ? prenotazioneArchiviata.Fattura.Numero.ToString() : "";
             dataFatturaTimePicker.Value = prenotazioneArchiviata.Fattura.DataFattura;
+            
             clienteDataGridView.Rows.Add(prenotazioneArchiviata.Cliente.Nome, prenotazioneArchiviata.Cliente.Nome, prenotazioneArchiviata.Cliente.CodiceFiscale, prenotazioneArchiviata.Cliente.Indirizzo);
+            
             dettagliFatturaDataGridView.Rows.Add("Bungalow", prenotazioneArchiviata.Fattura.TotaleBungalow);
             dettagliFatturaDataGridView.Rows.Add("Skicards", prenotazioneArchiviata.Fattura.TotaleSkiCards);
             dettagliFatturaDataGridView.Rows.Add("");
             dettagliFatturaDataGridView.Rows.Add("Totale", prenotazioneArchiviata.Fattura.TotaleFattura);
+            
             dettagliFatturaDataGridView.Rows[3].Selected = true;  
         }
 

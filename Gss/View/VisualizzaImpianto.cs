@@ -26,36 +26,45 @@ namespace Gss.View
 
         private void VisualizzaImpianto_Load(object sender, EventArgs e)
         {
-            int contaAlpine = 0;
-            int contaFondo = 0;
-            int contaSnowpark = 0;
+            if (impianto == null)
+            {
+                MessageBox.Show("Impossibile Visualizzare l'impianto richiesto! L'impianto selezionato potrebbe essere corrotto.");
+                this.Close();
+            }
+
+            int alpineCount = 0;
+            int fondoCount = 0;
+            int snowparkCount = 0;
+
             foreach(Pista p in impianto.Piste)
             {
                 if (p is Alpina)
                 {
                     Alpina alpina = (Alpina)p;
                     pisteAlpineDataGridView.Rows.Add(alpina.Nome, alpina.Difficolta.ToString());
-                    contaAlpine++;
+                    alpineCount++;
                 }
                 else if (p is Fondo)
                 {
                     Fondo fondo = (Fondo)p;
                     pisteDiFondoDataGridView.Rows.Add(fondo.Nome, fondo.DislivelloMedio.ToString(), fondo.DislivelloMassimo.ToString());
-                    contaFondo++;
+                    fondoCount++;
                 }
                 else if (p is SnowPark)
                 {
                     SnowPark snowPark = (SnowPark)p;
                     pisteSnowparkDataGridView.Rows.Add(snowPark.Nome, snowPark.NumeroSalti.ToString(), snowPark.NumeroJibs.ToString());
-                    contaSnowpark++;
+                    snowparkCount++;
                 }
             }
+
             nomeImpiantoTextBox.Text = impianto.Nome;
             versanteTextBox.Text = impianto.Versante;
             codiceTextBox.Text = impianto.Codice;
-            pisteAlpineTotaliLabel.Text = "Piste Alpine Totali  " + contaAlpine;
-            pisteDiFondoTotaliLabel.Text = "Piste Di Fondo Totali  " + contaFondo;
-            pisteSnowParkLabel.Text = "Piste SnowPark Totali  " + contaSnowpark;
+
+            pisteAlpineTotaliLabel.Text = "Piste Alpine Totali  " + alpineCount;
+            pisteDiFondoTotaliLabel.Text = "Piste Di Fondo Totali  " + fondoCount;
+            pisteSnowParkLabel.Text = "Piste SnowPark Totali  " + snowparkCount;
         }
     }
 }

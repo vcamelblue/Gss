@@ -160,6 +160,7 @@ namespace Gss.View
                     if (result == DialogResult.OK)
                     {
                         prenotazioniController.AddPrenotazione(prenotazioneCorrente);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
                 }

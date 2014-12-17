@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
+using Gss.View.Utility;
 
 namespace Gss.View {
     public partial class GestioneInformazioniResort : Form {
         
          //Fields
 
-        private bool _inEditingMode;
-        private Resort _resort;
-        private ResortController _resortController;
+        private bool inEditingMode;
+        private Resort resort;
+        private ResortController resortController;
 
         public GestioneInformazioniResort(ResortController resortController) {
 
-            _resortController = resortController;
-            _resort = null;
-            _inEditingMode = false;
+            this.resortController = resortController;
+            resort = null;
+            inEditingMode = false;
 
             InitializeComponent();
         
@@ -31,23 +32,34 @@ namespace Gss.View {
 
         public GestioneInformazioniResort(ResortController resortController, Resort resort)
         {
-            _resortController = resortController;
-            _resort = resort;
-            _inEditingMode = true;
+            this.resortController = resortController;
+            this.resort = resort;
+            inEditingMode = true;
 
             InitializeComponent();
 
-            nomeTextBox.Text = _resort.Nome;
-            indirizzoTextBox.Text = _resort.Indirizzo;
-            telefonoTextBox.Text = _resort.Telefono;
-            emailTextBox.Text = _resort.Email;
-            dataIniziodateTimePicker.Value = _resort.DataInizioStagione == DateTime.MinValue? DateTime.Now.AddMonths(1) : _resort.DataInizioStagione;
-            dataFinedateTimePicker.Value = _resort.DataFineStagione == DateTime.MinValue? DateTime.Now.AddMonths(2) : resort.DataFineStagione;
+            nomeTextBox.Text = resort == null ? "" : resort.Nome;
+            indirizzoTextBox.Text = resort == null ? "" : resort.Indirizzo;
+            telefonoTextBox.Text = resort == null ? "" : resort.Telefono;
+            emailTextBox.Text = resort == null ? "" : resort.Email;
+            dataIniziodateTimePicker.Value = resort.DataInizioStagione == DateTime.MinValue? DateTime.Now.AddMonths(1) : resort.DataInizioStagione;
+            dataFinedateTimePicker.Value = resort.DataFineStagione == DateTime.MinValue? DateTime.Now.AddMonths(3) : resort.DataFineStagione;
 
             
             this.Text = "Modifica Info";
             this.salvaButton.Text = "Salva Modifiche";
         }
+
+        /*
+            try
+            {
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+         */
 
         private void salvaButton_Click(object sender, EventArgs e)
         {
@@ -60,62 +72,37 @@ namespace Gss.View {
             DateTime dataInizio = dataIniziodateTimePicker.Value.Date;
             DateTime dataFine = dataFinedateTimePicker.Value.Date;
 
-            if (checkFields(nome, indirizzo, telefono, email))
+            if (ConfigAndUtility.checkFields(nome, indirizzo, telefono, email))
             {
                 try
+                {
+                    if (inEditingMode)
                     {
-                        if (_inEditingMode)
-                        {
-                            try
-                            {
-                                _resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
-                                this.DialogResult = DialogResult.OK;
-                                this.Close();
-                            }
-                            catch (Exception exception)
-                            {
-                                MessageBox.Show(exception.Message);
-                            }
-                        }
-                        else
-                        {   
-                            Resort resort = new Resort(nome, indirizzo, telefono, email, dataInizio, dataFine);
-                            _resortController.SetResort(resort);
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                        
+                        resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();                        
                     }
+                    else
+                    {   
+                        Resort resort = new Resort(nome, indirizzo, telefono, email, dataInizio, dataFine);
+
+                        resortController.SetResort(resort);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }                        
+                }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message);
                 }
-            }
-
-            
+            }           
         }
 
         private void annullaButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        //Utility Methods
-
-        private bool checkFields(params String[] fields)
-        {
-            bool all_Ok = true;
-
-            foreach (String s in fields)
-            {
-                all_Ok &= (s != "");
-            }
-            return all_Ok;
-        }
-
-        private String noNullString(String source)
-        {
-            return source != null ? source : "";
         }
     }
 }

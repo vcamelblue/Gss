@@ -15,5 +15,25 @@ namespace Gss.View.Utility
         public static readonly Color normalFontColor = Color.FromKnownColor(KnownColor.Black);
         public static readonly Color selectFontColor = Color.FromArgb(251, 251, 251);
 
+
+        
+        
+        //Utility Methods
+
+        public static bool checkFields(params String[] fields)
+        {
+            bool all_Ok = true;
+
+            foreach (String s in fields)
+            {
+                all_Ok &= (s != "");
+            }
+            return all_Ok;
+        }
+
+        public static String noNullString(String source)
+        {
+            return source != null ? source : "";
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Controller;
 using Gss.Model;
+using Gss.View.Utility;
 
 namespace Gss.View 
 {
@@ -22,9 +23,9 @@ namespace Gss.View
         public AggiungiModificaImpianto(ResortController resortController) 
         {
             this.resortController = resortController;
-            inEditingMode = false;
-            impianto = null;
-            pisteImpianto = new List<Pista>();
+            this.inEditingMode = false;
+            this.impianto = null;
+            this.pisteImpianto = new List<Pista>();
 
             InitializeComponent();
         }
@@ -32,9 +33,9 @@ namespace Gss.View
         public AggiungiModificaImpianto(ResortController resortController, Impianto impianto)
         {
             this.resortController = resortController;
-            inEditingMode = true;
+            this.inEditingMode = true;
             this.impianto = impianto;
-            pisteImpianto = impianto.Piste;
+            this.pisteImpianto = impianto.Piste;
 
             InitializeComponent();
         }
@@ -43,16 +44,25 @@ namespace Gss.View
         {
             if (inEditingMode)
             {
+                if (impianto == null)
+                {
+                    MessageBox.Show("Impossibile caricare i dati dell'impianto selezionato! L'impianto potrebbe essere corrotto.");
+                    this.Close();
+                }
+
                 codiceTextBox.Text = impianto.Codice;
                 nomeTextBox.Text = impianto.Nome;
                 versanteTextBox.Text = impianto.Versante;
+
                 SetDataGrid();
+
                 codiceTextBox.Enabled = false;
 
                 this.Text = "Modifica Impianto";
                 salvaButton.Text = "Salva Modifiche";
             }
-            else pisteTotaliLabel.Text = "";
+            else 
+                pisteTotaliLabel.Text = "";
         }
 
         private string GetTipologiaByPista(Pista pista)
@@ -89,7 +99,7 @@ namespace Gss.View
         private void aggiungiPistaButton_Click(object sender, EventArgs e)
         {
 
-            if (!inEditingMode && impianto==null)
+            if (!inEditingMode && impianto == null)
             {
                 impianto = new Impianto(codiceTextBox.Text, nomeTextBox.Text, versanteTextBox.Text);
             }
@@ -108,7 +118,7 @@ namespace Gss.View
         {
             foreach (Pista p in pisteImpianto)
             {
-                if (p.Nome==pisteDataGridView.SelectedRows[0].Cells[0].Value)
+                if (p.Nome == pisteDataGridView.SelectedRows[0].Cells[0].Value)
                 {
                     AggiungiModificaPista aggiungiPistaForm = new AggiungiModificaPista(resortController, impianto, p);
                     
@@ -133,7 +143,7 @@ namespace Gss.View
                     if (result == DialogResult.OK)
                     {
                         impianto.Remove(p);
-                        pisteImpianto=impianto.Piste;
+                        pisteImpianto = impianto.Piste;
                         Refresh();
                         break;
                     }
@@ -157,16 +167,18 @@ namespace Gss.View
             string nomeImpianto = nomeTextBox.Text;
             string versante = versanteTextBox.Text;
 
-            if (checkFields(codiceImpianto, nomeImpianto, versante))
+            if (ConfigAndUtility.checkFields(codiceImpianto, nomeImpianto, versante))
             {
                 try
                 {
                     if (inEditingMode)
                     {
-                        Impianto impiantoModificato = new Impianto(codiceImpianto, nomeImpianto, versante);
-                        List<Pista> pisteModificate = impianto.Piste;
-                        impiantoModificato.Piste = pisteModificate;
-                        resortController.EditImpianto(impianto, impiantoModificato);
+                        impianto.Codice = codiceImpianto;
+                        impianto.Nome = nomeImpianto;
+                        impianto.Versante = versante;
+
+                        //le piste sono già impostate perchè l'agiunta/modifica/rimozione avviene sull'impianto passato,
+                        //se in editing mode!
                     }
                     else
                     {
@@ -174,7 +186,6 @@ namespace Gss.View
                         nuovoImpianto.Piste = pisteImpianto;
                         resortController.AddImpianto(nuovoImpianto);
                     }
-                    //SE TUTTO OK FARE COSI'
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -191,32 +202,20 @@ namespace Gss.View
         }
 
        public override void Refresh()
-        {
+       {
             base.Refresh();
-            pisteDataGridView.Rows.Clear();
             SetDataGrid();
-        }
+       }
 
        private void SetDataGrid()
-        {
+       {
+            pisteDataGridView.Rows.Clear();
             foreach (Pista p in pisteImpianto)
             {
                 pisteDataGridView.Rows.Add(p.Nome, GetTipologiaByPista(p), GetInfoByPista(p));
             }
             pisteTotaliLabel.Text = "Piste Totali  " + pisteImpianto.Count().ToString();
-        }
-
-       private bool checkFields(params String[] fields)
-       {
-           bool all_Ok = true;
-
-           foreach (String s in fields)
-           {
-               all_Ok &= (s != "");
-           }
-           return all_Ok;
        }
-       
 
     }
 }

@@ -101,8 +101,10 @@ namespace Gss.View
         private void AggiungiModificaCliente_Load(object sender, EventArgs e)
         {
             if ((inEditingMode || inViewMode) && clienteToEdit == null)
+            {
                 MessageBox.Show("Impossibile caricare i dati del cliente selezionato! Il cliente potrebbe essere corrotto.");
-
+                this.Close();
+            }
 
             if (inViewMode == true)
             {

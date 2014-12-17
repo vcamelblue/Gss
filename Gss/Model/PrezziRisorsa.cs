@@ -66,6 +66,21 @@ namespace Gss.Model
             return null;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            PrezziRisorsa p = null;
+
+            if (obj is PrezziRisorsa)
+                p = (PrezziRisorsa)obj;
+            else
+                return false;
+
+            return (this.Prezzo == p.Prezzo && p.PrezziSpecifici.Equals(p.PrezziSpecifici));
+        }
+        
         public object Clone()
         {
             PrezziRisorsa result = new PrezziRisorsa(this.Prezzo, new List<PrezzoSpecifico>());

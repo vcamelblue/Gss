@@ -55,7 +55,7 @@ namespace Gss.View
             DateTime dataInizio = dataInizioTimePicker.Value;
             DateTime dataFine = dataFineTimePicker.Value;
             string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
-            ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloByNome(nomeProfilo);
+            ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeProfilo);
 
             //AGGIUNGERE CONTROLLO CHE UN PERIODO AGGIUNTO/MODIFICATO NON SIA GIA PRESENTE!!! GRAVE ERRORE ALTRIMENTI!
 
@@ -122,7 +122,7 @@ namespace Gss.View
             dataInizioTimePicker.MinDate = periodiProfiliController.Gss.Resort.DataInizioStagione;
             dataInizioTimePicker.MaxDate = periodiProfiliController.Gss.Resort.DataFineStagione;
 
-            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().Profili)
+            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetAllProfili().Profili)
             {
                 profiloPeriodoComboBox.Items.Add(p.Nome);
             }

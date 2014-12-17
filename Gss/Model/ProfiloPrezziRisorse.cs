@@ -23,7 +23,7 @@ namespace Gss.Model
 
         }
 
-        public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorsa
+        public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorse
         {
             get { return _prezziRisorsa; }
             set { _prezziRisorsa = value; }
@@ -78,12 +78,12 @@ namespace Gss.Model
         {
             ProfiloPrezziRisorse result = new ProfiloPrezziRisorse(this.Nome);
 
-            result.PrezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
+            result.PrezziRisorse = new Dictionary<Risorsa, PrezziRisorsa>();
 
-            foreach(Risorsa risorsa in this.PrezziRisorsa.Keys){
+            foreach(Risorsa risorsa in this.PrezziRisorse.Keys){
 
                 Risorsa risClone = (Risorsa) risorsa.Clone();
-                PrezziRisorsa prezziRisClone = (PrezziRisorsa) this.PrezziRisorsa[risorsa].Clone();
+                PrezziRisorsa prezziRisClone = (PrezziRisorsa) this.PrezziRisorse[risorsa].Clone();
 
                 result.Add(risClone, prezziRisClone);
             }

@@ -29,6 +29,20 @@ namespace Gss.Model
             set { _valore = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+
+            PrezzoSpecifico p = null;
+
+            if (obj is PrezzoSpecifico)
+                p = (PrezzoSpecifico)obj;
+            else
+                return false;
+
+            return (this.Tipologia == p.Tipologia && p.Valore == p.Valore);
+        }
 
     }
 }

@@ -199,11 +199,11 @@ namespace Gss
             Periodo periodo5 = new Periodo(new DateTime(2015, 1, 27), new DateTime(2015, 2, 5));
             
 
-            periodo1.Profilo=periodiProfiliController.GetProfiloByNome("Bassa");
-            periodo2.Profilo = periodiProfiliController.GetProfiloByNome("Media");
-            periodo3.Profilo = periodiProfiliController.GetProfiloByNome("Alta");
-            periodo4.Profilo = periodiProfiliController.GetProfiloByNome("Media");
-            periodo5.Profilo = periodiProfiliController.GetProfiloByNome("Bassa");
+            periodo1.Profilo=periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
+            periodo2.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
+            periodo3.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Alta");
+            periodo4.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Media");
+            periodo5.Profilo = periodiProfiliController.GetProfiloPrezziRisorsaByNome("Bassa");
               
 
 
@@ -274,53 +274,53 @@ namespace Gss
             PrezziRisorsa prezziBungalow8Bassa = new PrezziRisorsa(65, prezzispecifici);
 
 
-            periodiProfiliController.SetPrezzoRisorsa(b1, "Alta", prezziBungalow1Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b2, "Alta", prezziBungalow2Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b3, "Alta", prezziBungalow3Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b4, "Alta", prezziBungalow4Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b5, "Alta", prezziBungalow5Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b6, "Alta", prezziBungalow6Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b7, "Alta", prezziBungalow7Alta);
-            periodiProfiliController.SetPrezzoRisorsa(b8, "Alta", prezziBungalow8Alta);
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b1, prezziBungalow1Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b2, prezziBungalow2Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b3, prezziBungalow3Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b4, prezziBungalow4Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b5, prezziBungalow5Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b6, prezziBungalow6Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b7, prezziBungalow7Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b8, prezziBungalow8Alta, "Alta");
 
-            periodiProfiliController.SetPrezzoRisorsa(b1, "Media", prezziBungalow1Media);
-            periodiProfiliController.SetPrezzoRisorsa(b2, "Media", prezziBungalow2Media);
-            periodiProfiliController.SetPrezzoRisorsa(b3, "Media", prezziBungalow3Media);
-            periodiProfiliController.SetPrezzoRisorsa(b4, "Media", prezziBungalow4Media);
-            periodiProfiliController.SetPrezzoRisorsa(b5, "Media", prezziBungalow5Media);
-            periodiProfiliController.SetPrezzoRisorsa(b6, "Media", prezziBungalow6Media);
-            periodiProfiliController.SetPrezzoRisorsa(b7, "Media", prezziBungalow7Media);
-            periodiProfiliController.SetPrezzoRisorsa(b8, "Media", prezziBungalow8Media);
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b1, prezziBungalow1Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b2, prezziBungalow2Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b3, prezziBungalow3Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b4, prezziBungalow4Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b5, prezziBungalow5Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b6, prezziBungalow6Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b7, prezziBungalow7Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b8, prezziBungalow8Media, "Media");
 
-            periodiProfiliController.SetPrezzoRisorsa(b1, "Bassa", prezziBungalow1Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b2, "Bassa", prezziBungalow2Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b3, "Bassa", prezziBungalow3Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b4, "Bassa", prezziBungalow4Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b5, "Bassa", prezziBungalow5Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b6, "Bassa", prezziBungalow6Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b7, "Bassa", prezziBungalow7Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(b8, "Bassa", prezziBungalow8Bassa);
-
-
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b1, prezziBungalow1Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b2, prezziBungalow2Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b3, prezziBungalow3Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b4, prezziBungalow4Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b5, prezziBungalow5Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b6, prezziBungalow6Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b7, prezziBungalow7Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(b8, prezziBungalow8Bassa, "Bassa");
 
 
-            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Alta", prezziImpianto1Alta);
-            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Alta", prezziImpianto2Alta);
-            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Alta", prezziImpianto3Alta);
-            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Alta", prezziImpianto4Alta);
-            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Alta", prezziImpianto5Alta);
 
-            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Media", prezziImpianto1Media);
-            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Media", prezziImpianto2Media);
-            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Media", prezziImpianto3Media);
-            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Media", prezziImpianto4Media);
-            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Media", prezziImpianto5Media);
 
-            periodiProfiliController.SetPrezzoRisorsa(impianto1, "Bassa", prezziImpianto1Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(impianto2, "Bassa", prezziImpianto2Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(impianto3, "Bassa", prezziImpianto3Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(impianto4, "Bassa", prezziImpianto4Bassa);
-            periodiProfiliController.SetPrezzoRisorsa(impianto5, "Bassa", prezziImpianto5Bassa);
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto1, prezziImpianto1Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto2, prezziImpianto2Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto3, prezziImpianto3Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto4, prezziImpianto4Alta, "Alta");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto5, prezziImpianto5Alta, "Alta");
+
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto1, prezziImpianto1Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto2, prezziImpianto2Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto3, prezziImpianto3Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto4, prezziImpianto4Media, "Media");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto5, prezziImpianto5Media, "Media");
+
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto1, prezziImpianto1Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto2, prezziImpianto2Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto3, prezziImpianto3Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto4, prezziImpianto4Bassa, "Bassa");
+            periodiProfiliController.SetPrezziForRisorsaInProfilo(impianto5, prezziImpianto5Bassa, "Bassa");
             #endregion
             
             PrenotazioniController prenotazioniController = new PrenotazioniController();

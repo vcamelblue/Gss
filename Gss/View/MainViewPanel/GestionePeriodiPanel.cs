@@ -47,7 +47,7 @@ namespace Gss.View.MainViewPanel
 
         private void modificaPeriodiButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaPeriodi modificaPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController, periodiProfiliController.GetAllPeriodiClone());
+            AggiungiModificaPeriodi modificaPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController, periodiProfiliController.GetCloneOfAllPeriodi());
 
             DialogResult result = modificaPeriodiForm.ShowDialog();
             if (result == DialogResult.OK)

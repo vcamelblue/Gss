@@ -39,7 +39,7 @@ namespace Gss.View.MainViewPanel
         private void RiempiGridProfili()
         {
             profiliDataGridView.Rows.Clear();
-            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetProfili().Profili)
+            foreach (ProfiloPrezziRisorse p in periodiProfiliController.GetAllProfili().Profili)
             {
                 profiliDataGridView.Rows.Add(p.Nome);
             }
@@ -54,7 +54,7 @@ namespace Gss.View.MainViewPanel
         private void visualizzaProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloByNome(nomeSelezionato);
+            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
             AggiungiModificaVisualizzaProfilo visualizzaProfiloForm = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, true);
             visualizzaProfiloForm.Show();
         }
@@ -62,7 +62,7 @@ namespace Gss.View.MainViewPanel
         private void rimuoviProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloByNome(nomeSelezionato);
+            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
 
             DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il profilo selezionato?", "Rimozione Profilo", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
@@ -75,7 +75,7 @@ namespace Gss.View.MainViewPanel
         private void modificaProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloByNome(nomeSelezionato);
+            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
 
             AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, false);
 

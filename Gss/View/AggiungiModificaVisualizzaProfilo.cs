@@ -231,15 +231,15 @@ namespace Gss.View
                 if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
-                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo).ToString();
-                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerAccesso).ToString();
+                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo.Nome).ToString();
+                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo.Nome, TipologiaPrezzo.PrezzoPerAccesso).ToString();
                     SpostatiNellaGriglia();
                 }
                 else
                 {
                     Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
-                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo).ToString();
-                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
+                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo.Nome).ToString();
+                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo.Nome, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
                     SpostatiNellaGriglia();
                 }
             }
@@ -250,15 +250,15 @@ namespace Gss.View
                 if (IndividuaRisorsa(codiceSelezionato) is Impianto)
                 {
                     Impianto impiantoSelezionato = (Impianto)IndividuaRisorsa(codiceSelezionato);
-                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo).ToString();
-                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo, TipologiaPrezzo.PrezzoPerAccesso).ToString();
+                    prezzoPerGiornataImpiantoTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(impiantoSelezionato, profilo.Nome).ToString();
+                    prezzoPerAccessoImpiantoTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(impiantoSelezionato, profilo.Nome, TipologiaPrezzo.PrezzoPerAccesso).ToString();
                     SpostatiNellaGriglia();
                 }
                 else
                 {
                     Bungalow bungalowSelezionato = (Bungalow)IndividuaRisorsa(codiceSelezionato);
-                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo).ToString();
-                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
+                    prezzoPerGironataPostStdTextBox.Text = periodiProfiliController.GetPrezzoRisorsaByProfilo(bungalowSelezionato, profilo.Nome).ToString();
+                    prezzoPerPersonaExtraTextBox.Text = periodiProfiliController.GetPrezzoSpecificoRisorsaByProfilo(bungalowSelezionato, profilo.Nome, TipologiaPrezzo.PrezzoPerPersonaExtra).ToString();
                     SpostatiNellaGriglia();
                 }
             }
@@ -310,7 +310,7 @@ namespace Gss.View
                     profilo.Nome = nomeProfilo;
                     try
                     {
-                        periodiProfiliController.SetProfilo(profilo,nomeProfiloPrimaDelleModifiche);
+                        periodiProfiliController.EditProfilo(profilo,nomeProfiloPrimaDelleModifiche);
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }
@@ -349,7 +349,7 @@ namespace Gss.View
                         PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerAccesso, prezzoAccesso);
                         PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
                         prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                        profilo.PrezziRisorsa[impiantoSelezionato] = prezziRisorsa;
+                        profilo.PrezziRisorse[impiantoSelezionato] = prezziRisorsa;
                         prezzoPerGiornataImpiantoTextBox.Clear();
                         prezzoPerAccessoImpiantoTextBox.Clear();
                     }
@@ -377,7 +377,7 @@ namespace Gss.View
                         PrezzoSpecifico prezzoSpecifico = new PrezzoSpecifico(TipologiaPrezzo.PrezzoPerPersonaExtra, prezzoExtra);
                         PrezziRisorsa prezziRisorsa = new PrezziRisorsa(prezzoGiornata, new List<PrezzoSpecifico>());
                         prezziRisorsa.PrezziSpecifici.Add(prezzoSpecifico);
-                        profilo.PrezziRisorsa[bungalowSelezionato] = prezziRisorsa;
+                        profilo.PrezziRisorse[bungalowSelezionato] = prezziRisorsa;
                         prezzoPerGironataPostStdTextBox.Clear();
                         prezzoPerPersonaExtraTextBox.Clear();
                     }

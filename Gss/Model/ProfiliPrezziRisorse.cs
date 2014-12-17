@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Gss.Model
 {
-    public class ProfiliPrezziRisorse //STATIC?!
+    public class ProfiliPrezziRisorse
     {
         private List<ProfiloPrezziRisorse> _profili;
 
-        public ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
-        {
-            _profili = profili;
-        }
 
         public ProfiliPrezziRisorse()
             : this(new List<ProfiloPrezziRisorse>())
@@ -21,20 +17,31 @@ namespace Gss.Model
 
         }
 
+        public ProfiliPrezziRisorse(List<ProfiloPrezziRisorse> profili)
+        {
+            _profili = profili;
+        }
+
+
         public List<ProfiloPrezziRisorse> Profili
         {
             get { return _profili; }
             set { _profili = value; }
         }
 
-        public void Add(ProfiloPrezziRisorse profilo)
+        public bool Add(ProfiloPrezziRisorse profilo)
         {
-            _profili.Add(profilo);
+            if (Profili.Contains(profilo))
+                return false;
+
+            Profili.Add(profilo);
+
+            return true;
         }
 
         public bool Remove(ProfiloPrezziRisorse profilo)
         {
-            return _profili.Remove(profilo);
+            return Profili.Remove(profilo);
         }
 
         public ProfiloPrezziRisorse GetProfiloPrezziRisorseByNome(string nomeProfilo)

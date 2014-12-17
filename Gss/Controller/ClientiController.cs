@@ -42,16 +42,7 @@ namespace Gss.Controller
         {
             if (cliente.Identic(clienteModificato)) 
                 throw new Exception("Non sono state apportate modifiche al cliente!");
-
-            /* QUA BISOGNEREBBE CONTROLLARE CHE IL CLIENTE MODIFICATO NON SIA UGUALE A UNO GIA PRESENTE,
-             * ESCLUDENDO PERO' QUELLO CHE ERA DA MODIFICARE!! POSSIBILE IDEA, USARE LA IDENTIC PER FARE
-             * IL CONTROLLO CHE QUELLO MODIFICATO NON SIA UGUALE A QUALCUNALTRO ESCLUDENDO DALLA LISTA 
-             * QUELLO CHE ERA DA MODIFICARE IN ORIGINE!
-             * 
-             * 
-             * DONE!
-             */
-
+            
             foreach (Cliente c in Gss.Clienti.ListaClienti)
             {
                 //salto il cliente originale e verifico se quello modificato esiste gia nel sistema!

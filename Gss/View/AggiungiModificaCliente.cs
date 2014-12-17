@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Model;
 using Gss.Controller;
+using Gss.View.Utility;
 
 namespace Gss.View
 {
@@ -27,7 +28,8 @@ namespace Gss.View
         public AggiungiModificaCliente(ClientiController clientiController) 
         {
             this.clientiController = clientiController;
-            inEditingMode = false;
+            this.inEditingMode = false;
+            this.inViewMode = false;
 
             InitializeComponent();
         }
@@ -38,37 +40,7 @@ namespace Gss.View
             this.clienteToEdit = clienteToEdit;
             this.inViewMode = inViewMode;
 
-
             InitializeComponent();
-
-            if (inViewMode == true)
-            {
-                this.inEditingMode = false;
-                nomeTextBox.Enabled = false;
-                cognomeTextBox.Enabled = false;
-                dataNascitaTimePicker.Enabled = false;
-                codiceFiscaleTextBox.Enabled = false;
-                indirizzoTextBox.Enabled = false;
-                telefonoTextBox.Enabled = false;
-                emailTextBox.Enabled = false;
-                salvaButton.Visible = false;
-                annullaButton.Visible = false;
-            }
-            else
-            {
-                this.inEditingMode = true;
-            }
-
-            nomeTextBox.Text = clienteToEdit.Nome;
-            cognomeTextBox.Text = clienteToEdit.Cognome;
-            dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
-            codiceFiscaleTextBox.Text = clienteToEdit.CodiceFiscale;
-            indirizzoTextBox.Text = clienteToEdit.Indirizzo;
-            telefonoTextBox.Text = clienteToEdit.Telefono;
-            emailTextBox.Text = clienteToEdit.Email;
-
-            this.Text = "Modifica Cliente";
-            this.salvaButton.Text = "Salva Modifiche";
         }
 
 
@@ -89,14 +61,14 @@ namespace Gss.View
             //controllo che non siano nulli/vuoti, telefono e email sono opzionali, 
             //ma almeno uno dei due deve esistere
             
-            if( checkFields(nome, cognome, codiceFiscale, indirizzo) && dataNascita != null
+            if( ConfigAndUtility.checkFields(nome, cognome, codiceFiscale, indirizzo) && dataNascita != null
                 && (telefono != "" || email != "") ) 
             {
                 //se in editing mode setto i campi del cliente passato
-                try {
-
-                    //verificare che il cliente originale non sia null?
-                    if (inEditingMode) {   
+                try 
+                {
+                    if (inEditingMode) 
+                    {   
                         Cliente clienteEdited = new Cliente(nome, cognome, codiceFiscale, dataNascita, indirizzo, telefono, email);
                         clientiController.EditCliente(clienteToEdit, clienteEdited);
                     }
@@ -106,23 +78,12 @@ namespace Gss.View
                         clientiController.AddCliente(cliente);
                     }
 
-                    //SE TUTTO OK FARE COSI'
-
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-
-                    //dall'alatro lato
-
-                    //AggiungiModificaCliente imc = new AggiungiModificaCliente(controller, cliente);
-                    //DialogResult res = imc.ShowDialog();
-                    //if (res == DialogResult.OK) {
-                    //    Refresh();
-                    //}
                 }
                 catch (Exception exception) {
                     MessageBox.Show(exception.Message);
                 }
-
             }
             else //se lo sono lancio errore
             {
@@ -136,23 +97,47 @@ namespace Gss.View
             this.Close();
         }
 
-        //Utility Methods
 
-        private bool checkFields(params String[] fields) 
+        private void AggiungiModificaCliente_Load(object sender, EventArgs e)
         {
-            bool all_Ok = true;
+            if ((inEditingMode || inViewMode) && clienteToEdit == null)
+                MessageBox.Show("Impossibile caricare i dati del cliente selezionato! Il cliente potrebbe essere corrotto.");
 
-            foreach (String s in fields) 
+
+            if (inViewMode == true)
             {
-                all_Ok &= (s != "");
+                this.inEditingMode = false;
+
+                nomeTextBox.Enabled = false;
+                cognomeTextBox.Enabled = false;
+                dataNascitaTimePicker.Enabled = false;
+                codiceFiscaleTextBox.Enabled = false;
+                indirizzoTextBox.Enabled = false;
+                telefonoTextBox.Enabled = false;
+                emailTextBox.Enabled = false;
+                salvaButton.Visible = false;
+                annullaButton.Visible = false;
+
+                this.Height -= annullaButton.Height + 20;
+
+                this.Text = "Visualizza Cliente";
             }
-            return all_Ok;
-        }
+            else
+            {
+                this.inEditingMode = true;
 
-        private String noNullString(String source) {
-            return source != null ? source : "";
-        }
+                this.Text = "Modifica Cliente";
+                this.salvaButton.Text = "Salva Modifiche";
+            }
 
+            nomeTextBox.Text = clienteToEdit.Nome;
+            cognomeTextBox.Text = clienteToEdit.Cognome;
+            dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
+            codiceFiscaleTextBox.Text = clienteToEdit.CodiceFiscale;
+            indirizzoTextBox.Text = clienteToEdit.Indirizzo;
+            telefonoTextBox.Text = clienteToEdit.Telefono;
+            emailTextBox.Text = clienteToEdit.Email;
+        }
 
     }
 }

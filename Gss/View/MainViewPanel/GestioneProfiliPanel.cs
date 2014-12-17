@@ -99,7 +99,7 @@ namespace Gss.View.MainViewPanel
             {
                 MessageBox.Show(exception.Message);
             }
-            AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, false);
+            AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController,(ProfiloPrezziRisorse) profiloSelezionato.Clone(), false);
 
             DialogResult res = modificaProfilo.ShowDialog();
             if (res == DialogResult.OK)

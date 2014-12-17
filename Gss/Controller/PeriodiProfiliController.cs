@@ -305,6 +305,10 @@ namespace Gss.Controller
                 throw new Exception("Impossibile rimuovere il profilo selezionato dal sistema! Operazione non effettuata.");
         }
 
+        public void SetPrezziRisorsaForProfilo(String profilo, Risorsa risorsa, PrezziRisorsa prezzi)
+        {
+
+        }
 
         //Private Methods
         

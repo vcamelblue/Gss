@@ -75,7 +75,7 @@ namespace Gss.View.MainViewPanel
         private void modificaProfiloButton_Click(object sender, EventArgs e)
         {
             string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+            ProfiloPrezziRisorse profiloSelezionato = (ProfiloPrezziRisorse) periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato).Clone();
 
             AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, profiloSelezionato, false);
 

@@ -77,7 +77,7 @@ namespace Gss.Model
             else
                 return false;
 
-            return (this.Profilo.Equals(p.Profilo) && this._dataInizio == p.DataInizio && this._dataFine == p.DataFine);
+            return (this.Profilo.Equals(p.Profilo) && this.DataInizio.Date == p.DataInizio.Date && this.DataFine.Date == p.DataFine.Date);
         }
     }
 }

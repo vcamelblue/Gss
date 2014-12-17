@@ -43,7 +43,7 @@ namespace Gss.Model
             else
                 return false;
 
-            return (snowpark.NumeroSalti.Equals(this.NumeroSalti) && snowpark.NumeroJibs.Equals(this.NumeroJibs));
+            return (snowpark.NumeroSalti == this.NumeroSalti && snowpark.NumeroJibs == this.NumeroJibs);
 
         }
 

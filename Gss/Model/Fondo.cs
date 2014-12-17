@@ -44,7 +44,7 @@ namespace Gss.Model
             else
                 return false;
 
-            return (fondo.DislivelloMedio.Equals(this.DislivelloMedio) && fondo.DislivelloMassimo.Equals(this.DislivelloMassimo));
+            return (fondo.DislivelloMedio == this.DislivelloMedio && fondo.DislivelloMassimo == this.DislivelloMassimo);
 
         }
 

@@ -82,7 +82,7 @@ namespace Gss.Model
                 return false;
 
             return (cliente.CodiceFiscale.Equals(this.CodiceFiscale) && cliente.Nome.Equals(this.Nome) &&
-                    cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Equals(this.DataNascita));
+                    cliente.Cognome.Equals(this.Cognome) && cliente.DataNascita.Date == this.DataNascita.Date);
         }
 
         public override string ToString()

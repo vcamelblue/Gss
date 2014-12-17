@@ -75,8 +75,8 @@ namespace Gss.Model
             return (this.NumeroPrenotazione == prenotazione.NumeroPrenotazione &&
                     this.NumeroPersone == prenotazione.NumeroPersone &&
                     this.Cliente.Equals(prenotazione.Cliente) &&
-                    this.DataInizio == prenotazione.DataInizio &&
-                    this.DataFine == prenotazione.DataFine);
+                    this.DataInizio.Date == prenotazione.DataInizio.Date &&
+                    this.DataFine.Date == prenotazione.DataFine.Date);
 
         }
 

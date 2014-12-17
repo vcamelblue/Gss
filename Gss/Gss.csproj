@@ -123,6 +123,7 @@
     <Compile Include="View\AggiungiModificaSkipass.designer.cs">
       <DependentUpon>AggiungiModificaSkipass.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Utility\ConfigAndUtility.cs" />
     <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>

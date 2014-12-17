@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gss.Controller;
 using Gss.View.MainViewPanel;
+using Gss.View.Utility;
 
 namespace Gss.View
 {
@@ -31,11 +32,12 @@ namespace Gss.View
 
         //Impostazioni bottoni
         private Button previusSelectedButton = null;
-        private Color normalButtonColor = Color.FromKnownColor(KnownColor.LightGray);
-        private Color selectedButtonColor = Color.FromArgb(54, 78, 102); //Color.FromKnownColor(KnownColor.MenuHighlight);
-        private Color normalFontColor = Color.FromKnownColor(KnownColor.Black);
-        private Color selectFontColor = Color.FromArgb(251, 251, 251);
 
+        private Color normalButtonColor = ConfigAndUtility.normalButtonColor;
+        private Color selectedButtonColor = ConfigAndUtility.selectedButtonColor;
+        private Color normalFontColor = ConfigAndUtility.normalFontColor;
+        private Color selectFontColor = ConfigAndUtility.selectFontColor;
+        
         public MainView(PrenotazioniController prenotazioniController, ClientiController clientiController, ResortController resortController, PeriodiProfiliController periodiProfiliController)
         {
             this.clientiController = clientiController;

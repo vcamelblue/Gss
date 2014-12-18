@@ -100,45 +100,49 @@ namespace Gss.View
 
         private void AggiungiModificaCliente_Load(object sender, EventArgs e)
         {
-            if ((inEditingMode || inViewMode) && clienteToEdit == null)
+            if ((inEditingMode || inViewMode))
             {
-                MessageBox.Show("Impossibile caricare i dati del cliente selezionato! Il cliente potrebbe essere corrotto.");
-                this.Close();
+                if (clienteToEdit == null)
+                {
+                    MessageBox.Show("Impossibile caricare i dati del cliente selezionato! Il cliente potrebbe essere corrotto.");
+                    this.Close();
+                }
+
+                if (inViewMode == true)
+                {
+                    this.inEditingMode = false;
+
+                    nomeTextBox.Enabled = false;
+                    cognomeTextBox.Enabled = false;
+                    dataNascitaTimePicker.Enabled = false;
+                    codiceFiscaleTextBox.Enabled = false;
+                    indirizzoTextBox.Enabled = false;
+                    telefonoTextBox.Enabled = false;
+                    emailTextBox.Enabled = false;
+                    salvaButton.Visible = false;
+                    annullaButton.Visible = false;
+
+                    this.Height -= annullaButton.Height + 20;
+
+                    this.Text = "Visualizza Cliente";
+                }
+                else
+                {
+                    this.inEditingMode = true;
+
+                    this.Text = "Modifica Cliente";
+                    this.salvaButton.Text = "Salva Modifiche";
+                }
+
+                nomeTextBox.Text = clienteToEdit.Nome;
+                cognomeTextBox.Text = clienteToEdit.Cognome;
+                dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
+                codiceFiscaleTextBox.Text = clienteToEdit.CodiceFiscale;
+                indirizzoTextBox.Text = clienteToEdit.Indirizzo;
+                telefonoTextBox.Text = clienteToEdit.Telefono;
+                emailTextBox.Text = clienteToEdit.Email;
+
             }
-
-            if (inViewMode == true)
-            {
-                this.inEditingMode = false;
-
-                nomeTextBox.Enabled = false;
-                cognomeTextBox.Enabled = false;
-                dataNascitaTimePicker.Enabled = false;
-                codiceFiscaleTextBox.Enabled = false;
-                indirizzoTextBox.Enabled = false;
-                telefonoTextBox.Enabled = false;
-                emailTextBox.Enabled = false;
-                salvaButton.Visible = false;
-                annullaButton.Visible = false;
-
-                this.Height -= annullaButton.Height + 20;
-
-                this.Text = "Visualizza Cliente";
-            }
-            else
-            {
-                this.inEditingMode = true;
-
-                this.Text = "Modifica Cliente";
-                this.salvaButton.Text = "Salva Modifiche";
-            }
-
-            nomeTextBox.Text = clienteToEdit.Nome;
-            cognomeTextBox.Text = clienteToEdit.Cognome;
-            dataNascitaTimePicker.Value = clienteToEdit.DataNascita;
-            codiceFiscaleTextBox.Text = clienteToEdit.CodiceFiscale;
-            indirizzoTextBox.Text = clienteToEdit.Indirizzo;
-            telefonoTextBox.Text = clienteToEdit.Telefono;
-            emailTextBox.Text = clienteToEdit.Email;
         }
 
     }

@@ -59,5 +59,10 @@ namespace Gss.Model
 
             return (other.Codice == this.Codice);
         }
+
+        public override int GetHashCode()
+        {
+            return this.Codice.GetHashCode();
+        }
     }
 }

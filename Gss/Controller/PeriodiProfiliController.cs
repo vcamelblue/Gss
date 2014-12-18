@@ -94,7 +94,7 @@ namespace Gss.Controller
             List<Periodo> temp = new List<Periodo>();
             periodi.Sort(new PeriodoComparer());
             foreach (Periodo p in periodi)
-                temp.Add((Periodo)p.Clone());
+                temp.Add(p);
 
 
             if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio.Date)

@@ -14,7 +14,7 @@ namespace Gss.Model
         public ProfiloPrezziRisorse(string nome)
         {
             _nome = nome;
-            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>(new RisorsaComparer());
+            _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
         }
 
         public ProfiloPrezziRisorse()
@@ -48,11 +48,14 @@ namespace Gss.Model
 
         public PrezziRisorsa GetPrezziRisorsa(Risorsa risorsa)
         {
-            foreach (Risorsa r in _prezziRisorsa.Keys)
+
+            /*foreach (Risorsa r in _prezziRisorsa.Keys)
             {
                 if (r.Equals(risorsa))
                     return _prezziRisorsa[r];
-            }
+            }*/
+            if (_prezziRisorsa.Keys.Contains(risorsa))
+                return _prezziRisorsa[risorsa];
             
             return null;
         }

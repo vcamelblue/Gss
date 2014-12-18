@@ -205,7 +205,7 @@ namespace Gss.View
 
         private void dataInizioPrenotazioneTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            dataFinePrenotazioneTimePicker.MinDate = dataInizioPrenotazioneTimePicker.Value;
+            dataFinePrenotazioneTimePicker.MinDate = dataInizioPrenotazioneTimePicker.Value.AddDays(1);
         }
 
         private void ricercaBungalowButton_Click(object sender, EventArgs e)

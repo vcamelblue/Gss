@@ -104,5 +104,10 @@ namespace Gss.View {
         {
             this.Close();
         }
+
+        private void dataIniziodateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            dataFinedateTimePicker.MinDate = dataIniziodateTimePicker.Value.AddDays(1);
+        }
     }
 }

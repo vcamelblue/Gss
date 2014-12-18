@@ -160,5 +160,10 @@ namespace Gss.View
             }
             return false;
         }
+
+        private void dataInizioTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            dataFineTimePicker.MinDate = dataInizioTimePicker.Value;
+        }
     }
 }

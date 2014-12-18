@@ -40,6 +40,7 @@
             this.dataInizioTimePicker.Name = "dataInizioTimePicker";
             this.dataInizioTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataInizioTimePicker.TabIndex = 4;
+            this.dataInizioTimePicker.ValueChanged += new System.EventHandler(this.dataInizioTimePicker_ValueChanged);
             // 
             // dataFineTimePicker
             // 

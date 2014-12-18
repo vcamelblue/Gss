@@ -162,6 +162,7 @@
             this.dataIniziodateTimePicker.Name = "dataIniziodateTimePicker";
             this.dataIniziodateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataIniziodateTimePicker.TabIndex = 10;
+            this.dataIniziodateTimePicker.ValueChanged += new System.EventHandler(this.dataIniziodateTimePicker_ValueChanged);
             // 
             // dataFinedateTimePicker
             // 

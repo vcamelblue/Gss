@@ -237,6 +237,8 @@ namespace Gss.View {
             difficoltaComboBox.Items.Insert(1,Difficolta.Media.ToString());
             difficoltaComboBox.Items.Insert(2,Difficolta.Bassa.ToString());
 
+            difficoltaComboBox.SelectedIndex = 0;
+
             if (_inEditingMode)
             {
                 tipologiaComboBox1.SelectedIndex = tipologiaComboBox1.FindStringExact(cercaCategoria(_pista));

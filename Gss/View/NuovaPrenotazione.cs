@@ -51,6 +51,7 @@ namespace Gss.View
             //Prenotazione Tab
             dataInizioPrenotazioneTimePicker.MinDate = resortController.Gss.Resort.DataInizioStagione;
             dataInizioPrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
+            dataFinePrenotazioneTimePicker.MinDate = dataInizioPrenotazioneTimePicker.Value.AddDays(1);
             dataFinePrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
             numeroPrenotazioneTextBox.Text = resortController.Gss.NumeroPrenotazioni.ToString();
             
@@ -248,6 +249,10 @@ namespace Gss.View
             if (bungalowDisponibiliDataGridView.Rows.Count == 0)
             {
                 avantiConfermaButton.Enabled = false;
+            }
+            else
+            {
+                avantiConfermaButton.Enabled = true;
             }
         }
 

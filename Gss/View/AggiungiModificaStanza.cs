@@ -61,15 +61,8 @@ namespace Gss.View
             //recupero i campi
             try
             {
-                numeroPostiStandard = Convert.ToInt32(numeroPostiStandardTextBox.Text);
-                numeroPostiMassimi = Convert.ToInt32(numeroPostiMassimiTextBox.Text);
-            }
-            catch (FormatException exception)
-            {
-                MessageBox.Show("Inserisci solo numeri interi positivi!");
-            }
-            try
-            {
+                 numeroPostiStandard = Convert.ToInt32(numeroPostiStandardTextBox.Text);
+                 numeroPostiMassimi = Convert.ToInt32(numeroPostiMassimiTextBox.Text);
                   if ((numeroPostiStandard > 0) && (numeroPostiMassimi > 0) && (numeroPostiMassimi >= numeroPostiStandard))
                   {
                       if (inEditingMode)
@@ -91,9 +84,9 @@ namespace Gss.View
                       MessageBox.Show("Inserire numeri maggiori di zero e con posti massimi maggiori o uguali di posti standard");
                   }
             }
-            catch (Exception exception)
+            catch (FormatException exception)
             {
-                MessageBox.Show("Inserisci numeri posti maggiori di zero, e posti massimi maggiori di posti standard");
+                MessageBox.Show("Inserisci solo numeri interi positivi!");
             }
         }
     }

@@ -45,12 +45,12 @@ namespace Gss.Controller
                 {
                     result += temp.ElementAt(i) + " modificato con data inizio portata a ";
                     temp.ElementAt(i).DataInizio = temp.ElementAt(i - 1).DataFine.AddDays(1);
-                    result += temp.ElementAt(i).DataInizio;
+                    result += temp.ElementAt(i).DataInizio+"\n";
                 }
                 if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataInizio.Date) == 0 &&
                     DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) == 0)
                 {
-                    result += temp.ElementAt(i - 1) + " eliminato per sovrapposizione di date";
+                    result += temp.ElementAt(i - 1) + " eliminato per sovrapposizione di date \n";
                     temp.RemoveAt(i - 1);
                     continue;
                 }
@@ -73,7 +73,7 @@ namespace Gss.Controller
 
                 else if (DateTime.Compare(temp.ElementAt(i).DataInizio.AddDays(-1).Date, temp.ElementAt(i - 1).DataFine.Date) > 0)
                 {
-                    result += temp.ElementAt(i - 1) + " modificato con data fine portata a " + temp.ElementAt(i).DataInizio.AddDays(-1).ToShortDateString();
+                    result += temp.ElementAt(i - 1) + " modificato con data fine portata a " + temp.ElementAt(i).DataInizio.AddDays(-1).ToShortDateString()+ "\n";
                     temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                 }
                 temp.Sort(new PeriodoComparer());//

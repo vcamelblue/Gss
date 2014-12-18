@@ -132,6 +132,10 @@ namespace Gss.View
                 dataInizioTimePicker.Value = periodo.DataInizio;
                 dataFineTimePicker.Value = periodo.DataFine;
             }
+            else
+            {
+                profiloPeriodoComboBox.SelectedIndex = 0;
+            }
         }
 
 

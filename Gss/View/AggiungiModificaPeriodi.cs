@@ -115,7 +115,7 @@ namespace Gss.View
 
             if (modificheAiPeriodi != "")
             {
-                DialogResult result = MessageBox.Show("I periodi inseriti non sono applicabili, potrebbero essere apportate le seguenti modifiche:\n" + modificheAiPeriodi + "\n\nvuoi apportare queste modifiche?", "Modifiche Ai Periodi Inseriti", MessageBoxButtons.OKCancel);
+                DialogResult result = MessageBox.Show("I periodi inseriti non sono applicabili, potrebbero essere apportate le seguenti modifiche:\n\n" + modificheAiPeriodi + "\nVuoi apportare queste modifiche?", "Modifiche Ai Periodi Inseriti", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
                     Refresh();

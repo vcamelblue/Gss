@@ -34,7 +34,7 @@ namespace Gss.Controller
 
             if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio.Date)
             {
-                result += temp.ElementAt(0) + " modificato con data d'inizio portata a " + Gss.Resort.DataInizioStagione.ToString("dd/MM/yyyy") + "\n";
+                result += temp.ElementAt(0) + " modificato con data d'inizio portata a " + Gss.Resort.DataInizioStagione.ToShortDateString() + "\n\n";
                 temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
             }
             int i = 1;
@@ -45,12 +45,12 @@ namespace Gss.Controller
                 {
                     result += temp.ElementAt(i) + " modificato con data inizio portata a ";
                     temp.ElementAt(i).DataInizio = temp.ElementAt(i - 1).DataFine.AddDays(1);
-                    result += temp.ElementAt(i).DataInizio+"\n";
+                    result += temp.ElementAt(i).DataInizio.ToShortDateString() + "\n\n";
                 }
                 if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataInizio.Date) == 0 &&
                     DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) == 0)
                 {
-                    result += temp.ElementAt(i - 1) + " eliminato per sovrapposizione di date \n";
+                    result += temp.ElementAt(i - 1) + " eliminato per sovrapposizione di date \n\n";
                     temp.RemoveAt(i - 1);
                     continue;
                 }
@@ -60,12 +60,12 @@ namespace Gss.Controller
                     {
                         result += temp.ElementAt(i - 1);
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                        result += " modificato con data fine portata a " + temp.ElementAt(i - 1).DataFine.ToShortDateString() + "\n";
+                        result += " modificato con data fine portata a " + temp.ElementAt(i - 1).DataFine.ToShortDateString() + "\n\n";
                     }
                     else
                     {
                         periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - i).Profilo); // .Clone()???
-                        result += "Inserito " + temp.ElementAt(i) + " in " + temp.ElementAt(i - 1) + "\n";
+                        result += "Inserito " + temp.ElementAt(i) + " in " + temp.ElementAt(i - 1) + "\n\n";
                         temp.Add(periodoTemp);
                         temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
                     }

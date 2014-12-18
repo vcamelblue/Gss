@@ -153,6 +153,16 @@ namespace Gss.View
             {
                 periodiDataGridView.Rows.Add(p.Profilo.Nome, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"));
             }
+            if (periodiDataGridView.Rows.Count == 0)
+            {
+                rimuoviPeriodoButton.Enabled = false;
+                modificaPeriodoButton.Enabled = false;
+            }
+            else
+            {
+                rimuoviPeriodoButton.Enabled = true;
+                modificaPeriodoButton.Enabled = true;
+            }
         }
 
         //verifco ogni campo in quanto la equals di profilo è riconoscibile solo su tutti i campi!

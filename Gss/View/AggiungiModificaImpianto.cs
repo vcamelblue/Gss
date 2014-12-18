@@ -215,6 +215,17 @@ namespace Gss.View
                 pisteDataGridView.Rows.Add(p.Nome, GetTipologiaByPista(p), GetInfoByPista(p));
             }
             pisteTotaliLabel.Text = "Piste Totali  " + pisteImpianto.Count().ToString();
+
+            if (pisteDataGridView.Rows.Count == 0)
+            {
+                rimuoviPistaButton.Enabled = false;
+                modificaPistaButton.Enabled = false;
+            }
+            else
+            {
+                rimuoviPistaButton.Enabled = true;
+                modificaPistaButton.Enabled = true;
+            }
        }
 
     }

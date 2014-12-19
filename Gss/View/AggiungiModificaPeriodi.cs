@@ -51,10 +51,7 @@ namespace Gss.View
 
         private void AggiungiModificaPeriodi_Load(object sender, EventArgs e)
         {
-            if (inEditMode)
-            {
-                RiempiGrigliaPeriodi();
-            }
+            RiempiGrigliaPeriodi();
         }
 
         private void aggiungiPeriodoButton_Click(object sender, EventArgs e)

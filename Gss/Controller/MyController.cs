@@ -31,5 +31,20 @@ namespace Gss.Controller
         {
             return this.Gss.Resort.isStagioneIniziata();
         }
+
+        public bool thereIsAtLeastOneRisorsa()
+        {
+            return (Gss.Resort.Bungalows.ListaBungalow.Count > 0 || Gss.Resort.Impianti.ListaImpianti.Count > 0);
+        }
+
+        public bool thereIsAtLeastOneProfilo()
+        {
+            return Gss.ProfiliPrezziRisorse.Profili.Count > 0;
+        }
+
+        public bool thereIsAtLeastOnePeriodo()
+        {
+            return Gss.GestorePeriodi.Periodi.Count > 0;
+        }
     }
 }

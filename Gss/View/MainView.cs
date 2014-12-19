@@ -40,6 +40,16 @@ namespace Gss.View
         private Color normalFontColor = ConfigAndUtility.normalFontColor;
         private Color selectFontColor = ConfigAndUtility.selectFontColor;
         
+        /* Intero rappresentante lo step attuale di configurazione: 
+         * step 0 : impostazione info resort e date
+         * step 1 : impostazione risorse
+         * step 2 : impostazione profilo
+         * step 3 : impostazione periodo
+         * step 4 : attesa inizio stagione
+         * step 5 : stadio finale, tutto ablitato
+            
+         * private int actualConfigurationStep = 0;
+        */
 
         //Constructors
 
@@ -85,6 +95,8 @@ namespace Gss.View
             if (!resortController.IsStagioneImpostata())
             {
                 switchToPage(gestioneResortTabPage, gestioneResortTabButton);
+
+                showHelpMessage();
             }
             else if (!resortController.IsStagioneIniziata())
             {
@@ -101,20 +113,28 @@ namespace Gss.View
 
         private void riepilogoGiornalieroTabButton_Click(object sender, EventArgs e)
         {
-            switchToPage(riepilogoGiornalieroTabPage, riepilogoGiornalieroTabButton);
+            if (isPanelAccesible(4))
+            {
+                switchToPage(riepilogoGiornalieroTabPage, riepilogoGiornalieroTabButton);
 
-            riepilogoGiornalieroPanel.Refresh();
+                riepilogoGiornalieroPanel.Refresh();
+            }
         }
 
         private void gestionePrenotazioniTabButton_Click(object sender, EventArgs e)
         {
-            switchToPage(gestionePrenotazioniTabPage, gestionePrenotazioniTabButton);
+            if (isPanelAccesible(4))
+            {
+                switchToPage(gestionePrenotazioniTabPage, gestionePrenotazioniTabButton);
 
-            gestionePrenotazioniPanel.Refresh();
+                gestionePrenotazioniPanel.Refresh();
+            }            
         }
 
         private void gestioneClientiTabButton_Click(object sender, EventArgs e)
         {
+            //Sempre Accessibile
+
             switchToPage(gestioneClientiTabPage, gestioneClientiTabButton);
 
             gestioneClientiPanel.Refresh();
@@ -122,6 +142,8 @@ namespace Gss.View
 
         private void gestioneResortTabButton_Click(object sender, EventArgs e)
         {
+            //Sempre Accessibile
+
             switchToPage(gestioneResortTabPage, gestioneResortTabButton);
 
             gestioneResortPanel.Refresh();
@@ -129,27 +151,81 @@ namespace Gss.View
 
         private void gestioneProfiliTabButton_Click(object sender, EventArgs e)
         {
-            switchToPage(gestioneProfiliTabPage, gestioneProfiliTabButton);
+            if (isPanelAccesible(2))
+            {
+                switchToPage(gestioneProfiliTabPage, gestioneProfiliTabButton);
 
-            gestioneProfiliPanel.Refresh();
+                gestioneProfiliPanel.Refresh();
+            }
         }
 
         private void gestionePeriodiTabButton_Click(object sender, EventArgs e)
         {
-            switchToPage(gestionePeriodiTabPage, gestionePeriodiTabButton);
+            if (isPanelAccesible(3))
+            {
+                switchToPage(gestionePeriodiTabPage, gestionePeriodiTabButton);
 
-            gestionePeriodiPanel.Refresh();
+                gestionePeriodiPanel.Refresh();
+            }
         }
 
         private void gestioneIncassiTabButton_Click(object sender, EventArgs e)
         {
-            switchToPage(gestioneIncassiTabPage, gestioneIncassiTabButton);
+            if (isPanelAccesible(4))
+            {
+                switchToPage(gestioneIncassiTabPage, gestioneIncassiTabButton);
 
-            gestioneIncassiPanel.Refresh();
+                gestioneIncassiPanel.Refresh();
+            }
         }
 
 
         //Private Utility Methods
+
+        private void showHelpMessage()
+        {
+            StringBuilder message = new StringBuilder();
+
+            message.Append("Benvenuto in Gelbison Super Sky!\n");
+            message.Append("Per configurare correttamente il software è necessario innanzitutto impostare le info del resort ");
+            message.Append("e le date di inizio e fine della stagione corrente. ");
+            message.Append("Successivamente sarà possibile aggiungere una o più risorse al sistema in modo da poter essere successivamente prezzate. ");
+            message.Append("A questo punto sarà necessario creare uno o più profili per poter impostare i periodi in modo corretto. ");
+            message.Append("Una volta impostati anche quest'ultimi sara possibile iniziare ad usare il software con tutte le sue funzionalità abilitate.");
+
+            MessageBox.Show(message.ToString());
+        }
+
+        private bool isPanelAccesible(int stepChiamante)
+        {
+            if (!resortController.IsStagioneImpostata() && stepChiamante != 0)
+            {
+                MessageBox.Show("Prima di continuare è necessario impostare le date della stagione! Inserisci le date per continuare.");
+                return false;
+            }
+            else if (!resortController.thereIsAtLeastOneRisorsa() && stepChiamante != 1 && stepChiamante > 0)
+            {
+                MessageBox.Show("Prima di continuare è necessario inserire almeno una risorsa! Inserisci una o più risorse per continuare.");
+                return false;
+            }
+            else if (!resortController.thereIsAtLeastOneProfilo() && stepChiamante != 2 && stepChiamante > 1)
+            {
+                MessageBox.Show("Prima di continuare è necessario impostare almeno un profilo! Inserisci uno o più profili per continuare.");
+                return false;
+            }
+            else if (!resortController.thereIsAtLeastOnePeriodo() && stepChiamante != 3 && stepChiamante > 2)
+            {
+                MessageBox.Show("Prima di continuare è necessario impostare almeno un periodo! Inserisci uno o più periodi per continuare.");
+                return false;
+            }
+            else if (!resortController.IsStagioneIniziata() && stepChiamante != 4 && stepChiamante > 3)
+            {
+                MessageBox.Show("La stagione non è ancora iniziata! Pannello non disponibile.");
+                return false;
+            }
+
+            return true;
+        }
 
         private void switchToPage(TabPage newTabPage, Button selectedButtonAssociated)
         {
@@ -157,12 +233,10 @@ namespace Gss.View
             selectRightTabButton(selectedButtonAssociated);
         }
 
-
         private void selectRightPanel(TabPage tabPage)
         {
             tabControlWithoutHeader.SelectedTab = tabPage;
         }
-
 
         private void selectRightTabButton(Button newSelectedButton)
         {

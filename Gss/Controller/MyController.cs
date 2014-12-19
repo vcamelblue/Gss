@@ -20,15 +20,5 @@ namespace Gss.Controller
         {
             get { return _gss; }
         }
-
-        public bool IsStagioneImpostata()
-        {
-            return this.Gss.Resort.isStagioneImpostata();
-        }
-
-        public bool IsStagioneIniziata()
-        {
-            return this.Gss.Resort.isStagioneIniziata();
-        }
     }
 }

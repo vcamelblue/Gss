@@ -66,7 +66,7 @@ namespace Gss.Controller
             
             //se la stagione è gia iniziata blocco l'inserimento di nuove date
 
-            if (base.IsStagioneIniziata())
+            if (Gss.Resort.isStagioneIniziata())
             {
                 throw new Exception("Impossibile modificare le date della stagione, stagione già in corso");
             }
@@ -101,9 +101,6 @@ namespace Gss.Controller
 
         public void AddImpianto(Impianto impianto)
         {
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile aggiungere un nuovo impianto al sistema! La stagione è gia iniziata.");
-
             if (codiceRisorsaGiaEsistente(impianto))
             {
                 throw new Exception("Codice Risorsa già presente");
@@ -117,9 +114,6 @@ namespace Gss.Controller
 
         public void RemoveImpianto(Impianto impianto)
         {
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile rimuovere un impianto dal sistema! La stagione è gia iniziata.");
-
             if (!Gss.Resort.Impianti.Remove(impianto))
                 throw new Exception("Impossibile Rimuovere L'Impianto Dal Sistema!");
 
@@ -153,9 +147,6 @@ namespace Gss.Controller
 
         public void AddBungalow(Bungalow bungalow)
         {
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile aggiungere un nuovo bungalow al sistema! La stagione è gia iniziata.");
-
             if (codiceRisorsaGiaEsistente(bungalow))
             {
                 throw new Exception("Codice Risorsa già presente");
@@ -163,16 +154,12 @@ namespace Gss.Controller
 
             if (!(Gss.Resort.Bungalows.Add(bungalow)))
             {
-                throw new Exception("Impossibile aggiungre il bungalow al sistema! Il bungalow è già presente.");
+                throw new Exception("Bungalow già presente");
             }
         }
 
         public void RemoveBungalow(Bungalow bungalow)
         {
-
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile rimuovere il bungalow dal sistema! La stagione è gia iniziata.");
-
             if (!(Gss.Resort.Bungalows.Remove(bungalow)))
             {
                 throw new Exception("Impossibile rimuvoere il Bungalow dal sistema, rimozione non effettuata!");
@@ -181,9 +168,6 @@ namespace Gss.Controller
 
         public void EditBungalow(Bungalow bungalow, Bungalow bungalowModificato)
         {
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile modificare il bungalow! La stagione è gia iniziata.");
-
             foreach (Stanza s in bungalowModificato.Stanze)
             {
                 if (!isStanzaValid(s))
@@ -196,9 +180,6 @@ namespace Gss.Controller
 
         public void EditBungalow(Bungalow bungalow, List<Stanza> nuoveStanze)
         {
-            if (IsStagioneIniziata())
-                throw new Exception("Impossibile modificare il bungalow! La stagione è gia iniziata.");
-
             foreach (Stanza s in nuoveStanze)
             {
                 if (!isStanzaValid(s))

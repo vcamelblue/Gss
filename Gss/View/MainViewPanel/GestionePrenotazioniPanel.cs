@@ -154,21 +154,39 @@ namespace Gss.View.MainViewPanel
         private void archiviaRimuoviPrenotazioneButton_Click(object sender, EventArgs e)
         {   
             int numeroPrenotazioneSelezionata = int.Parse(prenotazioniDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-
             Prenotazione prenotazioneSelezionata = prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata);
-            DialogResult result = MessageBox.Show("Sicuro di voler archiviare la prenotazione?", "Archviazione Prenotazione", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
+            if (previusSelectedButton.Equals(prenotazioniConcluseTabButton))
             {
-                try
+                DialogResult result = MessageBox.Show("Sicuro di voler archiviare la prenotazione?", "Archviazione Prenotazione", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
                 {
-                    prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
-                    VisualizzaFattura visualizzaFatt = new VisualizzaFattura((PrenotazioneArchiviata) prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata));
-                    visualizzaFatt.Show();
-                    Refresh();
+                    try
+                    {
+                        prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
+                        VisualizzaFattura visualizzaFatt = new VisualizzaFattura((PrenotazioneArchiviata)prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata));
+                        visualizzaFatt.Show();
+                        Refresh();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
                 }
-                catch (Exception exception)
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Sicuro di voler eliminare la prenotazione?", "Elimina Prenotazione", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show(exception.Message);
+                    try
+                    {
+                        prenotazioniController.RemovePrenotazione(prenotazioneSelezionata);
+                        Refresh();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
                 }
             }
         }

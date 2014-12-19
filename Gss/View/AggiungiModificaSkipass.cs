@@ -434,17 +434,6 @@ namespace Gss.View
 
         }
 
-        private bool checkFields(params String[] fields)
-        {
-            bool all_Ok = true;
-
-            foreach (String s in fields)
-            {
-                all_Ok &= (s != "");
-            }
-            return all_Ok;
-        }
-
         private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             caratteristicaSpecificaAlmenoFiltroTextBox.Clear();

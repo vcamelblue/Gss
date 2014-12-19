@@ -51,24 +51,18 @@ namespace Gss.View.MainViewPanel
         private void prenotazioniConcluseTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(prenotazioniConcluseTabButton);
-            modificaPrenotazioneButton.Enabled = false;
-            archiviaRimuoviPrenotazioneButton.Enabled = true;
             RiempiGrigliaPrenotazioniConcluse();
         }
 
         private void prenotazioniInCorsoTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(prenotazioniInCorsoTabButton);
-            modificaPrenotazioneButton.Enabled = false;
-            archiviaRimuoviPrenotazioneButton.Enabled = false;
             RiempiGrigliaPrenotazioniInCorso();
         }
 
         private void prenotazioniFutureTabButton_Click(object sender, EventArgs e)
         {
             selectRightTab(prenotazioniFutureTabButton);
-            archiviaRimuoviPrenotazioneButton.Enabled = false;
-            modificaPrenotazioneButton.Enabled = true;
             RiempiGrigliaPrenotazioniFuture();
         }
 
@@ -78,6 +72,15 @@ namespace Gss.View.MainViewPanel
             foreach (Prenotazione p in prenotazioniController.GetPrenotazioniFuture().ListaPrenotazioni)
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
+            }
+            if (prenotazioniController.GetPrenotazioniFuture().ListaPrenotazioni.Count == 0)
+            {
+                archiviaRimuoviPrenotazioneButton.Enabled = false;
+            }
+            else
+            {
+                archiviaRimuoviPrenotazioneButton.Text = "Elimina Prenotazione";
+                archiviaRimuoviPrenotazioneButton.Enabled = true;
             }
         }
 
@@ -100,6 +103,11 @@ namespace Gss.View.MainViewPanel
             if (prenotazioniController.GetPrenotazioniConcluseNonArchiviate().ListaPrenotazioni.Count == 0)
             {
                 archiviaRimuoviPrenotazioneButton.Enabled = false;
+            }
+            else
+            {
+                archiviaRimuoviPrenotazioneButton.Text = "Archivia Prenotazione";
+                archiviaRimuoviPrenotazioneButton.Enabled = true;
             }
         }
 

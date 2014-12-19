@@ -18,6 +18,8 @@ namespace Gss.Controller
         public void AddPrenotazione(Prenotazione prenotazione)
         {
             //AGGIUNGERE CONTROLLI SULL'INIZIO DELLA STAGIONE!
+            if (!IsStagioneImpostata())
+                throw new Exception("Impossibile aggiungere una nuova prenotazione al sistema! La stagione non è stata ancora impostata!");
 
             if (!Gss.Prenotazioni.Add(prenotazione))
                 throw new Exception("Prenotazione già presente nel sistema");
@@ -26,7 +28,7 @@ namespace Gss.Controller
         public void RemovePrenotazione(Prenotazione prenotazione)
         {
             if (prenotazione.DataInizio.Date < DateTime.Today.AddDays(7).Date)
-                throw new Exception("La prenotazione già è iniziata");
+                throw new Exception("Impossibile rimuovere la prenotazione dal sistema! La prenotazione è già entro una settimana dalla data odierna.");
 
             if (!Gss.Prenotazioni.Remove(prenotazione))
                 throw new Exception("Impossibile Rimuovere La Prenotazione Dal Sistema!");

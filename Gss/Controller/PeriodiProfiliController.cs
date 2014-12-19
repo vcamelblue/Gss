@@ -90,6 +90,10 @@ namespace Gss.Controller
 
         public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile impostare i periodi! La stagione è gia iniziata.");
+
+
             Periodo periodoTemp;
             List<Periodo> temp = new List<Periodo>();
             periodi.Sort(new PeriodoComparer());
@@ -148,6 +152,9 @@ namespace Gss.Controller
 
         public void RemoveAllPeriodi()
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile rimuovere i periodi dal sistema! La stagione è gia iniziata.");
+
             this.Gss.GestorePeriodi.Periodi = new List<Periodo>();
         }
 
@@ -198,6 +205,9 @@ namespace Gss.Controller
 
         public void SetPrezziForRisorsaInProfilo(Risorsa risorsa, PrezziRisorsa prezzi, ProfiloPrezziRisorse profilo)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile impostare i prezzi per la risorsa specificata! La stagione è gia iniziata.");
+
             if (risorsa == null || profilo == null || prezzi == null)
                 throw new Exception("Impossibile impostare i prezzi per la risorsa nel profilo scelto! Uno o più valori sono errati.");
 
@@ -210,6 +220,9 @@ namespace Gss.Controller
 
         public void SetPrezziForRisorsaInProfilo(Risorsa risorsa, PrezziRisorsa prezzi, string nomeProfilo)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile impostare i prezzi per la risorsa specificata! La stagione è gia iniziata.");
+
             if (risorsa == null || nomeProfilo == null || prezzi == null)
                 throw new Exception("Impossibile impostare i prezzi per la risorsa nel profilo scelto! Uno o più valori sono errati.");
 
@@ -274,6 +287,9 @@ namespace Gss.Controller
 
         public void AddProfilo(ProfiloPrezziRisorse profilo)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile aggiungere un nuovo profilo al sistema! La stagione è gia iniziata.");
+
             if (profilo == null)
                 throw new Exception("Impossibile aggiungere un profilo nullo al sistema! Operazione non effettuata.");
 
@@ -283,6 +299,9 @@ namespace Gss.Controller
 
         public void EditProfilo(ProfiloPrezziRisorse profiloModificato, string nomeProfiloDaModificare)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile modificare il profilo selezionato! La stagione è gia iniziata.");
+
             ProfiloPrezziRisorse profiloDaModificare = GetProfiloPrezziRisorsaByNome(nomeProfiloDaModificare);
 
             if (profiloDaModificare == null)
@@ -301,14 +320,13 @@ namespace Gss.Controller
 
         public void RemoveProfilo(ProfiloPrezziRisorse profilo)
         {
+            if (IsStagioneIniziata())
+                throw new Exception("Impossibile rimuovere il profilo selezionato dal sistema! La stagione è gia iniziata.");
+
             if (!this.Gss.ProfiliPrezziRisorse.Remove(profilo))
                 throw new Exception("Impossibile rimuovere il profilo selezionato dal sistema! Operazione non effettuata.");
         }
 
-        public void SetPrezziRisorsaForProfilo(String profilo, Risorsa risorsa, PrezziRisorsa prezzi)
-        {
-
-        }
 
         //Private Methods
         

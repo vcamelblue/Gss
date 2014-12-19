@@ -220,7 +220,14 @@ namespace Gss.View
                     if (numeroPersone != 0)
                     {
                         Bungalows bungalowsDisponibili = prenotazioniController.FindBungalowDisponibiliFor(dataInizioPrenotazioneTimePicker.Value, dataFinePrenotazioneTimePicker.Value, numeroPersone);
-                        riempiListaBungalow(bungalowsDisponibili,numeroPersone);
+                        if(bungalowsDisponibili.ListaBungalow.Count!=0)
+                        {
+                            riempiListaBungalow(bungalowsDisponibili,numeroPersone);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nessun bungalow è disponibile");
+                        }
                     }
                     else
                     {

@@ -77,6 +77,7 @@ namespace Gss.View.MainViewPanel
                 try
                 {
                     clientiController.RemoveCliente(clienteSelezionato);
+                    Refresh();
                 }
                 catch (Exception exception)
                 {

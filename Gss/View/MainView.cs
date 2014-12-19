@@ -15,6 +15,8 @@ namespace Gss.View
 {
     public partial class MainView : Form
     {
+        //Fields
+
         //Controller
         private ClientiController clientiController;
         private ResortController resortController;
@@ -38,6 +40,9 @@ namespace Gss.View
         private Color normalFontColor = ConfigAndUtility.normalFontColor;
         private Color selectFontColor = ConfigAndUtility.selectFontColor;
         
+
+        //Constructors
+
         public MainView(PrenotazioniController prenotazioniController, ClientiController clientiController, ResortController resortController, PeriodiProfiliController periodiProfiliController)
         {
             this.clientiController = clientiController;
@@ -45,10 +50,7 @@ namespace Gss.View
             this.prenotazioniController = prenotazioniController;
             this.periodiProfiliController = periodiProfiliController;
 
-            InitializeComponent();
-
-
-            selectRightTab(riepilogoGiornalieroTabButton);
+            InitializeComponent();            
 
             //Creo e Aggiungo il pannello Riepilogo
             riepilogoGiornalieroPanel = new RiepilogoGiornalieroPanel(this.components, prenotazioniController);
@@ -77,58 +79,92 @@ namespace Gss.View
             //Creo e Aggiungo il pannello Incassi
             gestioneIncassiPanel = new GestioneIncassiPanel(this.components,prenotazioniController);
             gestioneIncassiTabPage.Controls.Add(gestioneIncassiPanel);
+
+
+            //Imposto il pannello giusto
+            if (!resortController.IsStagioneImpostata())
+            {
+                switchToPage(gestioneResortTabPage, gestioneResortTabButton);
+            }
+            else if (!resortController.IsStagioneIniziata())
+            {
+                switchToPage(gestionePrenotazioniTabPage, gestioneResortTabButton);
+            }
+            else
+            {
+                switchToPage(riepilogoGiornalieroTabPage, riepilogoGiornalieroTabButton);
+            }
         }
+
+
+        //Events
 
         private void riepilogoGiornalieroTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(riepilogoGiornalieroTabButton);
+            switchToPage(riepilogoGiornalieroTabPage, riepilogoGiornalieroTabButton);
+
             riepilogoGiornalieroPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = riepilogoGiornalieroTabPage;
         }
 
         private void gestionePrenotazioniTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestionePrenotazioniTabButton);
+            switchToPage(gestionePrenotazioniTabPage, gestionePrenotazioniTabButton);
+
             gestionePrenotazioniPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestionePrenotazioniTabPage;
         }
 
         private void gestioneClientiTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestioneClientiTabButton);
+            switchToPage(gestioneClientiTabPage, gestioneClientiTabButton);
+
             gestioneClientiPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestioneClientiTabPage;
         }
 
         private void gestioneResortTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestioneResortTabButton);
+            switchToPage(gestioneResortTabPage, gestioneResortTabButton);
+
             gestioneResortPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestioneResortTabPage;
         }
 
         private void gestioneProfiliTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestioneProfiliTabButton);
+            switchToPage(gestioneProfiliTabPage, gestioneProfiliTabButton);
+
             gestioneProfiliPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestioneProfiliTabPage;
         }
 
         private void gestionePeriodiTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestionePeriodiTabButton);
+            switchToPage(gestionePeriodiTabPage, gestionePeriodiTabButton);
+
             gestionePeriodiPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestionePeriodiTabPage;
         }
 
         private void gestioneIncassiTabButton_Click(object sender, EventArgs e)
         {
-            selectRightTab(gestioneIncassiTabButton);
+            switchToPage(gestioneIncassiTabPage, gestioneIncassiTabButton);
+
             gestioneIncassiPanel.Refresh();
-            tabControlWithoutHeader.SelectedTab = gestioneIncassiTabPage;
         }
 
-        private void selectRightTab(Button newSelectedButton)
+
+        //Private Utility Methods
+
+        private void switchToPage(TabPage newTabPage, Button selectedButtonAssociated)
+        {
+            selectRightPanel(newTabPage);
+            selectRightTabButton(selectedButtonAssociated);
+        }
+
+
+        private void selectRightPanel(TabPage tabPage)
+        {
+            tabControlWithoutHeader.SelectedTab = tabPage;
+        }
+
+
+        private void selectRightTabButton(Button newSelectedButton)
         {
             if (previusSelectedButton != null)
             {

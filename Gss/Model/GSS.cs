@@ -75,7 +75,7 @@ namespace Gss.Model
 
 
         //TODO, FARE REFACTOR DI QUESTI METODI PER OTTENERE IL NUMERO GIUSTO ANCHE SE SI ANNULLA LA PRENOTAZIONE
-        public int NumeroPrenotazioni
+        public int ProssimoNumeroPrenotazione
         {
             get
             {
@@ -84,7 +84,7 @@ namespace Gss.Model
             }
         }
 
-        public int NumeroSkiCards
+        public int ProssimoNumeroSkiCard
         {
             get
             {
@@ -93,7 +93,7 @@ namespace Gss.Model
             }
         }
 
-        public int NumeroSkiPass
+        public int ProssimoNumeroSkiPass
         {
             get
             {

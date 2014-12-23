@@ -213,7 +213,7 @@
             this.numPisteDiFodnoColumn.HeaderText = "Piste Di Fondo";
             this.numPisteDiFodnoColumn.Name = "numPisteDiFodnoColumn";
             this.numPisteDiFodnoColumn.ReadOnly = true;
-            this.numPisteDiFodnoColumn.Width = 99;
+            this.numPisteDiFodnoColumn.Width = 112;
             // 
             // numPisteSnowparkColumn
             // 
@@ -270,10 +270,10 @@
             this.filtroPerNomeTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.filtroPerNomeTabPage.Controls.Add(this.nomeImpiantoFiltroTextBox);
             this.filtroPerNomeTabPage.Controls.Add(this.myLabel7);
-            this.filtroPerNomeTabPage.Location = new System.Drawing.Point(4, 23);
+            this.filtroPerNomeTabPage.Location = new System.Drawing.Point(4, 27);
             this.filtroPerNomeTabPage.Name = "filtroPerNomeTabPage";
             this.filtroPerNomeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerNomeTabPage.Size = new System.Drawing.Size(663, 59);
+            this.filtroPerNomeTabPage.Size = new System.Drawing.Size(663, 55);
             this.filtroPerNomeTabPage.TabIndex = 0;
             this.filtroPerNomeTabPage.Text = "Filtro Per Nome";
             // 
@@ -285,7 +285,7 @@
             this.nomeImpiantoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.nomeImpiantoFiltroTextBox.Location = new System.Drawing.Point(98, 23);
             this.nomeImpiantoFiltroTextBox.Name = "nomeImpiantoFiltroTextBox";
-            this.nomeImpiantoFiltroTextBox.Size = new System.Drawing.Size(417, 17);
+            this.nomeImpiantoFiltroTextBox.Size = new System.Drawing.Size(417, 21);
             this.nomeImpiantoFiltroTextBox.TabIndex = 1;
             // 
             // myLabel7
@@ -296,7 +296,7 @@
             this.myLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel7.Location = new System.Drawing.Point(18, 23);
             this.myLabel7.Name = "myLabel7";
-            this.myLabel7.Size = new System.Drawing.Size(42, 17);
+            this.myLabel7.Size = new System.Drawing.Size(52, 21);
             this.myLabel7.TabIndex = 0;
             this.myLabel7.Text = "Nome";
             // 
@@ -305,10 +305,10 @@
             this.filtroPerPrezzoTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.filtroPerPrezzoTabPage.Controls.Add(this.prezzoMassimoFiltroTextBox);
             this.filtroPerPrezzoTabPage.Controls.Add(this.myLabel8);
-            this.filtroPerPrezzoTabPage.Location = new System.Drawing.Point(4, 23);
+            this.filtroPerPrezzoTabPage.Location = new System.Drawing.Point(4, 27);
             this.filtroPerPrezzoTabPage.Name = "filtroPerPrezzoTabPage";
             this.filtroPerPrezzoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerPrezzoTabPage.Size = new System.Drawing.Size(663, 59);
+            this.filtroPerPrezzoTabPage.Size = new System.Drawing.Size(663, 55);
             this.filtroPerPrezzoTabPage.TabIndex = 1;
             this.filtroPerPrezzoTabPage.Text = "Filtro Per Prezzo";
             // 
@@ -320,7 +320,7 @@
             this.prezzoMassimoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.prezzoMassimoFiltroTextBox.Location = new System.Drawing.Point(146, 25);
             this.prezzoMassimoFiltroTextBox.Name = "prezzoMassimoFiltroTextBox";
-            this.prezzoMassimoFiltroTextBox.Size = new System.Drawing.Size(366, 17);
+            this.prezzoMassimoFiltroTextBox.Size = new System.Drawing.Size(366, 21);
             this.prezzoMassimoFiltroTextBox.TabIndex = 1;
             // 
             // myLabel8
@@ -331,7 +331,7 @@
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel8.Location = new System.Drawing.Point(16, 25);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(99, 17);
+            this.myLabel8.Size = new System.Drawing.Size(124, 21);
             this.myLabel8.TabIndex = 0;
             this.myLabel8.Text = "Prezzo Massimo";
             // 
@@ -342,10 +342,10 @@
             this.filtroPerTipoPisteTabPage.Controls.Add(this.myLabel10);
             this.filtroPerTipoPisteTabPage.Controls.Add(this.numeroPisteFiltroTextBox);
             this.filtroPerTipoPisteTabPage.Controls.Add(this.myLabel9);
-            this.filtroPerTipoPisteTabPage.Location = new System.Drawing.Point(4, 23);
+            this.filtroPerTipoPisteTabPage.Location = new System.Drawing.Point(4, 27);
             this.filtroPerTipoPisteTabPage.Name = "filtroPerTipoPisteTabPage";
             this.filtroPerTipoPisteTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerTipoPisteTabPage.Size = new System.Drawing.Size(663, 59);
+            this.filtroPerTipoPisteTabPage.Size = new System.Drawing.Size(663, 55);
             this.filtroPerTipoPisteTabPage.TabIndex = 2;
             this.filtroPerTipoPisteTabPage.Text = "Filtro Per Tipo Piste";
             // 
@@ -358,7 +358,7 @@
             this.tipologiaPistaFiltroComboBox.FormattingEnabled = true;
             this.tipologiaPistaFiltroComboBox.Location = new System.Drawing.Point(354, 20);
             this.tipologiaPistaFiltroComboBox.Name = "tipologiaPistaFiltroComboBox";
-            this.tipologiaPistaFiltroComboBox.Size = new System.Drawing.Size(151, 22);
+            this.tipologiaPistaFiltroComboBox.Size = new System.Drawing.Size(151, 26);
             this.tipologiaPistaFiltroComboBox.TabIndex = 3;
             // 
             // myLabel10
@@ -369,7 +369,7 @@
             this.myLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel10.Location = new System.Drawing.Point(291, 25);
             this.myLabel10.Name = "myLabel10";
-            this.myLabel10.Size = new System.Drawing.Size(35, 17);
+            this.myLabel10.Size = new System.Drawing.Size(44, 21);
             this.myLabel10.TabIndex = 2;
             this.myLabel10.Text = "Piste";
             // 
@@ -381,7 +381,7 @@
             this.numeroPisteFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroPisteFiltroTextBox.Location = new System.Drawing.Point(98, 25);
             this.numeroPisteFiltroTextBox.Name = "numeroPisteFiltroTextBox";
-            this.numeroPisteFiltroTextBox.Size = new System.Drawing.Size(173, 17);
+            this.numeroPisteFiltroTextBox.Size = new System.Drawing.Size(173, 21);
             this.numeroPisteFiltroTextBox.TabIndex = 1;
             // 
             // myLabel9
@@ -392,7 +392,7 @@
             this.myLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel9.Location = new System.Drawing.Point(7, 25);
             this.myLabel9.Name = "myLabel9";
-            this.myLabel9.Size = new System.Drawing.Size(51, 17);
+            this.myLabel9.Size = new System.Drawing.Size(64, 21);
             this.myLabel9.TabIndex = 0;
             this.myLabel9.Text = "Almeno";
             // 
@@ -402,10 +402,10 @@
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.caratteristicaSpecificaAlmenoFiltroTextBox);
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.myLabel11);
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.caratteristicaSpecificaFiltroComboBox);
-            this.filtroPerCaratteristicaTabPage.Location = new System.Drawing.Point(4, 23);
+            this.filtroPerCaratteristicaTabPage.Location = new System.Drawing.Point(4, 27);
             this.filtroPerCaratteristicaTabPage.Name = "filtroPerCaratteristicaTabPage";
             this.filtroPerCaratteristicaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerCaratteristicaTabPage.Size = new System.Drawing.Size(663, 59);
+            this.filtroPerCaratteristicaTabPage.Size = new System.Drawing.Size(663, 55);
             this.filtroPerCaratteristicaTabPage.TabIndex = 3;
             this.filtroPerCaratteristicaTabPage.Text = "Filtro Per Caratteristica";
             // 
@@ -417,7 +417,7 @@
             this.caratteristicaSpecificaAlmenoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.caratteristicaSpecificaAlmenoFiltroTextBox.Location = new System.Drawing.Point(335, 23);
             this.caratteristicaSpecificaAlmenoFiltroTextBox.Name = "caratteristicaSpecificaAlmenoFiltroTextBox";
-            this.caratteristicaSpecificaAlmenoFiltroTextBox.Size = new System.Drawing.Size(177, 17);
+            this.caratteristicaSpecificaAlmenoFiltroTextBox.Size = new System.Drawing.Size(177, 21);
             this.caratteristicaSpecificaAlmenoFiltroTextBox.TabIndex = 2;
             // 
             // myLabel11
@@ -428,7 +428,7 @@
             this.myLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel11.Location = new System.Drawing.Point(243, 23);
             this.myLabel11.Name = "myLabel11";
-            this.myLabel11.Size = new System.Drawing.Size(51, 17);
+            this.myLabel11.Size = new System.Drawing.Size(64, 21);
             this.myLabel11.TabIndex = 1;
             this.myLabel11.Text = "Almeno";
             // 
@@ -441,7 +441,7 @@
             this.caratteristicaSpecificaFiltroComboBox.FormattingEnabled = true;
             this.caratteristicaSpecificaFiltroComboBox.Location = new System.Drawing.Point(25, 19);
             this.caratteristicaSpecificaFiltroComboBox.Name = "caratteristicaSpecificaFiltroComboBox";
-            this.caratteristicaSpecificaFiltroComboBox.Size = new System.Drawing.Size(195, 22);
+            this.caratteristicaSpecificaFiltroComboBox.Size = new System.Drawing.Size(195, 26);
             this.caratteristicaSpecificaFiltroComboBox.TabIndex = 0;
             this.caratteristicaSpecificaFiltroComboBox.SelectedIndexChanged += new System.EventHandler(this.caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged);
             // 
@@ -451,9 +451,8 @@
             this.caratteristicaSpecificaRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.caratteristicaSpecificaRadioButton.Location = new System.Drawing.Point(10, 122);
             this.caratteristicaSpecificaRadioButton.Name = "caratteristicaSpecificaRadioButton";
-            this.caratteristicaSpecificaRadioButton.Size = new System.Drawing.Size(221, 21);
+            this.caratteristicaSpecificaRadioButton.Size = new System.Drawing.Size(270, 25);
             this.caratteristicaSpecificaRadioButton.TabIndex = 3;
-            this.caratteristicaSpecificaRadioButton.TabStop = true;
             this.caratteristicaSpecificaRadioButton.Text = "Con caratteristica specifica almeno";
             this.caratteristicaSpecificaRadioButton.UseVisualStyleBackColor = true;
             this.caratteristicaSpecificaRadioButton.CheckedChanged += new System.EventHandler(this.caratteristicaSpecificaRadioButton_CheckedChanged);
@@ -464,9 +463,8 @@
             this.nPisteDiTipoRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nPisteDiTipoRadioButton.Location = new System.Drawing.Point(10, 94);
             this.nPisteDiTipoRadioButton.Name = "nPisteDiTipoRadioButton";
-            this.nPisteDiTipoRadioButton.Size = new System.Drawing.Size(170, 21);
+            this.nPisteDiTipoRadioButton.Size = new System.Drawing.Size(213, 25);
             this.nPisteDiTipoRadioButton.TabIndex = 2;
-            this.nPisteDiTipoRadioButton.TabStop = true;
             this.nPisteDiTipoRadioButton.Text = "Con almeno n piste di tipo";
             this.nPisteDiTipoRadioButton.UseVisualStyleBackColor = true;
             this.nPisteDiTipoRadioButton.CheckedChanged += new System.EventHandler(this.nPisteDiTipoRadioButton_CheckedChanged);
@@ -477,9 +475,8 @@
             this.prezzoMassimoRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prezzoMassimoRadioButton.Location = new System.Drawing.Point(10, 66);
             this.prezzoMassimoRadioButton.Name = "prezzoMassimoRadioButton";
-            this.prezzoMassimoRadioButton.Size = new System.Drawing.Size(164, 21);
+            this.prezzoMassimoRadioButton.Size = new System.Drawing.Size(203, 25);
             this.prezzoMassimoRadioButton.TabIndex = 1;
-            this.prezzoMassimoRadioButton.TabStop = true;
             this.prezzoMassimoRadioButton.Text = "Prezzo al massimo pari a";
             this.prezzoMassimoRadioButton.UseVisualStyleBackColor = true;
             this.prezzoMassimoRadioButton.CheckedChanged += new System.EventHandler(this.prezzoMassimoRadioButton_CheckedChanged);
@@ -487,10 +484,11 @@
             // perNomeRadioButton
             // 
             this.perNomeRadioButton.AutoSize = true;
+            this.perNomeRadioButton.Checked = true;
             this.perNomeRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.perNomeRadioButton.Location = new System.Drawing.Point(10, 38);
             this.perNomeRadioButton.Name = "perNomeRadioButton";
-            this.perNomeRadioButton.Size = new System.Drawing.Size(80, 21);
+            this.perNomeRadioButton.Size = new System.Drawing.Size(98, 25);
             this.perNomeRadioButton.TabIndex = 0;
             this.perNomeRadioButton.TabStop = true;
             this.perNomeRadioButton.Text = "Per nome";
@@ -515,10 +513,10 @@
             this.skipassAGiornataTabPage.Controls.Add(this.skipassAGiornataDataInizioTimePicker);
             this.skipassAGiornataTabPage.Controls.Add(this.myLabel4);
             this.skipassAGiornataTabPage.Controls.Add(this.myLabel3);
-            this.skipassAGiornataTabPage.Location = new System.Drawing.Point(4, 23);
+            this.skipassAGiornataTabPage.Location = new System.Drawing.Point(4, 27);
             this.skipassAGiornataTabPage.Name = "skipassAGiornataTabPage";
             this.skipassAGiornataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skipassAGiornataTabPage.Size = new System.Drawing.Size(681, 59);
+            this.skipassAGiornataTabPage.Size = new System.Drawing.Size(681, 55);
             this.skipassAGiornataTabPage.TabIndex = 0;
             this.skipassAGiornataTabPage.Text = "Skipass A Giornata";
             // 
@@ -526,14 +524,14 @@
             // 
             this.skipassAGiornataDataFineTimePicker.Location = new System.Drawing.Point(443, 15);
             this.skipassAGiornataDataFineTimePicker.Name = "skipassAGiornataDataFineTimePicker";
-            this.skipassAGiornataDataFineTimePicker.Size = new System.Drawing.Size(226, 22);
+            this.skipassAGiornataDataFineTimePicker.Size = new System.Drawing.Size(226, 26);
             this.skipassAGiornataDataFineTimePicker.TabIndex = 3;
             // 
             // skipassAGiornataDataInizioTimePicker
             // 
             this.skipassAGiornataDataInizioTimePicker.Location = new System.Drawing.Point(86, 15);
             this.skipassAGiornataDataInizioTimePicker.Name = "skipassAGiornataDataInizioTimePicker";
-            this.skipassAGiornataDataInizioTimePicker.Size = new System.Drawing.Size(226, 22);
+            this.skipassAGiornataDataInizioTimePicker.Size = new System.Drawing.Size(226, 26);
             this.skipassAGiornataDataInizioTimePicker.TabIndex = 2;
             this.skipassAGiornataDataInizioTimePicker.ValueChanged += new System.EventHandler(this.skipassAGiornataDataInizioTimePicker_ValueChanged);
             // 
@@ -545,7 +543,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(366, 20);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(19, 17);
+            this.myLabel4.Size = new System.Drawing.Size(24, 21);
             this.myLabel4.TabIndex = 1;
             this.myLabel4.Text = "Al";
             // 
@@ -557,7 +555,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(28, 19);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(27, 17);
+            this.myLabel3.Size = new System.Drawing.Size(32, 21);
             this.myLabel3.TabIndex = 0;
             this.myLabel3.Text = "Dal";
             // 
@@ -568,10 +566,10 @@
             this.skipassAdAccessoTabPage.Controls.Add(this.numeroAccessiTextBox);
             this.skipassAdAccessoTabPage.Controls.Add(this.myLabel6);
             this.skipassAdAccessoTabPage.Controls.Add(this.myLabel5);
-            this.skipassAdAccessoTabPage.Location = new System.Drawing.Point(4, 23);
+            this.skipassAdAccessoTabPage.Location = new System.Drawing.Point(4, 27);
             this.skipassAdAccessoTabPage.Name = "skipassAdAccessoTabPage";
             this.skipassAdAccessoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skipassAdAccessoTabPage.Size = new System.Drawing.Size(681, 59);
+            this.skipassAdAccessoTabPage.Size = new System.Drawing.Size(681, 55);
             this.skipassAdAccessoTabPage.TabIndex = 1;
             this.skipassAdAccessoTabPage.Text = "Skipass Ad Accesso";
             // 
@@ -579,7 +577,7 @@
             // 
             this.skipassAdAccessoDataInizioTimePicker.Location = new System.Drawing.Point(450, 13);
             this.skipassAdAccessoDataInizioTimePicker.Name = "skipassAdAccessoDataInizioTimePicker";
-            this.skipassAdAccessoDataInizioTimePicker.Size = new System.Drawing.Size(223, 22);
+            this.skipassAdAccessoDataInizioTimePicker.Size = new System.Drawing.Size(223, 26);
             this.skipassAdAccessoDataInizioTimePicker.TabIndex = 3;
             // 
             // numeroAccessiTextBox
@@ -590,7 +588,7 @@
             this.numeroAccessiTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.numeroAccessiTextBox.Location = new System.Drawing.Point(138, 17);
             this.numeroAccessiTextBox.Name = "numeroAccessiTextBox";
-            this.numeroAccessiTextBox.Size = new System.Drawing.Size(188, 17);
+            this.numeroAccessiTextBox.Size = new System.Drawing.Size(188, 21);
             this.numeroAccessiTextBox.TabIndex = 2;
             // 
             // myLabel6
@@ -601,7 +599,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(365, 17);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(64, 17);
+            this.myLabel6.Size = new System.Drawing.Size(79, 21);
             this.myLabel6.TabIndex = 1;
             this.myLabel6.Text = "Valido Dal";
             // 
@@ -613,7 +611,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(11, 17);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(97, 17);
+            this.myLabel5.Size = new System.Drawing.Size(121, 21);
             this.myLabel5.TabIndex = 0;
             this.myLabel5.Text = "Numero Accessi";
             // 
@@ -654,7 +652,7 @@
             this.tipologiaSkipassComboBox.FormattingEnabled = true;
             this.tipologiaSkipassComboBox.Location = new System.Drawing.Point(517, 31);
             this.tipologiaSkipassComboBox.Name = "tipologiaSkipassComboBox";
-            this.tipologiaSkipassComboBox.Size = new System.Drawing.Size(196, 22);
+            this.tipologiaSkipassComboBox.Size = new System.Drawing.Size(196, 26);
             this.tipologiaSkipassComboBox.TabIndex = 3;
             this.tipologiaSkipassComboBox.SelectedIndexChanged += new System.EventHandler(this.tipologiaSkipassComboBox_SelectedIndexChanged);
             // 
@@ -662,11 +660,12 @@
             // 
             this.codiceSkipassTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.codiceSkipassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceSkipassTextBox.Enabled = false;
             this.codiceSkipassTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codiceSkipassTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceSkipassTextBox.Location = new System.Drawing.Point(94, 31);
             this.codiceSkipassTextBox.Name = "codiceSkipassTextBox";
-            this.codiceSkipassTextBox.Size = new System.Drawing.Size(210, 17);
+            this.codiceSkipassTextBox.Size = new System.Drawing.Size(210, 21);
             this.codiceSkipassTextBox.TabIndex = 2;
             // 
             // myLabel2
@@ -677,7 +676,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(438, 31);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(59, 17);
+            this.myLabel2.Size = new System.Drawing.Size(73, 21);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Tipologia";
             // 
@@ -689,7 +688,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(32, 31);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(45, 17);
+            this.myLabel1.Size = new System.Drawing.Size(56, 21);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice";
             // 

@@ -53,7 +53,7 @@ namespace Gss.View
             dataInizioPrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
             dataFinePrenotazioneTimePicker.MinDate = dataInizioPrenotazioneTimePicker.Value.AddDays(1);
             dataFinePrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
-            numeroPrenotazioneTextBox.Text = resortController.Gss.NumeroPrenotazioni.ToString();
+            numeroPrenotazioneTextBox.Text = resortController.Gss.ProssimoNumeroPrenotazione.ToString();
             
             selectRightTab(clienteTabButton);
         }
@@ -336,7 +336,7 @@ namespace Gss.View
             DialogResult result = MessageBox.Show("Sicuro di voler duplicare la SkiCard selezionata?", "Duplicazione SkiCard", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                string codiceSkicard = prenotazioniController.Gss.NumeroSkiCards.ToString();
+                string codiceSkicard = prenotazioniController.Gss.ProssimoNumeroSkiCard.ToString();
                 SkiCard skiCard = new SkiCard(codiceSkicard);
                 foreach (SkiPass s in skicardSelezionata.SkiPass)
                 {
@@ -344,7 +344,7 @@ namespace Gss.View
                     {
                         SkiPassAdAccesso skipassDaCopiare = (SkiPassAdAccesso)s;
                         //Creo la copia dello skipass
-                        SkiPassAdAccesso skipassCopiato = new SkiPassAdAccesso(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.NumeroAccessi, skipassDaCopiare.DataRilascio);
+                        SkiPassAdAccesso skipassCopiato = new SkiPassAdAccesso(resortController.Gss.ProssimoNumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.NumeroAccessi, skipassDaCopiare.DataRilascio);
                         //Aggiungo la copia 
                         skiCard.Add(skipassCopiato);
                     }
@@ -352,7 +352,7 @@ namespace Gss.View
                     {
                         SkiPassAGiornata skipassDaCopiare = (SkiPassAGiornata)s;
                         //Creo la copia dello skipass
-                        SkiPassAGiornata skipassCopiato = new SkiPassAGiornata(resortController.Gss.NumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.DataInizio, skipassDaCopiare.DataFine);
+                        SkiPassAGiornata skipassCopiato = new SkiPassAGiornata(resortController.Gss.ProssimoNumeroSkiPass.ToString(), skipassDaCopiare.Impianto, skipassDaCopiare.DataInizio, skipassDaCopiare.DataFine);
                         //Aggiungo la copia
                         skiCard.Add(skipassCopiato);
                     }

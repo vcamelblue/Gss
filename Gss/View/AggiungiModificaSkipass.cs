@@ -54,28 +54,27 @@ namespace Gss.View
 
             SetRangeDate();
 
-            perNomeRadioButton.Checked = true;
-            codiceSkipassTextBox.Enabled = false;
-
             if (!inEditingMode)
             {
-                codiceSkipassTextBox.Text = prenotazioneController.Gss.NumeroSkiPass.ToString();
+                codiceSkipassTextBox.Text = prenotazioneController.Gss.ProssimoNumeroSkiPass.ToString();
             }
             else
             {
                 codiceSkipassTextBox.Text = skipass.Codice;
                 tipologiaSkipassComboBox.SelectedIndex = tipologiaSkipassComboBox.FindStringExact(GetTipologiaBySkipass(skipass));
-                    if (tipologiaSkipassComboBox.SelectedIndex == 0)
-                    {
-                        SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
-                        skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
-                        skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
-                    }
-                    else
-                    {
-                        SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
-                        skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
-                    }
+                
+                if (tipologiaSkipassComboBox.SelectedIndex == 0)
+                {
+                    SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
+                    skipassAGiornataDataInizioTimePicker.Value = skipassAGiornata.DataInizio;
+                    skipassAGiornataDataFineTimePicker.Value = skipassAGiornata.DataFine;
+                }
+                else
+                {
+                    SkiPassAdAccesso skipassAdAccesso = (SkiPassAdAccesso)skipass;
+                    numeroAccessiTextBox.Text = skipassAdAccesso.NumeroAccessi.ToString();
+                    skipassAdAccessoDataInizioTimePicker.Value = skipassAdAccesso.DataRilascio;
+                }
             }
         }
 
@@ -117,14 +116,17 @@ namespace Gss.View
 
         private void visualizzaDettagliImpiantoButton_Click(object sender, EventArgs e)
         {
-            foreach (Impianto i in prenotazioneController.Gss.Resort.Impianti.ListaImpianti)
+            try
             {
-                if (i.Codice == impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString())
-                {
-                    VisualizzaImpianto visualizzaForm = new VisualizzaImpianto(i);
-                    visualizzaForm.Show();
-                }
-            }  
+                Impianto i = resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                VisualizzaImpianto visualizzaForm = new VisualizzaImpianto(i);
+                visualizzaForm.Show();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void filtraButton_Click(object sender, EventArgs e)
@@ -154,7 +156,7 @@ namespace Gss.View
                 if (caratteristicaSpecificaFiltroComboBox.SelectedIndex == 0)//difficolta
                 {
 
-                    if (checkDifficoltà(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
+                    if (isDifficoltàValid(caratteristicaSpecificaAlmenoFiltroTextBox.Text))
                     {
                         Difficolta difficoltaCercata =(Difficolta)Enum.Parse((typeof(Difficolta)), getDifficoltàGiustaByString(caratteristicaSpecificaAlmenoFiltroTextBox.Text));
                         IFiltra filtroDifficoltà = new FiltraPerDifficolta(difficoltaCercata);
@@ -267,7 +269,7 @@ namespace Gss.View
             }
         }
 
-        private bool checkDifficoltà(string difficolta)
+        private bool isDifficoltàValid(string difficolta)
         {
             string difficoltaBassa = "Bassa";
             string difficoltaAlta = "Alta";
@@ -446,41 +448,46 @@ namespace Gss.View
 
         private void AggiungiSkipassButton_Click(object sender, EventArgs e)
         {
-            //Recupero i campi
-            string codice = codiceSkipassTextBox.Text;
-            int tipologiaScelta = tipologiaSkipassComboBox.SelectedIndex;
+            try
+            {
+                //Recupero i campi
+                string codice = codiceSkipassTextBox.Text;
+                int tipologiaScelta = tipologiaSkipassComboBox.SelectedIndex;
 
-            if (tipologiaScelta == 0)//skipass a giornata
-            {
-                DateTime datainizio = skipassAGiornataDataInizioTimePicker.Value;
-                DateTime datafine = skipassAGiornataDataFineTimePicker.Value;
-                if (inEditingMode)
+                if (tipologiaScelta == 0)//skipass a giornata
                 {
-                    SkiPassAGiornata skipassModificato = (SkiPassAGiornata)skipass;
-                    Impianto impiantoScelto = recuperaImpianto();
-                    skipassModificato.DataInizio = datainizio;
-                    skipassModificato.DataFine = datafine;
-                    skipassModificato.Impianto = impiantoScelto;
+                    DateTime datainizio = skipassAGiornataDataInizioTimePicker.Value;
+                    DateTime datafine = skipassAGiornataDataFineTimePicker.Value;
+
+                    if (inEditingMode)
+                    {
+                        SkiPassAGiornata skipassModificato = (SkiPassAGiornata)skipass;
+                        Impianto impiantoScelto = recuperaImpianto();
+
+                        skipassModificato.DataInizio = datainizio;
+                        skipassModificato.DataFine = datafine;
+                        skipassModificato.Impianto = impiantoScelto;
+                    }
+                    else
+                    {
+                        Impianto impiantoScelto = recuperaImpianto();
+                        SkiPassAGiornata nuovoSkipass = new SkiPassAGiornata(codice, impiantoScelto, datainizio, datafine);
+                        skicard.Add(nuovoSkipass);
+                    }
                 }
-                else
+                else // skipass ad accesso
                 {
-                    Impianto impiantoScelto = recuperaImpianto();
-                    SkiPassAGiornata nuovoSkipass = new SkiPassAGiornata(codice, impiantoScelto, datainizio, datafine);
-                    skicard.Add(nuovoSkipass);
-                }
-            }
-            else // skipass ad accesso
-            {
-                DateTime dataRilascio = skipassAdAccessoDataInizioTimePicker.Value;
-                if(numeroAccessiTextBox.Text!="")
-                {
-                    try
+                    DateTime dataRilascio = skipassAdAccessoDataInizioTimePicker.Value;
+
+                    if (numeroAccessiTextBox.Text != "")
                     {
                         int numeroAccessi = int.Parse(numeroAccessiTextBox.Text);
+
                         if (inEditingMode)
                         {
                             SkiPassAdAccesso skipassModificato = (SkiPassAdAccesso)skipass;
                             Impianto impiantoScelto = recuperaImpianto();
+
                             skipassModificato.DataRilascio = dataRilascio;
                             skipassModificato.NumeroAccessi = numeroAccessi;
                             skipassModificato.Impianto = impiantoScelto;
@@ -492,38 +499,33 @@ namespace Gss.View
                             skicard.Add(nuovoSkipass);
                         }
                     }
-                    catch(FormatException)
+                    else
                     {
-                        MessageBox.Show("Inserire numero di accessi validi");
+                        MessageBox.Show("Riempire tutti i campi");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Riempire tutti i campi");
-                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            catch (FormatException)
+            {
+                MessageBox.Show("Inserire un numero di accessi valido!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private Impianto recuperaImpianto()
         {
-            foreach (Impianto i in resortController.GetImpianti().ListaImpianti)
-            {
-                if (impiantiDataGridView.SelectedRows[0].Cells[0].Value == i.Codice)
-                {
-                    return i;
-                }
-            }
-            return null;
+            return resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
         }
 
         private void tipologiaSkipassComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tipologiaSkipassComboBox.SelectedIndex == 0)
-            {
                 tipoSkipassTabControl.SelectedTab = skipassAGiornataTabPage;
-            }
             else 
                 tipoSkipassTabControl.SelectedTab = skipassAdAccessoTabPage;
         }

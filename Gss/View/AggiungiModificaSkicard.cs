@@ -15,30 +15,39 @@ namespace Gss.View
     public partial class AggiungiModificaSkicard : Form 
     {
 
+        //Fields
+
         private PrenotazioniController prenotazioniController;
         private ResortController resortController;
         private SkiCard skiCard;
         private SkiCards skicards;
         private bool inEditingMode;
 
+        //Constructors
+
+            //New Skicard Mode
         public AggiungiModificaSkicard(PrenotazioniController prenotazioniController, ResortController resortController,SkiCards skicards)
         {
             this.prenotazioniController = prenotazioniController;
             this.resortController = resortController;
-            this.skiCard = null;
             this.skicards = skicards;
-            inEditingMode = false;
+
+            this.skiCard = null;
+            
+            this.inEditingMode = false;
 
             InitializeComponent();
         }
 
+            //Editing Skicard Mode
         public AggiungiModificaSkicard(PrenotazioniController prenotazioniController, ResortController resortController,SkiCards skicards, SkiCard skicard) 
         {
             this.prenotazioniController = prenotazioniController;
             this.resortController = resortController;
             this.skiCard = skicard;
             this.skicards = skicards;
-            inEditingMode = true;
+
+            this.inEditingMode = true;
 
             InitializeComponent();
 
@@ -48,7 +57,6 @@ namespace Gss.View
 
         private void AggiungiModificaSkicard_Load(object sender, EventArgs e)
         {
-            codiceTextBox.Enabled = false;
             if (inEditingMode)
             {
                 codiceTextBox.Text = skiCard.Codice;
@@ -56,7 +64,7 @@ namespace Gss.View
             }
             else
             {
-                codiceTextBox.Text = prenotazioniController.Gss.NumeroSkiCards.ToString();
+                codiceTextBox.Text = prenotazioniController.Gss.ProssimoNumeroSkiCard.ToString();
                 modificaSkipassButton.Enabled = false;
                 rimuoviSkipssButton.Enabled = false;
             }
@@ -65,14 +73,18 @@ namespace Gss.View
         private void riempiSkiPassGrid()
         {
             totaleSkipassLabel.Text = "Pass Totali  " + skiCard.SkiPass.Count;
+
             double totale = 0;
+
             foreach(SkiPass s in skiCard.SkiPass)
             {
                 skipassDataGridView.Rows.Add(s.Codice, s.Impianto.Nome, GetTipologiaSkipass(s), GetInfoBySkipass(s), s.GetPrezzoSkiPass());
                 totale += s.GetPrezzoSkiPass();
             }
+
             totaleSkipassLabel.Text = "Totale SkiPass  " + totale + " €";
-            if (skiCard.SkiPass.Count==0)
+
+            if (skiCard.SkiPass.Count == 0)
             {
                 modificaSkipassButton.Enabled = false;
                 rimuoviSkipssButton.Enabled = false;

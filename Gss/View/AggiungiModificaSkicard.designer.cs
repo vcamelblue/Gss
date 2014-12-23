@@ -32,6 +32,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.totaleSkipassLabel = new Gss.View.Components.MyLabel(this.components);
             this.skipassDataGridView = new Gss.View.Components.MyDataGridView(this.components);
+            this.codiceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.impiantoAssociatoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipologiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prezzoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.annullaButton = new Gss.View.Components.MyButton(this.components);
             this.salvaButton = new Gss.View.Components.MyButton(this.components);
             this.rimuoviSkipssButton = new Gss.View.Components.MyButton(this.components);
@@ -40,11 +45,6 @@
             this.codiceTextBox = new Gss.View.Components.MyTextBox(this.components);
             this.myLabel2 = new Gss.View.Components.MyLabel(this.components);
             this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
-            this.codiceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.impiantoAssociatoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipologiaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezzoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skipassDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.totaleSkipassLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.totaleSkipassLabel.Location = new System.Drawing.Point(602, 231);
             this.totaleSkipassLabel.Name = "totaleSkipassLabel";
-            this.totaleSkipassLabel.Size = new System.Drawing.Size(91, 17);
+            this.totaleSkipassLabel.Size = new System.Drawing.Size(114, 21);
             this.totaleSkipassLabel.TabIndex = 4;
             this.totaleSkipassLabel.Text = "Totale SkiPass  ";
             // 
@@ -130,6 +130,41 @@
             this.skipassDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.skipassDataGridView.Size = new System.Drawing.Size(708, 184);
             this.skipassDataGridView.TabIndex = 3;
+            // 
+            // codiceColumn
+            // 
+            this.codiceColumn.FillWeight = 10F;
+            this.codiceColumn.HeaderText = "Codice";
+            this.codiceColumn.Name = "codiceColumn";
+            this.codiceColumn.ReadOnly = true;
+            // 
+            // impiantoAssociatoColumn
+            // 
+            this.impiantoAssociatoColumn.FillWeight = 20F;
+            this.impiantoAssociatoColumn.HeaderText = "Impianto Associato";
+            this.impiantoAssociatoColumn.Name = "impiantoAssociatoColumn";
+            this.impiantoAssociatoColumn.ReadOnly = true;
+            // 
+            // tipologiaColumn
+            // 
+            this.tipologiaColumn.FillWeight = 20F;
+            this.tipologiaColumn.HeaderText = "Tipologia";
+            this.tipologiaColumn.Name = "tipologiaColumn";
+            this.tipologiaColumn.ReadOnly = true;
+            // 
+            // infoColumn
+            // 
+            this.infoColumn.FillWeight = 40F;
+            this.infoColumn.HeaderText = "Info";
+            this.infoColumn.Name = "infoColumn";
+            this.infoColumn.ReadOnly = true;
+            // 
+            // prezzoColumn
+            // 
+            this.prezzoColumn.FillWeight = 12F;
+            this.prezzoColumn.HeaderText = "Prezzo";
+            this.prezzoColumn.Name = "prezzoColumn";
+            this.prezzoColumn.ReadOnly = true;
             // 
             // annullaButton
             // 
@@ -205,11 +240,12 @@
             // 
             this.codiceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.codiceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.codiceTextBox.Enabled = false;
             this.codiceTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codiceTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceTextBox.Location = new System.Drawing.Point(258, 23);
             this.codiceTextBox.Name = "codiceTextBox";
-            this.codiceTextBox.Size = new System.Drawing.Size(445, 17);
+            this.codiceTextBox.Size = new System.Drawing.Size(445, 21);
             this.codiceTextBox.TabIndex = 2;
             this.codiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -221,7 +257,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 78);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(55, 19);
+            this.myLabel2.Size = new System.Drawing.Size(67, 24);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Skipass";
             // 
@@ -233,44 +269,9 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(89, 17);
+            this.myLabel1.Size = new System.Drawing.Size(112, 21);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice SkiCard";
-            // 
-            // codiceColumn
-            // 
-            this.codiceColumn.FillWeight = 10F;
-            this.codiceColumn.HeaderText = "Codice";
-            this.codiceColumn.Name = "codiceColumn";
-            this.codiceColumn.ReadOnly = true;
-            // 
-            // impiantoAssociatoColumn
-            // 
-            this.impiantoAssociatoColumn.FillWeight = 20F;
-            this.impiantoAssociatoColumn.HeaderText = "Impianto Associato";
-            this.impiantoAssociatoColumn.Name = "impiantoAssociatoColumn";
-            this.impiantoAssociatoColumn.ReadOnly = true;
-            // 
-            // tipologiaColumn
-            // 
-            this.tipologiaColumn.FillWeight = 20F;
-            this.tipologiaColumn.HeaderText = "Tipologia";
-            this.tipologiaColumn.Name = "tipologiaColumn";
-            this.tipologiaColumn.ReadOnly = true;
-            // 
-            // infoColumn
-            // 
-            this.infoColumn.FillWeight = 40F;
-            this.infoColumn.HeaderText = "Info";
-            this.infoColumn.Name = "infoColumn";
-            this.infoColumn.ReadOnly = true;
-            // 
-            // prezzoColumn
-            // 
-            this.prezzoColumn.FillWeight = 12F;
-            this.prezzoColumn.HeaderText = "Prezzo";
-            this.prezzoColumn.Name = "prezzoColumn";
-            this.prezzoColumn.ReadOnly = true;
             // 
             // AggiungiModificaSkicard
             // 

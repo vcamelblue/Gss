@@ -13,40 +13,42 @@ using Gss.Controller;
 namespace Gss.View {
     public partial class AggiungiModificaPista : Form {
 
-        private bool _inEditingMode;
-        private Impianto _impianto;
-        private Pista _pista;
-        private ResortController _resortController;
+        private bool inEditingMode;
+        private Impianto impianto;
+        private Pista pista;
+        private ResortController resortController;
 
         //Costruttore per aggiunta
         public AggiungiModificaPista(ResortController resortController, Impianto impianto ) {
 
-            _inEditingMode = false;
-            _impianto = impianto;
-            _resortController = resortController;
+            this.resortController = resortController;
+            this.impianto = impianto;
+
+            this.inEditingMode = false;
             
             InitializeComponent();
 
-            tabControlWithoutHeader1.SelectedTab = tabVuoto;
+            tipoPistaTabControl.SelectedTab = tabVuoto;
         }
 
         //Costruttore per modifica, si assume che la pista passata sia il riferimento all'oggetto corretto,
         //da non modificare prima dell'effettivo salvataggio!
         public AggiungiModificaPista(ResortController resortController, Impianto impianto, Pista pista)
         {
-            _inEditingMode = true;
-            _impianto = impianto;
-            _resortController = resortController;
-            _pista = pista;
+            this.resortController = resortController;
+            this.impianto = impianto;
+            this.pista = pista;
+
+            this.inEditingMode = true;
 
             InitializeComponent();
 
             //cerco il pannello corretto in base al tipo di pista, se nullo errore!
-            TabPage tabCorrente = checkPista(_pista);
+            TabPage tabCorrente = checkPista(pista);
 
             if (tabCorrente != null)
             {
-                tabControlWithoutHeader1.SelectedTab = checkPista(_pista);
+                tipoPistaTabControl.SelectedTab = checkPista(pista);
 
                 this.Text = "Modifica Pista";
                 salvaButton.Text = "Salva Modifiche";
@@ -61,15 +63,15 @@ namespace Gss.View {
 
         private void salvaButton_Click(object sender, EventArgs e)
         {
-            if (tabControlWithoutHeader1.SelectedTab == tabAlpina)
+            if (tipoPistaTabControl.SelectedTab == tabAlpina)
             {
                 salvaAlpina();
             }
-            else if (tabControlWithoutHeader1.SelectedTab == tabFondo)
+            else if (tipoPistaTabControl.SelectedTab == tabFondo)
             {
                 salvaAFondo();
             }
-            else if (tabControlWithoutHeader1.SelectedTab == tabSnowpark)
+            else if (tipoPistaTabControl.SelectedTab == tabSnowpark)
             {
                 salvaSnowpark();
             }
@@ -89,9 +91,9 @@ namespace Gss.View {
                     numeroSalti = int.Parse(numeroSaltiTextBox.Text);
                     numeroJibs = int.Parse(numeroJibsTextBox.Text);
 
-                    if (_inEditingMode)
+                    if (inEditingMode)
                     {
-                        SnowPark snowpark = (SnowPark)_pista;
+                        SnowPark snowpark = (SnowPark)pista;
                         snowpark.Nome = nomePista;
                         snowpark.NumeroSalti = numeroSalti;
                         snowpark.NumeroJibs = numeroJibs;
@@ -99,7 +101,7 @@ namespace Gss.View {
                     else
                     {
                         SnowPark snowpark = new SnowPark(nomePista, numeroSalti, numeroJibs);
-                        _impianto.Add(snowpark);
+                        impianto.Add(snowpark);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -116,7 +118,7 @@ namespace Gss.View {
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.ToString());
+                    MessageBox.Show(exception.Message);
                 }
             }
             else
@@ -138,9 +140,9 @@ namespace Gss.View {
                 {
                     dislivelloMassimo = double.Parse(dislivelloMaxTextBox2.Text);
                     dislivelloMedio = double.Parse(dislivelloMedioTextBox.Text);
-                    if (_inEditingMode)
+                    if (inEditingMode)
                     {
-                        Fondo fondo = (Fondo)_pista;
+                        Fondo fondo = (Fondo)pista;
                         fondo.Nome = nomePista;
                         fondo.DislivelloMassimo = dislivelloMassimo;
                         fondo.DislivelloMedio = dislivelloMedio;
@@ -148,7 +150,7 @@ namespace Gss.View {
                     else
                     {
                         Fondo fondo = new Fondo(nomePista, dislivelloMassimo, dislivelloMedio);
-                        _impianto.Add(fondo);
+                        impianto.Add(fondo);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -165,7 +167,7 @@ namespace Gss.View {
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.ToString());
+                    MessageBox.Show(exception.Message);
                 }
             }
             else
@@ -188,16 +190,16 @@ namespace Gss.View {
                 {
                     difficoltaValue = (Difficolta)Enum.Parse(typeof(Difficolta), difficoltaString);
 
-                    if (_inEditingMode)
+                    if (inEditingMode)
                     {
-                        Alpina alpina = (Alpina)_pista;
+                        Alpina alpina = (Alpina)pista;
                         alpina.Nome = nomePista;
                         alpina.Difficolta = difficoltaValue;
                     }
                     else
                     {
                         Alpina alpina = new Alpina(nomePista, difficoltaValue);
-                        _impianto.Add(alpina);
+                        impianto.Add(alpina);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -209,7 +211,7 @@ namespace Gss.View {
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.ToString());
+                    MessageBox.Show(exception.Message);
                 }
             }
             else
@@ -239,14 +241,14 @@ namespace Gss.View {
 
             difficoltaComboBox.SelectedIndex = 0;
 
-            if (_inEditingMode)
+            if (inEditingMode)
             {
-                tipologiaComboBox1.SelectedIndex = tipologiaComboBox1.FindStringExact(cercaCategoria(_pista));
+                tipologiaComboBox1.SelectedIndex = tipologiaComboBox1.FindStringExact(cercaCategoria(pista));
                 tipologiaComboBox1.Enabled =  false;
 
-                if (_pista is Alpina)
+                if (pista is Alpina)
                 {
-                    Alpina alpina = (Alpina)_pista;
+                    Alpina alpina = (Alpina)pista;
                     difficoltaComboBox.SelectedIndex = difficoltaComboBox.FindStringExact(alpina.Difficolta.ToString());
                 }
             }
@@ -256,6 +258,9 @@ namespace Gss.View {
         //funzione per identificare il pannello in base alla tipologia di pista
         private TabPage checkPista(Pista pista)
         {
+            if (pista == null)
+                return null;
+
             if (pista is Alpina)
             {
                 Alpina alpina = (Alpina)pista;
@@ -312,15 +317,15 @@ namespace Gss.View {
         {
             if (tipologiaComboBox1.SelectedIndex == 0)
             {
-                tabControlWithoutHeader1.SelectedTab = tabAlpina;
+                tipoPistaTabControl.SelectedTab = tabAlpina;
             }
             if (tipologiaComboBox1.SelectedIndex == 1)
             {
-                tabControlWithoutHeader1.SelectedTab = tabFondo;
+                tipoPistaTabControl.SelectedTab = tabFondo;
             }
             if (tipologiaComboBox1.SelectedIndex == 2)
             {
-                tabControlWithoutHeader1.SelectedTab = tabSnowpark;
+                tipoPistaTabControl.SelectedTab = tabSnowpark;
             }
         }
 

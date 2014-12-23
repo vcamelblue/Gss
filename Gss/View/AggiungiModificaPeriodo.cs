@@ -25,24 +25,28 @@ namespace Gss.View
 
         //Constructors
 
+            //New Profilo Mode
         public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController,List<Periodo> periodi) 
         {
             this.periodiProfiliController = periodiProfiliController;
-            inEditingMode = false;
-            periodo = null;
+            this.inEditingMode = false;
             this.periodi = periodi;
+
+            this.periodo = null;
 
             InitializeComponent();
         }
 
+            //Editing Profilo Mode
         public AggiungiModificaPeriodo(PeriodiProfiliController periodiProfiliController,List<Periodo> periodi,Periodo periodo)
         {
             this.periodiProfiliController = periodiProfiliController;
-            inEditingMode = true;
+            this.inEditingMode = true;
             this.periodo = periodo;
             this.periodi = periodi;
 
             InitializeComponent();
+
             salvaButton.Text = "Salva Modifiche";
             this.Text = "Modifica Periodo";
         }
@@ -52,52 +56,66 @@ namespace Gss.View
 
         private void salvaButton_Click(object sender, EventArgs e) 
         {
-            DateTime dataInizio = dataInizioTimePicker.Value;
-            DateTime dataFine = dataFineTimePicker.Value;
-            string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
-            ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeProfilo);
+            try
+            {
+                DateTime dataInizio = dataInizioTimePicker.Value;
+                DateTime dataFine = dataFineTimePicker.Value;
 
-            //AGGIUNGERE CONTROLLO CHE UN PERIODO AGGIUNTO/MODIFICATO NON SIA GIA PRESENTE!!! GRAVE ERRORE ALTRIMENTI!
+                string nomeProfilo = profiloPeriodoComboBox.SelectedItem.ToString();
 
-            if (periodoConDataInizioGiaSettataInAltroPeriodo(profiloScelto, dataInizio))
-            {
-                MessageBox.Show("Il periodo inserito contiene una Data Inizio già presente in un'altro periodo! Modifica i campi per continuare.");
-            }
-            else if (periodoGiaEsistente(profiloScelto, dataInizio, dataFine))
-            {
-                MessageBox.Show("Il periodo inserito esiste già!\nModifica i campi per continuare.");
-            }
-            else if (inEditingMode)
-            {
-                if(!(periodo.Profilo.Equals(profiloScelto)      && 
-                     periodo.DataInizio.Date == dataInizio.Date && 
-                     periodo.DataFine.Date == dataFine.Date) ) //testo se almeno qualcosa è cambiato
+                ProfiloPrezziRisorse profiloScelto = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeProfilo);
+
+                //AGGIUNGERE CONTROLLO CHE UN PERIODO AGGIUNTO/MODIFICATO NON SIA GIA PRESENTE!!! GRAVE ERRORE ALTRIMENTI!
+
+                if (periodoConDataInizioGiaSettataInAltroPeriodo(profiloScelto, dataInizio))
                 {
-                    foreach (Periodo p in periodi)
-                    {
-                        if (p.Equals(periodo))
-                        {
-                            p.DataInizio = dataInizio;
-                            p.DataFine = dataFine;
-                            p.Profilo = profiloScelto;
-
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                    }
+                    MessageBox.Show("Il periodo inserito contiene una Data Inizio già presente in un'altro periodo! Modifica i campi per continuare.");
+                }
+                else if (periodoGiaEsistente(profiloScelto, dataInizio, dataFine))
+                {
+                    MessageBox.Show("Il periodo inserito esiste già!\nModifica i campi per continuare.");
                 }
                 else
                 {
-                    MessageBox.Show("Nessuna modifica apportata!");
-                }                
-            }
-            else
-            {
-                Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
-                periodi.Add(periodo);
+                    if (inEditingMode)
+                    {       
+                            //testo se almeno qualcosa è cambiato
+                        if (!(periodo.Profilo.Equals(profiloScelto) &&
+                             periodo.DataInizio.Date == dataInizio.Date &&
+                             periodo.DataFine.Date == dataFine.Date)) 
+                        {
+                            foreach (Periodo p in periodi)
+                            {
+                                if (p.Equals(periodo))
+                                {
+                                    p.DataInizio = dataInizio;
+                                    p.DataFine = dataFine;
+                                    p.Profilo = profiloScelto;
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                                    this.DialogResult = DialogResult.OK;
+                                    this.Close();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nessuna modifica apportata!");
+                        }
+                    }
+                    else
+                    {
+                        Periodo periodo = new Periodo(dataInizio, dataFine, profiloScelto);
+                        periodi.Add(periodo);
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                }
+                
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
             
         }

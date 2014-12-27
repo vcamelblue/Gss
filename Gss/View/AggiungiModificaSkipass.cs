@@ -15,18 +15,22 @@ namespace Gss.View
 {
     public partial class AggiungiModificaSkipass : Form 
 	{
+        //Fileds
+        
         private PrenotazioniController prenotazioneController;
         private ResortController resortController;
         private SkiCard skicard;
         private SkiPass skipass;
         private bool inEditingMode;
 
+        
+            #region UtilityFields
 
         private readonly string difficoltaBassa = "Bassa";
         private readonly string difficoltaAlta = "Alta";
         private readonly string difficoltaMedia = "Media";
 
-
+        
         private readonly int TIPO_SKIPASS_A_GIORNATA_INDEX = 0;
         private readonly int TIPO_SKIPASS_AD_ACCESSO_INDEX = 1;
 
@@ -40,6 +44,12 @@ namespace Gss.View
         private readonly int CARATT_SPECIF_DISL_MED_FILTRO_INDEX = 2;
         private readonly int CARATT_SPECIF_NUM_SALTI_FILTRO_INDEX = 3;
         private readonly int CARATT_SPECIF_NUM_JIBS_FILTRO_INDEX = 4;
+        
+            #endregion
+
+        //Constructors
+
+            //New Skipass Constructors
 
         public AggiungiModificaSkipass(PrenotazioniController prenotazioneController, ResortController resortController,SkiCard skicard) 
 		{
@@ -52,6 +62,8 @@ namespace Gss.View
 
             InitializeComponent();
         }
+
+            //Editing Skipass Constructors
 
         public AggiungiModificaSkipass(PrenotazioniController prenotazioneController,ResortController resortController, SkiCard skicard, SkiPass skipass)
         {
@@ -67,6 +79,11 @@ namespace Gss.View
             this.Text = "Modifica SkiPass";
             AggiungiSkipassButton.Text = "Salva Modifiche";
         }
+
+
+        //Events
+
+        #region Events
 
         private void AggiungiModificaSkipass_Load(object sender, EventArgs e)
         {
@@ -84,7 +101,7 @@ namespace Gss.View
             {
                 codiceSkipassTextBox.Text = skipass.Codice;
                 tipologiaSkipassComboBox.SelectedIndex = tipologiaSkipassComboBox.FindStringExact(GetTipologiaBySkipass(skipass));
-                
+
                 if (tipologiaSkipassComboBox.SelectedIndex == TIPO_SKIPASS_A_GIORNATA_INDEX)
                 {
                     SkiPassAGiornata skipassAGiornata = (SkiPassAGiornata)skipass;
@@ -101,9 +118,7 @@ namespace Gss.View
         }
 
 
-        //Events
-
-        private void tipologiaSkipassComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void tipologiaSkipassComboBox_SelectedIndexChanged(object sender, EventArgs e) //switch pannello by skipass
         {
             if (tipologiaSkipassComboBox.SelectedIndex == TIPO_SKIPASS_A_GIORNATA_INDEX)
                 tipoSkipassTabControl.SelectedTab = skipassAGiornataTabPage;
@@ -111,32 +126,32 @@ namespace Gss.View
                 tipoSkipassTabControl.SelectedTab = skipassAdAccessoTabPage;
         }
 
-        private void skipassAGiornataDataInizioTimePicker_ValueChanged(object sender, EventArgs e)
+        private void skipassAGiornataDataInizioTimePicker_ValueChanged(object sender, EventArgs e) //correzione date selezionabili
         {
             skipassAGiornataDataFineTimePicker.MinDate = skipassAGiornataDataInizioTimePicker.Value;
         }
         
-        private void perNomeRadioButton_CheckedChanged(object sender, EventArgs e)          //Switch panel
+        private void perNomeRadioButton_CheckedChanged(object sender, EventArgs e)          //Switch filtro panel
         {
             tipoFiltroTabControl.SelectedTab = filtroPerNomeTabPage;
         }
 
-        private void prezzoMassimoRadioButton_CheckedChanged(object sender, EventArgs e)    //Switch panel
+        private void prezzoMassimoRadioButton_CheckedChanged(object sender, EventArgs e)    //Switch filtro panel
         {
             tipoFiltroTabControl.SelectedTab = filtroPerPrezzoTabPage;
         }
 
-        private void nPisteDiTipoRadioButton_CheckedChanged(object sender, EventArgs e)     //Switch panel
+        private void nPisteDiTipoRadioButton_CheckedChanged(object sender, EventArgs e)     //Switch filtro panel
         {
             tipoFiltroTabControl.SelectedTab = filtroPerTipoPisteTabPage;
         }
 
-        private void caratteristicaSpecificaRadioButton_CheckedChanged(object sender, EventArgs e) //Switch panel
+        private void caratteristicaSpecificaRadioButton_CheckedChanged(object sender, EventArgs e) //Switch filtro panel
         {
             tipoFiltroTabControl.SelectedTab = filtroPerCaratteristicaTabPage;
         }
 
-        private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged(object sender, EventArgs e) //svuotamento campo di testo
         {
             caratteristicaSpecificaAlmenoFiltroTextBox.Clear();
         }
@@ -217,7 +232,6 @@ namespace Gss.View
             this.Close();
         }
 
-
         private void visualizzaDettagliImpiantoButton_Click(object sender, EventArgs e)
         {
             try
@@ -253,8 +267,11 @@ namespace Gss.View
             }
         }
 
+        #endregion
 
         //Filtri
+
+        #region MetodiFiltri
 
         private void FiltraPerNome()
         {
@@ -485,6 +502,7 @@ namespace Gss.View
             }
         }
 
+        #endregion
 
         //Private Utility Methods
         
@@ -541,9 +559,9 @@ namespace Gss.View
         
         private bool isDifficoltàValid(string difficolta)
         {
-            if ((difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
-                || (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
-                || (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase)))
+            if ((   difficolta.Equals(difficoltaBassa, StringComparison.InvariantCultureIgnoreCase))
+                || (difficolta.Equals(difficoltaAlta,  StringComparison.InvariantCultureIgnoreCase))
+                || (difficolta.Equals(difficoltaMedia, StringComparison.InvariantCultureIgnoreCase)))
             {
                 return true;
             }
@@ -563,13 +581,13 @@ namespace Gss.View
  
         private string getDifficoltàGiustaByString(string difficolta) //Metodo per farmi restituire bene le stringhe per costruirmi l'enumerativo esatto
         {
-            if (difficoltaBassa.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            if (difficolta.Equals(difficoltaBassa, StringComparison.InvariantCultureIgnoreCase))
                 return difficoltaBassa;
 
-            if (difficoltaAlta.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            if (difficolta.Equals(difficoltaAlta,  StringComparison.InvariantCultureIgnoreCase))
                 return difficoltaAlta;
 
-            if (difficoltaMedia.Equals(difficolta, StringComparison.InvariantCultureIgnoreCase))
+            if (difficolta.Equals(difficoltaMedia, StringComparison.InvariantCultureIgnoreCase))
                 return difficoltaMedia;
 
             return "";

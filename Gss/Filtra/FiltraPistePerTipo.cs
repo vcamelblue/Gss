@@ -10,13 +10,8 @@ namespace Gss.Filtra
     public class FiltraPistePerTipo : IFiltra
     {
         private string _tipoPistaToFilter;
-
-        public string TipoPistaToFilter
-        {
-            get { return _tipoPistaToFilter; }
-            set { _tipoPistaToFilter = value; }
-        }
         private int _numeroMinPisteToFilter;
+
 
         public FiltraPistePerTipo(int numeroMinPisteToFilter, string tipoPistaToFilter)
         {
@@ -24,51 +19,72 @@ namespace Gss.Filtra
             _tipoPistaToFilter = tipoPistaToFilter;
         }
 
+
+        public string TipoPistaToFilter
+        {
+            get { return _tipoPistaToFilter; }
+            set { _tipoPistaToFilter = value; }
+        }
+
+        public int NumeroMinPisteToFilter
+        {
+            get { return _numeroMinPisteToFilter; }
+            set { _numeroMinPisteToFilter = value; }
+        }
+
+
         public Impianti Filtra(Impianti impianti)
         {
             Impianti i = new Impianti();
             
-            if(this._tipoPistaToFilter=="Tutte")
+            if(TipoPistaToFilter == "Tutte")
             {
                 foreach (Impianto impianto in impianti.ListaImpianti)
                 {
-                if (impianto.NumeroPiste() >= this._numeroMinPisteToFilter)
-                    i.Add(impianto);      
+                    if (impianto.NumeroPiste() >= NumeroMinPisteToFilter)
+                        i.Add(impianto);      
                 }
-                return i;
-            }
-            if(this._tipoPistaToFilter=="Alpina")
-            {
-                foreach (Impianto impianto in impianti.ListaImpianti)
-                {
-                    if (impianto.GetPisteAlpine().Count >= this._numeroMinPisteToFilter)
-                        i.Add(impianto);
-                }
+
                 return i;
             }
 
-            if (this._tipoPistaToFilter == "Fondo")
+
+            if(TipoPistaToFilter == "Alpina")
             {
                 foreach (Impianto impianto in impianti.ListaImpianti)
                 {
-                    if (impianto.GetPisteFondo().Count >= this._numeroMinPisteToFilter)
+                    if (impianto.GetPisteAlpine().Count >= NumeroMinPisteToFilter)
                         i.Add(impianto);
                 }
+
                 return i;
             }
 
-            if (this._tipoPistaToFilter == "SnowPark")
+
+            if (TipoPistaToFilter == "Fondo")
             {
                 foreach (Impianto impianto in impianti.ListaImpianti)
                 {
-                    if (impianto.GetPisteSnowPark().Count >= this._numeroMinPisteToFilter)
+                    if (impianto.GetPisteFondo().Count >= NumeroMinPisteToFilter)
                         i.Add(impianto);
                 }
+
                 return i;
             }
+
+
+            if (TipoPistaToFilter == "SnowPark")
+            {
+                foreach (Impianto impianto in impianti.ListaImpianti)
+                {
+                    if (impianto.GetPisteSnowPark().Count >= NumeroMinPisteToFilter)
+                        i.Add(impianto);
+                }
+
+                return i;
+            }
+
             return i;
         }
-
-
     }
 }

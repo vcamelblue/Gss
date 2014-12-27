@@ -47,11 +47,12 @@ namespace Gss.Filtra
                 double prezzo = 0;
                 DateTime data = DataInizio;
 
-                while (!(data.Equals(DataFine)))
+                while (data.Date < DataFine.Date)
                 {
                     prezzo += i.GetPrezzoFor(data).Prezzo;
-                    data=data.AddDays(1);
+                    data = data.AddDays(1);
                 }
+
                 if (prezzo <= PrezzoToFilter)
                 {
                     result.Add(i);

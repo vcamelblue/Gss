@@ -24,126 +24,12 @@ namespace Gss.Controller
         //Periodi
         public string TrySetPeriodi(List<Periodo> periodi)
         {
-            string result = "";
-            Periodo periodoTemp;
-            List<Periodo> temp = new List<Periodo>();
-            periodi.Sort(new PeriodoComparer());
-            foreach (Periodo p in periodi)
-                temp.Add((Periodo)p.Clone());
-
-
-            if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio.Date)
-            {
-                result += temp.ElementAt(0) + " modificato con data d'inizio portata a " + Gss.Resort.DataInizioStagione.ToShortDateString() + "\n\n";
-                temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
-            }
-            int i = 1;
-            while (i < temp.Count)
-            {
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataInizio.Date) == 0 &&
-                    DateTime.Compare(temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).DataFine) != 0)
-                {
-                    result += temp.ElementAt(i) + " modificato con data inizio portata a ";
-                    temp.ElementAt(i).DataInizio = temp.ElementAt(i - 1).DataFine.AddDays(1);
-                    result += temp.ElementAt(i).DataInizio.ToShortDateString() + "\n\n";
-                }
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataInizio.Date) == 0 &&
-                    DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) == 0)
-                {
-                    result += temp.ElementAt(i - 1) + " eliminato per sovrapposizione di date \n\n";
-                    temp.RemoveAt(i - 1);
-                    continue;
-                }
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataFine.Date) <= 0)
-                {
-                    if (DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) >= 0)
-                    {
-                        result += temp.ElementAt(i - 1);
-                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                        result += " modificato con data fine portata a " + temp.ElementAt(i - 1).DataFine.ToShortDateString() + "\n\n";
-                    }
-                    else
-                    {
-                        periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - i).Profilo); // .Clone()???
-                        result += "Inserito " + temp.ElementAt(i) + " in " + temp.ElementAt(i - 1) + "\n\n";
-                        temp.Add(periodoTemp);
-                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                    }
-                }
-
-                else if (DateTime.Compare(temp.ElementAt(i).DataInizio.AddDays(-1).Date, temp.ElementAt(i - 1).DataFine.Date) > 0)
-                {
-                    result += temp.ElementAt(i - 1) + " modificato con data fine portata a " + temp.ElementAt(i).DataInizio.AddDays(-1).ToShortDateString()+ "\n";
-                    temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                }
-                temp.Sort(new PeriodoComparer());//
-                i++;
-            }
-            i--;
-            if (DateTime.Compare(temp.ElementAt(i).DataFine.Date, Gss.Resort.DataFineStagione) < 0)
-            {
-                result += temp.ElementAt(i) + " modificato con data fine portata a " + Gss.Resort.DataFineStagione.ToShortDateString();
-                temp.ElementAt(i).DataFine = Gss.Resort.DataFineStagione;
-            }
-            return result;
+           return Gss.GestorePeriodi.TrySetPeriodi(periodi);
         }
 
         public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
-            Periodo periodoTemp;
-            List<Periodo> temp = new List<Periodo>();
-            periodi.Sort(new PeriodoComparer());
-            foreach (Periodo p in periodi)
-                temp.Add(p);
-
-
-            if (Gss.Resort.DataInizioStagione != temp.ElementAt(0).DataInizio.Date)
-            {
-                temp.ElementAt(0).DataInizio = Gss.Resort.DataInizioStagione;
-            }
-            int i = 1;
-            while (i < temp.Count)
-            {
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataInizio.Date) == 0 &&
-                    DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) != 0)
-                {
-                    temp.ElementAt(i).DataInizio = temp.ElementAt(i - 1).DataFine.AddDays(1);
-                }
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio, temp.ElementAt(i - 1).DataInizio) == 0 &&
-                    DateTime.Compare(temp.ElementAt(i).DataFine, temp.ElementAt(i - 1).DataFine) == 0)
-                {
-                    temp.RemoveAt(i - 1);
-                    continue;
-                }
-                if (DateTime.Compare(temp.ElementAt(i).DataInizio.Date, temp.ElementAt(i - 1).DataFine.Date) <= 0)
-                {
-                    if (DateTime.Compare(temp.ElementAt(i).DataFine.Date, temp.ElementAt(i - 1).DataFine.Date) >= 0)
-                    {
-                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                    }
-                    else
-                    {
-                        periodoTemp = new Periodo(temp.ElementAt(i).DataFine.AddDays(1), temp.ElementAt(i - 1).DataFine, temp.ElementAt(i - i).Profilo); // .Clone()???
-                        temp.Add(periodoTemp);
-                        temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                        temp.Sort(new PeriodoComparer());
-                    }
-                }
-
-                else if (DateTime.Compare(temp.ElementAt(i).DataInizio.AddDays(-1).Date, temp.ElementAt(i - 1).DataFine.Date) > 0)
-                {
-                    temp.ElementAt(i - 1).DataFine = temp.ElementAt(i).DataInizio.AddDays(-1);
-                }
-                i++;
-            }
-            i--;
-            if (DateTime.Compare(temp.ElementAt(i).DataFine.Date, Gss.Resort.DataFineStagione.Date) < 0)
-            {
-                temp.ElementAt(i).DataFine = Gss.Resort.DataFineStagione;
-            }
-            temp.Sort(new PeriodoComparer());
-            Gss.GestorePeriodi.Periodi = temp;
-            return temp;
+            return Gss.GestorePeriodi.SetPeriodi(periodi);
         }
 
         public void RemoveAllPeriodi()
@@ -189,7 +75,6 @@ namespace Gss.Controller
             return profilo;
         }
 
-        //CONTINUARE DA QUI A RICONTROLLARE
 
         public ProfiliPrezziRisorse GetAllProfili()
         {
@@ -288,6 +173,9 @@ namespace Gss.Controller
             if (profiloDaModificare == null)
                 throw new Exception("Impossibile modificare il profilo selezionato! Il profilo da modificare potrebbe essere corrotto nel sistema.");
 
+            if (profiloModificato.Nome != nomeProfiloDaModificare && ((Gss.ProfiliPrezziRisorse.GetProfiloPrezziRisorseByNome(profiloModificato.Nome)) != null))
+                throw new Exception("Il nome del profilo esiste già nel sistema");
+
             if (profiloModificato.PrezziRisorse.Count == profiloDaModificare.PrezziRisorse.Count)
             {
                 if (!ProfiloIsChanged(profiloModificato, profiloDaModificare))
@@ -303,11 +191,27 @@ namespace Gss.Controller
         {
             if (!this.Gss.ProfiliPrezziRisorse.Remove(profilo))
                 throw new Exception("Impossibile rimuovere il profilo selezionato dal sistema! Operazione non effettuata.");
-        }
 
-        public void SetPrezziRisorsaForProfilo(String profilo, Risorsa risorsa, PrezziRisorsa prezzi)
-        {
+            #region RiallineamentoPeriodi
 
+            List<Periodo> temp = new List<Periodo>();
+            List<Periodo> periodi = Gss.GestorePeriodi.Periodi;
+
+            foreach (Periodo p in periodi)
+                temp.Add((Periodo)p.Clone());
+
+            //Elimino da temp i periodi che hanno il profilo eliminato
+            foreach (Periodo p in periodi)
+            {
+                if (p.Profilo.Equals(profilo))
+                    temp.Remove(p);
+            }
+
+            //se ne ho rimosso almeno uno, reimposto i periodi
+            if (periodi.Count != temp.Count)
+                this.SetPeriodi(temp);
+            
+            #endregion
         }
 
         //Private Methods

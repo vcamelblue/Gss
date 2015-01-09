@@ -101,6 +101,7 @@ namespace Gss.View
             {
                 codiceSkipassTextBox.Text = skipass.Codice;
                 tipologiaSkipassComboBox.SelectedIndex = tipologiaSkipassComboBox.FindStringExact(GetTipologiaBySkipass(skipass));
+                tipologiaSkipassComboBox.Enabled = false;
 
                 if (tipologiaSkipassComboBox.SelectedIndex == TIPO_SKIPASS_A_GIORNATA_INDEX)
                 {

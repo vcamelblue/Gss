@@ -52,8 +52,10 @@ namespace Gss.Controller
 
         //RESORT METHODS
 
-        public void SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
+        public string SetResortInfo(string nome, string indirizzo, string telefono, string email, DateTime dataInizioStagione, DateTime dataFineStagione)
         {
+            String result = "";
+
             if (nome == null || indirizzo == null || telefono == null || email == null)
             {
                 throw new Exception("Impossibile impostare i dati del Resort, uno o più valori non sono validi");
@@ -66,20 +68,24 @@ namespace Gss.Controller
             
             //se la stagione è gia iniziata blocco l'inserimento di nuove date
 
-            if (Gss.Resort.isStagioneIniziata())
+            if (Gss.Resort.isStagioneIniziata() && (dataInizioStagione.Date!= Gss.Resort.DataInizioStagione.Date || dataFineStagione.Date != Gss.Resort.DataFineStagione.Date))
             {
-                throw new Exception("Impossibile modificare le date della stagione, stagione già in corso");
+                throw new Exception("Impossibile modificare le date della stagione, la stagione è già in corso");
             }
 
-            //Rielliniare i periodi se la stagione non e' iniziata e si ritoccano le date???
+            //Rielliniare i periodi se la stagione non e' iniziata
 
-            //if (Gss.Resort.DataInizioStagione > dataInizioStagione || Gss.Resort.DataFineStagione < dataFineStagione)
-            //{
+            if (Gss.Resort.DataInizioStagione.Date != dataInizioStagione.Date || Gss.Resort.DataFineStagione.Date != dataFineStagione.Date)
+            {
                 Gss.Resort.DataInizioStagione = dataInizioStagione;
                 Gss.Resort.DataFineStagione = dataFineStagione;
-                //GestorePeriodi.AllineaPeriodi()
-            //}
-            
+
+                result = Gss.GestorePeriodi.TrySetPeriodi(Gss.GestorePeriodi.Periodi);
+
+                Gss.GestorePeriodi.SetPeriodi(Gss.GestorePeriodi.Periodi);
+            }
+
+            return result;
         }
 
         //RISORSE METHODS   

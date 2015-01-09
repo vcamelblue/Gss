@@ -76,9 +76,15 @@ namespace Gss.View {
             {
                 try
                 {
+
                     if (inEditingMode)
                     {
-                        resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+                        String periodiModificati = resortController.SetResortInfo(nome, indirizzo, telefono, email, dataInizio, dataFine);
+
+                        if (periodiModificati != "")
+                        {
+                            MessageBox.Show(periodiModificati);
+                        }
 
                         this.DialogResult = DialogResult.OK;
                         this.Close();                        

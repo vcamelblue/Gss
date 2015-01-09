@@ -135,7 +135,7 @@ namespace Gss.View
 
         private void RiempiProfiloComboBox()
         {
-            dataFineTimePicker.MinDate = periodiProfiliController.Gss.Resort.DataInizioStagione;
+            dataFineTimePicker.MinDate = dataInizioTimePicker.Value.Date.AddDays(1);
             dataFineTimePicker.MaxDate = periodiProfiliController.Gss.Resort.DataFineStagione;
             dataInizioTimePicker.MinDate = periodiProfiliController.Gss.Resort.DataInizioStagione;
             dataInizioTimePicker.MaxDate = periodiProfiliController.Gss.Resort.DataFineStagione;
@@ -185,7 +185,7 @@ namespace Gss.View
 
         private void dataInizioTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            dataFineTimePicker.MinDate = dataInizioTimePicker.Value;
+            dataFineTimePicker.MinDate = dataInizioTimePicker.Value.Date.AddDays(1);
         }
     }
 }

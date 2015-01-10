@@ -67,7 +67,7 @@ namespace Gss.Model
         {
             GSS Gss = GSS.GetInstance();
 
-            if (Gss.GestorePeriodi.Periodi.Count == 0)
+            if (periodi.Count == 0)
                 return "";
 
             string result = "";
@@ -149,7 +149,7 @@ namespace Gss.Model
         {
             GSS Gss = GSS.GetInstance();
 
-            if (Gss.GestorePeriodi.Periodi.Count == 0)
+            if (periodi.Count == 0)
                 return new List<Periodo>();
 
             Periodo periodoTemp;

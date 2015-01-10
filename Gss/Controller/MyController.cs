@@ -32,17 +32,17 @@ namespace Gss.Controller
             return this.Gss.Resort.isStagioneIniziata();
         }
 
-        public bool thereIsAtLeastOneRisorsa()
+        public bool ThereIsAtLeastOneRisorsa()
         {
             return (Gss.Resort.Bungalows.ListaBungalow.Count > 0 || Gss.Resort.Impianti.ListaImpianti.Count > 0);
         }
 
-        public bool thereIsAtLeastOneProfilo()
+        public bool ThereIsAtLeastOneProfilo()
         {
             return Gss.ProfiliPrezziRisorse.Profili.Count > 0;
         }
 
-        public bool thereIsAtLeastOnePeriodo()
+        public bool ThereIsAtLeastOnePeriodo()
         {
             return Gss.GestorePeriodi.Periodi.Count > 0;
         }

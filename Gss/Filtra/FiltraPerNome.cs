@@ -26,7 +26,7 @@ namespace Gss.Filtra
         {
             Impianti result = new Impianti();
 
-            foreach (Impianto i in impianti.ListaImpianti)
+           /* foreach (Impianto i in impianti.ListaImpianti)
             {
                 if (i.Nome.IndexOf(NameToFinder, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
@@ -34,14 +34,14 @@ namespace Gss.Filtra
                 }
             }
 
+            return result;*/
+
+
+            result.ListaImpianti = (from impianto in impianti.ListaImpianti
+                        where impianto.Nome == NameToFinder
+                         select impianto).ToList<Impianto>();
+
             return result;
-
-
-            //result.ListaImpianti = (from impianto in impianti.ListaImpianti
-            //             where impianto.Nome == NameToFinder
-            //             select impianto).ToList<Impianto>();
-
-            //return result;
 
         }
     }

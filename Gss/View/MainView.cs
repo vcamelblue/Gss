@@ -203,17 +203,17 @@ namespace Gss.View
                 MessageBox.Show("Prima di continuare è necessario impostare le date della stagione! Inserisci le date per continuare.");
                 return false;
             }
-            else if (!resortController.thereIsAtLeastOneRisorsa() && stepChiamante != 1 && stepChiamante > 0)
+            else if (!resortController.ThereIsAtLeastOneRisorsa() && stepChiamante != 1 && stepChiamante > 0)
             {
                 MessageBox.Show("Prima di continuare è necessario inserire almeno una risorsa! Inserisci una o più risorse per continuare.");
                 return false;
             }
-            else if (!resortController.thereIsAtLeastOneProfilo() && stepChiamante != 2 && stepChiamante > 1)
+            else if (!resortController.ThereIsAtLeastOneProfilo() && stepChiamante != 2 && stepChiamante > 1)
             {
                 MessageBox.Show("Prima di continuare è necessario impostare almeno un profilo! Inserisci uno o più profili per continuare.");
                 return false;
             }
-            else if (!resortController.thereIsAtLeastOnePeriodo() && stepChiamante != 3 && stepChiamante > 2)
+            else if (!resortController.ThereIsAtLeastOnePeriodo() && stepChiamante != 3 && stepChiamante > 2)
             {
                 MessageBox.Show("Prima di continuare è necessario impostare almeno un periodo! Inserisci uno o più periodi per continuare.");
                 return false;

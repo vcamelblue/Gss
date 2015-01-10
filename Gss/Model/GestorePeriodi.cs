@@ -12,13 +12,12 @@ namespace Gss.Model
 
         //Fields
 
-        private static GestorePeriodi _gestorePeriodi;
         private List<Periodo> periodi;
 
        
         //Constructors
 
-        private GestorePeriodi() 
+        public GestorePeriodi() 
         {
             periodi = new List<Periodo>();            
         }
@@ -32,26 +31,6 @@ namespace Gss.Model
         }
 
         //Methods
-
-        public static GestorePeriodi GetInstance()
-        {
-            if(_gestorePeriodi == null)
-            {
-                _gestorePeriodi = new GestorePeriodi();
-            }
-            return _gestorePeriodi;
-        }
-
-
-        public void Add(Periodo p)
-        {
-            this.Periodi.Add(p);
-        }
-
-        public bool Remove(Periodo p) 
-        {
-            return this.Periodi.Remove(p);
-        }
 
 
         public Periodo getPeriodoByData(DateTime data)
@@ -87,6 +66,9 @@ namespace Gss.Model
         public string TrySetPeriodi(List<Periodo> periodi)
         {
             GSS Gss = GSS.GetInstance();
+
+            if (Gss.GestorePeriodi.Periodi.Count == 0)
+                return "";
 
             string result = "";
             Periodo periodoTemp;
@@ -166,6 +148,9 @@ namespace Gss.Model
         public List<Periodo> SetPeriodi(List<Periodo> periodi)
         {
             GSS Gss = GSS.GetInstance();
+
+            if (Gss.GestorePeriodi.Periodi.Count == 0)
+                return new List<Periodo>();
 
             Periodo periodoTemp;
             List<Periodo> temp = new List<Periodo>();

@@ -17,6 +17,12 @@ namespace Gss.Model
             _prezziRisorsa = new Dictionary<Risorsa, PrezziRisorsa>();
         }
 
+        public ProfiloPrezziRisorse()
+            : this(null)
+        {
+
+        }
+
         public Dictionary<Risorsa, PrezziRisorsa> PrezziRisorse
         {
             get { return _prezziRisorsa; }

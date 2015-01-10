@@ -26,7 +26,7 @@ namespace Gss.Model
             _resort = new Resort();
             _clienti = new Clienti();
             _prenotazioni = new Prenotazioni();
-            _gestorePeriodi = GestorePeriodi.GetInstance();
+            _gestorePeriodi = new GestorePeriodi();
             _profiliPrezziRisorse = new ProfiliPrezziRisorse();
 
             _numeroPrenotazioni = 0;

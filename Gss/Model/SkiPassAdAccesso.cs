@@ -33,14 +33,14 @@ namespace Gss.Model
         public override double GetPrezzoSkiPass()
         {
             
-            Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(DataRilascio);
+            //Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(DataRilascio);
 
-            if (periodo == null)
-            {
-                throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
-            }
+            //if (periodo == null)
+            //{
+            //   throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
+            //}
 
-            PrezziRisorsa prezziSkipass = periodo.Profilo.GetPrezziRisorsa(Impianto);
+            PrezziRisorsa prezziSkipass = Impianto.GetPrezzoFor(DataRilascio);
 
             if (prezziSkipass == null)
             {

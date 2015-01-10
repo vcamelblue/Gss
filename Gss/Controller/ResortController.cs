@@ -80,7 +80,9 @@ namespace Gss.Controller
                 Gss.Resort.DataInizioStagione = dataInizioStagione;
                 Gss.Resort.DataFineStagione = dataFineStagione;
 
-                result = Gss.GestorePeriodi.AllineaPeriodi();
+                result = Gss.GestorePeriodi.TrySetPeriodi(Gss.GestorePeriodi.Periodi);
+
+                Gss.GestorePeriodi.SetPeriodi(Gss.GestorePeriodi.Periodi);
             }
 
             return result;

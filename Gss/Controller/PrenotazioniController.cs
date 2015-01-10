@@ -23,9 +23,9 @@ namespace Gss.Controller
                 throw new Exception("Prenotazione già presente nel sistema");
         }
 
-        public void RemovePrenotazione(Prenotazione prenotazione)
+        public void RemovePrenotazione(PrenotazioneAttiva prenotazione)
         {
-            if (prenotazione.DataInizio.Date < DateTime.Today.AddDays(7).Date)
+            if (prenotazione.IsEntroUnaSettimana())
                 throw new Exception("La prenotazione già è iniziata");
 
             if (!Gss.Prenotazioni.Remove(prenotazione))

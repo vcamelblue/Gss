@@ -51,12 +51,12 @@ namespace Gss.Model
             return Stanze.Count;
         }
 
-        public void Add(Stanza stanza)
+        public void AddStanza(Stanza stanza)
         {
             Stanze.Add(stanza);
         }
 
-        public bool Remove(Stanza stanza)
+        public bool RemoveStanza(Stanza stanza)
         {
             return Stanze.Remove(stanza);
         }
@@ -166,7 +166,7 @@ namespace Gss.Model
             clone = new Bungalow(this.Codice);
             foreach (Stanza s in Stanze)
             {
-                clone.Add((Stanza)s.Clone());
+                clone.AddStanza((Stanza)s.Clone());
             }
             return clone;
         }

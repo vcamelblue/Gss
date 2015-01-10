@@ -121,18 +121,18 @@ namespace Gss
             
             
 
-            b1.Add(s3);
-            b1.Add(s9);
-            b2.Add(s2);
-            b3.Add(s1);
-            b4.Add(s5);
-            b5.Add(s4);
-            b5.Add(s10);
-            b6.Add(s6);
-            b7.Add(s7);
-            b7.Add(s11);
-            b8.Add(s8);
-            b8.Add(s12);
+            b1.AddStanza(s3);
+            b1.AddStanza(s9);
+            b2.AddStanza(s2);
+            b3.AddStanza(s1);
+            b4.AddStanza(s5);
+            b5.AddStanza(s4);
+            b5.AddStanza(s10);
+            b6.AddStanza(s6);
+            b7.AddStanza(s7);
+            b7.AddStanza(s11);
+            b8.AddStanza(s8);
+            b8.AddStanza(s12);
 #endregion
 
             #region Aggiunta Bungalows al Resort
@@ -357,7 +357,7 @@ namespace Gss
             prenotazioniController.AddPrenotazione(prenotazioneAttiva3);
 
             PrenotazioneAttiva prenotazioneAttiva4 = new PrenotazioneAttiva(prenotazioniController.Gss.ProssimoNumeroPrenotazione, 3, DateTime.Today.AddDays(15), DateTime.Today.AddDays(22), cliente5);
-            prenotazioneAttiva3.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
+            prenotazioneAttiva4.Bungalow = prenotazioniController.FindBungalowDisponibiliFor(prenotazioneAttiva3.DataInizio, prenotazioneAttiva3.DataFine, prenotazioneAttiva3.NumeroPersone).ListaBungalow.First();
             prenotazioniController.AddPrenotazione(prenotazioneAttiva4);
 
 

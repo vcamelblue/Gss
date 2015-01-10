@@ -15,6 +15,12 @@ namespace Gss.Model
             _impianti = new List<Impianto>();
         }
 
+        public List<Impianto> ListaImpianti
+        {
+            get { return _impianti; }
+            set { _impianti = value; }
+        }
+
         public bool Add(Impianto impianto)
         {
 
@@ -31,11 +37,7 @@ namespace Gss.Model
             return ListaImpianti.Remove(impianto);
         }
 
-        public List<Impianto> ListaImpianti
-        {
-            get { return _impianti; }
-            set { _impianti = value; }
-        }
+        
 
         public override string ToString()
         {

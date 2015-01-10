@@ -54,7 +54,7 @@ namespace Gss.Model
                 throw new Exception("Impossibile Trovare Il prezzo per lo skipass nel periodo specificato!");
             }
 
-            return NumeroAccessi * prezzoPerAccessoSkipass.Valore;
+            return NumeroAccessi * prezzoPerAccessoSkipass.Prezzo;
         }
     }
 }

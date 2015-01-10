@@ -92,12 +92,6 @@ namespace Gss.Model
             set { _dataFineStagione = value; }
         }
 
-        public void SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
-        {
-            this.DataInizioStagione = dataInizioStagione;
-            this.DataFineStagione = dataFineStagione;
-        }
-
         public bool isStagioneImpostata()
         {
             return (DataInizioStagione.Date != DateTime.MinValue.Date && DataFineStagione.Date != DateTime.MinValue.Date);

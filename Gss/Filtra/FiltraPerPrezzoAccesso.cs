@@ -36,7 +36,7 @@ namespace Gss.Filtra
 
             foreach (Impianto i in impianti.ListaImpianti)
             {
-                if ((i.GetPrezzoFor(DataRilascio).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore)<=PrezzoToFilter) 
+                if ((i.GetPrezzoFor(DataRilascio).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Prezzo)<=PrezzoToFilter) 
                 {
                     result.Add(i);
                 }

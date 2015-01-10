@@ -10,12 +10,12 @@ namespace Gss.Model
     {
        
         private TipologiaPrezzo _tipologia;
-        private double _valore;
+        private double _prezzo;
 
-        public PrezzoSpecifico(TipologiaPrezzo tipologia, double valore)
+        public PrezzoSpecifico(TipologiaPrezzo tipologia, double prezzo)
         {
             _tipologia = tipologia;
-            _valore = valore;
+            _prezzo = prezzo;
         }
 
         public TipologiaPrezzo Tipologia
@@ -23,10 +23,10 @@ namespace Gss.Model
             get { return _tipologia; }
             set { _tipologia = value; }
         }
-        public double Valore
+        public double Prezzo
         {
-            get { return _valore; }
-            set { _valore = value; }
+            get { return _prezzo; }
+            set { _prezzo = value; }
         }
 
         public override bool Equals(object obj)
@@ -41,7 +41,7 @@ namespace Gss.Model
             else
                 return false;
 
-            return (this.Tipologia == p.Tipologia && p.Valore == p.Valore);
+            return (this.Tipologia == p.Tipologia && p.Prezzo == p.Prezzo);
         }
 
     }

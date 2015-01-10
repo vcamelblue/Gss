@@ -149,8 +149,8 @@ namespace Gss.Controller
             {
                 if (ps.Tipologia == tipologia)
                 {
-                    if (ps.Valore != 0)
-                        return ps.Valore;
+                    if (ps.Prezzo != 0)
+                        return ps.Prezzo;
                 }
             } 
             

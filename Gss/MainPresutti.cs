@@ -105,16 +105,16 @@ namespace Gss
             Stanza s7 = new Stanza(2, 4);
             Stanza s8 = new Stanza(5, 7);
 
-            b1.Add(s1);
-            b1.Add(s2);
-            b1.Add(s3);
-            b2.Add(s2);
-            b3.Add(s3);
-            b4.Add(s4);
-            b5.Add(s5);
-            b6.Add(s6);
-            b7.Add(s7);
-            b8.Add(s8);
+            b1.AddStanza(s1);
+            b1.AddStanza(s2);
+            b1.AddStanza(s3);
+            b2.AddStanza(s2);
+            b3.AddStanza(s3);
+            b4.AddStanza(s4);
+            b5.AddStanza(s5);
+            b6.AddStanza(s6);
+            b7.AddStanza(s7);
+            b8.AddStanza(s8);
 
             ProfiloPrezziRisorse profilo1 = new ProfiloPrezziRisorse("Alta");
             ProfiloPrezziRisorse profilo2 = new ProfiloPrezziRisorse("Bassa");

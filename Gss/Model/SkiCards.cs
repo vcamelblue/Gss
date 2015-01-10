@@ -15,6 +15,12 @@ namespace Gss.Model
             _listaSkiCard = new List<SkiCard>();
         }
 
+        public List<SkiCard> ListaSkiCard
+        {
+            get { return _listaSkiCard; }
+            set { _listaSkiCard = value; }
+        }
+
         public bool Add(SkiCard skicard)
         {
             if (ListaSkiCard.Contains(skicard))
@@ -41,11 +47,7 @@ namespace Gss.Model
             return result;
         }
 
-        public List<SkiCard> ListaSkiCard
-        {
-            get { return _listaSkiCard; }
-            set { _listaSkiCard = value; }
-        }
+        
 
     }
 }

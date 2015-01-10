@@ -15,17 +15,17 @@ namespace Gss.Model
             _codice = codice;
         }
 
+        public string Codice
+        {
+            get { return _codice; }
+            set { _codice = value; }
+        }
+
         public PrezziRisorsa GetPrezzoFor(DateTime data)
         {
             Periodo periodo = GestorePeriodi.GetInstance().getPeriodoByData(data);
             
             return periodo == null ? null : periodo.Profilo.GetPrezziRisorsa(this);
-        }
-
-        public string Codice
-        {
-            get { return _codice; }
-            set { _codice = value; }
         }
 
         public override bool Equals(object obj)

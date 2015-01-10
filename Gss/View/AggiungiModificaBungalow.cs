@@ -108,7 +108,7 @@ namespace Gss.View
                     DialogResult result = MessageBox.Show("Sicuro di voler rimuovere la stanza selezionata?", "Rimozione Stanza", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
-                        bungalow.Remove(s);
+                        bungalow.RemoveStanza(s);
                         Refresh();
                         break;
                     }

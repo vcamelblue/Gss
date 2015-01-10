@@ -73,7 +73,7 @@ namespace Gss.View
                       else //nuova stanza
                       {
                           stanza = new Stanza(numeroPostiStandard, numeroPostiMassimi);
-                          bungalow.Add(stanza);
+                          bungalow.AddStanza(stanza);
                       }
 
                       this.DialogResult = DialogResult.OK;

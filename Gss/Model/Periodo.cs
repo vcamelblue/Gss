@@ -12,12 +12,6 @@ namespace Gss.Model
         private DateTime _dataInizio;
         private DateTime _dataFine;
 
-
-        public Periodo()
-        {
-            _profilo=new ProfiloPrezziRisorse();
-        }
-
         public Periodo(DateTime dataInizio, DateTime dataFine)
         {
             _dataInizio = dataInizio;

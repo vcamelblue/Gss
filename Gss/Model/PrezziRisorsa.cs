@@ -17,12 +17,6 @@ namespace Gss.Model
             _prezziSpecifici = prezziSpecifici;
         }
 
-        public PrezziRisorsa()
-            : this(0, new List<PrezzoSpecifico>())
-        {
-            
-        }
-
         public double Prezzo
         {
             get { return _prezzo; }
@@ -36,7 +30,7 @@ namespace Gss.Model
         }
 
         //Aggiungo solo prezzi specifici con tipologie diverse
-        public bool Add(PrezzoSpecifico prezzoSpecifico)
+        public bool AddPrezzoSpecifico(PrezzoSpecifico prezzoSpecifico)
         {
             foreach (PrezzoSpecifico ps in PrezziSpecifici)
             {
@@ -49,7 +43,7 @@ namespace Gss.Model
             return true;
         }
 
-        public bool Remove(PrezzoSpecifico prezzoSpecifico)
+        public bool RemovePrezzoSpecifico(PrezzoSpecifico prezzoSpecifico)
         {
             return PrezziSpecifici.Remove(prezzoSpecifico);
         }
@@ -87,7 +81,7 @@ namespace Gss.Model
 
             foreach (PrezzoSpecifico p in this.PrezziSpecifici)
             {
-                result.PrezziSpecifici.Add(new PrezzoSpecifico(p.Tipologia, p.Valore));
+                result.PrezziSpecifici.Add(new PrezzoSpecifico(p.Tipologia, p.Prezzo));
             }
 
             return result;

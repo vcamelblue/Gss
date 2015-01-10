@@ -101,16 +101,5 @@ namespace Gss.Model
                 return _numeroSkiPass;
             }
         }
-
-        public bool SetStagione(DateTime dataInizioStagione, DateTime dataFineStagione)
-        {
-            //_gestorePeriodi.SetStagione(dataInizioStagione, dataInizioStagione);
-            _resort.SetStagione(dataInizioStagione, dataFineStagione);
-            return true;
-            //TODO!!!!
-
-            //nuovo todo, eliminare il return a bool e questi inutili commenti e todo
-        }
-        
     }
 }

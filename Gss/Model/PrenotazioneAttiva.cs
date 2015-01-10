@@ -53,7 +53,7 @@ namespace Gss.Model
 
         public bool IsEntroUnaSettimana()
         {
-            return (DateTime.Today.AddDays(7).Date <= DataInizio.Date);
+            return (DateTime.Today.AddDays(7).Date > DataInizio.Date);
         }
 
         public bool AddSkiCard(SkiCard skicard)
@@ -112,7 +112,7 @@ namespace Gss.Model
                         throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
 
 
-                    prezzo += numeroPersoneExtra * prezzoPerPersonaExtra.Valore;
+                    prezzo += numeroPersoneExtra * prezzoPerPersonaExtra.Prezzo;
                     data = data.AddDays(1);
                 }
                 return prezzo;

@@ -8,21 +8,21 @@ namespace Gss.Model
 {
     public class Prenotazioni
     {
-        private List<Prenotazione> _listaPrenotazioni;
+        private List<Prenotazione> _prenotazioni;
 
         public Prenotazioni(List<Prenotazione> prenotazioni)
         {
-            _listaPrenotazioni = prenotazioni;
+            _prenotazioni = prenotazioni;
         }
 
         public Prenotazioni(){
-            _listaPrenotazioni = new List<Prenotazione>();
+            _prenotazioni = new List<Prenotazione>();
         }
 
         public List<Prenotazione> ListaPrenotazioni
         {
-            get { return _listaPrenotazioni; }
-            set { _listaPrenotazioni = value; }
+            get { return _prenotazioni; }
+            set { _prenotazioni = value; }
         }
 
 

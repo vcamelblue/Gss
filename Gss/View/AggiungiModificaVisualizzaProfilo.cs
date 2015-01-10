@@ -136,7 +136,7 @@ namespace Gss.View
                 impiantoDataGridView.Rows.Add(impiantoSelezionato.Codice, impiantoSelezionato.Nome, impiantoSelezionato.Versante, impiantoSelezionato.GetPisteAlpine().Count, impiantoSelezionato.GetPisteFondo().Count, impiantoSelezionato.GetPisteSnowPark().Count);
                 if (inEditingMode || inViewMode)
                 {
-                    prezzoPerAccessoImpiantoTextBox.Text = profilo.GetPrezziRisorsa(impiantoSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Valore.ToString();
+                    prezzoPerAccessoImpiantoTextBox.Text = profilo.GetPrezziRisorsa(impiantoSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerAccesso).Prezzo.ToString();
                     prezzoPerGiornataImpiantoTextBox.Text = profilo.GetPrezziRisorsa(impiantoSelezionato).Prezzo.ToString();
                 }
             }
@@ -147,7 +147,7 @@ namespace Gss.View
                 bungalowDataGridView.Rows.Add(bungalowSelezionato.Codice, bungalowSelezionato.GetNumeroStanze(), bungalowSelezionato.ToStringStanze(), bungalowSelezionato.PostiTotaliStandard(), bungalowSelezionato.PostiTotaliMax());
                 if (inEditingMode || inViewMode)
                 {
-                    prezzoPerPersonaExtraTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Valore.ToString();
+                    prezzoPerPersonaExtraTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).GetPrezzoByTipologia(TipologiaPrezzo.PrezzoPerPersonaExtra).Prezzo.ToString();
                     prezzoPerGironataPostStdTextBox.Text = profilo.GetPrezziRisorsa(bungalowSelezionato).Prezzo.ToString();
                 }
             }

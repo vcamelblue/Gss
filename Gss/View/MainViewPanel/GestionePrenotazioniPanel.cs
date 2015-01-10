@@ -154,7 +154,7 @@ namespace Gss.View.MainViewPanel
         private void archiviaRimuoviPrenotazioneButton_Click(object sender, EventArgs e)
         {   
             int numeroPrenotazioneSelezionata = int.Parse(prenotazioniDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            Prenotazione prenotazioneSelezionata = prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata);
+            PrenotazioneAttiva prenotazioneSelezionata =(PrenotazioneAttiva) prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata);
             if (previusSelectedButton.Equals(prenotazioniConcluseTabButton))
             {
                 DialogResult result = MessageBox.Show("Sicuro di voler archiviare la prenotazione?", "Archviazione Prenotazione", MessageBoxButtons.OKCancel);
@@ -162,7 +162,7 @@ namespace Gss.View.MainViewPanel
                 {
                     try
                     {
-                        prenotazioniController.ArchiviaPrenotazione((PrenotazioneAttiva)prenotazioneSelezionata);
+                        prenotazioniController.ArchiviaPrenotazione(prenotazioneSelezionata);
                         VisualizzaFattura visualizzaFatt = new VisualizzaFattura((PrenotazioneArchiviata)prenotazioniController.GetPrenotazioneByNumeroPrenotazione(numeroPrenotazioneSelezionata));
                         visualizzaFatt.Show();
                         Refresh();

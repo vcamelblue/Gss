@@ -543,13 +543,13 @@ namespace Gss.View
 
         private void SetRangeDate()
         {
-            skipassAGiornataDataInizioTimePicker.MinDate = prenotazioneController.Gss.Resort.DataInizioStagione;
+            skipassAGiornataDataInizioTimePicker.MinDate = (resortController.Gss.Resort.DataInizioStagione > DateTime.Today.Date) ? resortController.Gss.Resort.DataInizioStagione : DateTime.Today.Date;
             skipassAGiornataDataInizioTimePicker.MaxDate = prenotazioneController.Gss.Resort.DataFineStagione;
 
-            skipassAGiornataDataFineTimePicker.MinDate = prenotazioneController.Gss.Resort.DataInizioStagione;
+            skipassAGiornataDataFineTimePicker.MinDate = skipassAGiornataDataInizioTimePicker.MinDate;
             skipassAGiornataDataFineTimePicker.MaxDate = prenotazioneController.Gss.Resort.DataFineStagione;
 
-            skipassAdAccessoDataInizioTimePicker.MinDate = prenotazioneController.Gss.Resort.DataInizioStagione;
+            skipassAdAccessoDataInizioTimePicker.MinDate = (resortController.Gss.Resort.DataInizioStagione > DateTime.Today.Date) ? resortController.Gss.Resort.DataInizioStagione : DateTime.Today.Date;
             skipassAdAccessoDataInizioTimePicker.MaxDate = prenotazioneController.Gss.Resort.DataFineStagione;
         }
 

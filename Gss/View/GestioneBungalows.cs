@@ -58,55 +58,75 @@ namespace Gss.View
 
         private void rimuoviBungalowButton_Click(object sender, EventArgs e)
         {
-            try
+            if(!resortController.IsStagioneIniziata())
             {
-                Bungalow toRemove = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            
-                DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il bungalow selezionato?", "Rimozione Bungalow", MessageBoxButtons.OKCancel);
-            
-                if (result == DialogResult.OK)
+                try
                 {
-                    resortController.RemoveBungalow(toRemove);
-                    Refresh();
+                    Bungalow toRemove = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+            
+                    DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il bungalow selezionato?", "Rimozione Bungalow", MessageBoxButtons.OKCancel);
+            
+                    if (result == DialogResult.OK)
+                    {
+                        resortController.RemoveBungalow(toRemove);
+                        Refresh();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
                 }
             }
-            catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Impossibile rimuovere il Bungalow, la stagione è già iniziata!");
             }
         }
 
         private void aggiungiBungalowButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaBungalow aggiungiBungalowForm = new AggiungiModificaBungalow(resortController);
-
-            DialogResult res = aggiungiBungalowForm.ShowDialog();
-            if (res == DialogResult.OK)
+            if (!resortController.IsStagioneIniziata())
             {
-                Refresh();
+                AggiungiModificaBungalow aggiungiBungalowForm = new AggiungiModificaBungalow(resortController);
+
+                DialogResult res = aggiungiBungalowForm.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile aggiungere un Bungalow, la stagione è già iniziata!");
             }
         }
 
         private void modificaBungalowButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!resortController.IsStagioneIniziata())
             {
-                Bungalow bungalowToEdit = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-
-                Bungalow bungalowCopia = (Bungalow)bungalowToEdit.Clone();
-
-                AggiungiModificaBungalow modificaBungalow = new AggiungiModificaBungalow(resortController, bungalowCopia);
-
-                DialogResult res = modificaBungalow.ShowDialog();
-                if (res == DialogResult.OK)
+                try
                 {
-                    resortController.EditBungalow(bungalowToEdit, bungalowCopia);
-                    Refresh();
+                    Bungalow bungalowToEdit = resortController.GetBungalowByCodice(bungalowDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                    Bungalow bungalowCopia = (Bungalow)bungalowToEdit.Clone();
+
+                    AggiungiModificaBungalow modificaBungalow = new AggiungiModificaBungalow(resortController, bungalowCopia);
+
+                    DialogResult res = modificaBungalow.ShowDialog();
+                    if (res == DialogResult.OK)
+                    {
+                        resortController.EditBungalow(bungalowToEdit, bungalowCopia);
+                        Refresh();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
                 }
             }
-            catch (Exception exception)
+            else
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Impossibile modificare il Bungalow, la stagione è già iniziata!");
             }
         }
 

@@ -45,55 +45,76 @@ namespace Gss.View
 
         private void rimuoviImpiantoButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!resortController.IsStagioneIniziata())
             {
-                Impianto impiantoToRemove = resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            
-                DialogResult result = MessageBox.Show("Sicuro di voler rimuovere l'impianto selezionato?", "Rimozione Pista", MessageBoxButtons.OKCancel);
-            
-                if (result == DialogResult.OK)
+                try
                 {
-                    resortController.RemoveImpianto(impiantoToRemove);
-                    Refresh();
+                    Impianto impiantoToRemove = resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                    DialogResult result = MessageBox.Show("Sicuro di voler rimuovere l'impianto selezionato?", "Rimozione Pista", MessageBoxButtons.OKCancel);
+
+                    if (result == DialogResult.OK)
+                    {
+                        resortController.RemoveImpianto(impiantoToRemove);
+                        Refresh();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
                 }
             }
-            catch (Exception exception)
+            else
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Impossibile rimuovere l'impianto, la stagione è già iniziata!");
             }
         }
 
         private void AggiungiImpiantoButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaImpianto aggiungiImpiantoForm = new AggiungiModificaImpianto(resortController);
-           
-            DialogResult res = aggiungiImpiantoForm.ShowDialog();
-            if (res == DialogResult.OK)
+            if (!resortController.IsStagioneIniziata())
             {
-                Refresh();
+                AggiungiModificaImpianto aggiungiImpiantoForm = new AggiungiModificaImpianto(resortController);
+
+                DialogResult res = aggiungiImpiantoForm.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile aggiungere un impianto, la stagione è già iniziata!");
             }
         }
 
         private void modificaImpiantoButton_Click(object sender, EventArgs e)
         {
-            try
+            if (!resortController.IsStagioneIniziata())
             {
-                Impianto impiantoToEdit = resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-            
-                Impianto impiantoCopia = (Impianto)impiantoToEdit.Clone();
-            
-                AggiungiModificaImpianto modificaImpianto = new AggiungiModificaImpianto(resortController, impiantoCopia);
-
-                DialogResult res = modificaImpianto.ShowDialog();
-                if (res == DialogResult.OK)
+                try
                 {
-                    resortController.EditImpianto(impiantoToEdit, impiantoCopia);
-                    Refresh();
+                    Impianto impiantoToEdit = resortController.GetImpiantoByCodice(impiantiDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
+                    Impianto impiantoCopia = (Impianto)impiantoToEdit.Clone();
+
+                    AggiungiModificaImpianto modificaImpianto = new AggiungiModificaImpianto(resortController, impiantoCopia);
+
+                    DialogResult res = modificaImpianto.ShowDialog();
+                    if (res == DialogResult.OK)
+                    {
+                        resortController.EditImpianto(impiantoToEdit, impiantoCopia);
+                        Refresh();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
                 }
             }
-            catch (Exception exception)
+            else
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show("Impossibile modificare l'impianto, la stagione è già iniziata!");
             }
         }
         

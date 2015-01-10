@@ -91,6 +91,8 @@ namespace Gss.View.MainViewPanel
             {
                 prenotazioniDataGridView.Rows.Add(p.NumeroPrenotazione, p.DataInizio.ToString("d MMMM yyyy"), p.DataFine.ToString("d MMMM yyyy"), p.Cliente.Nome + "  " + p.Cliente.Cognome);
             }
+
+            archiviaRimuoviPrenotazioneButton.Enabled = false;
         }
 
         private void RiempiGrigliaPrenotazioniConcluse()
@@ -129,7 +131,6 @@ namespace Gss.View.MainViewPanel
         {
             selectRightTab(prenotazioniInCorsoTabButton);
             archiviaRimuoviPrenotazioneButton.Enabled = false;
-            modificaPrenotazioneButton.Enabled = false;
             RiempiGrigliaPrenotazioniInCorso();
         }
 
@@ -142,12 +143,19 @@ namespace Gss.View.MainViewPanel
 
         private void nuovaPrenotazioneButton_Click(object sender, EventArgs e)
         {
-            NuovaPrenotazione nuovaPrenotazione = new NuovaPrenotazione(prenotazioniController, clientiController, resortController);
-
-            DialogResult res = nuovaPrenotazione.ShowDialog();
-            if (res == DialogResult.OK)
+            if (prenotazioniController.IsStagioneIniziata())
             {
-                Refresh();
+                NuovaPrenotazione nuovaPrenotazione = new NuovaPrenotazione(prenotazioniController, clientiController, resortController);
+
+                DialogResult res = nuovaPrenotazione.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Non è possibile fare prenotazioni, la stagione non è iniziata!");
             }
         }
 
@@ -189,6 +197,11 @@ namespace Gss.View.MainViewPanel
                     }
                 }
             }
+        }
+
+        private void modificaPrenotazioneButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Nel prototipo non è stata implementata la modifica di una prenotazione");
         }
     }
 }

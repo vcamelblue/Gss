@@ -49,7 +49,7 @@ namespace Gss.View
             RiempiListaClienti();
 
             //Prenotazione Tab
-            dataInizioPrenotazioneTimePicker.MinDate = resortController.Gss.Resort.DataInizioStagione;
+            dataInizioPrenotazioneTimePicker.MinDate = (resortController.Gss.Resort.DataInizioStagione > DateTime.Today.Date) ? resortController.Gss.Resort.DataInizioStagione : DateTime.Today.Date;
             dataInizioPrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;
             dataFinePrenotazioneTimePicker.MinDate = dataInizioPrenotazioneTimePicker.Value.AddDays(1);
             dataFinePrenotazioneTimePicker.MaxDate = resortController.Gss.Resort.DataFineStagione;

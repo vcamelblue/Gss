@@ -100,6 +100,8 @@ namespace Gss.View
 
         private void AggiungiModificaCliente_Load(object sender, EventArgs e)
         {
+            dataNascitaTimePicker.MaxDate = DateTime.Today.AddYears(-18);
+
             if ((inEditingMode || inViewMode))
             {
                 if (clienteToEdit == null)

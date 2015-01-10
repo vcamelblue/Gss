@@ -36,33 +36,54 @@ namespace Gss.View.MainViewPanel
 
         private void impostaPeriodiButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaPeriodi aggiungiPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController);
-
-            DialogResult result = aggiungiPeriodiForm.ShowDialog();
-            if (result == DialogResult.OK)
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                Refresh();
+                AggiungiModificaPeriodi aggiungiPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController);
+
+                DialogResult result = aggiungiPeriodiForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile impostare nuovi periodi, la stagione è già iniziata!");
             }
         }
 
         private void modificaPeriodiButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaPeriodi modificaPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController, periodiProfiliController.GetCloneOfAllPeriodi());
-
-            DialogResult result = modificaPeriodiForm.ShowDialog();
-            if (result == DialogResult.OK)
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                Refresh();
+                AggiungiModificaPeriodi modificaPeriodiForm = new AggiungiModificaPeriodi(periodiProfiliController, periodiProfiliController.GetCloneOfAllPeriodi());
+
+                DialogResult result = modificaPeriodiForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile modificare i periodi, la stagione è già iniziata!");
             }
         }
 
         private void rimuoviTuttiIPeriodiButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Sicuro di voler rimuovere Tutti i periodi?", "Rimozione Periodi", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                periodiProfiliController.RemoveAllPeriodi();
-                Refresh();
+                DialogResult result = MessageBox.Show("Sicuro di voler rimuovere Tutti i periodi?", "Rimozione Periodi", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    periodiProfiliController.RemoveAllPeriodi();
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile rimuovere i periodi, la stagione è già iniziata!");
             }
         }
 

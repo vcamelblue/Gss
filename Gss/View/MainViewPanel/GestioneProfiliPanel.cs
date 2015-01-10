@@ -69,53 +69,74 @@ namespace Gss.View.MainViewPanel
 
         private void rimuoviProfiloButton_Click(object sender, EventArgs e)
         {
-            string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = null;
-            try
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+                string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                ProfiloPrezziRisorse profiloSelezionato = null;
+                try
+                {
+                    profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+                DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il profilo selezionato?", "Rimozione Profilo", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    periodiProfiliController.RemoveProfilo(profiloSelezionato);
+                    Refresh();
+                }
             }
-            catch (Exception exception)
+            else
             {
-                MessageBox.Show(exception.Message);
-            }
-            DialogResult result = MessageBox.Show("Sicuro di voler rimuovere il profilo selezionato?", "Rimozione Profilo", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
-            {
-                periodiProfiliController.RemoveProfilo(profiloSelezionato);
-                Refresh();
+                MessageBox.Show("Impossibile rimuovere il profilo, la stagione è già iniziata");
             }
         }
 
         private void modificaProfiloButton_Click(object sender, EventArgs e)
         {
-            string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            ProfiloPrezziRisorse profiloSelezionato = null;
-            try
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-            AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController,(ProfiloPrezziRisorse) profiloSelezionato.Clone(), false);
+                string nomeSelezionato = profiliDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                ProfiloPrezziRisorse profiloSelezionato = null;
+                try
+                {
+                    profiloSelezionato = periodiProfiliController.GetProfiloPrezziRisorsaByNome(nomeSelezionato);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+                AggiungiModificaVisualizzaProfilo modificaProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController, (ProfiloPrezziRisorse)profiloSelezionato.Clone(), false);
 
-            DialogResult res = modificaProfilo.ShowDialog();
-            if (res == DialogResult.OK)
+                DialogResult res = modificaProfilo.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
             {
-                Refresh();
+                MessageBox.Show("Impossibile modificare il profilo, la stagione è già iniziata!");
             }
         }
 
         private void aggiungiProfiloButton_Click(object sender, EventArgs e)
         {
-            AggiungiModificaVisualizzaProfilo aggiungiProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController);
-
-            DialogResult res = aggiungiProfilo.ShowDialog();
-            if (res == DialogResult.OK)
+            if (!periodiProfiliController.IsStagioneIniziata())
             {
-                Refresh();
+                AggiungiModificaVisualizzaProfilo aggiungiProfilo = new AggiungiModificaVisualizzaProfilo(resortController, periodiProfiliController);
+
+                DialogResult res = aggiungiProfilo.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Impossibile aggiungere un profilo, la stagione è già iniziata!");
             }
         }
     }

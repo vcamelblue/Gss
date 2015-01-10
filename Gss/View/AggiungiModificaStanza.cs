@@ -89,6 +89,11 @@ namespace Gss.View
                 MessageBox.Show("Inserisci solo numeri interi positivi!");
             }
         }
+
+        private void annullaButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

@@ -234,6 +234,17 @@ namespace Gss.Model
             Gss.GestorePeriodi.Periodi = temp;
             return temp;
         }
+
+        public string AllineaPeriodi()
+        {
+            GSS Gss = GSS.GetInstance();
+
+            if (Gss.GestorePeriodi.Periodi.Count == 0)
+                return "";
+
+            Gss.GestorePeriodi.SetPeriodi(Gss.GestorePeriodi.Periodi);
+            return Gss.GestorePeriodi.TrySetPeriodi(Gss.GestorePeriodi.Periodi);
+        }
     }
 
     

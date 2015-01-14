@@ -537,8 +537,19 @@ namespace Gss.View
             impiantiDataGridView.Rows.Clear();
             foreach (Impianto i in impianti.ListaImpianti)
             {
-                impiantiDataGridView.Rows.Add(i.Codice, i.Nome, i.Versante, i.GetPisteAlpine().Count, i.GetPisteFondo().Count, i.GetPisteSnowPark().Count);
+                if(HavePrezzo(i))
+                    impiantiDataGridView.Rows.Add(i.Codice, i.Nome, i.Versante, i.GetPisteAlpine().Count, i.GetPisteFondo().Count, i.GetPisteSnowPark().Count);
             }
+        }
+
+        private bool HavePrezzo(Impianto i)
+        {
+            foreach(ProfiloPrezziRisorse p in GSS.GetInstance().ProfiliPrezziRisorse.Profili)
+            {
+                if (p.GetPrezziRisorsa(i) == null)
+                    return false;
+            }
+            return true;
         }
 
         private void SetRangeDate()

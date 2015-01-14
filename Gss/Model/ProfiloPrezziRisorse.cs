@@ -55,7 +55,9 @@ namespace Gss.Model
                     return _prezziRisorsa[r];
             }*/
             if (_prezziRisorsa.Keys.Contains(risorsa))
-                return _prezziRisorsa[risorsa];
+            {
+                    return _prezziRisorsa[risorsa];
+            }
             
             return null;
         }

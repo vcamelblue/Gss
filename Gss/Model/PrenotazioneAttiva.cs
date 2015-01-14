@@ -84,7 +84,8 @@ namespace Gss.Model
                 PrezziRisorsa prezziBungalow = Bungalow.GetPrezzoFor(data);
 
                 if (prezziBungalow == null)
-                    throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
+                    return 0;
+                    //throw new Exception("Impossibile Trovare Il prezzo per la risorsa specificata nel periodo specificato!");
 
                 prezzo += prezziBungalow.Prezzo;
                 data = data.AddDays(1);

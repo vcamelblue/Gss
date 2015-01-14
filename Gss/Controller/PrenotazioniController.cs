@@ -162,7 +162,11 @@ namespace Gss.Controller
             
             //Ragionamento in logica negativa: tra tutti i bungalows rimuovo quelli non prenotabili
 
-            result.ListaBungalow = Gss.Resort.Bungalows.ListaBungalow.ToList<Bungalow>();
+            foreach(Bungalow b in Gss.Resort.Bungalows.ListaBungalow.ToList<Bungalow>())
+            {
+                if(b.GetPrezzoFor(dataInizio)!=null && b.GetPrezzoFor(dataFine).Prezzo!=null)
+                    result.ListaBungalow.Add(b);
+            }
 
             foreach(PrenotazioneAttiva p in Gss.Prenotazioni.GetPrenotazioniAttive())
             {
@@ -178,7 +182,7 @@ namespace Gss.Controller
 
                 //Logica negativa, quelli che non hanno esito positivo vengono rimossi perche occupati in uno o più giorni
 
-                if ( ! (dataInizio.Date >= p.DataFine.Date || dataFine.Date <= p.DataInizio.Date) )
+                if ( (! (dataInizio.Date >= p.DataFine.Date || dataFine.Date <= p.DataInizio.Date)))
                 {
                     result.Remove(p.Bungalow);
                 }

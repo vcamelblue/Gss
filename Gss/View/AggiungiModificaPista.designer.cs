@@ -61,9 +61,9 @@
             this.annullaButton.FlatAppearance.BorderSize = 0;
             this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(80, 244);
+            this.annullaButton.Location = new System.Drawing.Point(32, 244);
             this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(63, 26);
+            this.annullaButton.Size = new System.Drawing.Size(152, 26);
             this.annullaButton.TabIndex = 8;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             this.salvaButton.FlatAppearance.BorderSize = 0;
             this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaButton.Location = new System.Drawing.Point(299, 244);
+            this.salvaButton.Location = new System.Drawing.Point(273, 244);
             this.salvaButton.Name = "salvaButton";
-            this.salvaButton.Size = new System.Drawing.Size(120, 26);
+            this.salvaButton.Size = new System.Drawing.Size(152, 26);
             this.salvaButton.TabIndex = 7;
             this.salvaButton.Text = "Salva";
             this.salvaButton.UseVisualStyleBackColor = false;
@@ -89,10 +89,10 @@
             this.tipologiaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipologiaComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tipologiaComboBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipologiaComboBox1.Location = new System.Drawing.Point(280, 28);
+            this.tipologiaComboBox1.Location = new System.Drawing.Point(273, 18);
             this.tipologiaComboBox1.Name = "tipologiaComboBox1";
-            this.tipologiaComboBox1.Size = new System.Drawing.Size(121, 26);
-            this.tipologiaComboBox1.TabIndex = 6;
+            this.tipologiaComboBox1.Size = new System.Drawing.Size(152, 22);
+            this.tipologiaComboBox1.TabIndex = 4;
             this.tipologiaComboBox1.SelectedValueChanged += new System.EventHandler(this.tipologiaComboBox1_SelectedValueChanged);
             // 
             // tipoPistaTabControl
@@ -111,10 +111,10 @@
             // tabVuoto
             // 
             this.tabVuoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.tabVuoto.Location = new System.Drawing.Point(4, 27);
+            this.tabVuoto.Location = new System.Drawing.Point(4, 23);
             this.tabVuoto.Name = "tabVuoto";
             this.tabVuoto.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuoto.Size = new System.Drawing.Size(449, 128);
+            this.tabVuoto.Size = new System.Drawing.Size(449, 132);
             this.tabVuoto.TabIndex = 0;
             this.tabVuoto.Text = "tabPage1";
             // 
@@ -125,10 +125,10 @@
             this.tabAlpina.Controls.Add(this.myLabel3);
             this.tabAlpina.Controls.Add(this.nomeAlpinaTextBox);
             this.tabAlpina.Controls.Add(this.myLabel2);
-            this.tabAlpina.Location = new System.Drawing.Point(4, 27);
+            this.tabAlpina.Location = new System.Drawing.Point(4, 23);
             this.tabAlpina.Name = "tabAlpina";
             this.tabAlpina.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlpina.Size = new System.Drawing.Size(449, 128);
+            this.tabAlpina.Size = new System.Drawing.Size(449, 132);
             this.tabAlpina.TabIndex = 1;
             this.tabAlpina.Text = "tabPage2";
             // 
@@ -139,9 +139,9 @@
             this.difficoltaComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.difficoltaComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.difficoltaComboBox.FormattingEnabled = true;
-            this.difficoltaComboBox.Location = new System.Drawing.Point(276, 80);
+            this.difficoltaComboBox.Location = new System.Drawing.Point(269, 83);
             this.difficoltaComboBox.Name = "difficoltaComboBox";
-            this.difficoltaComboBox.Size = new System.Drawing.Size(121, 26);
+            this.difficoltaComboBox.Size = new System.Drawing.Size(152, 22);
             this.difficoltaComboBox.TabIndex = 3;
             // 
             // myLabel3
@@ -150,9 +150,9 @@
             this.myLabel3.BackColor = System.Drawing.Color.Transparent;
             this.myLabel3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel3.Location = new System.Drawing.Point(52, 80);
+            this.myLabel3.Location = new System.Drawing.Point(25, 84);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(72, 21);
+            this.myLabel3.Size = new System.Drawing.Size(59, 17);
             this.myLabel3.TabIndex = 2;
             this.myLabel3.Text = "Difficolta";
             // 
@@ -162,9 +162,9 @@
             this.nomeAlpinaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomeAlpinaTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeAlpinaTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeAlpinaTextBox.Location = new System.Drawing.Point(276, 34);
+            this.nomeAlpinaTextBox.Location = new System.Drawing.Point(269, 28);
             this.nomeAlpinaTextBox.Name = "nomeAlpinaTextBox";
-            this.nomeAlpinaTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nomeAlpinaTextBox.Size = new System.Drawing.Size(152, 17);
             this.nomeAlpinaTextBox.TabIndex = 1;
             // 
             // myLabel2
@@ -173,9 +173,9 @@
             this.myLabel2.BackColor = System.Drawing.Color.Transparent;
             this.myLabel2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel2.Location = new System.Drawing.Point(49, 34);
+            this.myLabel2.Location = new System.Drawing.Point(25, 28);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(52, 21);
+            this.myLabel2.Size = new System.Drawing.Size(42, 17);
             this.myLabel2.TabIndex = 0;
             this.myLabel2.Text = "Nome";
             // 
@@ -188,10 +188,10 @@
             this.tabFondo.Controls.Add(this.myLabel6);
             this.tabFondo.Controls.Add(this.myLabel5);
             this.tabFondo.Controls.Add(this.myLabel4);
-            this.tabFondo.Location = new System.Drawing.Point(4, 27);
+            this.tabFondo.Location = new System.Drawing.Point(4, 23);
             this.tabFondo.Name = "tabFondo";
             this.tabFondo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFondo.Size = new System.Drawing.Size(449, 128);
+            this.tabFondo.Size = new System.Drawing.Size(449, 132);
             this.tabFondo.TabIndex = 2;
             this.tabFondo.Text = "tabPage3";
             // 
@@ -201,9 +201,9 @@
             this.dislivelloMedioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dislivelloMedioTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dislivelloMedioTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.dislivelloMedioTextBox.Location = new System.Drawing.Point(201, 96);
+            this.dislivelloMedioTextBox.Location = new System.Drawing.Point(269, 97);
             this.dislivelloMedioTextBox.Name = "dislivelloMedioTextBox";
-            this.dislivelloMedioTextBox.Size = new System.Drawing.Size(100, 21);
+            this.dislivelloMedioTextBox.Size = new System.Drawing.Size(152, 17);
             this.dislivelloMedioTextBox.TabIndex = 5;
             // 
             // dislivelloMaxTextBox2
@@ -212,9 +212,9 @@
             this.dislivelloMaxTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dislivelloMaxTextBox2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dislivelloMaxTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.dislivelloMaxTextBox2.Location = new System.Drawing.Point(201, 60);
+            this.dislivelloMaxTextBox2.Location = new System.Drawing.Point(269, 61);
             this.dislivelloMaxTextBox2.Name = "dislivelloMaxTextBox2";
-            this.dislivelloMaxTextBox2.Size = new System.Drawing.Size(100, 21);
+            this.dislivelloMaxTextBox2.Size = new System.Drawing.Size(152, 17);
             this.dislivelloMaxTextBox2.TabIndex = 4;
             // 
             // nomeFondoTextBox
@@ -223,9 +223,9 @@
             this.nomeFondoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomeFondoTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeFondoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeFondoTextBox.Location = new System.Drawing.Point(201, 27);
+            this.nomeFondoTextBox.Location = new System.Drawing.Point(269, 28);
             this.nomeFondoTextBox.Name = "nomeFondoTextBox";
-            this.nomeFondoTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nomeFondoTextBox.Size = new System.Drawing.Size(152, 17);
             this.nomeFondoTextBox.TabIndex = 3;
             // 
             // myLabel6
@@ -234,9 +234,9 @@
             this.myLabel6.BackColor = System.Drawing.Color.Transparent;
             this.myLabel6.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel6.Location = new System.Drawing.Point(49, 96);
+            this.myLabel6.Location = new System.Drawing.Point(25, 97);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(121, 21);
+            this.myLabel6.Size = new System.Drawing.Size(96, 17);
             this.myLabel6.TabIndex = 2;
             this.myLabel6.Text = "Dislivello Medio";
             // 
@@ -246,9 +246,9 @@
             this.myLabel5.BackColor = System.Drawing.Color.Transparent;
             this.myLabel5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel5.Location = new System.Drawing.Point(49, 60);
+            this.myLabel5.Location = new System.Drawing.Point(25, 61);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(140, 21);
+            this.myLabel5.Size = new System.Drawing.Size(110, 17);
             this.myLabel5.TabIndex = 1;
             this.myLabel5.Text = "Dislivello Massimo";
             // 
@@ -258,9 +258,9 @@
             this.myLabel4.BackColor = System.Drawing.Color.Transparent;
             this.myLabel4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel4.Location = new System.Drawing.Point(49, 27);
+            this.myLabel4.Location = new System.Drawing.Point(25, 28);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(52, 21);
+            this.myLabel4.Size = new System.Drawing.Size(42, 17);
             this.myLabel4.TabIndex = 0;
             this.myLabel4.Text = "Nome";
             // 
@@ -273,10 +273,10 @@
             this.tabSnowpark.Controls.Add(this.myLabel9);
             this.tabSnowpark.Controls.Add(this.myLabel8);
             this.tabSnowpark.Controls.Add(this.myLabel7);
-            this.tabSnowpark.Location = new System.Drawing.Point(4, 27);
+            this.tabSnowpark.Location = new System.Drawing.Point(4, 23);
             this.tabSnowpark.Name = "tabSnowpark";
             this.tabSnowpark.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSnowpark.Size = new System.Drawing.Size(449, 128);
+            this.tabSnowpark.Size = new System.Drawing.Size(449, 132);
             this.tabSnowpark.TabIndex = 3;
             this.tabSnowpark.Text = "tabPage4";
             // 
@@ -286,9 +286,9 @@
             this.numeroJibsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numeroJibsTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroJibsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.numeroJibsTextBox.Location = new System.Drawing.Point(177, 94);
+            this.numeroJibsTextBox.Location = new System.Drawing.Point(269, 97);
             this.numeroJibsTextBox.Name = "numeroJibsTextBox";
-            this.numeroJibsTextBox.Size = new System.Drawing.Size(100, 21);
+            this.numeroJibsTextBox.Size = new System.Drawing.Size(152, 17);
             this.numeroJibsTextBox.TabIndex = 5;
             // 
             // numeroSaltiTextBox
@@ -297,9 +297,9 @@
             this.numeroSaltiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numeroSaltiTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroSaltiTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.numeroSaltiTextBox.Location = new System.Drawing.Point(177, 58);
+            this.numeroSaltiTextBox.Location = new System.Drawing.Point(269, 61);
             this.numeroSaltiTextBox.Name = "numeroSaltiTextBox";
-            this.numeroSaltiTextBox.Size = new System.Drawing.Size(100, 21);
+            this.numeroSaltiTextBox.Size = new System.Drawing.Size(152, 17);
             this.numeroSaltiTextBox.TabIndex = 4;
             // 
             // nomeSnowparkTextBox
@@ -308,9 +308,9 @@
             this.nomeSnowparkTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomeSnowparkTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeSnowparkTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeSnowparkTextBox.Location = new System.Drawing.Point(177, 25);
+            this.nomeSnowparkTextBox.Location = new System.Drawing.Point(269, 28);
             this.nomeSnowparkTextBox.Name = "nomeSnowparkTextBox";
-            this.nomeSnowparkTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nomeSnowparkTextBox.Size = new System.Drawing.Size(152, 17);
             this.nomeSnowparkTextBox.TabIndex = 3;
             // 
             // myLabel9
@@ -319,9 +319,9 @@
             this.myLabel9.BackColor = System.Drawing.Color.Transparent;
             this.myLabel9.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel9.Location = new System.Drawing.Point(37, 94);
+            this.myLabel9.Location = new System.Drawing.Point(25, 97);
             this.myLabel9.Name = "myLabel9";
-            this.myLabel9.Size = new System.Drawing.Size(96, 21);
+            this.myLabel9.Size = new System.Drawing.Size(76, 17);
             this.myLabel9.TabIndex = 2;
             this.myLabel9.Text = "Numero Jibs";
             // 
@@ -331,9 +331,9 @@
             this.myLabel8.BackColor = System.Drawing.Color.Transparent;
             this.myLabel8.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel8.Location = new System.Drawing.Point(37, 58);
+            this.myLabel8.Location = new System.Drawing.Point(25, 61);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(100, 21);
+            this.myLabel8.Size = new System.Drawing.Size(81, 17);
             this.myLabel8.TabIndex = 1;
             this.myLabel8.Text = "Numero Salti";
             // 
@@ -343,9 +343,9 @@
             this.myLabel7.BackColor = System.Drawing.Color.Transparent;
             this.myLabel7.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel7.Location = new System.Drawing.Point(37, 25);
+            this.myLabel7.Location = new System.Drawing.Point(25, 28);
             this.myLabel7.Name = "myLabel7";
-            this.myLabel7.Size = new System.Drawing.Size(52, 21);
+            this.myLabel7.Size = new System.Drawing.Size(42, 17);
             this.myLabel7.TabIndex = 0;
             this.myLabel7.Text = "Nome";
             // 
@@ -355,9 +355,9 @@
             this.myLabel1.BackColor = System.Drawing.Color.Transparent;
             this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(53, 29);
+            this.myLabel1.Location = new System.Drawing.Point(28, 19);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(73, 21);
+            this.myLabel1.Size = new System.Drawing.Size(59, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Tipologia";
             // 
@@ -374,6 +374,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaPista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Pista";
             this.Load += new System.EventHandler(this.AggiungiModificaPista_Load);
             this.tipoPistaTabControl.ResumeLayout(false);

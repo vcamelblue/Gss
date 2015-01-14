@@ -49,6 +49,8 @@ namespace Gss.View
             {
                 codiceTextBox1.Text = bungalow.Codice;
                 codiceTextBox1.Enabled = false;
+                btrattinoLabel.Visible = false;
+
                 RiempiGrid();
             }
             else
@@ -154,7 +156,7 @@ namespace Gss.View
         {
             if (!inEditingMode && bungalow == null)
             {
-                bungalow = new Bungalow(codiceTextBox1.Text);
+                bungalow = new Bungalow("B-" + codiceTextBox1.Text);
             }
 
             AggiungiModificaStanza aggiungiStanzaForm = new AggiungiModificaStanza(bungalow, resortController);
@@ -184,7 +186,7 @@ namespace Gss.View
                     }
                     else
                     {
-                        Bungalow bungalowNuovo = new Bungalow(codiceBungalow);
+                        Bungalow bungalowNuovo = new Bungalow("B-" + codiceBungalow);
                         bungalowNuovo.Stanze = bungalow.Stanze;
                         resortController.AddBungalow(bungalowNuovo);
                     }

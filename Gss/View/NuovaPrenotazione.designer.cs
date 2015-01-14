@@ -1242,6 +1242,7 @@
             this.riepilogoTabButton.Name = "riepilogoTabButton";
             this.riepilogoTabButton.Size = new System.Drawing.Size(207, 26);
             this.riepilogoTabButton.TabIndex = 3;
+            this.riepilogoTabButton.TabStop = false;
             this.riepilogoTabButton.Text = "Riepilogo";
             this.riepilogoTabButton.UseVisualStyleBackColor = false;
             // 
@@ -1256,6 +1257,7 @@
             this.skicardsTabButton.Name = "skicardsTabButton";
             this.skicardsTabButton.Size = new System.Drawing.Size(207, 26);
             this.skicardsTabButton.TabIndex = 2;
+            this.skicardsTabButton.TabStop = false;
             this.skicardsTabButton.Text = "SkiCards";
             this.skicardsTabButton.UseVisualStyleBackColor = false;
             // 
@@ -1270,6 +1272,7 @@
             this.prenotazioneTabButton.Name = "prenotazioneTabButton";
             this.prenotazioneTabButton.Size = new System.Drawing.Size(207, 26);
             this.prenotazioneTabButton.TabIndex = 1;
+            this.prenotazioneTabButton.TabStop = false;
             this.prenotazioneTabButton.Text = "Prenotazione";
             this.prenotazioneTabButton.UseVisualStyleBackColor = false;
             // 
@@ -1285,6 +1288,7 @@
             this.clienteTabButton.Name = "clienteTabButton";
             this.clienteTabButton.Size = new System.Drawing.Size(207, 26);
             this.clienteTabButton.TabIndex = 0;
+            this.clienteTabButton.TabStop = false;
             this.clienteTabButton.Text = "Cliente";
             this.clienteTabButton.UseVisualStyleBackColor = false;
             // 
@@ -1304,6 +1308,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "NuovaPrenotazione";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuova Prenotazione";
             this.Load += new System.EventHandler(this.NuovaPrenotazione_Load);
             this.tabControlWithoutHeader.ResumeLayout(false);

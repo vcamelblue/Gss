@@ -323,6 +323,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "VisualizzaFattura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizza Fattura";
             this.Load += new System.EventHandler(this.VisualizzaFattura_Load);
             this.groupBox1.ResumeLayout(false);

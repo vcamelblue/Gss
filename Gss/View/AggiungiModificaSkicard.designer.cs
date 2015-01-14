@@ -64,9 +64,9 @@
             this.totaleSkipassLabel.BackColor = System.Drawing.Color.Transparent;
             this.totaleSkipassLabel.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaleSkipassLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.totaleSkipassLabel.Location = new System.Drawing.Point(602, 231);
+            this.totaleSkipassLabel.Location = new System.Drawing.Point(602, 246);
             this.totaleSkipassLabel.Name = "totaleSkipassLabel";
-            this.totaleSkipassLabel.Size = new System.Drawing.Size(114, 21);
+            this.totaleSkipassLabel.Size = new System.Drawing.Size(91, 17);
             this.totaleSkipassLabel.TabIndex = 4;
             this.totaleSkipassLabel.Text = "Totale SkiPass  ";
             // 
@@ -128,7 +128,7 @@
             this.skipassDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.skipassDataGridView.RowTemplate.Height = 24;
             this.skipassDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.skipassDataGridView.Size = new System.Drawing.Size(708, 184);
+            this.skipassDataGridView.Size = new System.Drawing.Size(708, 199);
             this.skipassDataGridView.TabIndex = 3;
             // 
             // codiceColumn
@@ -245,7 +245,7 @@
             this.codiceTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceTextBox.Location = new System.Drawing.Point(258, 23);
             this.codiceTextBox.Name = "codiceTextBox";
-            this.codiceTextBox.Size = new System.Drawing.Size(445, 21);
+            this.codiceTextBox.Size = new System.Drawing.Size(445, 17);
             this.codiceTextBox.TabIndex = 2;
             this.codiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -257,7 +257,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(23, 78);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(67, 24);
+            this.myLabel2.Size = new System.Drawing.Size(55, 19);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Skipass";
             // 
@@ -269,7 +269,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(23, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(112, 21);
+            this.myLabel1.Size = new System.Drawing.Size(89, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice SkiCard";
             // 
@@ -291,6 +291,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaSkicard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi SkiCard";
             this.Load += new System.EventHandler(this.AggiungiModificaSkicard_Load);
             this.groupBox1.ResumeLayout(false);

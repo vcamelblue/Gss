@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.gestioneIncassiTabButton = new Gss.View.Components.MyButton(this.components);
             this.gestioneProfiliTabButton = new Gss.View.Components.MyButton(this.components);
             this.gestionePeriodiTabButton = new Gss.View.Components.MyButton(this.components);
@@ -50,8 +51,17 @@
             this.groupBox1.Location = new System.Drawing.Point(234, -9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(704, 588);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.monthCalendar.Enabled = false;
+            this.monthCalendar.Location = new System.Drawing.Point(4, 252);
+            this.monthCalendar.MaxSelectionCount = 200000000;
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 8;
             // 
             // gestioneIncassiTabButton
             // 
@@ -59,10 +69,10 @@
             this.gestioneIncassiTabButton.FlatAppearance.BorderSize = 0;
             this.gestioneIncassiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestioneIncassiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneIncassiTabButton.Location = new System.Drawing.Point(1, 219);
+            this.gestioneIncassiTabButton.Location = new System.Drawing.Point(1, 209);
             this.gestioneIncassiTabButton.Name = "gestioneIncassiTabButton";
             this.gestioneIncassiTabButton.Size = new System.Drawing.Size(232, 26);
-            this.gestioneIncassiTabButton.TabIndex = 7;
+            this.gestioneIncassiTabButton.TabIndex = 6;
             this.gestioneIncassiTabButton.Text = "Gestione Incassi";
             this.gestioneIncassiTabButton.UseVisualStyleBackColor = false;
             this.gestioneIncassiTabButton.Click += new System.EventHandler(this.gestioneIncassiTabButton_Click);
@@ -73,10 +83,10 @@
             this.gestioneProfiliTabButton.FlatAppearance.BorderSize = 0;
             this.gestioneProfiliTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestioneProfiliTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneProfiliTabButton.Location = new System.Drawing.Point(1, 165);
+            this.gestioneProfiliTabButton.Location = new System.Drawing.Point(1, 155);
             this.gestioneProfiliTabButton.Name = "gestioneProfiliTabButton";
             this.gestioneProfiliTabButton.Size = new System.Drawing.Size(232, 26);
-            this.gestioneProfiliTabButton.TabIndex = 6;
+            this.gestioneProfiliTabButton.TabIndex = 4;
             this.gestioneProfiliTabButton.Text = "Gestione Profili";
             this.gestioneProfiliTabButton.UseVisualStyleBackColor = false;
             this.gestioneProfiliTabButton.Click += new System.EventHandler(this.gestioneProfiliTabButton_Click);
@@ -87,7 +97,7 @@
             this.gestionePeriodiTabButton.FlatAppearance.BorderSize = 0;
             this.gestionePeriodiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestionePeriodiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionePeriodiTabButton.Location = new System.Drawing.Point(1, 192);
+            this.gestionePeriodiTabButton.Location = new System.Drawing.Point(1, 182);
             this.gestionePeriodiTabButton.Name = "gestionePeriodiTabButton";
             this.gestionePeriodiTabButton.Size = new System.Drawing.Size(232, 26);
             this.gestionePeriodiTabButton.TabIndex = 5;
@@ -101,10 +111,10 @@
             this.gestioneResortTabButton.FlatAppearance.BorderSize = 0;
             this.gestioneResortTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestioneResortTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneResortTabButton.Location = new System.Drawing.Point(1, 138);
+            this.gestioneResortTabButton.Location = new System.Drawing.Point(1, 128);
             this.gestioneResortTabButton.Name = "gestioneResortTabButton";
             this.gestioneResortTabButton.Size = new System.Drawing.Size(232, 26);
-            this.gestioneResortTabButton.TabIndex = 4;
+            this.gestioneResortTabButton.TabIndex = 3;
             this.gestioneResortTabButton.Text = "Gestione Resort";
             this.gestioneResortTabButton.UseVisualStyleBackColor = false;
             this.gestioneResortTabButton.Click += new System.EventHandler(this.gestioneResortTabButton_Click);
@@ -115,10 +125,10 @@
             this.gestioneClientiTabButton.FlatAppearance.BorderSize = 0;
             this.gestioneClientiTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestioneClientiTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneClientiTabButton.Location = new System.Drawing.Point(1, 111);
+            this.gestioneClientiTabButton.Location = new System.Drawing.Point(1, 101);
             this.gestioneClientiTabButton.Name = "gestioneClientiTabButton";
             this.gestioneClientiTabButton.Size = new System.Drawing.Size(232, 26);
-            this.gestioneClientiTabButton.TabIndex = 3;
+            this.gestioneClientiTabButton.TabIndex = 2;
             this.gestioneClientiTabButton.Text = "Gestione Clienti";
             this.gestioneClientiTabButton.UseVisualStyleBackColor = false;
             this.gestioneClientiTabButton.Click += new System.EventHandler(this.gestioneClientiTabButton_Click);
@@ -129,10 +139,10 @@
             this.gestionePrenotazioniTabButton.FlatAppearance.BorderSize = 0;
             this.gestionePrenotazioniTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gestionePrenotazioniTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionePrenotazioniTabButton.Location = new System.Drawing.Point(1, 84);
+            this.gestionePrenotazioniTabButton.Location = new System.Drawing.Point(1, 74);
             this.gestionePrenotazioniTabButton.Name = "gestionePrenotazioniTabButton";
             this.gestionePrenotazioniTabButton.Size = new System.Drawing.Size(232, 26);
-            this.gestionePrenotazioniTabButton.TabIndex = 2;
+            this.gestionePrenotazioniTabButton.TabIndex = 1;
             this.gestionePrenotazioniTabButton.Text = "Gestione Prenotazioni";
             this.gestionePrenotazioniTabButton.UseVisualStyleBackColor = false;
             this.gestionePrenotazioniTabButton.Click += new System.EventHandler(this.gestionePrenotazioniTabButton_Click);
@@ -143,10 +153,10 @@
             this.riepilogoGiornalieroTabButton.FlatAppearance.BorderSize = 0;
             this.riepilogoGiornalieroTabButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.riepilogoGiornalieroTabButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.riepilogoGiornalieroTabButton.Location = new System.Drawing.Point(1, 57);
+            this.riepilogoGiornalieroTabButton.Location = new System.Drawing.Point(1, 47);
             this.riepilogoGiornalieroTabButton.Name = "riepilogoGiornalieroTabButton";
             this.riepilogoGiornalieroTabButton.Size = new System.Drawing.Size(232, 26);
-            this.riepilogoGiornalieroTabButton.TabIndex = 1;
+            this.riepilogoGiornalieroTabButton.TabIndex = 0;
             this.riepilogoGiornalieroTabButton.Text = "Riepilogo Giornaliero";
             this.riepilogoGiornalieroTabButton.UseVisualStyleBackColor = false;
             this.riepilogoGiornalieroTabButton.Click += new System.EventHandler(this.riepilogoGiornalieroTabButton_Click);
@@ -169,70 +179,70 @@
             // 
             // riepilogoGiornalieroTabPage
             // 
-            this.riepilogoGiornalieroTabPage.Location = new System.Drawing.Point(4, 27);
+            this.riepilogoGiornalieroTabPage.Location = new System.Drawing.Point(4, 23);
             this.riepilogoGiornalieroTabPage.Name = "riepilogoGiornalieroTabPage";
             this.riepilogoGiornalieroTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.riepilogoGiornalieroTabPage.Size = new System.Drawing.Size(690, 542);
+            this.riepilogoGiornalieroTabPage.Size = new System.Drawing.Size(690, 546);
             this.riepilogoGiornalieroTabPage.TabIndex = 0;
             this.riepilogoGiornalieroTabPage.Text = "Riepilogo Giornaliero";
             this.riepilogoGiornalieroTabPage.UseVisualStyleBackColor = true;
             // 
             // gestionePrenotazioniTabPage
             // 
-            this.gestionePrenotazioniTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestionePrenotazioniTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestionePrenotazioniTabPage.Name = "gestionePrenotazioniTabPage";
             this.gestionePrenotazioniTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestionePrenotazioniTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestionePrenotazioniTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestionePrenotazioniTabPage.TabIndex = 1;
             this.gestionePrenotazioniTabPage.Text = "Gestione Prenotazioni";
             this.gestionePrenotazioniTabPage.UseVisualStyleBackColor = true;
             // 
             // gestioneClientiTabPage
             // 
-            this.gestioneClientiTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestioneClientiTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestioneClientiTabPage.Name = "gestioneClientiTabPage";
             this.gestioneClientiTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestioneClientiTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestioneClientiTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestioneClientiTabPage.TabIndex = 2;
             this.gestioneClientiTabPage.Text = "Gestione Clienti";
             this.gestioneClientiTabPage.UseVisualStyleBackColor = true;
             // 
             // gestioneResortTabPage
             // 
-            this.gestioneResortTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestioneResortTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestioneResortTabPage.Name = "gestioneResortTabPage";
             this.gestioneResortTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestioneResortTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestioneResortTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestioneResortTabPage.TabIndex = 3;
             this.gestioneResortTabPage.Text = "Resort";
             this.gestioneResortTabPage.UseVisualStyleBackColor = true;
             // 
             // gestioneProfiliTabPage
             // 
-            this.gestioneProfiliTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestioneProfiliTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestioneProfiliTabPage.Name = "gestioneProfiliTabPage";
             this.gestioneProfiliTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestioneProfiliTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestioneProfiliTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestioneProfiliTabPage.TabIndex = 4;
             this.gestioneProfiliTabPage.Text = "Profili";
             this.gestioneProfiliTabPage.UseVisualStyleBackColor = true;
             // 
             // gestionePeriodiTabPage
             // 
-            this.gestionePeriodiTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestionePeriodiTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestionePeriodiTabPage.Name = "gestionePeriodiTabPage";
             this.gestionePeriodiTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestionePeriodiTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestionePeriodiTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestionePeriodiTabPage.TabIndex = 5;
             this.gestionePeriodiTabPage.Text = "Periodi";
             this.gestionePeriodiTabPage.UseVisualStyleBackColor = true;
             // 
             // gestioneIncassiTabPage
             // 
-            this.gestioneIncassiTabPage.Location = new System.Drawing.Point(4, 27);
+            this.gestioneIncassiTabPage.Location = new System.Drawing.Point(4, 23);
             this.gestioneIncassiTabPage.Name = "gestioneIncassiTabPage";
             this.gestioneIncassiTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.gestioneIncassiTabPage.Size = new System.Drawing.Size(690, 542);
+            this.gestioneIncassiTabPage.Size = new System.Drawing.Size(690, 546);
             this.gestioneIncassiTabPage.TabIndex = 6;
             this.gestioneIncassiTabPage.Text = "Incassi";
             this.gestioneIncassiTabPage.UseVisualStyleBackColor = true;
@@ -242,6 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(932, 573);
+            this.Controls.Add(this.monthCalendar);
             this.Controls.Add(this.gestioneIncassiTabButton);
             this.Controls.Add(this.gestioneProfiliTabButton);
             this.Controls.Add(this.gestionePeriodiTabButton);
@@ -253,6 +264,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBox1.ResumeLayout(false);
             this.tabControlWithoutHeader.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -277,5 +289,6 @@
         private Components.MyButton gestionePeriodiTabButton;
         private Components.MyButton gestioneProfiliTabButton;
         private Components.MyButton gestioneIncassiTabButton;
+        private System.Windows.Forms.MonthCalendar monthCalendar;
     }
 }

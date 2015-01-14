@@ -46,7 +46,7 @@
             // 
             this.dataNascitaTimePicker.Location = new System.Drawing.Point(178, 177);
             this.dataNascitaTimePicker.Name = "dataNascitaTimePicker";
-            this.dataNascitaTimePicker.Size = new System.Drawing.Size(186, 23);
+            this.dataNascitaTimePicker.Size = new System.Drawing.Size(186, 20);
             this.dataNascitaTimePicker.TabIndex = 9;
             // 
             // annullaButton
@@ -85,7 +85,7 @@
             this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.emailTextBox.Location = new System.Drawing.Point(178, 419);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(186, 21);
+            this.emailTextBox.Size = new System.Drawing.Size(186, 17);
             this.emailTextBox.TabIndex = 13;
             this.emailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -97,7 +97,7 @@
             this.telefonoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.telefonoTextBox.Location = new System.Drawing.Point(178, 359);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(186, 21);
+            this.telefonoTextBox.Size = new System.Drawing.Size(186, 17);
             this.telefonoTextBox.TabIndex = 12;
             this.telefonoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -109,7 +109,7 @@
             this.indirizzoTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.indirizzoTextBox.Location = new System.Drawing.Point(178, 299);
             this.indirizzoTextBox.Name = "indirizzoTextBox";
-            this.indirizzoTextBox.Size = new System.Drawing.Size(186, 21);
+            this.indirizzoTextBox.Size = new System.Drawing.Size(186, 17);
             this.indirizzoTextBox.TabIndex = 11;
             this.indirizzoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -121,7 +121,7 @@
             this.codiceFiscaleTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.codiceFiscaleTextBox.Location = new System.Drawing.Point(178, 239);
             this.codiceFiscaleTextBox.Name = "codiceFiscaleTextBox";
-            this.codiceFiscaleTextBox.Size = new System.Drawing.Size(186, 21);
+            this.codiceFiscaleTextBox.Size = new System.Drawing.Size(186, 17);
             this.codiceFiscaleTextBox.TabIndex = 10;
             this.codiceFiscaleTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -133,7 +133,7 @@
             this.cognomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.cognomeTextBox.Location = new System.Drawing.Point(178, 117);
             this.cognomeTextBox.Name = "cognomeTextBox";
-            this.cognomeTextBox.Size = new System.Drawing.Size(186, 21);
+            this.cognomeTextBox.Size = new System.Drawing.Size(186, 17);
             this.cognomeTextBox.TabIndex = 8;
             this.cognomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -145,7 +145,7 @@
             this.nomeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.nomeTextBox.Location = new System.Drawing.Point(178, 57);
             this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(186, 21);
+            this.nomeTextBox.Size = new System.Drawing.Size(186, 17);
             this.nomeTextBox.TabIndex = 7;
             this.nomeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -157,7 +157,7 @@
             this.myLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel7.Location = new System.Drawing.Point(36, 423);
             this.myLabel7.Name = "myLabel7";
-            this.myLabel7.Size = new System.Drawing.Size(53, 21);
+            this.myLabel7.Size = new System.Drawing.Size(43, 17);
             this.myLabel7.TabIndex = 6;
             this.myLabel7.Text = "E-mail";
             // 
@@ -169,7 +169,7 @@
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel6.Location = new System.Drawing.Point(36, 362);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(68, 21);
+            this.myLabel6.Size = new System.Drawing.Size(56, 17);
             this.myLabel6.TabIndex = 5;
             this.myLabel6.Text = "Telefono";
             // 
@@ -181,7 +181,7 @@
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel5.Location = new System.Drawing.Point(36, 301);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(69, 21);
+            this.myLabel5.Size = new System.Drawing.Size(56, 17);
             this.myLabel5.TabIndex = 4;
             this.myLabel5.Text = "Indirizzo";
             // 
@@ -193,7 +193,7 @@
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel4.Location = new System.Drawing.Point(36, 240);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(106, 21);
+            this.myLabel4.Size = new System.Drawing.Size(85, 17);
             this.myLabel4.TabIndex = 3;
             this.myLabel4.Text = "Codice Fiscale";
             // 
@@ -205,7 +205,7 @@
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel3.Location = new System.Drawing.Point(36, 179);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(97, 21);
+            this.myLabel3.Size = new System.Drawing.Size(81, 17);
             this.myLabel3.TabIndex = 2;
             this.myLabel3.Text = "Data Nascita";
             // 
@@ -217,7 +217,7 @@
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel2.Location = new System.Drawing.Point(36, 117);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(76, 21);
+            this.myLabel2.Size = new System.Drawing.Size(61, 17);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Cognome";
             // 
@@ -229,7 +229,7 @@
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.myLabel1.Location = new System.Drawing.Point(36, 57);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(52, 21);
+            this.myLabel1.Size = new System.Drawing.Size(42, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Nome";
             // 
@@ -257,6 +257,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Cliente";
             this.Load += new System.EventHandler(this.AggiungiModificaCliente_Load);
             this.ResumeLayout(false);

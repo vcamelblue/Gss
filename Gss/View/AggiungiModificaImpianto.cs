@@ -57,12 +57,18 @@ namespace Gss.View
                 SetDataGrid();
 
                 codiceTextBox.Enabled = false;
+                itrattinoLabel.Visible = false;
 
                 this.Text = "Modifica Impianto";
                 salvaButton.Text = "Salva Modifiche";
             }
             else 
+            {
                 pisteTotaliLabel.Text = "";
+                SetDataGrid();
+            } 
+                
+
         }
 
         private string GetTipologiaByPista(Pista pista)
@@ -182,7 +188,7 @@ namespace Gss.View
                     }
                     else
                     {
-                        Impianto nuovoImpianto = new Impianto(codiceImpianto, nomeImpianto, versante);
+                        Impianto nuovoImpianto = new Impianto("I-" + codiceImpianto, nomeImpianto, versante);
                         nuovoImpianto.Piste = pisteImpianto;
                         resortController.AddImpianto(nuovoImpianto);
                     }
@@ -220,11 +226,13 @@ namespace Gss.View
             {
                 rimuoviPistaButton.Enabled = false;
                 modificaPistaButton.Enabled = false;
+                salvaButton.Enabled = false;
             }
             else
             {
                 rimuoviPistaButton.Enabled = true;
                 modificaPistaButton.Enabled = true;
+                salvaButton.Enabled = true;
             }
        }
 

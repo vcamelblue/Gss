@@ -69,10 +69,10 @@
             this.annullaButton = new Gss.View.Components.MyButton(this.components);
             this.salvaButton = new Gss.View.Components.MyButton(this.components);
             this.risorseDataGridView = new Gss.View.Components.MyDataGridView(this.components);
-            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
-            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.risorsaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codiceCilumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProfiloTextBox = new Gss.View.Components.MyTextBox(this.components);
+            this.myLabel1 = new Gss.View.Components.MyLabel(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControlWithoutHeader.SuspendLayout();
             this.bungalowTabPage.SuspendLayout();
@@ -88,7 +88,7 @@
             this.groupBox1.Location = new System.Drawing.Point(260, 51);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(559, 339);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // tabControlWithoutHeader
@@ -543,7 +543,21 @@
             this.risorseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.risorseDataGridView.Size = new System.Drawing.Size(229, 373);
             this.risorseDataGridView.TabIndex = 20;
+            this.risorseDataGridView.TabStop = false;
             this.risorseDataGridView.SelectionChanged += new System.EventHandler(this.risorseDataGridView_SelectionChanged);
+            // 
+            // risorsaColumn
+            // 
+            this.risorsaColumn.HeaderText = "Risorsa";
+            this.risorsaColumn.Name = "risorsaColumn";
+            this.risorsaColumn.ReadOnly = true;
+            // 
+            // codiceCilumn
+            // 
+            this.codiceCilumn.HeaderText = "Codice";
+            this.codiceCilumn.Name = "codiceCilumn";
+            this.codiceCilumn.ReadOnly = true;
+            this.codiceCilumn.Visible = false;
             // 
             // nomeProfiloTextBox
             // 
@@ -569,19 +583,6 @@
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Nome Profilo";
             // 
-            // risorsaColumn
-            // 
-            this.risorsaColumn.HeaderText = "Risorsa";
-            this.risorsaColumn.Name = "risorsaColumn";
-            this.risorsaColumn.ReadOnly = true;
-            // 
-            // codiceCilumn
-            // 
-            this.codiceCilumn.HeaderText = "Codice";
-            this.codiceCilumn.Name = "codiceCilumn";
-            this.codiceCilumn.ReadOnly = true;
-            this.codiceCilumn.Visible = false;
-            // 
             // AggiungiModificaVisualizzaProfilo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -598,6 +599,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaVisualizzaProfilo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Profilo";
             this.Load += new System.EventHandler(this.AggiungiModificaVisualizzaProfilo_Load);
             this.groupBox1.ResumeLayout(false);

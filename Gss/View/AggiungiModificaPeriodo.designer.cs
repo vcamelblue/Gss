@@ -36,7 +36,7 @@
             // 
             // dataInizioTimePicker
             // 
-            this.dataInizioTimePicker.Location = new System.Drawing.Point(305, 117);
+            this.dataInizioTimePicker.Location = new System.Drawing.Point(258, 61);
             this.dataInizioTimePicker.Name = "dataInizioTimePicker";
             this.dataInizioTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataInizioTimePicker.TabIndex = 4;
@@ -44,7 +44,7 @@
             // 
             // dataFineTimePicker
             // 
-            this.dataFineTimePicker.Location = new System.Drawing.Point(305, 175);
+            this.dataFineTimePicker.Location = new System.Drawing.Point(258, 99);
             this.dataFineTimePicker.Name = "dataFineTimePicker";
             this.dataFineTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataFineTimePicker.TabIndex = 5;
@@ -55,9 +55,9 @@
             this.annullaButton.FlatAppearance.BorderSize = 0;
             this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(108, 257);
+            this.annullaButton.Location = new System.Drawing.Point(31, 147);
             this.annullaButton.Name = "annullaButton";
-            this.annullaButton.Size = new System.Drawing.Size(117, 26);
+            this.annullaButton.Size = new System.Drawing.Size(200, 26);
             this.annullaButton.TabIndex = 7;
             this.annullaButton.Text = "Annulla";
             this.annullaButton.UseVisualStyleBackColor = false;
@@ -69,9 +69,9 @@
             this.salvaButton.FlatAppearance.BorderSize = 0;
             this.salvaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salvaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvaButton.Location = new System.Drawing.Point(349, 257);
+            this.salvaButton.Location = new System.Drawing.Point(258, 147);
             this.salvaButton.Name = "salvaButton";
-            this.salvaButton.Size = new System.Drawing.Size(117, 26);
+            this.salvaButton.Size = new System.Drawing.Size(200, 26);
             this.salvaButton.TabIndex = 6;
             this.salvaButton.Text = "Salva";
             this.salvaButton.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             this.myLabel3.BackColor = System.Drawing.Color.Transparent;
             this.myLabel3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel3.Location = new System.Drawing.Point(75, 177);
+            this.myLabel3.Location = new System.Drawing.Point(28, 101);
             this.myLabel3.Name = "myLabel3";
             this.myLabel3.Size = new System.Drawing.Size(62, 17);
             this.myLabel3.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.myLabel2.BackColor = System.Drawing.Color.Transparent;
             this.myLabel2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel2.Location = new System.Drawing.Point(75, 119);
+            this.myLabel2.Location = new System.Drawing.Point(28, 63);
             this.myLabel2.Name = "myLabel2";
             this.myLabel2.Size = new System.Drawing.Size(69, 17);
             this.myLabel2.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.myLabel1.BackColor = System.Drawing.Color.Transparent;
             this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(75, 58);
+            this.myLabel1.Location = new System.Drawing.Point(28, 27);
             this.myLabel1.Name = "myLabel1";
             this.myLabel1.Size = new System.Drawing.Size(90, 17);
             this.myLabel1.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.profiloPeriodoComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profiloPeriodoComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profiloPeriodoComboBox.FormattingEnabled = true;
-            this.profiloPeriodoComboBox.Location = new System.Drawing.Point(305, 55);
+            this.profiloPeriodoComboBox.Location = new System.Drawing.Point(258, 24);
             this.profiloPeriodoComboBox.Name = "profiloPeriodoComboBox";
             this.profiloPeriodoComboBox.Size = new System.Drawing.Size(200, 22);
             this.profiloPeriodoComboBox.TabIndex = 3;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(582, 303);
+            this.ClientSize = new System.Drawing.Size(486, 189);
             this.Controls.Add(this.profiloPeriodoComboBox);
             this.Controls.Add(this.annullaButton);
             this.Controls.Add(this.salvaButton);
@@ -141,6 +141,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaPeriodo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Periodo";
             this.Load += new System.EventHandler(this.AggiungiModificaPeriodo_Load);
             this.ResumeLayout(false);

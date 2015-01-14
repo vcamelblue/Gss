@@ -24,11 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.visualizzaDettagliImpiantoButton = new Gss.View.Components.MyButton(this.components);
             this.impiantiDataGridView = new Gss.View.Components.MyDataGridView(this.components);
@@ -96,9 +96,9 @@
             this.groupBox1.Controls.Add(this.impiantiDataGridView);
             this.groupBox1.Controls.Add(this.filtraImpiantiGroupBox);
             this.groupBox1.Controls.Add(this.tipoSkipassTabControl);
-            this.groupBox1.Location = new System.Drawing.Point(-2, 63);
+            this.groupBox1.Location = new System.Drawing.Point(-2, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 617);
+            this.groupBox1.Size = new System.Drawing.Size(746, 587);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -108,7 +108,7 @@
             this.visualizzaDettagliImpiantoButton.FlatAppearance.BorderSize = 0;
             this.visualizzaDettagliImpiantoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.visualizzaDettagliImpiantoButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visualizzaDettagliImpiantoButton.Location = new System.Drawing.Point(516, 582);
+            this.visualizzaDettagliImpiantoButton.Location = new System.Drawing.Point(516, 551);
             this.visualizzaDettagliImpiantoButton.Name = "visualizzaDettagliImpiantoButton";
             this.visualizzaDettagliImpiantoButton.Size = new System.Drawing.Size(193, 26);
             this.visualizzaDettagliImpiantoButton.TabIndex = 3;
@@ -121,24 +121,24 @@
             this.impiantiDataGridView.AllowUserToAddRows = false;
             this.impiantiDataGridView.AllowUserToDeleteRows = false;
             this.impiantiDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.impiantiDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.impiantiDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.impiantiDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.impiantiDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.impiantiDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.impiantiDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.impiantiDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.impiantiDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.impiantiDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.impiantiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.impiantiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceColumn,
@@ -147,35 +147,35 @@
             this.numPisteAlpineColumn,
             this.numPisteDiFodnoColumn,
             this.numPisteSnowparkColumn});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.impiantiDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.impiantiDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.impiantiDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.impiantiDataGridView.Location = new System.Drawing.Point(26, 414);
+            this.impiantiDataGridView.Location = new System.Drawing.Point(26, 307);
             this.impiantiDataGridView.MultiSelect = false;
             this.impiantiDataGridView.Name = "impiantiDataGridView";
             this.impiantiDataGridView.ReadOnly = true;
             this.impiantiDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.impiantiDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.impiantiDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.impiantiDataGridView.RowHeadersVisible = false;
             this.impiantiDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.impiantiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.impiantiDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.impiantiDataGridView.RowTemplate.Height = 24;
             this.impiantiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.impiantiDataGridView.Size = new System.Drawing.Size(689, 157);
+            this.impiantiDataGridView.Size = new System.Drawing.Size(689, 234);
             this.impiantiDataGridView.TabIndex = 2;
             // 
             // codiceColumn
@@ -213,7 +213,7 @@
             this.numPisteDiFodnoColumn.HeaderText = "Piste Di Fondo";
             this.numPisteDiFodnoColumn.Name = "numPisteDiFodnoColumn";
             this.numPisteDiFodnoColumn.ReadOnly = true;
-            this.numPisteDiFodnoColumn.Width = 112;
+            this.numPisteDiFodnoColumn.Width = 99;
             // 
             // numPisteSnowparkColumn
             // 
@@ -231,9 +231,9 @@
             this.filtraImpiantiGroupBox.Controls.Add(this.perNomeRadioButton);
             this.filtraImpiantiGroupBox.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filtraImpiantiGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.filtraImpiantiGroupBox.Location = new System.Drawing.Point(26, 131);
+            this.filtraImpiantiGroupBox.Location = new System.Drawing.Point(26, 81);
             this.filtraImpiantiGroupBox.Name = "filtraImpiantiGroupBox";
-            this.filtraImpiantiGroupBox.Size = new System.Drawing.Size(689, 264);
+            this.filtraImpiantiGroupBox.Size = new System.Drawing.Size(689, 199);
             this.filtraImpiantiGroupBox.TabIndex = 1;
             this.filtraImpiantiGroupBox.TabStop = false;
             this.filtraImpiantiGroupBox.Text = " Filtra Impianti ";
@@ -244,7 +244,7 @@
             this.filtraButton.FlatAppearance.BorderSize = 0;
             this.filtraButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.filtraButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtraButton.Location = new System.Drawing.Point(565, 214);
+            this.filtraButton.Location = new System.Drawing.Point(563, 142);
             this.filtraButton.Name = "filtraButton";
             this.filtraButton.Size = new System.Drawing.Size(101, 26);
             this.filtraButton.TabIndex = 5;
@@ -259,10 +259,10 @@
             this.tipoFiltroTabControl.Controls.Add(this.filtroPerTipoPisteTabPage);
             this.tipoFiltroTabControl.Controls.Add(this.filtroPerCaratteristicaTabPage);
             this.tipoFiltroTabControl.Font = new System.Drawing.Font("Calibri", 9F);
-            this.tipoFiltroTabControl.Location = new System.Drawing.Point(6, 166);
+            this.tipoFiltroTabControl.Location = new System.Drawing.Point(6, 131);
             this.tipoFiltroTabControl.Name = "tipoFiltroTabControl";
             this.tipoFiltroTabControl.SelectedIndex = 0;
-            this.tipoFiltroTabControl.Size = new System.Drawing.Size(671, 86);
+            this.tipoFiltroTabControl.Size = new System.Drawing.Size(671, 67);
             this.tipoFiltroTabControl.TabIndex = 4;
             // 
             // filtroPerNomeTabPage
@@ -270,10 +270,10 @@
             this.filtroPerNomeTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.filtroPerNomeTabPage.Controls.Add(this.nomeImpiantoFiltroTextBox);
             this.filtroPerNomeTabPage.Controls.Add(this.myLabel7);
-            this.filtroPerNomeTabPage.Location = new System.Drawing.Point(4, 27);
+            this.filtroPerNomeTabPage.Location = new System.Drawing.Point(4, 23);
             this.filtroPerNomeTabPage.Name = "filtroPerNomeTabPage";
             this.filtroPerNomeTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerNomeTabPage.Size = new System.Drawing.Size(663, 55);
+            this.filtroPerNomeTabPage.Size = new System.Drawing.Size(663, 45);
             this.filtroPerNomeTabPage.TabIndex = 0;
             this.filtroPerNomeTabPage.Text = "Filtro Per Nome";
             // 
@@ -283,9 +283,9 @@
             this.nomeImpiantoFiltroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomeImpiantoFiltroTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomeImpiantoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.nomeImpiantoFiltroTextBox.Location = new System.Drawing.Point(98, 23);
+            this.nomeImpiantoFiltroTextBox.Location = new System.Drawing.Point(81, 17);
             this.nomeImpiantoFiltroTextBox.Name = "nomeImpiantoFiltroTextBox";
-            this.nomeImpiantoFiltroTextBox.Size = new System.Drawing.Size(417, 21);
+            this.nomeImpiantoFiltroTextBox.Size = new System.Drawing.Size(448, 17);
             this.nomeImpiantoFiltroTextBox.TabIndex = 1;
             // 
             // myLabel7
@@ -294,9 +294,9 @@
             this.myLabel7.BackColor = System.Drawing.Color.Transparent;
             this.myLabel7.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel7.Location = new System.Drawing.Point(18, 23);
+            this.myLabel7.Location = new System.Drawing.Point(22, 17);
             this.myLabel7.Name = "myLabel7";
-            this.myLabel7.Size = new System.Drawing.Size(52, 21);
+            this.myLabel7.Size = new System.Drawing.Size(42, 17);
             this.myLabel7.TabIndex = 0;
             this.myLabel7.Text = "Nome";
             // 
@@ -305,10 +305,10 @@
             this.filtroPerPrezzoTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.filtroPerPrezzoTabPage.Controls.Add(this.prezzoMassimoFiltroTextBox);
             this.filtroPerPrezzoTabPage.Controls.Add(this.myLabel8);
-            this.filtroPerPrezzoTabPage.Location = new System.Drawing.Point(4, 27);
+            this.filtroPerPrezzoTabPage.Location = new System.Drawing.Point(4, 23);
             this.filtroPerPrezzoTabPage.Name = "filtroPerPrezzoTabPage";
             this.filtroPerPrezzoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerPrezzoTabPage.Size = new System.Drawing.Size(663, 55);
+            this.filtroPerPrezzoTabPage.Size = new System.Drawing.Size(663, 45);
             this.filtroPerPrezzoTabPage.TabIndex = 1;
             this.filtroPerPrezzoTabPage.Text = "Filtro Per Prezzo";
             // 
@@ -318,9 +318,9 @@
             this.prezzoMassimoFiltroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.prezzoMassimoFiltroTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prezzoMassimoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.prezzoMassimoFiltroTextBox.Location = new System.Drawing.Point(146, 25);
+            this.prezzoMassimoFiltroTextBox.Location = new System.Drawing.Point(140, 17);
             this.prezzoMassimoFiltroTextBox.Name = "prezzoMassimoFiltroTextBox";
-            this.prezzoMassimoFiltroTextBox.Size = new System.Drawing.Size(366, 21);
+            this.prezzoMassimoFiltroTextBox.Size = new System.Drawing.Size(389, 17);
             this.prezzoMassimoFiltroTextBox.TabIndex = 1;
             // 
             // myLabel8
@@ -329,9 +329,9 @@
             this.myLabel8.BackColor = System.Drawing.Color.Transparent;
             this.myLabel8.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel8.Location = new System.Drawing.Point(16, 25);
+            this.myLabel8.Location = new System.Drawing.Point(22, 17);
             this.myLabel8.Name = "myLabel8";
-            this.myLabel8.Size = new System.Drawing.Size(124, 21);
+            this.myLabel8.Size = new System.Drawing.Size(99, 17);
             this.myLabel8.TabIndex = 0;
             this.myLabel8.Text = "Prezzo Massimo";
             // 
@@ -342,10 +342,10 @@
             this.filtroPerTipoPisteTabPage.Controls.Add(this.myLabel10);
             this.filtroPerTipoPisteTabPage.Controls.Add(this.numeroPisteFiltroTextBox);
             this.filtroPerTipoPisteTabPage.Controls.Add(this.myLabel9);
-            this.filtroPerTipoPisteTabPage.Location = new System.Drawing.Point(4, 27);
+            this.filtroPerTipoPisteTabPage.Location = new System.Drawing.Point(4, 23);
             this.filtroPerTipoPisteTabPage.Name = "filtroPerTipoPisteTabPage";
             this.filtroPerTipoPisteTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerTipoPisteTabPage.Size = new System.Drawing.Size(663, 55);
+            this.filtroPerTipoPisteTabPage.Size = new System.Drawing.Size(663, 45);
             this.filtroPerTipoPisteTabPage.TabIndex = 2;
             this.filtroPerTipoPisteTabPage.Text = "Filtro Per Tipo Piste";
             // 
@@ -356,9 +356,9 @@
             this.tipologiaPistaFiltroComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tipologiaPistaFiltroComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tipologiaPistaFiltroComboBox.FormattingEnabled = true;
-            this.tipologiaPistaFiltroComboBox.Location = new System.Drawing.Point(354, 20);
+            this.tipologiaPistaFiltroComboBox.Location = new System.Drawing.Point(381, 13);
             this.tipologiaPistaFiltroComboBox.Name = "tipologiaPistaFiltroComboBox";
-            this.tipologiaPistaFiltroComboBox.Size = new System.Drawing.Size(151, 26);
+            this.tipologiaPistaFiltroComboBox.Size = new System.Drawing.Size(151, 22);
             this.tipologiaPistaFiltroComboBox.TabIndex = 3;
             // 
             // myLabel10
@@ -367,9 +367,9 @@
             this.myLabel10.BackColor = System.Drawing.Color.Transparent;
             this.myLabel10.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel10.Location = new System.Drawing.Point(291, 25);
+            this.myLabel10.Location = new System.Drawing.Point(333, 17);
             this.myLabel10.Name = "myLabel10";
-            this.myLabel10.Size = new System.Drawing.Size(44, 21);
+            this.myLabel10.Size = new System.Drawing.Size(35, 17);
             this.myLabel10.TabIndex = 2;
             this.myLabel10.Text = "Piste";
             // 
@@ -379,9 +379,9 @@
             this.numeroPisteFiltroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numeroPisteFiltroTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroPisteFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.numeroPisteFiltroTextBox.Location = new System.Drawing.Point(98, 25);
+            this.numeroPisteFiltroTextBox.Location = new System.Drawing.Point(80, 17);
             this.numeroPisteFiltroTextBox.Name = "numeroPisteFiltroTextBox";
-            this.numeroPisteFiltroTextBox.Size = new System.Drawing.Size(173, 21);
+            this.numeroPisteFiltroTextBox.Size = new System.Drawing.Size(226, 17);
             this.numeroPisteFiltroTextBox.TabIndex = 1;
             // 
             // myLabel9
@@ -390,9 +390,9 @@
             this.myLabel9.BackColor = System.Drawing.Color.Transparent;
             this.myLabel9.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel9.Location = new System.Drawing.Point(7, 25);
+            this.myLabel9.Location = new System.Drawing.Point(22, 17);
             this.myLabel9.Name = "myLabel9";
-            this.myLabel9.Size = new System.Drawing.Size(64, 21);
+            this.myLabel9.Size = new System.Drawing.Size(51, 17);
             this.myLabel9.TabIndex = 0;
             this.myLabel9.Text = "Almeno";
             // 
@@ -402,10 +402,10 @@
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.caratteristicaSpecificaAlmenoFiltroTextBox);
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.myLabel11);
             this.filtroPerCaratteristicaTabPage.Controls.Add(this.caratteristicaSpecificaFiltroComboBox);
-            this.filtroPerCaratteristicaTabPage.Location = new System.Drawing.Point(4, 27);
+            this.filtroPerCaratteristicaTabPage.Location = new System.Drawing.Point(4, 23);
             this.filtroPerCaratteristicaTabPage.Name = "filtroPerCaratteristicaTabPage";
             this.filtroPerCaratteristicaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filtroPerCaratteristicaTabPage.Size = new System.Drawing.Size(663, 55);
+            this.filtroPerCaratteristicaTabPage.Size = new System.Drawing.Size(663, 40);
             this.filtroPerCaratteristicaTabPage.TabIndex = 3;
             this.filtroPerCaratteristicaTabPage.Text = "Filtro Per Caratteristica";
             // 
@@ -415,9 +415,9 @@
             this.caratteristicaSpecificaAlmenoFiltroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.caratteristicaSpecificaAlmenoFiltroTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.caratteristicaSpecificaAlmenoFiltroTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.caratteristicaSpecificaAlmenoFiltroTextBox.Location = new System.Drawing.Point(335, 23);
+            this.caratteristicaSpecificaAlmenoFiltroTextBox.Location = new System.Drawing.Point(350, 17);
             this.caratteristicaSpecificaAlmenoFiltroTextBox.Name = "caratteristicaSpecificaAlmenoFiltroTextBox";
-            this.caratteristicaSpecificaAlmenoFiltroTextBox.Size = new System.Drawing.Size(177, 21);
+            this.caratteristicaSpecificaAlmenoFiltroTextBox.Size = new System.Drawing.Size(177, 17);
             this.caratteristicaSpecificaAlmenoFiltroTextBox.TabIndex = 2;
             // 
             // myLabel11
@@ -426,9 +426,9 @@
             this.myLabel11.BackColor = System.Drawing.Color.Transparent;
             this.myLabel11.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel11.Location = new System.Drawing.Point(243, 23);
+            this.myLabel11.Location = new System.Drawing.Point(284, 17);
             this.myLabel11.Name = "myLabel11";
-            this.myLabel11.Size = new System.Drawing.Size(64, 21);
+            this.myLabel11.Size = new System.Drawing.Size(51, 17);
             this.myLabel11.TabIndex = 1;
             this.myLabel11.Text = "Almeno";
             // 
@@ -439,9 +439,9 @@
             this.caratteristicaSpecificaFiltroComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.caratteristicaSpecificaFiltroComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.caratteristicaSpecificaFiltroComboBox.FormattingEnabled = true;
-            this.caratteristicaSpecificaFiltroComboBox.Location = new System.Drawing.Point(25, 19);
+            this.caratteristicaSpecificaFiltroComboBox.Location = new System.Drawing.Point(25, 14);
             this.caratteristicaSpecificaFiltroComboBox.Name = "caratteristicaSpecificaFiltroComboBox";
-            this.caratteristicaSpecificaFiltroComboBox.Size = new System.Drawing.Size(195, 26);
+            this.caratteristicaSpecificaFiltroComboBox.Size = new System.Drawing.Size(233, 22);
             this.caratteristicaSpecificaFiltroComboBox.TabIndex = 0;
             this.caratteristicaSpecificaFiltroComboBox.SelectedIndexChanged += new System.EventHandler(this.caratteristicaSpecificaFiltroComboBox_SelectedIndexChanged);
             // 
@@ -449,9 +449,9 @@
             // 
             this.caratteristicaSpecificaRadioButton.AutoSize = true;
             this.caratteristicaSpecificaRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caratteristicaSpecificaRadioButton.Location = new System.Drawing.Point(10, 122);
+            this.caratteristicaSpecificaRadioButton.Location = new System.Drawing.Point(10, 111);
             this.caratteristicaSpecificaRadioButton.Name = "caratteristicaSpecificaRadioButton";
-            this.caratteristicaSpecificaRadioButton.Size = new System.Drawing.Size(270, 25);
+            this.caratteristicaSpecificaRadioButton.Size = new System.Drawing.Size(221, 21);
             this.caratteristicaSpecificaRadioButton.TabIndex = 3;
             this.caratteristicaSpecificaRadioButton.Text = "Con caratteristica specifica almeno";
             this.caratteristicaSpecificaRadioButton.UseVisualStyleBackColor = true;
@@ -461,9 +461,9 @@
             // 
             this.nPisteDiTipoRadioButton.AutoSize = true;
             this.nPisteDiTipoRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nPisteDiTipoRadioButton.Location = new System.Drawing.Point(10, 94);
+            this.nPisteDiTipoRadioButton.Location = new System.Drawing.Point(10, 83);
             this.nPisteDiTipoRadioButton.Name = "nPisteDiTipoRadioButton";
-            this.nPisteDiTipoRadioButton.Size = new System.Drawing.Size(213, 25);
+            this.nPisteDiTipoRadioButton.Size = new System.Drawing.Size(170, 21);
             this.nPisteDiTipoRadioButton.TabIndex = 2;
             this.nPisteDiTipoRadioButton.Text = "Con almeno n piste di tipo";
             this.nPisteDiTipoRadioButton.UseVisualStyleBackColor = true;
@@ -473,9 +473,9 @@
             // 
             this.prezzoMassimoRadioButton.AutoSize = true;
             this.prezzoMassimoRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezzoMassimoRadioButton.Location = new System.Drawing.Point(10, 66);
+            this.prezzoMassimoRadioButton.Location = new System.Drawing.Point(10, 55);
             this.prezzoMassimoRadioButton.Name = "prezzoMassimoRadioButton";
-            this.prezzoMassimoRadioButton.Size = new System.Drawing.Size(203, 25);
+            this.prezzoMassimoRadioButton.Size = new System.Drawing.Size(164, 21);
             this.prezzoMassimoRadioButton.TabIndex = 1;
             this.prezzoMassimoRadioButton.Text = "Prezzo al massimo pari a";
             this.prezzoMassimoRadioButton.UseVisualStyleBackColor = true;
@@ -486,9 +486,9 @@
             this.perNomeRadioButton.AutoSize = true;
             this.perNomeRadioButton.Checked = true;
             this.perNomeRadioButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.perNomeRadioButton.Location = new System.Drawing.Point(10, 38);
+            this.perNomeRadioButton.Location = new System.Drawing.Point(10, 27);
             this.perNomeRadioButton.Name = "perNomeRadioButton";
-            this.perNomeRadioButton.Size = new System.Drawing.Size(98, 25);
+            this.perNomeRadioButton.Size = new System.Drawing.Size(80, 21);
             this.perNomeRadioButton.TabIndex = 0;
             this.perNomeRadioButton.TabStop = true;
             this.perNomeRadioButton.Text = "Per nome";
@@ -500,7 +500,7 @@
             this.tipoSkipassTabControl.Controls.Add(this.skipassAGiornataTabPage);
             this.tipoSkipassTabControl.Controls.Add(this.skipassAdAccessoTabPage);
             this.tipoSkipassTabControl.Font = new System.Drawing.Font("Calibri", 9F);
-            this.tipoSkipassTabControl.Location = new System.Drawing.Point(26, 22);
+            this.tipoSkipassTabControl.Location = new System.Drawing.Point(26, 16);
             this.tipoSkipassTabControl.Name = "tipoSkipassTabControl";
             this.tipoSkipassTabControl.SelectedIndex = 0;
             this.tipoSkipassTabControl.Size = new System.Drawing.Size(689, 86);
@@ -513,25 +513,25 @@
             this.skipassAGiornataTabPage.Controls.Add(this.skipassAGiornataDataInizioTimePicker);
             this.skipassAGiornataTabPage.Controls.Add(this.myLabel4);
             this.skipassAGiornataTabPage.Controls.Add(this.myLabel3);
-            this.skipassAGiornataTabPage.Location = new System.Drawing.Point(4, 27);
+            this.skipassAGiornataTabPage.Location = new System.Drawing.Point(4, 23);
             this.skipassAGiornataTabPage.Name = "skipassAGiornataTabPage";
             this.skipassAGiornataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skipassAGiornataTabPage.Size = new System.Drawing.Size(681, 55);
+            this.skipassAGiornataTabPage.Size = new System.Drawing.Size(681, 59);
             this.skipassAGiornataTabPage.TabIndex = 0;
             this.skipassAGiornataTabPage.Text = "Skipass A Giornata";
             // 
             // skipassAGiornataDataFineTimePicker
             // 
-            this.skipassAGiornataDataFineTimePicker.Location = new System.Drawing.Point(443, 15);
+            this.skipassAGiornataDataFineTimePicker.Location = new System.Drawing.Point(453, 15);
             this.skipassAGiornataDataFineTimePicker.Name = "skipassAGiornataDataFineTimePicker";
-            this.skipassAGiornataDataFineTimePicker.Size = new System.Drawing.Size(226, 26);
+            this.skipassAGiornataDataFineTimePicker.Size = new System.Drawing.Size(226, 22);
             this.skipassAGiornataDataFineTimePicker.TabIndex = 3;
             // 
             // skipassAGiornataDataInizioTimePicker
             // 
-            this.skipassAGiornataDataInizioTimePicker.Location = new System.Drawing.Point(86, 15);
+            this.skipassAGiornataDataInizioTimePicker.Location = new System.Drawing.Point(66, 15);
             this.skipassAGiornataDataInizioTimePicker.Name = "skipassAGiornataDataInizioTimePicker";
-            this.skipassAGiornataDataInizioTimePicker.Size = new System.Drawing.Size(226, 26);
+            this.skipassAGiornataDataInizioTimePicker.Size = new System.Drawing.Size(226, 22);
             this.skipassAGiornataDataInizioTimePicker.TabIndex = 2;
             this.skipassAGiornataDataInizioTimePicker.ValueChanged += new System.EventHandler(this.skipassAGiornataDataInizioTimePicker_ValueChanged);
             // 
@@ -541,9 +541,9 @@
             this.myLabel4.BackColor = System.Drawing.Color.Transparent;
             this.myLabel4.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel4.Location = new System.Drawing.Point(366, 20);
+            this.myLabel4.Location = new System.Drawing.Point(411, 19);
             this.myLabel4.Name = "myLabel4";
-            this.myLabel4.Size = new System.Drawing.Size(24, 21);
+            this.myLabel4.Size = new System.Drawing.Size(19, 17);
             this.myLabel4.TabIndex = 1;
             this.myLabel4.Text = "Al";
             // 
@@ -553,9 +553,9 @@
             this.myLabel3.BackColor = System.Drawing.Color.Transparent;
             this.myLabel3.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel3.Location = new System.Drawing.Point(28, 19);
+            this.myLabel3.Location = new System.Drawing.Point(21, 19);
             this.myLabel3.Name = "myLabel3";
-            this.myLabel3.Size = new System.Drawing.Size(32, 21);
+            this.myLabel3.Size = new System.Drawing.Size(27, 17);
             this.myLabel3.TabIndex = 0;
             this.myLabel3.Text = "Dal";
             // 
@@ -566,18 +566,18 @@
             this.skipassAdAccessoTabPage.Controls.Add(this.numeroAccessiTextBox);
             this.skipassAdAccessoTabPage.Controls.Add(this.myLabel6);
             this.skipassAdAccessoTabPage.Controls.Add(this.myLabel5);
-            this.skipassAdAccessoTabPage.Location = new System.Drawing.Point(4, 27);
+            this.skipassAdAccessoTabPage.Location = new System.Drawing.Point(4, 23);
             this.skipassAdAccessoTabPage.Name = "skipassAdAccessoTabPage";
             this.skipassAdAccessoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.skipassAdAccessoTabPage.Size = new System.Drawing.Size(681, 55);
+            this.skipassAdAccessoTabPage.Size = new System.Drawing.Size(681, 59);
             this.skipassAdAccessoTabPage.TabIndex = 1;
             this.skipassAdAccessoTabPage.Text = "Skipass Ad Accesso";
             // 
             // skipassAdAccessoDataInizioTimePicker
             // 
-            this.skipassAdAccessoDataInizioTimePicker.Location = new System.Drawing.Point(450, 13);
+            this.skipassAdAccessoDataInizioTimePicker.Location = new System.Drawing.Point(453, 15);
             this.skipassAdAccessoDataInizioTimePicker.Name = "skipassAdAccessoDataInizioTimePicker";
-            this.skipassAdAccessoDataInizioTimePicker.Size = new System.Drawing.Size(223, 26);
+            this.skipassAdAccessoDataInizioTimePicker.Size = new System.Drawing.Size(226, 22);
             this.skipassAdAccessoDataInizioTimePicker.TabIndex = 3;
             // 
             // numeroAccessiTextBox
@@ -586,9 +586,9 @@
             this.numeroAccessiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numeroAccessiTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroAccessiTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.numeroAccessiTextBox.Location = new System.Drawing.Point(138, 17);
+            this.numeroAccessiTextBox.Location = new System.Drawing.Point(117, 19);
             this.numeroAccessiTextBox.Name = "numeroAccessiTextBox";
-            this.numeroAccessiTextBox.Size = new System.Drawing.Size(188, 21);
+            this.numeroAccessiTextBox.Size = new System.Drawing.Size(175, 17);
             this.numeroAccessiTextBox.TabIndex = 2;
             // 
             // myLabel6
@@ -597,9 +597,9 @@
             this.myLabel6.BackColor = System.Drawing.Color.Transparent;
             this.myLabel6.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel6.Location = new System.Drawing.Point(365, 17);
+            this.myLabel6.Location = new System.Drawing.Point(373, 19);
             this.myLabel6.Name = "myLabel6";
-            this.myLabel6.Size = new System.Drawing.Size(79, 21);
+            this.myLabel6.Size = new System.Drawing.Size(64, 17);
             this.myLabel6.TabIndex = 1;
             this.myLabel6.Text = "Valido Dal";
             // 
@@ -609,9 +609,9 @@
             this.myLabel5.BackColor = System.Drawing.Color.Transparent;
             this.myLabel5.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel5.Location = new System.Drawing.Point(11, 17);
+            this.myLabel5.Location = new System.Drawing.Point(4, 19);
             this.myLabel5.Name = "myLabel5";
-            this.myLabel5.Size = new System.Drawing.Size(121, 21);
+            this.myLabel5.Size = new System.Drawing.Size(97, 17);
             this.myLabel5.TabIndex = 0;
             this.myLabel5.Text = "Numero Accessi";
             // 
@@ -621,7 +621,7 @@
             this.annullaButton.FlatAppearance.BorderSize = 0;
             this.annullaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.annullaButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.annullaButton.Location = new System.Drawing.Point(43, 689);
+            this.annullaButton.Location = new System.Drawing.Point(43, 655);
             this.annullaButton.Name = "annullaButton";
             this.annullaButton.Size = new System.Drawing.Size(122, 26);
             this.annullaButton.TabIndex = 6;
@@ -635,7 +635,7 @@
             this.AggiungiSkipassButton.FlatAppearance.BorderSize = 0;
             this.AggiungiSkipassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AggiungiSkipassButton.Font = new System.Drawing.Font("Calibri Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AggiungiSkipassButton.Location = new System.Drawing.Point(568, 689);
+            this.AggiungiSkipassButton.Location = new System.Drawing.Point(568, 655);
             this.AggiungiSkipassButton.Name = "AggiungiSkipassButton";
             this.AggiungiSkipassButton.Size = new System.Drawing.Size(122, 26);
             this.AggiungiSkipassButton.TabIndex = 5;
@@ -650,9 +650,9 @@
             this.tipologiaSkipassComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tipologiaSkipassComboBox.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tipologiaSkipassComboBox.FormattingEnabled = true;
-            this.tipologiaSkipassComboBox.Location = new System.Drawing.Point(517, 31);
+            this.tipologiaSkipassComboBox.Location = new System.Drawing.Point(517, 23);
             this.tipologiaSkipassComboBox.Name = "tipologiaSkipassComboBox";
-            this.tipologiaSkipassComboBox.Size = new System.Drawing.Size(196, 26);
+            this.tipologiaSkipassComboBox.Size = new System.Drawing.Size(196, 22);
             this.tipologiaSkipassComboBox.TabIndex = 3;
             this.tipologiaSkipassComboBox.SelectedIndexChanged += new System.EventHandler(this.tipologiaSkipassComboBox_SelectedIndexChanged);
             // 
@@ -663,9 +663,9 @@
             this.codiceSkipassTextBox.Enabled = false;
             this.codiceSkipassTextBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codiceSkipassTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.codiceSkipassTextBox.Location = new System.Drawing.Point(94, 31);
+            this.codiceSkipassTextBox.Location = new System.Drawing.Point(94, 23);
             this.codiceSkipassTextBox.Name = "codiceSkipassTextBox";
-            this.codiceSkipassTextBox.Size = new System.Drawing.Size(210, 21);
+            this.codiceSkipassTextBox.Size = new System.Drawing.Size(226, 17);
             this.codiceSkipassTextBox.TabIndex = 2;
             // 
             // myLabel2
@@ -674,9 +674,9 @@
             this.myLabel2.BackColor = System.Drawing.Color.Transparent;
             this.myLabel2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel2.Location = new System.Drawing.Point(438, 31);
+            this.myLabel2.Location = new System.Drawing.Point(438, 23);
             this.myLabel2.Name = "myLabel2";
-            this.myLabel2.Size = new System.Drawing.Size(73, 21);
+            this.myLabel2.Size = new System.Drawing.Size(59, 17);
             this.myLabel2.TabIndex = 1;
             this.myLabel2.Text = "Tipologia";
             // 
@@ -686,9 +686,9 @@
             this.myLabel1.BackColor = System.Drawing.Color.Transparent;
             this.myLabel1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.myLabel1.Location = new System.Drawing.Point(32, 31);
+            this.myLabel1.Location = new System.Drawing.Point(32, 23);
             this.myLabel1.Name = "myLabel1";
-            this.myLabel1.Size = new System.Drawing.Size(56, 21);
+            this.myLabel1.Size = new System.Drawing.Size(45, 17);
             this.myLabel1.TabIndex = 0;
             this.myLabel1.Text = "Codice";
             // 
@@ -696,7 +696,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(742, 727);
+            this.ClientSize = new System.Drawing.Size(742, 691);
             this.Controls.Add(this.annullaButton);
             this.Controls.Add(this.AggiungiSkipassButton);
             this.Controls.Add(this.groupBox1);
@@ -707,6 +707,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "AggiungiModificaSkipass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aggiungi Skipass";
             this.Load += new System.EventHandler(this.AggiungiModificaSkipass_Load);
             this.groupBox1.ResumeLayout(false);

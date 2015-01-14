@@ -217,6 +217,7 @@
             this.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GestioneImpianti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestione Impianti";
             this.Load += new System.EventHandler(this.GestioneImpianti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.impiantiDataGridView)).EndInit();

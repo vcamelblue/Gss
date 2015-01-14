@@ -154,7 +154,7 @@ namespace Gss.View
             
         }
 
-        private void salvaPrezzoRisorse()
+        private bool salvaPrezzoRisorse()
         {
             if (!inEditingMode && !inViewMode)
             {
@@ -180,12 +180,14 @@ namespace Gss.View
                                 SpostatiNellaGriglia();
                                 prezzoPerGiornataImpiantoTextBox.Clear();
                                 prezzoPerAccessoImpiantoTextBox.Clear();
+                                return true;
                             }
                             else
                             {
                                 MessageBox.Show("Inserire dei prezzi positivi");
                                 prezzoPerGiornataImpiantoTextBox.Clear();
                                 prezzoPerAccessoImpiantoTextBox.Clear();
+                                return false;
                             }
                         }
                         catch (Exception)
@@ -218,12 +220,14 @@ namespace Gss.View
                                 SpostatiNellaGriglia();
                                 prezzoPerGironataPostStdTextBox.Clear();
                                 prezzoPerPersonaExtraTextBox.Clear();
+                                return true;
                             }
                             else
                             {
                                 MessageBox.Show("Inserire dei prezzi positivi");
                                 prezzoPerGironataPostStdTextBox.Clear();
                                 prezzoPerPersonaExtraTextBox.Clear();
+                                return false;
                             }
                         }
                         catch (FormatException)
@@ -275,11 +279,14 @@ namespace Gss.View
                     SpostatiNellaGriglia();
                 }
             }
+            return true;
         }
 
         private void prossimaRisorsaButton_Click(object sender, EventArgs e)
         {
-            if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 2)
+            if ( (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 2) && 
+               ( (ConfigAndUtility.checkFields(prezzoPerAccessoImpiantoTextBox.Text) && ConfigAndUtility.checkFields(prezzoPerGiornataImpiantoTextBox.Text))
+               ||(ConfigAndUtility.checkFields(prezzoPerGironataPostStdTextBox.Text) && ConfigAndUtility.checkFields(prezzoPerPersonaExtraTextBox.Text))))
             {
                     prossimaRisorsaButton.Enabled = false;
             }
@@ -308,12 +315,16 @@ namespace Gss.View
                     profilo.Nome = nomeProfilo;
                     try
                     {
-                        if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 1)
+                        if (risorseDataGridView.SelectedRows[0].Index == risorseDataGridView.Rows.Count - 1 &&
+               ((ConfigAndUtility.checkFields(prezzoPerAccessoImpiantoTextBox.Text) && ConfigAndUtility.checkFields(prezzoPerGiornataImpiantoTextBox.Text))
+               || (ConfigAndUtility.checkFields(prezzoPerGironataPostStdTextBox.Text) && ConfigAndUtility.checkFields(prezzoPerPersonaExtraTextBox.Text))))
                         {
-                            salvaPrezzoRisorse();
-                            periodiProfiliController.AddProfilo(profilo);
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            if(salvaPrezzoRisorse())
+                            {
+                                periodiProfiliController.AddProfilo(profilo);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
                         }
                         else
                         {

@@ -41,7 +41,7 @@ namespace Gss.Filtra
                     }
                 }
             }
-
+            
             return result;
         }
     }

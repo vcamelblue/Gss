@@ -106,6 +106,13 @@ namespace Gss.View
             {
                 switchToPage(riepilogoGiornalieroTabPage, riepilogoGiornalieroTabButton);
             }
+
+            if(resortController.IsStagioneImpostata())
+            {
+                monthCalendar.SelectionStart = resortController.Gss.Resort.DataInizioStagione;
+                monthCalendar.SelectionEnd = resortController.Gss.Resort.DataFineStagione;
+            }
+
         }
 
 
